@@ -2,7 +2,7 @@
 GENERATED FILE — DO NOT EDIT BY HAND.
 
 Source repo: wsollers/lra-governance
-Source commit: a55609adaf2be4bd68941a4cb78336e56d92a60b
+Source commit: d98bb51fc80e683b38a9d1e76f4a0c91037ede0a
 Generated from:
 - docs/governance/...
 - docs/architecture/...
@@ -39,8 +39,10 @@ Owned concerns:
 - local copies of synced `common/` and `bibliography/`,
 - volume-to-monorepo content sync.
 
-This overlay must not contain Lean-specific, C++ / Vulkan / simulation, or
-numerical-analysis / benchmark / plotting rules.
+This overlay may contain negative guard rails that say specialist rules do not
+apply to volume repos. It must not contain positive Lean-specific, C++ /
+Vulkan / simulation, numerical-analysis / benchmark / plotting, or PDF
+extraction workflow rules.
 
 ## Agent Scope
 
