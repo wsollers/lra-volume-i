@@ -36,7 +36,8 @@ Owned concerns:
 
 - volume content only,
 - Overleaf-ready volume roots,
-- local copies of synced `common/` and `bibliography/`,
+- local copies of synced `common/`,
+- the volume-owned bibliography shard,
 - volume-to-monorepo content sync.
 
 This overlay may contain negative guard rails that say specialist rules do not
