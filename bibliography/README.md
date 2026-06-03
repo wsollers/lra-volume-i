@@ -27,3 +27,13 @@ To search before adding a mobile/OCR/extractor candidate, run:
 ```powershell
 python scripts/check_bibliography.py --find "author or title words"
 ```
+
+Local PDF inventory, ISBN scanning, rename planning, and reading-tab launchers
+are documented in:
+
+```text
+docs/workflows/reading-library-tools.md
+```
+
+Those tools describe local holdings and reading workflows. They do not replace
+BibTeX entries, and they do not rename or delete files automatically.
