@@ -22,6 +22,11 @@ jobs:
           token: ${{ secrets.SYNC_PAT }}
           path: monorepo
 
+      - name: Validate leaf proof stubs
+        run: |
+          cd source
+          python scripts/validate_leaf_proofs.py --root . --strict
+
       - name: Sync volume-i/ into monorepo
         run: |
           rsync -av --delete source/volume-i/ monorepo/volume-i/

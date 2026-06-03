@@ -1,0 +1,29 @@
+# Split Bibliography
+
+This directory is owned by `lra-common`.
+
+Add new entries to exactly one split file:
+
+- `volume-i-foundations.bib`
+- `volume-ii-number-systems.bib`
+- `volume-iii-analysis.bib`
+- `volume-iv-algebra.bib`
+- `volume-v-topology-geometry.bib`
+- `volume-vi-computational.bib`
+- `volume-vii-numerical-approximation.bib`
+- `volume-viii-logic-foundations.bib`
+- `general-reference.bib`
+
+`analysis.bib` is a legacy pointer only. Do not add entries there.
+
+Before committing, run:
+
+```powershell
+python scripts/check_bibliography.py
+```
+
+To search before adding a mobile/OCR/extractor candidate, run:
+
+```powershell
+python scripts/check_bibliography.py --find "author or title words"
+```
