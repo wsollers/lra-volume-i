@@ -132,6 +132,16 @@ environments:
   file: notes\semantics\notes-semantics.tex
   display_title: Truth Assignment
   proof_file: null
+- label: def:truth-assignment-domain-propositional-logic
+  type: def
+  file: notes\semantics\notes-semantics.tex
+  display_title: Domain of a Truth Assignment
+  proof_file: null
+- label: def:extended-truth-assignment-propositional-logic
+  type: def
+  file: notes\semantics\notes-semantics.tex
+  display_title: Extension of a Truth Assignment to Formulas
+  proof_file: null
 - label: thm:unique-extension-truth-assignment-propositional-logic
   type: thm
   file: notes\semantics\notes-semantics.tex

@@ -491,6 +491,21 @@ and
 \]
 \end{remark*}
 
+\begin{remark*}[Readable decomposition]
+\[
+\varphi\leftrightarrow\psi
+\quad\Longleftrightarrow\quad
+(\varphi\to\psi)\land(\psi\to\varphi)
+\]
+and also
+\[
+\varphi\leftrightarrow\psi
+\quad\Longleftrightarrow\quad
+(\varphi\land\psi)\lor(\neg\varphi\land\neg\psi).
+\]
+The biconditional says that the two formulas have the same truth value.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 A biconditional says that two formulas have the same truth value: both true or both false.
 \end{remark*}
@@ -532,6 +547,21 @@ means that \(C[-]\) is a one-hole propositional formula context.
 A formula context is a syntactic environment into which a formula can be inserted. Contexts make precise the idea of replacing a subformula inside a larger formula.
 \end{remark*}
 
+\begin{remark*}[Examples]
+If
+\[
+C[-] := ([-]\land R),
+\]
+then
+\[
+C[P]=(P\land R)
+\]
+and
+\[
+C[Q\lor S]=((Q\lor S)\land R).
+\]
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:well-formed-formula]{Well-Formed Formula}
@@ -571,6 +601,16 @@ C[\varphi]\equiv C[\psi]
 \]
 \end{remark*}
 
+\begin{remark*}[Readable decomposition]
+\[
+\varphi\equiv\psi
+\quad\Longrightarrow\quad
+C[\varphi]\equiv C[\psi].
+\]
+A logical equivalence may be used inside a larger formula context without changing
+the truth behavior of the whole formula.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Logical equivalence is substitutive: equivalent formulas may be replaced inside larger formulas without changing truth behavior.
 \end{remark*}
@@ -583,6 +623,35 @@ Logical equivalence is substitutive: equivalent formulas may be replaced inside 
   \item \hyperref[thm:unique-extension-truth-assignment-propositional-logic]{Unique Extension of a Truth Assignment}
 \end{itemize}
 \end{dependencies}
+\begin{remark*}[Rules of replacement]
+The equivalence laws in this section may be used as replacement rules inside
+larger formulas. If a formula contains a subformula matching one side of a listed
+equivalence law, that subformula may be replaced by the other side.
+
+Common replacement rules include:
+\[
+\neg\neg\varphi \equiv \varphi,
+\]
+\[
+\neg(\varphi\land\psi)\equiv \neg\varphi\lor\neg\psi,
+\qquad
+\neg(\varphi\lor\psi)\equiv \neg\varphi\land\neg\psi,
+\]
+\[
+\varphi\to\psi\equiv \neg\varphi\lor\psi,
+\]
+\[
+\varphi\leftrightarrow\psi
+\equiv
+(\varphi\to\psi)\land(\psi\to\varphi),
+\]
+and
+\[
+\varphi\leftrightarrow\psi
+\equiv
+(\varphi\land\psi)\lor(\neg\varphi\land\neg\psi).
+\]
+\end{remark*}
 % END GENERATED ARTIFACT: thm:replacement-of-logical-equivalents-propositional-logic
 % BEGIN GENERATED ARTIFACT: rem:algebraic-role-of-propositional-laws
 \begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,

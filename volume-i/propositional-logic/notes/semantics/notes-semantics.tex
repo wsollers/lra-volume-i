@@ -1,5 +1,8 @@
 \section{Semantics}
 
+\subsection{Truth Assignments}
+\label{subsec:truth-assignments-propositional-logic}
+
 % BEGIN GENERATED ARTIFACT: def:truth-assignment-propositional-logic
 \begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
   left=6pt, right=6pt, top=4pt, bottom=4pt,
@@ -7,11 +10,12 @@
   fonttitle=\small\bfseries]
 \begin{definition}[Truth Assignment]
 \label{def:truth-assignment-propositional-logic}
-A truth assignment for propositional logic is a function
+A \emph{truth assignment} is a function
 \[
 v:\Prop\to\mathbb{B}.
 \]
-Thus a truth assignment assigns either \(\mathrm{False}\) or \(\mathrm{True}\) to each propositional variable.
+For each propositional variable \(P\in\Prop\), the value \(v(P)\) is the truth
+value assigned to \(P\).
 \end{definition}
 \end{tcolorbox}
 
@@ -27,11 +31,27 @@ v:\Prop\to\mathbb{B}.
 \[
 \operatorname{TruthAssignment}(v)
 \]
-means that \(v\) assigns a truth value to every propositional variable.
+means that \(v\) assigns exactly one truth value to each propositional variable.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-A truth assignment fixes the truth values of atomic formulas. The recursive semantics of the connectives then determines the truth value of each molecular formula.
+A truth assignment gives semantic values to the atomic formulas. The recursive
+truth conditions for the connectives then determine the truth value of every
+well-formed formula.
+\end{remark*}
+
+\begin{remark*}[Examples]
+If \(\Prop=\{P_1,P_2,P_3,\ldots\}\), then a truth assignment may satisfy
+\[
+v(P_1)=\True,\qquad v(P_2)=\False,\qquad v(P_3)=\True,
+\]
+with values assigned to every remaining propositional variable.
+\end{remark*}
+
+\begin{remark*}[Non-Examples]
+A partial assignment that gives values only to \(P_1\) and \(P_2\) is not a truth
+assignment on \(\Prop\). It may be useful for local computations, but it is not a
+function \(\Prop\to\mathbb{B}\).
 \end{remark*}
 
 \begin{dependencies}
@@ -42,6 +62,188 @@ A truth assignment fixes the truth values of atomic formulas. The recursive sema
 \end{itemize}
 \end{dependencies}
 % END GENERATED ARTIFACT: def:truth-assignment-propositional-logic
+
+% BEGIN GENERATED ARTIFACT: def:truth-assignment-domain-propositional-logic
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Domain of a Truth Assignment)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Domain of a Truth Assignment]
+\label{def:truth-assignment-domain-propositional-logic}
+The \emph{domain} of a truth assignment
+\[
+v:\Prop\to\mathbb{B}
+\]
+is the set \(\Prop\) of propositional variables.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{TruthAssignment}(v)\Longrightarrow \operatorname{dom}(v)=\Prop.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A truth assignment is global: it assigns truth values to all propositional
+variables in the language, even when a particular formula uses only finitely many
+of them.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:truth-assignment-propositional-logic]{Truth Assignment}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:truth-assignment-domain-propositional-logic
+
+\subsection{Extension of a Truth Assignment}
+\label{subsec:extension-of-truth-assignment-propositional-logic}
+
+% BEGIN GENERATED ARTIFACT: def:extended-truth-assignment-propositional-logic
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Extension of a Truth Assignment to Formulas)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Extension of a Truth Assignment to Formulas]
+\label{def:extended-truth-assignment-propositional-logic}
+Let
+\[
+v:\Prop\to\mathbb{B}
+\]
+be a truth assignment. The \emph{extension} of \(v\) to well-formed formulas is
+the function
+\[
+\widehat v:\WFF\to\mathbb{B}
+\]
+defined recursively as follows:
+\[
+\widehat v(P)=v(P)
+\quad\text{for every }P\in\Prop,
+\]
+\[
+\widehat v(\neg\varphi)=\True
+\Longleftrightarrow
+\widehat v(\varphi)=\False,
+\]
+\[
+\widehat v(\varphi\land\psi)=\True
+\Longleftrightarrow
+\widehat v(\varphi)=\True
+\text{ and }
+\widehat v(\psi)=\True,
+\]
+\[
+\widehat v(\varphi\lor\psi)=\True
+\Longleftrightarrow
+\widehat v(\varphi)=\True
+\text{ or }
+\widehat v(\psi)=\True,
+\]
+\[
+\widehat v(\varphi\to\psi)=\False
+\Longleftrightarrow
+\widehat v(\varphi)=\True
+\text{ and }
+\widehat v(\psi)=\False,
+\]
+and
+\[
+\widehat v(\varphi\leftrightarrow\psi)=\True
+\Longleftrightarrow
+\widehat v(\varphi)=\widehat v(\psi).
+\]
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+For every truth assignment \(v:\Prop\to\mathbb{B}\), its extension is a function
+\[
+\widehat v:\WFF\to\mathbb{B}
+\]
+satisfying the recursive truth clauses for propositional variables, negation,
+conjunction, disjunction, material implication, and biconditional.
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{ExtendedTruthAssignment}(\widehat v,v)
+\]
+means that \(\widehat v\) is the recursively defined truth-value function on
+\(\WFF\) induced by the atomic truth assignment \(v\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The original assignment \(v\) gives truth values only to propositional variables.
+The extension \(\widehat v\) evaluates every formula by following the formula's
+syntactic construction.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:truth-assignment-propositional-logic]{Truth Assignment}
+  \item \hyperref[def:well-formed-formula]{Well-Formed Formula}
+  \item \hyperref[thm:structural-recursion-propositional-formulas]{Structural Recursion for Propositional Formulas}
+  \item \hyperref[thm:unique-decomposition-propositional-formulas]{Unique Decomposition for Propositional Formulas}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:extended-truth-assignment-propositional-logic
+
+\begin{remark*}[Truth conditions for primitive connectives]
+\[
+\begin{array}{c|c}
+\varphi & \neg\varphi\\
+\hline
+\True & \False\\
+\False & \True
+\end{array}
+\qquad
+\begin{array}{c|c|c}
+\varphi & \psi & \varphi\land\psi\\
+\hline
+\True & \True & \True\\
+\True & \False & \False\\
+\False & \True & \False\\
+\False & \False & \False
+\end{array}
+\]
+\[
+\begin{array}{c|c|c}
+\varphi & \psi & \varphi\lor\psi\\
+\hline
+\True & \True & \True\\
+\True & \False & \True\\
+\False & \True & \True\\
+\False & \False & \False
+\end{array}
+\qquad
+\begin{array}{c|c|c}
+\varphi & \psi & \varphi\to\psi\\
+\hline
+\True & \True & \True\\
+\True & \False & \False\\
+\False & \True & \True\\
+\False & \False & \True
+\end{array}
+\]
+\[
+\begin{array}{c|c|c}
+\varphi & \psi & \varphi\leftrightarrow\psi\\
+\hline
+\True & \True & \True\\
+\True & \False & \False\\
+\False & \True & \False\\
+\False & \False & \True
+\end{array}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The truth tables are not additional formation rules. They specify how each
+primitive connective acts on truth values once the formula has already been
+formed syntactically.
+\end{remark*}
+
 % BEGIN GENERATED ARTIFACT: thm:unique-extension-truth-assignment-propositional-logic
 \begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
   left=6pt, right=6pt, top=4pt, bottom=4pt,
@@ -49,46 +251,16 @@ A truth assignment fixes the truth values of atomic formulas. The recursive sema
   fonttitle=\small\bfseries]
 \begin{theorem}[Unique Extension of a Truth Assignment]
 \label{thm:unique-extension-truth-assignment-propositional-logic}
-Every truth assignment \(v:\Prop\to\mathbb{B}\) extends uniquely to a function
+Every truth assignment
+\[
+v:\Prop\to\mathbb{B}
+\]
+has a unique extension
 \[
 \widehat v:\WFF\to\mathbb{B}
 \]
-satisfying the following clauses:
-\[
-\widehat v(P)=v(P)\quad(P\in\Prop),
-\]
-\[
-\widehat v(\neg\varphi)=\mathrm{True}
-\Longleftrightarrow
-\widehat v(\varphi)=\mathrm{False},
-\]
-\[
-\widehat v(\varphi\land\psi)=\mathrm{True}
-\Longleftrightarrow
-\widehat v(\varphi)=\mathrm{True}
-\text{ and }
-\widehat v(\psi)=\mathrm{True},
-\]
-\[
-\widehat v(\varphi\lor\psi)=\mathrm{True}
-\Longleftrightarrow
-\widehat v(\varphi)=\mathrm{True}
-\text{ or }
-\widehat v(\psi)=\mathrm{True},
-\]
-\[
-\widehat v(\varphi\to\psi)=\mathrm{True}
-\Longleftrightarrow
-\widehat v(\varphi)=\mathrm{False}
-\text{ or }
-\widehat v(\psi)=\mathrm{True},
-\]
-and
-\[
-\widehat v(\varphi\leftrightarrow\psi)=\mathrm{True}
-\Longleftrightarrow
-\widehat v(\varphi)=\widehat v(\psi).
-\]
+satisfying the recursive truth clauses for propositional variables and the
+primitive connectives.
 
 \noindent\hyperref[prf:unique-extension-truth-assignment-propositional-logic]{Go to proof.}
 \end{theorem}
@@ -96,36 +268,34 @@ and
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&(\forall v:\Prop\to\mathbb{B})(\exists!\widehat v:\WFF\to\mathbb{B})\\
-&\quad\text{such that, for all }P\in\Prop\text{ and }\varphi,\psi\in\WFF,\\
-&\quad \widehat v(P)=v(P),\\
-&\quad \widehat v(\neg\varphi)=\mathrm{True}
-   \Longleftrightarrow \widehat v(\varphi)=\mathrm{False},\\
-&\quad \widehat v(\varphi\land\psi)=\mathrm{True}
-   \Longleftrightarrow
-   (\widehat v(\varphi)=\mathrm{True}\land \widehat v(\psi)=\mathrm{True}),\\
-&\quad \widehat v(\varphi\lor\psi)=\mathrm{True}
-   \Longleftrightarrow
-   (\widehat v(\varphi)=\mathrm{True}\lor \widehat v(\psi)=\mathrm{True}),\\
-&\quad \widehat v(\varphi\to\psi)=\mathrm{True}
-   \Longleftrightarrow
-   (\widehat v(\varphi)=\mathrm{False}\lor \widehat v(\psi)=\mathrm{True}),\\
-&\quad \widehat v(\varphi\leftrightarrow\psi)=\mathrm{True}
-   \Longleftrightarrow
-   \widehat v(\varphi)=\widehat v(\psi).
-\end{aligned}
+(\forall v:\Prop\to\mathbb{B})(\exists!\widehat v:\WFF\to\mathbb{B})
+\]
+such that \(\widehat v\) agrees with \(v\) on \(\Prop\) and satisfies the
+recursive truth clauses for
+\[
+\neg,\land,\lor,\to,\leftrightarrow.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{TruthAssignment}(v)
+\Longrightarrow
+\exists!\widehat v\,
+\operatorname{ExtendedTruthAssignment}(\widehat v,v).
 \]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-A valuation on variables determines exactly one truth value for every formula. This theorem is the semantic counterpart of structural recursion and unique decomposition.
+This theorem guarantees that semantic evaluation is well-defined. Once the
+truth values of the propositional variables are fixed, every well-formed formula
+has exactly one truth value.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:truth-assignment-propositional-logic]{Truth Assignment}
-  \item \hyperref[def:well-formed-formula]{Well-Formed Formula}
+  \item \hyperref[def:extended-truth-assignment-propositional-logic]{Extension of a Truth Assignment to Formulas}
   \item \hyperref[thm:structural-recursion-propositional-formulas]{Structural Recursion for Propositional Formulas}
   \item \hyperref[thm:unique-decomposition-propositional-formulas]{Unique Decomposition for Propositional Formulas}
 \end{itemize}
