@@ -1,0 +1,748 @@
+\section{Semantics}
+
+% BEGIN GENERATED ARTIFACT: def:truth-assignment-propositional-logic
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Truth Assignment)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Truth Assignment]
+\label{def:truth-assignment-propositional-logic}
+A truth assignment for propositional logic is a function
+\[
+v:\Prop\to\mathbb{B}.
+\]
+Thus a truth assignment assigns either \(\mathrm{False}\) or \(\mathrm{True}\) to each propositional variable.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{TruthAssignment}(v)
+\Longleftrightarrow
+v:\Prop\to\mathbb{B}.
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{TruthAssignment}(v)
+\]
+means that \(v\) assigns a truth value to every propositional variable.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A truth assignment fixes the truth values of atomic formulas. The recursive semantics of the connectives then determines the truth value of each molecular formula.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:truth-value-propositional-logic]{Truth Value}
+  \item \hyperref[def:propositional-variable]{Propositional Variable}
+  \item \hyperref[def:well-formed-formula]{Well-Formed Formula}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:truth-assignment-propositional-logic
+% BEGIN GENERATED ARTIFACT: thm:unique-extension-truth-assignment-propositional-logic
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Unique Extension of a Truth Assignment)}},
+  fonttitle=\small\bfseries]
+\begin{theorem}[Unique Extension of a Truth Assignment]
+\label{thm:unique-extension-truth-assignment-propositional-logic}
+Every truth assignment \(v:\Prop\to\mathbb{B}\) extends uniquely to a function
+\[
+\widehat v:\WFF\to\mathbb{B}
+\]
+satisfying the following clauses:
+\[
+\widehat v(P)=v(P)\quad(P\in\Prop),
+\]
+\[
+\widehat v(\neg\varphi)=\mathrm{True}
+\Longleftrightarrow
+\widehat v(\varphi)=\mathrm{False},
+\]
+\[
+\widehat v(\varphi\land\psi)=\mathrm{True}
+\Longleftrightarrow
+\widehat v(\varphi)=\mathrm{True}
+\text{ and }
+\widehat v(\psi)=\mathrm{True},
+\]
+\[
+\widehat v(\varphi\lor\psi)=\mathrm{True}
+\Longleftrightarrow
+\widehat v(\varphi)=\mathrm{True}
+\text{ or }
+\widehat v(\psi)=\mathrm{True},
+\]
+\[
+\widehat v(\varphi\to\psi)=\mathrm{True}
+\Longleftrightarrow
+\widehat v(\varphi)=\mathrm{False}
+\text{ or }
+\widehat v(\psi)=\mathrm{True},
+\]
+and
+\[
+\widehat v(\varphi\leftrightarrow\psi)=\mathrm{True}
+\Longleftrightarrow
+\widehat v(\varphi)=\widehat v(\psi).
+\]
+
+\noindent\hyperref[prf:unique-extension-truth-assignment-propositional-logic]{Go to proof.}
+\end{theorem}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&(\forall v:\Prop\to\mathbb{B})(\exists!\widehat v:\WFF\to\mathbb{B})\\
+&\quad\text{such that, for all }P\in\Prop\text{ and }\varphi,\psi\in\WFF,\\
+&\quad \widehat v(P)=v(P),\\
+&\quad \widehat v(\neg\varphi)=\mathrm{True}
+   \Longleftrightarrow \widehat v(\varphi)=\mathrm{False},\\
+&\quad \widehat v(\varphi\land\psi)=\mathrm{True}
+   \Longleftrightarrow
+   (\widehat v(\varphi)=\mathrm{True}\land \widehat v(\psi)=\mathrm{True}),\\
+&\quad \widehat v(\varphi\lor\psi)=\mathrm{True}
+   \Longleftrightarrow
+   (\widehat v(\varphi)=\mathrm{True}\lor \widehat v(\psi)=\mathrm{True}),\\
+&\quad \widehat v(\varphi\to\psi)=\mathrm{True}
+   \Longleftrightarrow
+   (\widehat v(\varphi)=\mathrm{False}\lor \widehat v(\psi)=\mathrm{True}),\\
+&\quad \widehat v(\varphi\leftrightarrow\psi)=\mathrm{True}
+   \Longleftrightarrow
+   \widehat v(\varphi)=\widehat v(\psi).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A valuation on variables determines exactly one truth value for every formula. This theorem is the semantic counterpart of structural recursion and unique decomposition.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:truth-assignment-propositional-logic]{Truth Assignment}
+  \item \hyperref[def:well-formed-formula]{Well-Formed Formula}
+  \item \hyperref[thm:structural-recursion-propositional-formulas]{Structural Recursion for Propositional Formulas}
+  \item \hyperref[thm:unique-decomposition-propositional-formulas]{Unique Decomposition for Propositional Formulas}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: thm:unique-extension-truth-assignment-propositional-logic
+% BEGIN GENERATED ARTIFACT: def:satisfaction-propositional-formula
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Satisfaction of a Formula)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Satisfaction of a Formula]
+\label{def:satisfaction-propositional-formula}
+Let \(v\) be a truth assignment and let \(\varphi\in\WFF\). We say that \(v\) satisfies \(\varphi\), written
+\[
+v\models\varphi,
+\]
+if
+\[
+\widehat v(\varphi)=\mathrm{True}.
+\]
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+v\models\varphi
+\Longleftrightarrow
+\operatorname{TruthAssignment}(v)
+\land
+\varphi\in\WFF
+\land
+\widehat v(\varphi)=\mathrm{True}.
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{SatisfiesFormula}(v,\varphi)
+\]
+means \(v\models\varphi\).
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+v\not\models\varphi
+\Longleftrightarrow
+\widehat v(\varphi)=\mathrm{False}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The notation \(v\models\varphi\) means that the formula \(\varphi\) is true under the truth assignment \(v\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:truth-assignment-propositional-logic]{Truth Assignment}
+  \item \hyperref[thm:unique-extension-truth-assignment-propositional-logic]{Unique Extension of a Truth Assignment}
+  \item \hyperref[def:well-formed-formula]{Well-Formed Formula}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:satisfaction-propositional-formula
+% BEGIN GENERATED ARTIFACT: def:satisfaction-set-propositional-logic
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Satisfaction of a Set of Formulas)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Satisfaction of a Set of Formulas]
+\label{def:satisfaction-set-propositional-logic}
+Let \(\Gamma\subseteq\WFF\). A truth assignment \(v\) satisfies \(\Gamma\), written
+\[
+v\models\Gamma,
+\]
+if \(v\models\gamma\) for every \(\gamma\in\Gamma\).
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+v\models\Gamma
+\Longleftrightarrow
+\operatorname{TruthAssignment}(v)
+\land
+\Gamma\subseteq\WFF
+\land
+(\forall\gamma\in\Gamma)(v\models\gamma).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{SatisfiesSet}(v,\Gamma)
+\]
+means \(v\) satisfies every formula in \(\Gamma\).
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+v\not\models\Gamma
+\Longleftrightarrow
+\exists\gamma\in\Gamma\text{ such that }v\not\models\gamma.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Satisfaction of a set means simultaneous satisfaction of every formula in the set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:satisfaction-propositional-formula]{Satisfaction of a Formula}
+  \item \hyperref[def:truth-assignment-propositional-logic]{Truth Assignment}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:satisfaction-set-propositional-logic
+% BEGIN GENERATED ARTIFACT: def:truth-table-propositional-logic
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Truth Table)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Truth Table]
+\label{def:truth-table-propositional-logic}
+Let \(\varphi\in\WFF\) and suppose the variables occurring in \(\varphi\) are among \(P_1,\ldots,P_n\). A truth table for \(\varphi\) is a finite table with one row for each assignment
+\[
+a:\{P_1,\ldots,P_n\}\to\mathbb{B}
+\]
+and a final column recording the value of \(\widehat v(\varphi)\) for any truth assignment \(v\) extending \(a\).
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{TruthTable}(\varphi)
+\Longleftrightarrow
+\varphi\in\WFF
+\land
+\operatorname{Var}(\varphi)=\{P_1,\ldots,P_n\}
+\land
+\text{the table has }2^n\text{ assignment rows}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A truth table is finite because every formula contains only finitely many variables. It records the complete truth behavior of a formula.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:formula-variable-set-propositional-logic]{Variable Set of a Formula}
+  \item \hyperref[lem:finiteness-of-variables-propositional-formulas]{Finiteness of Variables in a Formula}
+  \item \hyperref[thm:unique-extension-truth-assignment-propositional-logic]{Unique Extension of a Truth Assignment}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:truth-table-propositional-logic
+% BEGIN GENERATED ARTIFACT: def:tautology-propositional-logic
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Tautology)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Tautology]
+\label{def:tautology-propositional-logic}
+A formula \(\varphi\in\WFF\) is a tautology, written
+\[
+\models\varphi,
+\]
+if every truth assignment satisfies \(\varphi\).
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\models\varphi
+\Longleftrightarrow
+\varphi\in\WFF
+\land
+(\forall v:\Prop\to\mathbb{B})(v\models\varphi).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{Tautology}(\varphi)
+\]
+means \(\models\varphi\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A tautology is true under every possible assignment of truth values to propositional variables.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:satisfaction-propositional-formula]{Satisfaction of a Formula}
+  \item \hyperref[def:truth-assignment-propositional-logic]{Truth Assignment}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:tautology-propositional-logic
+% BEGIN GENERATED ARTIFACT: def:contradiction-propositional-logic
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Contradiction)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Contradiction]
+\label{def:contradiction-propositional-logic}
+A formula \(\varphi\in\WFF\) is a contradiction if no truth assignment satisfies \(\varphi\).
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Contradiction}(\varphi)
+\Longleftrightarrow
+\varphi\in\WFF
+\land
+(\forall v:\Prop\to\mathbb{B})(v\not\models\varphi).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{Contradiction}(\varphi)
+\]
+means that \(\varphi\) is false under every truth assignment.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A contradiction has no true row in its truth table.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:satisfaction-propositional-formula]{Satisfaction of a Formula}
+  \item \hyperref[def:truth-assignment-propositional-logic]{Truth Assignment}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:contradiction-propositional-logic
+% BEGIN GENERATED ARTIFACT: def:satisfiable-formula-propositional-logic
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Satisfiable Formula)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Satisfiable Formula]
+\label{def:satisfiable-formula-propositional-logic}
+A formula \(\varphi\in\WFF\) is satisfiable if at least one truth assignment satisfies it.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{SatisfiableFormula}(\varphi)
+\Longleftrightarrow
+\varphi\in\WFF
+\land
+\exists v:\Prop\to\mathbb{B}\text{ such that }v\models\varphi.
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{SatisfiableFormula}(\varphi)
+\]
+means that \(\varphi\) is true under at least one truth assignment.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A satisfiable formula has at least one true row in its truth table.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:satisfaction-propositional-formula]{Satisfaction of a Formula}
+  \item \hyperref[def:truth-assignment-propositional-logic]{Truth Assignment}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:satisfiable-formula-propositional-logic
+% BEGIN GENERATED ARTIFACT: def:contingency-propositional-logic
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Contingency)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Contingency]
+\label{def:contingency-propositional-logic}
+A formula \(\varphi\in\WFF\) is a contingency if it is satisfiable but not a tautology.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Contingency}(\varphi)
+\Longleftrightarrow
+\operatorname{SatisfiableFormula}(\varphi)
+\land
+\neg \operatorname{Tautology}(\varphi).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{Contingency}(\varphi)
+\]
+means that \(\varphi\) is true under some truth assignments and false under others.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A contingency has at least one true row and at least one false row in its truth table.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:satisfiable-formula-propositional-logic]{Satisfiable Formula}
+  \item \hyperref[def:tautology-propositional-logic]{Tautology}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:contingency-propositional-logic
+% BEGIN GENERATED ARTIFACT: def:logical-consequence-propositional-logic
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Logical Consequence)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Logical Consequence]
+\label{def:logical-consequence-propositional-logic}
+Let \(\Gamma\subseteq\WFF\) and \(\varphi\in\WFF\). The formula \(\varphi\) is a logical consequence of \(\Gamma\), written
+\[
+\Gamma\models\varphi,
+\]
+if every truth assignment satisfying \(\Gamma\) also satisfies \(\varphi\).
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\Gamma\models\varphi
+\Longleftrightarrow
+\Gamma\subseteq\WFF
+\land
+\varphi\in\WFF
+\land
+(\forall v:\Prop\to\mathbb{B})
+\left[
+v\models\Gamma\to v\models\varphi
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{LogicalConsequence}(\Gamma,\varphi)
+\]
+means \(\Gamma\models\varphi\).
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\Gamma\not\models\varphi
+\Longleftrightarrow
+\exists v:\Prop\to\mathbb{B}
+\left[
+v\models\Gamma
+\land
+v\not\models\varphi
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Logical consequence means truth preservation from premises to conclusion. There is no truth assignment under which all premises are true and the conclusion is false.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:satisfaction-set-propositional-logic]{Satisfaction of a Set of Formulas}
+  \item \hyperref[def:satisfaction-propositional-formula]{Satisfaction of a Formula}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:logical-consequence-propositional-logic
+% BEGIN GENERATED ARTIFACT: def:logical-equivalence-propositional-logic
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Logical Equivalence)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Logical Equivalence]
+\label{def:logical-equivalence-propositional-logic}
+Formulas \(\varphi,\psi\in\WFF\) are logically equivalent, written
+\[
+\varphi\equiv\psi,
+\]
+if they have the same truth value under every truth assignment.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\varphi\equiv\psi
+\Longleftrightarrow
+\varphi,\psi\in\WFF
+\land
+(\forall v:\Prop\to\mathbb{B})
+\left[
+\widehat v(\varphi)=\widehat v(\psi)
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{LogicalEquivalence}(\varphi,\psi)
+\]
+means \(\varphi\equiv\psi\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Logically equivalent formulas have identical truth-table columns. They are interchangeable for semantic purposes.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:unique-extension-truth-assignment-propositional-logic]{Unique Extension of a Truth Assignment}
+  \item \hyperref[def:truth-assignment-propositional-logic]{Truth Assignment}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:logical-equivalence-propositional-logic
+% BEGIN GENERATED ARTIFACT: lem:coincidence-lemma-propositional-logic
+\begin{tcolorbox}[colback=lembox, colframe=lemborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Lemma (Coincidence Lemma for Propositional Logic)}},
+  fonttitle=\small\bfseries]
+\begin{lemma}[Coincidence Lemma for Propositional Logic]
+\label{lem:coincidence-lemma-propositional-logic}
+Let \(v,w:\Prop\to\mathbb{B}\) be truth assignments. If \(v\) and \(w\) agree on every propositional variable occurring in \(\varphi\), then they assign the same truth value to \(\varphi\):
+\[
+v|_{\operatorname{Var}(\varphi)}
+=
+w|_{\operatorname{Var}(\varphi)}
+\Longrightarrow
+\widehat v(\varphi)=\widehat w(\varphi).
+\]
+
+\noindent\hyperref[prf:coincidence-lemma-propositional-logic]{Go to proof.}
+\end{lemma}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\forall\varphi\in\WFF)
+(\forall v,w:\Prop\to\mathbb{B})
+\left[
+(\forall P\in\operatorname{Var}(\varphi))(v(P)=w(P))
+\to
+\widehat v(\varphi)=\widehat w(\varphi)
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The truth value of a formula depends only on the variables actually occurring in that formula.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:formula-variable-set-propositional-logic]{Variable Set of a Formula}
+  \item \hyperref[thm:unique-extension-truth-assignment-propositional-logic]{Unique Extension of a Truth Assignment}
+  \item \hyperref[thm:structural-induction-propositional-formulas]{Structural Induction for Propositional Formulas}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: lem:coincidence-lemma-propositional-logic
+% BEGIN GENERATED ARTIFACT: thm:finite-truth-table-propositional-logic
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Finite Truth-Table Theorem)}},
+  fonttitle=\small\bfseries]
+\begin{theorem}[Finite Truth-Table Theorem]
+\label{thm:finite-truth-table-propositional-logic}
+Every propositional formula has a finite truth table. More precisely, if \(\operatorname{Var}(\varphi)\) has \(n\) elements, then \(\varphi\) has a truth table with \(2^n\) rows.
+
+\noindent\hyperref[prf:finite-truth-table-propositional-logic]{Go to proof.}
+\end{theorem}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\forall\varphi\in\WFF)
+\left[
+|\operatorname{Var}(\varphi)|=n
+\to
+\operatorname{TruthTable}(\varphi)\text{ has }2^n\text{ rows}
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Truth tables are finite because every formula contains only finitely many propositional variables.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:truth-table-propositional-logic]{Truth Table}
+  \item \hyperref[lem:finiteness-of-variables-propositional-formulas]{Finiteness of Variables in a Formula}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: thm:finite-truth-table-propositional-logic
+% BEGIN GENERATED ARTIFACT: def:boolean-function-propositional-logic
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Boolean Function)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Boolean Function]
+\label{def:boolean-function-propositional-logic}
+An \(n\)-ary Boolean function is a function
+\[
+f:\mathbb{B}^n\to\mathbb{B}.
+\]
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+BooleanFunction_n(f)
+\Longleftrightarrow
+f:\mathbb{B}^n\to\mathbb{B}.
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+BooleanFunction_n(f)
+\]
+means that \(f\) takes \(n\) truth values as input and returns one truth value.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Boolean functions are the abstract truth-functions that formulas may represent.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:truth-value-propositional-logic]{Truth Value}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:boolean-function-propositional-logic
+% BEGIN GENERATED ARTIFACT: def:truth-function-induced-by-formula
+\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Truth Function Induced by a Formula)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Truth Function Induced by a Formula]
+\label{def:truth-function-induced-by-formula}
+Let \(\varphi\in\WFF\), and suppose \(\operatorname{Var}(\varphi)\subseteq\{P_1,\ldots,P_n\}\). The truth function induced by \(\varphi\) is the Boolean function
+\[
+f_\varphi:\mathbb{B}^n\to\mathbb{B}
+\]
+defined by
+\[
+f_\varphi(b_1,\ldots,b_n)=\widehat v(\varphi),
+\]
+where \(v(P_i)=b_i\) for each \(i\).
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+f_\varphi(b_1,\ldots,b_n)=\widehat v(\varphi)
+\quad
+\text{whenever }
+v(P_i)=b_i\text{ for }1\le i\le n.
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{TruthFunctionOfFormula}(f_\varphi,\varphi)
+\]
+means that \(f_\varphi\) records the truth behavior of \(\varphi\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The induced truth function packages the truth table of a formula as a Boolean function.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:boolean-function-propositional-logic]{Boolean Function}
+  \item \hyperref[def:formula-variable-set-propositional-logic]{Variable Set of a Formula}
+  \item \hyperref[thm:unique-extension-truth-assignment-propositional-logic]{Unique Extension of a Truth Assignment}
+  \item \hyperref[lem:coincidence-lemma-propositional-logic]{Coincidence Lemma for Propositional Logic}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:truth-function-induced-by-formula
+% BEGIN GENERATED ARTIFACT: thm:counting-boolean-functions
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Counting Boolean Functions)}},
+  fonttitle=\small\bfseries]
+\begin{theorem}[Counting Boolean Functions]
+\label{thm:counting-boolean-functions}
+There are exactly
+\[
+2^{2^n}
+\]
+Boolean functions \(\mathbb{B}^n\to\mathbb{B}\).
+
+\noindent\hyperref[prf:counting-boolean-functions]{Go to proof.}
+\end{theorem}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\left|\{f:\mathbb{B}^n\to\mathbb{B}\}\right|=2^{2^n}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The domain \(\mathbb{B}^n\) has \(2^n\) elements. A Boolean function chooses one of two truth values for each input row.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:boolean-function-propositional-logic]{Boolean Function}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: thm:counting-boolean-functions

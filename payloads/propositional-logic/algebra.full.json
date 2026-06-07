@@ -1,0 +1,782 @@
+{
+  "schema_version": 1,
+  "chapter": "propositional-logic",
+  "topic": "algebra",
+  "artifacts": [
+    {
+      "label": "def:propositional-equivalence-law",
+      "kind": "definition",
+      "title": "Propositional Equivalence Law",
+      "body_b64": "QSBwcm9wb3NpdGlvbmFsIGVxdWl2YWxlbmNlIGxhdyBpcyBhIHZhbGlkIHNjaGVtYSBvZiB0aGUgZm9ybQpcWwpcdmFycGhpXGVxdWl2XHBzaSwKXF0Kd2l0aCBcKFx2YXJwaGksXHBzaVxpblxXRkZcKS4gRWFjaCBpbnN0YW5jZSBvZiB0aGUgc2NoZW1hIHNheXMgdGhhdCB0aGUgdHdvIGZvcm11bGFzIGhhdmUgdGhlIHNhbWUgdHJ1dGggdmFsdWUgdW5kZXIgZXZlcnkgdHJ1dGggYXNzaWdubWVudC4=",
+      "interpretation_b64": "RXF1aXZhbGVuY2UgbGF3cyBhcmUgdGhlIGFsZ2VicmFpYyByZXdyaXRlIHJ1bGVzIG9mIHByb3Bvc2l0aW9uYWwgbG9naWMuIFRoZXkgYWxsb3cgZm9ybXVsYXMgdG8gYmUgdHJhbnNmb3JtZWQgd2l0aG91dCBjaGFuZ2luZyB0cnV0aCBjb25kaXRpb25zLg==",
+      "dependencies": [
+        "def:logical-equivalence-propositional-logic",
+        "def:well-formed-formula"
+      ],
+      "predicates": {
+        "defines": [
+          "PropositionalEquivalenceLaw"
+        ],
+        "uses": [
+          "LogicalEquivalence",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\varphi\\equiv\\psi",
+            "name": "logical equivalence",
+            "meaning": "same truth value under every truth assignment",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtQcm9wb3NpdGlvbmFsRXF1aXZhbGVuY2VMYXd9KFx2YXJwaGksXHBzaSkKXExvbmdsZWZ0cmlnaHRhcnJvdwpcdmFycGhpLFxwc2lcaW5cV0ZGClxsYW5kClx2YXJwaGlcZXF1aXZccHNpLgpcXQ==",
+      "predicate_reading_b64": "XFsKXG9wZXJhdG9ybmFtZXtQcm9wb3NpdGlvbmFsRXF1aXZhbGVuY2VMYXd9KFx2YXJwaGksXHBzaSkKXF0KbWVhbnMgdGhhdCBcKFx2YXJwaGlcZXF1aXZccHNpXCkgaXMgYSB2YWxpZCBsb2dpY2FsLWVxdWl2YWxlbmNlIHNjaGVtYS4="
+    },
+    {
+      "label": "thm:logical-equivalence-equivalence-relation",
+      "kind": "theorem",
+      "title": "Logical Equivalence is an Equivalence Relation",
+      "body_b64": "TG9naWNhbCBlcXVpdmFsZW5jZSBpcyByZWZsZXhpdmUsIHN5bW1ldHJpYywgYW5kIHRyYW5zaXRpdmUgb24gXChcV0ZGXCk6ClxbClx2YXJwaGlcZXF1aXZcdmFycGhpLApccXF1YWQKXHZhcnBoaVxlcXVpdlxwc2lcTG9uZ3JpZ2h0YXJyb3dccHNpXGVxdWl2XHZhcnBoaSwKXF0KYW5kClxbCihcdmFycGhpXGVxdWl2XHBzaVxsYW5kXHBzaVxlcXVpdlxjaGkpClxMb25ncmlnaHRhcnJvdwpcdmFycGhpXGVxdWl2XGNoaS4KXF0=",
+      "interpretation_b64": "TG9naWNhbCBlcXVpdmFsZW5jZSBiZWhhdmVzIGxpa2UgZXF1YWxpdHkgYXQgdGhlIHNlbWFudGljIGxldmVsLg==",
+      "dependencies": [
+        "def:logical-equivalence-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "LogicalEquivalence",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\varphi\\equiv\\psi",
+            "name": "logical equivalence",
+            "meaning": "same truth value under every truth assignment",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXGJlZ2lue2FsaWduZWR9CiYoXGZvcmFsbFx2YXJwaGlcaW5cV0ZGKShcdmFycGhpXGVxdWl2XHZhcnBoaSksXFwKJihcZm9yYWxsXHZhcnBoaSxccHNpXGluXFdGRikoXHZhcnBoaVxlcXVpdlxwc2lcdG9ccHNpXGVxdWl2XHZhcnBoaSksXFwKJihcZm9yYWxsXHZhcnBoaSxccHNpLFxjaGlcaW5cV0ZGKQooKFx2YXJwaGlcZXF1aXZccHNpXGxhbmRccHNpXGVxdWl2XGNoaSlcdG9cdmFycGhpXGVxdWl2XGNoaSkuClxlbmR7YWxpZ25lZH0KXF0=",
+      "proof_sketch_b64": "VW5mb2xkIGxvZ2ljYWwgZXF1aXZhbGVuY2UgYXMgZXF1YWxpdHkgb2YgdHJ1dGggdmFsdWVzIHVuZGVyIGV2ZXJ5IHRydXRoIGFzc2lnbm1lbnQu"
+    },
+    {
+      "label": "thm:basic-boolean-equivalence-laws-propositional-logic",
+      "kind": "theorem",
+      "title": "Basic Boolean Equivalence Laws",
+      "body_b64": "Rm9yIGFsbCBmb3JtdWxhcyBcKFx2YXJwaGksXHBzaSxcY2hpXGluXFdGRlwpLCB0aGUgZm9sbG93aW5nIGxvZ2ljYWwgZXF1aXZhbGVuY2VzIGhvbGQuCgpDb21tdXRhdGl2aXR5OgpcWwpcdmFycGhpXGxhbmRccHNpXGVxdWl2XHBzaVxsYW5kXHZhcnBoaSwKXHFxdWFkClx2YXJwaGlcbG9yXHBzaVxlcXVpdlxwc2lcbG9yXHZhcnBoaS4KXF0KCkFzc29jaWF0aXZpdHk6ClxbCihcdmFycGhpXGxhbmRccHNpKVxsYW5kXGNoaQpcZXF1aXYKXHZhcnBoaVxsYW5kKFxwc2lcbGFuZFxjaGkpLApccXF1YWQKKFx2YXJwaGlcbG9yXHBzaSlcbG9yXGNoaQpcZXF1aXYKXHZhcnBoaVxsb3IoXHBzaVxsb3JcY2hpKS4KXF0KCklkZW1wb3RlbmNlOgpcWwpcdmFycGhpXGxhbmRcdmFycGhpXGVxdWl2XHZhcnBoaSwKXHFxdWFkClx2YXJwaGlcbG9yXHZhcnBoaVxlcXVpdlx2YXJwaGkuClxdCgpEb3VibGUgbmVnYXRpb246ClxbClxuZWdcbmVnXHZhcnBoaVxlcXVpdlx2YXJwaGkuClxd",
+      "interpretation_b64": "VGhlc2UgYXJlIHRoZSBiYXNpYyBhbGdlYnJhaWMgbGF3cyBmb3IgY29uanVuY3Rpb24sIGRpc2p1bmN0aW9uLCBhbmQgbmVnYXRpb24u",
+      "dependencies": [
+        "def:logical-equivalence-propositional-logic",
+        "thm:unique-extension-truth-assignment-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "LogicalEquivalence",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\equiv",
+            "name": "logical equivalence symbol",
+            "meaning": "logical equivalence relation between formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKKFxmb3JhbGxcdmFycGhpLFxwc2ksXGNoaVxpblxXRkYpClxsZWZ0WwpcYmVnaW57Z2F0aGVyZWR9Clx2YXJwaGlcbGFuZFxwc2lcZXF1aXZccHNpXGxhbmRcdmFycGhpLFxxdWFkClx2YXJwaGlcbG9yXHBzaVxlcXVpdlxwc2lcbG9yXHZhcnBoaSxcXAooXHZhcnBoaVxsYW5kXHBzaSlcbGFuZFxjaGlcZXF1aXZcdmFycGhpXGxhbmQoXHBzaVxsYW5kXGNoaSksXHF1YWQKKFx2YXJwaGlcbG9yXHBzaSlcbG9yXGNoaVxlcXVpdlx2YXJwaGlcbG9yKFxwc2lcbG9yXGNoaSksXFwKXHZhcnBoaVxsYW5kXHZhcnBoaVxlcXVpdlx2YXJwaGksXHF1YWQKXHZhcnBoaVxsb3JcdmFycGhpXGVxdWl2XHZhcnBoaSxccXVhZApcbmVnXG5lZ1x2YXJwaGlcZXF1aXZcdmFycGhpClxlbmR7Z2F0aGVyZWR9ClxyaWdodF0uClxd",
+      "proof_sketch_b64": "UHJvdmUgZWFjaCBlcXVpdmFsZW5jZSBieSB0cnV0aC10YWJsZSBjYWxjdWxhdGlvbiBvciBieSB1bmZvbGRpbmcgdGhlIHNlbWFudGljIGNsYXVzZXMgZm9yIFwoXHdpZGVoYXQgdlwpLg=="
+    },
+    {
+      "label": "thm:identity-domination-laws-propositional-logic",
+      "kind": "theorem",
+      "title": "Identity and Domination Laws",
+      "body_b64": "TGV0IFwoXHRvcFwpIGJlIGFueSB0YXV0b2xvZ2ljYWwgZm9ybXVsYSBhbmQgbGV0IFwoXGJvdFwpIGJlIGFueSBjb250cmFkaWN0b3J5IGZvcm11bGEuIFRoZW4gZm9yIGV2ZXJ5IFwoXHZhcnBoaVxpblxXRkZcKToKXFsKXHZhcnBoaVxsYW5kXHRvcFxlcXVpdlx2YXJwaGksClxxcXVhZApcdmFycGhpXGxvclxib3RcZXF1aXZcdmFycGhpLApcXQphbmQKXFsKXHZhcnBoaVxsYW5kXGJvdFxlcXVpdlxib3QsClxxcXVhZApcdmFycGhpXGxvclx0b3BcZXF1aXZcdG9wLgpcXQ==",
+      "interpretation_b64": "VGF1dG9sb2dpZXMgYWN0IGxpa2UgdHJ1ZSBjb25zdGFudHM7IGNvbnRyYWRpY3Rpb25zIGFjdCBsaWtlIGZhbHNlIGNvbnN0YW50cy4=",
+      "dependencies": [
+        "def:tautology-propositional-logic",
+        "def:contradiction-propositional-logic",
+        "def:logical-equivalence-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "Tautology",
+          "Contradiction",
+          "LogicalEquivalence",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\top",
+            "name": "tautological formula",
+            "meaning": "a formula chosen as a true constant",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "thm:identity-domination-laws-propositional-logic",
+            "registry_id": "propositional_logic.truth_constant_top"
+          },
+          {
+            "symbol": "\\bot",
+            "name": "contradictory formula",
+            "meaning": "a formula chosen as a false constant",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "thm:identity-domination-laws-propositional-logic",
+            "registry_id": "propositional_logic.truth_constant_bottom"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\equiv",
+            "name": "logical equivalence symbol",
+            "meaning": "logical equivalence relation between formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXGJlZ2lue2FsaWduZWR9CiYoXG9wZXJhdG9ybmFtZXtUYXV0b2xvZ3l9KFx0b3ApXGxhbmQgXG9wZXJhdG9ybmFtZXtDb250cmFkaWN0aW9ufShcYm90KSkKXHRvCihcZm9yYWxsXHZhcnBoaVxpblxXRkYpXFwKJlxxdWFkClxsZWZ0WwooXHZhcnBoaVxsYW5kXHRvcFxlcXVpdlx2YXJwaGkpClxsYW5kCihcdmFycGhpXGxvclxib3RcZXF1aXZcdmFycGhpKQpcbGFuZAooXHZhcnBoaVxsYW5kXGJvdFxlcXVpdlxib3QpClxsYW5kCihcdmFycGhpXGxvclx0b3BcZXF1aXZcdG9wKQpccmlnaHRdLgpcZW5ke2FsaWduZWR9Clxd",
+      "proof_sketch_b64": "RXZhbHVhdGUgYm90aCBzaWRlcyB1bmRlciBhbiBhcmJpdHJhcnkgdHJ1dGggYXNzaWdubWVudC4="
+    },
+    {
+      "label": "thm:de-morgan-laws-propositional-logic",
+      "kind": "theorem",
+      "title": "De Morgan Laws for Propositional Logic",
+      "body_b64": "Rm9yIGFsbCBcKFx2YXJwaGksXHBzaVxpblxXRkZcKSwKXFsKXG5lZyhcdmFycGhpXGxhbmRccHNpKQpcZXF1aXYKXG5lZ1x2YXJwaGlcbG9yXG5lZ1xwc2ksClxdCmFuZApcWwpcbmVnKFx2YXJwaGlcbG9yXHBzaSkKXGVxdWl2ClxuZWdcdmFycGhpXGxhbmRcbmVnXHBzaS4KXF0=",
+      "interpretation_b64": "TmVnYXRpb24gc3dhcHMgY29uanVuY3Rpb24gd2l0aCBkaXNqdW5jdGlvbiB3aGVuIHB1c2hlZCBpbndhcmQu",
+      "dependencies": [
+        "def:logical-equivalence-propositional-logic",
+        "thm:unique-extension-truth-assignment-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "LogicalEquivalence",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\equiv",
+            "name": "logical equivalence symbol",
+            "meaning": "logical equivalence relation between formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXGJlZ2lue2dhdGhlcmVkfQooXGZvcmFsbFx2YXJwaGksXHBzaVxpblxXRkYpClxsZWZ0WwpcbmVnKFx2YXJwaGlcbGFuZFxwc2kpClxlcXVpdgpcbmVnXHZhcnBoaVxsb3JcbmVnXHBzaQpccmlnaHRdLFxcCihcZm9yYWxsXHZhcnBoaSxccHNpXGluXFdGRikKXGxlZnRbClxuZWcoXHZhcnBoaVxsb3JccHNpKQpcZXF1aXYKXG5lZ1x2YXJwaGlcbGFuZFxuZWdccHNpClxyaWdodF0uClxlbmR7Z2F0aGVyZWR9Clxd",
+      "readable_decomposition_b64": "XFsKXHVuZGVyYnJhY2V7XG5lZyhcdmFycGhpXGxhbmRccHNpKX1fe1x0ZXh0e25vdCBib3RofX0KXGVxdWl2Clx1bmRlcmJyYWNle1xuZWdcdmFycGhpXGxvclxuZWdccHNpfV97XHRleHR7YXQgbGVhc3Qgb25lIGZhaWxzfX0sClxxcXVhZApcdW5kZXJicmFjZXtcbmVnKFx2YXJwaGlcbG9yXHBzaSl9X3tcdGV4dHtuZWl0aGVyfX0KXGVxdWl2Clx1bmRlcmJyYWNle1xuZWdcdmFycGhpXGxhbmRcbmVnXHBzaX1fe1x0ZXh0e2JvdGggZmFpbH19LgpcXQ==",
+      "proof_sketch_b64": "VXNlIGEgdHdvLXZhcmlhYmxlIHRydXRoIHRhYmxlIG9yIHVuZm9sZCB0aGUgc2VtYW50aWMgY2xhdXNlcyBmb3IgXChcbmVnLFxsYW5kLFxsb3JcKS4="
+    },
+    {
+      "label": "thm:distributive-laws-propositional-logic",
+      "kind": "theorem",
+      "title": "Distributive Laws for Propositional Logic",
+      "body_b64": "Rm9yIGFsbCBcKFx2YXJwaGksXHBzaSxcY2hpXGluXFdGRlwpLApcWwpcdmFycGhpXGxhbmQoXHBzaVxsb3JcY2hpKQpcZXF1aXYKKFx2YXJwaGlcbGFuZFxwc2kpXGxvcihcdmFycGhpXGxhbmRcY2hpKSwKXF0KYW5kClxbClx2YXJwaGlcbG9yKFxwc2lcbGFuZFxjaGkpClxlcXVpdgooXHZhcnBoaVxsb3JccHNpKVxsYW5kKFx2YXJwaGlcbG9yXGNoaSkuClxd",
+      "interpretation_b64": "Q29uanVuY3Rpb24gZGlzdHJpYnV0ZXMgb3ZlciBkaXNqdW5jdGlvbiwgYW5kIGRpc2p1bmN0aW9uIGRpc3RyaWJ1dGVzIG92ZXIgY29uanVuY3Rpb24uIFRoZXNlIGxhd3MgYXJlIHRoZSBtYWluIGFsZ2VicmFpYyBlbmdpbmUgYmVoaW5kIENORiBhbmQgRE5GIGNvbnZlcnNpb24u",
+      "dependencies": [
+        "def:logical-equivalence-propositional-logic",
+        "thm:unique-extension-truth-assignment-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "LogicalEquivalence",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\equiv",
+            "name": "logical equivalence symbol",
+            "meaning": "logical equivalence relation between formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXGJlZ2lue2dhdGhlcmVkfQooXGZvcmFsbFx2YXJwaGksXHBzaSxcY2hpXGluXFdGRikKXGxlZnRbClx2YXJwaGlcbGFuZChccHNpXGxvclxjaGkpClxlcXVpdgooXHZhcnBoaVxsYW5kXHBzaSlcbG9yKFx2YXJwaGlcbGFuZFxjaGkpClxyaWdodF0sXFwKKFxmb3JhbGxcdmFycGhpLFxwc2ksXGNoaVxpblxXRkYpClxsZWZ0WwpcdmFycGhpXGxvcihccHNpXGxhbmRcY2hpKQpcZXF1aXYKKFx2YXJwaGlcbG9yXHBzaSlcbGFuZChcdmFycGhpXGxvclxjaGkpClxyaWdodF0uClxlbmR7Z2F0aGVyZWR9Clxd",
+      "proof_sketch_b64": "VXNlIGEgdGhyZWUtdmFyaWFibGUgdHJ1dGggdGFibGUgb3Igc2VtYW50aWMgY2FzZSBhbmFseXNpcy4="
+    },
+    {
+      "label": "thm:absorption-laws-propositional-logic",
+      "kind": "theorem",
+      "title": "Absorption Laws",
+      "body_b64": "Rm9yIGFsbCBcKFx2YXJwaGksXHBzaVxpblxXRkZcKSwKXFsKXHZhcnBoaVxsYW5kKFx2YXJwaGlcbG9yXHBzaSlcZXF1aXZcdmFycGhpLApcXQphbmQKXFsKXHZhcnBoaVxsb3IoXHZhcnBoaVxsYW5kXHBzaSlcZXF1aXZcdmFycGhpLgpcXQ==",
+      "interpretation_b64": "T25jZSBcKFx2YXJwaGlcKSBpcyBhbHJlYWR5IHJlcXVpcmVkLCBhZGRpbmcgXChcdmFycGhpXGxvclxwc2lcKSBjb250cmlidXRlcyBubyBhZGRpdGlvbmFsIGNvbnN0cmFpbnQuIER1YWxseSwgb25jZSBcKFx2YXJwaGlcKSBpcyBhbHJlYWR5IGFsbG93ZWQsIGFkZGluZyBcKFx2YXJwaGlcbGFuZFxwc2lcKSBjb250cmlidXRlcyBubyBhZGRpdGlvbmFsIHBvc3NpYmlsaXR5Lg==",
+      "dependencies": [
+        "def:logical-equivalence-propositional-logic",
+        "thm:basic-boolean-equivalence-laws-propositional-logic",
+        "thm:distributive-laws-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "LogicalEquivalence",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\equiv",
+            "name": "logical equivalence symbol",
+            "meaning": "logical equivalence relation between formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXGJlZ2lue2dhdGhlcmVkfQooXGZvcmFsbFx2YXJwaGksXHBzaVxpblxXRkYpClxsZWZ0WwpcdmFycGhpXGxhbmQoXHZhcnBoaVxsb3JccHNpKVxlcXVpdlx2YXJwaGkKXHJpZ2h0XSxcXAooXGZvcmFsbFx2YXJwaGksXHBzaVxpblxXRkYpClxsZWZ0WwpcdmFycGhpXGxvcihcdmFycGhpXGxhbmRccHNpKVxlcXVpdlx2YXJwaGkKXHJpZ2h0XS4KXGVuZHtnYXRoZXJlZH0KXF0=",
+      "proof_sketch_b64": "UHJvdmUgYnkgdHJ1dGggdGFibGUgb3IgZGVyaXZlIGFsZ2VicmFpY2FsbHkgZnJvbSBkaXN0cmlidXRpdml0eSwgaWRlbXBvdGVuY2UsIGFuZCBpZGVudGl0eSBsYXdzLg=="
+    },
+    {
+      "label": "thm:conditional-equivalence-laws-propositional-logic",
+      "kind": "theorem",
+      "title": "Conditional Equivalence Laws",
+      "body_b64": "Rm9yIGFsbCBcKFx2YXJwaGksXHBzaVxpblxXRkZcKSwKXFsKXHZhcnBoaVx0b1xwc2kKXGVxdWl2ClxuZWdcdmFycGhpXGxvclxwc2ksClxdCmFuZApcWwpcbmVnKFx2YXJwaGlcdG9ccHNpKQpcZXF1aXYKXHZhcnBoaVxsYW5kXG5lZ1xwc2kuClxd",
+      "interpretation_b64": "QSBjb25kaXRpb25hbCBmYWlscyBleGFjdGx5IHdoZW4gdGhlIGFudGVjZWRlbnQgaXMgdHJ1ZSBhbmQgdGhlIGNvbnNlcXVlbnQgaXMgZmFsc2Uu",
+      "dependencies": [
+        "def:logical-equivalence-propositional-logic",
+        "thm:unique-extension-truth-assignment-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "LogicalEquivalence",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\equiv",
+            "name": "logical equivalence symbol",
+            "meaning": "logical equivalence relation between formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXGJlZ2lue2dhdGhlcmVkfQooXGZvcmFsbFx2YXJwaGksXHBzaVxpblxXRkYpClxsZWZ0WwpcdmFycGhpXHRvXHBzaQpcZXF1aXYKXG5lZ1x2YXJwaGlcbG9yXHBzaQpccmlnaHRdLFxcCihcZm9yYWxsXHZhcnBoaSxccHNpXGluXFdGRikKXGxlZnRbClxuZWcoXHZhcnBoaVx0b1xwc2kpClxlcXVpdgpcdmFycGhpXGxhbmRcbmVnXHBzaQpccmlnaHRdLgpcZW5ke2dhdGhlcmVkfQpcXQ==",
+      "readable_decomposition_b64": "XFsKXHVuZGVyYnJhY2V7XHZhcnBoaVx0b1xwc2l9X3tcdGV4dHtubyBjb3VudGVyZXhhbXBsZX19ClxlcXVpdgpcdW5kZXJicmFjZXtcbmVnXHZhcnBoaVxsb3JccHNpfV97XHRleHR7cHJlbWlzZSBmYWxzZSBvciBjb25jbHVzaW9uIHRydWV9fSwKXHFxdWFkClx1bmRlcmJyYWNle1xuZWcoXHZhcnBoaVx0b1xwc2kpfV97XHRleHR7Y291bnRlcmV4YW1wbGV9fQpcZXF1aXYKXHVuZGVyYnJhY2V7XHZhcnBoaVxsYW5kXG5lZ1xwc2l9X3tcdGV4dHtwcmVtaXNlIHRydWUgYW5kIGNvbmNsdXNpb24gZmFsc2V9fS4KXF0=",
+      "proof_sketch_b64": "VXNlIHRoZSBzZW1hbnRpYyB0cnV0aCBjbGF1c2UgZm9yIGltcGxpY2F0aW9uLg=="
+    },
+    {
+      "label": "thm:biconditional-equivalence-laws-propositional-logic",
+      "kind": "theorem",
+      "title": "Biconditional Equivalence Laws",
+      "body_b64": "Rm9yIGFsbCBcKFx2YXJwaGksXHBzaVxpblxXRkZcKSwKXFsKXHZhcnBoaVxsZWZ0cmlnaHRhcnJvd1xwc2kKXGVxdWl2CihcdmFycGhpXHRvXHBzaSlcbGFuZChccHNpXHRvXHZhcnBoaSksClxdCmFuZApcWwpcdmFycGhpXGxlZnRyaWdodGFycm93XHBzaQpcZXF1aXYKKFx2YXJwaGlcbGFuZFxwc2kpXGxvcihcbmVnXHZhcnBoaVxsYW5kXG5lZ1xwc2kpLgpcXQ==",
+      "interpretation_b64": "QSBiaWNvbmRpdGlvbmFsIHNheXMgdGhhdCB0d28gZm9ybXVsYXMgaGF2ZSB0aGUgc2FtZSB0cnV0aCB2YWx1ZTogYm90aCB0cnVlIG9yIGJvdGggZmFsc2Uu",
+      "dependencies": [
+        "def:logical-equivalence-propositional-logic",
+        "thm:conditional-equivalence-laws-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "LogicalEquivalence",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\equiv",
+            "name": "logical equivalence symbol",
+            "meaning": "logical equivalence relation between formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXGJlZ2lue2dhdGhlcmVkfQooXGZvcmFsbFx2YXJwaGksXHBzaVxpblxXRkYpClxsZWZ0WwpcdmFycGhpXGxlZnRyaWdodGFycm93XHBzaQpcZXF1aXYKKFx2YXJwaGlcdG9ccHNpKVxsYW5kKFxwc2lcdG9cdmFycGhpKQpccmlnaHRdLFxcCihcZm9yYWxsXHZhcnBoaSxccHNpXGluXFdGRikKXGxlZnRbClx2YXJwaGlcbGVmdHJpZ2h0YXJyb3dccHNpClxlcXVpdgooXHZhcnBoaVxsYW5kXHBzaSlcbG9yKFxuZWdcdmFycGhpXGxhbmRcbmVnXHBzaSkKXHJpZ2h0XS4KXGVuZHtnYXRoZXJlZH0KXF0=",
+      "proof_sketch_b64": "VXNlIHRoZSB0cnV0aCBjbGF1c2UgZm9yIGJpY29uZGl0aW9uYWwsIG9yIHJld3JpdGUgdXNpbmcgdGhlIGNvbmRpdGlvbmFsIGVxdWl2YWxlbmNlIGxhd3Mu"
+    },
+    {
+      "label": "def:formula-context-propositional-logic",
+      "kind": "definition",
+      "title": "Formula Context",
+      "body_b64": "QSBmb3JtdWxhIGNvbnRleHQgXChDWy1dXCkgaXMgYSB3ZWxsLWZvcm1lZCBmb3JtdWxhIHdpdGggb25lIGRpc3Rpbmd1aXNoZWQgcGxhY2Vob2xkZXIgb2NjdXJyZW5jZSBcKFstXVwpLiBGb3IgZWFjaCB3ZWxsLWZvcm1lZCBmb3JtdWxhIFwoXHZhcnBoaVwpLCB0aGUgZXhwcmVzc2lvbiBcKENbXHZhcnBoaV1cKSBkZW5vdGVzIHRoZSBmb3JtdWxhIG9idGFpbmVkIGJ5IHJlcGxhY2luZyB0aGUgcGxhY2Vob2xkZXIgd2l0aCBcKFx2YXJwaGlcKS4=",
+      "interpretation_b64": "QSBmb3JtdWxhIGNvbnRleHQgaXMgYSBzeW50YWN0aWMgZW52aXJvbm1lbnQgaW50byB3aGljaCBhIGZvcm11bGEgY2FuIGJlIGluc2VydGVkLiBDb250ZXh0cyBtYWtlIHByZWNpc2UgdGhlIGlkZWEgb2YgcmVwbGFjaW5nIGEgc3ViZm9ybXVsYSBpbnNpZGUgYSBsYXJnZXIgZm9ybXVsYS4=",
+      "dependencies": [
+        "def:well-formed-formula",
+        "def:subformula-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "FormulaContext"
+        ],
+        "uses": [
+          "WellFormedFormula",
+          "Subformula"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "C[-]",
+            "name": "formula context",
+            "meaning": "a one-hole propositional formula context",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:formula-context-propositional-logic",
+            "registry_id": "propositional_logic.formula_context"
+          },
+          {
+            "symbol": "C[\\varphi]",
+            "name": "context substitution",
+            "meaning": "formula obtained by filling a context with a formula",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:formula-context-propositional-logic",
+            "registry_id": "propositional_logic.formula_context_substitution"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtGb3JtdWxhQ29udGV4dH0oQ1stXSkKXExvbmdyaWdodGFycm93CihcZm9yYWxsXHZhcnBoaVxpblxXRkYpKENbXHZhcnBoaV1caW5cV0ZGKS4KXF0=",
+      "predicate_reading_b64": "XFsKXG9wZXJhdG9ybmFtZXtGb3JtdWxhQ29udGV4dH0oQ1stXSkKXF0KbWVhbnMgdGhhdCBcKENbLV1cKSBpcyBhIG9uZS1ob2xlIHByb3Bvc2l0aW9uYWwgZm9ybXVsYSBjb250ZXh0Lg=="
+    },
+    {
+      "label": "thm:replacement-of-logical-equivalents-propositional-logic",
+      "kind": "theorem",
+      "title": "Replacement of Logical Equivalents",
+      "body_b64": "UmVwbGFjaW5nIGxvZ2ljYWxseSBlcXVpdmFsZW50IGZvcm11bGFzIGluc2lkZSBhIGZvcm11bGEgY29udGV4dCBwcmVzZXJ2ZXMgbG9naWNhbCBlcXVpdmFsZW5jZToKXFsKXHZhcnBoaVxlcXVpdlxwc2kKXExvbmdyaWdodGFycm93CkNbXHZhcnBoaV1cZXF1aXYgQ1tccHNpXS4KXF0=",
+      "interpretation_b64": "TG9naWNhbCBlcXVpdmFsZW5jZSBpcyBzdWJzdGl0dXRpdmU6IGVxdWl2YWxlbnQgZm9ybXVsYXMgbWF5IGJlIHJlcGxhY2VkIGluc2lkZSBsYXJnZXIgZm9ybXVsYXMgd2l0aG91dCBjaGFuZ2luZyB0cnV0aCBiZWhhdmlvci4=",
+      "dependencies": [
+        "def:formula-context-propositional-logic",
+        "def:logical-equivalence-propositional-logic",
+        "lem:coincidence-lemma-propositional-logic",
+        "thm:unique-extension-truth-assignment-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "FormulaContext",
+          "LogicalEquivalence",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "C[-]",
+            "name": "formula context",
+            "meaning": "a one-hole propositional formula context",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:formula-context-propositional-logic",
+            "registry_id": "propositional_logic.formula_context"
+          },
+          {
+            "symbol": "C[\\varphi]",
+            "name": "context substitution",
+            "meaning": "formula obtained by filling a context with a formula",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:formula-context-propositional-logic",
+            "registry_id": "propositional_logic.formula_context_substitution"
+          },
+          {
+            "symbol": "\\varphi\\equiv\\psi",
+            "name": "logical equivalence",
+            "meaning": "same truth value under every truth assignment",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKKFxmb3JhbGxcdmFycGhpLFxwc2lcaW5cV0ZGKQooXGZvcmFsbCBDWy1dKQpcbGVmdFsKXG9wZXJhdG9ybmFtZXtGb3JtdWxhQ29udGV4dH0oQ1stXSkKXGxhbmQKXHZhcnBoaVxlcXVpdlxwc2kKXHRvCkNbXHZhcnBoaV1cZXF1aXYgQ1tccHNpXQpccmlnaHRdLgpcXQ==",
+      "proof_sketch_b64": "UHJvdmUgYnkgc3RydWN0dXJhbCBpbmR1Y3Rpb24gb24gdGhlIGNvbnRleHQgXChDWy1dXCkuIFRoZSBwbGFjZWhvbGRlciBjYXNlIHVzZXMgXChcdmFycGhpXGVxdWl2XHBzaVwpLiBUaGUgY29ubmVjdGl2ZSBjYXNlcyBmb2xsb3cgZnJvbSB0aGUgc2VtYW50aWMgdHJ1dGggY2xhdXNlcy4="
+    },
+    {
+      "label": "rem:algebraic-role-of-propositional-laws",
+      "kind": "remark",
+      "title": "Algebraic Role of Propositional Laws",
+      "body_b64": "VGhlIGxhd3MgaW4gdGhpcyBzZWN0aW9uIGFsbG93IGZvcm11bGFzIHRvIGJlIG1hbmlwdWxhdGVkIGFsZ2VicmFpY2FsbHkuIFRoZXkgYXJlIG5vdCBuZXcgZm9ybWF0aW9uIHJ1bGVzOyB0aGV5IGFyZSBzZW1hbnRpYyBlcXVpdmFsZW5jZXMuIExhdGVyIHNlY3Rpb25zIHVzZSB0aGVzZSBsYXdzIHRvIHRyYW5zZm9ybSBmb3JtdWxhcyBpbnRvIG5vcm1hbCBmb3JtcyBhbmQgdG8gcmVkdWNlIHRoZSBzZXQgb2YgcHJpbWl0aXZlIGNvbm5lY3RpdmVzLg==",
+      "interpretation_b64": "VGhlIGFsZ2VicmEgb2YgcHJvcG9zaXRpb25zIGlzIHRoZSBicmlkZ2UgZnJvbSBzZW1hbnRpY3MgdG8gY29tcHV0YXRpb246IG9uY2UgZm9ybXVsYXMgYXJlIGVxdWl2YWxlbnQsIHRoZXkgY2FuIGJlIHJld3JpdHRlbiB3aXRob3V0IGNoYW5naW5nIHRydXRoIGJlaGF2aW9yLg==",
+      "dependencies": [
+        "def:logical-equivalence-propositional-logic",
+        "thm:replacement-of-logical-equivalents-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "LogicalEquivalence"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\equiv",
+            "name": "logical equivalence symbol",
+            "meaning": "logical equivalence relation between formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false
+    }
+  ]
+}

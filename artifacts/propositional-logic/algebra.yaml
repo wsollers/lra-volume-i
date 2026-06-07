@@ -1,0 +1,1154 @@
+schema_version: 1
+chapter: propositional-logic
+topic: algebra
+encoding: utf-8
+content_format: latex
+artifacts:
+- label: def:propositional-equivalence-law
+  kind: definition
+  title: Propositional Equivalence Law
+  dependencies:
+  - def:logical-equivalence-propositional-logic
+  - def:well-formed-formula
+  predicates:
+    defines:
+    - PropositionalEquivalenceLaw
+    uses:
+    - LogicalEquivalence
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: \varphi\equiv\psi
+      name: logical equivalence
+      meaning: same truth value under every truth assignment
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence_formula
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \psi
+      name: second formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_formula
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+    - symbol: \equiv
+      name: logical equivalence symbol
+      meaning: logical equivalence relation between formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: |-
+    A propositional equivalence law is a valid schema of the form
+    \[
+    \varphi\equiv\psi,
+    \]
+    with \(\varphi,\psi\in\WFF\). Each instance of the schema says that the two formulas have the same truth value under every truth assignment.
+  quantified_form: |-
+    \[
+    \operatorname{PropositionalEquivalenceLaw}(\varphi,\psi)
+    \Longleftrightarrow
+    \varphi,\psi\in\WFF
+    \land
+    \varphi\equiv\psi.
+    \]
+  predicate_reading: |-
+    \[
+    \operatorname{PropositionalEquivalenceLaw}(\varphi,\psi)
+    \]
+    means that \(\varphi\equiv\psi\) is a valid logical-equivalence schema.
+  interpretation: Equivalence laws are the algebraic rewrite rules of propositional logic. They allow
+    formulas to be transformed without changing truth conditions.
+- label: thm:logical-equivalence-equivalence-relation
+  kind: theorem
+  title: Logical Equivalence is an Equivalence Relation
+  dependencies:
+  - def:logical-equivalence-propositional-logic
+  predicates:
+    defines: []
+    uses:
+    - LogicalEquivalence
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: \varphi\equiv\psi
+      name: logical equivalence
+      meaning: same truth value under every truth assignment
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence_formula
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi,\psi,\chi,\theta
+      name: formula metavariables
+      meaning: metavariables ranging over propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_metavariables
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+    - symbol: \equiv
+      name: logical equivalence symbol
+      meaning: logical equivalence relation between formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: |-
+    Logical equivalence is reflexive, symmetric, and transitive on \(\WFF\):
+    \[
+    \varphi\equiv\varphi,
+    \qquad
+    \varphi\equiv\psi\Longrightarrow\psi\equiv\varphi,
+    \]
+    and
+    \[
+    (\varphi\equiv\psi\land\psi\equiv\chi)
+    \Longrightarrow
+    \varphi\equiv\chi.
+    \]
+  quantified_form: |-
+    \[
+    \begin{aligned}
+    &(\forall\varphi\in\WFF)(\varphi\equiv\varphi),\\
+    &(\forall\varphi,\psi\in\WFF)(\varphi\equiv\psi\to\psi\equiv\varphi),\\
+    &(\forall\varphi,\psi,\chi\in\WFF)
+    ((\varphi\equiv\psi\land\psi\equiv\chi)\to\varphi\equiv\chi).
+    \end{aligned}
+    \]
+  interpretation: Logical equivalence behaves like equality at the semantic level.
+  proof_sketch: Unfold logical equivalence as equality of truth values under every truth assignment.
+- label: thm:basic-boolean-equivalence-laws-propositional-logic
+  kind: theorem
+  title: Basic Boolean Equivalence Laws
+  dependencies:
+  - def:logical-equivalence-propositional-logic
+  - thm:unique-extension-truth-assignment-propositional-logic
+  predicates:
+    defines: []
+    uses:
+    - LogicalEquivalence
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: \equiv
+      name: logical equivalence symbol
+      meaning: logical equivalence relation between formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \lor
+      name: disjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.disjunction
+    - symbol: \neg
+      name: negation
+      meaning: unary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.negation
+    - symbol: \varphi,\psi,\chi,\theta
+      name: formula metavariables
+      meaning: metavariables ranging over propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_metavariables
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+    - symbol: \widehat v
+      name: extended truth assignment
+      meaning: unique extension to formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.extended_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: |-
+    For all formulas \(\varphi,\psi,\chi\in\WFF\), the following logical equivalences hold.
+
+    Commutativity:
+    \[
+    \varphi\land\psi\equiv\psi\land\varphi,
+    \qquad
+    \varphi\lor\psi\equiv\psi\lor\varphi.
+    \]
+
+    Associativity:
+    \[
+    (\varphi\land\psi)\land\chi
+    \equiv
+    \varphi\land(\psi\land\chi),
+    \qquad
+    (\varphi\lor\psi)\lor\chi
+    \equiv
+    \varphi\lor(\psi\lor\chi).
+    \]
+
+    Idempotence:
+    \[
+    \varphi\land\varphi\equiv\varphi,
+    \qquad
+    \varphi\lor\varphi\equiv\varphi.
+    \]
+
+    Double negation:
+    \[
+    \neg\neg\varphi\equiv\varphi.
+    \]
+  quantified_form: |-
+    \[
+    (\forall\varphi,\psi,\chi\in\WFF)
+    \left[
+    \begin{gathered}
+    \varphi\land\psi\equiv\psi\land\varphi,\quad
+    \varphi\lor\psi\equiv\psi\lor\varphi,\\
+    (\varphi\land\psi)\land\chi\equiv\varphi\land(\psi\land\chi),\quad
+    (\varphi\lor\psi)\lor\chi\equiv\varphi\lor(\psi\lor\chi),\\
+    \varphi\land\varphi\equiv\varphi,\quad
+    \varphi\lor\varphi\equiv\varphi,\quad
+    \neg\neg\varphi\equiv\varphi
+    \end{gathered}
+    \right].
+    \]
+  interpretation: These are the basic algebraic laws for conjunction, disjunction, and negation.
+  proof_sketch: Prove each equivalence by truth-table calculation or by unfolding the semantic clauses
+    for \(\widehat v\).
+- label: thm:identity-domination-laws-propositional-logic
+  kind: theorem
+  title: Identity and Domination Laws
+  dependencies:
+  - def:tautology-propositional-logic
+  - def:contradiction-propositional-logic
+  - def:logical-equivalence-propositional-logic
+  predicates:
+    defines: []
+    uses:
+    - Tautology
+    - Contradiction
+    - LogicalEquivalence
+    - WellFormedFormula
+  notations:
+    defines:
+    - symbol: \top
+      name: tautological formula
+      meaning: a formula chosen as a true constant
+      scope: chapter
+      status: canonical
+      introduced_by: thm:identity-domination-laws-propositional-logic
+      registry_id: propositional_logic.truth_constant_top
+    - symbol: \bot
+      name: contradictory formula
+      meaning: a formula chosen as a false constant
+      scope: chapter
+      status: canonical
+      introduced_by: thm:identity-domination-laws-propositional-logic
+      registry_id: propositional_logic.truth_constant_bottom
+    uses:
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \lor
+      name: disjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.disjunction
+    - symbol: \equiv
+      name: logical equivalence symbol
+      meaning: logical equivalence relation between formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: |-
+    Let \(\top\) be any tautological formula and let \(\bot\) be any contradictory formula. Then for every \(\varphi\in\WFF\):
+    \[
+    \varphi\land\top\equiv\varphi,
+    \qquad
+    \varphi\lor\bot\equiv\varphi,
+    \]
+    and
+    \[
+    \varphi\land\bot\equiv\bot,
+    \qquad
+    \varphi\lor\top\equiv\top.
+    \]
+  quantified_form: |-
+    \[
+    \begin{aligned}
+    &(\operatorname{Tautology}(\top)\land \operatorname{Contradiction}(\bot))
+    \to
+    (\forall\varphi\in\WFF)\\
+    &\quad
+    \left[
+    (\varphi\land\top\equiv\varphi)
+    \land
+    (\varphi\lor\bot\equiv\varphi)
+    \land
+    (\varphi\land\bot\equiv\bot)
+    \land
+    (\varphi\lor\top\equiv\top)
+    \right].
+    \end{aligned}
+    \]
+  interpretation: Tautologies act like true constants; contradictions act like false constants.
+  proof_sketch: Evaluate both sides under an arbitrary truth assignment.
+- label: thm:de-morgan-laws-propositional-logic
+  kind: theorem
+  title: De Morgan Laws for Propositional Logic
+  dependencies:
+  - def:logical-equivalence-propositional-logic
+  - thm:unique-extension-truth-assignment-propositional-logic
+  predicates:
+    defines: []
+    uses:
+    - LogicalEquivalence
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: \neg
+      name: negation
+      meaning: unary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.negation
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \lor
+      name: disjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.disjunction
+    - symbol: \equiv
+      name: logical equivalence symbol
+      meaning: logical equivalence relation between formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi,\psi,\chi,\theta
+      name: formula metavariables
+      meaning: metavariables ranging over propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_metavariables
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: |-
+    For all \(\varphi,\psi\in\WFF\),
+    \[
+    \neg(\varphi\land\psi)
+    \equiv
+    \neg\varphi\lor\neg\psi,
+    \]
+    and
+    \[
+    \neg(\varphi\lor\psi)
+    \equiv
+    \neg\varphi\land\neg\psi.
+    \]
+  quantified_form: |-
+    \[
+    \begin{gathered}
+    (\forall\varphi,\psi\in\WFF)
+    \left[
+    \neg(\varphi\land\psi)
+    \equiv
+    \neg\varphi\lor\neg\psi
+    \right],\\
+    (\forall\varphi,\psi\in\WFF)
+    \left[
+    \neg(\varphi\lor\psi)
+    \equiv
+    \neg\varphi\land\neg\psi
+    \right].
+    \end{gathered}
+    \]
+  interpretation: Negation swaps conjunction with disjunction when pushed inward.
+  readable_decomposition: |-
+    \[
+    \underbrace{\neg(\varphi\land\psi)}_{\text{not both}}
+    \equiv
+    \underbrace{\neg\varphi\lor\neg\psi}_{\text{at least one fails}},
+    \qquad
+    \underbrace{\neg(\varphi\lor\psi)}_{\text{neither}}
+    \equiv
+    \underbrace{\neg\varphi\land\neg\psi}_{\text{both fail}}.
+    \]
+  proof_sketch: Use a two-variable truth table or unfold the semantic clauses for \(\neg,\land,\lor\).
+- label: thm:distributive-laws-propositional-logic
+  kind: theorem
+  title: Distributive Laws for Propositional Logic
+  dependencies:
+  - def:logical-equivalence-propositional-logic
+  - thm:unique-extension-truth-assignment-propositional-logic
+  predicates:
+    defines: []
+    uses:
+    - LogicalEquivalence
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \lor
+      name: disjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.disjunction
+    - symbol: \equiv
+      name: logical equivalence symbol
+      meaning: logical equivalence relation between formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi,\psi,\chi,\theta
+      name: formula metavariables
+      meaning: metavariables ranging over propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_metavariables
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: |-
+    For all \(\varphi,\psi,\chi\in\WFF\),
+    \[
+    \varphi\land(\psi\lor\chi)
+    \equiv
+    (\varphi\land\psi)\lor(\varphi\land\chi),
+    \]
+    and
+    \[
+    \varphi\lor(\psi\land\chi)
+    \equiv
+    (\varphi\lor\psi)\land(\varphi\lor\chi).
+    \]
+  quantified_form: |-
+    \[
+    \begin{gathered}
+    (\forall\varphi,\psi,\chi\in\WFF)
+    \left[
+    \varphi\land(\psi\lor\chi)
+    \equiv
+    (\varphi\land\psi)\lor(\varphi\land\chi)
+    \right],\\
+    (\forall\varphi,\psi,\chi\in\WFF)
+    \left[
+    \varphi\lor(\psi\land\chi)
+    \equiv
+    (\varphi\lor\psi)\land(\varphi\lor\chi)
+    \right].
+    \end{gathered}
+    \]
+  interpretation: Conjunction distributes over disjunction, and disjunction distributes over conjunction.
+    These laws are the main algebraic engine behind CNF and DNF conversion.
+  proof_sketch: Use a three-variable truth table or semantic case analysis.
+- label: thm:absorption-laws-propositional-logic
+  kind: theorem
+  title: Absorption Laws
+  dependencies:
+  - def:logical-equivalence-propositional-logic
+  - thm:basic-boolean-equivalence-laws-propositional-logic
+  - thm:distributive-laws-propositional-logic
+  predicates:
+    defines: []
+    uses:
+    - LogicalEquivalence
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \lor
+      name: disjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.disjunction
+    - symbol: \equiv
+      name: logical equivalence symbol
+      meaning: logical equivalence relation between formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi,\psi,\chi,\theta
+      name: formula metavariables
+      meaning: metavariables ranging over propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_metavariables
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: |-
+    For all \(\varphi,\psi\in\WFF\),
+    \[
+    \varphi\land(\varphi\lor\psi)\equiv\varphi,
+    \]
+    and
+    \[
+    \varphi\lor(\varphi\land\psi)\equiv\varphi.
+    \]
+  quantified_form: |-
+    \[
+    \begin{gathered}
+    (\forall\varphi,\psi\in\WFF)
+    \left[
+    \varphi\land(\varphi\lor\psi)\equiv\varphi
+    \right],\\
+    (\forall\varphi,\psi\in\WFF)
+    \left[
+    \varphi\lor(\varphi\land\psi)\equiv\varphi
+    \right].
+    \end{gathered}
+    \]
+  interpretation: Once \(\varphi\) is already required, adding \(\varphi\lor\psi\) contributes no additional
+    constraint. Dually, once \(\varphi\) is already allowed, adding \(\varphi\land\psi\) contributes no
+    additional possibility.
+  proof_sketch: Prove by truth table or derive algebraically from distributivity, idempotence, and identity
+    laws.
+- label: thm:conditional-equivalence-laws-propositional-logic
+  kind: theorem
+  title: Conditional Equivalence Laws
+  dependencies:
+  - def:logical-equivalence-propositional-logic
+  - thm:unique-extension-truth-assignment-propositional-logic
+  predicates:
+    defines: []
+    uses:
+    - LogicalEquivalence
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: \neg
+      name: negation
+      meaning: unary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.negation
+    - symbol: \lor
+      name: disjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.disjunction
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \equiv
+      name: logical equivalence symbol
+      meaning: logical equivalence relation between formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi,\psi,\chi,\theta
+      name: formula metavariables
+      meaning: metavariables ranging over propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_metavariables
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: |-
+    For all \(\varphi,\psi\in\WFF\),
+    \[
+    \varphi\to\psi
+    \equiv
+    \neg\varphi\lor\psi,
+    \]
+    and
+    \[
+    \neg(\varphi\to\psi)
+    \equiv
+    \varphi\land\neg\psi.
+    \]
+  quantified_form: |-
+    \[
+    \begin{gathered}
+    (\forall\varphi,\psi\in\WFF)
+    \left[
+    \varphi\to\psi
+    \equiv
+    \neg\varphi\lor\psi
+    \right],\\
+    (\forall\varphi,\psi\in\WFF)
+    \left[
+    \neg(\varphi\to\psi)
+    \equiv
+    \varphi\land\neg\psi
+    \right].
+    \end{gathered}
+    \]
+  interpretation: A conditional fails exactly when the antecedent is true and the consequent is false.
+  readable_decomposition: |-
+    \[
+    \underbrace{\varphi\to\psi}_{\text{no counterexample}}
+    \equiv
+    \underbrace{\neg\varphi\lor\psi}_{\text{premise false or conclusion true}},
+    \qquad
+    \underbrace{\neg(\varphi\to\psi)}_{\text{counterexample}}
+    \equiv
+    \underbrace{\varphi\land\neg\psi}_{\text{premise true and conclusion false}}.
+    \]
+  proof_sketch: Use the semantic truth clause for implication.
+- label: thm:biconditional-equivalence-laws-propositional-logic
+  kind: theorem
+  title: Biconditional Equivalence Laws
+  dependencies:
+  - def:logical-equivalence-propositional-logic
+  - thm:conditional-equivalence-laws-propositional-logic
+  predicates:
+    defines: []
+    uses:
+    - LogicalEquivalence
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: \leftrightarrow
+      name: biconditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.biconditional
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \lor
+      name: disjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.disjunction
+    - symbol: \neg
+      name: negation
+      meaning: unary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.negation
+    - symbol: \equiv
+      name: logical equivalence symbol
+      meaning: logical equivalence relation between formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi,\psi,\chi,\theta
+      name: formula metavariables
+      meaning: metavariables ranging over propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_metavariables
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: |-
+    For all \(\varphi,\psi\in\WFF\),
+    \[
+    \varphi\leftrightarrow\psi
+    \equiv
+    (\varphi\to\psi)\land(\psi\to\varphi),
+    \]
+    and
+    \[
+    \varphi\leftrightarrow\psi
+    \equiv
+    (\varphi\land\psi)\lor(\neg\varphi\land\neg\psi).
+    \]
+  quantified_form: |-
+    \[
+    \begin{gathered}
+    (\forall\varphi,\psi\in\WFF)
+    \left[
+    \varphi\leftrightarrow\psi
+    \equiv
+    (\varphi\to\psi)\land(\psi\to\varphi)
+    \right],\\
+    (\forall\varphi,\psi\in\WFF)
+    \left[
+    \varphi\leftrightarrow\psi
+    \equiv
+    (\varphi\land\psi)\lor(\neg\varphi\land\neg\psi)
+    \right].
+    \end{gathered}
+    \]
+  interpretation: 'A biconditional says that two formulas have the same truth value: both true or both
+    false.'
+  proof_sketch: Use the truth clause for biconditional, or rewrite using the conditional equivalence laws.
+- label: def:formula-context-propositional-logic
+  kind: definition
+  title: Formula Context
+  dependencies:
+  - def:well-formed-formula
+  - def:subformula-propositional-logic
+  predicates:
+    defines:
+    - FormulaContext
+    uses:
+    - WellFormedFormula
+    - Subformula
+  notations:
+    defines:
+    - symbol: C[-]
+      name: formula context
+      meaning: a one-hole propositional formula context
+      scope: chapter
+      status: canonical
+      introduced_by: def:formula-context-propositional-logic
+      registry_id: propositional_logic.formula_context
+    - symbol: C[\varphi]
+      name: context substitution
+      meaning: formula obtained by filling a context with a formula
+      scope: chapter
+      status: canonical
+      introduced_by: def:formula-context-propositional-logic
+      registry_id: propositional_logic.formula_context_substitution
+    uses:
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: A formula context \(C[-]\) is a well-formed formula with one distinguished placeholder occurrence
+    \([-]\). For each well-formed formula \(\varphi\), the expression \(C[\varphi]\) denotes the formula
+    obtained by replacing the placeholder with \(\varphi\).
+  quantified_form: |-
+    \[
+    \operatorname{FormulaContext}(C[-])
+    \Longrightarrow
+    (\forall\varphi\in\WFF)(C[\varphi]\in\WFF).
+    \]
+  predicate_reading: |-
+    \[
+    \operatorname{FormulaContext}(C[-])
+    \]
+    means that \(C[-]\) is a one-hole propositional formula context.
+  interpretation: A formula context is a syntactic environment into which a formula can be inserted. Contexts
+    make precise the idea of replacing a subformula inside a larger formula.
+- label: thm:replacement-of-logical-equivalents-propositional-logic
+  kind: theorem
+  title: Replacement of Logical Equivalents
+  dependencies:
+  - def:formula-context-propositional-logic
+  - def:logical-equivalence-propositional-logic
+  - lem:coincidence-lemma-propositional-logic
+  - thm:unique-extension-truth-assignment-propositional-logic
+  predicates:
+    defines: []
+    uses:
+    - FormulaContext
+    - LogicalEquivalence
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: C[-]
+      name: formula context
+      meaning: a one-hole propositional formula context
+      scope: chapter
+      status: canonical
+      introduced_by: def:formula-context-propositional-logic
+      registry_id: propositional_logic.formula_context
+    - symbol: C[\varphi]
+      name: context substitution
+      meaning: formula obtained by filling a context with a formula
+      scope: chapter
+      status: canonical
+      introduced_by: def:formula-context-propositional-logic
+      registry_id: propositional_logic.formula_context_substitution
+    - symbol: \varphi\equiv\psi
+      name: logical equivalence
+      meaning: same truth value under every truth assignment
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence_formula
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \psi
+      name: second formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_formula
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+    - symbol: \equiv
+      name: logical equivalence symbol
+      meaning: logical equivalence relation between formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: |-
+    Replacing logically equivalent formulas inside a formula context preserves logical equivalence:
+    \[
+    \varphi\equiv\psi
+    \Longrightarrow
+    C[\varphi]\equiv C[\psi].
+    \]
+  quantified_form: |-
+    \[
+    (\forall\varphi,\psi\in\WFF)
+    (\forall C[-])
+    \left[
+    \operatorname{FormulaContext}(C[-])
+    \land
+    \varphi\equiv\psi
+    \to
+    C[\varphi]\equiv C[\psi]
+    \right].
+    \]
+  interpretation: 'Logical equivalence is substitutive: equivalent formulas may be replaced inside larger
+    formulas without changing truth behavior.'
+  proof_sketch: Prove by structural induction on the context \(C[-]\). The placeholder case uses \(\varphi\equiv\psi\).
+    The connective cases follow from the semantic truth clauses.
+- label: rem:algebraic-role-of-propositional-laws
+  kind: remark
+  title: Algebraic Role of Propositional Laws
+  dependencies:
+  - def:logical-equivalence-propositional-logic
+  - thm:replacement-of-logical-equivalents-propositional-logic
+  predicates:
+    defines: []
+    uses:
+    - LogicalEquivalence
+  notations:
+    defines: []
+    uses:
+    - symbol: \equiv
+      name: logical equivalence symbol
+      meaning: logical equivalence relation between formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: The laws in this section allow formulas to be manipulated algebraically. They are not new formation
+    rules; they are semantic equivalences. Later sections use these laws to transform formulas into normal
+    forms and to reduce the set of primitive connectives.
+  interpretation: 'The algebra of propositions is the bridge from semantics to computation: once formulas
+    are equivalent, they can be rewritten without changing truth behavior.'

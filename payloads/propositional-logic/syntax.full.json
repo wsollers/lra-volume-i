@@ -1,0 +1,1638 @@
+{
+  "schema_version": 1,
+  "chapter": "propositional-logic",
+  "topic": "syntax",
+  "encoding": "utf-8",
+  "content_format": "latex",
+  "artifacts": [
+    {
+      "label": "def:truth-value-propositional-logic",
+      "kind": "definition",
+      "title": "Truth Value",
+      "body_b64": "VGhlIHNldCBvZiB0cnV0aCB2YWx1ZXMgaXMKXFsKXG1hdGhiYiBCIDo9IFx7XG1hdGhybXtGYWxzZX0sXG1hdGhybXtUcnVlfVx9LgpcXQpTb21lIHNvdXJjZXMgaWRlbnRpZnkgdGhpcyBzZXQgd2l0aCBcKFx7MCwxXH1cKSwgd2l0aCBcKDBcKSByZWFkIGFzIGZhbHNlIGFuZCBcKDFcKSByZWFkIGFzIHRydWUu",
+      "interpretation_b64": "VHJ1dGggdmFsdWVzIGFyZSB0aGUgc2VtYW50aWMgdGFyZ2V0cyBvZiBwcm9wb3NpdGlvbmFsIGZvcm11bGFzLiBTeW50YXggZGV0ZXJtaW5lcyB3aGljaCBzdHJpbmdzIGFyZSBmb3JtdWxhczsgc2VtYW50aWNzIGxhdGVyIGFzc2lnbnMgZWxlbWVudHMgb2YgXChcbWF0aGJiIEJcKSB0byBmb3JtdWxhcy4=",
+      "dependencies": [],
+      "predicates": {
+        "defines": [],
+        "uses": []
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\mathbb B",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "scope": "global",
+            "status": "canonical",
+            "introduced_by": "def:truth-value-propositional-logic"
+          }
+        ],
+        "uses": []
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG1hdGhiYiBCPVx7XG1hdGhybXtGYWxzZX0sXG1hdGhybXtUcnVlfVx9LgpcXQ=="
+    },
+    {
+      "label": "def:propositional-language",
+      "kind": "definition",
+      "title": "Propositional Language",
+      "body_b64": "QSBwcm9wb3NpdGlvbmFsIGxhbmd1YWdlIGNvbnNpc3RzIG9mOgpcYmVnaW57ZW51bWVyYXRlfQpcaXRlbSBhIHNldCBcKFxQcm9wXCkgb2YgcHJvcG9zaXRpb25hbCB2YXJpYWJsZXM7ClxpdGVtIGxvZ2ljYWwgY29ubmVjdGl2ZXM7ClxpdGVtIHB1bmN0dWF0aW9uIHN5bWJvbHMgc3VjaCBhcyBwYXJlbnRoZXNlczsKXGl0ZW0gcmVjdXJzaXZlIGZvcm1hdGlvbiBydWxlcyBzcGVjaWZ5aW5nIHRoZSB3ZWxsLWZvcm1lZCBmb3JtdWxhcy4KXGVuZHtlbnVtZXJhdGV9",
+      "interpretation_b64": "VGhlIGxhbmd1YWdlIHN1cHBsaWVzIHN5bWJvbHMgYW5kIGdyYW1tYXIuIEl0IGRvZXMgbm90IHlldCBhc3NpZ24gdHJ1dGggdmFsdWVzLCB0cnV0aCBjb25kaXRpb25zLCBvciBsb2dpY2FsIGNvbnNlcXVlbmNlLg==",
+      "dependencies": [
+        "def:truth-value-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "PropositionalLanguage"
+        ],
+        "uses": []
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "global",
+            "status": "canonical",
+            "introduced_by": "def:propositional-language"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\mathbb B",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG1hdGhjYWwgTF97XG1hdGhybXtwcm9wfX0KPQooXFByb3AsXHtcbmVnLFxsYW5kLFxsb3IsXHRvLFxsZWZ0cmlnaHRhcnJvd1x9LFx0ZXh0e3B1bmN0dWF0aW9ufSxcdGV4dHtmb3JtYXRpb24gcnVsZXN9KS4KXF0="
+    },
+    {
+      "label": "def:propositional-variable",
+      "kind": "definition",
+      "title": "Propositional Variable",
+      "body_b64": "QSBwcm9wb3NpdGlvbmFsIHZhcmlhYmxlIGlzIGFuIGF0b21pYyBzeW1ib2wgaW50ZW5kZWQgdG8gc3RhbmQgZm9yIGEgcHJvcG9zaXRpb24uIEEgc3RhbmRhcmQgc3VwcGx5IG9mIHZhcmlhYmxlcyBpcwpcWwpcUHJvcD1ce1BfMSxQXzIsUF8zLFxsZG90c1x9LgpcXQpJbmZvcm1hbGx5LCB2YXJpYWJsZXMgYXJlIG9mdGVuIHdyaXR0ZW4gXChQLFEsUixTLFxsZG90c1wpLg==",
+      "interpretation_b64": "QSBwcm9wb3NpdGlvbmFsIHZhcmlhYmxlIGhhcyBubyBpbnRlcm5hbCBzeW50YWN0aWMgc3RydWN0dXJlIGluIHByb3Bvc2l0aW9uYWwgbG9naWMuIEl0IGlzIGEgYmFzaWMgc3ltYm9sIGZyb20gd2hpY2ggbW9yZSBjb21wbGV4IGZvcm11bGFzIGFyZSBmb3JtZWQu",
+      "dependencies": [
+        "def:propositional-language"
+      ],
+      "predicates": {
+        "defines": [
+          "PropositionalVariable"
+        ],
+        "uses": [
+          "PropositionalLanguage"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "P,Q,R",
+            "name": "propositional variables",
+            "meaning": "schematic propositional variables",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:propositional-variable"
+          },
+          {
+            "symbol": "P_1,\\ldots,P_n",
+            "name": "finite list of propositional variables",
+            "meaning": "a finite schematic list of propositional variables",
+            "scope": "chapter",
+            "status": "local",
+            "introduced_by": "def:propositional-variable"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtQcm9wb3NpdGlvbmFsVmFyaWFibGV9KFApXExvbmdsZWZ0cmlnaHRhcnJvdyBQXGluXFByb3AuClxd",
+      "predicate_reading_b64": "XChcb3BlcmF0b3JuYW1le1Byb3Bvc2l0aW9uYWxWYXJpYWJsZX0oUClcKSBtZWFucyBcKFBcaW5cUHJvcFwpLg==",
+      "examples_b64": "XChQLFEsUixQXzEsUF8yXCkgYXJlIHByb3Bvc2l0aW9uYWwgdmFyaWFibGVzIHdoZW4gdGhleSBiZWxvbmcgdG8gXChcUHJvcFwpLg==",
+      "non_examples_b64": "XChcbmVnIFBcKSwgXChQXGxhbmQgUVwpLCBhbmQgXCgoUFx0byBRKVwpIGFyZSBub3QgcHJvcG9zaXRpb25hbCB2YXJpYWJsZXM7IHRoZXkgYXJlIGNvbXBvdW5kIGZvcm11bGFzLg=="
+    },
+    {
+      "label": "def:logical-connective",
+      "kind": "definition",
+      "title": "Logical Connective",
+      "body_b64": "VGhlIHN0YW5kYXJkIHByaW1pdGl2ZSBwcm9wb3NpdGlvbmFsIGNvbm5lY3RpdmVzIGFyZQpcWwpcbmVnLFxxcXVhZCBcbGFuZCxccXF1YWQgXGxvcixccXF1YWQgXHRvLFxxcXVhZCBcbGVmdHJpZ2h0YXJyb3cuClxdClRoZSBjb25uZWN0aXZlIFwoXG5lZ1wpIGlzIHVuYXJ5LiBUaGUgY29ubmVjdGl2ZXMgXChcbGFuZCxcbG9yLFx0byxcbGVmdHJpZ2h0YXJyb3dcKSBhcmUgYmluYXJ5LgoKXFsKXGJlZ2lue2FycmF5fXtjfGN8Y3xjfGN9Clx0ZXh0e1N5bWJvbH0gJiBcdGV4dHtOYW1lfSAmIFx0ZXh0e0FyaXR5fSAmIFx0ZXh0e0Zvcm1hdGlvbiBwYXR0ZXJufSAmIFx0ZXh0e1JlYWRpbmd9XFwKXGhsaW5lClxuZWcgJiBcdGV4dHtuZWdhdGlvbn0gJiBcdGV4dHt1bmFyeX0gJiBcbmVnXHZhcnBoaSAmIFx0ZXh0e25vdCB9XHZhcnBoaVxcClxsYW5kICYgXHRleHR7Y29uanVuY3Rpb259ICYgXHRleHR7YmluYXJ5fSAmIChcdmFycGhpXGxhbmRccHNpKSAmIFx2YXJwaGlcdGV4dHsgYW5kIH1ccHNpXFwKXGxvciAmIFx0ZXh0e2Rpc2p1bmN0aW9ufSAmIFx0ZXh0e2JpbmFyeX0gJiAoXHZhcnBoaVxsb3JccHNpKSAmIFx2YXJwaGlcdGV4dHsgb3IgfVxwc2lcXApcdG8gJiBcdGV4dHtjb25kaXRpb25hbH0gJiBcdGV4dHtiaW5hcnl9ICYgKFx2YXJwaGlcdG9ccHNpKSAmIFx0ZXh0e2lmIH1cdmFycGhpLFx0ZXh0eyB0aGVuIH1ccHNpXFwKXGxlZnRyaWdodGFycm93ICYgXHRleHR7Ymljb25kaXRpb25hbH0gJiBcdGV4dHtiaW5hcnl9ICYgKFx2YXJwaGlcbGVmdHJpZ2h0YXJyb3dccHNpKSAmIFx2YXJwaGlcdGV4dHsgaWZmIH1ccHNpClxlbmR7YXJyYXl9Clxd",
+      "interpretation_b64": "QXJpdHkgcmVjb3JkcyBob3cgbWFueSBmb3JtdWxhcyBhIGNvbm5lY3RpdmUgdXNlcyB0byBmb3JtIGEgbmV3IGZvcm11bGEuIFRoZSB0cnV0aCBiZWhhdmlvciBvZiB0aGVzZSBjb25uZWN0aXZlcyBiZWxvbmdzIHRvIHNlbWFudGljcywgbm90IHRvIHRoZSBzeW50YWN0aWMgZGVmaW5pdGlvbi4=",
+      "dependencies": [
+        "def:propositional-language"
+      ],
+      "predicates": {
+        "defines": [
+          "LogicalConnective",
+          "UnaryConnective",
+          "BinaryConnective"
+        ],
+        "uses": [
+          "PropositionalLanguage"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical",
+            "introduced_by": "def:logical-connective"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical",
+            "introduced_by": "def:logical-connective"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical",
+            "introduced_by": "def:logical-connective"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical",
+            "introduced_by": "def:logical-connective"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical",
+            "introduced_by": "def:logical-connective"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical",
+            "introduced_by": "def:logical-connective"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\varphi,\\psi",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over formulas",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtVbmFyeUNvbm5lY3RpdmV9KFxuZWcpClxxdWFkXHRleHR7YW5kfVxxdWFkClxvcGVyYXRvcm5hbWV7QmluYXJ5Q29ubmVjdGl2ZX0oXGxhbmQpXGxhbmQgXG9wZXJhdG9ybmFtZXtCaW5hcnlDb25uZWN0aXZlfShcbG9yKVxsYW5kIFxvcGVyYXRvcm5hbWV7QmluYXJ5Q29ubmVjdGl2ZX0oXHRvKVxsYW5kIFxvcGVyYXRvcm5hbWV7QmluYXJ5Q29ubmVjdGl2ZX0oXGxlZnRyaWdodGFycm93KS4KXF0="
+    },
+    {
+      "label": "def:well-formed-formula",
+      "kind": "definition",
+      "title": "Well-Formed Formula",
+      "body_b64": "VGhlIHNldCBcKFxXRkZcKSBvZiB3ZWxsLWZvcm1lZCBmb3JtdWxhcyBpcyB0aGUgc21hbGxlc3Qgc2V0IG9mIHN0cmluZ3Mgc2F0aXNmeWluZyB0aGUgZm9sbG93aW5nIGZvcm1hdGlvbiBydWxlczoKXGJlZ2lue2VudW1lcmF0ZX0KXGl0ZW0gRXZlcnkgcHJvcG9zaXRpb25hbCB2YXJpYWJsZSBcKFBcaW5cUHJvcFwpIGJlbG9uZ3MgdG8gXChcV0ZGXCkuClxpdGVtIElmIFwoXHZhcnBoaVxpblxXRkZcKSwgdGhlbiBcKFxuZWdcdmFycGhpXGluXFdGRlwpLgpcaXRlbSBJZiBcKFx2YXJwaGksXHBzaVxpblxXRkZcKSBhbmQgXChcY2lyY1xpblx7XGxhbmQsXGxvcixcdG8sXGxlZnRyaWdodGFycm93XH1cKSwgdGhlbiBcKChcdmFycGhpXGNpcmNccHNpKVxpblxXRkZcKS4KXGl0ZW0gTm8gc3RyaW5nIGlzIGEgd2VsbC1mb3JtZWQgZm9ybXVsYSB1bmxlc3MgaXQgaXMgb2J0YWluZWQgYnkgZmluaXRlbHkgbWFueSBhcHBsaWNhdGlvbnMgb2YgdGhlIHByZXZpb3VzIGNsYXVzZXMuClxlbmR7ZW51bWVyYXRlfQ==",
+      "interpretation_b64": "V2VsbC1mb3JtZWQgZm9ybXVsYXMgYXJlIGV4YWN0bHkgdGhlIHN0cmluZ3MgdG8gd2hpY2ggdGhlIHNlbWFudGljIGFuZCBwcm9vZi10aGVvcmV0aWMgbWFjaGluZXJ5IG9mIHByb3Bvc2l0aW9uYWwgbG9naWMgYXBwbGllcy4=",
+      "dependencies": [
+        "def:propositional-variable",
+        "def:logical-connective"
+      ],
+      "predicates": {
+        "defines": [
+          "WellFormedFormula"
+        ],
+        "uses": [
+          "PropositionalVariable",
+          "LogicalConnective"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:well-formed-formula"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": [
+          {
+            "label": "rel:generated-by-formation-rules",
+            "meaning": "generated by recursive formation rules"
+          }
+        ]
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXFdGRgo9ClxiaWdjYXAKXGxlZnRcewpTIDoKXFByb3Bcc3Vic2V0ZXEgUyxcOwooXGZvcmFsbFx2YXJwaGlcaW4gUykoXG5lZ1x2YXJwaGlcaW4gUyksXDsKKFxmb3JhbGxcdmFycGhpLFxwc2lcaW4gUykKKFxmb3JhbGxcY2lyY1xpblx7XGxhbmQsXGxvcixcdG8sXGxlZnRyaWdodGFycm93XH0pClxiaWdsKChcdmFycGhpXGNpcmNccHNpKVxpbiBTXGJpZ3IpClxyaWdodFx9LgpcXQ==",
+      "predicate_reading_b64": "XChcb3BlcmF0b3JuYW1le1dlbGxGb3JtZWRGb3JtdWxhfShcdmFycGhpKVwpIG1lYW5zIFwoXHZhcnBoaVxpblxXRkZcKSwgcmVhZCBhcyDigJxcKFx2YXJwaGlcKSBpcyBhIHdlbGwtZm9ybWVkIGZvcm11bGEu4oCd",
+      "negated_form_b64": "XFsKXHNpZ21hXG5vdGluXFdGRgpcTG9uZ2xlZnRyaWdodGFycm93ClxleGlzdHMgUwpcbGVmdFsKXFByb3Bcc3Vic2V0ZXEgUwpcbGFuZAooXGZvcmFsbFx2YXJwaGlcaW4gUykoXG5lZ1x2YXJwaGlcaW4gUykKXGxhbmQKKFxmb3JhbGxcdmFycGhpLFxwc2lcaW4gUykKKFxmb3JhbGxcY2lyY1xpblx7XGxhbmQsXGxvcixcdG8sXGxlZnRyaWdodGFycm93XH0pCigoXHZhcnBoaVxjaXJjXHBzaSlcaW4gUykKXGxhbmQKXHNpZ21hXG5vdGluIFMKXHJpZ2h0XS4KXF0=",
+      "negation_predicate_reading_b64": "XChcbmVnIFxvcGVyYXRvcm5hbWV7V2VsbEZvcm1lZEZvcm11bGF9KFxzaWdtYSlcKSBtZWFucyB0aGUgc3RyaW5nIFwoXHNpZ21hXCkgaXMgZXhjbHVkZWQgYnkgYXQgbGVhc3Qgb25lIGZvcm1hdGlvbi1jbG9zZWQgc2V0IGNvbnRhaW5pbmcgXChcUHJvcFwpOyBlcXVpdmFsZW50bHksIGl0IGlzIG5vdCBnZW5lcmF0ZWQgYnkgZmluaXRlbHkgbWFueSBhcHBsaWNhdGlvbnMgb2YgdGhlIGZvcm1hdGlvbiBydWxlcy4=",
+      "examples_b64": "XChQXCksIFwoXG5lZyBQXCksIFwoKFBcdG8gUSlcKSwgYW5kIFwoKFBcdG8oUVxsb3IgUikpXCkgYXJlIHdlbGwtZm9ybWVkIGZvcm11bGFzLg==",
+      "non_examples_b64": "XChQXGxhbmRcKSwgXCgoUCBRKVwpLCBhbmQgXChcbmVnXGxvciBQXCkgYXJlIG5vdCB3ZWxsLWZvcm1lZCBmb3JtdWxhcy4=",
+      "failure_mode_decomposition_b64": "XFsKXHVuZGVyYnJhY2V7UFxsYW5kfV97XHRleHR7bWlzc2luZyByaWdodCBvcGVyYW5kfX0KXHFxdWFkClx1bmRlcmJyYWNleyhQXCBRKX1fe1x0ZXh0e21pc3NpbmcgYmluYXJ5IGNvbm5lY3RpdmV9fQpccXF1YWQKXHVuZGVyYnJhY2V7XG5lZ1xsb3IgUH1fe1x0ZXh0e25lZ2F0aW9uIGFwcGxpZWQgdG8gYSBub24tZm9ybXVsYX19LgpcXQ=="
+    },
+    {
+      "label": "def:atomic-formula-propositional-logic",
+      "kind": "definition",
+      "title": "Atomic Formula",
+      "body_b64": "QW4gYXRvbWljIGZvcm11bGEgaXMgYSB3ZWxsLWZvcm1lZCBmb3JtdWxhIHRoYXQgaXMgYSBwcm9wb3NpdGlvbmFsIHZhcmlhYmxlLg==",
+      "interpretation_b64": "QXRvbWljIGZvcm11bGFzIGFyZSB0aGUgYmFzZSBjYXNlcyBvZiB0aGUgcmVjdXJzaXZlIGdyYW1tYXIuIFRoZXkgY29udGFpbiBubyBjb25uZWN0aXZlIHN0cnVjdHVyZS4=",
+      "dependencies": [
+        "def:well-formed-formula",
+        "def:propositional-variable"
+      ],
+      "predicates": {
+        "defines": [
+          "AtomicFormula"
+        ],
+        "uses": [
+          "WellFormedFormula",
+          "PropositionalVariable"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi",
+            "name": "formula metavariable",
+            "meaning": "a metavariable ranging over formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtBdG9taWNGb3JtdWxhfShcdmFycGhpKQpcTG9uZ2xlZnRyaWdodGFycm93Clx2YXJwaGlcaW5cV0ZGXGxhbmRcdmFycGhpXGluXFByb3AuClxd",
+      "predicate_reading_b64": "XChcb3BlcmF0b3JuYW1le0F0b21pY0Zvcm11bGF9KFx2YXJwaGkpXCkgbWVhbnMgdGhhdCBcKFx2YXJwaGlcKSBpcyBhIHByb3Bvc2l0aW9uYWwgdmFyaWFibGUgdmlld2VkIGFzIGEgd2VsbC1mb3JtZWQgZm9ybXVsYS4="
+    },
+    {
+      "label": "def:molecular-formula-propositional-logic",
+      "kind": "definition",
+      "title": "Molecular Formula",
+      "body_b64": "QSBtb2xlY3VsYXIgZm9ybXVsYSBpcyBhIHdlbGwtZm9ybWVkIGZvcm11bGEgdGhhdCBpcyBub3QgYXRvbWljLiBFcXVpdmFsZW50bHksIGl0IGlzIGEgd2VsbC1mb3JtZWQgZm9ybXVsYSBmb3JtZWQgdXNpbmcgYXQgbGVhc3Qgb25lIGxvZ2ljYWwgY29ubmVjdGl2ZS4=",
+      "interpretation_b64": "TW9sZWN1bGFyIGZvcm11bGFzIGFyZSBleGFjdGx5IHRoZSBmb3JtdWxhcyBvYnRhaW5lZCBieSBhcHBseWluZyBuZWdhdGlvbiBvciBhIGJpbmFyeSBjb25uZWN0aXZlIGF0IGxlYXN0IG9uY2Uu",
+      "dependencies": [
+        "def:well-formed-formula",
+        "def:atomic-formula-propositional-logic",
+        "def:logical-connective"
+      ],
+      "predicates": {
+        "defines": [
+          "MolecularFormula"
+        ],
+        "uses": [
+          "WellFormedFormula",
+          "AtomicFormula",
+          "LogicalConnective"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi",
+            "name": "formula metavariable",
+            "meaning": "a metavariable ranging over formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtNb2xlY3VsYXJGb3JtdWxhfShcdmFycGhpKQpcTG9uZ2xlZnRyaWdodGFycm93Clx2YXJwaGlcaW5cV0ZGXGxhbmRcbmVnIFxvcGVyYXRvcm5hbWV7QXRvbWljRm9ybXVsYX0oXHZhcnBoaSkuClxd",
+      "predicate_reading_b64": "XChcb3BlcmF0b3JuYW1le01vbGVjdWxhckZvcm11bGF9KFx2YXJwaGkpXCkgbWVhbnMgdGhhdCBcKFx2YXJwaGlcKSBoYXMgbm9udHJpdmlhbCBjb25uZWN0aXZlIHN0cnVjdHVyZS4="
+    },
+    {
+      "label": "def:main-connective-propositional-logic",
+      "kind": "definition",
+      "title": "Main Connective",
+      "body_b64": "VGhlIG1haW4gY29ubmVjdGl2ZSBvZiBhIG1vbGVjdWxhciBmb3JtdWxhIGlzIHRoZSBjb25uZWN0aXZlIGludHJvZHVjZWQgYXQgdGhlIGZpbmFsIGZvcm1hdGlvbiBzdGVwOgpcYmVnaW57ZW51bWVyYXRlfQpcaXRlbSBmb3IgXChcbmVnXHZhcnBoaVwpLCB0aGUgbWFpbiBjb25uZWN0aXZlIGlzIFwoXG5lZ1wpOwpcaXRlbSBmb3IgXCgoXHZhcnBoaVxjaXJjXHBzaSlcKSwgdGhlIG1haW4gY29ubmVjdGl2ZSBpcyBcKFxjaXJjXCkuClxlbmR7ZW51bWVyYXRlfQpBdG9taWMgZm9ybXVsYXMgaGF2ZSBubyBtYWluIGNvbm5lY3RpdmUu",
+      "interpretation_b64": "VGhlIG1haW4gY29ubmVjdGl2ZSBpZGVudGlmaWVzIHRoZSBvdXRlcm1vc3Qgc3ludGFjdGljIG9wZXJhdGlvbi4gSXQgaXMgdGhlIGZpcnN0IGNvbm5lY3RpdmUgdXNlZCB3aGVuIGFuYWx5emluZyBhIGZvcm11bGEgZnJvbSB0aGUgb3V0c2lkZSBpbndhcmQu",
+      "dependencies": [
+        "def:well-formed-formula",
+        "def:molecular-formula-propositional-logic",
+        "def:logical-connective"
+      ],
+      "predicates": {
+        "defines": [
+          "MainConnective"
+        ],
+        "uses": [
+          "MolecularFormula",
+          "LogicalConnective"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtNYWluQ29ubmVjdGl2ZX0oXG5lZ1x2YXJwaGksXG5lZykKXHF1YWRcdGV4dHthbmR9XHF1YWQKXG9wZXJhdG9ybmFtZXtNYWluQ29ubmVjdGl2ZX0oKFx2YXJwaGlcY2lyY1xwc2kpLFxjaXJjKS4KXF0=",
+      "predicate_reading_b64": "XChcb3BlcmF0b3JuYW1le01haW5Db25uZWN0aXZlfShcdmFycGhpLGMpXCkgbWVhbnMgdGhhdCBcKGNcKSBpcyB0aGUgb3V0ZXJtb3N0IGNvbm5lY3RpdmUgaW50cm9kdWNlZCBpbiB0aGUgZmluYWwgZm9ybWF0aW9uIHN0ZXAgb2YgXChcdmFycGhpXCku"
+    },
+    {
+      "label": "thm:structural-induction-propositional-formulas",
+      "kind": "theorem",
+      "title": "Structural Induction for Propositional Formulas",
+      "body_b64": "TGV0IFwoQShcdmFycGhpKVwpIGJlIGEgcHJvcGVydHkgb2Ygd2VsbC1mb3JtZWQgZm9ybXVsYXMuIFN1cHBvc2U6ClxiZWdpbntlbnVtZXJhdGV9ClxpdGVtIFwoQShQKVwpIGhvbGRzIGZvciBldmVyeSBcKFBcaW5cUHJvcFwpOwpcaXRlbSBpZiBcKEEoXHZhcnBoaSlcKSBob2xkcywgdGhlbiBcKEEoXG5lZ1x2YXJwaGkpXCkgaG9sZHM7ClxpdGVtIGlmIFwoQShcdmFycGhpKVwpIGFuZCBcKEEoXHBzaSlcKSBob2xkLCB0aGVuIFwoQSgoXHZhcnBoaVxjaXJjXHBzaSkpXCkgaG9sZHMgZm9yIGV2ZXJ5IFwoXGNpcmNcaW5ce1xsYW5kLFxsb3IsXHRvLFxsZWZ0cmlnaHRhcnJvd1x9XCkuClxlbmR7ZW51bWVyYXRlfQpUaGVuIFwoQShcdGhldGEpXCkgaG9sZHMgZm9yIGV2ZXJ5IFwoXHRoZXRhXGluXFdGRlwpLg==",
+      "interpretation_b64": "VG8gcHJvdmUgYSBzdGF0ZW1lbnQgZm9yIGFsbCBmb3JtdWxhcywgaXQgc3VmZmljZXMgdG8gcHJvdmUgaXQgZm9yIHByb3Bvc2l0aW9uYWwgdmFyaWFibGVzIGFuZCBzaG93IGl0IGlzIHByZXNlcnZlZCBieSBlYWNoIGZvcm11bGEtZm9ybWluZyBvcGVyYXRpb24u",
+      "dependencies": [
+        "def:well-formed-formula"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "WellFormedFormula",
+          "PropositionalVariable"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXGxlZnRbCihcZm9yYWxsIFBcaW5cUHJvcClBKFApClxsYW5kCihcZm9yYWxsXHZhcnBoaVxpblxXRkYpKEEoXHZhcnBoaSlcdG8gQShcbmVnXHZhcnBoaSkpClxsYW5kCihcZm9yYWxsXHZhcnBoaSxccHNpXGluXFdGRikKKFxmb3JhbGxcY2lyY1xpblx7XGxhbmQsXGxvcixcdG8sXGxlZnRyaWdodGFycm93XH0pClxiaWdsKChBKFx2YXJwaGkpXGxhbmQgQShccHNpKSlcdG8gQSgoXHZhcnBoaVxjaXJjXHBzaSkpXGJpZ3IpClxyaWdodF0KXHRvCihcZm9yYWxsXHRoZXRhXGluXFdGRilBKFx0aGV0YSkuClxd"
+    },
+    {
+      "label": "thm:structural-recursion-propositional-formulas",
+      "kind": "theorem",
+      "title": "Structural Recursion for Propositional Formulas",
+      "body_b64": "VG8gZGVmaW5lIGEgZnVuY3Rpb24gXChGXCkgb24gXChcV0ZGXCksIGl0IHN1ZmZpY2VzIHRvIHNwZWNpZnk6ClxiZWdpbntlbnVtZXJhdGV9ClxpdGVtIFwoRihQKVwpIGZvciBldmVyeSBcKFBcaW5cUHJvcFwpOwpcaXRlbSBcKEYoXG5lZ1x2YXJwaGkpXCkgaW4gdGVybXMgb2YgXChGKFx2YXJwaGkpXCk7ClxpdGVtIFwoRigoXHZhcnBoaVxjaXJjXHBzaSkpXCkgaW4gdGVybXMgb2YgXChGKFx2YXJwaGkpXCksIFwoRihccHNpKVwpLCBhbmQgXChcY2lyY1wpLgpcZW5ke2VudW1lcmF0ZX0KV2hlbiB0aGVzZSBjbGF1c2VzIHJlc3BlY3QgdGhlIGZvcm1hdGlvbiBydWxlcywgdGhleSBkZXRlcm1pbmUgYSB1bmlxdWUgZnVuY3Rpb24gb24gXChcV0ZGXCku",
+      "interpretation_b64": "U3RydWN0dXJhbCByZWN1cnNpb24ganVzdGlmaWVzIHJlY3Vyc2l2ZSBkZWZpbml0aW9ucyBzdWNoIGFzIHZhcmlhYmxlcyBvZiBhIGZvcm11bGEsIHN1YmZvcm11bGFzLCBkZXB0aCwgY29ubmVjdGl2ZSBjb3VudCwgc3ludGF4IHRyZWUsIGFuZCB0cnV0aCBldmFsdWF0aW9uLg==",
+      "dependencies": [
+        "def:well-formed-formula",
+        "thm:structural-induction-propositional-formulas"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXHRleHR7cmVjdXJzaXZlIGRhdGEgb24gdGhlIGZvcm1hdGlvbiBjbGF1c2VzIG9mIH1cV0ZGClxMb25ncmlnaHRhcnJvdwpcZXhpc3RzIUY6XFdGRlx0byBYClx0ZXh0eyBzYXRpc2Z5aW5nIHRob3NlIGNsYXVzZXN9LgpcXQ=="
+    },
+    {
+      "label": "lem:constructor-disjointness-propositional-formulas",
+      "kind": "lemma",
+      "title": "Constructor Disjointness for Propositional Formulas",
+      "body_b64": "VGhlIHRocmVlIG91dGVyIGZvcm1hdGlvbiBjYXNlcyBmb3IgcHJvcG9zaXRpb25hbCBmb3JtdWxhcyBhcmUgZGlzam9pbnQ6ClxiZWdpbntlbnVtZXJhdGV9ClxpdGVtIG5vIHByb3Bvc2l0aW9uYWwgdmFyaWFibGUgaXMgYSBuZWdhdGlvbiBmb3JtdWxhOwpcaXRlbSBubyBwcm9wb3NpdGlvbmFsIHZhcmlhYmxlIGlzIGEgYmluYXJ5IGZvcm11bGE7ClxpdGVtIG5vIG5lZ2F0aW9uIGZvcm11bGEgaXMgYSBiaW5hcnkgZm9ybXVsYS4KXGVuZHtlbnVtZXJhdGV9",
+      "interpretation_b64": "QSBmb3JtdWxhIGNhbm5vdCBiZSBwYXJzZWQgYXMgdHdvIGRpZmZlcmVudCBvdXRlciBmb3JtYXRpb24gdHlwZXMu",
+      "dependencies": [
+        "def:well-formed-formula",
+        "def:atomic-formula-propositional-logic",
+        "def:main-connective-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "WellFormedFormula",
+          "AtomicFormula",
+          "MolecularFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKUFxpblxQcm9wXFJpZ2h0YXJyb3cKXGxlZnRbCihcZm9yYWxsXHZhcnBoaVxpblxXRkYpKFBcbmVcbmVnXHZhcnBoaSkKXGxhbmQKKFxmb3JhbGxcdmFycGhpLFxwc2lcaW5cV0ZGKShcZm9yYWxsXGNpcmMpKFBcbmUoXHZhcnBoaVxjaXJjXHBzaSkpClxyaWdodF0KXF0KYW5kClxbCihcZm9yYWxsXHZhcnBoaSxccHNpLFxjaGlcaW5cV0ZGKShcZm9yYWxsXGNpcmMpClxiaWdsKFxuZWdcdmFycGhpXG5lKFxwc2lcY2lyY1xjaGkpXGJpZ3IpLgpcXQ==",
+      "readable_decomposition_b64": "XFsKXHVuZGVyYnJhY2V7UH1fe1x0ZXh0e2F0b21pY319ClxxcXVhZApcdW5kZXJicmFjZXtcbmVnXHZhcnBoaX1fe1x0ZXh0e25lZ2F0aW9uIGNhc2V9fQpccXF1YWQKXHVuZGVyYnJhY2V7KFx2YXJwaGlcY2lyY1xwc2kpfV97XHRleHR7YmluYXJ5IGNhc2V9fQpcXQpiZWxvbmcgdG8gdGhyZWUgZGlzdGluY3Qgb3V0ZXItZm9ybSBjbGFzc2VzLg=="
+    },
+    {
+      "label": "lem:constructor-injectivity-propositional-formulas",
+      "kind": "lemma",
+      "title": "Constructor Injectivity for Propositional Formulas",
+      "body_b64": "VGhlIHByb3Bvc2l0aW9uYWwgZm9ybXVsYSBjb25zdHJ1Y3RvcnMgYXJlIGluamVjdGl2ZToKXGJlZ2lue2VudW1lcmF0ZX0KXGl0ZW0gaWYgXChcbmVnXHZhcnBoaT1cbmVnXHBzaVwpLCB0aGVuIFwoXHZhcnBoaT1ccHNpXCk7ClxpdGVtIGlmIFwoKFx2YXJwaGlcY2lyY1xwc2kpPShcYWxwaGFcc3RhclxiZXRhKVwpLCB0aGVuIFwoXHZhcnBoaT1cYWxwaGFcKSwgXChccHNpPVxiZXRhXCksIGFuZCBcKFxjaXJjPVxzdGFyXCkuClxlbmR7ZW51bWVyYXRlfQ==",
+      "interpretation_b64": "SWYgdHdvIGZvcm11bGFzIGFyZSBidWlsdCBieSB0aGUgc2FtZSBvdXRlciBjb25zdHJ1Y3RvciBhbmQgYXJlIGVxdWFsIGFzIHN0cmluZ3MsIHRoZW4gdGhlaXIgaW1tZWRpYXRlIGNvbnN0aXR1ZW50cyBhcmUgZXF1YWwu",
+      "dependencies": [
+        "def:well-formed-formula",
+        "def:logical-connective"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "WellFormedFormula",
+          "LogicalConnective"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\alpha,\\beta",
+            "name": "additional formula metavariables",
+            "meaning": "formula metavariables used in comparison statements",
+            "scope": "chapter",
+            "status": "local"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKKFxmb3JhbGxcdmFycGhpLFxwc2lcaW5cV0ZGKQooXG5lZ1x2YXJwaGk9XG5lZ1xwc2lcdG9cdmFycGhpPVxwc2kpClxdCmFuZApcWwooXGZvcmFsbFx2YXJwaGksXHBzaSxcYWxwaGEsXGJldGFcaW5cV0ZGKQooXGZvcmFsbFxjaXJjLFxzdGFyXGluXHtcbGFuZCxcbG9yLFx0byxcbGVmdHJpZ2h0YXJyb3dcfSkKXGxlZnRbCihcdmFycGhpXGNpcmNccHNpKT0oXGFscGhhXHN0YXJcYmV0YSkKXHRvCihcdmFycGhpPVxhbHBoYVxsYW5kXHBzaT1cYmV0YVxsYW5kXGNpcmM9XHN0YXIpClxyaWdodF0uClxd"
+    },
+    {
+      "label": "thm:unique-decomposition-propositional-formulas",
+      "kind": "theorem",
+      "title": "Unique Decomposition for Propositional Formulas",
+      "body_b64": "RXZlcnkgXChcdmFycGhpXGluXFdGRlwpIGhhcyBleGFjdGx5IG9uZSBvdXRlcm1vc3QgZm9ybToKXGJlZ2lue2VudW1lcmF0ZX0KXGl0ZW0gXChcdmFycGhpPVBcKSBmb3IgYSB1bmlxdWUgXChQXGluXFByb3BcKTsKXGl0ZW0gXChcdmFycGhpPVxuZWdccHNpXCkgZm9yIGEgdW5pcXVlIFwoXHBzaVxpblxXRkZcKTsKXGl0ZW0gXChcdmFycGhpPShccHNpXGNpcmNcY2hpKVwpIGZvciB1bmlxdWUgXChccHNpLFxjaGlcaW5cV0ZGXCkgYW5kIGEgdW5pcXVlIGJpbmFyeSBjb25uZWN0aXZlIFwoXGNpcmNcaW5ce1xsYW5kLFxsb3IsXHRvLFxsZWZ0cmlnaHRhcnJvd1x9XCkuClxlbmR7ZW51bWVyYXRlfQ==",
+      "interpretation_b64": "VW5pcXVlIGRlY29tcG9zaXRpb24gbWFrZXMgcmVjdXJzaXZlIGRlZmluaXRpb25zIGFuZCBpbmR1Y3Rpb24gb24gZm9ybXVsYXMgdW5hbWJpZ3VvdXMu",
+      "dependencies": [
+        "def:well-formed-formula",
+        "lem:constructor-disjointness-propositional-formulas",
+        "lem:constructor-injectivity-propositional-formulas"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "WellFormedFormula",
+          "PropositionalVariable",
+          "AtomicFormula",
+          "MolecularFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXGZvcmFsbFx2YXJwaGlcaW5cV0ZGLFxxdWFkClx0ZXh0e2V4YWN0bHkgb25lIG9mIHRoZSBmb2xsb3dpbmcgaG9sZHM6fQpcXQpcWwpcdmFycGhpXGluXFByb3AsXHFxdWFkClxleGlzdHMhXHBzaVxpblxXRkZcLChcdmFycGhpPVxuZWdccHNpKSxccXF1YWQKXGV4aXN0cyFccHNpLFxjaGlcaW5cV0ZGXDtcZXhpc3RzIVxjaXJjXGluXHtcbGFuZCxcbG9yLFx0byxcbGVmdHJpZ2h0YXJyb3dcfVwsKFx2YXJwaGk9KFxwc2lcY2lyY1xjaGkpKS4KXF0=",
+      "readable_decomposition_b64": "XFsKXHZhcnBoaQpcaW4KXHVuZGVyYnJhY2V7XFByb3B9X3tcdGV4dHthdG9taWMgY2FzZX19ClxxdWFkXHRleHR7b3J9XHF1YWQKXHZhcnBoaT0KXHVuZGVyYnJhY2V7XG5lZ1xwc2l9X3tcdGV4dHtuZWdhdGlvbiBjYXNlfX0KXHF1YWRcdGV4dHtvcn1ccXVhZApcdmFycGhpPQpcdW5kZXJicmFjZXsoXHBzaVxjaXJjXGNoaSl9X3tcdGV4dHtiaW5hcnkgY2FzZX19LApcXQphbmQgZXhhY3RseSBvbmUgb2YgdGhlc2UgYWx0ZXJuYXRpdmVzIGhvbGRzLg=="
+    },
+    {
+      "label": "def:parse-tree-propositional-logic",
+      "kind": "definition",
+      "title": "Parse Tree",
+      "body_b64": "VGhlIHBhcnNlIHRyZWUsIG9yIHN5bnRheCB0cmVlLCBvZiBhIHdlbGwtZm9ybWVkIGZvcm11bGEgaXMgdGhlIHRyZWUgcmVwcmVzZW50YXRpb24gb2YgaXRzIHJlY3Vyc2l2ZSBjb25zdHJ1Y3Rpb246ClxiZWdpbntlbnVtZXJhdGV9ClxpdGVtIGEgcHJvcG9zaXRpb25hbCB2YXJpYWJsZSBpcyByZXByZXNlbnRlZCBieSBhIHNpbmdsZSBsZWFmOwpcaXRlbSBhIGZvcm11bGEgXChcbmVnXHZhcnBoaVwpIGlzIHJlcHJlc2VudGVkIGJ5IGEgcm9vdCBsYWJlbGVkIFwoXG5lZ1wpIHdpdGggb25lIGNoaWxkLCB0aGUgcGFyc2UgdHJlZSBvZiBcKFx2YXJwaGlcKTsKXGl0ZW0gYSBmb3JtdWxhIFwoKFx2YXJwaGlcY2lyY1xwc2kpXCkgaXMgcmVwcmVzZW50ZWQgYnkgYSByb290IGxhYmVsZWQgXChcY2lyY1wpIHdpdGggdHdvIGNoaWxkcmVuLCB0aGUgcGFyc2UgdHJlZXMgb2YgXChcdmFycGhpXCkgYW5kIFwoXHBzaVwpLgpcZW5ke2VudW1lcmF0ZX0=",
+      "interpretation_b64": "VGhlIHBhcnNlIHRyZWUgcmVjb3JkcyB0aGUgc2FtZSBzdHJ1Y3R1cmUgZGVzY3JpYmVkIGJ5IHVuaXF1ZSBkZWNvbXBvc2l0aW9uLiBJdCB0dXJucyB0aGUgcmVjdXJzaXZlIGNvbnN0cnVjdGlvbiBvZiBhIGZvcm11bGEgaW50byBhIHZpc2libGUgdHJlZS4=",
+      "dependencies": [
+        "def:well-formed-formula",
+        "thm:unique-decomposition-propositional-formulas"
+      ],
+      "predicates": {
+        "defines": [
+          "ParseTree"
+        ],
+        "uses": [
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\operatorname{Tree}(\\varphi)",
+            "name": "syntax tree",
+            "meaning": "parse tree or formation tree of a formula",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:parse-tree-propositional-logic"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtUcmVlfTpcV0ZGXHRvXHtcdGV4dHtmaW5pdGUgcm9vdGVkIGxhYmVsZWQgdHJlZXN9XH0KXF0KaXMgZGVmaW5lZCByZWN1cnNpdmVseSBieSB0aGUgdGhyZWUgZm9ybWF0aW9uIGNsYXVzZXMgZm9yIHByb3Bvc2l0aW9uYWwgZm9ybXVsYXMu"
+    },
+    {
+      "label": "thm:unique-syntax-tree-propositional-formulas",
+      "kind": "theorem",
+      "title": "Unique Syntax Tree for Propositional Formulas",
+      "body_b64": "RXZlcnkgcHJvcG9zaXRpb25hbCB3ZWxsLWZvcm1lZCBmb3JtdWxhIGhhcyBhIHVuaXF1ZSBwYXJzZSB0cmVlLg==",
+      "interpretation_b64": "QSBmb3JtdWxhIGhhcyBleGFjdGx5IG9uZSB0cmVlIHJlcHJlc2VudGF0aW9uIG9mIGl0cyByZWN1cnNpdmUgY29uc3RydWN0aW9uLiBUaGlzIGlzIHRoZSB0cmVlIGZvcm0gb2YgdW5pcXVlIGRlY29tcG9zaXRpb24u",
+      "dependencies": [
+        "def:parse-tree-propositional-logic",
+        "thm:unique-decomposition-propositional-formulas"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "WellFormedFormula",
+          "ParseTree"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\operatorname{Tree}(\\varphi)",
+            "name": "syntax tree",
+            "meaning": "parse tree or formation tree of a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXGZvcmFsbFx2YXJwaGlcaW5cV0ZGLFxxdWFkIFxleGlzdHMhVFw7IChUPVxvcGVyYXRvcm5hbWV7VHJlZX0oXHZhcnBoaSkpLgpcXQ=="
+    },
+    {
+      "label": "def:formula-variable-set-propositional-logic",
+      "kind": "definition",
+      "title": "Variable Set of a Formula",
+      "body_b64": "VGhlIHZhcmlhYmxlIHNldCBcKFxvcGVyYXRvcm5hbWV7VmFyfShcdmFycGhpKVwpIG9mIGEgZm9ybXVsYSBcKFx2YXJwaGlcKSBpcyBkZWZpbmVkIHJlY3Vyc2l2ZWx5OgpcYmVnaW57ZW51bWVyYXRlfQpcaXRlbSBpZiBcKFx2YXJwaGk9UFxpblxQcm9wXCksIHRoZW4gXChcb3BlcmF0b3JuYW1le1Zhcn0oXHZhcnBoaSk9XHtQXH1cKTsKXGl0ZW0gaWYgXChcdmFycGhpPVxuZWdccHNpXCksIHRoZW4gXChcb3BlcmF0b3JuYW1le1Zhcn0oXHZhcnBoaSk9XG9wZXJhdG9ybmFtZXtWYXJ9KFxwc2kpXCk7ClxpdGVtIGlmIFwoXHZhcnBoaT0oXHBzaVxjaXJjXGNoaSlcKSwgdGhlbgpcWwpcb3BlcmF0b3JuYW1le1Zhcn0oXHZhcnBoaSk9XG9wZXJhdG9ybmFtZXtWYXJ9KFxwc2kpXGN1cFxvcGVyYXRvcm5hbWV7VmFyfShcY2hpKS4KXF0KXGVuZHtlbnVtZXJhdGV9",
+      "interpretation_b64": "VGhlIHZhcmlhYmxlIHNldCByZWNvcmRzIGV4YWN0bHkgd2hpY2ggcHJvcG9zaXRpb25hbCB2YXJpYWJsZXMgb2NjdXIgaW4gYSBmb3JtdWxhLg==",
+      "dependencies": [
+        "def:well-formed-formula",
+        "thm:structural-recursion-propositional-formulas"
+      ],
+      "predicates": {
+        "defines": [
+          "FormulaVariableSet"
+        ],
+        "uses": [
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\operatorname{Var}(\\varphi)",
+            "name": "variable set of a formula",
+            "meaning": "the set of propositional variables occurring in a formula",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:formula-variable-set-propositional-logic"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtWYXJ9KFApPVx7UFx9LFxxcXVhZApcb3BlcmF0b3JuYW1le1Zhcn0oXG5lZ1xwc2kpPVxvcGVyYXRvcm5hbWV7VmFyfShccHNpKSxccXF1YWQKXG9wZXJhdG9ybmFtZXtWYXJ9KChccHNpXGNpcmNcY2hpKSk9XG9wZXJhdG9ybmFtZXtWYXJ9KFxwc2kpXGN1cFxvcGVyYXRvcm5hbWV7VmFyfShcY2hpKS4KXF0="
+    },
+    {
+      "label": "def:subformula-propositional-logic",
+      "kind": "definition",
+      "title": "Subformula",
+      "body_b64": "VGhlIHNldCBcKFxvcGVyYXRvcm5hbWV7U3VifShcdmFycGhpKVwpIG9mIHN1YmZvcm11bGFzIG9mIGEgZm9ybXVsYSBcKFx2YXJwaGlcKSBpcyBkZWZpbmVkIHJlY3Vyc2l2ZWx5OgpcYmVnaW57ZW51bWVyYXRlfQpcaXRlbSBpZiBcKFx2YXJwaGlcKSBpcyBhdG9taWMsIHRoZW4gXChcb3BlcmF0b3JuYW1le1N1Yn0oXHZhcnBoaSk9XHtcdmFycGhpXH1cKTsKXGl0ZW0gaWYgXChcdmFycGhpPVxuZWdccHNpXCksIHRoZW4KXFsKXG9wZXJhdG9ybmFtZXtTdWJ9KFx2YXJwaGkpPVx7XHZhcnBoaVx9XGN1cFxvcGVyYXRvcm5hbWV7U3VifShccHNpKTsKXF0KXGl0ZW0gaWYgXChcdmFycGhpPShccHNpXGNpcmNcY2hpKVwpLCB0aGVuClxbClxvcGVyYXRvcm5hbWV7U3VifShcdmFycGhpKT1ce1x2YXJwaGlcfVxjdXBcb3BlcmF0b3JuYW1le1N1Yn0oXHBzaSlcY3VwXG9wZXJhdG9ybmFtZXtTdWJ9KFxjaGkpLgpcXQpcZW5ke2VudW1lcmF0ZX0KQSBwcm9wZXIgc3ViZm9ybXVsYSBpcyBhIHN1YmZvcm11bGEgb3RoZXIgdGhhbiBcKFx2YXJwaGlcKSBpdHNlbGYu",
+      "interpretation_b64": "U3ViZm9ybXVsYXMgYXJlIHRoZSBmb3JtdWxhcyB0aGF0IG9jY3VyIGF0IG5vZGVzIG9mIHRoZSBwYXJzZSB0cmVlLg==",
+      "dependencies": [
+        "def:well-formed-formula",
+        "thm:unique-decomposition-propositional-formulas"
+      ],
+      "predicates": {
+        "defines": [
+          "Subformula"
+        ],
+        "uses": [
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\operatorname{Sub}(\\varphi)",
+            "name": "subformula set",
+            "meaning": "the set of subformulas of a formula",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:subformula-propositional-logic"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtTdWJ9KFApPVx7UFx9LFxxcXVhZApcb3BlcmF0b3JuYW1le1N1Yn0oXG5lZ1xwc2kpPVx7XG5lZ1xwc2lcfVxjdXBcb3BlcmF0b3JuYW1le1N1Yn0oXHBzaSksClxdClxbClxvcGVyYXRvcm5hbWV7U3VifSgoXHBzaVxjaXJjXGNoaSkpCj0KXHsoXHBzaVxjaXJjXGNoaSlcfVxjdXBcb3BlcmF0b3JuYW1le1N1Yn0oXHBzaSlcY3VwXG9wZXJhdG9ybmFtZXtTdWJ9KFxjaGkpLgpcXQ=="
+    },
+    {
+      "label": "def:formula-depth-propositional-logic",
+      "kind": "definition",
+      "title": "Formula Depth",
+      "body_b64": "VGhlIGRlcHRoIG9mIGEgZm9ybXVsYSBcKFx2YXJwaGlcKSwgZGVub3RlZCBcKFxvcGVyYXRvcm5hbWV7ZGVwdGh9KFx2YXJwaGkpXCksIGlzIGRlZmluZWQgcmVjdXJzaXZlbHk6ClxiZWdpbntlbnVtZXJhdGV9ClxpdGVtIGlmIFwoXHZhcnBoaVwpIGlzIGF0b21pYywgdGhlbiBcKFxvcGVyYXRvcm5hbWV7ZGVwdGh9KFx2YXJwaGkpPTBcKTsKXGl0ZW0gaWYgXChcdmFycGhpPVxuZWdccHNpXCksIHRoZW4gXChcb3BlcmF0b3JuYW1le2RlcHRofShcdmFycGhpKT1cb3BlcmF0b3JuYW1le2RlcHRofShccHNpKSsxXCk7ClxpdGVtIGlmIFwoXHZhcnBoaT0oXHBzaVxjaXJjXGNoaSlcKSwgdGhlbgpcWwpcb3BlcmF0b3JuYW1le2RlcHRofShcdmFycGhpKT1cbWF4XHtcb3BlcmF0b3JuYW1le2RlcHRofShccHNpKSxcb3BlcmF0b3JuYW1le2RlcHRofShcY2hpKVx9KzEuClxdClxlbmR7ZW51bWVyYXRlfQ==",
+      "interpretation_b64": "Rm9ybXVsYSBkZXB0aCBtZWFzdXJlcyB0aGUgaGVpZ2h0IG9mIHRoZSBzeW50YXggdHJlZS4gU29tZSBhdXRob3JzIGNhbGwgdGhpcyB0aGUgcmFuaywgY29tcGxleGl0eSwgb3IgZm9ybWF0aW9uIGRlcHRoIG9mIHRoZSBmb3JtdWxhLg==",
+      "dependencies": [
+        "def:well-formed-formula",
+        "def:parse-tree-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "FormulaDepth"
+        ],
+        "uses": [
+          "WellFormedFormula",
+          "ParseTree"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\operatorname{depth}(\\varphi)",
+            "name": "formula depth",
+            "meaning": "height, rank, or complexity of the formula formation tree",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:formula-depth-propositional-logic"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtkZXB0aH0oUCk9MCxccXF1YWQKXG9wZXJhdG9ybmFtZXtkZXB0aH0oXG5lZ1xwc2kpPVxvcGVyYXRvcm5hbWV7ZGVwdGh9KFxwc2kpKzEsClxdClxbClxvcGVyYXRvcm5hbWV7ZGVwdGh9KChccHNpXGNpcmNcY2hpKSkKPQpcbWF4XHtcb3BlcmF0b3JuYW1le2RlcHRofShccHNpKSxcb3BlcmF0b3JuYW1le2RlcHRofShcY2hpKVx9KzEuClxd"
+    },
+    {
+      "label": "def:connective-count-propositional-logic",
+      "kind": "definition",
+      "title": "Connective Count",
+      "body_b64": "VGhlIGNvbm5lY3RpdmUgY291bnQgb2YgYSBmb3JtdWxhIFwoXHZhcnBoaVwpLCBkZW5vdGVkIFwoXG9wZXJhdG9ybmFtZXtjb25ufShcdmFycGhpKVwpLCBpcyBkZWZpbmVkIHJlY3Vyc2l2ZWx5OgpcYmVnaW57ZW51bWVyYXRlfQpcaXRlbSBpZiBcKFx2YXJwaGlcKSBpcyBhdG9taWMsIHRoZW4gXChcb3BlcmF0b3JuYW1le2Nvbm59KFx2YXJwaGkpPTBcKTsKXGl0ZW0gaWYgXChcdmFycGhpPVxuZWdccHNpXCksIHRoZW4gXChcb3BlcmF0b3JuYW1le2Nvbm59KFx2YXJwaGkpPVxvcGVyYXRvcm5hbWV7Y29ubn0oXHBzaSkrMVwpOwpcaXRlbSBpZiBcKFx2YXJwaGk9KFxwc2lcY2lyY1xjaGkpXCksIHRoZW4KXFsKXG9wZXJhdG9ybmFtZXtjb25ufShcdmFycGhpKT1cb3BlcmF0b3JuYW1le2Nvbm59KFxwc2kpK1xvcGVyYXRvcm5hbWV7Y29ubn0oXGNoaSkrMS4KXF0KXGVuZHtlbnVtZXJhdGV9",
+      "interpretation_b64": "Rm9ybXVsYSBkZXB0aCBtZWFzdXJlcyB0aGUgaGVpZ2h0IG9mIHRoZSBzeW50YXggdHJlZS4gQ29ubmVjdGl2ZSBjb3VudCBtZWFzdXJlcyB0aGUgbnVtYmVyIG9mIGNvbm5lY3RpdmUgbm9kZXMgaW4gdGhlIHN5bnRheCB0cmVlLg==",
+      "dependencies": [
+        "def:well-formed-formula",
+        "def:parse-tree-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "ConnectiveCount"
+        ],
+        "uses": [
+          "WellFormedFormula",
+          "ParseTree"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\operatorname{conn}(\\varphi)",
+            "name": "connective count",
+            "meaning": "the number of connective occurrences in a formula",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:connective-count-propositional-logic"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg",
+            "name": "negation",
+            "meaning": "unary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\land",
+            "name": "conjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\lor",
+            "name": "disjunction",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\to",
+            "name": "conditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\leftrightarrow",
+            "name": "biconditional",
+            "meaning": "binary propositional connective",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\circ",
+            "name": "generic binary connective",
+            "meaning": "an arbitrary member of \\(\\{\\land,\\lor,\\to,\\leftrightarrow\\}\\)",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtjb25ufShQKT0wLFxxcXVhZApcb3BlcmF0b3JuYW1le2Nvbm59KFxuZWdccHNpKT1cb3BlcmF0b3JuYW1le2Nvbm59KFxwc2kpKzEsClxdClxbClxvcGVyYXRvcm5hbWV7Y29ubn0oKFxwc2lcY2lyY1xjaGkpKQo9ClxvcGVyYXRvcm5hbWV7Y29ubn0oXHBzaSkrXG9wZXJhdG9ybmFtZXtjb25ufShcY2hpKSsxLgpcXQ=="
+    },
+    {
+      "label": "lem:proper-subformula-depth-propositional-logic",
+      "kind": "lemma",
+      "title": "Proper Subformula Depth",
+      "body_b64": "SWYgXChccHNpXCkgaXMgYSBwcm9wZXIgc3ViZm9ybXVsYSBvZiBcKFx2YXJwaGlcKSwgdGhlbgpcWwpcb3BlcmF0b3JuYW1le2RlcHRofShccHNpKTxcb3BlcmF0b3JuYW1le2RlcHRofShcdmFycGhpKS4KXF0=",
+      "interpretation_b64": "RXZlcnkgZGVzY2VudCBpbnRvIGEgcHJvcGVyIHN1YmZvcm11bGEgbG93ZXJzIGZvcm11bGEgZGVwdGguIFRoaXMganVzdGlmaWVzIGluZHVjdGlvbiBvbiBmb3JtdWxhIGRlcHRoIGFuZCByZWN1cnNpdmUgcHJvb2ZzIG92ZXIgc3ViZm9ybXVsYXMu",
+      "dependencies": [
+        "def:subformula-propositional-logic",
+        "def:formula-depth-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "Subformula",
+          "FormulaDepth",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\operatorname{Sub}(\\varphi)",
+            "name": "subformula set",
+            "meaning": "the set of subformulas of a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\operatorname{depth}(\\varphi)",
+            "name": "formula depth",
+            "meaning": "height of the formula tree",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKKFxmb3JhbGxcdmFycGhpLFxwc2lcaW5cV0ZGKQpcbGVmdFsKXHBzaVxpblxvcGVyYXRvcm5hbWV7U3VifShcdmFycGhpKVxsYW5kIFxwc2lcbmVcdmFycGhpClx0bwpcb3BlcmF0b3JuYW1le2RlcHRofShccHNpKTxcb3BlcmF0b3JuYW1le2RlcHRofShcdmFycGhpKQpccmlnaHRdLgpcXQ=="
+    },
+    {
+      "label": "lem:finiteness-of-variables-propositional-formulas",
+      "kind": "lemma",
+      "title": "Finiteness of Variables in a Formula",
+      "body_b64": "Rm9yIGV2ZXJ5IFwoXHZhcnBoaVxpblxXRkZcKSwgdGhlIHNldCBcKFxvcGVyYXRvcm5hbWV7VmFyfShcdmFycGhpKVwpIGlzIGZpbml0ZS4=",
+      "interpretation_b64": "RXZlcnkgZm9ybXVsYSBkZXBlbmRzIG9uIG9ubHkgZmluaXRlbHkgbWFueSBwcm9wb3NpdGlvbmFsIHZhcmlhYmxlcywgZXZlbiB0aG91Z2ggdGhlIGxhbmd1YWdlIG1heSBjb250YWluIGluZmluaXRlbHkgbWFueSB2YXJpYWJsZXMu",
+      "dependencies": [
+        "def:formula-variable-set-propositional-logic",
+        "thm:structural-induction-propositional-formulas"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "WellFormedFormula",
+          "FormulaVariableSet"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\operatorname{Var}(\\varphi)",
+            "name": "variable set of a formula",
+            "meaning": "the set of variables occurring in a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKKFxmb3JhbGxcdmFycGhpXGluXFdGRilccXVhZApcb3BlcmF0b3JuYW1le1Zhcn0oXHZhcnBoaSlcdGV4dHsgaXMgZmluaXRlfS4KXF0="
+    },
+    {
+      "label": "lem:finiteness-of-subformulas-propositional-formulas",
+      "kind": "lemma",
+      "title": "Finiteness of Subformulas",
+      "body_b64": "Rm9yIGV2ZXJ5IFwoXHZhcnBoaVxpblxXRkZcKSwgdGhlIHNldCBcKFxvcGVyYXRvcm5hbWV7U3VifShcdmFycGhpKVwpIGlzIGZpbml0ZS4=",
+      "interpretation_b64": "RXZlcnkgZm9ybXVsYSBoYXMgb25seSBmaW5pdGVseSBtYW55IHN5bnRhY3RpYyBwYXJ0cy4=",
+      "dependencies": [
+        "def:subformula-propositional-logic",
+        "thm:structural-induction-propositional-formulas"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "WellFormedFormula",
+          "Subformula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\operatorname{Sub}(\\varphi)",
+            "name": "subformula set",
+            "meaning": "the set of subformulas of a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKKFxmb3JhbGxcdmFycGhpXGluXFdGRilccXVhZApcb3BlcmF0b3JuYW1le1N1Yn0oXHZhcnBoaSlcdGV4dHsgaXMgZmluaXRlfS4KXF0="
+    }
+  ]
+}

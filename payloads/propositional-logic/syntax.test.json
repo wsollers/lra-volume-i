@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "chapter": "propositional-logic",
+  "topic": "syntax",
+  "artifacts": [
+    {
+      "label": "def:truth-value-propositional-logic",
+      "kind": "definition",
+      "title": "Truth Value",
+      "body": "The set of truth values is\n\\[\n\\mathbb{B}:=\\{\\False,\\True\\}.\n\\]\nEquivalently, some sources identify \\(\\mathbb{B}\\) with \\(\\{0,1\\}\\), with \\(0\\) read as false and \\(1\\) read as true.",
+      "quantified_form": "\\[\nx\\in\\mathbb{B}\\Longleftrightarrow x=\\False\\ \\text{or}\\ x=\\True.\n\\]",
+      "interpretation": "Truth values are the semantic targets of propositional formulas. Syntax determines which strings are formulas; semantics later assigns elements of \\(\\mathbb{B}\\) to formulas.",
+      "proof_required": false,
+      "dependencies": [],
+      "predicates": {
+        "defines": [],
+        "uses": []
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\mathbb{B}",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "latex": "\\mathbb{B}",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:truth-value-propositional-logic",
+            "registry_id": "propositional_logic.truth_values"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\False",
+            "name": "false truth value",
+            "meaning": "false truth value",
+            "registry_id": "propositional_logic.false_value"
+          },
+          {
+            "symbol": "\\True",
+            "name": "true truth value",
+            "meaning": "true truth value",
+            "registry_id": "propositional_logic.true_value"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      }
+    }
+  ]
+}

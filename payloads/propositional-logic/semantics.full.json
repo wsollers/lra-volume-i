@@ -1,0 +1,942 @@
+{
+  "schema_version": 1,
+  "chapter": "propositional-logic",
+  "topic": "semantics",
+  "artifacts": [
+    {
+      "label": "def:truth-assignment-propositional-logic",
+      "kind": "definition",
+      "title": "Truth Assignment",
+      "body_b64": "QSB0cnV0aCBhc3NpZ25tZW50IGZvciBwcm9wb3NpdGlvbmFsIGxvZ2ljIGlzIGEgZnVuY3Rpb24KXFsKdjpcUHJvcFx0b1xtYXRoYmJ7Qn0uClxdClRodXMgYSB0cnV0aCBhc3NpZ25tZW50IGFzc2lnbnMgZWl0aGVyIFwoXG1hdGhybXtGYWxzZX1cKSBvciBcKFxtYXRocm17VHJ1ZX1cKSB0byBlYWNoIHByb3Bvc2l0aW9uYWwgdmFyaWFibGUu",
+      "interpretation_b64": "QSB0cnV0aCBhc3NpZ25tZW50IGZpeGVzIHRoZSB0cnV0aCB2YWx1ZXMgb2YgYXRvbWljIGZvcm11bGFzLiBUaGUgcmVjdXJzaXZlIHNlbWFudGljcyBvZiB0aGUgY29ubmVjdGl2ZXMgdGhlbiBkZXRlcm1pbmVzIHRoZSB0cnV0aCB2YWx1ZSBvZiBlYWNoIG1vbGVjdWxhciBmb3JtdWxhLg==",
+      "dependencies": [
+        "def:truth-value-propositional-logic",
+        "def:propositional-variable",
+        "def:well-formed-formula"
+      ],
+      "predicates": {
+        "defines": [
+          "TruthAssignment"
+        ],
+        "uses": [
+          "PropositionalVariable",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "v",
+            "name": "truth assignment",
+            "meaning": "a truth assignment on propositional variables",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "def:truth-assignment-propositional-logic"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\mathbb{B}",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtUcnV0aEFzc2lnbm1lbnR9KHYpClxMb25nbGVmdHJpZ2h0YXJyb3cKdjpcUHJvcFx0b1xtYXRoYmJ7Qn0uClxd",
+      "predicate_reading_b64": "XFsKXG9wZXJhdG9ybmFtZXtUcnV0aEFzc2lnbm1lbnR9KHYpClxdCm1lYW5zIHRoYXQgXCh2XCkgYXNzaWducyBhIHRydXRoIHZhbHVlIHRvIGV2ZXJ5IHByb3Bvc2l0aW9uYWwgdmFyaWFibGUu"
+    },
+    {
+      "label": "thm:unique-extension-truth-assignment-propositional-logic",
+      "kind": "theorem",
+      "title": "Unique Extension of a Truth Assignment",
+      "body_b64": "RXZlcnkgdHJ1dGggYXNzaWdubWVudCBcKHY6XFByb3BcdG9cbWF0aGJie0J9XCkgZXh0ZW5kcyB1bmlxdWVseSB0byBhIGZ1bmN0aW9uClxbClx3aWRlaGF0IHY6XFdGRlx0b1xtYXRoYmJ7Qn0KXF0Kc2F0aXNmeWluZyB0aGUgZm9sbG93aW5nIGNsYXVzZXM6ClxbClx3aWRlaGF0IHYoUCk9dihQKVxxdWFkKFBcaW5cUHJvcCksClxdClxbClx3aWRlaGF0IHYoXG5lZ1x2YXJwaGkpPVxtYXRocm17VHJ1ZX0KXExvbmdsZWZ0cmlnaHRhcnJvdwpcd2lkZWhhdCB2KFx2YXJwaGkpPVxtYXRocm17RmFsc2V9LApcXQpcWwpcd2lkZWhhdCB2KFx2YXJwaGlcbGFuZFxwc2kpPVxtYXRocm17VHJ1ZX0KXExvbmdsZWZ0cmlnaHRhcnJvdwpcd2lkZWhhdCB2KFx2YXJwaGkpPVxtYXRocm17VHJ1ZX0KXHRleHR7IGFuZCB9Clx3aWRlaGF0IHYoXHBzaSk9XG1hdGhybXtUcnVlfSwKXF0KXFsKXHdpZGVoYXQgdihcdmFycGhpXGxvclxwc2kpPVxtYXRocm17VHJ1ZX0KXExvbmdsZWZ0cmlnaHRhcnJvdwpcd2lkZWhhdCB2KFx2YXJwaGkpPVxtYXRocm17VHJ1ZX0KXHRleHR7IG9yIH0KXHdpZGVoYXQgdihccHNpKT1cbWF0aHJte1RydWV9LApcXQpcWwpcd2lkZWhhdCB2KFx2YXJwaGlcdG9ccHNpKT1cbWF0aHJte1RydWV9ClxMb25nbGVmdHJpZ2h0YXJyb3cKXHdpZGVoYXQgdihcdmFycGhpKT1cbWF0aHJte0ZhbHNlfQpcdGV4dHsgb3IgfQpcd2lkZWhhdCB2KFxwc2kpPVxtYXRocm17VHJ1ZX0sClxdCmFuZApcWwpcd2lkZWhhdCB2KFx2YXJwaGlcbGVmdHJpZ2h0YXJyb3dccHNpKT1cbWF0aHJte1RydWV9ClxMb25nbGVmdHJpZ2h0YXJyb3cKXHdpZGVoYXQgdihcdmFycGhpKT1cd2lkZWhhdCB2KFxwc2kpLgpcXQ==",
+      "interpretation_b64": "QSB2YWx1YXRpb24gb24gdmFyaWFibGVzIGRldGVybWluZXMgZXhhY3RseSBvbmUgdHJ1dGggdmFsdWUgZm9yIGV2ZXJ5IGZvcm11bGEuIFRoaXMgdGhlb3JlbSBpcyB0aGUgc2VtYW50aWMgY291bnRlcnBhcnQgb2Ygc3RydWN0dXJhbCByZWN1cnNpb24gYW5kIHVuaXF1ZSBkZWNvbXBvc2l0aW9uLg==",
+      "dependencies": [
+        "def:truth-assignment-propositional-logic",
+        "def:well-formed-formula",
+        "thm:structural-recursion-propositional-formulas",
+        "thm:unique-decomposition-propositional-formulas"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "TruthAssignment",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\widehat v",
+            "name": "extended truth assignment",
+            "meaning": "unique extension of a truth assignment to formulas",
+            "scope": "chapter",
+            "status": "canonical",
+            "introduced_by": "thm:unique-extension-truth-assignment-propositional-logic"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "v",
+            "name": "truth assignment",
+            "meaning": "truth assignment on propositional variables",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\mathbb{B}",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\neg,\\land,\\lor,\\to,\\leftrightarrow",
+            "name": "standard connectives",
+            "meaning": "standard propositional connectives",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXGJlZ2lue2FsaWduZWR9CiYoXGZvcmFsbCB2OlxQcm9wXHRvXG1hdGhiYntCfSkoXGV4aXN0cyFcd2lkZWhhdCB2OlxXRkZcdG9cbWF0aGJie0J9KVxcCiZccXVhZFx0ZXh0e3N1Y2ggdGhhdCwgZm9yIGFsbCB9UFxpblxQcm9wXHRleHR7IGFuZCB9XHZhcnBoaSxccHNpXGluXFdGRixcXAomXHF1YWQgXHdpZGVoYXQgdihQKT12KFApLFxcCiZccXVhZCBcd2lkZWhhdCB2KFxuZWdcdmFycGhpKT1cbWF0aHJte1RydWV9CiAgIFxMb25nbGVmdHJpZ2h0YXJyb3cgXHdpZGVoYXQgdihcdmFycGhpKT1cbWF0aHJte0ZhbHNlfSxcXAomXHF1YWQgXHdpZGVoYXQgdihcdmFycGhpXGxhbmRccHNpKT1cbWF0aHJte1RydWV9CiAgIFxMb25nbGVmdHJpZ2h0YXJyb3cKICAgKFx3aWRlaGF0IHYoXHZhcnBoaSk9XG1hdGhybXtUcnVlfVxsYW5kIFx3aWRlaGF0IHYoXHBzaSk9XG1hdGhybXtUcnVlfSksXFwKJlxxdWFkIFx3aWRlaGF0IHYoXHZhcnBoaVxsb3JccHNpKT1cbWF0aHJte1RydWV9CiAgIFxMb25nbGVmdHJpZ2h0YXJyb3cKICAgKFx3aWRlaGF0IHYoXHZhcnBoaSk9XG1hdGhybXtUcnVlfVxsb3IgXHdpZGVoYXQgdihccHNpKT1cbWF0aHJte1RydWV9KSxcXAomXHF1YWQgXHdpZGVoYXQgdihcdmFycGhpXHRvXHBzaSk9XG1hdGhybXtUcnVlfQogICBcTG9uZ2xlZnRyaWdodGFycm93CiAgIChcd2lkZWhhdCB2KFx2YXJwaGkpPVxtYXRocm17RmFsc2V9XGxvciBcd2lkZWhhdCB2KFxwc2kpPVxtYXRocm17VHJ1ZX0pLFxcCiZccXVhZCBcd2lkZWhhdCB2KFx2YXJwaGlcbGVmdHJpZ2h0YXJyb3dccHNpKT1cbWF0aHJte1RydWV9CiAgIFxMb25nbGVmdHJpZ2h0YXJyb3cKICAgXHdpZGVoYXQgdihcdmFycGhpKT1cd2lkZWhhdCB2KFxwc2kpLgpcZW5ke2FsaWduZWR9Clxd",
+      "proof_sketch_b64": "VXNlIHN0cnVjdHVyYWwgcmVjdXJzaW9uIHRvIGRlZmluZSBcKFx3aWRlaGF0IHZcKS4gVXNlIHN0cnVjdHVyYWwgaW5kdWN0aW9uIG9yIHVuaXF1ZW5lc3Mgb2YgcmVjdXJzaXZlIGRlZmluaXRpb25zIHRvIHByb3ZlIHVuaXF1ZW5lc3Mu"
+    },
+    {
+      "label": "def:satisfaction-propositional-formula",
+      "kind": "definition",
+      "title": "Satisfaction of a Formula",
+      "body_b64": "TGV0IFwodlwpIGJlIGEgdHJ1dGggYXNzaWdubWVudCBhbmQgbGV0IFwoXHZhcnBoaVxpblxXRkZcKS4gV2Ugc2F5IHRoYXQgXCh2XCkgc2F0aXNmaWVzIFwoXHZhcnBoaVwpLCB3cml0dGVuClxbCnZcbW9kZWxzXHZhcnBoaSwKXF0KaWYKXFsKXHdpZGVoYXQgdihcdmFycGhpKT1cbWF0aHJte1RydWV9LgpcXQ==",
+      "interpretation_b64": "VGhlIG5vdGF0aW9uIFwodlxtb2RlbHNcdmFycGhpXCkgbWVhbnMgdGhhdCB0aGUgZm9ybXVsYSBcKFx2YXJwaGlcKSBpcyB0cnVlIHVuZGVyIHRoZSB0cnV0aCBhc3NpZ25tZW50IFwodlwpLg==",
+      "dependencies": [
+        "def:truth-assignment-propositional-logic",
+        "thm:unique-extension-truth-assignment-propositional-logic",
+        "def:well-formed-formula"
+      ],
+      "predicates": {
+        "defines": [
+          "SatisfiesFormula"
+        ],
+        "uses": [
+          "TruthAssignment",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "v\\models\\varphi",
+            "name": "satisfaction of a formula",
+            "meaning": "truth assignment satisfies a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "v",
+            "name": "truth assignment",
+            "meaning": "truth assignment on propositional variables",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\widehat v",
+            "name": "extended truth assignment",
+            "meaning": "unique extension to formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\varphi,\\psi,\\chi,\\theta",
+            "name": "formula metavariables",
+            "meaning": "metavariables ranging over propositional well-formed formulas",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKdlxtb2RlbHNcdmFycGhpClxMb25nbGVmdHJpZ2h0YXJyb3cKXG9wZXJhdG9ybmFtZXtUcnV0aEFzc2lnbm1lbnR9KHYpClxsYW5kClx2YXJwaGlcaW5cV0ZGClxsYW5kClx3aWRlaGF0IHYoXHZhcnBoaSk9XG1hdGhybXtUcnVlfS4KXF0=",
+      "predicate_reading_b64": "XFsKXG9wZXJhdG9ybmFtZXtTYXRpc2ZpZXNGb3JtdWxhfSh2LFx2YXJwaGkpClxdCm1lYW5zIFwodlxtb2RlbHNcdmFycGhpXCku",
+      "negated_form_b64": "XFsKdlxub3RcbW9kZWxzXHZhcnBoaQpcTG9uZ2xlZnRyaWdodGFycm93Clx3aWRlaGF0IHYoXHZhcnBoaSk9XG1hdGhybXtGYWxzZX0uClxd"
+    },
+    {
+      "label": "def:satisfaction-set-propositional-logic",
+      "kind": "definition",
+      "title": "Satisfaction of a Set of Formulas",
+      "body_b64": "TGV0IFwoXEdhbW1hXHN1YnNldGVxXFdGRlwpLiBBIHRydXRoIGFzc2lnbm1lbnQgXCh2XCkgc2F0aXNmaWVzIFwoXEdhbW1hXCksIHdyaXR0ZW4KXFsKdlxtb2RlbHNcR2FtbWEsClxdCmlmIFwodlxtb2RlbHNcZ2FtbWFcKSBmb3IgZXZlcnkgXChcZ2FtbWFcaW5cR2FtbWFcKS4=",
+      "interpretation_b64": "U2F0aXNmYWN0aW9uIG9mIGEgc2V0IG1lYW5zIHNpbXVsdGFuZW91cyBzYXRpc2ZhY3Rpb24gb2YgZXZlcnkgZm9ybXVsYSBpbiB0aGUgc2V0Lg==",
+      "dependencies": [
+        "def:satisfaction-propositional-formula",
+        "def:truth-assignment-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "SatisfiesSet"
+        ],
+        "uses": [
+          "TruthAssignment",
+          "SatisfiesFormula",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "v\\models\\Gamma",
+            "name": "satisfaction of a set",
+            "meaning": "truth assignment satisfies each formula in a set",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\Gamma",
+            "name": "set of premise formulas",
+            "meaning": "a set of propositional formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "v\\models\\varphi",
+            "name": "satisfaction of a formula",
+            "meaning": "truth assignment satisfies a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKdlxtb2RlbHNcR2FtbWEKXExvbmdsZWZ0cmlnaHRhcnJvdwpcb3BlcmF0b3JuYW1le1RydXRoQXNzaWdubWVudH0odikKXGxhbmQKXEdhbW1hXHN1YnNldGVxXFdGRgpcbGFuZAooXGZvcmFsbFxnYW1tYVxpblxHYW1tYSkodlxtb2RlbHNcZ2FtbWEpLgpcXQ==",
+      "predicate_reading_b64": "XFsKXG9wZXJhdG9ybmFtZXtTYXRpc2ZpZXNTZXR9KHYsXEdhbW1hKQpcXQptZWFucyBcKHZcKSBzYXRpc2ZpZXMgZXZlcnkgZm9ybXVsYSBpbiBcKFxHYW1tYVwpLg==",
+      "negated_form_b64": "XFsKdlxub3RcbW9kZWxzXEdhbW1hClxMb25nbGVmdHJpZ2h0YXJyb3cKXGV4aXN0c1xnYW1tYVxpblxHYW1tYVx0ZXh0eyBzdWNoIHRoYXQgfXZcbm90XG1vZGVsc1xnYW1tYS4KXF0="
+    },
+    {
+      "label": "def:truth-table-propositional-logic",
+      "kind": "definition",
+      "title": "Truth Table",
+      "body_b64": "TGV0IFwoXHZhcnBoaVxpblxXRkZcKSBhbmQgc3VwcG9zZSB0aGUgdmFyaWFibGVzIG9jY3VycmluZyBpbiBcKFx2YXJwaGlcKSBhcmUgYW1vbmcgXChQXzEsXGxkb3RzLFBfblwpLiBBIHRydXRoIHRhYmxlIGZvciBcKFx2YXJwaGlcKSBpcyBhIGZpbml0ZSB0YWJsZSB3aXRoIG9uZSByb3cgZm9yIGVhY2ggYXNzaWdubWVudApcWwphOlx7UF8xLFxsZG90cyxQX25cfVx0b1xtYXRoYmJ7Qn0KXF0KYW5kIGEgZmluYWwgY29sdW1uIHJlY29yZGluZyB0aGUgdmFsdWUgb2YgXChcd2lkZWhhdCB2KFx2YXJwaGkpXCkgZm9yIGFueSB0cnV0aCBhc3NpZ25tZW50IFwodlwpIGV4dGVuZGluZyBcKGFcKS4=",
+      "interpretation_b64": "QSB0cnV0aCB0YWJsZSBpcyBmaW5pdGUgYmVjYXVzZSBldmVyeSBmb3JtdWxhIGNvbnRhaW5zIG9ubHkgZmluaXRlbHkgbWFueSB2YXJpYWJsZXMuIEl0IHJlY29yZHMgdGhlIGNvbXBsZXRlIHRydXRoIGJlaGF2aW9yIG9mIGEgZm9ybXVsYS4=",
+      "dependencies": [
+        "def:formula-variable-set-propositional-logic",
+        "lem:finiteness-of-variables-propositional-formulas",
+        "thm:unique-extension-truth-assignment-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "TruthTable"
+        ],
+        "uses": [
+          "WellFormedFormula",
+          "FormulaVariableSet",
+          "TruthAssignment"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\operatorname{Var}(\\varphi)",
+            "name": "variable set of a formula",
+            "meaning": "the set of propositional variables occurring in a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "P_1,\\ldots,P_n",
+            "name": "finite list of propositional variables",
+            "meaning": "a finite schematic list of propositional variables",
+            "scope": "chapter",
+            "status": "local"
+          },
+          {
+            "symbol": "\\mathbb{B}",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\widehat v",
+            "name": "extended truth assignment",
+            "meaning": "unique extension to formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtUcnV0aFRhYmxlfShcdmFycGhpKQpcTG9uZ2xlZnRyaWdodGFycm93Clx2YXJwaGlcaW5cV0ZGClxsYW5kClxvcGVyYXRvcm5hbWV7VmFyfShcdmFycGhpKT1ce1BfMSxcbGRvdHMsUF9uXH0KXGxhbmQKXHRleHR7dGhlIHRhYmxlIGhhcyB9Ml5uXHRleHR7IGFzc2lnbm1lbnQgcm93c30uClxd"
+    },
+    {
+      "label": "def:tautology-propositional-logic",
+      "kind": "definition",
+      "title": "Tautology",
+      "body_b64": "QSBmb3JtdWxhIFwoXHZhcnBoaVxpblxXRkZcKSBpcyBhIHRhdXRvbG9neSwgd3JpdHRlbgpcWwpcbW9kZWxzXHZhcnBoaSwKXF0KaWYgZXZlcnkgdHJ1dGggYXNzaWdubWVudCBzYXRpc2ZpZXMgXChcdmFycGhpXCku",
+      "interpretation_b64": "QSB0YXV0b2xvZ3kgaXMgdHJ1ZSB1bmRlciBldmVyeSBwb3NzaWJsZSBhc3NpZ25tZW50IG9mIHRydXRoIHZhbHVlcyB0byBwcm9wb3NpdGlvbmFsIHZhcmlhYmxlcy4=",
+      "dependencies": [
+        "def:satisfaction-propositional-formula",
+        "def:truth-assignment-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "Tautology"
+        ],
+        "uses": [
+          "TruthAssignment",
+          "SatisfiesFormula",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\models\\varphi",
+            "name": "tautology notation",
+            "meaning": "formula valid under every truth assignment",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "v\\models\\varphi",
+            "name": "satisfaction of a formula",
+            "meaning": "truth assignment satisfies a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\mathbb{B}",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG1vZGVsc1x2YXJwaGkKXExvbmdsZWZ0cmlnaHRhcnJvdwpcdmFycGhpXGluXFdGRgpcbGFuZAooXGZvcmFsbCB2OlxQcm9wXHRvXG1hdGhiYntCfSkodlxtb2RlbHNcdmFycGhpKS4KXF0=",
+      "predicate_reading_b64": "XFsKXG9wZXJhdG9ybmFtZXtUYXV0b2xvZ3l9KFx2YXJwaGkpClxdCm1lYW5zIFwoXG1vZGVsc1x2YXJwaGlcKS4="
+    },
+    {
+      "label": "def:contradiction-propositional-logic",
+      "kind": "definition",
+      "title": "Contradiction",
+      "body_b64": "QSBmb3JtdWxhIFwoXHZhcnBoaVxpblxXRkZcKSBpcyBhIGNvbnRyYWRpY3Rpb24gaWYgbm8gdHJ1dGggYXNzaWdubWVudCBzYXRpc2ZpZXMgXChcdmFycGhpXCku",
+      "interpretation_b64": "QSBjb250cmFkaWN0aW9uIGhhcyBubyB0cnVlIHJvdyBpbiBpdHMgdHJ1dGggdGFibGUu",
+      "dependencies": [
+        "def:satisfaction-propositional-formula",
+        "def:truth-assignment-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "Contradiction"
+        ],
+        "uses": [
+          "TruthAssignment",
+          "SatisfiesFormula",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "v\\models\\varphi",
+            "name": "satisfaction of a formula",
+            "meaning": "truth assignment satisfies a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtDb250cmFkaWN0aW9ufShcdmFycGhpKQpcTG9uZ2xlZnRyaWdodGFycm93Clx2YXJwaGlcaW5cV0ZGClxsYW5kCihcZm9yYWxsIHY6XFByb3BcdG9cbWF0aGJie0J9KSh2XG5vdFxtb2RlbHNcdmFycGhpKS4KXF0=",
+      "predicate_reading_b64": "XFsKXG9wZXJhdG9ybmFtZXtDb250cmFkaWN0aW9ufShcdmFycGhpKQpcXQptZWFucyB0aGF0IFwoXHZhcnBoaVwpIGlzIGZhbHNlIHVuZGVyIGV2ZXJ5IHRydXRoIGFzc2lnbm1lbnQu"
+    },
+    {
+      "label": "def:satisfiable-formula-propositional-logic",
+      "kind": "definition",
+      "title": "Satisfiable Formula",
+      "body_b64": "QSBmb3JtdWxhIFwoXHZhcnBoaVxpblxXRkZcKSBpcyBzYXRpc2ZpYWJsZSBpZiBhdCBsZWFzdCBvbmUgdHJ1dGggYXNzaWdubWVudCBzYXRpc2ZpZXMgaXQu",
+      "interpretation_b64": "QSBzYXRpc2ZpYWJsZSBmb3JtdWxhIGhhcyBhdCBsZWFzdCBvbmUgdHJ1ZSByb3cgaW4gaXRzIHRydXRoIHRhYmxlLg==",
+      "dependencies": [
+        "def:satisfaction-propositional-formula",
+        "def:truth-assignment-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "SatisfiableFormula"
+        ],
+        "uses": [
+          "TruthAssignment",
+          "SatisfiesFormula",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "v\\models\\varphi",
+            "name": "satisfaction of a formula",
+            "meaning": "truth assignment satisfies a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\mathbb{B}",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtTYXRpc2ZpYWJsZUZvcm11bGF9KFx2YXJwaGkpClxMb25nbGVmdHJpZ2h0YXJyb3cKXHZhcnBoaVxpblxXRkYKXGxhbmQKXGV4aXN0cyB2OlxQcm9wXHRvXG1hdGhiYntCfVx0ZXh0eyBzdWNoIHRoYXQgfXZcbW9kZWxzXHZhcnBoaS4KXF0=",
+      "predicate_reading_b64": "XFsKXG9wZXJhdG9ybmFtZXtTYXRpc2ZpYWJsZUZvcm11bGF9KFx2YXJwaGkpClxdCm1lYW5zIHRoYXQgXChcdmFycGhpXCkgaXMgdHJ1ZSB1bmRlciBhdCBsZWFzdCBvbmUgdHJ1dGggYXNzaWdubWVudC4="
+    },
+    {
+      "label": "def:contingency-propositional-logic",
+      "kind": "definition",
+      "title": "Contingency",
+      "body_b64": "QSBmb3JtdWxhIFwoXHZhcnBoaVxpblxXRkZcKSBpcyBhIGNvbnRpbmdlbmN5IGlmIGl0IGlzIHNhdGlzZmlhYmxlIGJ1dCBub3QgYSB0YXV0b2xvZ3ku",
+      "interpretation_b64": "QSBjb250aW5nZW5jeSBoYXMgYXQgbGVhc3Qgb25lIHRydWUgcm93IGFuZCBhdCBsZWFzdCBvbmUgZmFsc2Ugcm93IGluIGl0cyB0cnV0aCB0YWJsZS4=",
+      "dependencies": [
+        "def:satisfiable-formula-propositional-logic",
+        "def:tautology-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "Contingency"
+        ],
+        "uses": [
+          "SatisfiableFormula",
+          "Tautology",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": []
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXG9wZXJhdG9ybmFtZXtDb250aW5nZW5jeX0oXHZhcnBoaSkKXExvbmdsZWZ0cmlnaHRhcnJvdwpcb3BlcmF0b3JuYW1le1NhdGlzZmlhYmxlRm9ybXVsYX0oXHZhcnBoaSkKXGxhbmQKXG5lZyBcb3BlcmF0b3JuYW1le1RhdXRvbG9neX0oXHZhcnBoaSkuClxd",
+      "predicate_reading_b64": "XFsKXG9wZXJhdG9ybmFtZXtDb250aW5nZW5jeX0oXHZhcnBoaSkKXF0KbWVhbnMgdGhhdCBcKFx2YXJwaGlcKSBpcyB0cnVlIHVuZGVyIHNvbWUgdHJ1dGggYXNzaWdubWVudHMgYW5kIGZhbHNlIHVuZGVyIG90aGVycy4="
+    },
+    {
+      "label": "def:logical-consequence-propositional-logic",
+      "kind": "definition",
+      "title": "Logical Consequence",
+      "body_b64": "TGV0IFwoXEdhbW1hXHN1YnNldGVxXFdGRlwpIGFuZCBcKFx2YXJwaGlcaW5cV0ZGXCkuIFRoZSBmb3JtdWxhIFwoXHZhcnBoaVwpIGlzIGEgbG9naWNhbCBjb25zZXF1ZW5jZSBvZiBcKFxHYW1tYVwpLCB3cml0dGVuClxbClxHYW1tYVxtb2RlbHNcdmFycGhpLApcXQppZiBldmVyeSB0cnV0aCBhc3NpZ25tZW50IHNhdGlzZnlpbmcgXChcR2FtbWFcKSBhbHNvIHNhdGlzZmllcyBcKFx2YXJwaGlcKS4=",
+      "interpretation_b64": "TG9naWNhbCBjb25zZXF1ZW5jZSBtZWFucyB0cnV0aCBwcmVzZXJ2YXRpb24gZnJvbSBwcmVtaXNlcyB0byBjb25jbHVzaW9uLiBUaGVyZSBpcyBubyB0cnV0aCBhc3NpZ25tZW50IHVuZGVyIHdoaWNoIGFsbCBwcmVtaXNlcyBhcmUgdHJ1ZSBhbmQgdGhlIGNvbmNsdXNpb24gaXMgZmFsc2Uu",
+      "dependencies": [
+        "def:satisfaction-set-propositional-logic",
+        "def:satisfaction-propositional-formula"
+      ],
+      "predicates": {
+        "defines": [
+          "LogicalConsequence"
+        ],
+        "uses": [
+          "TruthAssignment",
+          "SatisfiesSet",
+          "SatisfiesFormula",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\Gamma\\models\\varphi",
+            "name": "semantic consequence",
+            "meaning": "semantic consequence from premises to conclusion",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "v\\models\\Gamma",
+            "name": "satisfaction of a set",
+            "meaning": "truth assignment satisfies each formula in a set",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "v\\models\\varphi",
+            "name": "satisfaction of a formula",
+            "meaning": "truth assignment satisfies a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\Gamma",
+            "name": "set of premise formulas",
+            "meaning": "a set of propositional formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXEdhbW1hXG1vZGVsc1x2YXJwaGkKXExvbmdsZWZ0cmlnaHRhcnJvdwpcR2FtbWFcc3Vic2V0ZXFcV0ZGClxsYW5kClx2YXJwaGlcaW5cV0ZGClxsYW5kCihcZm9yYWxsIHY6XFByb3BcdG9cbWF0aGJie0J9KQpcbGVmdFsKdlxtb2RlbHNcR2FtbWFcdG8gdlxtb2RlbHNcdmFycGhpClxyaWdodF0uClxd",
+      "predicate_reading_b64": "XFsKXG9wZXJhdG9ybmFtZXtMb2dpY2FsQ29uc2VxdWVuY2V9KFxHYW1tYSxcdmFycGhpKQpcXQptZWFucyBcKFxHYW1tYVxtb2RlbHNcdmFycGhpXCku",
+      "negated_form_b64": "XFsKXEdhbW1hXG5vdFxtb2RlbHNcdmFycGhpClxMb25nbGVmdHJpZ2h0YXJyb3cKXGV4aXN0cyB2OlxQcm9wXHRvXG1hdGhiYntCfQpcbGVmdFsKdlxtb2RlbHNcR2FtbWEKXGxhbmQKdlxub3RcbW9kZWxzXHZhcnBoaQpccmlnaHRdLgpcXQ=="
+    },
+    {
+      "label": "def:logical-equivalence-propositional-logic",
+      "kind": "definition",
+      "title": "Logical Equivalence",
+      "body_b64": "Rm9ybXVsYXMgXChcdmFycGhpLFxwc2lcaW5cV0ZGXCkgYXJlIGxvZ2ljYWxseSBlcXVpdmFsZW50LCB3cml0dGVuClxbClx2YXJwaGlcZXF1aXZccHNpLApcXQppZiB0aGV5IGhhdmUgdGhlIHNhbWUgdHJ1dGggdmFsdWUgdW5kZXIgZXZlcnkgdHJ1dGggYXNzaWdubWVudC4=",
+      "interpretation_b64": "TG9naWNhbGx5IGVxdWl2YWxlbnQgZm9ybXVsYXMgaGF2ZSBpZGVudGljYWwgdHJ1dGgtdGFibGUgY29sdW1ucy4gVGhleSBhcmUgaW50ZXJjaGFuZ2VhYmxlIGZvciBzZW1hbnRpYyBwdXJwb3Nlcy4=",
+      "dependencies": [
+        "thm:unique-extension-truth-assignment-propositional-logic",
+        "def:truth-assignment-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "LogicalEquivalence"
+        ],
+        "uses": [
+          "TruthAssignment",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "\\varphi\\equiv\\psi",
+            "name": "logical equivalence",
+            "meaning": "same truth value under every truth assignment",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\widehat v",
+            "name": "extended truth assignment",
+            "meaning": "unique extension to formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\mathbb{B}",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKXHZhcnBoaVxlcXVpdlxwc2kKXExvbmdsZWZ0cmlnaHRhcnJvdwpcdmFycGhpLFxwc2lcaW5cV0ZGClxsYW5kCihcZm9yYWxsIHY6XFByb3BcdG9cbWF0aGJie0J9KQpcbGVmdFsKXHdpZGVoYXQgdihcdmFycGhpKT1cd2lkZWhhdCB2KFxwc2kpClxyaWdodF0uClxd",
+      "predicate_reading_b64": "XFsKXG9wZXJhdG9ybmFtZXtMb2dpY2FsRXF1aXZhbGVuY2V9KFx2YXJwaGksXHBzaSkKXF0KbWVhbnMgXChcdmFycGhpXGVxdWl2XHBzaVwpLg=="
+    },
+    {
+      "label": "lem:coincidence-lemma-propositional-logic",
+      "kind": "lemma",
+      "title": "Coincidence Lemma for Propositional Logic",
+      "body_b64": "TGV0IFwodix3OlxQcm9wXHRvXG1hdGhiYntCfVwpIGJlIHRydXRoIGFzc2lnbm1lbnRzLiBJZiBcKHZcKSBhbmQgXCh3XCkgYWdyZWUgb24gZXZlcnkgcHJvcG9zaXRpb25hbCB2YXJpYWJsZSBvY2N1cnJpbmcgaW4gXChcdmFycGhpXCksIHRoZW4gdGhleSBhc3NpZ24gdGhlIHNhbWUgdHJ1dGggdmFsdWUgdG8gXChcdmFycGhpXCk6ClxbCnZ8X3tcb3BlcmF0b3JuYW1le1Zhcn0oXHZhcnBoaSl9Cj0Kd3xfe1xvcGVyYXRvcm5hbWV7VmFyfShcdmFycGhpKX0KXExvbmdyaWdodGFycm93Clx3aWRlaGF0IHYoXHZhcnBoaSk9XHdpZGVoYXQgdyhcdmFycGhpKS4KXF0=",
+      "interpretation_b64": "VGhlIHRydXRoIHZhbHVlIG9mIGEgZm9ybXVsYSBkZXBlbmRzIG9ubHkgb24gdGhlIHZhcmlhYmxlcyBhY3R1YWxseSBvY2N1cnJpbmcgaW4gdGhhdCBmb3JtdWxhLg==",
+      "dependencies": [
+        "def:formula-variable-set-propositional-logic",
+        "thm:unique-extension-truth-assignment-propositional-logic",
+        "thm:structural-induction-propositional-formulas"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "TruthAssignment",
+          "FormulaVariableSet",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\operatorname{Var}(\\varphi)",
+            "name": "variable set of a formula",
+            "meaning": "the set of propositional variables occurring in a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\widehat v,\\widehat w",
+            "name": "extended truth assignments",
+            "meaning": "unique extensions of truth assignments to formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\Prop",
+            "name": "propositional variable set",
+            "meaning": "the set of propositional variables",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\mathbb{B}",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKKFxmb3JhbGxcdmFycGhpXGluXFdGRikKKFxmb3JhbGwgdix3OlxQcm9wXHRvXG1hdGhiYntCfSkKXGxlZnRbCihcZm9yYWxsIFBcaW5cb3BlcmF0b3JuYW1le1Zhcn0oXHZhcnBoaSkpKHYoUCk9dyhQKSkKXHRvClx3aWRlaGF0IHYoXHZhcnBoaSk9XHdpZGVoYXQgdyhcdmFycGhpKQpccmlnaHRdLgpcXQ==",
+      "proof_sketch_b64": "UHJvdmUgYnkgc3RydWN0dXJhbCBpbmR1Y3Rpb24gb24gXChcdmFycGhpXCkuIEF0b21pYyBjYXNlIGZvbGxvd3MgZnJvbSBhZ3JlZW1lbnQgb24gdmFyaWFibGVzLiBOZWdhdGlvbiBhbmQgYmluYXJ5IGNvbm5lY3RpdmUgY2FzZXMgZm9sbG93IGZyb20gdGhlIGluZHVjdGlvbiBoeXBvdGhlc2lzIGFuZCB0aGUgcmVjdXJzaXZlIHRydXRoIGNsYXVzZXMu"
+    },
+    {
+      "label": "thm:finite-truth-table-propositional-logic",
+      "kind": "theorem",
+      "title": "Finite Truth-Table Theorem",
+      "body_b64": "RXZlcnkgcHJvcG9zaXRpb25hbCBmb3JtdWxhIGhhcyBhIGZpbml0ZSB0cnV0aCB0YWJsZS4gTW9yZSBwcmVjaXNlbHksIGlmIFwoXG9wZXJhdG9ybmFtZXtWYXJ9KFx2YXJwaGkpXCkgaGFzIFwoblwpIGVsZW1lbnRzLCB0aGVuIFwoXHZhcnBoaVwpIGhhcyBhIHRydXRoIHRhYmxlIHdpdGggXCgyXm5cKSByb3dzLg==",
+      "interpretation_b64": "VHJ1dGggdGFibGVzIGFyZSBmaW5pdGUgYmVjYXVzZSBldmVyeSBmb3JtdWxhIGNvbnRhaW5zIG9ubHkgZmluaXRlbHkgbWFueSBwcm9wb3NpdGlvbmFsIHZhcmlhYmxlcy4=",
+      "dependencies": [
+        "def:truth-table-propositional-logic",
+        "lem:finiteness-of-variables-propositional-formulas"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "TruthTable",
+          "FormulaVariableSet",
+          "WellFormedFormula"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\operatorname{Var}(\\varphi)",
+            "name": "variable set of a formula",
+            "meaning": "the set of propositional variables occurring in a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\WFF",
+            "name": "well-formed formula set",
+            "meaning": "the set of propositional well-formed formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKKFxmb3JhbGxcdmFycGhpXGluXFdGRikKXGxlZnRbCnxcb3BlcmF0b3JuYW1le1Zhcn0oXHZhcnBoaSl8PW4KXHRvClxvcGVyYXRvcm5hbWV7VHJ1dGhUYWJsZX0oXHZhcnBoaSlcdGV4dHsgaGFzIH0yXm5cdGV4dHsgcm93c30KXHJpZ2h0XS4KXF0=",
+      "proof_sketch_b64": "VXNlIGZpbml0ZW5lc3Mgb2YgXChcb3BlcmF0b3JuYW1le1Zhcn0oXHZhcnBoaSlcKS4gSWYgdGhlcmUgYXJlIFwoblwpIHZhcmlhYmxlcywgdGhlbiB0aGVyZSBhcmUgXCgyXm5cKSBmdW5jdGlvbnMgZnJvbSB0aGF0IGZpbml0ZSB2YXJpYWJsZSBzZXQgdG8gXChcbWF0aGJie0J9XCku"
+    },
+    {
+      "label": "def:boolean-function-propositional-logic",
+      "kind": "definition",
+      "title": "Boolean Function",
+      "body_b64": "QW4gXChuXCktYXJ5IEJvb2xlYW4gZnVuY3Rpb24gaXMgYSBmdW5jdGlvbgpcWwpmOlxtYXRoYmJ7Qn1eblx0b1xtYXRoYmJ7Qn0uClxd",
+      "interpretation_b64": "Qm9vbGVhbiBmdW5jdGlvbnMgYXJlIHRoZSBhYnN0cmFjdCB0cnV0aC1mdW5jdGlvbnMgdGhhdCBmb3JtdWxhcyBtYXkgcmVwcmVzZW50Lg==",
+      "dependencies": [
+        "def:truth-value-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "BooleanFunction"
+        ],
+        "uses": []
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "f:\\mathbb{B}^n\\to\\mathbb{B}",
+            "name": "n-ary Boolean function",
+            "meaning": "function from truth-value tuples to a truth value",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\mathbb{B}",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKQm9vbGVhbkZ1bmN0aW9uX24oZikKXExvbmdsZWZ0cmlnaHRhcnJvdwpmOlxtYXRoYmJ7Qn1eblx0b1xtYXRoYmJ7Qn0uClxd",
+      "predicate_reading_b64": "XFsKQm9vbGVhbkZ1bmN0aW9uX24oZikKXF0KbWVhbnMgdGhhdCBcKGZcKSB0YWtlcyBcKG5cKSB0cnV0aCB2YWx1ZXMgYXMgaW5wdXQgYW5kIHJldHVybnMgb25lIHRydXRoIHZhbHVlLg=="
+    },
+    {
+      "label": "def:truth-function-induced-by-formula",
+      "kind": "definition",
+      "title": "Truth Function Induced by a Formula",
+      "body_b64": "TGV0IFwoXHZhcnBoaVxpblxXRkZcKSwgYW5kIHN1cHBvc2UgXChcb3BlcmF0b3JuYW1le1Zhcn0oXHZhcnBoaSlcc3Vic2V0ZXFce1BfMSxcbGRvdHMsUF9uXH1cKS4gVGhlIHRydXRoIGZ1bmN0aW9uIGluZHVjZWQgYnkgXChcdmFycGhpXCkgaXMgdGhlIEJvb2xlYW4gZnVuY3Rpb24KXFsKZl9cdmFycGhpOlxtYXRoYmJ7Qn1eblx0b1xtYXRoYmJ7Qn0KXF0KZGVmaW5lZCBieQpcWwpmX1x2YXJwaGkoYl8xLFxsZG90cyxiX24pPVx3aWRlaGF0IHYoXHZhcnBoaSksClxdCndoZXJlIFwodihQX2kpPWJfaVwpIGZvciBlYWNoIFwoaVwpLg==",
+      "interpretation_b64": "VGhlIGluZHVjZWQgdHJ1dGggZnVuY3Rpb24gcGFja2FnZXMgdGhlIHRydXRoIHRhYmxlIG9mIGEgZm9ybXVsYSBhcyBhIEJvb2xlYW4gZnVuY3Rpb24u",
+      "dependencies": [
+        "def:boolean-function-propositional-logic",
+        "def:formula-variable-set-propositional-logic",
+        "thm:unique-extension-truth-assignment-propositional-logic",
+        "lem:coincidence-lemma-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [
+          "TruthFunctionOfFormula"
+        ],
+        "uses": [
+          "BooleanFunction",
+          "WellFormedFormula",
+          "FormulaVariableSet"
+        ]
+      },
+      "notations": {
+        "defines": [
+          {
+            "symbol": "f_\\varphi",
+            "name": "truth function induced by a formula",
+            "meaning": "Boolean function represented by a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          }
+        ],
+        "uses": [
+          {
+            "symbol": "\\mathbb{B}",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "scope": "global",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\widehat v",
+            "name": "extended truth assignment",
+            "meaning": "unique extension to formulas",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "\\operatorname{Var}(\\varphi)",
+            "name": "variable set of a formula",
+            "meaning": "the set of propositional variables occurring in a formula",
+            "scope": "chapter",
+            "status": "canonical"
+          },
+          {
+            "symbol": "P_1,\\ldots,P_n",
+            "name": "finite list of propositional variables",
+            "meaning": "a finite schematic list of propositional variables",
+            "scope": "chapter",
+            "status": "local"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": false,
+      "quantified_form_b64": "XFsKZl9cdmFycGhpKGJfMSxcbGRvdHMsYl9uKT1cd2lkZWhhdCB2KFx2YXJwaGkpClxxdWFkClx0ZXh0e3doZW5ldmVyIH0KdihQX2kpPWJfaVx0ZXh0eyBmb3IgfTFcbGUgaVxsZSBuLgpcXQ==",
+      "predicate_reading_b64": "XFsKXG9wZXJhdG9ybmFtZXtUcnV0aEZ1bmN0aW9uT2ZGb3JtdWxhfShmX1x2YXJwaGksXHZhcnBoaSkKXF0KbWVhbnMgdGhhdCBcKGZfXHZhcnBoaVwpIHJlY29yZHMgdGhlIHRydXRoIGJlaGF2aW9yIG9mIFwoXHZhcnBoaVwpLg=="
+    },
+    {
+      "label": "thm:counting-boolean-functions",
+      "kind": "theorem",
+      "title": "Counting Boolean Functions",
+      "body_b64": "VGhlcmUgYXJlIGV4YWN0bHkKXFsKMl57Ml5ufQpcXQpCb29sZWFuIGZ1bmN0aW9ucyBcKFxtYXRoYmJ7Qn1eblx0b1xtYXRoYmJ7Qn1cKS4=",
+      "interpretation_b64": "VGhlIGRvbWFpbiBcKFxtYXRoYmJ7Qn1eblwpIGhhcyBcKDJeblwpIGVsZW1lbnRzLiBBIEJvb2xlYW4gZnVuY3Rpb24gY2hvb3NlcyBvbmUgb2YgdHdvIHRydXRoIHZhbHVlcyBmb3IgZWFjaCBpbnB1dCByb3cu",
+      "dependencies": [
+        "def:boolean-function-propositional-logic"
+      ],
+      "predicates": {
+        "defines": [],
+        "uses": [
+          "BooleanFunction"
+        ]
+      },
+      "notations": {
+        "defines": [],
+        "uses": [
+          {
+            "symbol": "\\mathbb{B}",
+            "name": "truth-value set",
+            "meaning": "the set of truth values",
+            "scope": "global",
+            "status": "canonical"
+          }
+        ]
+      },
+      "relations": {
+        "defines": [],
+        "uses": []
+      },
+      "proof_required": true,
+      "quantified_form_b64": "XFsKXGxlZnR8XHtmOlxtYXRoYmJ7Qn1eblx0b1xtYXRoYmJ7Qn1cfVxyaWdodHw9Ml57Ml5ufS4KXF0=",
+      "proof_sketch_b64": "Q291bnQgZnVuY3Rpb25zIGZyb20gYSBcKDJeblwpLWVsZW1lbnQgc2V0IHRvIGEgXCgyXCktZWxlbWVudCBzZXQu"
+    }
+  ]
+}

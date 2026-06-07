@@ -1,0 +1,1521 @@
+schema_version: 1
+chapter: propositional-logic
+topic: semantics
+encoding: utf-8
+content_format: latex
+artifacts:
+- label: def:truth-assignment-propositional-logic
+  kind: definition
+  title: Truth Assignment
+  dependencies:
+  - def:truth-value-propositional-logic
+  - def:propositional-variable
+  - def:well-formed-formula
+  predicates:
+    defines:
+    - TruthAssignment
+    uses:
+    - PropositionalVariable
+    - WellFormedFormula
+  notations:
+    defines:
+    - symbol: v
+      name: truth assignment
+      meaning: a truth assignment on propositional variables
+      scope: chapter
+      status: canonical
+      introduced_by: def:truth-assignment-propositional-logic
+      registry_id: propositional_logic.truth_assignment
+    uses:
+    - symbol: \Prop
+      name: propositional variable set
+      meaning: the set of propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.variable_set
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: |-
+    A truth assignment for propositional logic is a function
+    \[
+    v:\Prop\to\mathbb{B}.
+    \]
+    Thus a truth assignment assigns either \(\mathrm{False}\) or \(\mathrm{True}\) to each propositional variable.
+  quantified_form: |-
+    \[
+    \operatorname{TruthAssignment}(v)
+    \Longleftrightarrow
+    v:\Prop\to\mathbb{B}.
+    \]
+  predicate_reading: |-
+    \[
+    \operatorname{TruthAssignment}(v)
+    \]
+    means that \(v\) assigns a truth value to every propositional variable.
+  interpretation: A truth assignment fixes the truth values of atomic formulas. The recursive semantics
+    of the connectives then determines the truth value of each molecular formula.
+- label: thm:unique-extension-truth-assignment-propositional-logic
+  kind: theorem
+  title: Unique Extension of a Truth Assignment
+  dependencies:
+  - def:truth-assignment-propositional-logic
+  - def:well-formed-formula
+  - thm:structural-recursion-propositional-formulas
+  - thm:unique-decomposition-propositional-formulas
+  predicates:
+    defines: []
+    uses:
+    - TruthAssignment
+    - WellFormedFormula
+  notations:
+    defines:
+    - symbol: \widehat v
+      name: extended truth assignment
+      meaning: unique extension of a truth assignment to formulas
+      scope: chapter
+      status: canonical
+      introduced_by: thm:unique-extension-truth-assignment-propositional-logic
+      registry_id: propositional_logic.extended_truth_assignment
+    uses:
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: \Prop
+      name: propositional variable set
+      meaning: the set of propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.variable_set
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \neg,\land,\lor,\to,\leftrightarrow
+      name: standard connectives
+      meaning: standard propositional connectives
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.standard_connectives
+    - symbol: \varphi,\psi,\chi,\theta
+      name: formula metavariables
+      meaning: metavariables ranging over propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_metavariables
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: |-
+    Every truth assignment \(v:\Prop\to\mathbb{B}\) extends uniquely to a function
+    \[
+    \widehat v:\WFF\to\mathbb{B}
+    \]
+    satisfying the following clauses:
+    \[
+    \widehat v(P)=v(P)\quad(P\in\Prop),
+    \]
+    \[
+    \widehat v(\neg\varphi)=\mathrm{True}
+    \Longleftrightarrow
+    \widehat v(\varphi)=\mathrm{False},
+    \]
+    \[
+    \widehat v(\varphi\land\psi)=\mathrm{True}
+    \Longleftrightarrow
+    \widehat v(\varphi)=\mathrm{True}
+    \text{ and }
+    \widehat v(\psi)=\mathrm{True},
+    \]
+    \[
+    \widehat v(\varphi\lor\psi)=\mathrm{True}
+    \Longleftrightarrow
+    \widehat v(\varphi)=\mathrm{True}
+    \text{ or }
+    \widehat v(\psi)=\mathrm{True},
+    \]
+    \[
+    \widehat v(\varphi\to\psi)=\mathrm{True}
+    \Longleftrightarrow
+    \widehat v(\varphi)=\mathrm{False}
+    \text{ or }
+    \widehat v(\psi)=\mathrm{True},
+    \]
+    and
+    \[
+    \widehat v(\varphi\leftrightarrow\psi)=\mathrm{True}
+    \Longleftrightarrow
+    \widehat v(\varphi)=\widehat v(\psi).
+    \]
+  quantified_form: |-
+    \[
+    \begin{aligned}
+    &(\forall v:\Prop\to\mathbb{B})(\exists!\widehat v:\WFF\to\mathbb{B})\\
+    &\quad\text{such that, for all }P\in\Prop\text{ and }\varphi,\psi\in\WFF,\\
+    &\quad \widehat v(P)=v(P),\\
+    &\quad \widehat v(\neg\varphi)=\mathrm{True}
+       \Longleftrightarrow \widehat v(\varphi)=\mathrm{False},\\
+    &\quad \widehat v(\varphi\land\psi)=\mathrm{True}
+       \Longleftrightarrow
+       (\widehat v(\varphi)=\mathrm{True}\land \widehat v(\psi)=\mathrm{True}),\\
+    &\quad \widehat v(\varphi\lor\psi)=\mathrm{True}
+       \Longleftrightarrow
+       (\widehat v(\varphi)=\mathrm{True}\lor \widehat v(\psi)=\mathrm{True}),\\
+    &\quad \widehat v(\varphi\to\psi)=\mathrm{True}
+       \Longleftrightarrow
+       (\widehat v(\varphi)=\mathrm{False}\lor \widehat v(\psi)=\mathrm{True}),\\
+    &\quad \widehat v(\varphi\leftrightarrow\psi)=\mathrm{True}
+       \Longleftrightarrow
+       \widehat v(\varphi)=\widehat v(\psi).
+    \end{aligned}
+    \]
+  interpretation: A valuation on variables determines exactly one truth value for every formula. This
+    theorem is the semantic counterpart of structural recursion and unique decomposition.
+  proof_sketch: Use structural recursion to define \(\widehat v\). Use structural induction or uniqueness
+    of recursive definitions to prove uniqueness.
+- label: def:satisfaction-propositional-formula
+  kind: definition
+  title: Satisfaction of a Formula
+  dependencies:
+  - def:truth-assignment-propositional-logic
+  - thm:unique-extension-truth-assignment-propositional-logic
+  - def:well-formed-formula
+  predicates:
+    defines:
+    - SatisfiesFormula
+    uses:
+    - TruthAssignment
+    - WellFormedFormula
+  notations:
+    defines:
+    - symbol: v\models\varphi
+      name: satisfaction of a formula
+      meaning: truth assignment satisfies a formula
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.satisfaction_formula
+    uses:
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: \widehat v
+      name: extended truth assignment
+      meaning: unique extension to formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.extended_truth_assignment
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi,\psi,\chi,\theta
+      name: formula metavariables
+      meaning: metavariables ranging over propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_metavariables
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+    - symbol: \models\varphi
+      name: tautology notation
+      meaning: formula valid under every truth assignment
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.validity_formula
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: |-
+    Let \(v\) be a truth assignment and let \(\varphi\in\WFF\). We say that \(v\) satisfies \(\varphi\), written
+    \[
+    v\models\varphi,
+    \]
+    if
+    \[
+    \widehat v(\varphi)=\mathrm{True}.
+    \]
+  quantified_form: |-
+    \[
+    v\models\varphi
+    \Longleftrightarrow
+    \operatorname{TruthAssignment}(v)
+    \land
+    \varphi\in\WFF
+    \land
+    \widehat v(\varphi)=\mathrm{True}.
+    \]
+  predicate_reading: |-
+    \[
+    \operatorname{SatisfiesFormula}(v,\varphi)
+    \]
+    means \(v\models\varphi\).
+  interpretation: The notation \(v\models\varphi\) means that the formula \(\varphi\) is true under the
+    truth assignment \(v\).
+  negated_form: |-
+    \[
+    v\not\models\varphi
+    \Longleftrightarrow
+    \widehat v(\varphi)=\mathrm{False}.
+    \]
+- label: def:satisfaction-set-propositional-logic
+  kind: definition
+  title: Satisfaction of a Set of Formulas
+  dependencies:
+  - def:satisfaction-propositional-formula
+  - def:truth-assignment-propositional-logic
+  predicates:
+    defines:
+    - SatisfiesSet
+    uses:
+    - TruthAssignment
+    - SatisfiesFormula
+    - WellFormedFormula
+  notations:
+    defines:
+    - symbol: v\models\Gamma
+      name: satisfaction of a set
+      meaning: truth assignment satisfies each formula in a set
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.satisfaction_set
+    - symbol: \Gamma
+      name: set of premise formulas
+      meaning: a set of propositional formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.premise_set
+    uses:
+    - symbol: v\models\varphi
+      name: satisfaction of a formula
+      meaning: truth assignment satisfies a formula
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.satisfaction_formula
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: |-
+    Let \(\Gamma\subseteq\WFF\). A truth assignment \(v\) satisfies \(\Gamma\), written
+    \[
+    v\models\Gamma,
+    \]
+    if \(v\models\gamma\) for every \(\gamma\in\Gamma\).
+  quantified_form: |-
+    \[
+    v\models\Gamma
+    \Longleftrightarrow
+    \operatorname{TruthAssignment}(v)
+    \land
+    \Gamma\subseteq\WFF
+    \land
+    (\forall\gamma\in\Gamma)(v\models\gamma).
+    \]
+  predicate_reading: |-
+    \[
+    \operatorname{SatisfiesSet}(v,\Gamma)
+    \]
+    means \(v\) satisfies every formula in \(\Gamma\).
+  interpretation: Satisfaction of a set means simultaneous satisfaction of every formula in the set.
+  negated_form: |-
+    \[
+    v\not\models\Gamma
+    \Longleftrightarrow
+    \exists\gamma\in\Gamma\text{ such that }v\not\models\gamma.
+    \]
+- label: def:truth-table-propositional-logic
+  kind: definition
+  title: Truth Table
+  dependencies:
+  - def:formula-variable-set-propositional-logic
+  - lem:finiteness-of-variables-propositional-formulas
+  - thm:unique-extension-truth-assignment-propositional-logic
+  predicates:
+    defines:
+    - TruthTable
+    uses:
+    - WellFormedFormula
+    - FormulaVariableSet
+    - TruthAssignment
+  notations:
+    defines: []
+    uses:
+    - symbol: \operatorname{Var}(\varphi)
+      name: variable set of a formula
+      meaning: the set of propositional variables occurring in a formula
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_variable_set
+    - symbol: P_1,\ldots,P_n
+      name: finite list of propositional variables
+      meaning: a finite schematic list of propositional variables
+      scope: chapter
+      status: local
+      registry_id: propositional_logic.propositional_variable_list
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \widehat v
+      name: extended truth assignment
+      meaning: unique extension to formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.extended_truth_assignment
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: |-
+    Let \(\varphi\in\WFF\) and suppose the variables occurring in \(\varphi\) are among \(P_1,\ldots,P_n\). A truth table for \(\varphi\) is a finite table with one row for each assignment
+    \[
+    a:\{P_1,\ldots,P_n\}\to\mathbb{B}
+    \]
+    and a final column recording the value of \(\widehat v(\varphi)\) for any truth assignment \(v\) extending \(a\).
+  quantified_form: |-
+    \[
+    \operatorname{TruthTable}(\varphi)
+    \Longleftrightarrow
+    \varphi\in\WFF
+    \land
+    \operatorname{Var}(\varphi)=\{P_1,\ldots,P_n\}
+    \land
+    \text{the table has }2^n\text{ assignment rows}.
+    \]
+  interpretation: A truth table is finite because every formula contains only finitely many variables.
+    It records the complete truth behavior of a formula.
+- label: def:tautology-propositional-logic
+  kind: definition
+  title: Tautology
+  dependencies:
+  - def:satisfaction-propositional-formula
+  - def:truth-assignment-propositional-logic
+  predicates:
+    defines:
+    - Tautology
+    uses:
+    - TruthAssignment
+    - SatisfiesFormula
+    - WellFormedFormula
+  notations:
+    defines:
+    - symbol: \models\varphi
+      name: tautology notation
+      meaning: formula valid under every truth assignment
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.validity_formula
+    uses:
+    - symbol: v\models\varphi
+      name: satisfaction of a formula
+      meaning: truth assignment satisfies a formula
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.satisfaction_formula
+    - symbol: \Prop
+      name: propositional variable set
+      meaning: the set of propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.variable_set
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: |-
+    A formula \(\varphi\in\WFF\) is a tautology, written
+    \[
+    \models\varphi,
+    \]
+    if every truth assignment satisfies \(\varphi\).
+  quantified_form: |-
+    \[
+    \models\varphi
+    \Longleftrightarrow
+    \varphi\in\WFF
+    \land
+    (\forall v:\Prop\to\mathbb{B})(v\models\varphi).
+    \]
+  predicate_reading: |-
+    \[
+    \operatorname{Tautology}(\varphi)
+    \]
+    means \(\models\varphi\).
+  interpretation: A tautology is true under every possible assignment of truth values to propositional
+    variables.
+- label: def:contradiction-propositional-logic
+  kind: definition
+  title: Contradiction
+  dependencies:
+  - def:satisfaction-propositional-formula
+  - def:truth-assignment-propositional-logic
+  predicates:
+    defines:
+    - Contradiction
+    uses:
+    - TruthAssignment
+    - SatisfiesFormula
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: v\models\varphi
+      name: satisfaction of a formula
+      meaning: truth assignment satisfies a formula
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.satisfaction_formula
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \Prop
+      name: propositional variable set
+      meaning: the set of propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.variable_set
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+    - symbol: \models\varphi
+      name: tautology notation
+      meaning: formula valid under every truth assignment
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.validity_formula
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: A formula \(\varphi\in\WFF\) is a contradiction if no truth assignment satisfies \(\varphi\).
+  quantified_form: |-
+    \[
+    \operatorname{Contradiction}(\varphi)
+    \Longleftrightarrow
+    \varphi\in\WFF
+    \land
+    (\forall v:\Prop\to\mathbb{B})(v\not\models\varphi).
+    \]
+  predicate_reading: |-
+    \[
+    \operatorname{Contradiction}(\varphi)
+    \]
+    means that \(\varphi\) is false under every truth assignment.
+  interpretation: A contradiction has no true row in its truth table.
+- label: def:satisfiable-formula-propositional-logic
+  kind: definition
+  title: Satisfiable Formula
+  dependencies:
+  - def:satisfaction-propositional-formula
+  - def:truth-assignment-propositional-logic
+  predicates:
+    defines:
+    - SatisfiableFormula
+    uses:
+    - TruthAssignment
+    - SatisfiesFormula
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: v\models\varphi
+      name: satisfaction of a formula
+      meaning: truth assignment satisfies a formula
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.satisfaction_formula
+    - symbol: \Prop
+      name: propositional variable set
+      meaning: the set of propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.variable_set
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+    - symbol: \models\varphi
+      name: tautology notation
+      meaning: formula valid under every truth assignment
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.validity_formula
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: A formula \(\varphi\in\WFF\) is satisfiable if at least one truth assignment satisfies it.
+  quantified_form: |-
+    \[
+    \operatorname{SatisfiableFormula}(\varphi)
+    \Longleftrightarrow
+    \varphi\in\WFF
+    \land
+    \exists v:\Prop\to\mathbb{B}\text{ such that }v\models\varphi.
+    \]
+  predicate_reading: |-
+    \[
+    \operatorname{SatisfiableFormula}(\varphi)
+    \]
+    means that \(\varphi\) is true under at least one truth assignment.
+  interpretation: A satisfiable formula has at least one true row in its truth table.
+- label: def:contingency-propositional-logic
+  kind: definition
+  title: Contingency
+  dependencies:
+  - def:satisfiable-formula-propositional-logic
+  - def:tautology-propositional-logic
+  predicates:
+    defines:
+    - Contingency
+    uses:
+    - SatisfiableFormula
+    - Tautology
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \neg
+      name: negation
+      meaning: unary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.negation
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: A formula \(\varphi\in\WFF\) is a contingency if it is satisfiable but not a tautology.
+  quantified_form: |-
+    \[
+    \operatorname{Contingency}(\varphi)
+    \Longleftrightarrow
+    \operatorname{SatisfiableFormula}(\varphi)
+    \land
+    \neg \operatorname{Tautology}(\varphi).
+    \]
+  predicate_reading: |-
+    \[
+    \operatorname{Contingency}(\varphi)
+    \]
+    means that \(\varphi\) is true under some truth assignments and false under others.
+  interpretation: A contingency has at least one true row and at least one false row in its truth table.
+- label: def:logical-consequence-propositional-logic
+  kind: definition
+  title: Logical Consequence
+  dependencies:
+  - def:satisfaction-set-propositional-logic
+  - def:satisfaction-propositional-formula
+  predicates:
+    defines:
+    - LogicalConsequence
+    uses:
+    - TruthAssignment
+    - SatisfiesSet
+    - SatisfiesFormula
+    - WellFormedFormula
+  notations:
+    defines:
+    - symbol: \Gamma\models\varphi
+      name: semantic consequence
+      meaning: semantic consequence from premises to conclusion
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.semantic_consequence_formula
+    uses:
+    - symbol: v\models\Gamma
+      name: satisfaction of a set
+      meaning: truth assignment satisfies each formula in a set
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.satisfaction_set
+    - symbol: v\models\varphi
+      name: satisfaction of a formula
+      meaning: truth assignment satisfies a formula
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.satisfaction_formula
+    - symbol: \Gamma
+      name: set of premise formulas
+      meaning: a set of propositional formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.premise_set
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \Prop
+      name: propositional variable set
+      meaning: the set of propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.variable_set
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+    - symbol: \models\varphi
+      name: tautology notation
+      meaning: formula valid under every truth assignment
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.validity_formula
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: |-
+    Let \(\Gamma\subseteq\WFF\) and \(\varphi\in\WFF\). The formula \(\varphi\) is a logical consequence of \(\Gamma\), written
+    \[
+    \Gamma\models\varphi,
+    \]
+    if every truth assignment satisfying \(\Gamma\) also satisfies \(\varphi\).
+  quantified_form: |-
+    \[
+    \Gamma\models\varphi
+    \Longleftrightarrow
+    \Gamma\subseteq\WFF
+    \land
+    \varphi\in\WFF
+    \land
+    (\forall v:\Prop\to\mathbb{B})
+    \left[
+    v\models\Gamma\to v\models\varphi
+    \right].
+    \]
+  predicate_reading: |-
+    \[
+    \operatorname{LogicalConsequence}(\Gamma,\varphi)
+    \]
+    means \(\Gamma\models\varphi\).
+  interpretation: Logical consequence means truth preservation from premises to conclusion. There is no
+    truth assignment under which all premises are true and the conclusion is false.
+  negated_form: |-
+    \[
+    \Gamma\not\models\varphi
+    \Longleftrightarrow
+    \exists v:\Prop\to\mathbb{B}
+    \left[
+    v\models\Gamma
+    \land
+    v\not\models\varphi
+    \right].
+    \]
+- label: def:logical-equivalence-propositional-logic
+  kind: definition
+  title: Logical Equivalence
+  dependencies:
+  - thm:unique-extension-truth-assignment-propositional-logic
+  - def:truth-assignment-propositional-logic
+  predicates:
+    defines:
+    - LogicalEquivalence
+    uses:
+    - TruthAssignment
+    - WellFormedFormula
+  notations:
+    defines:
+    - symbol: \varphi\equiv\psi
+      name: logical equivalence
+      meaning: same truth value under every truth assignment
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.logical_equivalence_formula
+    uses:
+    - symbol: \widehat v
+      name: extended truth assignment
+      meaning: unique extension to formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.extended_truth_assignment
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \Prop
+      name: propositional variable set
+      meaning: the set of propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.variable_set
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \psi
+      name: second formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_formula
+    - symbol: \land
+      name: conjunction
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conjunction
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: |-
+    Formulas \(\varphi,\psi\in\WFF\) are logically equivalent, written
+    \[
+    \varphi\equiv\psi,
+    \]
+    if they have the same truth value under every truth assignment.
+  quantified_form: |-
+    \[
+    \varphi\equiv\psi
+    \Longleftrightarrow
+    \varphi,\psi\in\WFF
+    \land
+    (\forall v:\Prop\to\mathbb{B})
+    \left[
+    \widehat v(\varphi)=\widehat v(\psi)
+    \right].
+    \]
+  predicate_reading: |-
+    \[
+    \operatorname{LogicalEquivalence}(\varphi,\psi)
+    \]
+    means \(\varphi\equiv\psi\).
+  interpretation: Logically equivalent formulas have identical truth-table columns. They are interchangeable
+    for semantic purposes.
+- label: lem:coincidence-lemma-propositional-logic
+  kind: lemma
+  title: Coincidence Lemma for Propositional Logic
+  dependencies:
+  - def:formula-variable-set-propositional-logic
+  - thm:unique-extension-truth-assignment-propositional-logic
+  - thm:structural-induction-propositional-formulas
+  predicates:
+    defines: []
+    uses:
+    - TruthAssignment
+    - FormulaVariableSet
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: \operatorname{Var}(\varphi)
+      name: variable set of a formula
+      meaning: the set of propositional variables occurring in a formula
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_variable_set
+    - symbol: \widehat v,\widehat w
+      name: extended truth assignments
+      meaning: unique extensions of truth assignments to formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.extended_truth_assignment
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \Prop
+      name: propositional variable set
+      meaning: the set of propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.variable_set
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+    - symbol: v,w
+      name: v,w
+      meaning: v,w
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: |-
+    Let \(v,w:\Prop\to\mathbb{B}\) be truth assignments. If \(v\) and \(w\) agree on every propositional variable occurring in \(\varphi\), then they assign the same truth value to \(\varphi\):
+    \[
+    v|_{\operatorname{Var}(\varphi)}
+    =
+    w|_{\operatorname{Var}(\varphi)}
+    \Longrightarrow
+    \widehat v(\varphi)=\widehat w(\varphi).
+    \]
+  quantified_form: |-
+    \[
+    (\forall\varphi\in\WFF)
+    (\forall v,w:\Prop\to\mathbb{B})
+    \left[
+    (\forall P\in\operatorname{Var}(\varphi))(v(P)=w(P))
+    \to
+    \widehat v(\varphi)=\widehat w(\varphi)
+    \right].
+    \]
+  interpretation: The truth value of a formula depends only on the variables actually occurring in that
+    formula.
+  proof_sketch: Prove by structural induction on \(\varphi\). Atomic case follows from agreement on variables.
+    Negation and binary connective cases follow from the induction hypothesis and the recursive truth
+    clauses.
+- label: thm:finite-truth-table-propositional-logic
+  kind: theorem
+  title: Finite Truth-Table Theorem
+  dependencies:
+  - def:truth-table-propositional-logic
+  - lem:finiteness-of-variables-propositional-formulas
+  predicates:
+    defines: []
+    uses:
+    - TruthTable
+    - FormulaVariableSet
+    - WellFormedFormula
+  notations:
+    defines: []
+    uses:
+    - symbol: \operatorname{Var}(\varphi)
+      name: variable set of a formula
+      meaning: the set of propositional variables occurring in a formula
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_variable_set
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: Every propositional formula has a finite truth table. More precisely, if \(\operatorname{Var}(\varphi)\)
+    has \(n\) elements, then \(\varphi\) has a truth table with \(2^n\) rows.
+  quantified_form: |-
+    \[
+    (\forall\varphi\in\WFF)
+    \left[
+    |\operatorname{Var}(\varphi)|=n
+    \to
+    \operatorname{TruthTable}(\varphi)\text{ has }2^n\text{ rows}
+    \right].
+    \]
+  interpretation: Truth tables are finite because every formula contains only finitely many propositional
+    variables.
+  proof_sketch: Use finiteness of \(\operatorname{Var}(\varphi)\). If there are \(n\) variables, then
+    there are \(2^n\) functions from that finite variable set to \(\mathbb{B}\).
+- label: def:boolean-function-propositional-logic
+  kind: definition
+  title: Boolean Function
+  dependencies:
+  - def:truth-value-propositional-logic
+  predicates:
+    defines:
+    - BooleanFunction
+    uses: []
+  notations:
+    defines:
+    - symbol: f:\mathbb{B}^n\to\mathbb{B}
+      name: n-ary Boolean function
+      meaning: function from truth-value tuples to a truth value
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.boolean_function
+    uses:
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: |-
+    An \(n\)-ary Boolean function is a function
+    \[
+    f:\mathbb{B}^n\to\mathbb{B}.
+    \]
+  quantified_form: |-
+    \[
+    BooleanFunction_n(f)
+    \Longleftrightarrow
+    f:\mathbb{B}^n\to\mathbb{B}.
+    \]
+  predicate_reading: |-
+    \[
+    BooleanFunction_n(f)
+    \]
+    means that \(f\) takes \(n\) truth values as input and returns one truth value.
+  interpretation: Boolean functions are the abstract truth-functions that formulas may represent.
+- label: def:truth-function-induced-by-formula
+  kind: definition
+  title: Truth Function Induced by a Formula
+  dependencies:
+  - def:boolean-function-propositional-logic
+  - def:formula-variable-set-propositional-logic
+  - thm:unique-extension-truth-assignment-propositional-logic
+  - lem:coincidence-lemma-propositional-logic
+  predicates:
+    defines:
+    - TruthFunctionOfFormula
+    uses:
+    - BooleanFunction
+    - WellFormedFormula
+    - FormulaVariableSet
+  notations:
+    defines:
+    - symbol: f_\varphi
+      name: truth function induced by a formula
+      meaning: Boolean function represented by a formula
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.truth_function_formula
+    uses:
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \widehat v
+      name: extended truth assignment
+      meaning: unique extension to formulas
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.extended_truth_assignment
+    - symbol: \operatorname{Var}(\varphi)
+      name: variable set of a formula
+      meaning: the set of propositional variables occurring in a formula
+      scope: chapter
+      status: canonical
+      registry_id: propositional_logic.formula_variable_set
+    - symbol: P_1,\ldots,P_n
+      name: finite list of propositional variables
+      meaning: a finite schematic list of propositional variables
+      scope: chapter
+      status: local
+      registry_id: propositional_logic.propositional_variable_list
+    - symbol: \WFF
+      name: well-formed formula set
+      meaning: the set of propositional well-formed formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula_set
+    - symbol: \varphi
+      name: formula metavariable
+      meaning: a metavariable ranging over formulas
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.formula
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+  relations:
+    defines: []
+    uses: []
+  proof_required: false
+  body: |-
+    Let \(\varphi\in\WFF\), and suppose \(\operatorname{Var}(\varphi)\subseteq\{P_1,\ldots,P_n\}\). The truth function induced by \(\varphi\) is the Boolean function
+    \[
+    f_\varphi:\mathbb{B}^n\to\mathbb{B}
+    \]
+    defined by
+    \[
+    f_\varphi(b_1,\ldots,b_n)=\widehat v(\varphi),
+    \]
+    where \(v(P_i)=b_i\) for each \(i\).
+  quantified_form: |-
+    \[
+    f_\varphi(b_1,\ldots,b_n)=\widehat v(\varphi)
+    \quad
+    \text{whenever }
+    v(P_i)=b_i\text{ for }1\le i\le n.
+    \]
+  predicate_reading: |-
+    \[
+    \operatorname{TruthFunctionOfFormula}(f_\varphi,\varphi)
+    \]
+    means that \(f_\varphi\) records the truth behavior of \(\varphi\).
+  interpretation: The induced truth function packages the truth table of a formula as a Boolean function.
+- label: thm:counting-boolean-functions
+  kind: theorem
+  title: Counting Boolean Functions
+  dependencies:
+  - def:boolean-function-propositional-logic
+  predicates:
+    defines: []
+    uses:
+    - BooleanFunction
+  notations:
+    defines: []
+    uses:
+    - symbol: \mathbb{B}
+      name: truth-value set
+      meaning: the set of truth values
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_values
+    - symbol: \to
+      name: conditional
+      meaning: binary propositional connective
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.conditional
+    - symbol: v
+      name: truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.truth_assignment
+    - symbol: w
+      name: second truth assignment
+      meaning: truth assignment on propositional variables
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.second_truth_assignment
+    - symbol: f:\mathbb{B}^n\to\mathbb{B}
+      name: n-ary Boolean function
+      meaning: function from truth-value tuples to a truth value
+      scope: global
+      status: canonical
+      registry_id: propositional_logic.boolean_function
+  relations:
+    defines: []
+    uses: []
+  proof_required: true
+  body: |-
+    There are exactly
+    \[
+    2^{2^n}
+    \]
+    Boolean functions \(\mathbb{B}^n\to\mathbb{B}\).
+  quantified_form: |-
+    \[
+    \left|\{f:\mathbb{B}^n\to\mathbb{B}\}\right|=2^{2^n}.
+    \]
+  interpretation: The domain \(\mathbb{B}^n\) has \(2^n\) elements. A Boolean function chooses one of
+    two truth values for each input row.
+  proof_sketch: Count functions from a \(2^n\)-element set to a \(2\)-element set.
