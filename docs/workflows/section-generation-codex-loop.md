@@ -72,7 +72,9 @@ The prompt must specify:
    - includes a proof-structure remark;
    - includes a dependency block;
    - ends with `\clearpage`.
-10. Validation and build commands.
+10. Validation and build commands, including note-block validation for newly
+   generated notes:
+   `python scripts/validate_note_blocks.py --root . <new-notes-directory>`.
 11. The required final report format.
 12. The instruction to delete `codex-prompt` before committing.
 13. The commit message.
@@ -105,7 +107,8 @@ Codex must:
 6. Hook all proof stubs into proof indexes.
 7. Verify note-side theorem-like artifacts have proof navigation.
 8. Verify proof files have return navigation and `\LRAProofFor{...}`.
-9. Run validators.
+9. Run validators, including `scripts/validate_note_blocks.py` on the generated
+   note files or note directory.
 10. Run the LuaLaTeX build or the project build wrapper.
 11. Delete `codex-prompt`.
 12. Commit and push.
