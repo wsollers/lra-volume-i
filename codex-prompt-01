@@ -1,0 +1,146 @@
+# codex-prompt-01: Normal Forms setup and orientation
+
+You are working in `wsollers/lra-volume-i`.
+
+Process this prompt only. Do not process later `codex-prompt-*` files until instructed. Execute exactly, then delete `codex-prompt-01`, commit, and report.
+
+## Required rule loading
+
+Before editing, read and obey:
+
+- `AGENTS.md`
+- `docs/agent-task-index.md`
+- `docs/governance/repo-overlays/lra-volume.md` if present
+- `docs/workflows/section-generation-codex-loop.md` if present
+- `docs/governance/atomic-artifact-standards.md`
+- `docs/governance/dependency-standards.md`
+- `docs/governance/proof-standards.md`
+- `docs/governance/notation-standards.md`
+- `docs/governance/extraction-standards.md`
+- `constitution/schema/block-registry.yaml`
+- `constitution/schema/artifact-matrix.yaml`
+- `constitution/schema/file-schema.yaml`
+
+Do not edit `common/`, generated governance wrappers, bibliography files, or canonical YAML files.
+
+## Scope
+
+Create the Normal Forms section shell for Volume I, Chapter 1, Propositional Logic, and populate only the orientation topic.
+
+Use one section directory and named topic `.tex` files. Do not create per-topic subdirectories.
+
+## Create notes files
+
+Create:
+
+```text
+volume-i/propositional-logic/notes/normal-forms/index.tex
+volume-i/propositional-logic/notes/normal-forms/orientation.tex
+volume-i/propositional-logic/notes/normal-forms/literals-clauses.tex
+volume-i/propositional-logic/notes/normal-forms/negation-normal-form.tex
+volume-i/propositional-logic/notes/normal-forms/disjunctive-normal-form.tex
+volume-i/propositional-logic/notes/normal-forms/conjunctive-normal-form.tex
+volume-i/propositional-logic/notes/normal-forms/conversion-procedures.tex
+volume-i/propositional-logic/notes/normal-forms/canonical-normal-forms.tex
+volume-i/propositional-logic/notes/normal-forms/semantic-classification.tex
+volume-i/propositional-logic/notes/normal-forms/summary.tex
+```
+
+Create `volume-i/propositional-logic/notes/normal-forms/index.tex` with exactly:
+
+```latex
+\subsection*{Normal Forms}
+\input{volume-i/propositional-logic/notes/normal-forms/orientation}
+\input{volume-i/propositional-logic/notes/normal-forms/literals-clauses}
+\input{volume-i/propositional-logic/notes/normal-forms/negation-normal-form}
+\input{volume-i/propositional-logic/notes/normal-forms/disjunctive-normal-form}
+\input{volume-i/propositional-logic/notes/normal-forms/conjunctive-normal-form}
+\input{volume-i/propositional-logic/notes/normal-forms/conversion-procedures}
+\input{volume-i/propositional-logic/notes/normal-forms/canonical-normal-forms}
+\input{volume-i/propositional-logic/notes/normal-forms/semantic-classification}
+\input{volume-i/propositional-logic/notes/normal-forms/summary}
+```
+
+Update `volume-i/propositional-logic/notes/index.tex` by adding this input after the algebra input:
+
+```latex
+\input{volume-i/propositional-logic/notes/normal-forms/index}
+```
+
+For every other empty topic file, insert only a TODO comment naming the topic, for example:
+
+```latex
+% TODO: populated by codex-prompt-02.
+```
+
+## Create proofs shell
+
+Create:
+
+```text
+volume-i/propositional-logic/proofs/normal-forms/index.tex
+```
+
+Create `volume-i/propositional-logic/proofs/normal-forms/index.tex` with exactly:
+
+```latex
+\subsection*{Normal Forms Proofs}
+\input{volume-i/propositional-logic/proofs/normal-forms/prf-existence-negation-normal-form-propositional-logic}
+\input{volume-i/propositional-logic/proofs/normal-forms/prf-existence-disjunctive-normal-form-propositional-logic}
+\input{volume-i/propositional-logic/proofs/normal-forms/prf-dnf-satisfiability-criterion-propositional-logic}
+\input{volume-i/propositional-logic/proofs/normal-forms/prf-existence-conjunctive-normal-form-propositional-logic}
+\input{volume-i/propositional-logic/proofs/normal-forms/prf-canonical-disjunctive-normal-form-propositional-logic}
+\input{volume-i/propositional-logic/proofs/normal-forms/prf-canonical-conjunctive-normal-form-propositional-logic}
+\input{volume-i/propositional-logic/proofs/normal-forms/prf-normal-form-semantic-classification-propositional-logic}
+```
+
+Update `volume-i/propositional-logic/proofs/index.tex` by adding this input after the algebra input:
+
+```latex
+\input{volume-i/propositional-logic/proofs/normal-forms/index}
+```
+
+Do not create proof stubs in this prompt. Later prompts create them when the theorem-like source artifact is created.
+
+## Populate orientation.tex
+
+Populate `volume-i/propositional-logic/notes/normal-forms/orientation.tex` with prose and remarks only. Do not create formal definitions or theorem-like artifacts in this file.
+
+Content requirements:
+
+- Explain that a normal form is a controlled syntactic shape for formulas.
+- Explain that normal-form conversion preserves logical equivalence.
+- Explain that this section uses syntax, semantics, and the algebra of propositions.
+- Explain that the section introduces NNF, DNF, CNF, canonical normal forms, and semantic classification uses.
+- Explain that normal forms prepare for satisfiability, proof search, functional completeness, and later resolution.
+- Use ordinary LaTeX prose, section-local remarks if useful, and no dependency block unless a formal artifact is introduced.
+
+## Validation
+
+Run, if available:
+
+```bash
+python scripts/validate_leaf_proofs.py --root . --strict
+latexmk -lualatex main.tex
+```
+
+If the proof validator fails because later proof stubs do not yet exist, report that this is expected at this intermediate prompt and do not invent stubs in this prompt.
+
+## Cleanup and commit
+
+Delete `codex-prompt-01` before committing.
+
+Commit message:
+
+```text
+Add Volume I propositional normal forms section shell
+```
+
+Final report must include:
+
+- files created
+- files modified
+- validation status
+- LuaLaTeX/build status
+- commit hash
+- confirmation that `codex-prompt-01` was deleted
