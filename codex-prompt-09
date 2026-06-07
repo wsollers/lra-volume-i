@@ -1,0 +1,82 @@
+# codex-prompt-09: Normal Forms summary and final pass
+
+You are working in `wsollers/lra-volume-i`.
+
+Process this prompt only. Execute exactly, then delete `codex-prompt-09`, commit, and report.
+
+## Required rule loading
+
+Before editing, read and obey `AGENTS.md`, `docs/agent-task-index.md`, the available lra-volume overlay, `docs/governance/atomic-artifact-standards.md`, `docs/governance/dependency-standards.md`, `docs/governance/proof-standards.md`, `docs/governance/notation-standards.md`, `docs/governance/extraction-standards.md`, and the relevant schema files under `constitution/schema/`.
+
+Do not edit `common/`, generated governance wrappers, bibliography files, or canonical YAML files.
+
+## Scope
+
+Populate exactly this notes file:
+
+```text
+volume-i/propositional-logic/notes/normal-forms/summary.tex
+```
+
+Do not create definitions, theorems, lemmas, propositions, corollaries, or proof stubs in this prompt.
+
+## Content requirements
+
+Create a prose summary and transition topic.
+
+Include:
+
+- Literal vocabulary summary.
+- NNF summary.
+- DNF summary.
+- CNF summary.
+- Canonical normal forms summary.
+- Conversion workflow summary.
+- Bridge back to algebra of propositions.
+- Bridge forward to functional completeness.
+- Bridge forward to argument forms and proof systems.
+
+Use ordinary LaTeX prose and section-local remarks if useful. Do not create a dependency block unless a formal artifact is introduced.
+
+## Final consistency checks
+
+After populating `summary.tex`, check that:
+
+1. `volume-i/propositional-logic/notes/index.tex` routes `normal-forms/index`.
+2. `volume-i/propositional-logic/notes/normal-forms/index.tex` routes all topic files in this order:
+   - orientation
+   - literals-clauses
+   - negation-normal-form
+   - disjunctive-normal-form
+   - conjunctive-normal-form
+   - conversion-procedures
+   - canonical-normal-forms
+   - semantic-classification
+   - summary
+3. `volume-i/propositional-logic/proofs/index.tex` routes `normal-forms/index` if any normal-forms proof stubs were created by earlier prompts.
+4. `volume-i/propositional-logic/proofs/normal-forms/index.tex` routes all normal-form proof stubs that actually exist.
+5. Every normal-form theorem-like artifact has a note-side `Go to proof` link.
+6. Every normal-form proof stub has return navigation and `\LRAProofFor{...}`.
+7. No dependency target uses `rem:` or `prf:`.
+8. No TODO placeholder remains in any populated normal-forms topic file. It is acceptable for files not yet processed by earlier prompts to still have TODO comments; report them explicitly if present.
+
+## Validation
+
+Run, if available:
+
+```bash
+python scripts/validate_leaf_proofs.py --root . --strict
+latexmk -lualatex main.tex
+```
+
+## Cleanup and commit
+
+Delete `codex-prompt-09` before committing.
+
+Commit message:
+
+```text
+Add Volume I normal forms summary
+```
+
+Final report must include files changed, validation status, build status, commit hash, confirmation that `codex-prompt-09` was deleted, and any unresolved TODO placeholders or validation risks.
