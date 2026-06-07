@@ -1,0 +1,75 @@
+# codex-prompt-06: Normal Forms conversion procedures
+
+You are working in `wsollers/lra-volume-i`.
+
+Process this prompt only. Do not process later `codex-prompt-*` files until instructed. Execute exactly, then delete `codex-prompt-06`, commit, and report.
+
+## Required rule loading
+
+Before editing, read and obey `AGENTS.md`, `docs/agent-task-index.md`, the available lra-volume overlay, `docs/governance/atomic-artifact-standards.md`, `docs/governance/dependency-standards.md`, `docs/governance/proof-standards.md`, `docs/governance/notation-standards.md`, `docs/governance/extraction-standards.md`, and the relevant schema files under `constitution/schema/`.
+
+Do not edit `common/`, generated governance wrappers, bibliography files, or canonical YAML files.
+
+## Scope
+
+Populate exactly this notes file:
+
+```text
+volume-i/propositional-logic/notes/normal-forms/conversion-procedures.tex
+```
+
+Do not create theorem-like artifacts in this prompt. Do not create proof stubs in this prompt.
+
+## Existing dependency labels available for references
+
+- `thm:biconditional-equivalence-laws-propositional-logic` -> Biconditional Equivalence Laws
+- `thm:conditional-equivalence-laws-propositional-logic` -> Conditional Equivalence Laws
+- `thm:de-morgan-laws-propositional-logic` -> De Morgan Laws for Propositional Logic
+- `thm:distributive-laws-propositional-logic` -> Distributive Laws for Propositional Logic
+- `thm:replacement-of-logical-equivalents-propositional-logic` -> Replacement of Logical Equivalents
+- `def:negation-normal-form-propositional-logic` -> Negation Normal Form
+- `def:disjunctive-normal-form-propositional-logic` -> Disjunctive Normal Form
+- `def:conjunctive-normal-form-propositional-logic` -> Conjunctive Normal Form
+
+## Content requirements
+
+Generate a procedural topic with explanatory prose and reusable remarks only.
+
+Include:
+
+- Equivalence-preserving conversion.
+- Step 1: eliminate biconditionals.
+- Step 2: eliminate conditionals.
+- Step 3: push negations inward.
+- Step 4A: distribute conjunction over disjunction for DNF.
+- Step 4B: distribute disjunction over conjunction for CNF.
+- DNF conversion workflow.
+- CNF conversion workflow.
+- Termination by decreasing or controlling formula complexity.
+- Correctness by logical equivalence laws and replacement.
+- Non-uniqueness of ordinary DNF and CNF.
+- Size blowup warning.
+- A compact comparison table if appropriate.
+
+Do not create definitions, theorems, lemmas, propositions, corollaries, or proof obligations in this file.
+
+## Validation
+
+Run, if available:
+
+```bash
+python scripts/validate_leaf_proofs.py --root . --strict
+latexmk -lualatex main.tex
+```
+
+## Cleanup and commit
+
+Delete `codex-prompt-06` before committing.
+
+Commit message:
+
+```text
+Add Volume I normal form conversion procedures
+```
+
+Final report must include files changed, validation status, build status, commit hash, and confirmation that `codex-prompt-06` was deleted.
