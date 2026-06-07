@@ -12,12 +12,20 @@ where each \(L_i\) is a literal. The one-literal case is permitted.
 \end{definition}
 \end{tcolorbox}
 
-\begin{remark*}[Reading]
+\begin{remark*}[Standard quantified statement]
+\[
+L_1\land L_2\land\cdots\land L_k,
+\qquad
+L_i\text{ is a literal for each }i.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Elementary conjunctions are the conjunction terms used as the building blocks
 of disjunctive normal form. They record simultaneous literal requirements.
 \end{remark*}
 
-\begin{example*}[Elementary conjunctions]
+\begin{example*}[Examples]
 \[
 P,\qquad P\land\neg Q,\qquad \neg P\land R\land S
 \]
@@ -44,13 +52,21 @@ that contains exactly one of \(P_i\) or \(\neg P_i\) for each
 \end{definition}
 \end{tcolorbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+M=L_1\land\cdots\land L_n,
+\]
+where for each \(i\), exactly one of \(P_i\) or \(\neg P_i\) appears among the
+literals \(L_1,\ldots,L_n\).
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 A minterm relative to \(P_1,\ldots,P_n\) specifies one complete truth-value
 assignment on those variables: choosing \(P_i\) requires \(P_i\) to be true,
 and choosing \(\neg P_i\) requires \(P_i\) to be false.
 \end{remark*}
 
-\begin{example*}[Minterm]
+\begin{example*}[Examples]
 Relative to \(P,Q,R\), the formula
 \[
 P\land\neg Q\land R
@@ -82,7 +98,16 @@ where each \(C_j\) is an elementary conjunction.
 \end{definition}
 \end{tcolorbox}
 
-\begin{remark*}[Structural route]
+\begin{remark*}[Standard quantified statement]
+\[
+\varphi\text{ is in DNF}
+\Longleftrightarrow
+\varphi=C_1\lor C_2\lor\cdots\lor C_m
+\]
+for finitely many elementary conjunctions \(C_1,\ldots,C_m\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 DNF is a syntactic form, but it is used semantically: once a formula is replaced
 by a \hyperref[def:logical-equivalence-propositional-logic]{logically equivalent}
 DNF formula, questions about
@@ -90,7 +115,7 @@ DNF formula, questions about
 to questions about individual conjunction terms.
 \end{remark*}
 
-\begin{example*}[Disjunctive normal form]
+\begin{example*}[Examples]
 \[
 (P\land Q)\lor(\neg P\land R)\lor S
 \]
@@ -121,7 +146,14 @@ and
 \end{theorem}
 \end{tcolorbox}
 
-\begin{remark*}[Construction]
+\begin{remark*}[Standard quantified statement]
+\[
+(\forall\varphi\in\WFF)(\exists\psi\in\WFF)
+\bigl(\psi\text{ is in DNF}\land \varphi\equiv\psi\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 One first converts \(\varphi\) to negation normal form, then repeatedly applies
 distributive laws to move conjunctions below disjunctions. Replacement of
 logical equivalents preserves equivalence at each step.
@@ -152,7 +184,15 @@ if at least one conjunction term in \(\psi\) contains no
 \end{theorem}
 \end{tcolorbox}
 
-\begin{remark*}[Use]
+\begin{remark*}[Standard quantified statement]
+\[
+\psi\text{ is a satisfiable DNF formula}
+\Longleftrightarrow
+\text{some conjunction term of }\psi\text{ has no complementary literals.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 A DNF formula is true exactly when at least one of its conjunction terms is
 true. A conjunction term can be made true exactly when it does not require both
 a variable and its negation.

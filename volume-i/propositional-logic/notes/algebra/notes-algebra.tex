@@ -1,5 +1,17 @@
 \section{Algebra of Propositions}
 
+\begin{tcolorbox}[
+  colback=gray!6,
+  colframe=gray!40,
+  arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  title={\small\textbf{Toolkit}},
+  fonttitle=\small\bfseries
+]
+This section uses logical equivalence, equivalence laws, formula contexts, and
+replacement of logical equivalents to treat propositions algebraically.
+\end{tcolorbox}
+
 % BEGIN GENERATED ARTIFACT: def:propositional-equivalence-law
 \begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
   left=6pt, right=6pt, top=4pt, bottom=4pt,
@@ -258,7 +270,7 @@ and
 \]
 \end{remark*}
 
-\begin{remark*}[Readable decomposition]
+\begin{remark*}[Predicate reading]
 \[
 \underbrace{\neg(\varphi\land\psi)}_{\text{not both}}
 \equiv
@@ -425,7 +437,7 @@ and
 \]
 \end{remark*}
 
-\begin{remark*}[Readable decomposition]
+\begin{remark*}[Predicate reading]
 \[
 \underbrace{\varphi\to\psi}_{\text{no counterexample}}
 \equiv
@@ -491,7 +503,7 @@ and
 \]
 \end{remark*}
 
-\begin{remark*}[Readable decomposition]
+\begin{remark*}[Predicate reading]
 \[
 \varphi\leftrightarrow\psi
 \quad\Longleftrightarrow\quad
@@ -601,7 +613,7 @@ C[\varphi]\equiv C[\psi]
 \]
 \end{remark*}
 
-\begin{remark*}[Readable decomposition]
+\begin{remark*}[Predicate reading]
 \[
 \varphi\equiv\psi
 \quad\Longrightarrow\quad
@@ -615,15 +627,7 @@ the truth behavior of the whole formula.
 Logical equivalence is substitutive: equivalent formulas may be replaced inside larger formulas without changing truth behavior.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:formula-context-propositional-logic]{Formula Context}
-  \item \hyperref[def:logical-equivalence-propositional-logic]{Logical Equivalence}
-  \item \hyperref[lem:coincidence-lemma-propositional-logic]{Coincidence Lemma for Propositional Logic}
-  \item \hyperref[thm:unique-extension-truth-assignment-propositional-logic]{Unique Extension of a Truth Assignment}
-\end{itemize}
-\end{dependencies}
-\begin{remark*}[Rules of replacement]
+\begin{remark*}[Exposition]
 The equivalence laws in this section may be used as replacement rules inside
 larger formulas. If a formula contains a subformula matching one side of a listed
 equivalence law, that subformula may be replaced by the other side.
@@ -652,26 +656,22 @@ and
 (\varphi\land\psi)\lor(\neg\varphi\land\neg\psi).
 \]
 \end{remark*}
-% END GENERATED ARTIFACT: thm:replacement-of-logical-equivalents-propositional-logic
-% BEGIN GENERATED ARTIFACT: rem:algebraic-role-of-propositional-laws
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Remark (Algebraic Role of Propositional Laws)}},
-  fonttitle=\small\bfseries]
-\begin{remark}[Algebraic Role of Propositional Laws]
-\label{rem:algebraic-role-of-propositional-laws}
-The laws in this section allow formulas to be manipulated algebraically. They are not new formation rules; they are semantic equivalences. Later sections use these laws to transform formulas into normal forms and to reduce the set of primitive connectives.
-\end{remark}
-\end{tcolorbox}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Exposition]
+The laws in this section allow formulas to be manipulated algebraically. They are not new formation rules; they are semantic equivalences. Later sections use these laws to transform formulas into normal forms and to reduce the set of primitive connectives.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The algebra of propositions is the bridge from semantics to computation: once formulas are equivalent, they can be rewritten without changing truth behavior.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:formula-context-propositional-logic]{Formula Context}
   \item \hyperref[def:logical-equivalence-propositional-logic]{Logical Equivalence}
+  \item \hyperref[lem:coincidence-lemma-propositional-logic]{Coincidence Lemma for Propositional Logic}
+  \item \hyperref[thm:unique-extension-truth-assignment-propositional-logic]{Unique Extension of a Truth Assignment}
   \item \hyperref[thm:replacement-of-logical-equivalents-propositional-logic]{Replacement of Logical Equivalents}
 \end{itemize}
 \end{dependencies}
-% END GENERATED ARTIFACT: rem:algebraic-role-of-propositional-laws
+% END GENERATED ARTIFACT: thm:replacement-of-logical-equivalents-propositional-logic

@@ -12,12 +12,20 @@ where each \(L_i\) is a literal. The one-literal case is permitted.
 \end{definition}
 \end{tcolorbox}
 
-\begin{remark*}[Reading]
+\begin{remark*}[Standard quantified statement]
+\[
+L_1\lor L_2\lor\cdots\lor L_k,
+\qquad
+L_i\text{ is a literal for each }i.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Elementary disjunctions are the clause-level building blocks used in
 conjunctive normal form. They record finite literal alternatives.
 \end{remark*}
 
-\begin{example*}[Elementary disjunctions]
+\begin{example*}[Examples]
 \[
 P,\qquad P\lor\neg Q,\qquad \neg P\lor R\lor S
 \]
@@ -44,13 +52,21 @@ that contains exactly one of \(P_i\) or \(\neg P_i\) for each
 \end{definition}
 \end{tcolorbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+M=L_1\lor\cdots\lor L_n,
+\]
+where for each \(i\), exactly one of \(P_i\) or \(\neg P_i\) appears among the
+literals \(L_1,\ldots,L_n\).
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 A maxterm relative to \(P_1,\ldots,P_n\) specifies one literal-level
 alternative for every variable in the list. It is false under exactly the
 assignment that makes each listed literal false.
 \end{remark*}
 
-\begin{example*}[Maxterm]
+\begin{example*}[Examples]
 Relative to \(P,Q,R\), the formula
 \[
 P\lor\neg Q\lor R
@@ -82,7 +98,16 @@ where each \(C_j\) is a clause.
 \end{definition}
 \end{tcolorbox}
 
-\begin{remark*}[Structural route]
+\begin{remark*}[Standard quantified statement]
+\[
+\varphi\text{ is in CNF}
+\Longleftrightarrow
+\varphi=C_1\land C_2\land\cdots\land C_m
+\]
+for finitely many clauses \(C_1,\ldots,C_m\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 CNF is a syntactic form used to expose clause-by-clause constraints. Replacing
 a formula by a
 \hyperref[def:logical-equivalence-propositional-logic]{logically equivalent}
@@ -91,7 +116,7 @@ CNF formula turns global validity and
 questions about the interaction of its clauses.
 \end{remark*}
 
-\begin{example*}[Conjunctive normal form]
+\begin{example*}[Examples]
 \[
 (P\lor Q)\land(\neg P\lor R)\land S
 \]
@@ -122,7 +147,14 @@ and
 \end{theorem}
 \end{tcolorbox}
 
-\begin{remark*}[Construction]
+\begin{remark*}[Standard quantified statement]
+\[
+(\forall\varphi\in\WFF)(\exists\psi\in\WFF)
+\bigl(\psi\text{ is in CNF}\land \varphi\equiv\psi\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 One first converts \(\varphi\) to negation normal form, then repeatedly applies
 distributive laws to move disjunctions below conjunctions. Replacement of
 logical equivalents preserves equivalence through every local rewrite.

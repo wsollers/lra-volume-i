@@ -26,7 +26,23 @@ formula \(\varphi\in\WFF\):
 \end{theorem}
 \end{tcolorbox}
 
-\begin{remark*}[Truth-table method versus normal-form method]
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\varphi\text{ is satisfiable}
+&\Longleftrightarrow
+\text{some equivalent DNF term is satisfiable},\\
+\varphi\text{ is a contradiction}
+&\Longleftrightarrow
+\text{no equivalent DNF term is satisfiable},\\
+\varphi\text{ is a tautology}
+&\Longleftrightarrow
+\text{no equivalent CNF clause is falsifiable}.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 The truth-table method classifies \(\varphi\) by evaluating every row directly.
 The normal-form method first rewrites \(\varphi\) into an equivalent DNF or CNF
 formula and then checks the finite terms or clauses. Canonical normal forms
@@ -34,7 +50,7 @@ connect the two approaches: canonical DNF is built from true rows, and
 canonical CNF is built from false rows.
 \end{remark*}
 
-\begin{remark*}[Why DNF and CNF serve different checks]
+\begin{remark*}[Exposition]
 DNF is naturally witness-producing. A satisfiable term gives an explicit way
 to make the whole disjunction true. CNF is naturally suited for clause
 checking: each clause is a local obstruction to falsifying the whole

@@ -1,5 +1,17 @@
 \section{Semantics}
 
+\begin{tcolorbox}[
+  colback=gray!6,
+  colframe=gray!40,
+  arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  title={\small\textbf{Toolkit}},
+  fonttitle=\small\bfseries
+]
+This section uses truth assignments, recursive extensions, satisfaction,
+truth tables, and logical equivalence to assign meanings to formulas.
+\end{tcolorbox}
+
 \subsection{Truth Assignments}
 \label{subsec:truth-assignments-propositional-logic}
 
@@ -179,17 +191,7 @@ The extension \(\widehat v\) evaluates every formula by following the formula's
 syntactic construction.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:truth-assignment-propositional-logic]{Truth Assignment}
-  \item \hyperref[def:well-formed-formula]{Well-Formed Formula}
-  \item \hyperref[thm:structural-recursion-propositional-formulas]{Structural Recursion for Propositional Formulas}
-  \item \hyperref[thm:unique-decomposition-propositional-formulas]{Unique Decomposition for Propositional Formulas}
-\end{itemize}
-\end{dependencies}
-% END GENERATED ARTIFACT: def:extended-truth-assignment-propositional-logic
-
-\begin{remark*}[Truth conditions for primitive connectives]
+\begin{remark*}[Examples]
 \[
 \begin{array}{c|c}
 \varphi & \neg\varphi\\
@@ -238,11 +240,22 @@ syntactic construction.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Examples]
 The truth tables are not additional formation rules. They specify how each
 primitive connective acts on truth values once the formula has already been
 formed syntactically.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:truth-assignment-propositional-logic]{Truth Assignment}
+  \item \hyperref[def:well-formed-formula]{Well-Formed Formula}
+  \item \hyperref[thm:structural-recursion-propositional-formulas]{Structural Recursion for Propositional Formulas}
+  \item \hyperref[thm:unique-decomposition-propositional-formulas]{Unique Decomposition for Propositional Formulas}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:extended-truth-assignment-propositional-logic
+
 
 % BEGIN GENERATED ARTIFACT: thm:unique-extension-truth-assignment-propositional-logic
 \begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,

@@ -19,6 +19,19 @@ P_i, & \text{if row }r\text{ makes }P_i\text{ true},\\
 \end{definition}
 \end{tcolorbox}
 
+\begin{remark*}[Standard quantified statement]
+For a fixed row \(r\) on variables \(P_1,\ldots,P_n\),
+\[
+\bigwedge_{i=1}^{n} L_i,
+\qquad
+L_i=
+\begin{cases}
+P_i, & r(P_i)=\True,\\
+\neg P_i, & r(P_i)=\False.
+\end{cases}
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The row conjunction names exactly one truth-table row. It is true on that row
 and false on every row that disagrees with it on at least one listed variable.
@@ -54,6 +67,19 @@ P_i, & \text{if row }r\text{ makes }P_i\text{ false},\\
 \end{definition}
 \end{tcolorbox}
 
+\begin{remark*}[Standard quantified statement]
+For a fixed row \(r\) on variables \(P_1,\ldots,P_n\),
+\[
+\bigvee_{i=1}^{n} M_i,
+\qquad
+M_i=
+\begin{cases}
+P_i, & r(P_i)=\False,\\
+\neg P_i, & r(P_i)=\True.
+\end{cases}
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The row clause excludes exactly one truth-table row. It is false on row \(r\)
 and true on every row that disagrees with \(r\) on at least one listed
@@ -81,7 +107,22 @@ corresponding to the rows on which \(\varphi\) is true.
 \end{definition}
 \end{tcolorbox}
 
-\begin{remark*}[Special case]
+\begin{remark*}[Standard quantified statement]
+For \(\mathrm{Var}(\varphi)=\{P_1,\ldots,P_n\}\), the canonical
+disjunctive normal form is
+\[
+\bigvee_{\widehat v(\varphi)=\True}
+\bigl(L_1\land\cdots\land L_n\bigr),
+\]
+where each row conjunction is determined by the truth-table row of \(v\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Canonical DNF records exactly the truth-table rows on which the formula is
+true, using one row conjunction for each true row.
+\end{remark*}
+
+\begin{remark*}[Examples]
 If \(\varphi\) is a contradiction, then it has no true rows. Its canonical DNF
 is the empty disjunction, represented by the
 \hyperref[def:empty-clause-propositional-logic]{empty clause}.
@@ -109,7 +150,22 @@ corresponding to the rows on which \(\varphi\) is false.
 \end{definition}
 \end{tcolorbox}
 
-\begin{remark*}[Special case]
+\begin{remark*}[Standard quantified statement]
+For \(\mathrm{Var}(\varphi)=\{P_1,\ldots,P_n\}\), the canonical
+conjunctive normal form is
+\[
+\bigwedge_{\widehat v(\varphi)=\False}
+\bigl(M_1\lor\cdots\lor M_n\bigr),
+\]
+where each row clause is determined by the truth-table row of \(v\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Canonical CNF records exactly the truth-table rows on which the formula is
+false, using one row clause for each false row.
+\end{remark*}
+
+\begin{remark*}[Examples]
 If \(\varphi\) is a tautology, then it has no false rows. Its canonical CNF is
 the empty conjunction, represented by the
 \hyperref[def:empty-conjunction-propositional-logic]{empty conjunction}.
@@ -140,6 +196,15 @@ relative to a fixed ordering of its finitely many variables.
 \noindent\hyperref[prf:canonical-disjunctive-normal-form-propositional-logic]{Go to proof.}
 \end{theorem}
 \end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\forall\varphi\in\WFF)\,
+\varphi\equiv \mathrm{CDNF}_{P_1,\ldots,P_n}(\varphi),
+\]
+where \(P_1,\ldots,P_n\) is a fixed ordering of the finitely many variables of
+\(\varphi\).
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 Canonical DNF rebuilds the formula from exactly the truth-table rows where the
@@ -172,6 +237,15 @@ relative to a fixed ordering of its finitely many variables.
 \noindent\hyperref[prf:canonical-conjunctive-normal-form-propositional-logic]{Go to proof.}
 \end{theorem}
 \end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\forall\varphi\in\WFF)\,
+\varphi\equiv \mathrm{CCNF}_{P_1,\ldots,P_n}(\varphi),
+\]
+where \(P_1,\ldots,P_n\) is a fixed ordering of the finitely many variables of
+\(\varphi\).
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 Canonical CNF rebuilds the formula by excluding exactly the truth-table rows
