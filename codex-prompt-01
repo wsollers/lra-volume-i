@@ -67,7 +67,7 @@ Update `volume-i/propositional-logic/notes/index.tex` by adding this input after
 \input{volume-i/propositional-logic/notes/normal-forms/index}
 ```
 
-For every other empty topic file, insert only a TODO comment naming the topic, for example:
+For every empty topic file, insert only a TODO comment naming the future prompt that will populate it, for example:
 
 ```latex
 % TODO: populated by codex-prompt-02.
@@ -85,22 +85,12 @@ Create `volume-i/propositional-logic/proofs/normal-forms/index.tex` with exactly
 
 ```latex
 \subsection*{Normal Forms Proofs}
-\input{volume-i/propositional-logic/proofs/normal-forms/prf-existence-negation-normal-form-propositional-logic}
-\input{volume-i/propositional-logic/proofs/normal-forms/prf-existence-disjunctive-normal-form-propositional-logic}
-\input{volume-i/propositional-logic/proofs/normal-forms/prf-dnf-satisfiability-criterion-propositional-logic}
-\input{volume-i/propositional-logic/proofs/normal-forms/prf-existence-conjunctive-normal-form-propositional-logic}
-\input{volume-i/propositional-logic/proofs/normal-forms/prf-canonical-disjunctive-normal-form-propositional-logic}
-\input{volume-i/propositional-logic/proofs/normal-forms/prf-canonical-conjunctive-normal-form-propositional-logic}
-\input{volume-i/propositional-logic/proofs/normal-forms/prf-normal-form-semantic-classification-propositional-logic}
 ```
 
-Update `volume-i/propositional-logic/proofs/index.tex` by adding this input after the algebra input:
-
-```latex
-\input{volume-i/propositional-logic/proofs/normal-forms/index}
-```
-
-Do not create proof stubs in this prompt. Later prompts create them when the theorem-like source artifact is created.
+Do not update `volume-i/propositional-logic/proofs/index.tex` in this prompt.
+Do not add proof-stub inputs yet.
+Do not create proof stubs in this prompt.
+Later prompts will add the normal-forms proofs index to the chapter proof index when they create the first proof stub.
 
 ## Populate orientation.tex
 
@@ -124,7 +114,7 @@ python scripts/validate_leaf_proofs.py --root . --strict
 latexmk -lualatex main.tex
 ```
 
-If the proof validator fails because later proof stubs do not yet exist, report that this is expected at this intermediate prompt and do not invent stubs in this prompt.
+Report any validation/build failures honestly. Since this prompt creates no theorem-like artifacts and no proof obligations, do not create proof stubs in response to validation output unless they are for previously existing theorem-like artifacts.
 
 ## Cleanup and commit
 
