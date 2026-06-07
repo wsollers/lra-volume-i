@@ -1,0 +1,244 @@
+# codex-prompt-house-rules-repair: Propositional Logic house-rule validator repair
+
+You are working in `wsollers/lra-volume-i`.
+
+Process this prompt only. Do not add new mathematical content beyond what is needed to repair validator errors. Do not process any other `codex-prompt-*` files. After repair, delete this prompt, commit, and report.
+
+## Required rule loading
+
+Before editing, read and obey:
+
+- `AGENTS.md`
+- `docs/agent-task-index.md`
+- `docs/governance/repo-overlays/lra-volume.md` if present
+- `docs/governance/atomic-artifact-standards.md`
+- `docs/governance/decoration-box-standards.md` if present
+- `docs/governance/decoration-audit-standards.md` if present
+- `docs/governance/dependency-standards.md`
+- `docs/governance/proof-standards.md`
+- `docs/governance/notation-standards.md`
+- `docs/governance/extraction-standards.md`
+- `constitution/schema/block-registry.yaml`
+- `constitution/schema/artifact-matrix.yaml`
+- `constitution/schema/file-schema.yaml`
+
+Do not edit `common/`, generated governance wrappers, bibliography files, or canonical YAML files unless the validator explicitly requires it. This task is a chapter-level repair for Volume I propositional logic only.
+
+## Validator command
+
+Run this command from the repo root or equivalent local path setup:
+
+```powershell
+python F:\repos\lra-governance\tools\governance\validate_chapter_house_rules.py --chapter F:\repos\lra-volume-i\volume-i\propositional-logic --format json
+```
+
+After repairs, also run:
+
+```powershell
+latexmk -lualatex -interaction=nonstopmode -halt-on-error main.tex
+```
+
+If your checkout paths differ, use the equivalent command paths and report exactly what you ran.
+
+## Current known validator result to repair
+
+Status: FAIL
+Errors: 66
+Warnings: 149
+
+Previously targeted structural issues are fixed: 0 remaining structural errors for chapter root routing, capstone placement, topic pairing, proof restatement type, proof filename prefix, proof layers, and normal-form proof order.
+
+Error counts by code:
+
+```text
+25 unknown_decoration_block
+16 missing_standard_quantified_statement
+11 missing_interpretation
+6 missing_or_duplicate_toolkit
+3 decoration_order
+1 boxed_nonformal_content
+1 missing_dependencies
+1 missing_dependent_parent_block
+1 plain_remark_or_example
+1 unknown_label_prefix
+```
+
+## Global repair rules
+
+Apply these rules consistently:
+
+1. Every notes section file reported by the validator must begin with exactly one Toolkit tcolorbox before formal artifacts.
+2. Formal `definition`, `theorem`, `lemma`, `proposition`, and `corollary` artifacts need standard house decoration blocks required by the artifact matrix, including `Standard quantified statement` where required.
+3. Definitions and theorem-like entries generally need an `Interpretation` block.
+4. Decoration blocks must use canonical validator-recognized names and canonical order.
+5. Nonstandard decoration titles such as `Reading`, `Construction`, `Special case`, `Readable decomposition`, `Structural route`, `Use`, `Truth-table method versus normal-form method`, `Why DNF and CNF serve different checks`, and topic-specific example titles must be rewritten into approved block names or moved into compliant prose/example blocks.
+6. Use starred prose/example environments: `remark*` and `example*`, not unstarred `remark` or `example`.
+7. Remarks, examples, and proofs must not be boxed.
+8. Labels must use approved prefixes. Remove or replace invalid `rem:` labels that are not allowed by the validator.
+9. `Failure mode decomposition` requires a parent `Failure modes` block.
+10. `dependencies` must appear before `Interpretation` when the validator expects that order.
+11. Do not use `rem:` or `prf:` as dependency targets.
+12. Preserve existing mathematical meaning. This is a formatting/house-rule repair, not a content expansion.
+13. Do not add theorem-like artifacts unless required to repair a malformed existing artifact.
+
+## Files and errors to repair
+
+### `volume-i/propositional-logic/notes/algebra/notes-algebra.tex`
+
+Repair these 10 errors:
+
+- Add exactly one Toolkit tcolorbox at the top before formal artifacts.
+- Replace nonstandard decoration block `Readable decomposition` under `thm:de-morgan-laws-propositional-logic` with an approved canonical block or compliant prose/example placement.
+- Replace nonstandard decoration block `Readable decomposition` under `thm:conditional-equivalence-laws-propositional-logic`.
+- Replace nonstandard decoration block `Readable decomposition` under `thm:biconditional-equivalence-laws-propositional-logic`.
+- Replace nonstandard decoration block `Readable decomposition` under `thm:replacement-of-logical-equivalents-propositional-logic`.
+- Replace nonstandard decoration block `Rules of replacement` under `thm:replacement-of-logical-equivalents-propositional-logic` with an approved block or compliant prose/example placement.
+- Remove boxed nonformal content around the algebraic role remark.
+- Fix decoration order where `Interpretation` appears before `dependencies` for `thm:replacement-of-logical-equivalents-propositional-logic`.
+- Change unstarred `remark` to `remark*` where required.
+- Remove or replace invalid label `rem:algebraic-role-of-propositional-laws`; do not use a `rem:` label.
+
+### `volume-i/propositional-logic/notes/normal-forms/canonical-normal-forms.tex`
+
+Repair these 10 errors:
+
+- Add `Standard quantified statement` for `def:truth-table-row-conjunction-propositional-logic`.
+- Add `Standard quantified statement` for `def:truth-table-row-clause-propositional-logic`.
+- Add `Standard quantified statement` and `Interpretation` for `def:canonical-disjunctive-normal-form-propositional-logic`.
+- Replace nonstandard `Special case` block under canonical DNF with an approved block or compliant prose/example placement.
+- Add `Standard quantified statement` and `Interpretation` for `def:canonical-conjunctive-normal-form-propositional-logic`.
+- Replace nonstandard `Special case` block under canonical CNF.
+- Add `Standard quantified statement` for `thm:canonical-disjunctive-normal-form-propositional-logic`.
+- Add `Standard quantified statement` for `thm:canonical-conjunctive-normal-form-propositional-logic`.
+
+### `volume-i/propositional-logic/notes/normal-forms/conjunctive-normal-form.tex`
+
+Repair these 13 errors:
+
+- Add `Standard quantified statement` and `Interpretation` for `def:elementary-disjunction-propositional-logic`.
+- Replace nonstandard blocks `Reading` and `Elementary disjunctions` under `def:elementary-disjunction-propositional-logic`.
+- Add `Standard quantified statement` for `def:maxterm-propositional-logic`.
+- Replace nonstandard block `Maxterm` under `def:maxterm-propositional-logic`.
+- Add `Standard quantified statement` and `Interpretation` for `def:conjunctive-normal-form-propositional-logic`.
+- Replace nonstandard blocks `Structural route` and `Conjunctive normal form` under `def:conjunctive-normal-form-propositional-logic`.
+- Add `Standard quantified statement` and `Interpretation` for `thm:existence-conjunctive-normal-form-propositional-logic`.
+- Replace nonstandard block `Construction` under `thm:existence-conjunctive-normal-form-propositional-logic`.
+
+### `volume-i/propositional-logic/notes/normal-forms/disjunctive-normal-form.tex`
+
+Repair these 16 errors:
+
+- Add `Standard quantified statement` and `Interpretation` for `def:elementary-conjunction-propositional-logic`.
+- Replace nonstandard blocks `Reading` and `Elementary conjunctions` under `def:elementary-conjunction-propositional-logic`.
+- Add `Standard quantified statement` for `def:minterm-propositional-logic`.
+- Replace nonstandard block `Minterm` under `def:minterm-propositional-logic`.
+- Add `Standard quantified statement` and `Interpretation` for `def:disjunctive-normal-form-propositional-logic`.
+- Replace nonstandard blocks `Structural route` and `Disjunctive normal form` under `def:disjunctive-normal-form-propositional-logic`.
+- Add `Standard quantified statement` and `Interpretation` for `thm:existence-disjunctive-normal-form-propositional-logic`.
+- Replace nonstandard block `Construction` under `thm:existence-disjunctive-normal-form-propositional-logic`.
+- Add `Standard quantified statement` and `Interpretation` for `thm:dnf-satisfiability-criterion-propositional-logic`.
+- Replace nonstandard block `Use` under `thm:dnf-satisfiability-criterion-propositional-logic`.
+
+### `volume-i/propositional-logic/notes/normal-forms/orientation.tex`
+
+Repair:
+
+- Add exactly one Toolkit tcolorbox at the top before any prose/formal artifacts.
+
+### `volume-i/propositional-logic/notes/normal-forms/semantic-classification.tex`
+
+Repair these 4 errors:
+
+- Add `Standard quantified statement` and `Interpretation` for `thm:normal-form-semantic-classification-propositional-logic`.
+- Replace nonstandard block `Truth-table method versus normal-form method`.
+- Replace nonstandard block `Why DNF and CNF serve different checks`.
+
+### `volume-i/propositional-logic/notes/normal-forms/summary.tex`
+
+Repair:
+
+- Add exactly one Toolkit tcolorbox at the top before any prose/formal artifacts.
+
+### `volume-i/propositional-logic/notes/notation/notation.tex`
+
+Repair:
+
+- Add exactly one Toolkit tcolorbox at the top before formal artifacts/prose as required by the validator.
+
+### `volume-i/propositional-logic/notes/semantics/notes-semantics.tex`
+
+Repair these 3 errors:
+
+- Add exactly one Toolkit tcolorbox at the top before formal artifacts.
+- Replace nonstandard decoration block `Truth conditions for primitive connectives` under `def:extended-truth-assignment-propositional-logic` with an approved block or compliant prose/example placement.
+- Fix decoration order where `Interpretation` appears before dependencies for `def:extended-truth-assignment-propositional-logic`.
+
+### `volume-i/propositional-logic/notes/syntax/notes-syntax.tex`
+
+Repair these 7 errors:
+
+- Add exactly one Toolkit tcolorbox at the top before formal artifacts.
+- Add missing parent `Failure modes` block before `Failure mode decomposition` for `def:well-formed-formula`.
+- Replace nonstandard decoration block `Readable decomposition` under `lem:constructor-disjointness-propositional-formulas`.
+- Replace nonstandard decoration block `Readable decomposition` under `thm:unique-decomposition-propositional-formulas`.
+- Add missing shared `dependencies` block for `def:subformula-propositional-logic`.
+- Add missing `Interpretation` block for `def:subformula-propositional-logic`.
+- Fix decoration order where `Interpretation` appears before dependencies for `def:proper-subformula`.
+
+## Toolkit guidance
+
+When adding a Toolkit tcolorbox, match the local house style used elsewhere in Volume I. Keep each Toolkit concise. Do not over-explain. It should be a section-level tool list or reading guide, not a formal mathematical artifact.
+
+## Decoration block guidance
+
+Use validator-recognized canonical blocks. Prefer these where appropriate:
+
+- `Standard quantified statement`
+- `Definition predicate reading` for definitions
+- `Predicate reading` for theorem-like artifacts
+- `Negated quantified statement` when required or already present
+- `Failure modes`
+- `Failure mode decomposition` only after `Failure modes`
+- `Contrapositive quantified statement` only for theorem-like artifacts when useful
+- `Interpretation`
+- `Examples`
+- `Non-Examples`
+- `Dependencies` through the shared `dependencies` environment
+
+If a nonstandard block contains useful prose, either retitle it to an approved block when semantically appropriate, or convert it to ordinary compliant prose without making it a decoration block attached to the formal artifact.
+
+## Validation target
+
+After repairs, rerun:
+
+```powershell
+python F:\repos\lra-governance\tools\governance\validate_chapter_house_rules.py --chapter F:\repos\lra-volume-i\volume-i\propositional-logic --format json
+```
+
+The target is 0 errors. If warnings remain, report them grouped by code and whether they are pre-existing or newly introduced.
+
+Then run:
+
+```powershell
+latexmk -lualatex -interaction=nonstopmode -halt-on-error main.tex
+```
+
+## Cleanup and commit
+
+Delete `codex-prompt-house-rules-repair` before committing.
+
+Commit message:
+
+```text
+Repair propositional logic house-rule blocks
+```
+
+Final report must include:
+
+- files changed;
+- validator command run;
+- validator status and remaining error count;
+- warning count grouped by code if any remain;
+- LuaLaTeX build status;
+- commit hash;
+- confirmation that `codex-prompt-house-rules-repair` was deleted.
