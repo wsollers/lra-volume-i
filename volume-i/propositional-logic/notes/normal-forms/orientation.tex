@@ -1,0 +1,34 @@
+\subsubsection*{Orientation}
+
+A normal form is a controlled syntactic shape for a propositional formula.
+Instead of allowing an arbitrary mixture of connectives, parentheses, and
+nested subformulas, a normal-form convention specifies which connectives may
+appear and how they may be arranged. The point is not to change the proposition
+being expressed, but to put the proposition into a form whose structure is easy
+to inspect.
+
+Normal-form conversion is therefore governed by logical equivalence. When a
+formula is converted into a normal form, the converted formula must have the
+same truth value as the original formula under every truth assignment. The
+algebra of propositions supplies the equivalence laws used to justify these
+conversions, while the semantic theory explains why preserving truth under
+every assignment is the right standard.
+
+\begin{remark*}[Section map]
+This section uses the preceding syntax, semantics, and algebra of propositions
+as its starting point. It first isolates literals and clauses, then introduces
+negation normal form, disjunctive normal form, conjunctive normal form,
+canonical normal forms, and semantic classification uses. Later arguments
+will use these forms to organize satisfiability questions, proof search,
+functional completeness, and resolution-style methods.
+\end{remark*}
+
+\begin{remark*}[Why normal forms matter]
+Normal forms trade arbitrary expression for regular structure. In a truth-table
+argument, regular structure helps classify formulas as tautologies,
+contradictions, satisfiable formulas, or contingencies. In proof search and
+satisfiability procedures, regular structure turns a formula into a finite
+combinatorial object that can be searched. In functional completeness, normal
+forms show how complicated truth functions can be built from simpler
+connectives.
+\end{remark*}
