@@ -1,5 +1,13 @@
 # Agent Task Index
 
+Repository scope: `Learning-Real-Analysis` is read-only by default unless the
+user explicitly asks to modify it; workflows sync changes from the leaf
+`lra-*` repositories into that aggregate monorepo.
+
+Governance scope: `lra-governance` is the master governance and script
+repository; shared scripts, rules, prompts, schemas, and workflows belong here,
+and commit syncs copy those rules into the leaf repositories.
+
 This index tells agents which authority to load for common LRA tasks. It is a
 router, not a replacement for the referenced standards.
 
