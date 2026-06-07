@@ -1,0 +1,53 @@
+% BEGIN GENERATED ARTIFACT: prf:normal-form-semantic-classification-propositional-logic
+\newpage
+\phantomsection
+\label{prf:normal-form-semantic-classification-propositional-logic}
+\LRAProofFor{thm:normal-form-semantic-classification-propositional-logic}
+
+\begin{remark*}[Return]
+\hyperref[thm:normal-form-semantic-classification-propositional-logic]{Return to Theorem (Semantic Classification by Normal Forms).}
+\end{remark*}
+
+\begin{theorem*}[Semantic Classification by Normal Forms]
+Normal forms give finite certificates for semantic classification. A formula is
+satisfiable exactly when some DNF equivalent has a satisfiable term; it is a
+contradiction exactly when some DNF equivalent has no satisfiable term; it is a
+tautology exactly when some CNF equivalent has no falsifiable clause; and it is
+a contingency exactly when it is satisfiable and not a tautology.
+\end{theorem*}
+
+\begin{proof}
+\textbf{Professional Standard Proof.}~
+TODO: supply the compact proof.
+\end{proof}
+
+\begin{proof}
+\textbf{Detailed Learning Proof.}~
+TODO: supply the detailed learning proof.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Use logical equivalence to replace \(\varphi\) by an equivalent normal form.
+For DNF, apply the DNF satisfiability criterion to detect whether at least one
+term can be made true; absence of such a term gives contradiction. For CNF,
+use the dual clause check: if no clause can be falsified, every valuation makes
+each clause true, so the conjunction is a tautology. Finally, contingency is
+the semantic case of satisfiable but not tautological.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:disjunctive-normal-form-propositional-logic]{Disjunctive Normal Form}
+  \item \hyperref[def:conjunctive-normal-form-propositional-logic]{Conjunctive Normal Form}
+  \item \hyperref[def:satisfiable-formula-propositional-logic]{Satisfiable Formula}
+  \item \hyperref[def:contradiction-propositional-logic]{Contradiction}
+  \item \hyperref[def:tautology-propositional-logic]{Tautology}
+  \item \hyperref[def:contingency-propositional-logic]{Contingency}
+  \item \hyperref[thm:dnf-satisfiability-criterion-propositional-logic]{DNF Satisfiability Criterion}
+  \item \hyperref[thm:canonical-disjunctive-normal-form-propositional-logic]{Canonical Disjunctive Normal Form Theorem}
+  \item \hyperref[thm:canonical-conjunctive-normal-form-propositional-logic]{Canonical Conjunctive Normal Form Theorem}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+% END GENERATED ARTIFACT: prf:normal-form-semantic-classification-propositional-logic
