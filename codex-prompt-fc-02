@@ -1,0 +1,76 @@
+# codex-prompt-fc-02: Insert Functional Completeness orientation
+
+You are working in `wsollers/lra-volume-i`.
+
+Process this prompt only. Do not generate new mathematical content. Replace the contents of the target file with the exact LaTeX below, then validate, delete this prompt, commit, push, and report.
+
+## Target file
+
+```text
+volume-i/propositional-logic/notes/functional-completeness/orientation.tex
+```
+
+## Exact LaTeX to write
+
+```latex
+\subsubsection*{Orientation}
+
+\begin{tcolorbox}[
+  colback=gray!6,
+  colframe=gray!40,
+  arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  title={\small\textbf{Toolkit}},
+  fonttitle=\small\bfseries
+]
+This orientation uses Boolean functions, truth functions induced by formulas,
+logical equivalence, canonical normal forms, and connective rewrite laws to
+explain functional completeness.
+\end{tcolorbox}
+
+\begin{remark*}[Exposition]
+Functional completeness is the study of expressive power. A collection of
+connectives is functionally complete when every Boolean function can be
+represented by some propositional formula using only those connectives. Thus the
+question is not whether a connective set is convenient, but whether it is
+sufficient to express every possible truth-function behavior.
+\end{remark*}
+
+\begin{remark*}[Section map]
+This section begins with Boolean functions and formula representation, then
+introduces connective bases and definability of connectives. It uses normal
+forms to prove completeness of the standard connectives and then reduces the
+primitive vocabulary further. The final topics show that NAND and NOR each form
+a one-connective complete basis, while some familiar connective sets fail to be
+functionally complete.
+\end{remark*}
+
+\begin{remark*}[Connection with normal forms]
+Normal forms explain why functional completeness is possible. Canonical DNF and
+canonical CNF show that the truth behavior of a formula can be reconstructed
+from finitely many truth-table rows. Once those canonical constructions are
+available, proving that a connective set is functionally complete amounts to
+showing that the connectives needed for those normal forms can be defined from
+that set.
+\end{remark*}
+```
+
+## Validation
+
+Run:
+
+```powershell
+python F:\repos\lra-governance\tools\governance\validate_note_blocks.py --file F:\repos\lra-volume-i\volume-i\propositional-logic\notes\functional-completeness\orientation.tex --format json
+python F:\repos\lra-governance\tools\governance\validate_chapter_house_rules.py --chapter F:\repos\lra-volume-i\volume-i\propositional-logic --format json
+latexmk -lualatex -interaction=nonstopmode -halt-on-error main.tex
+```
+
+## Cleanup and commit
+
+Delete `codex-prompt-fc-02` before committing.
+
+Commit message:
+
+```text
+Add Volume I functional completeness orientation
+```
