@@ -1,0 +1,66 @@
+# codex-prompt-af-02: Insert Argument Forms orientation
+
+You are working in `wsollers/lra-volume-i`.
+
+Process this prompt only. Do not generate new mathematical content. Replace the contents of the target file with the exact LaTeX below, then validate, delete this prompt, commit, push, and report.
+
+## Target file
+
+```text
+volume-i/propositional-logic/notes/argument-forms/orientation.tex
+```
+
+## Exact LaTeX to write
+
+```latex
+\subsubsection*{Orientation}
+
+\begin{tcolorbox}[
+  colback=gray!6,
+  colframe=gray!40,
+  arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  title={\small\textbf{Toolkit}},
+  fonttitle=\small\bfseries
+]
+This orientation uses truth assignments, logical consequence, tautology,
+logical equivalence, formula contexts, and counterexample assignments to justify
+common argument forms.
+\end{tcolorbox}
+
+\begin{remark*}[Exposition]
+Argument forms are reusable patterns of inference. The purpose of this section
+is to justify the basic inference tools that will be used throughout the rest of
+the project. The justification is semantic: an argument form is valid when no
+truth assignment makes every premise true while making the conclusion false.
+\end{remark*}
+
+\begin{remark*}[Section map]
+This section introduces argument forms, substitution instances, validity,
+invalidity, and counterexample assignments. It then proves the validity of the
+standard inference patterns, isolates common invalid forms, explains rules of
+replacement, and connects informal proof patterns with semantic consequence.
+Formal proof systems are previewed but not developed here.
+\end{remark*}
+
+\begin{remark*}[Boundary]
+The goal is rigorous senior-undergraduate propositional logic. The section
+proves that the proof moves used later are truth-preserving, but it does not
+build Hilbert systems, sequent calculi, cut elimination, or metatheoretic
+completeness machinery.
+\end{remark*}
+```
+
+## Validation
+
+Run note-block validation on the target file, chapter house-rule validation on the propositional-logic chapter, and LuaLaTeX.
+
+## Cleanup and commit
+
+Delete `codex-prompt-af-02` before committing.
+
+Commit message:
+
+```text
+Add Volume I argument forms orientation
+```
