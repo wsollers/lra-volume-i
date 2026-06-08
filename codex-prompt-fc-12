@@ -1,0 +1,432 @@
+# codex-prompt-fc-12: Insert Functional Completeness proof stubs and final validation
+
+You are working in `wsollers/lra-volume-i`.
+
+Process this prompt only. Do not generate new mathematical content. Create the exact proof stubs and index edits below, then validate, delete this prompt, commit, push, and report.
+
+## Required rule loading
+
+Before editing, read and obey:
+
+- `AGENTS.md`
+- `docs/agent-task-index.md`
+- `docs/governance/proof-standards.md`
+- `docs/governance/dependency-standards.md`
+- `docs/governance/extraction-standards.md`
+- `constitution/schema/file-schema.yaml`
+
+## Index edits
+
+Update `volume-i/propositional-logic/proofs/index.tex` by adding this input after the normal-forms proof input if absent:
+
+```latex
+\input{volume-i/propositional-logic/proofs/functional-completeness/index}
+```
+
+Replace `volume-i/propositional-logic/proofs/functional-completeness/index.tex` with exactly:
+
+```latex
+\subsection*{Functional Completeness Proofs}
+\input{volume-i/propositional-logic/proofs/functional-completeness/prf-dnf-representation-of-boolean-functions-propositional-logic}
+\input{volume-i/propositional-logic/proofs/functional-completeness/prf-standard-connectives-functionally-complete-propositional-logic}
+\input{volume-i/propositional-logic/proofs/functional-completeness/prf-negation-conjunction-functionally-complete-propositional-logic}
+\input{volume-i/propositional-logic/proofs/functional-completeness/prf-negation-disjunction-functionally-complete-propositional-logic}
+\input{volume-i/propositional-logic/proofs/functional-completeness/prf-nand-functionally-complete-propositional-logic}
+\input{volume-i/propositional-logic/proofs/functional-completeness/prf-nor-functionally-complete-propositional-logic}
+\input{volume-i/propositional-logic/proofs/functional-completeness/prf-conjunction-disjunction-not-functionally-complete-propositional-logic}
+\input{volume-i/propositional-logic/proofs/functional-completeness/prf-nand-nor-minimal-complete-bases-propositional-logic}
+```
+
+## Create proof stubs
+
+Create the following files exactly as specified. Each file must begin with `\newpage` and end with `\clearpage`.
+
+### `volume-i/propositional-logic/proofs/functional-completeness/prf-dnf-representation-of-boolean-functions-propositional-logic.tex`
+
+```latex
+% BEGIN GENERATED ARTIFACT: prf:dnf-representation-of-boolean-functions-propositional-logic
+\newpage
+\phantomsection
+\label{prf:dnf-representation-of-boolean-functions-propositional-logic}
+\LRAProofFor{thm:dnf-representation-of-boolean-functions-propositional-logic}
+
+\begin{remark*}[Return]
+\hyperref[thm:dnf-representation-of-boolean-functions-propositional-logic]{Return to Theorem (DNF Representation of Boolean Functions).}
+\end{remark*}
+
+\begin{theorem*}[DNF Representation of Boolean Functions]
+Every Boolean function \(f:\mathbb{B}^n\to\mathbb{B}\) is represented by a
+formula in disjunctive normal form using variables \(P_1,\ldots,P_n\).
+\end{theorem*}
+
+\begin{proof}
+\textbf{Professional Standard Proof.}~
+TODO: supply the compact proof.
+\end{proof}
+
+\begin{proof}
+\textbf{Detailed Learning Proof.}~
+TODO: supply the detailed learning proof.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Use the truth table of \(f\). For each row on which \(f\) has value \(\True\),
+form the corresponding row conjunction. The disjunction of all such row
+conjunctions is a DNF formula representing \(f\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:boolean-function-representation-propositional-logic]{Representation of a Boolean Function}
+  \item \hyperref[def:canonical-disjunctive-normal-form-propositional-logic]{Canonical Disjunctive Normal Form}
+  \item \hyperref[thm:canonical-disjunctive-normal-form-propositional-logic]{Canonical Disjunctive Normal Form Theorem}
+  \item \hyperref[def:disjunctive-normal-form-propositional-logic]{Disjunctive Normal Form}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+% END GENERATED ARTIFACT: prf:dnf-representation-of-boolean-functions-propositional-logic
+```
+
+### `volume-i/propositional-logic/proofs/functional-completeness/prf-standard-connectives-functionally-complete-propositional-logic.tex`
+
+```latex
+% BEGIN GENERATED ARTIFACT: prf:standard-connectives-functionally-complete-propositional-logic
+\newpage
+\phantomsection
+\label{prf:standard-connectives-functionally-complete-propositional-logic}
+\LRAProofFor{thm:standard-connectives-functionally-complete-propositional-logic}
+
+\begin{remark*}[Return]
+\hyperref[thm:standard-connectives-functionally-complete-propositional-logic]{Return to Theorem (Standard Connectives are Functionally Complete).}
+\end{remark*}
+
+\begin{theorem*}[Standard Connectives are Functionally Complete]
+The connective basis \(\{\neg,\land,\lor\}\) is functionally complete.
+\end{theorem*}
+
+\begin{proof}
+\textbf{Professional Standard Proof.}~
+TODO: supply the compact proof.
+\end{proof}
+
+\begin{proof}
+\textbf{Detailed Learning Proof.}~
+TODO: supply the detailed learning proof.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Apply the DNF representation theorem for Boolean functions. DNF formulas use
+only literals, conjunctions, and disjunctions, so they use only
+\(\neg,\land,\lor\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:functionally-complete-connective-set-propositional-logic]{Functionally Complete Connective Set}
+  \item \hyperref[thm:dnf-representation-of-boolean-functions-propositional-logic]{DNF Representation of Boolean Functions}
+  \item \hyperref[def:disjunctive-normal-form-propositional-logic]{Disjunctive Normal Form}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+% END GENERATED ARTIFACT: prf:standard-connectives-functionally-complete-propositional-logic
+```
+
+### `volume-i/propositional-logic/proofs/functional-completeness/prf-negation-conjunction-functionally-complete-propositional-logic.tex`
+
+```latex
+% BEGIN GENERATED ARTIFACT: prf:negation-conjunction-functionally-complete-propositional-logic
+\newpage
+\phantomsection
+\label{prf:negation-conjunction-functionally-complete-propositional-logic}
+\LRAProofFor{thm:negation-conjunction-functionally-complete-propositional-logic}
+
+\begin{remark*}[Return]
+\hyperref[thm:negation-conjunction-functionally-complete-propositional-logic]{Return to Theorem (Negation and Conjunction are Functionally Complete).}
+\end{remark*}
+
+\begin{theorem*}[Negation and Conjunction are Functionally Complete]
+The connective basis \(\{\neg,\land\}\) is functionally complete.
+\end{theorem*}
+
+\begin{proof}
+\textbf{Professional Standard Proof.}~
+TODO: supply the compact proof.
+\end{proof}
+
+\begin{proof}
+\textbf{Detailed Learning Proof.}~
+TODO: supply the detailed learning proof.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Use De Morgan's law to define disjunction from negation and conjunction:
+\(\varphi\lor\psi\equiv\neg(\neg\varphi\land\neg\psi)\). Then translate any
+formula over \(\{\neg,\land,\lor\}\) into a formula over \(\{\neg,\land\}\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:standard-connectives-functionally-complete-propositional-logic]{Standard Connectives are Functionally Complete}
+  \item \hyperref[thm:de-morgan-laws-propositional-logic]{De Morgan Laws for Propositional Logic}
+  \item \hyperref[thm:replacement-of-logical-equivalents-propositional-logic]{Replacement of Logical Equivalents}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+% END GENERATED ARTIFACT: prf:negation-conjunction-functionally-complete-propositional-logic
+```
+
+### `volume-i/propositional-logic/proofs/functional-completeness/prf-negation-disjunction-functionally-complete-propositional-logic.tex`
+
+```latex
+% BEGIN GENERATED ARTIFACT: prf:negation-disjunction-functionally-complete-propositional-logic
+\newpage
+\phantomsection
+\label{prf:negation-disjunction-functionally-complete-propositional-logic}
+\LRAProofFor{thm:negation-disjunction-functionally-complete-propositional-logic}
+
+\begin{remark*}[Return]
+\hyperref[thm:negation-disjunction-functionally-complete-propositional-logic]{Return to Theorem (Negation and Disjunction are Functionally Complete).}
+\end{remark*}
+
+\begin{theorem*}[Negation and Disjunction are Functionally Complete]
+The connective basis \(\{\neg,\lor\}\) is functionally complete.
+\end{theorem*}
+
+\begin{proof}
+\textbf{Professional Standard Proof.}~
+TODO: supply the compact proof.
+\end{proof}
+
+\begin{proof}
+\textbf{Detailed Learning Proof.}~
+TODO: supply the detailed learning proof.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Use De Morgan's law to define conjunction from negation and disjunction:
+\(\varphi\land\psi\equiv\neg(\neg\varphi\lor\neg\psi)\). Then translate any
+formula over \(\{\neg,\land,\lor\}\) into a formula over \(\{\neg,\lor\}\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:standard-connectives-functionally-complete-propositional-logic]{Standard Connectives are Functionally Complete}
+  \item \hyperref[thm:de-morgan-laws-propositional-logic]{De Morgan Laws for Propositional Logic}
+  \item \hyperref[thm:replacement-of-logical-equivalents-propositional-logic]{Replacement of Logical Equivalents}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+% END GENERATED ARTIFACT: prf:negation-disjunction-functionally-complete-propositional-logic
+```
+
+### `volume-i/propositional-logic/proofs/functional-completeness/prf-nand-functionally-complete-propositional-logic.tex`
+
+```latex
+% BEGIN GENERATED ARTIFACT: prf:nand-functionally-complete-propositional-logic
+\newpage
+\phantomsection
+\label{prf:nand-functionally-complete-propositional-logic}
+\LRAProofFor{thm:nand-functionally-complete-propositional-logic}
+
+\begin{remark*}[Return]
+\hyperref[thm:nand-functionally-complete-propositional-logic]{Return to Theorem (NAND is Functionally Complete).}
+\end{remark*}
+
+\begin{theorem*}[NAND is Functionally Complete]
+The one-connective basis \(\{\uparrow\}\) is functionally complete.
+\end{theorem*}
+
+\begin{proof}
+\textbf{Professional Standard Proof.}~
+TODO: supply the compact proof.
+\end{proof}
+
+\begin{proof}
+\textbf{Detailed Learning Proof.}~
+TODO: supply the detailed learning proof.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Show that NAND defines negation and conjunction. Since \(\{\neg,\land\}\) is
+functionally complete, any Boolean function can be represented by first using
+that basis and then replacing the defined connectives by NAND-only patterns.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:nand-connective-propositional-logic]{NAND Connective}
+  \item \hyperref[def:nand-only-formula-propositional-logic]{NAND-Only Formula}
+  \item \hyperref[def:functionally-complete-connective-set-propositional-logic]{Functionally Complete Connective Set}
+  \item \hyperref[thm:negation-conjunction-functionally-complete-propositional-logic]{Negation and Conjunction are Functionally Complete}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+% END GENERATED ARTIFACT: prf:nand-functionally-complete-propositional-logic
+```
+
+### `volume-i/propositional-logic/proofs/functional-completeness/prf-nor-functionally-complete-propositional-logic.tex`
+
+```latex
+% BEGIN GENERATED ARTIFACT: prf:nor-functionally-complete-propositional-logic
+\newpage
+\phantomsection
+\label{prf:nor-functionally-complete-propositional-logic}
+\LRAProofFor{thm:nor-functionally-complete-propositional-logic}
+
+\begin{remark*}[Return]
+\hyperref[thm:nor-functionally-complete-propositional-logic]{Return to Theorem (NOR is Functionally Complete).}
+\end{remark*}
+
+\begin{theorem*}[NOR is Functionally Complete]
+The one-connective basis \(\{\downarrow\}\) is functionally complete.
+\end{theorem*}
+
+\begin{proof}
+\textbf{Professional Standard Proof.}~
+TODO: supply the compact proof.
+\end{proof}
+
+\begin{proof}
+\textbf{Detailed Learning Proof.}~
+TODO: supply the detailed learning proof.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Show that NOR defines negation and disjunction. Since \(\{\neg,\lor\}\) is
+functionally complete, any Boolean function can be represented by first using
+that basis and then replacing the defined connectives by NOR-only patterns.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:nor-connective-propositional-logic]{NOR Connective}
+  \item \hyperref[def:nor-only-formula-propositional-logic]{NOR-Only Formula}
+  \item \hyperref[def:functionally-complete-connective-set-propositional-logic]{Functionally Complete Connective Set}
+  \item \hyperref[thm:negation-disjunction-functionally-complete-propositional-logic]{Negation and Disjunction are Functionally Complete}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+% END GENERATED ARTIFACT: prf:nor-functionally-complete-propositional-logic
+```
+
+### `volume-i/propositional-logic/proofs/functional-completeness/prf-conjunction-disjunction-not-functionally-complete-propositional-logic.tex`
+
+```latex
+% BEGIN GENERATED ARTIFACT: prf:conjunction-disjunction-not-functionally-complete-propositional-logic
+\newpage
+\phantomsection
+\label{prf:conjunction-disjunction-not-functionally-complete-propositional-logic}
+\LRAProofFor{thm:conjunction-disjunction-not-functionally-complete-propositional-logic}
+
+\begin{remark*}[Return]
+\hyperref[thm:conjunction-disjunction-not-functionally-complete-propositional-logic]{Return to Theorem (Conjunction and Disjunction are not Functionally Complete).}
+\end{remark*}
+
+\begin{theorem*}[Conjunction and Disjunction are not Functionally Complete]
+The connective basis \(\{\land,\lor\}\) is not functionally complete.
+\end{theorem*}
+
+\begin{proof}
+\textbf{Professional Standard Proof.}~
+TODO: supply the compact proof.
+\end{proof}
+
+\begin{proof}
+\textbf{Detailed Learning Proof.}~
+TODO: supply the detailed learning proof.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Prove by structural induction that every formula using only \(\land\) and
+\(\lor\) represents a monotone Boolean function. Since negation is not monotone,
+\(\{\land,\lor\}\) cannot represent every Boolean function.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:incomplete-connective-set-propositional-logic]{Incomplete Connective Set}
+  \item \hyperref[def:monotone-boolean-function-propositional-logic]{Monotone Boolean Function}
+  \item \hyperref[def:functionally-complete-connective-set-propositional-logic]{Functionally Complete Connective Set}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+% END GENERATED ARTIFACT: prf:conjunction-disjunction-not-functionally-complete-propositional-logic
+```
+
+### `volume-i/propositional-logic/proofs/functional-completeness/prf-nand-nor-minimal-complete-bases-propositional-logic.tex`
+
+```latex
+% BEGIN GENERATED ARTIFACT: prf:nand-nor-minimal-complete-bases-propositional-logic
+\newpage
+\phantomsection
+\label{prf:nand-nor-minimal-complete-bases-propositional-logic}
+\LRAProofFor{thm:nand-nor-minimal-complete-bases-propositional-logic}
+
+\begin{remark*}[Return]
+\hyperref[thm:nand-nor-minimal-complete-bases-propositional-logic]{Return to Theorem (NAND and NOR are Minimal Complete Bases).}
+\end{remark*}
+
+\begin{theorem*}[NAND and NOR are Minimal Complete Bases]
+The one-connective bases \(\{\uparrow\}\) and \(\{\downarrow\}\) are minimal
+complete bases.
+\end{theorem*}
+
+\begin{proof}
+\textbf{Professional Standard Proof.}~
+TODO: supply the compact proof.
+\end{proof}
+
+\begin{proof}
+\textbf{Detailed Learning Proof.}~
+TODO: supply the detailed learning proof.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Use the functional completeness of NAND and NOR. Since each basis contains a
+single connective, the only proper subset is the empty basis, which is not
+functionally complete. Therefore each one-connective complete basis is minimal.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:minimal-complete-basis-propositional-logic]{Minimal Complete Basis}
+  \item \hyperref[thm:nand-functionally-complete-propositional-logic]{NAND is Functionally Complete}
+  \item \hyperref[thm:nor-functionally-complete-propositional-logic]{NOR is Functionally Complete}
+  \item \hyperref[def:incomplete-connective-set-propositional-logic]{Incomplete Connective Set}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+% END GENERATED ARTIFACT: prf:nand-nor-minimal-complete-bases-propositional-logic
+```
+
+## Final validation
+
+Run:
+
+```powershell
+python F:\repos\lra-governance\tools\governance\validate_chapter_house_rules.py --chapter F:\repos\lra-volume-i\volume-i\propositional-logic --format json
+python F:\repos\lra-volume-i\scripts\validate_leaf_proofs.py --root F:\repos\lra-volume-i --strict
+latexmk -lualatex -interaction=nonstopmode -halt-on-error main.tex
+```
+
+If `validate_leaf_proofs.py` still reports known pre-existing repo-wide proof issues outside the generated Functional Completeness proof files, report them separately from this task. The Functional Completeness proof files must satisfy proof-stub structure.
+
+## Cleanup and commit
+
+Delete `codex-prompt-fc-12` before committing.
+
+Commit message:
+
+```text
+Add Volume I functional completeness proof stubs
+```
+
+Final report must include files created/modified, chapter validator status, proof validator status, LuaLaTeX status, commit hash, and prompt deletion confirmation.
