@@ -1,0 +1,66 @@
+# codex-prompt-af-09: Insert bridge to proof systems
+
+You are working in `wsollers/lra-volume-i`.
+
+Process this prompt only. Do not generate new mathematical content. Replace the contents of the target file with the exact LaTeX below, then validate, delete this prompt, commit, push, and report.
+
+## Target file
+
+```text
+volume-i/propositional-logic/notes/argument-forms/bridge-to-proof-systems.tex
+```
+
+## Exact LaTeX to write
+
+```latex
+\subsubsection*{Argument Forms as a Bridge to Formal Systems}
+
+\begin{tcolorbox}[
+  colback=gray!6,
+  colframe=gray!40,
+  arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  title={\small\textbf{Toolkit}},
+  fonttitle=\small\bfseries
+]
+This topic distinguishes semantic validity from formal derivability and explains
+why formal proof systems are deferred.
+\end{tcolorbox}
+
+\begin{remark*}[Exposition]
+A valid argument form is a semantic object: it preserves truth under all truth
+assignments. A formal rule of inference is a syntactic object inside a specified
+proof system. Many formal systems include rules corresponding to the valid
+argument forms justified in this section, but the semantic justification and the
+formal rule are not the same object.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Formal proof systems require additional machinery: formal derivations,
+assumptions, discharge rules, axioms or axiom schemata, and precise proof-checking
+rules. Natural deduction, Hilbert systems, tableaux, resolution, and sequent
+calculus are examples of such systems. They are important, but they are not the
+main purpose of this introductory propositional-logic section.
+\end{remark*}
+
+\begin{remark*}[Transition]
+The tools validated here are safe to use in ordinary mathematical proof because
+they are truth-preserving. Later, when formal proof systems are introduced, these
+same patterns can be represented as formal rules, derived rules, or admissible
+moves depending on the chosen system.
+\end{remark*}
+```
+
+## Validation
+
+Run note-block validation on the target file, chapter house-rule validation on the propositional-logic chapter, and LuaLaTeX.
+
+## Cleanup and commit
+
+Delete `codex-prompt-af-09` before committing.
+
+Commit message:
+
+```text
+Add Volume I bridge from argument forms to proof systems
+```
