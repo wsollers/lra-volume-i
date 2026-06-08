@@ -1,0 +1,68 @@
+# codex-prompt-fc-11: Insert Functional Completeness summary topic
+
+You are working in `wsollers/lra-volume-i`.
+
+Process this prompt only. Do not generate new mathematical content. Replace the contents of the target file with the exact LaTeX below, then validate, delete this prompt, commit, push, and report.
+
+## Target file
+
+```text
+volume-i/propositional-logic/notes/functional-completeness/summary.tex
+```
+
+## Exact LaTeX to write
+
+```latex
+\subsubsection*{Summary and Transition}
+
+\begin{tcolorbox}[
+  colback=gray!6,
+  colframe=gray!40,
+  arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  title={\small\textbf{Toolkit}},
+  fonttitle=\small\bfseries
+]
+This summary reviews Boolean-function representation, connective bases,
+functional completeness, NAND, NOR, incomplete bases, and minimal complete
+bases.
+\end{tcolorbox}
+
+\begin{remark*}[Exposition]
+Functional completeness measures the expressive strength of a connective basis.
+A functionally complete basis can represent every finite Boolean function by a
+formula using only the connectives in that basis. Normal forms supply the main
+construction: truth-table rows can be converted into formulas, and those
+formulas can be assembled into a representative for the desired Boolean
+function.
+\end{remark*}
+
+\begin{remark*}[Section map]
+The standard connectives \(\neg\), \(\land\), and \(\lor\) are functionally
+complete because they can build disjunctive normal forms. De Morgan laws reduce
+this basis to \(\{\neg,\land\}\) or \(\{\neg,\lor\}\). NAND and NOR go further:
+each single connective can define a complete two-connective basis and therefore
+can represent every Boolean function.
+\end{remark*}
+
+\begin{remark*}[Transition]
+The next section moves from expressive power to argument forms and informal
+proof patterns. Functional completeness explains which truth functions can be
+expressed. Argument forms ask which patterns of inference preserve truth from
+premises to conclusions.
+\end{remark*}
+```
+
+## Validation
+
+Run note-block validation on the target file, chapter house-rule validation on the propositional-logic chapter, and LuaLaTeX. Missing proof stubs for theorem-like artifacts introduced by earlier Functional Completeness prompts are expected until the final proof-stub prompt is processed.
+
+## Cleanup and commit
+
+Delete `codex-prompt-fc-11` before committing.
+
+Commit message:
+
+```text
+Add Volume I functional completeness summary
+```
