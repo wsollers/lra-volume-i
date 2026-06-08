@@ -24,16 +24,15 @@ TODO: supply the detailed learning proof.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-Use the canonical disjunctive normal form theorem to construct, from the truth
-table of \(f\), a disjunction of row conjunctions for exactly those rows on
-which \(f\) has value \(\mathrm{True}\). The representation definition then
-identifies the resulting DNF formula with the Boolean function on every input
-row.
+Use the truth table of \(f\). For each row on which \(f\) has value \(\True\),
+form the corresponding row conjunction. The disjunction of all such row
+conjunctions is a DNF formula representing \(f\).
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:boolean-function-representation-propositional-logic]{Representation of a Boolean Function}
+  \item \hyperref[def:canonical-disjunctive-normal-form-propositional-logic]{Canonical Disjunctive Normal Form}
   \item \hyperref[thm:canonical-disjunctive-normal-form-propositional-logic]{Canonical Disjunctive Normal Form Theorem}
   \item \hyperref[def:disjunctive-normal-form-propositional-logic]{Disjunctive Normal Form}
 \end{itemize}
