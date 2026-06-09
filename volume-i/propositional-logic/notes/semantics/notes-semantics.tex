@@ -2,10 +2,7 @@
 \label{subsec:truth-assignments-propositional-logic}
 
 % BEGIN GENERATED ARTIFACT: def:truth-assignment-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Truth Assignment)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Truth Assignment)}
 \begin{definition}[Truth Assignment]
 \label{def:truth-assignment-propositional-logic}
 A \emph{truth assignment} is a function
@@ -15,7 +12,7 @@ v:\Prop\to\mathbb{B}.
 For each propositional variable \(P\in\Prop\), the value \(v(P)\) is the truth
 value assigned to \(P\).
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -62,10 +59,7 @@ function \(\Prop\to\mathbb{B}\).
 % END GENERATED ARTIFACT: def:truth-assignment-propositional-logic
 
 % BEGIN GENERATED ARTIFACT: def:truth-assignment-domain-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Domain of a Truth Assignment)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Domain of a Truth Assignment)}
 \begin{definition}[Domain of a Truth Assignment]
 \label{def:truth-assignment-domain-propositional-logic}
 The \emph{domain} of a truth assignment
@@ -74,7 +68,7 @@ v:\Prop\to\mathbb{B}
 \]
 is the set \(\Prop\) of propositional variables.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -99,10 +93,7 @@ of them.
 \label{subsec:extension-of-truth-assignment-propositional-logic}
 
 % BEGIN GENERATED ARTIFACT: def:extended-truth-assignment-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Extension of a Truth Assignment to Formulas)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Extension of a Truth Assignment to Formulas)}
 \begin{definition}[Extension of a Truth Assignment to Formulas]
 \label{def:extended-truth-assignment-propositional-logic}
 Let
@@ -152,7 +143,7 @@ and
 \widehat v(\varphi)=\widehat v(\psi).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For every truth assignment \(v:\Prop\to\mathbb{B}\), its extension is a function
@@ -244,10 +235,7 @@ formed syntactically.
 
 
 % BEGIN GENERATED ARTIFACT: thm:unique-extension-truth-assignment-propositional-logic
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Unique Extension of a Truth Assignment)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Unique Extension of a Truth Assignment)}
 \begin{theorem}[Unique Extension of a Truth Assignment]
 \label{thm:unique-extension-truth-assignment-propositional-logic}
 Every truth assignment
@@ -263,7 +251,7 @@ primitive connectives.
 
 \noindent\hyperref[prf:unique-extension-truth-assignment-propositional-logic]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -301,10 +289,7 @@ has exactly one truth value.
 \end{dependencies}
 % END GENERATED ARTIFACT: thm:unique-extension-truth-assignment-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:satisfaction-propositional-formula
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Satisfaction of a Formula)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Satisfaction of a Formula)}
 \begin{definition}[Satisfaction of a Formula]
 \label{def:satisfaction-propositional-formula}
 Let \(v\) be a truth assignment and let \(\varphi\in\WFF\). We say that \(v\) satisfies \(\varphi\), written
@@ -316,7 +301,7 @@ if
 \widehat v(\varphi)=\mathrm{True}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -358,10 +343,7 @@ The notation \(v\models\varphi\) means that the formula \(\varphi\) is true unde
 \end{dependencies}
 % END GENERATED ARTIFACT: def:satisfaction-propositional-formula
 % BEGIN GENERATED ARTIFACT: def:satisfaction-set-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Satisfaction of a Set of Formulas)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Satisfaction of a Set of Formulas)}
 \begin{definition}[Satisfaction of a Set of Formulas]
 \label{def:satisfaction-set-propositional-logic}
 Let \(\Gamma\subseteq\WFF\). A truth assignment \(v\) satisfies \(\Gamma\), written
@@ -370,7 +352,7 @@ v\models\Gamma,
 \]
 if \(v\models\gamma\) for every \(\gamma\in\Gamma\).
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -411,10 +393,7 @@ Satisfaction of a set means simultaneous satisfaction of every formula in the se
 \end{dependencies}
 % END GENERATED ARTIFACT: def:satisfaction-set-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:truth-table-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Truth Table)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Truth Table)}
 \begin{definition}[Truth Table]
 \label{def:truth-table-propositional-logic}
 Let \(\varphi\in\WFF\) and suppose the variables occurring in \(\varphi\) are among \(P_1,\ldots,P_n\). A truth table for \(\varphi\) is a finite table with one row for each assignment
@@ -423,7 +402,7 @@ a:\{P_1,\ldots,P_n\}\to\mathbb{B}
 \]
 and a final column recording the value of \(\widehat v(\varphi)\) for any truth assignment \(v\) extending \(a\).
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -450,10 +429,7 @@ A truth table is finite because every formula contains only finitely many variab
 \end{dependencies}
 % END GENERATED ARTIFACT: def:truth-table-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:tautology-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Tautology)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Tautology)}
 \begin{definition}[Tautology]
 \label{def:tautology-propositional-logic}
 A formula \(\varphi\in\WFF\) is a tautology, written
@@ -462,7 +438,7 @@ A formula \(\varphi\in\WFF\) is a tautology, written
 \]
 if every truth assignment satisfies \(\varphi\).
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -493,15 +469,12 @@ A tautology is true under every possible assignment of truth values to propositi
 \end{dependencies}
 % END GENERATED ARTIFACT: def:tautology-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:contradiction-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Contradiction)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Contradiction)}
 \begin{definition}[Contradiction]
 \label{def:contradiction-propositional-logic}
 A formula \(\varphi\in\WFF\) is a contradiction if no truth assignment satisfies \(\varphi\).
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -532,15 +505,12 @@ A contradiction has no true row in its truth table.
 \end{dependencies}
 % END GENERATED ARTIFACT: def:contradiction-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:satisfiable-formula-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Satisfiable Formula)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Satisfiable Formula)}
 \begin{definition}[Satisfiable Formula]
 \label{def:satisfiable-formula-propositional-logic}
 A formula \(\varphi\in\WFF\) is satisfiable if at least one truth assignment satisfies it.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -571,15 +541,12 @@ A satisfiable formula has at least one true row in its truth table.
 \end{dependencies}
 % END GENERATED ARTIFACT: def:satisfiable-formula-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:contingency-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Contingency)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Contingency)}
 \begin{definition}[Contingency]
 \label{def:contingency-propositional-logic}
 A formula \(\varphi\in\WFF\) is a contingency if it is satisfiable but not a tautology.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -610,10 +577,7 @@ A contingency has at least one true row and at least one false row in its truth 
 \end{dependencies}
 % END GENERATED ARTIFACT: def:contingency-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:logical-consequence-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Logical Consequence)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Logical Consequence)}
 \begin{definition}[Logical Consequence]
 \label{def:logical-consequence-propositional-logic}
 Let \(\Gamma\subseteq\WFF\) and \(\varphi\in\WFF\). The formula \(\varphi\) is a logical consequence of \(\Gamma\), written
@@ -622,7 +586,7 @@ Let \(\Gamma\subseteq\WFF\) and \(\varphi\in\WFF\). The formula \(\varphi\) is a
 \]
 if every truth assignment satisfying \(\Gamma\) also satisfies \(\varphi\).
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -671,10 +635,7 @@ Logical consequence means truth preservation from premises to conclusion. There 
 \end{dependencies}
 % END GENERATED ARTIFACT: def:logical-consequence-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:logical-equivalence-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Logical Equivalence)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Logical Equivalence)}
 \begin{definition}[Logical Equivalence]
 \label{def:logical-equivalence-propositional-logic}
 Formulas \(\varphi,\psi\in\WFF\) are logically equivalent, written
@@ -683,7 +644,7 @@ Formulas \(\varphi,\psi\in\WFF\) are logically equivalent, written
 \]
 if they have the same truth value under every truth assignment.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -717,10 +678,7 @@ Logically equivalent formulas have identical truth-table columns. They are inter
 \end{dependencies}
 % END GENERATED ARTIFACT: def:logical-equivalence-propositional-logic
 % BEGIN GENERATED ARTIFACT: lem:coincidence-lemma-propositional-logic
-\begin{tcolorbox}[colback=lembox, colframe=lemborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Lemma (Coincidence Lemma for Propositional Logic)}},
-  fonttitle=\small\bfseries]
+\begin{lemmabox}{Lemma (Coincidence Lemma for Propositional Logic)}
 \begin{lemma}[Coincidence Lemma for Propositional Logic]
 \label{lem:coincidence-lemma-propositional-logic}
 Let \(v,w:\Prop\to\mathbb{B}\) be truth assignments. If \(v\) and \(w\) agree on every propositional variable occurring in \(\varphi\), then they assign the same truth value to \(\varphi\):
@@ -734,7 +692,7 @@ w|_{\operatorname{Var}(\varphi)}
 
 \noindent\hyperref[prf:coincidence-lemma-propositional-logic]{Go to proof.}
 \end{lemma}
-\end{tcolorbox}
+\end{lemmabox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -761,17 +719,14 @@ The truth value of a formula depends only on the variables actually occurring in
 \end{dependencies}
 % END GENERATED ARTIFACT: lem:coincidence-lemma-propositional-logic
 % BEGIN GENERATED ARTIFACT: thm:finite-truth-table-propositional-logic
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Finite Truth-Table Theorem)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Finite Truth-Table Theorem)}
 \begin{theorem}[Finite Truth-Table Theorem]
 \label{thm:finite-truth-table-propositional-logic}
 Every propositional formula has a finite truth table. More precisely, if \(\operatorname{Var}(\varphi)\) has \(n\) elements, then \(\varphi\) has a truth table with \(2^n\) rows.
 
 \noindent\hyperref[prf:finite-truth-table-propositional-logic]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -796,10 +751,7 @@ Truth tables are finite because every formula contains only finitely many propos
 \end{dependencies}
 % END GENERATED ARTIFACT: thm:finite-truth-table-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:boolean-function-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Boolean Function)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Boolean Function)}
 \begin{definition}[Boolean Function]
 \label{def:boolean-function-propositional-logic}
 An \(n\)-ary Boolean function is a function
@@ -807,7 +759,7 @@ An \(n\)-ary Boolean function is a function
 f:\mathbb{B}^n\to\mathbb{B}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -835,10 +787,7 @@ Boolean functions are the abstract truth-functions that formulas may represent.
 \end{dependencies}
 % END GENERATED ARTIFACT: def:boolean-function-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:truth-function-induced-by-formula
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Truth Function Induced by a Formula)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Truth Function Induced by a Formula)}
 \begin{definition}[Truth Function Induced by a Formula]
 \label{def:truth-function-induced-by-formula}
 Let \(\varphi\in\WFF\), and suppose \(\operatorname{Var}(\varphi)\subseteq\{P_1,\ldots,P_n\}\). The truth function induced by \(\varphi\) is the Boolean function
@@ -851,7 +800,7 @@ f_\varphi(b_1,\ldots,b_n)=\widehat v(\varphi),
 \]
 where \(v(P_i)=b_i\) for each \(i\).
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -883,10 +832,7 @@ The induced truth function packages the truth table of a formula as a Boolean fu
 \end{dependencies}
 % END GENERATED ARTIFACT: def:truth-function-induced-by-formula
 % BEGIN GENERATED ARTIFACT: thm:counting-boolean-functions
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Counting Boolean Functions)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Counting Boolean Functions)}
 \begin{theorem}[Counting Boolean Functions]
 \label{thm:counting-boolean-functions}
 There are exactly
@@ -897,7 +843,7 @@ Boolean functions \(\mathbb{B}^n\to\mathbb{B}\).
 
 \noindent\hyperref[prf:counting-boolean-functions]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[

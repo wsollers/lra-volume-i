@@ -1,5 +1,5 @@
 % BEGIN GENERATED ARTIFACT: def:truth-table-row-conjunction-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt, title={\small\textbf{Definition (Truth-Table Row Conjunction)}}]
+\begin{definitionbox}{Definition (Truth-Table Row Conjunction)}
 \begin{definition}[Truth-Table Row Conjunction]
 \label{def:truth-table-row-conjunction-propositional-logic}
 Fix a finite variable list \(P_1,\ldots,P_n\) and a row \(r\) of the
@@ -17,7 +17,7 @@ P_i, & \text{if row }r\text{ makes }P_i\text{ true},\\
 \end{cases}
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For a fixed row \(r\) on variables \(P_1,\ldots,P_n\),
@@ -47,7 +47,7 @@ and false on every row that disagrees with it on at least one listed variable.
 % END GENERATED ARTIFACT: def:truth-table-row-conjunction-propositional-logic
 
 % BEGIN GENERATED ARTIFACT: def:truth-table-row-clause-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt, title={\small\textbf{Definition (Truth-Table Row Clause)}}]
+\begin{definitionbox}{Definition (Truth-Table Row Clause)}
 \begin{definition}[Truth-Table Row Clause]
 \label{def:truth-table-row-clause-propositional-logic}
 Fix a finite variable list \(P_1,\ldots,P_n\) and a row \(r\) of the
@@ -65,7 +65,7 @@ P_i, & \text{if row }r\text{ makes }P_i\text{ false},\\
 \end{cases}
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For a fixed row \(r\) on variables \(P_1,\ldots,P_n\),
@@ -96,7 +96,7 @@ variable.
 % END GENERATED ARTIFACT: def:truth-table-row-clause-propositional-logic
 
 % BEGIN GENERATED ARTIFACT: def:canonical-disjunctive-normal-form-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt, title={\small\textbf{Definition (Canonical Disjunctive Normal Form)}}]
+\begin{definitionbox}{Definition (Canonical Disjunctive Normal Form)}
 \begin{definition}[Canonical Disjunctive Normal Form]
 \label{def:canonical-disjunctive-normal-form-propositional-logic}
 Let \(\varphi\in\WFF\), and fix an ordering \(P_1,\ldots,P_n\) of the finite
@@ -105,7 +105,7 @@ variable set of \(\varphi\). The \emph{canonical disjunctive normal form} of
 \hyperref[def:truth-table-row-conjunction-propositional-logic]{truth-table row conjunctions}
 corresponding to the rows on which \(\varphi\) is true.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For \(\mathrm{Var}(\varphi)=\{P_1,\ldots,P_n\}\), the canonical
@@ -139,7 +139,7 @@ is the empty disjunction, represented by the
 % END GENERATED ARTIFACT: def:canonical-disjunctive-normal-form-propositional-logic
 
 % BEGIN GENERATED ARTIFACT: def:canonical-conjunctive-normal-form-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt, title={\small\textbf{Definition (Canonical Conjunctive Normal Form)}}]
+\begin{definitionbox}{Definition (Canonical Conjunctive Normal Form)}
 \begin{definition}[Canonical Conjunctive Normal Form]
 \label{def:canonical-conjunctive-normal-form-propositional-logic}
 Let \(\varphi\in\WFF\), and fix an ordering \(P_1,\ldots,P_n\) of the finite
@@ -148,7 +148,7 @@ variable set of \(\varphi\). The \emph{canonical conjunctive normal form} of
 \hyperref[def:truth-table-row-clause-propositional-logic]{truth-table row clauses}
 corresponding to the rows on which \(\varphi\) is false.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For \(\mathrm{Var}(\varphi)=\{P_1,\ldots,P_n\}\), the canonical
@@ -182,7 +182,7 @@ the empty conjunction, represented by the
 % END GENERATED ARTIFACT: def:canonical-conjunctive-normal-form-propositional-logic
 
 % BEGIN GENERATED ARTIFACT: thm:canonical-disjunctive-normal-form-propositional-logic
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt, title={\small\textbf{Theorem (Canonical Disjunctive Normal Form)}}]
+\begin{theorembox}{Theorem (Canonical Disjunctive Normal Form)}
 \begin{theorem}[Canonical Disjunctive Normal Form Theorem]
 \label{thm:canonical-disjunctive-normal-form-propositional-logic}
 Every formula \(\varphi\in\WFF\) is
@@ -195,7 +195,7 @@ relative to a fixed ordering of its finitely many variables.
 \]
 \noindent\hyperref[prf:canonical-disjunctive-normal-form-propositional-logic]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -223,7 +223,7 @@ disjunction accepts any of those rows.
 % END GENERATED ARTIFACT: thm:canonical-disjunctive-normal-form-propositional-logic
 
 % BEGIN GENERATED ARTIFACT: thm:canonical-conjunctive-normal-form-propositional-logic
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt, left=6pt, right=6pt, top=4pt, bottom=4pt, title={\small\textbf{Theorem (Canonical Conjunctive Normal Form)}}]
+\begin{theorembox}{Theorem (Canonical Conjunctive Normal Form)}
 \begin{theorem}[Canonical Conjunctive Normal Form Theorem]
 \label{thm:canonical-conjunctive-normal-form-propositional-logic}
 Every formula \(\varphi\in\WFF\) is
@@ -236,7 +236,7 @@ relative to a fixed ordering of its finitely many variables.
 \]
 \noindent\hyperref[prf:canonical-conjunctive-normal-form-propositional-logic]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[

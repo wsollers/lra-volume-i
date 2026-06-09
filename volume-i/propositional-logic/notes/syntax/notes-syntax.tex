@@ -1,8 +1,5 @@
 % BEGIN GENERATED ARTIFACT: def:truth-value-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Truth Value)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Truth Value)}
 \begin{definition}[Truth Value]
 \label{def:truth-value-propositional-logic}
 The set of truth values is
@@ -11,7 +8,7 @@ The set of truth values is
 \]
 Some sources identify this set with \(\{0,1\}\), with \(0\) read as false and \(1\) read as true.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -28,10 +25,7 @@ Truth values are the semantic targets of propositional formulas. Syntax determin
 \end{dependencies}
 % END GENERATED ARTIFACT: def:truth-value-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:propositional-language
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Propositional Language)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Propositional Language)}
 \begin{definition}[Propositional Language]
 \label{def:propositional-language}
 A propositional language consists of:
@@ -42,7 +36,7 @@ A propositional language consists of:
 \item recursive formation rules specifying the well-formed formulas.
 \end{enumerate}
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -63,10 +57,7 @@ The language supplies symbols and grammar. It does not yet assign truth values, 
 \end{dependencies}
 % END GENERATED ARTIFACT: def:propositional-language
 % BEGIN GENERATED ARTIFACT: def:propositional-variable
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Propositional Variable)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Propositional Variable)}
 \begin{definition}[Propositional Variable]
 \label{def:propositional-variable}
 A propositional variable is an atomic symbol intended to stand for a proposition. A standard supply of variables is
@@ -75,7 +66,7 @@ A propositional variable is an atomic symbol intended to stand for a proposition
 \]
 Informally, variables are often written \(P,Q,R,S,\ldots\).
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -106,10 +97,7 @@ A propositional variable has no internal syntactic structure in propositional lo
 \end{dependencies}
 % END GENERATED ARTIFACT: def:propositional-variable
 % BEGIN GENERATED ARTIFACT: def:logical-connective
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Logical Connective)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Logical Connective)}
 \begin{definition}[Logical Connective]
 \label{def:logical-connective}
 The standard primitive propositional connectives are
@@ -130,7 +118,7 @@ The connective \(\neg\) is unary. The connectives \(\land,\lor,\to,\leftrightarr
 \end{array}
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -151,10 +139,7 @@ Arity records how many formulas a connective uses to form a new formula. The tru
 \end{dependencies}
 % END GENERATED ARTIFACT: def:logical-connective
 % BEGIN GENERATED ARTIFACT: def:well-formed-formula
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Well-Formed Formula)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Well-Formed Formula)}
 \begin{definition}[Well-Formed Formula]
 \label{def:well-formed-formula}
 The set \(\WFF\) of well-formed formulas is the smallest set of strings satisfying the following formation rules:
@@ -165,7 +150,7 @@ The set \(\WFF\) of well-formed formulas is the smallest set of strings satisfyi
 \item No string is a well-formed formula unless it is obtained by finitely many applications of the previous clauses.
 \end{enumerate}
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -246,10 +231,7 @@ Well-formed formulas are exactly the strings to which the semantic and proof-the
 \end{dependencies}
 % END GENERATED ARTIFACT: def:well-formed-formula
 % BEGIN GENERATED ARTIFACT: lem:closure-under-formation-propositional-formulas
-\begin{tcolorbox}[colback=lembox, colframe=lemborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Lemma (Closure Under Formation)}},
-  fonttitle=\small\bfseries]
+\begin{lemmabox}{Lemma (Closure Under Formation)}
 \begin{lemma}[Closure Under Formation]
 \label{lem:closure-under-formation-propositional-formulas}
 The set \(\WFF\) is closed under the propositional formation rules.
@@ -269,7 +251,7 @@ then
 
 \noindent\hyperref[prf:closure-under-formation-propositional-formulas]{Go to proof.}
 \end{lemma}
-\end{tcolorbox}
+\end{lemmabox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -295,10 +277,7 @@ well-formed formula. It is the forward direction of the recursive grammar.
 \end{dependencies}
 % END GENERATED ARTIFACT: lem:closure-under-formation-propositional-formulas
 % BEGIN GENERATED ARTIFACT: thm:minimality-of-well-formed-formulas
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Minimality of Well-Formed Formulas)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Minimality of Well-Formed Formulas)}
 \begin{theorem}[Minimality of Well-Formed Formulas]
 \label{thm:minimality-of-well-formed-formulas}
 Let \(S\) be a set of strings over the propositional alphabet. Suppose:
@@ -316,7 +295,7 @@ Then
 
 \noindent\hyperref[prf:minimality-of-well-formed-formulas]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -349,15 +328,12 @@ propositional variables and is closed under the formation rules.
 \end{dependencies}
 % END GENERATED ARTIFACT: thm:minimality-of-well-formed-formulas
 % BEGIN GENERATED ARTIFACT: def:atomic-formula-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Atomic Formula)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Atomic Formula)}
 \begin{definition}[Atomic Formula]
 \label{def:atomic-formula-propositional-logic}
 An atomic formula is a well-formed formula that is a propositional variable.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -383,15 +359,12 @@ Atomic formulas are the base cases of the recursive grammar. They contain no con
 \end{dependencies}
 % END GENERATED ARTIFACT: def:atomic-formula-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:molecular-formula-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Molecular Formula)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Molecular Formula)}
 \begin{definition}[Molecular Formula]
 \label{def:molecular-formula-propositional-logic}
 A molecular formula is a well-formed formula that is not atomic. Equivalently, it is a well-formed formula formed using at least one logical connective.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -418,10 +391,7 @@ Molecular formulas are exactly the formulas obtained by applying negation or a b
 \end{dependencies}
 % END GENERATED ARTIFACT: def:molecular-formula-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:main-connective-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Main Connective)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Main Connective)}
 \begin{definition}[Main Connective]
 \label{def:main-connective-propositional-logic}
 The main connective of a molecular formula is the connective introduced at the final formation step:
@@ -431,7 +401,7 @@ The main connective of a molecular formula is the connective introduced at the f
 \end{enumerate}
 Atomic formulas have no main connective.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -458,10 +428,7 @@ The main connective identifies the outermost syntactic operation. It is the firs
 \end{dependencies}
 % END GENERATED ARTIFACT: def:main-connective-propositional-logic
 % BEGIN GENERATED ARTIFACT: thm:structural-induction-propositional-formulas
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Structural Induction for Propositional Formulas)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Structural Induction for Propositional Formulas)}
 \begin{theorem}[Structural Induction for Propositional Formulas]
 \label{thm:structural-induction-propositional-formulas}
 Let \(A(\varphi)\) be a property of well-formed formulas. Suppose:
@@ -474,7 +441,7 @@ Then \(A(\theta)\) holds for every \(\theta\in\WFF\).
 
 \noindent\hyperref[prf:structural-induction-propositional-formulas]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -503,10 +470,7 @@ To prove a statement for all formulas, it suffices to prove it for propositional
 \end{dependencies}
 % END GENERATED ARTIFACT: thm:structural-induction-propositional-formulas
 % BEGIN GENERATED ARTIFACT: thm:structural-recursion-propositional-formulas
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Structural Recursion for Propositional Formulas)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Structural Recursion for Propositional Formulas)}
 \begin{theorem}[Structural Recursion for Propositional Formulas]
 \label{thm:structural-recursion-propositional-formulas}
 To define a function \(F\) on \(\WFF\), it suffices to specify:
@@ -519,7 +483,7 @@ When these clauses respect the formation rules, they determine a unique function
 
 \noindent\hyperref[prf:structural-recursion-propositional-formulas]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -542,10 +506,7 @@ Structural recursion justifies recursive definitions such as variables of a form
 \end{dependencies}
 % END GENERATED ARTIFACT: thm:structural-recursion-propositional-formulas
 % BEGIN GENERATED ARTIFACT: lem:constructor-disjointness-propositional-formulas
-\begin{tcolorbox}[colback=lembox, colframe=lemborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Lemma (Constructor Disjointness for Propositional Formulas)}},
-  fonttitle=\small\bfseries]
+\begin{lemmabox}{Lemma (Constructor Disjointness for Propositional Formulas)}
 \begin{lemma}[Constructor Disjointness for Propositional Formulas]
 \label{lem:constructor-disjointness-propositional-formulas}
 The three outer formation cases for propositional formulas are disjoint:
@@ -557,7 +518,7 @@ The three outer formation cases for propositional formulas are disjoint:
 
 \noindent\hyperref[prf:constructor-disjointness-propositional-formulas]{Go to proof.}
 \end{lemma}
-\end{tcolorbox}
+\end{lemmabox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -599,10 +560,7 @@ A formula cannot be parsed as two different outer formation types.
 \end{dependencies}
 % END GENERATED ARTIFACT: lem:constructor-disjointness-propositional-formulas
 % BEGIN GENERATED ARTIFACT: lem:constructor-injectivity-propositional-formulas
-\begin{tcolorbox}[colback=lembox, colframe=lemborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Lemma (Constructor Injectivity for Propositional Formulas)}},
-  fonttitle=\small\bfseries]
+\begin{lemmabox}{Lemma (Constructor Injectivity for Propositional Formulas)}
 \begin{lemma}[Constructor Injectivity for Propositional Formulas]
 \label{lem:constructor-injectivity-propositional-formulas}
 The propositional formula constructors are injective:
@@ -613,7 +571,7 @@ The propositional formula constructors are injective:
 
 \noindent\hyperref[prf:constructor-injectivity-propositional-formulas]{Go to proof.}
 \end{lemma}
-\end{tcolorbox}
+\end{lemmabox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -644,10 +602,7 @@ If two formulas are built by the same outer constructor and are equal as strings
 \end{dependencies}
 % END GENERATED ARTIFACT: lem:constructor-injectivity-propositional-formulas
 % BEGIN GENERATED ARTIFACT: thm:unique-decomposition-propositional-formulas
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Unique Decomposition for Propositional Formulas)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Unique Decomposition for Propositional Formulas)}
 \begin{theorem}[Unique Decomposition for Propositional Formulas]
 \label{thm:unique-decomposition-propositional-formulas}
 Every \(\varphi\in\WFF\) has exactly one outermost form:
@@ -659,7 +614,7 @@ Every \(\varphi\in\WFF\) has exactly one outermost form:
 
 \noindent\hyperref[prf:unique-decomposition-propositional-formulas]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -701,10 +656,7 @@ Unique decomposition makes recursive definitions and induction on formulas unamb
 \end{dependencies}
 % END GENERATED ARTIFACT: thm:unique-decomposition-propositional-formulas
 % BEGIN GENERATED ARTIFACT: def:parse-tree-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Parse Tree)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Parse Tree)}
 \begin{definition}[Parse Tree]
 \label{def:parse-tree-propositional-logic}
 The parse tree, or syntax tree, of a well-formed formula is the tree representation of its recursive construction:
@@ -714,7 +666,7 @@ The parse tree, or syntax tree, of a well-formed formula is the tree representat
 \item a formula \((\varphi\circ\psi)\) is represented by a root labeled \(\circ\) with two children, the parse trees of \(\varphi\) and \(\psi\).
 \end{enumerate}
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -735,17 +687,14 @@ The parse tree records the same structure described by unique decomposition. It 
 \end{dependencies}
 % END GENERATED ARTIFACT: def:parse-tree-propositional-logic
 % BEGIN GENERATED ARTIFACT: thm:unique-syntax-tree-propositional-formulas
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Unique Syntax Tree for Propositional Formulas)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Unique Syntax Tree for Propositional Formulas)}
 \begin{theorem}[Unique Syntax Tree for Propositional Formulas]
 \label{thm:unique-syntax-tree-propositional-formulas}
 Every propositional well-formed formula has a unique parse tree.
 
 \noindent\hyperref[prf:unique-syntax-tree-propositional-formulas]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -765,10 +714,7 @@ A formula has exactly one tree representation of its recursive construction. Thi
 \end{dependencies}
 % END GENERATED ARTIFACT: thm:unique-syntax-tree-propositional-formulas
 % BEGIN GENERATED ARTIFACT: def:formula-variable-set-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Variable Set of a Formula)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Variable Set of a Formula)}
 \begin{definition}[Variable Set of a Formula]
 \label{def:formula-variable-set-propositional-logic}
 The variable set \(\operatorname{Var}(\varphi)\) of a formula \(\varphi\) is defined recursively:
@@ -781,7 +727,7 @@ The variable set \(\operatorname{Var}(\varphi)\) of a formula \(\varphi\) is def
 \]
 \end{enumerate}
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -803,10 +749,7 @@ The variable set records exactly which propositional variables occur in a formul
 \end{dependencies}
 % END GENERATED ARTIFACT: def:formula-variable-set-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:subformula-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Subformula)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Subformula)}
 \begin{definition}[Subformula]
 \label{def:subformula-propositional-logic}
 The set \(\operatorname{Sub}(\varphi)\) of subformulas of a formula \(\varphi\) is defined recursively:
@@ -822,7 +765,7 @@ The set \(\operatorname{Sub}(\varphi)\) of subformulas of a formula \(\varphi\) 
 \]
 \end{enumerate}
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -847,10 +790,7 @@ Subformulas are the formulas that occur at nodes of the parse tree.
 \end{itemize}
 \end{dependencies}
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Proper Subformula)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Proper Subformula)}
 \begin{definition}[Proper Subformula]
 \label{def:proper-subformula}
 Let \(\varphi\in\WFF\). A \emph{proper subformula} of \(\varphi\) is a
@@ -861,7 +801,7 @@ formula \(\psi\) such that
 \psi\neq\varphi.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -885,10 +825,7 @@ whole formula itself.
 
 % END GENERATED ARTIFACT: def:subformula-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:formula-depth-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Formula Depth)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Formula Depth)}
 \begin{definition}[Formula Depth]
 \label{def:formula-depth-propositional-logic}
 The depth of a formula \(\varphi\), denoted \(\operatorname{depth}(\varphi)\), is defined recursively:
@@ -901,7 +838,7 @@ The depth of a formula \(\varphi\), denoted \(\operatorname{depth}(\varphi)\), i
 \]
 \end{enumerate}
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -927,10 +864,7 @@ Formula depth measures the height of the syntax tree. Some authors call this the
 \end{dependencies}
 % END GENERATED ARTIFACT: def:formula-depth-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:connective-count-propositional-logic
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Connective Count)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Connective Count)}
 \begin{definition}[Connective Count]
 \label{def:connective-count-propositional-logic}
 The connective count of a formula \(\varphi\), denoted \(\operatorname{conn}(\varphi)\), is defined recursively:
@@ -943,7 +877,7 @@ The connective count of a formula \(\varphi\), denoted \(\operatorname{conn}(\va
 \]
 \end{enumerate}
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -969,10 +903,7 @@ Formula depth measures the height of the syntax tree. Connective count measures 
 \end{dependencies}
 % END GENERATED ARTIFACT: def:connective-count-propositional-logic
 % BEGIN GENERATED ARTIFACT: lem:proper-subformula-depth-propositional-logic
-\begin{tcolorbox}[colback=lembox, colframe=lemborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Lemma (Proper Subformula Depth)}},
-  fonttitle=\small\bfseries]
+\begin{lemmabox}{Lemma (Proper Subformula Depth)}
 \begin{lemma}[Proper Subformula Depth]
 \label{lem:proper-subformula-depth-propositional-logic}
 If \(\psi\) is a proper subformula of \(\varphi\), then
@@ -982,7 +913,7 @@ If \(\psi\) is a proper subformula of \(\varphi\), then
 
 \noindent\hyperref[prf:proper-subformula-depth-propositional-logic]{Go to proof.}
 \end{lemma}
-\end{tcolorbox}
+\end{lemmabox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1007,17 +938,14 @@ Every descent into a proper subformula lowers formula depth. This justifies indu
 \end{dependencies}
 % END GENERATED ARTIFACT: lem:proper-subformula-depth-propositional-logic
 % BEGIN GENERATED ARTIFACT: lem:finiteness-of-variables-propositional-formulas
-\begin{tcolorbox}[colback=lembox, colframe=lemborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Lemma (Finiteness of Variables in a Formula)}},
-  fonttitle=\small\bfseries]
+\begin{lemmabox}{Lemma (Finiteness of Variables in a Formula)}
 \begin{lemma}[Finiteness of Variables in a Formula]
 \label{lem:finiteness-of-variables-propositional-formulas}
 For every \(\varphi\in\WFF\), the set \(\operatorname{Var}(\varphi)\) is finite.
 
 \noindent\hyperref[prf:finiteness-of-variables-propositional-formulas]{Go to proof.}
 \end{lemma}
-\end{tcolorbox}
+\end{lemmabox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1038,17 +966,14 @@ Every formula depends on only finitely many propositional variables, even though
 \end{dependencies}
 % END GENERATED ARTIFACT: lem:finiteness-of-variables-propositional-formulas
 % BEGIN GENERATED ARTIFACT: lem:finiteness-of-subformulas-propositional-formulas
-\begin{tcolorbox}[colback=lembox, colframe=lemborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Lemma (Finiteness of Subformulas)}},
-  fonttitle=\small\bfseries]
+\begin{lemmabox}{Lemma (Finiteness of Subformulas)}
 \begin{lemma}[Finiteness of Subformulas]
 \label{lem:finiteness-of-subformulas-propositional-formulas}
 For every \(\varphi\in\WFF\), the set \(\operatorname{Sub}(\varphi)\) is finite.
 
 \noindent\hyperref[prf:finiteness-of-subformulas-propositional-formulas]{Go to proof.}
 \end{lemma}
-\end{tcolorbox}
+\end{lemmabox}
 
 \begin{remark*}[Standard quantified statement]
 \[

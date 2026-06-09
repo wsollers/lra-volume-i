@@ -5,29 +5,7 @@
 \section{Down-Sets and Up-Sets}
 \label{sec:down-up-sets}
 
-\begin{tcolorbox}[
-  colback=gray!6,
-  colframe=gray!40,
-  arc=2pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  title={\small\textbf{Toolkit: Down-Sets and Up-Sets}},
-  fonttitle=\small\bfseries
-]
-A down-set is a subset of a poset that is closed downward: if an element
-belongs to it, everything below that element belongs to it too.  An up-set
-is the dual notion — closed upward.  Down-sets are the order ideals of
-lattice theory; up-sets are the order filters.  The collection of all
-down-sets of a poset, ordered by inclusion, is itself an important poset.
-\end{tcolorbox}
-
-% ---------------------------------------------------------
-% def:down-set
-% ---------------------------------------------------------
-
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Down-Set)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Toolkit: Down-Sets and Up-Sets}
 \begin{definition}[Down-Set]
 \label{def:down-set}
 Let $(P, \leq)$ be a partially ordered set.  A subset $Q \subseteq P$ is
@@ -37,7 +15,7 @@ is closed downward:
 \forall x \in Q,\; \forall y \in P,\quad y \leq x \;\Longrightarrow\; y \in Q.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -76,10 +54,7 @@ theorem states that every finite distributive lattice arises this way.
 % def:up-set
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Up-Set)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Up-Set)}
 \begin{definition}[Up-Set]
 \label{def:up-set}
 Let $(P, \leq)$ be a partially ordered set.  A subset $Q \subseteq P$ is
@@ -89,7 +64,7 @@ is closed upward:
 \forall x \in Q,\; \forall y \in P,\quad x \leq y \;\Longrightarrow\; y \in Q.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[

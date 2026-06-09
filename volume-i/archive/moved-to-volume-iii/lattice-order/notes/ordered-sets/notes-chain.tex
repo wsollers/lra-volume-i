@@ -5,28 +5,7 @@
 \section{Chains and Antichains}
 \label{sec:chains-antichains}
 
-\begin{tcolorbox}[
-  colback=gray!6,
-  colframe=gray!40,
-  arc=2pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  title={\small\textbf{Toolkit: Chains and Antichains}},
-  fonttitle=\small\bfseries
-]
-A poset can contain subsets whose elements are either completely aligned
-or entirely incomparable.  These two extremes are formalised as chains and
-antichains.  They measure the ``linearity'' and ``width'' of the order
-structure respectively.
-\end{tcolorbox}
-
-% ---------------------------------------------------------
-% def:chain
-% ---------------------------------------------------------
-
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Chain)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Toolkit: Chains and Antichains}
 \begin{definition}[Chain]
 \label{def:chain}
 Let $(S, \leq)$ be a partially ordered set.  A subset $C \subseteq S$ is a
@@ -37,7 +16,7 @@ Let $(S, \leq)$ be a partially ordered set.  A subset $C \subseteq S$ is a
 Equivalently, the restriction of $\leq$ to $C$ is a
 \hyperref[def:total-order]{total order} on $C$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -76,10 +55,7 @@ element to any other is unambiguous.
 % def:antichain
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Antichain)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Antichain)}
 \begin{definition}[Antichain]
 \label{def:antichain}
 Let $(S, \leq)$ be a partially ordered set.  A subset $A \subseteq S$ is
@@ -88,7 +64,7 @@ an \emph{antichain} if no two distinct elements of $A$ are comparable:
 \forall x, y \in A, \quad x \neq y \Longrightarrow \neg(x \leq y) \land \neg(y \leq x).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[

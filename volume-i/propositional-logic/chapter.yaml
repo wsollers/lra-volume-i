@@ -272,6 +272,51 @@ environments:
   file: notes\algebra\notes-algebra.tex
   display_title: Replacement of Logical Equivalents
   proof_file: proofs\algebra\prf-replacement-of-logical-equivalents-propositional-logic.tex
+- label: def:satisfiable-set-of-propositional-formulas
+  type: def
+  file: notes\compactness-preview\satisfiable-sets.tex
+  display_title: Satisfiable Set of Propositional Formulas
+  proof_file: null
+- label: def:unsatisfiable-set-of-propositional-formulas
+  type: def
+  file: notes\compactness-preview\satisfiable-sets.tex
+  display_title: Unsatisfiable Set of Propositional Formulas
+  proof_file: null
+- label: def:finite-subset-of-set-of-propositional-formulas
+  type: def
+  file: notes\compactness-preview\finitely-satisfiable-sets.tex
+  display_title: Finite Subset of a Set of Propositional Formulas
+  proof_file: null
+- label: def:finitely-satisfiable-set-of-propositional-formulas
+  type: def
+  file: notes\compactness-preview\finitely-satisfiable-sets.tex
+  display_title: Finitely Satisfiable Set of Propositional Formulas
+  proof_file: null
+- label: def:unsatisfiability-witness-propositional-logic
+  type: def
+  file: notes\compactness-preview\finite-unsatisfiability-witness.tex
+  display_title: Unsatisfiability Witness
+  proof_file: null
+- label: def:finite-unsatisfiability-witness-propositional-logic
+  type: def
+  file: notes\compactness-preview\finite-unsatisfiability-witness.tex
+  display_title: Finite Unsatisfiability Witness
+  proof_file: null
+- label: thm:finite-unsatisfiability-witness-propositional-logic
+  type: thm
+  file: notes\compactness-preview\finite-unsatisfiability-witness.tex
+  display_title: Finite Unsatisfiability Witness
+  proof_file: proofs\compactness-preview\prf-finite-unsatisfiability-witness-propositional-logic.tex
+- label: cor:finite-unsatisfiability-witness-contrapositive-propositional-logic
+  type: cor
+  file: notes\compactness-preview\finite-unsatisfiability-witness.tex
+  display_title: Finite Witness Contrapositive
+  proof_file: proofs\compactness-preview\prf-finite-unsatisfiability-witness-contrapositive-propositional-logic.tex
+- label: thm:propositional-compactness
+  type: thm
+  file: notes\compactness-preview\propositional-compactness.tex
+  display_title: Propositional Compactness
+  proof_file: proofs\compactness-preview\prf-propositional-compactness.tex
 proof_files:
 - label: prf:closure-under-formation-propositional-formulas
   file: proofs\syntax\closure-under-formation-propositional-formulas.tex
@@ -345,6 +390,15 @@ proof_files:
 - label: prf:replacement-of-logical-equivalents-propositional-logic
   file: proofs\algebra\prf-replacement-of-logical-equivalents-propositional-logic.tex
   theorem_label: thm:replacement-of-logical-equivalents-propositional-logic
+- label: prf:finite-unsatisfiability-witness-propositional-logic
+  file: proofs\compactness-preview\prf-finite-unsatisfiability-witness-propositional-logic.tex
+  theorem_label: thm:finite-unsatisfiability-witness-propositional-logic
+- label: prf:finite-unsatisfiability-witness-contrapositive-propositional-logic
+  file: proofs\compactness-preview\prf-finite-unsatisfiability-witness-contrapositive-propositional-logic.tex
+  theorem_label: cor:finite-unsatisfiability-witness-contrapositive-propositional-logic
+- label: prf:propositional-compactness
+  file: proofs\compactness-preview\prf-propositional-compactness.tex
+  theorem_label: thm:propositional-compactness
 subject: propositional-logic
 display_title: Propositional Logic
 volume: volume-i

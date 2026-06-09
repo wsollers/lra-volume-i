@@ -5,28 +5,7 @@
 \section{Lifting and Co-Lifting}
 \label{sec:lifting}
 
-\begin{tcolorbox}[
-  colback=gray!6,
-  colframe=gray!40,
-  arc=2pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  title={\small\textbf{Toolkit: Lifting and Co-Lifting}},
-  fonttitle=\small\bfseries
-]
-A poset that lacks a bottom or top element can be given one by adjoining
-a new universal bound.  Lifting adjoins a bottom; co-lifting adjoins a
-top.  These constructions are dual to each other and are used throughout
-domain theory, where a bottom element represents an undefined state.
-\end{tcolorbox}
-
-% ---------------------------------------------------------
-% def:lifting
-% ---------------------------------------------------------
-
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Lifting)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Toolkit: Lifting and Co-Lifting}
 \begin{definition}[Lifting]
 \label{def:lifting}
 Let $(P, \leq)$ be a partially ordered set.  The \emph{lifting} of $P$
@@ -41,7 +20,7 @@ x \leq_{P_{\bot}} y \;\Longleftrightarrow\; x \leq_P y
 Thus $P_{\bot}$ is $P$ with a new
 \hyperref[def:bottom-element]{bottom element} $\bot$ adjoined.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[

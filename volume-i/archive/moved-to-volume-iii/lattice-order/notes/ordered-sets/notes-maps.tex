@@ -5,29 +5,7 @@
 \section{Maps Between Ordered Sets}
 \label{sec:maps-ordered-sets}
 
-\begin{tcolorbox}[
-  colback=gray!6,
-  colframe=gray!40,
-  arc=2pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  title={\small\textbf{Toolkit: Maps Between Ordered Sets}},
-  fonttitle=\small\bfseries
-]
-The structure-preserving maps between posets form a hierarchy of increasing
-strength.  An order-preserving map carries the direction of the order
-forward.  An order-embedding carries it in both directions.  An
-order-isomorphism is a surjective order-embedding — a perfect structural
-identification between two posets.
-\end{tcolorbox}
-
-% ---------------------------------------------------------
-% def:order-preserving-map
-% ---------------------------------------------------------
-
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Order-Preserving Map)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Toolkit: Maps Between Ordered Sets}
 \begin{definition}[Order-Preserving Map]
 \label{def:order-preserving-map}
 Let $(P, \leq_P)$ and $(Q, \leq_Q)$ be partially ordered sets.  A map
@@ -37,7 +15,7 @@ $\varphi : P \to Q$ is \emph{order-preserving} (or \emph{monotone}) if
 x \leq_P y \;\Longrightarrow\; \varphi(x) \leq_Q \varphi(y).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -74,10 +52,7 @@ of the category of posets.
 % def:order-embedding
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Order-Embedding)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Order-Embedding)}
 \begin{definition}[Order-Embedding]
 \label{def:order-embedding}
 Let $(P, \leq_P)$ and $(Q, \leq_Q)$ be partially ordered sets.  A map
@@ -88,7 +63,7 @@ x \leq_P y \;\Longleftrightarrow\; \varphi(x) \leq_Q \varphi(y).
 \]
 When $\varphi$ is an order-embedding, one writes $\varphi : P \hookrightarrow Q$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -117,10 +92,7 @@ and identifies $P$ order-isomorphically with its image in $Q$.
 % def:order-isomorphism
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Order-Isomorphism)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Order-Isomorphism)}
 \begin{definition}[Order-Isomorphism]
 \label{def:order-isomorphism}
 An \hyperref[def:order-embedding]{order-embedding} $\varphi : P \to Q$
@@ -128,7 +100,7 @@ that is surjective is an \emph{order-isomorphism}.  When an
 order-isomorphism exists, $P$ and $Q$ are said to be
 \emph{order-isomorphic}, written $P \cong Q$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[

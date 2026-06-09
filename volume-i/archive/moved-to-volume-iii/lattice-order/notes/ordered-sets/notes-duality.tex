@@ -5,29 +5,7 @@
 \section{Duality}
 \label{sec:duality}
 
-\begin{tcolorbox}[
-  colback=gray!6,
-  colframe=gray!40,
-  arc=2pt,
-  left=8pt, right=8pt, top=6pt, bottom=6pt,
-  title={\small\textbf{Toolkit: Duality}},
-  fonttitle=\small\bfseries
-]
-Every partially ordered set has a dual obtained by reversing all order
-relations.  Any statement that holds in every poset therefore holds in
-every dual poset, which means its order-reversed version also holds
-universally.  This is the Duality Principle — the formal engine behind
-phrases like ``by duality, the corresponding result for infima follows.''
-\end{tcolorbox}
-
-% ---------------------------------------------------------
-% def:dual-ordered-set
-% ---------------------------------------------------------
-
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Dual Ordered Set)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Toolkit: Duality}
 \begin{definition}[Dual Ordered Set]
 \label{def:dual-ordered-set}
 Let $(P, \leq)$ be a partially ordered set.  The \emph{dual} (or
@@ -37,7 +15,7 @@ equipped with the reversed order:
 x \leq_{P^{\mathrm{op}}} y \;\Longleftrightarrow\; y \leq_P x.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
