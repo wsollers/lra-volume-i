@@ -7,10 +7,7 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{tcolorbox}[colback=gray!6, colframe=gray!40, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Relational Properties — Quick Reference}},
-  fonttitle=\small\bfseries]
+\begin{toolkitbox}{Relational Properties — Quick Reference}
 \small
 \begin{tabular}{l l l l}
 \toprule
@@ -32,9 +29,8 @@ Partial order  & Reflexive + Antisymmetric + Transitive              & $\subsete
 Total order    & Partial order + Total                               & $\leq$ on $\mathbb{R}$ & \hyperref[def:total-order]{↓ Def} \\
 \bottomrule
 \end{tabular}
-\end{tcolorbox}
+\end{toolkitbox}
 
-\vspace{1em}
 
 % ---------------------------------------------------------
 % Individual property definitions
@@ -53,11 +49,11 @@ $R$ is \emph{irreflexive} if no element is related to itself:
 \]
 \end{definition}
 
-\begin{remark}[Independence of reflexive and irreflexive]
+\begin{remark*}[Independence of reflexive and irreflexive]
 A relation may be neither reflexive nor irreflexive (if some but not all
 elements satisfy $(a,a)\in R$). However, a relation cannot be both reflexive
 and irreflexive unless $A = \varnothing$.
-\end{remark}
+\end{remark*}
 
 \begin{definition}[Symmetric Relation]\label{def:symmetric}
 $R$ is \emph{symmetric} if related pairs commute:
@@ -82,11 +78,11 @@ $R$ is \emph{asymmetric} if related pairs never commute:
 \]
 \end{definition}
 
-\begin{remark}[Asymmetric vs.\ antisymmetric]
+\begin{remark*}[Asymmetric vs.\ antisymmetric]
 Every asymmetric relation is antisymmetric, but not conversely. $\leq$ on
 $\mathbb{R}$ is antisymmetric but not asymmetric (since $1 \leq 1$). Strict
 order $<$ is both asymmetric and irreflexive.
-\end{remark}
+\end{remark*}
 
 \begin{definition}[Transitive Relation]\label{def:transitive}
 $R$ is \emph{transitive} if it extends along chains:
@@ -107,16 +103,13 @@ $R$ is \emph{total} (or \emph{connex}) if every pair is comparable:
 % ---------------------------------------------------------
 % Structural classes
 % ---------------------------------------------------------
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Equivalence Relation)}},
-  fonttitle=\small\bfseries]
+\begin{propositionbox}{Definition (Equivalence Relation)}
 \label{def:equivalence-rel}
 $R$ is an \emph{equivalence relation} on $A$ if it is reflexive, symmetric,
 and transitive.
-\end{tcolorbox}
+\end{propositionbox}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 $R$ is an equivalence relation on $A$ iff:
 \[
 (\forall a \in A,\; (a,a)\in R)\;\wedge\;
@@ -125,21 +118,18 @@ $R$ is an equivalence relation on $A$ iff:
 \]
 \end{remark*}
 
-\begin{remark}[Role in mathematics]
+\begin{remark*}[Role in mathematics]
 Equivalence relations axiomatize the idea of ``sameness up to a chosen
 criterion.'' They partition sets into equivalence classes and are the basis
 for quotient constructions throughout algebra, topology, and analysis.
-\end{remark}
+\end{remark*}
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Preorder)}},
-  fonttitle=\small\bfseries]
+\begin{propositionbox}{Definition (Preorder)}
 \label{def:preorder}
 $R$ is a \emph{preorder} on $A$ if it is reflexive and transitive.
-\end{tcolorbox}
+\end{propositionbox}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 $R$ is a preorder on $A$ iff:
 \[
 (\forall a \in A,\; (a,a)\in R)\;\wedge\;
@@ -147,16 +137,13 @@ $R$ is a preorder on $A$ iff:
 \]
 \end{remark*}
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Partial Order)}},
-  fonttitle=\small\bfseries]
+\begin{propositionbox}{Definition (Partial Order)}
 \label{def:partial-order}
 $R$ is a \emph{partial order} on $A$ if it is reflexive, antisymmetric, and
 transitive.
-\end{tcolorbox}
+\end{propositionbox}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 $R$ is a partial order on $A$ iff:
 \[
 (\forall a \in A,\; (a,a)\in R)\;\wedge\;
@@ -165,37 +152,34 @@ $R$ is a partial order on $A$ iff:
 \]
 \end{remark*}
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Total Order)}},
-  fonttitle=\small\bfseries]
+\begin{propositionbox}{Definition (Total Order)}
 \label{def:total-order}
 $R$ is a \emph{total order} on $A$ if it is a partial order and is total.
-\end{tcolorbox}
+\end{propositionbox}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 $R$ is a total order on $A$ iff $R$ is a partial order on $A$ and additionally:
 \[
 \forall a, b \in A,\; (a,b)\in R \vee (b,a)\in R.
 \]
 \end{remark*}
 
-\begin{remark}[Using structural properties in proofs]
+\begin{remark*}[Using structural properties in proofs]
 When $R$ is asserted to be an equivalence relation or partial order, this is
 shorthand for the conjunction of its defining properties. In proofs, cite
 only the specific component needed: ``since $R$ is a partial order,
 antisymmetry implies \dots'' rather than restating all properties.
-\end{remark}
+\end{remark*}
 
-\begin{example}[Using a structural property in a proof]
+\begin{example*}[Using a structural property in a proof]
 Let $R$ be an equivalence relation on $A$. For any $a,b \in A$,
 $(a,b) \in R \Rightarrow [a] = [b]$, where $[a] = \{x \in A \mid (a,x) \in R\}$.
-\end{example}
+\end{example*}
 
 
 
-\begin{remark}[Properties are logically independent]
+\begin{remark*}[Properties are logically independent]
 No basic property implies another in general. A relation may be transitive
 without being reflexive, or symmetric without being transitive. The structural
 classes are distinguished precisely by requiring specific combinations.
-\end{remark}
+\end{remark*}

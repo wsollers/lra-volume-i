@@ -1,29 +1,43 @@
-% BEGIN GENERATED ARTIFACT: prf:normal-form-semantic-classification-propositional-logic
 \newpage
 \phantomsection
 \label{prf:normal-form-semantic-classification-propositional-logic}
 \LRAProofFor{thm:normal-form-semantic-classification-propositional-logic}
 
 \begin{remark*}[Return]
-\hyperref[thm:normal-form-semantic-classification-propositional-logic]{Return to Theorem (Semantic Classification by Normal Forms).}
+\hyperref[thm:normal-form-semantic-classification-propositional-logic]{Return to Theorem}
 \end{remark*}
 
 \begin{theorem*}[Semantic Classification by Normal Forms]
-Normal forms give finite certificates for semantic classification. A formula is
-satisfiable exactly when some DNF equivalent has a satisfiable term; it is a
-contradiction exactly when some DNF equivalent has no satisfiable term; it is a
-tautology exactly when some CNF equivalent has no falsifiable clause; and it is
-a contingency exactly when it is satisfiable and not a tautology.
+Normal forms give finite certificates for semantic classification. For any
+formula \(\varphi\in\WFF\):
+\begin{enumerate}
+  \item \(\varphi\) is
+  \hyperref[def:satisfiable-formula-propositional-logic]{satisfiable} if and
+  only if some
+  \hyperref[def:disjunctive-normal-form-propositional-logic]{DNF} formula
+  equivalent to \(\varphi\) has a satisfiable conjunction term.
+  \item \(\varphi\) is a
+  \hyperref[def:contradiction-propositional-logic]{contradiction} if and only
+  if some DNF formula equivalent to \(\varphi\) has no satisfiable conjunction
+  term.
+  \item \(\varphi\) is a
+  \hyperref[def:tautology-propositional-logic]{tautology} if and only if some
+  \hyperref[def:conjunctive-normal-form-propositional-logic]{CNF} formula
+  equivalent to \(\varphi\) has no falsifiable clause.
+  \item \(\varphi\) is a
+  \hyperref[def:contingency-propositional-logic]{contingency} if and only if it
+  is satisfiable and not a tautology.
+\end{enumerate}
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~
-TODO: supply the compact proof.
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+TODO: professional standard proof for normal-form-semantic-classification-propositional-logic.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~
-TODO: supply the detailed learning proof.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+TODO: detailed learning proof for normal-form-semantic-classification-propositional-logic.
 \end{proof}
 
 \begin{remark*}[Proof structure]
@@ -44,4 +58,3 @@ TODO: supply the detailed learning proof.
 \end{dependencies}
 
 \clearpage
-% END GENERATED ARTIFACT: prf:normal-form-semantic-classification-propositional-logic

@@ -2,10 +2,7 @@
 % Recursive Definitions (Tao §2.1, Prop. 2.1.16)
 % =========================================================
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Recursion on $\mathbb{N}$)}},
-  fonttitle=\small\bfseries]
+\begin{propositionbox}{Theorem (Recursion on $\mathbb{N}$)}
 Let $X$ be a set, let $a \in X$, and let $f : X \to X$ be a function.
 Then there exists a \textbf{unique} function $g : \mathbb{N} \to X$ such that:
 \[
@@ -13,7 +10,7 @@ g(0) = a
 \quad \text{and} \quad
 g(n\pp) = f(g(n)) \quad \text{for all } n \in \mathbb{N}.
 \]
-\end{tcolorbox}
+\end{propositionbox}
 
 \begin{remark}[Reading the theorem]
 The theorem has two parts.

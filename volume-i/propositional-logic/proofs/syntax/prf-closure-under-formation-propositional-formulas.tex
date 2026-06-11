@@ -1,33 +1,46 @@
-% BEGIN GENERATED ARTIFACT: prf:closure-under-formation-propositional-formulas
 \newpage
 \phantomsection
 \label{prf:closure-under-formation-propositional-formulas}
 \LRAProofFor{lem:closure-under-formation-propositional-formulas}
 
 \begin{remark*}[Return]
-\hyperref[lem:closure-under-formation-propositional-formulas]{Return to Lemma (Closure Under Formation).}
+\hyperref[lem:closure-under-formation-propositional-formulas]{Return to Theorem}
 \end{remark*}
 
-\begin{lemma*}[Closure Under Formation]
+\begin{theorem*}[Closure Under Formation]
 The set \(\WFF\) is closed under the propositional formation rules.
-\end{lemma*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~
-TODO: supply the proof by direct unpacking of the WFF formation rules.
+That is, if \(\varphi\in\WFF\), then
+\[
+\neg\varphi\in\WFF.
+\]
+If \(\varphi,\psi\in\WFF\) and
+\[
+\circ\in\{\land,\lor,\to,\leftrightarrow\},
+\]
+then
+\[
+(\varphi\circ\psi)\in\WFF.
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+TODO: professional standard proof for closure-under-formation-propositional-formulas.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~
-TODO: supply the detailed learning proof.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+TODO: detailed learning proof for closure-under-formation-propositional-formulas.
 \end{proof}
 
 \begin{remark*}[Proof structure]
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:well-formed-formula]{Well-Formed Formula}
+\begin{itemize}
+  \item \hyperref[def:well-formed-formula]{Well-Formed Formula}
+\end{itemize}
 \end{dependencies}
 
 \clearpage
-% END GENERATED ARTIFACT: prf:closure-under-formation-propositional-formulas
