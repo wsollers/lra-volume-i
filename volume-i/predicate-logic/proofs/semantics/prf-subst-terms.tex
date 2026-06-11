@@ -1,0 +1,45 @@
+% BEGIN GENERATED ARTIFACT: prf:subst-terms
+\newpage
+\phantomsection
+\label{prf:subst-terms}
+\LRAProofFor{lem:subst-terms}
+
+\begin{remark*}[Return]
+\hyperref[lem:subst-terms]{Return to Lemma (Substitution Lemma for Terms).}
+\end{remark*}
+
+\begin{lemma*}[Substitution Lemma for Terms]
+Let \(\mathcal M\) be a structure, let \(s\) be a variable assignment, let
+\(x\) be a variable, and let \(t\) and \(u\) be terms. Then
+\[
+\llbracket t[u/x]\rrbracket_{\mathcal M,s}
+=
+\llbracket t\rrbracket_{\mathcal M,\,
+s[x\mapsto\llbracket u\rrbracket_{\mathcal M,s}]}.
+\]
+\end{lemma*}
+
+\begin{proof}
+\textbf{Professional Standard Proof.}~
+TODO: supply the structural induction proof on the term \(t\).
+\end{proof}
+
+\begin{proof}
+\textbf{Detailed Learning Proof.}~
+TODO: supply the detailed learning proof, checking the variable, constant, and
+function-application cases.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subst-notation]{Substitution Notation}
+  \item \hyperref[def:free-for]{Free for Substitution}
+  \item \hyperref[def:term-interp]{Term Evaluation}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+% END GENERATED ARTIFACT: prf:subst-terms

@@ -9,8 +9,8 @@
 \midrule
 Signature & non-logical vocabulary & \hyperref[def:signature]{Definition} \\
 Language & signature together with logical syntax & \hyperref[def:language]{Definition} \\
-Constant symbol & names a distinguished object syntactically & \hyperref[def:constant-symbol]{Definition} \\
-Function symbol & names an operation syntactically & \hyperref[def:function-symbol]{Definition} \\
+Constant symbol & names a distinguished object syntactically & \hyperref[def:signature-constant-symbol]{Definition} \\
+Function symbol & names an operation syntactically & \hyperref[def:signature-function-symbol]{Definition} \\
 Relation symbol & names a relation syntactically & \hyperref[def:relation-symbol]{Definition} \\
 Arity & records number of input places & \hyperref[def:arity]{Definition} \\
 \bottomrule
@@ -108,7 +108,7 @@ logical grammar needed to form expressions from that vocabulary.
 \end{dependencies}
 
 \begin{definition}[Constant Symbol]
-\label{def:constant-symbol}
+\label{def:signature-constant-symbol}
 A \emph{constant symbol} is a non-logical symbol of arity $0$ in a signature.
 It may occur as a term without taking any input terms.
 \end{definition}
@@ -126,7 +126,7 @@ $0$ and $1$ are constant symbols.
 \end{dependencies}
 
 \begin{definition}[Function Symbol]
-\label{def:function-symbol}
+\label{def:signature-function-symbol}
 A \emph{function symbol} is a non-logical symbol in a signature assigned an
 arity $n\geq 1$. If $f$ has arity $n$ and $t_1,\ldots,t_n$ are terms, then
 $f(t_1,\ldots,t_n)$ is a term.
