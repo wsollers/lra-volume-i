@@ -7,33 +7,6 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{toolkitbox}{Functions — Quick Reference}
-\small
-\begin{tabular}{l l l}
-\toprule
-\textbf{Concept} & \textbf{Meaning} & \textbf{Detail} \\
-\midrule
-Function         & Left-total, right-unique relation                            & \hyperref[def:function]{↓ Def} \\
-Domain / Codomain & $\dom(f) = A$,\; $\cod(f) = B$ for $f : A \to B$            & \hyperref[def:domain-codomain]{↓ Def} \\
-Image of function & $\im(f) = \{f(a) \mid a \in A\}$                            & \hyperref[def:image-function]{↓ Def} \\
-Image of set      & $f(S) = \{f(a) \mid a \in S\}$ for $S \subseteq A$          & \hyperref[def:image-set]{↓ Def} \\
-Preimage          & $f^{-1}(T) = \{a \in A \mid f(a) \in T\}$ for $T \subseteq B$ & \hyperref[def:preimage]{↓ Def} \\
-Fiber             & $f^{-1}(\{b\})$: preimage of a singleton                    & \hyperref[def:fiber]{↓ Def} \\
-Graph             & $\{(a,b) \in A\times B \mid b = f(a)\}$                     & \hyperref[def:graph]{↓ Def} \\
-Injective         & Distinct inputs $\Rightarrow$ distinct outputs               & \hyperref[def:injective]{↓ Def} \\
-Surjective        & Every codomain element is achieved                          & \hyperref[def:surjective]{↓ Def} \\
-Bijective         & Injective and surjective                                    & \hyperref[def:bijective]{↓ Def} \\
-Identity          & $\id_A(a) = a$                                              & \hyperref[def:identity]{↓ Def} \\
-Inclusion map     & $\iota : A \hookrightarrow B$, $\iota(a) = a$ for $A \subseteq B$ & \hyperref[def:inclusion]{↓ Def} \\
-Composition       & $(g \circ f)(a) = g(f(a))$                                  & \hyperref[def:composition]{↓ Def} \\
-Inverse           & Defined for bijections; $f^{-1} \circ f = \id_A$            & \hyperref[def:inverse]{↓ Def} \\
-Left / Right inverse & Section and retraction                                  & \hyperref[def:left-right-inverse]{↓ Def} \\
-Restriction       & $f|_C : C \to B$                                            & \hyperref[def:restriction]{↓ Def} \\
-Extension         & $g : A' \to B$ with $g|_A = f$                              & \hyperref[def:extension]{↓ Def} \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 
 % ---------------------------------------------------------
 % Function definition
@@ -182,6 +155,8 @@ codomain when $A \subsetneq B$. The inclusion map is always injective.
 $f : A \to B$ is \emph{constant} if there exists $b_0 \in B$ with
 $f(a) = b_0$ for all $a \in A$.
 \end{definition}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $f$ is constant $\;\leftrightarrow\; \exists b_0 \in B,\; \forall a \in A,\; f(a) = b_0$.

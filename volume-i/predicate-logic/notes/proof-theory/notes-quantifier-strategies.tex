@@ -7,25 +7,6 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{toolkitbox}{Quantifier Proof Strategies — Quick Reference}
-\small
-\begin{tabular}{l l l}
-\toprule
-\textbf{Goal shape} & \textbf{Strategy} & \textbf{Key rule} \\
-\midrule
-Prove $\forall x\,\varphi(x)$  & Fix an arbitrary $x$; prove $\varphi(x)$ for that $x$  & UG \\
-Prove $\exists x\,\varphi(x)$  & Produce a specific witness $t$; verify $\varphi(t)$     & EG \\
-Use $\forall x\,\varphi(x)$    & Instantiate at any term $t$ to get $\varphi(t)$         & UI \\
-Use $\exists x\,\varphi(x)$    & Introduce a fresh name $c$ for the witness             & EI \\
-Negate $\forall x\,\varphi$    & Becomes $\exists x\,\neg\varphi$                        & Neg.\ law \\
-Negate $\exists x\,\varphi$    & Becomes $\forall x\,\neg\varphi$                        & Neg.\ law \\
-\midrule
-Prove $\forall x\,\exists y\,\varphi(x,y)$ & Fix $x$; then construct $y$ depending on $x$ & UG then EG \\
-Prove $\exists y\,\forall x\,\varphi(x,y)$ & Find $y$ first; then verify for all $x$       & EG then UG \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 
 \begin{exposition}
 The inference rules UI, UG, EI, and EG were defined in the previous section.

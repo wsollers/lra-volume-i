@@ -7,22 +7,6 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{toolkitbox}{Set Algebra Laws — Quick Reference}
-\small
-\begin{tabular}{l l l l}
-\toprule
-\textbf{Law} & \textbf{Union form} & \textbf{Intersection form} & \textbf{Detail} \\
-\midrule
-Commutativity  & $A \cup B = B \cup A$          & $A \cap B = B \cap A$          & \hyperref[thm:commutativity]{↓ Thm} \\
-Associativity  & $(A \cup B) \cup C = A \cup (B \cup C)$  & analogous   & \hyperref[thm:associativity]{↓ Thm} \\
-Distributivity & $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ & dual   & \hyperref[thm:distributivity]{↓ Thm} \\
-Identity       & $A \cup \varnothing = A$        & $A \cap U = A$                 & \hyperref[thm:identity-absorption]{↓ Thm} \\
-Absorption     & $A \cup (A \cap B) = A$         & $A \cap (A \cup B) = A$        & \hyperref[thm:identity-absorption]{↓ Thm} \\
-Involution     & $(A^c)^c = A$                  & ---                            & \hyperref[thm:involution]{↓ Thm} \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 
 \begin{remark*}[Algebraic structure of set operations]
 The operations $\cup$, $\cap$, and complement satisfy algebraic laws analogous
@@ -42,6 +26,8 @@ A \cap B = B \cap A.
 \hyperref[prf:commutativity]{Go to proof.}
 \end{theorem}
 
+\NoLocalDependencies
+
 \begin{remark*}[Standard quantified statement]
 $\forall A, B:\; \forall x\,(x \in A \cup B \leftrightarrow x \in B \cup A)$ and $\forall x\,(x \in A \cap B \leftrightarrow x \in B \cap A)$.
 \end{remark*}
@@ -55,6 +41,8 @@ Let $A,B,C$ be sets. Then
 \]
 \hyperref[prf:associativity]{Go to proof.}
 \end{theorem}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $\forall A, B, C:\; \forall x\,\bigl((x \in (A \cup B) \cup C) \leftrightarrow (x \in A \cup (B \cup C))\bigr)$, and analogously for $\cap$.
@@ -70,6 +58,8 @@ A \cup (B \cap C) = (A \cup B) \cap (A \cup C).
 \]
 \hyperref[prf:distributivity]{Go to proof.}
 \end{theorem}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $\forall A, B, C:\; \forall x\,\bigl(x \in A \cap (B \cup C) \leftrightarrow x \in (A \cap B) \cup (A \cap C)\bigr)$, and dually for $\cup$ over $\cap$.
@@ -90,6 +80,8 @@ A \cap (A \cup B) = A.
 \hyperref[prf:identity-absorption]{Go to proof.}
 \end{theorem}
 
+\NoLocalDependencies
+
 \begin{remark*}[Standard quantified statement]
 $\forall A \subseteq U:\; \forall x\,(x \in A \cup \varnothing \leftrightarrow x \in A)$ and $\forall x\,(x \in A \cap U \leftrightarrow x \in A)$.
 Absorption: $\forall A, B:\; \forall x\,(x \in A \cup (A \cap B) \leftrightarrow x \in A)$, and dually.
@@ -102,6 +94,8 @@ For any $A \subseteq U$,
 \]
 \hyperref[prf:involution]{Go to proof.}
 \end{theorem}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $\forall A \subseteq U:\; \forall x\,(x \in (A^c)^c \leftrightarrow x \in A)$.

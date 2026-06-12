@@ -7,20 +7,6 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{toolkitbox}{Quantifier Inference Rules — Quick Reference}
-\small
-\begin{tabular}{l l l l}
-\toprule
-\textbf{Rule} & \textbf{Schema} & \textbf{Key restriction} & \textbf{Detail} \\
-\midrule
-UI  & $\forall x\,\varphi \Rightarrow \varphi[t/x]$ & $t$ free for $x$ & \hyperref[def:ui]{↓ Def} \\
-UG  & $\varphi \Rightarrow \forall x\,\varphi$ & $x$ not free in assumptions & \hyperref[def:ug]{↓ Def} \\
-EI  & $\exists x\,\varphi \Rightarrow \varphi[c/x]$ & $c$ fresh witness & \hyperref[def:ei]{↓ Def} \\
-EG  & $\varphi[t/x] \Rightarrow \exists x\,\varphi$ & none & \hyperref[def:eg]{↓ Def} \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 
 % ---------------------------------------------------------
 % Universal Instantiation

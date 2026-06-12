@@ -5,39 +5,4 @@ This section uses truth values, propositional variables, connectives,
 well-formed formulas, formation trees, and subformulas to build syntax.
 \end{toolkitbox}
 
-\begin{definition}[Model-Theoretic Structure for Propositional Logic]
-Let $\mathcal{L}$ be a propositional language over a set of propositional variables $\mathcal{V}$. A \textbf{model} (or \textit{semantic structure}) for $\mathcal{L}$ is defined as a tuple $\mathcal{M} = \langle \mathcal{D}, \mathcal{I} \rangle$, where:
-\begin{itemize}
-    \item $\mathcal{D}$ is the \textbf{domain of discourse} (or semantic domain). In classical propositional logic, this is the two-element Boolean algebra of truth values, typically denoted as $\mathcal{D} = \{ \top, \bot \}$ (or $\{1, 0\}$).
-    \item $\mathcal{I}: \mathcal{V} \to \mathcal{D}$ is the \textbf{interpretation function}, which maps each atomic propositional variable to a truth value in the domain.
-\end{itemize}
-
-By the principle of structural induction, the interpretation $\mathcal{I}$ extends uniquely to a total valuation function $\overline{\mathcal{I}}: \text{WFF} \to \mathcal{D}$ over the set of all well-formed formulas. This extension acts as a homomorphism from the algebra of formulas to the Boolean algebra $\mathcal{D}$, satisfying constraints such as:
-\[ \overline{\mathcal{I}}(\phi \land \psi) = \overline{\mathcal{I}}(\phi) \sqcap \overline{\mathcal{I}}(\psi) \]
-where $\sqcap$ is the meet operation (logical AND) in the Boolean algebra $\mathcal{D}$.
-
-We say the model $\mathcal{M}$ \textbf{satisfies} a formula $\phi$, denoted $\mathcal{M} \models \phi$, if and only if $\overline{\mathcal{I}}(\phi) = \top$.
-\end{definition}
-
-
-
-
-
-
-
-
-
-
-
-\begin{remark*}[Exposition]
-The syntax section builds the formal language before assigning it meaning.
-It isolates the recursive formation rules for formulas and the structural
-notions, such as subformulas and depth, that later support semantic induction
-and proof arguments.
-\end{remark*}
-\begin{definition}[Syntax of Propositional Logic]
-The \textbf{syntax} of propositional logic dictates the formal rules for constructing valid expressions.
-
-Syntax is concerned strictly with the structural formation of these strings, completely independent of their semantic meaning or truth values.
-\end{definition}
 \input{volume-i/propositional-logic/notes/syntax/notes-syntax}

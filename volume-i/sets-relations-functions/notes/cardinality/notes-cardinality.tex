@@ -7,27 +7,6 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{toolkitbox}{Cardinality — Quick Reference}
-\small
-\begin{tabular}{l l l}
-\toprule
-\textbf{Concept} & \textbf{Meaning} & \textbf{Detail} \\
-\midrule
-Same cardinality     & Bijection $f : A \to B$ exists; written $A \sim B$            & \hyperref[def:same-cardinality]{↓ Def} \\
-Finite set           & $A \sim \{1,\dots,n\}$ for some $n \in \mathbb{N}$, or $A = \varnothing$ & \hyperref[def:finite-infinite]{↓ Def} \\
-Countably infinite   & $A \sim \mathbb{N}$                                           & \hyperref[def:countable]{↓ Def} \\
-Countable            & Finite or countably infinite                                  & \hyperref[def:countable]{↓ Def} \\
-Uncountable          & Infinite but not countable                                    & \hyperref[def:countable]{↓ Def} \\
-$|A| \leq |B|$       & Injection $A \hookrightarrow B$ exists                        & \hyperref[def:cardinality-order]{↓ Def} \\
-$\mathbb{Q}$ countable & Diagonal enumeration                                       & \hyperref[thm:Q-countable]{↓ Thm} \\
-$\mathbb{R}$ uncountable & Cantor diagonal argument                                & \hyperref[thm:R-uncountable]{↓ Thm} \\
-Schröder--Bernstein  & $|A|\leq|B|$ and $|B|\leq|A|$ $\Rightarrow$ $A \sim B$      & \hyperref[thm:schroder-bernstein]{↓ Thm} \\
-Cantor's theorem     & $|A| < |\mathcal{P}(A)|$ for every set $A$                   & \hyperref[thm:cantor]{↓ Thm} \\
-Countable union      & Countable union of countable sets is countable                & \hyperref[thm:countable-union]{↓ Thm} \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 
 \begin{exposition}
 The intuitive idea of ``size'' works perfectly for finite sets: $\{a,b,c\}$
@@ -156,6 +135,8 @@ The set $\mathbb{Q}$ of rational numbers is countable.
 \hyperref[prf:Q-countable]{Go to proof.}
 \end{theorem}
 
+\NoLocalDependencies
+
 \begin{remark*}[Proof strategy — diagonal enumeration]
 The argument arranges all positive rationals into an infinite two-dimensional
 array: place $p/q$ (in lowest terms, $p,q > 0$) in row $p$, column $q$. Then
@@ -180,6 +161,8 @@ Let $\{A_n\}_{n \in \mathbb{N}}$ be a countable family of countable sets.
 Then $\bigcup_{n=1}^{\infty} A_n$ is countable.
 \hyperref[prf:countable-union]{Go to proof.}
 \end{theorem}
+
+\NoLocalDependencies
 
 \begin{remark*}[Proof strategy]
 The argument again uses a diagonal enumeration. Arrange the elements of each
@@ -207,6 +190,8 @@ in size, this theorem is the justification.
 The set $\mathbb{R}$ of real numbers is not countable.
 \hyperref[prf:R-uncountable]{Go to proof.}
 \end{theorem}
+
+\NoLocalDependencies
 
 \begin{remark*}[Proof strategy — Cantor's diagonal argument]
 This is one of the most important proof techniques in all of mathematics.
@@ -243,6 +228,8 @@ For any set $A$, there is no surjection $A \to \mathcal{P}(A)$. In
 particular, $|A| < |\mathcal{P}(A)|$.
 \hyperref[prf:cantor]{Go to proof.}
 \end{theorem}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $\forall A:\; \neg\exists f: A\to\mathcal{P}(A),\; \forall S\in\mathcal{P}(A),\; \exists a\in A,\; f(a)=S$. Equivalently: $\forall f: A\to\mathcal{P}(A),\; \exists D\in\mathcal{P}(A),\; \forall a\in A,\; f(a)\neq D$.
@@ -340,6 +327,8 @@ Equivalently: if there exist injections $f : A \hookrightarrow B$ and
 $g : B \hookrightarrow A$, then there exists a bijection $h : A \to B$.
 \hyperref[prf:schroder-bernstein]{Go to proof.}
 \end{theorem}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $\bigl(\exists f: A\hookrightarrow B\bigr) \wedge \bigl(\exists g: B\hookrightarrow A\bigr) \;\to\; \exists h: A\to B,\; h$ bijective.

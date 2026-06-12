@@ -8,24 +8,6 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{toolkitbox}{Order Extensions — Quick Reference}
-\small
-\begin{tabular}{l l l}
-\toprule
-\textbf{Concept} & \textbf{Meaning} & \textbf{Detail} \\
-\midrule
-Preorder            & Reflexive, transitive (not necessarily antisymmetric)         & \hyperref[def:preorder]{↓ Def} \\
-Loset               & Linear order = complete partial order                        & \hyperref[def:loset]{↓ Def} \\
-Symmetric part      & $xIy \iff xRy \land yRx$                                     & \hyperref[def:sym-asym]{↓ Def} \\
-Asymmetric part     & $xPy \iff xRy \land \lnot(yRx)$                              & \hyperref[def:sym-asym]{↓ Def} \\
-Transitive closure  & Smallest transitive relation containing $R$                  & \hyperref[def:trans-closure]{↓ Def} \\
-Extension           & $\succsim'$ agrees with $\succsim$ on strict and weak ranks  & \hyperref[def:extension]{↓ Def} \\
-OWC                 & $xT(\succsim)y \Rightarrow \lnot(y \succ x)$                 & \hyperref[def:owc]{↓ Def} \\
-Szpilrajn's Thm     & Every partial order extends to a linear order                & \hyperref[thm:szpilrajn]{↓ Thm} \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 
 % ---------------------------------------------------------
 % Symmetric and asymmetric parts
@@ -168,6 +150,8 @@ of Choice for infinite sets; no proof avoiding AC is known.
 For any nonempty set $X$ and preorder $\succsim$ on $X$, there exists a
 complete preorder that is an extension of $\succsim$.
 \end{corollary}
+
+\NoLocalDependencies
 
 \begin{remark*}[Proof]
 \hyperref[prf:complete-preorder-extension]{Proof details.}

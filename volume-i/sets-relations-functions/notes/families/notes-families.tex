@@ -7,22 +7,6 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{toolkitbox}{Indexed Families — Quick Reference}
-\small
-\begin{tabular}{l l l}
-\toprule
-\textbf{Concept} & \textbf{Meaning} & \textbf{Detail} \\
-\midrule
-Indexed family      & Function $F : I \to \mathcal{P}(U)$; written $\{A_i\}_{i \in I}$ & \hyperref[def:indexed-family]{↓ Def} \\
-Indexed union       & $\bigcup_{i \in I} A_i$: in at least one $A_i$                    & \hyperref[def:indexed-union]{↓ Def} \\
-Indexed intersection & $\bigcap_{i \in I} A_i$: in every $A_i$                         & \hyperref[def:indexed-intersection]{↓ Def} \\
-Pairwise disjoint   & $i \neq j \Rightarrow A_i \cap A_j = \varnothing$                  & \hyperref[def:pairwise-disjoint]{↓ Def} \\
-Cover               & $\bigcup_{C \in \mathcal{C}} C = A$                               & \hyperref[def:cover]{↓ Def} \\
-Arbitrary product   & $\prod_{i \in I} A_i$: choice functions $f : I \to \bigcup A_i$   & \hyperref[def:arbitrary-product]{↓ Def} \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 
 \begin{remark*}[Motivation]
 Many set-theoretic constructions require not just pairs of sets but
@@ -88,6 +72,8 @@ A collection $\mathcal{C} \subseteq \mathcal{P}(A)$ is a \emph{cover} of $A$ if
 \bigcup_{C \in \mathcal{C}} C = A.
 \]
 \end{definition}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $\mathcal{C}$ covers $A$ $\;\leftrightarrow\; \forall x \in A,\; \exists C \in \mathcal{C},\; x \in C$.

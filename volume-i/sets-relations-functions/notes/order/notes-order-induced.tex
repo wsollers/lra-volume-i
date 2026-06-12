@@ -7,27 +7,6 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{toolkitbox}{Induced Orders and Order Embeddings --- Quick Reference}
-\small
-\begin{tabular}{l l l}
-\toprule
-\textbf{Concept} & \textbf{Meaning} & \textbf{Detail} \\
-\midrule
-Induced preorder    & $x \leq_f y \;\Leftrightarrow\; f(x) \leq' f(y)$; always a preorder  & \hyperref[def:induced-order]{↓ Def} \\
-Induced partial order & Induced order is a partial order iff $f$ is injective              & \hyperref[prop:induced-poset]{↓ Prop} \\
-$f$-indistinguishable & $x \sim_f y$: both $x \leq_f y$ and $y \leq_f x$                   & \hyperref[def:f-indist]{↓ Def} \\
-Order embedding     & Injective, order-preserving, and order-reflecting                     & \hyperref[def:order-embedding]{↓ Def} \\
-Embedding vs.\ isomorphism & Embedding is iso onto image; isomorphism is surjective too & \hyperref[prop:embedding-iso]{↓ Prop} \\
-Suborder            & Restriction of $\leq'$ to a subset $S \subseteq B$                   & \hyperref[def:suborder]{↓ Def} \\
-\midrule
-\multicolumn{2}{l}{\textit{Key results:}} & \\
-\midrule
-\multicolumn{2}{l}{$\leq_f$ preorder: always. \quad Antisymmetry: iff $f$ injective.}       & \hyperref[prop:induced-poset]{↓} \\
-\multicolumn{2}{l}{$f$ order embedding $\Rightarrow$ $(A,\leq_f) \cong (f(A), \leq')$.}    & \hyperref[prop:embedding-iso]{↓} \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 
 % ---------------------------------------------------------
 % The construction
@@ -74,6 +53,8 @@ For any function $f : A \to B$ and partial order $(B, \leq')$, the relation
 $\leq_f$ is a preorder on $A$: it is reflexive and transitive.
 \end{proposition}
 
+\NoLocalDependencies
+
 \begin{remark*}[Standard quantified statement]
 $\forall x \in A:\; f(x)\leq' f(x)$ (reflexivity); $\forall x,y,z \in A:\; f(x)\leq' f(y) \wedge f(y)\leq' f(z) \to f(x)\leq' f(z)$ (transitivity).
 \end{remark*}
@@ -111,6 +92,8 @@ Let $(B, \leq')$ be a partially ordered set and $f : A \to B$.
 The induced order $\leq_f$ is a partial order on $A$ if and only if
 $f$ is injective.
 \end{proposition}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $\leq_f$ is a partial order $\;\leftrightarrow\; \forall x,y \in A,\; f(x)\leq' f(y) \wedge f(y)\leq' f(x) \to x=y$ $\;\leftrightarrow\; \forall x,y \in A,\; f(x)=f(y) \to x=y$ (injectivity of $f$, since $\leq'$ is antisymmetric).
@@ -204,6 +187,8 @@ Every order embedding $f : (A, \leq) \to (B, \leq')$ is injective.
 \hyperref[prf:embedding-injective]{Go to proof.}
 \end{proposition}
 
+\NoLocalDependencies
+
 \begin{remark*}[Standard quantified statement]
 $\forall x,y \in A:\; f(x) = f(y) \to x = y$.
 \end{remark*}
@@ -222,6 +207,8 @@ If $f : (A, \leq) \to (B, \leq')$ is an order embedding, then $f$ is an
 order isomorphism from $(A, \leq)$ to the suborder $(f(A), \leq'_{f(A)})$.
 \hyperref[prf:embedding-iso]{Go to proof.}
 \end{proposition}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $\forall x,y \in A:\; x \leq y \;\leftrightarrow\; f(x) \leq'_{f(A)} f(y)$, i.e.\ $f$ is an order isomorphism $(A,\leq)\cong(f(A),\leq')$.

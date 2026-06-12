@@ -7,23 +7,6 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{toolkitbox}{Covers and FIP — Quick Reference}
-\small
-\begin{tabular}{l l l}
-\toprule
-\textbf{Concept} & \textbf{Meaning} & \textbf{Detail} \\
-\midrule
-Cover of $A$     & $\bigcup_{C \in \mathcal{C}} C \supseteq A$                     & \hyperref[def:cover-full]{↓ Def} \\
-Subcover         & Sub-collection of a cover that is still a cover                 & \hyperref[def:subcover]{↓ Def} \\
-Finite cover     & Cover with finitely many members                                & \hyperref[def:finite-cover]{↓ Def} \\
-Finite subcover  & Finite subcollection that is still a cover                      & \hyperref[def:subcover]{↓ Def} \\
-Open cover       & Cover whose members are all open sets                           & \hyperref[def:open-cover]{↓ Def} \\
-Finite Intersection Property & Every finite subcollection has nonempty intersection & \hyperref[def:fip]{↓ Def} \\
-FIP–cover duality & $\mathcal{C}$ covers $A$ $\iff$ closed complements fail FIP   & \hyperref[prop:fip-duality]{↓ Prop} \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 
 \begin{exposition}
 Compactness is one of the central concepts of analysis, and its definition is
@@ -75,6 +58,8 @@ In a topological space $(X, \tau)$, an \emph{open cover} of a subset $A
 \subseteq X$ is a cover $\mathcal{C}$ of $A$ all of whose members are open
 sets: $\mathcal{C} \subseteq \tau$.
 \end{definition}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $\mathcal{C}$ is an open cover of $A$ $\;\leftrightarrow\;$ $(\forall C \in \mathcal{C},\; C \in \tau) \;\wedge\; (\forall x \in A,\; \exists C \in \mathcal{C},\; x \in C)$.
@@ -135,6 +120,8 @@ only if the family of closed complements $\{F_\alpha\}$ has the FIP relative
 to $A$.
 \hyperref[prf:fip-duality]{Go to proof.}
 \end{proposition}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $A \subseteq \bigcup_{\alpha \in I} U_\alpha \;\leftrightarrow\; \neg(\forall\text{ finite }I_0\subseteq I,\; \bigcap_{\alpha\in I_0} F_\alpha \cap A \neq \varnothing)$. Reading pointwise: $\forall x\in A,\;\exists\alpha\in I,\; x\in U_\alpha \;\leftrightarrow\; \{F_\alpha\cap A\}$ fails the FIP.

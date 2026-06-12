@@ -7,28 +7,6 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{toolkitbox}{Set Operations — Quick Reference}
-\small
-\begin{tabular}{l l l l}
-\toprule
-\textbf{Concept} & \textbf{Notation} & \textbf{Membership condition} & \textbf{Detail} \\
-\midrule
-Empty set        & $\varnothing$             & $x \in \varnothing$ never         & \hyperref[def:empty-set]{↓ Def} \\
-Subset           & $A \subseteq B$           & $x \in A \Rightarrow x \in B$     & \hyperref[def:subset]{↓ Def} \\
-Proper subset    & $A \subsetneq B$          & $A \subseteq B$ and $A \neq B$    & \hyperref[def:proper-subset]{↓ Def} \\
-Set equality     & $A = B$                   & same elements both ways            & \hyperref[def:set-equality]{↓ Def} \\
-Union            & $A \cup B$                & in $A$ or in $B$                  & \hyperref[def:union]{↓ Def} \\
-Intersection     & $A \cap B$                & in $A$ and in $B$                 & \hyperref[def:intersection]{↓ Def} \\
-Set difference   & $A \setminus B$           & in $A$ but not $B$                & \hyperref[def:set-difference]{↓ Def} \\
-Symmetric diff.  & $A \triangle B$           & in exactly one of $A$, $B$        & \hyperref[def:sym-diff]{↓ Def} \\
-Complement       & $A^c = U \setminus A$     & in $U$ but not $A$                & \hyperref[def:complement]{↓ Def} \\
-Cartesian product& $A \times B$              & all ordered pairs $(a,b)$         & \hyperref[def:cartesian-product]{↓ Def} \\
-Power set        & $\mathcal{P}(A)$          & all subsets of $A$                & \hyperref[def:power-set]{↓ Def} \\
-De Morgan        & $(A \cup B)^c = A^c \cap B^c$ & complement of union        & \hyperref[thm:de-morgan]{↓ Thm} \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 
 % ---------------------------------------------------------
 % Empty Set
@@ -98,16 +76,7 @@ A \cup B \;=\; \{\, x \mid x \in A \lor x \in B \,\}.
 \]
 \end{propositionbox}
 
-\begin{center}
-\begin{tikzpicture}[scale=0.85]
-  \fill[pattern=north east lines] (-1,0) circle (1.5);
-  \fill[pattern=north east lines] ( 1,0) circle (1.5);
-  \draw (-1,0) circle (1.5);
-  \draw ( 1,0) circle (1.5);
-  \node at (-2.2,-1.6) {$A$};
-  \node at ( 2.2,-1.6) {$B$};
-\end{tikzpicture}
-\end{center}
+\input{volume-i/sets-relations-functions/notes/sets/figure-union}
 
 \begin{propositionbox}{Definition (Intersection)}
 \label{def:intersection}
@@ -118,18 +87,7 @@ A \cap B \;=\; \{\, x \mid x \in A \land x \in B \,\}.
 \]
 \end{propositionbox}
 
-\begin{center}
-\begin{tikzpicture}[scale=0.85]
-  \begin{scope}
-    \clip (-1,0) circle (1.5);
-    \fill[pattern=north east lines] (1,0) circle (1.5);
-  \end{scope}
-  \draw (-1,0) circle (1.5);
-  \draw ( 1,0) circle (1.5);
-  \node at (-2.2,-1.6) {$A$};
-  \node at ( 2.2,-1.6) {$B$};
-\end{tikzpicture}
-\end{center}
+\input{volume-i/sets-relations-functions/notes/sets/figure-intersection}
 
 \begin{propositionbox}{Definition (Set Difference)}
 \label{def:set-difference}
@@ -140,19 +98,7 @@ A \setminus B \;=\; \{\, x \mid x \in A \land x \notin B \,\}.
 \]
 \end{propositionbox}
 
-\begin{center}
-\begin{tikzpicture}[scale=0.85]
-  \fill[pattern=north east lines] (-1,0) circle (1.5);
-  \begin{scope}
-    \clip (1,0) circle (1.5);
-    \fill[white] (-1,0) circle (1.5);
-  \end{scope}
-  \draw (-1,0) circle (1.5);
-  \draw ( 1,0) circle (1.5);
-  \node at (-2.2,-1.6) {$A$};
-  \node at ( 2.2,-1.6) {$B$};
-\end{tikzpicture}
-\end{center}
+\input{volume-i/sets-relations-functions/notes/sets/figure-set-difference}
 
 \begin{propositionbox}{Definition (Symmetric Difference)}
 \label{def:sym-diff}
@@ -167,20 +113,7 @@ A \triangle B
 \]
 \end{propositionbox}
 
-\begin{center}
-\begin{tikzpicture}[scale=0.85]
-  \fill[pattern=north east lines] (-1,0) circle (1.5);
-  \fill[pattern=north east lines] ( 1,0) circle (1.5);
-  \begin{scope}
-    \clip (-1,0) circle (1.5);
-    \fill[white] (1,0) circle (1.5);
-  \end{scope}
-  \draw (-1,0) circle (1.5);
-  \draw ( 1,0) circle (1.5);
-  \node at (-2.2,-1.6) {$A$};
-  \node at ( 2.2,-1.6) {$B$};
-\end{tikzpicture}
-\end{center}
+\input{volume-i/sets-relations-functions/notes/sets/figure-symmetric-difference}
 
 \begin{remark*}[Algebraic structure of $\triangle$]
 The symmetric difference is commutative and associative. Under $\triangle$,
@@ -257,6 +190,8 @@ $\cup \leftrightarrow \cap$ and $\varnothing \leftrightarrow U$, with
 complements unchanged.
 \end{definition}
 
+\NoLocalDependencies
+
 \begin{remark*}[Standard quantified statement]
 $\forall$ expressions $E, E'$ over $U$: $E$ and $E'$ are dual iff $E'$ is obtained from $E$ by the substitution $\cup \mapsto \cap,\; \cap \mapsto \cup,\; \varnothing \mapsto U,\; U \mapsto \varnothing$.
 \end{remark*}
@@ -266,6 +201,8 @@ Any identity involving $\cup$, $\cap$, $\varnothing$, and $U$ that holds for
 all subsets of a universe remains valid when each operation and constant is
 replaced by its dual.
 \end{corollary}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 For any identity $\forall A_1,\dots,A_n \subseteq U:\; E(A_i,\cup,\cap,\varnothing,U) = E'(A_i,\cup,\cap,\varnothing,U)$, the dual identity $\forall A_1,\dots,A_n \subseteq U:\; E^d = E'^d$ holds, where $E^d$ replaces $\cup\leftrightarrow\cap$ and $\varnothing\leftrightarrow U$.

@@ -7,23 +7,6 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{toolkitbox}{Supremum, Infimum, and Bounds — Quick Reference}
-\small
-\begin{tabular}{l l l}
-\toprule
-\textbf{Concept} & \textbf{Meaning} & \textbf{Detail} \\
-\midrule
-Upper bound       & $u \geq s$ for all $s \in S$                       & \hyperref[def:bounds]{↓ Def} \\
-Lower bound       & $\ell \leq s$ for all $s \in S$                    & \hyperref[def:bounds]{↓ Def} \\
-Supremum          & Least upper bound of $S$                           & \hyperref[def:sup-inf]{↓ Def} \\
-Infimum           & Greatest lower bound of $S$                        & \hyperref[def:sup-inf]{↓ Def} \\
-Uniqueness        & Suprema and infima are unique when they exist       & \hyperref[prop:sup-unique]{↓ Prop} \\
-Max/min vs.\ sup/inf & Maximum $\Rightarrow$ supremum; not conversely & \hyperref[rem:max-vs-sup]{↓ Rem} \\
-Duality           & $\sup$ in $(A,\leq)$ = $\inf$ in $(A,\geq)$        & \hyperref[prop:sup-inf-duality]{↓ Prop} \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 
 % ---------------------------------------------------------
 % Motivation
@@ -134,6 +117,8 @@ Let $(A, \leq)$ be a poset and $S \subseteq A$.  If $\sup S$ exists, it is
 unique.  If $\inf S$ exists, it is unique.
 \end{proposition}
 
+\NoLocalDependencies
+
 \begin{remark*}[Standard quantified statement]
 $\forall u^*, v^* \in A$: if both $u^*$ and $v^*$ satisfy the two conditions
 in the definition of $\sup S$, then $u^* = v^*$.
@@ -242,6 +227,8 @@ $u^* = \sup S$ if and only if:
 \end{enumerate}
 \end{proposition}
 
+\NoLocalDependencies
+
 \begin{remark*}[Standard quantified statement]
 $u^* = \sup S \;\leftrightarrow\; (\forall s \in S,\; s \leq u^*) \;\wedge\;
 (\forall v \in A,\; v < u^* \;\rightarrow\; \exists s \in S,\; v < s)$.
@@ -272,6 +259,8 @@ In particular: if every nonempty bounded-above subset of $(A,\leq)$ has a
 supremum, then every nonempty bounded-below subset of $(A,\leq)$ has an
 infimum.
 \end{proposition}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $\forall S \subseteq A$: $\ell^*$ is the infimum of $S$ in $(A,\leq)$

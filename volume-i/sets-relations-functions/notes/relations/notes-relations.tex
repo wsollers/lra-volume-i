@@ -7,19 +7,6 @@
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
-\begin{toolkitbox}{Relations — Quick Reference}
-\small
-\begin{tabular}{l l l}
-\toprule
-\textbf{Concept} & \textbf{Meaning} & \textbf{Detail} \\
-\midrule
-Ordered pair     & $(a,b) := \{\{a\},\{a,b\}\}$; identity iff both coords equal  & \hyperref[def:ordered-pair]{↓ Def} \\
-Cartesian product & $A \times B$: all ordered pairs from $A$ and $B$             & \hyperref[def:cartesian-product-rel]{↓ Def} \\
-Relation         & Any subset $R \subseteq A \times B$                           & \hyperref[def:relation]{↓ Def} \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
 
 \begin{propositionbox}{Definition (Ordered Pair)}
 \label{def:ordered-pair}
@@ -39,6 +26,8 @@ For any sets $a,b,c,d$,
 \]
 \hyperref[prf:ordered-pair-unique]{Go to proof.}
 \end{theorem}
+
+\NoLocalDependencies
 
 \begin{remark*}[Standard quantified statement]
 $\forall a, b, c, d:\; (a,b) = (c,d) \;\leftrightarrow\; (a = c \wedge b = d)$.
