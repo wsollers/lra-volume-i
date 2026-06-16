@@ -11,6 +11,7 @@
 % ---------------------------------------------------------
 % Individual property definitions
 % ---------------------------------------------------------
+\begin{definitionbox}{Definition (Reflexive Relation)}
 \begin{definition}[Reflexive Relation]\label{def:reflexive}
 A binary relation $R\subseteq A\times A$ is \emph{reflexive} on $A$ if every
 element of the domain is related to itself:
@@ -19,6 +20,7 @@ element of the domain is related to itself:
 \]
 In infix notation, this is the condition $\forall a\in A,\ aRa$.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 Reflexivity is a universal requirement over the whole domain:
@@ -37,6 +39,7 @@ which forces equality to behave reflexively in every structure.
 
 \NoLocalDependencies
 
+\begin{definitionbox}{Definition (Irreflexive Relation)}
 \begin{definition}[Irreflexive Relation]\label{def:irreflexive}
 A binary relation $R\subseteq A\times A$ is \emph{irreflexive} on $A$ if no
 element of the domain is related to itself:
@@ -45,6 +48,7 @@ element of the domain is related to itself:
 \]
 In infix notation, this is the condition $\forall a\in A,\ \neg(aRa)$.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 Irreflexivity is not the same as merely failing to be reflexive:
@@ -75,6 +79,7 @@ elements satisfy $(a,a)\in R$). However, a relation cannot be both reflexive
 and irreflexive unless $A = \varnothing$.
 \end{remark*}
 
+\begin{definitionbox}{Definition (Symmetric Relation)}
 \begin{definition}[Symmetric Relation]\label{def:symmetric}
 A binary relation $R\subseteq A\times A$ is \emph{symmetric} on $A$ if every
 related pair also appears in the reverse order:
@@ -83,6 +88,7 @@ related pair also appears in the reverse order:
 \]
 In infix notation, this is $\forall a,b\in A,\ aRb\rightarrow bRa$.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 Symmetry is a conditional property:
@@ -101,6 +107,7 @@ equality, symmetry is expressed by the identity axiom
 
 \NoLocalDependencies
 
+\begin{definitionbox}{Definition (Antisymmetric Relation)}
 \begin{definition}[Antisymmetric Relation]\label{def:antisymmetric}
 A binary relation $R\subseteq A\times A$ is \emph{antisymmetric} on $A$ if any
 two elements related in both directions must be equal:
@@ -111,6 +118,7 @@ two elements related in both directions must be equal:
 In infix notation, this is
 $\forall a,b\in A,\ ((aRb\land bRa)\rightarrow a=b)$.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 Antisymmetry forbids two-way relation cycles between distinct elements:
@@ -129,6 +137,7 @@ axiomatizations of partial orders, antisymmetry is usually written
 
 \NoLocalDependencies
 
+\begin{definitionbox}{Definition (Asymmetric Relation)}
 \begin{definition}[Asymmetric Relation]\label{def:asymmetric}
 A binary relation $R\subseteq A\times A$ is \emph{asymmetric} on $A$ if every
 related pair excludes the reverse pair:
@@ -139,6 +148,7 @@ related pair excludes the reverse pair:
 In infix notation, this is
 $\forall a,b\in A,\ (aRb\rightarrow\neg(bRa))$.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 Asymmetry is the strict one-way condition
@@ -164,6 +174,7 @@ $\mathbb{R}$ is antisymmetric but not asymmetric (since $1 \leq 1$). Strict
 order $<$ is both asymmetric and irreflexive.
 \end{remark*}
 
+\begin{definitionbox}{Definition (Transitive Relation)}
 \begin{definition}[Transitive Relation]\label{def:transitive}
 A binary relation $R\subseteq A\times A$ is \emph{transitive} on $A$ if any
 two composable related pairs collapse to a direct related pair:
@@ -174,6 +185,7 @@ two composable related pairs collapse to a direct related pair:
 In infix notation, this is
 $\forall a,b,c\in A,\ ((aRb\land bRc)\rightarrow aRc)$.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 Transitivity is the formal chaining law:
@@ -193,6 +205,7 @@ orders.
 
 \NoLocalDependencies
 
+\begin{definitionbox}{Definition (Total (Connex) Relation)}
 \begin{definition}[Total (Connex) Relation]\label{def:total-rel}
 $R$ is \emph{total} (or \emph{connex}) if every pair is comparable:
 \[
@@ -200,6 +213,7 @@ $R$ is \emph{total} (or \emph{connex}) if every pair is comparable:
 (a,b) \in R \lor (b,a) \in R.
 \]
 \end{definition}
+\end{definitionbox}
 
 \NoLocalDependencies
 

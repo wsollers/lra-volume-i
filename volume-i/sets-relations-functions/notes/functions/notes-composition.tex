@@ -22,6 +22,7 @@ Composition is generally not commutative: $g \circ f \neq f \circ g$ even
 when both are defined.
 \end{remark*}
 
+\begin{theorembox}{Theorem (Associativity of Composition)}
 \begin{theorem}[Associativity of Composition]\label{thm:comp-assoc}
 For $f : A \to B$, $g : B \to C$, $h : C \to D$:
 \[
@@ -29,6 +30,7 @@ h \circ (g \circ f) = (h \circ g) \circ f.
 \]
 \hyperref[prf:comp-assoc]{Go to proof.}
 \end{theorem}
+\end{theorembox}
 
 \NoLocalDependencies
 
@@ -36,6 +38,7 @@ h \circ (g \circ f) = (h \circ g) \circ f.
 $\forall a \in A:\; h(g(f(a))) = h(g(f(a)))$, i.e.\ $\forall f\!:\!A\!\to\!B,\; g\!:\!B\!\to\!C,\; h\!:\!C\!\to\!D,\; \forall a \in A:\; [h \circ (g \circ f)](a) = [(h \circ g) \circ f](a)$.
 \end{remark*}
 
+\begin{theorembox}{Theorem (Identity and Composition)}
 \begin{theorem}[Identity and Composition]\label{thm:comp-id}
 For any $f : A \to B$:
 \[
@@ -45,6 +48,7 @@ f \circ \id_A = f
 \]
 \hyperref[prf:comp-id]{Go to proof.}
 \end{theorem}
+\end{theorembox}
 
 \NoLocalDependencies
 
@@ -52,6 +56,7 @@ f \circ \id_A = f
 $\forall f : A \to B,\; \forall a \in A:\; (f \circ \id_A)(a) = f(a)$ and $(\id_B \circ f)(a) = f(a)$.
 \end{remark*}
 
+\begin{theorembox}{Theorem (Injectivity and Surjectivity Under Composition)}
 \begin{theorem}[Injectivity and Surjectivity Under Composition]\label{thm:comp-inj-surj}
 Let $f : A \to B$ and $g : B \to C$.
 \begin{enumerate}[label=(\roman*)]
@@ -62,6 +67,7 @@ Let $f : A \to B$ and $g : B \to C$.
 \end{enumerate}
 \hyperref[prf:comp-inj-surj]{Go to proof.}
 \end{theorem}
+\end{theorembox}
 
 \NoLocalDependencies
 
@@ -84,6 +90,7 @@ Let $f : A \to B$ be bijective. The \emph{inverse function} is
 $f^{-1} : B \to A$ defined by: $f^{-1}(b) = a$ iff $f(a) = b$.
 \end{propositionbox}
 
+\begin{theorembox}{Theorem (Characterization of Inverse Functions)}
 \begin{theorem}[Characterization of Inverse Functions]\label{thm:inverse-char}
 Let $f : A \to B$ be bijective. Then
 \[
@@ -94,6 +101,7 @@ f \circ f^{-1} = \id_B.
 Conversely, a function admits an inverse iff it is bijective.
 \hyperref[prf:inverse-char]{Go to proof.}
 \end{theorem}
+\end{theorembox}
 
 \NoLocalDependencies
 
@@ -102,6 +110,7 @@ $\forall a \in A:\; f^{-1}(f(a)) = a$ and $\forall b \in B:\; f(f^{-1}(b)) = b$.
 Converse: $(\exists g: B\to A,\; g\circ f = \id_A \wedge f\circ g = \id_B) \;\leftrightarrow\; f$ is bijective.
 \end{remark*}
 
+\begin{theorembox}{Theorem (Inverse of a Composition)}
 \begin{theorem}[Inverse of a Composition]\label{thm:inverse-comp}
 Let $f : A \to B$ and $g : B \to C$ be bijective. Then $g \circ f$ is
 bijective and
@@ -110,6 +119,7 @@ bijective and
 \]
 \hyperref[prf:inverse-comp]{Go to proof.}
 \end{theorem}
+\end{theorembox}
 
 \NoLocalDependencies
 
@@ -130,6 +140,7 @@ A \emph{right inverse} (or \emph{section}) of $f$ is a function $h : B \to A$
 with $f \circ h = \id_B$.
 \end{propositionbox}
 
+\begin{theorembox}{Theorem (One-Sided Inverses and Function Properties)}
 \begin{theorem}[One-Sided Inverses and Function Properties]\label{thm:one-sided}
 Let $f : A \to B$.
 \begin{enumerate}[label=(\roman*)]
@@ -140,6 +151,7 @@ and $f$ is bijective.
 \end{enumerate}
 \hyperref[prf:one-sided]{Go to proof.}
 \end{theorem}
+\end{theorembox}
 
 \NoLocalDependencies
 
@@ -177,6 +189,7 @@ Theorem.
 % ---------------------------------------------------------
 % Image and Preimage Laws
 % ---------------------------------------------------------
+\begin{theorembox}{Theorem (Preimages Preserve Set Operations)}
 \begin{theorem}[Preimages Preserve Set Operations]\label{thm:preimage-ops}
 Let $f : A \to B$ and $S, T \subseteq B$. Then
 \begin{enumerate}[label=(\roman*)]
@@ -187,6 +200,7 @@ Let $f : A \to B$ and $S, T \subseteq B$. Then
 \end{enumerate}
 \hyperref[prf:preimage-ops]{Go to proof.}
 \end{theorem}
+\end{theorembox}
 
 \NoLocalDependencies
 
@@ -196,6 +210,7 @@ Let $f : A \to B$ and $S, T \subseteq B$. Then
 (iv) $\forall a \in A:\; a \in f^{-1}(S^c) \leftrightarrow f(a)\notin S$.
 \end{remark*}
 
+\begin{theorembox}{Theorem (Images and Set Operations)}
 \begin{theorem}[Images and Set Operations]\label{thm:image-ops}
 Let $f : A \to B$ and $S, T \subseteq A$. Then
 \begin{enumerate}[label=(\roman*)]
@@ -206,6 +221,7 @@ Let $f : A \to B$ and $S, T \subseteq A$. Then
 Equality holds in (ii) and (iii) for all $S,T$ iff $f$ is injective.
 \hyperref[prf:image-ops]{Go to proof.}
 \end{theorem}
+\end{theorembox}
 
 \NoLocalDependencies
 

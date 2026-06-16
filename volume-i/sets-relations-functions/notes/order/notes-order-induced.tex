@@ -48,10 +48,12 @@ $\forall x, y \in A,\quad x \leq_f y \;\Longleftrightarrow\; f(x) \leq' f(y)$.
 % Reflexivity and transitivity: always free
 % ---------------------------------------------------------
 
+\begin{propositionbox}{Proposition}
 \begin{proposition}[\texorpdfstring{\hyperref[prf:induced-preorder]{$\leq_f$ is always a preorder}}{$\leq_f$ is always a preorder}]\label{prop:induced-preorder}
 For any function $f : A \to B$ and partial order $(B, \leq')$, the relation
 $\leq_f$ is a preorder on $A$: it is reflexive and transitive.
 \end{proposition}
+\end{propositionbox}
 
 \NoLocalDependencies
 
@@ -87,11 +89,13 @@ $x \sim_f y$ forces $f(x) = f(y)$, making $f$ non-injective the only
 obstruction to antisymmetry.
 \end{remark*}
 
+\begin{propositionbox}{Proposition}
 \begin{proposition}[\texorpdfstring{\hyperref[prf:induced-poset]{$\leq_f$ is a partial order iff $f$ is injective}}{$\leq_f$ is a partial order iff $f$ is injective}]\label{prop:induced-poset}
 Let $(B, \leq')$ be a partially ordered set and $f : A \to B$.
 The induced order $\leq_f$ is a partial order on $A$ if and only if
 $f$ is injective.
 \end{proposition}
+\end{propositionbox}
 
 \NoLocalDependencies
 
@@ -182,10 +186,12 @@ In other words, an order embedding is exactly an injective function whose
 induced order \emph{agrees with the existing order on $A$}.
 \end{remark*}
 
+\begin{propositionbox}{Proposition (Order embeddings are injective)}
 \begin{proposition}[Order embeddings are injective]\label{prop:embedding-injective}
 Every order embedding $f : (A, \leq) \to (B, \leq')$ is injective.
 \hyperref[prf:embedding-injective]{Go to proof.}
 \end{proposition}
+\end{propositionbox}
 
 \NoLocalDependencies
 
@@ -202,11 +208,13 @@ same image, reflection forces them to be mutually $\leq$-related, and
 antisymmetry collapses them to equality.
 \end{remark*}
 
+\begin{propositionbox}{Proposition (Order embedding is isomorphism onto image)}
 \begin{proposition}[Order embedding is isomorphism onto image]\label{prop:embedding-iso}
 If $f : (A, \leq) \to (B, \leq')$ is an order embedding, then $f$ is an
 order isomorphism from $(A, \leq)$ to the suborder $(f(A), \leq'_{f(A)})$.
 \hyperref[prf:embedding-iso]{Go to proof.}
 \end{proposition}
+\end{propositionbox}
 
 \NoLocalDependencies
 

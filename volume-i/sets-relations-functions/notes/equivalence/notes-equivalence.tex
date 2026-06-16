@@ -32,10 +32,12 @@ A / R \;:=\; \{\, [a]_R \mid a \in A \,\}.
 \]
 \end{propositionbox}
 
+\begin{definitionbox}{Definition (Index of an Equivalence Relation)}
 \begin{definition}[Index of an Equivalence Relation]\label{def:index}
 The \emph{index} of $R$ on $A$ is the cardinality $|A/R|$, i.e.\ the number
 of equivalence classes.
 \end{definition}
+\end{definitionbox}
 
 \NoLocalDependencies
 
@@ -83,6 +85,7 @@ disjointness condition.
 % Core Lemma and Theorem
 % ---------------------------------------------------------
 
+\begin{lemmabox}{Lemma (Representative Independence Lemma)}
 \begin{lemma}[Representative Independence Lemma]\label{lem:rep-independence}
 Let $R$ be an equivalence relation on $A$. For any $a,b \in A$,
 \[
@@ -92,6 +95,7 @@ Let $R$ be an equivalence relation on $A$. For any $a,b \in A$,
 \]
 \hyperref[prf:rep-independence]{Go to proof.}
 \end{lemma}
+\end{lemmabox}
 
 \NoLocalDependencies
 
@@ -104,6 +108,7 @@ sets: a function $f : A \to B$ defined by $f([a]) = \cdots$ is well-defined
 iff the formula gives the same output for all representatives of $[a]$.
 \end{remark*}
 
+\begin{theorembox}{Theorem (Equivalence Relations and Partitions)}
 \begin{theorem}[Equivalence Relations and Partitions]\label{thm:equiv-partition}
 Let $A$ be a set.
 \begin{enumerate}[label=(\roman*)]
@@ -119,6 +124,7 @@ is an equivalence relation on $A$.
 \end{enumerate}
 \hyperref[prf:equiv-partition]{Go to proof.}
 \end{theorem}
+\end{theorembox}
 
 \NoLocalDependencies
 
@@ -148,6 +154,7 @@ All other equivalence relations on $A$ lie strictly between these extremes.
 % Universal Property of Quotient Maps
 % ---------------------------------------------------------
 
+\begin{theorembox}{Theorem (Universal Property of the Quotient Map)}
 \begin{theorem}[Universal Property of the Quotient Map]
 \label{thm:quotient-universal}
 Let $R$ be an equivalence relation on $A$, let $\pi : A \to A/R$ be the
@@ -161,6 +168,7 @@ f = \bar{f} \circ \pi.
 When it exists, $\bar{f}$ is defined by $\bar{f}([a]) = f(a)$.
 \hyperref[prf:quotient-universal]{Go to proof.}
 \end{theorem}
+\end{theorembox}
 
 \NoLocalDependencies
 

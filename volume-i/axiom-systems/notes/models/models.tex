@@ -61,6 +61,7 @@ The next sections use models to explain consistency and independence:
 \]
 \end{remark*}
 
+\begin{definitionbox}{Definition (Interpretation)}
 \begin{definition}[Interpretation]
 \label{def:axiom-systems-interpretation}
 Let $\Sigma=(\mathcal{C},\mathcal{F},\mathcal{R},\operatorname{ar})$ be a
@@ -70,6 +71,7 @@ maps each symbol of $\Sigma$ to concrete data over $M$: constants are assigned
 elements of $M$, function symbols are assigned operations on $M$, and relation
 symbols are assigned relations on $M$.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For every $c\in\mathcal{C}$, $\mathcal{I}(c)\in M$. For every
@@ -95,6 +97,7 @@ setting.
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition ($\mathcal{L}$-Structure)}
 \begin{definition}[$\mathcal{L}$-Structure]
 \label{def:axiom-systems-structure}
 Let $\mathcal{L}$ be a first-order signature. An
@@ -105,6 +108,7 @@ Let $\mathcal{L}$ be a first-order signature. An
 where $M$ is a nonempty domain and $\mathcal{I}$ is an interpretation of the
 symbols of $\mathcal{L}$ on $M$.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For every first-order signature $\mathcal{L}$, an $\mathcal{L}$-structure
@@ -142,6 +146,7 @@ relations.
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition (Model)}
 \begin{definition}[Model]
 \label{def:axiom-systems-model}
 Let $\mathcal{L}$ be a first-order signature, let $T$ be a theory over
@@ -150,6 +155,7 @@ $\mathcal{L}$-structure. The structure $\mathfrak{M}$ is a \emph{model of
 $T$}, written $\mathfrak{M}\vDash T$, if every sentence in $T$ is true in
 $\mathfrak{M}$.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For every theory $T$ over $\mathcal{L}$ and every $\mathcal{L}$-structure
@@ -174,6 +180,7 @@ assertions and their consequences hold.
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition (Satisfaction)}
 \begin{definition}[Satisfaction]
 \label{def:axiom-systems-satisfaction}
 Let $\mathfrak{M}=(M,\mathcal{I})$ be an $\mathcal{L}$-structure. A
@@ -195,6 +202,7 @@ relation, equality is interpreted as equality in $M$, Boolean connectives are
 interpreted by the corresponding truth operations, and quantifiers range over
 all elements of $M$.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For terms $t_1,\ldots,t_n$ and an $n$-ary relation symbol $R$,
@@ -243,6 +251,7 @@ a model of a theory.
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition (Countermodel)}
 \begin{definition}[Countermodel]
 \label{def:axiom-systems-countermodel}
 Let $\Gamma\subseteq\operatorname{Sent}(\mathcal{L})$ be a set of premises,
@@ -251,6 +260,7 @@ an $\mathcal{L}$-structure. A \emph{countermodel to the entailment
 $\Gamma\vDash\varphi$} is a structure $\mathfrak{M}$ that satisfies every
 sentence in $\Gamma$ but does not satisfy $\varphi$.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For $\Gamma\subseteq\operatorname{Sent}(\mathcal{L})$ and

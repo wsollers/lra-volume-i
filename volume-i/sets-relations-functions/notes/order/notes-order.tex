@@ -35,10 +35,12 @@ $a \leq b \iff (a < b \lor a=b)$. The two formulations carry exactly the
 same information.
 \end{remark*}
 
+\begin{definitionbox}{Definition (Comparable and Incomparable Elements)}
 \begin{definition}[Comparable and Incomparable Elements]\label{def:comparable}
 In an ordered set $(A,\leq)$, elements $a,b \in A$ are \emph{comparable} if
 $a \leq b$ or $b \leq a$; they are \emph{incomparable} if neither holds.
 \end{definition}
+\end{definitionbox}
 
 \NoLocalDependencies
 
@@ -164,11 +166,13 @@ well-ordered set, not merely its cardinality.
 % ---------------------------------------------------------
 % Chains, antichains, initial segments
 % ---------------------------------------------------------
+\begin{definitionbox}{Definition (Chain and Antichain)}
 \begin{definition}[Chain and Antichain]\label{def:chain}
 A subset $C \subseteq A$ of a poset $(A,\leq)$ is a \emph{chain} if every
 pair of elements in $C$ is comparable. It is an \emph{antichain} if no two
 distinct elements of $C$ are comparable.
 \end{definition}
+\end{definitionbox}
 
 \NoLocalDependencies
 
@@ -177,12 +181,14 @@ $C$ is a chain $\;\leftrightarrow\; \forall a,b \in C,\; a \leq b \vee b \leq a$
 $C$ is an antichain $\;\leftrightarrow\; \forall a,b \in C,\; a \neq b \to \neg(a \leq b) \wedge \neg(b \leq a)$.
 \end{remark*}
 
+\begin{definitionbox}{Definition (Initial Segment)}
 \begin{definition}[Initial Segment]\label{def:initial-segment}
 A subset $I \subseteq A$ is an \emph{initial segment} of $(A,\leq)$ if
 \[
 a \in I \text{ and } b \leq a \;\Rightarrow\; b \in I.
 \]
 \end{definition}
+\end{definitionbox}
 
 \NoLocalDependencies
 

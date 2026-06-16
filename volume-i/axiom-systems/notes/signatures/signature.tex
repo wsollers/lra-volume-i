@@ -42,6 +42,7 @@ The signature records only the available non-logical symbols and their arities.
 It does not assert any axioms about those symbols.
 \end{signaturebox}
 
+\begin{definitionbox}{Definition (First-Order Signature)}
 \begin{definition}[First-Order Signature]
 \label{def:signature}
 A \emph{first-order signature} is a tuple
@@ -55,6 +56,7 @@ function symbols, $\mathcal{R}$ is a set of relation symbols, and
 \]
 assigns to each function or relation symbol its number of arguments.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For every $s\in\mathcal{F}\cup\mathcal{R}$, the value
@@ -70,6 +72,7 @@ It says which symbols may occur and how many input places each symbol has.
 
 \NoLocalDependencies
 
+\begin{definitionbox}{Definition (Arity)}
 \begin{definition}[Arity]
 \label{def:arity}
 Let $\Sigma=(\mathcal{C},\mathcal{F},\mathcal{R},\operatorname{ar})$ be a
@@ -81,6 +84,7 @@ that assigns to each function or relation symbol the number of arguments it
 requires. When constants are treated as $0$-ary function symbols, the codomain
 is enlarged to include $0$.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For every $s\in\mathcal{F}\cup\mathcal{R}$, there is a unique positive
@@ -102,6 +106,7 @@ symbol has been supplied with the correct number of arguments.
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition (Language)}
 \begin{definition}[Language]
 \label{def:language}
 A \emph{first-order language} has two standard readings. As vocabulary, it is
@@ -122,6 +127,7 @@ logical symbols and punctuation. In this second reading,
     \text{ or } s\in\operatorname{WFF}(\Sigma)\}.
 \]
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 The vocabulary reading records which non-logical symbols may occur. The
@@ -141,6 +147,7 @@ logical grammar needed to form expressions from that vocabulary.
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition (Constant Symbol)}
 \begin{definition}[Constant Symbol]
 \label{def:signature-constant-symbol}
 A \emph{constant symbol} is a non-logical symbol that behaves syntactically as
@@ -153,6 +160,7 @@ included among function symbols, this is the condition
 Because its arity is $0$, the symbol $c$ is already a well-formed term and
 takes no input terms.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 If $c\in\mathcal{F}$ and $\operatorname{ar}(c)=0$, then
@@ -177,6 +185,7 @@ formal syntax; under the standard interpretation, it denotes the number zero.
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition (Function Symbol)}
 \begin{definition}[Function Symbol]
 \label{def:signature-function-symbol}
 A \emph{function symbol} is a non-logical symbol $f\in\mathcal{F}$ whose
@@ -184,6 +193,7 @@ assigned arity determines how many terms it must take as inputs. If
 $\operatorname{ar}(f)=n$, then $f$ is an $n$-ary term constructor: it takes
 exactly $n$ terms and produces a new term, not a truth value.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For every $f\in\mathcal{F}$, if $\operatorname{ar}(f)=n$, then
@@ -212,6 +222,7 @@ becomes an actual operation on the chosen domain.
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition (Relation Symbol)}
 \begin{definition}[Relation Symbol]
 \label{def:relation-symbol}
 A \emph{relation symbol}, or predicate symbol, is a non-logical symbol
@@ -220,6 +231,7 @@ as inputs. If $\operatorname{ar}(R)=n$, then $R$ is an $n$-ary formula
 constructor: it takes exactly $n$ terms and produces an atomic formula, hence
 something with a truth value rather than an object.
 \end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 For every $R\in\mathcal{R}$, if $\operatorname{ar}(R)=n$, then
