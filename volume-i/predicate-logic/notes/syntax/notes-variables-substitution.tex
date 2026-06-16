@@ -119,7 +119,14 @@ The expression $\varphi[t/x]$ denotes the formula obtained from $\varphi$ by
 replacing every \emph{free} occurrence of $x$ with the term $t$, leaving bound
 occurrences of $x$ unchanged.
 \end{definition}
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:variable]{Variable}
+  \item \hyperref[def:term]{Term}
+  \item \hyperref[def:formula]{Formula}
+  \item \hyperref[def:bound-free]{Bound and Free Occurrences}
+\end{itemize}
+\end{dependencies}
 \end{definitionbox}
 
 % ---------------------------------------------------------
@@ -156,7 +163,15 @@ $\varphi\to\psi$. For a quantified formula, the capture-avoidance condition is
 \]
 where $Q$ is either $\forall$ or $\exists$.
 \end{remark*}
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:variable]{Variable}
+  \item \hyperref[def:term]{Term}
+  \item \hyperref[def:formula]{Formula}
+  \item \hyperref[def:bound-free]{Bound and Free Occurrences}
+  \item \hyperref[def:fv]{Free Variables of a Formula}
+\end{itemize}
+\end{dependencies}
 \end{definitionbox}
 
 \begin{remark*}[Capture-avoiding substitution]
