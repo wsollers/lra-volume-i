@@ -28,10 +28,10 @@ jobs:
           cd source
           python scripts/check_bibliography.py --bib-dir bibliography
 
-      - name: Validate leaf proof stubs
+      - name: Validate volume
         run: |
           cd source
-          python scripts/validate_leaf_proofs.py --root . --strict
+          python scripts/build_volume.py --validate-only
 
       - name: Sync volume-i/ into monorepo
         run: |
