@@ -23,6 +23,14 @@ Note that $R = P \cup I$.
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:set-difference]{Set Difference}
+\end{itemize}
+\end{dependencies}
+
 \begin{remark*}[Preference-theoretic reading]
 In decision theory, $R$ encodes a preference relation: $xRy$ means ``$x$ is
 at least as good as $y$.'' Then $I$ is the \emph{indifference} relation
@@ -120,6 +128,13 @@ A \emph{complete extension} is an extension that is also complete.
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:preorder]{Preorder}
+  \item \hyperref[def:relation]{Relation}
+\end{itemize}
+\end{dependencies}
+
 \begin{remark*}[What extensions do]
 An extension of $\succsim$ ``fills in'' the comparisons left undecided by
 $\succsim$ without reversing any existing strict comparison. The goal is to
@@ -157,7 +172,14 @@ complete preorder that is an extension of $\succsim$.
 \end{corollary}
 \end{corollarybox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:preorder]{Preorder}
+  \item \hyperref[def:preorder-extension]{Extension of a Preorder}
+  \item \hyperref[def:quotient-set]{Quotient Set}
+  \item \hyperref[def:sym-asym]{Symmetric and Asymmetric Parts}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Proof]
 \hyperref[prf:complete-preorder-extension]{Proof details.}

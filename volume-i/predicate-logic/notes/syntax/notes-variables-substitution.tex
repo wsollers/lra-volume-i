@@ -23,6 +23,15 @@ appear within its scope.
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:formula]{Formula}
+  \item \hyperref[def:variable]{Variable}
+  \item \hyperref[def:universal-q]{Universal Quantifier}
+  \item \hyperref[def:existential-q]{Existential Quantifier}
+\end{itemize}
+\end{dependencies}
+
 \begin{remark*}[English reading]
 The scope is the reach of a quantifier — the subformula it governs. Scope is
 syntactically determined by the parenthesisation of the formula, not by
@@ -46,6 +55,16 @@ An occurrence of $x$ is \emph{free} if it is not bound by any quantifier in
 $\varphi$.
 \end{definition}
 \end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:formula]{Formula}
+  \item \hyperref[def:variable]{Variable}
+  \item \hyperref[def:universal-q]{Universal Quantifier}
+  \item \hyperref[def:existential-q]{Existential Quantifier}
+  \item \hyperref[def:scope]{Scope of a Quantifier}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[English reading]
 The same variable can have both bound and free occurrences in a single formula.
@@ -76,6 +95,17 @@ is defined recursively:
 \end{enumerate}
 \end{definition}
 \end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:bound-free]{Bound and Free Occurrences}
+  \item \hyperref[def:formula]{Formula}
+  \item \hyperref[def:term]{Term}
+  \item \hyperref[def:variable]{Variable}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:set-difference]{Set Difference}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[English reading]
 $\mathrm{FV}(\varphi)$ collects exactly those variables whose values can

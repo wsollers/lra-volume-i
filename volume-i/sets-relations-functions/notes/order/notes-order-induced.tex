@@ -34,6 +34,14 @@ f(x) \;\leq'\; f(y).
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:relation]{Relation}
+\end{itemize}
+\end{dependencies}
+
 \begin{remark*}[Intuition]
 Two elements of $A$ are compared by sending them through $f$ and comparing
 their images in $(B, \leq')$. The order on $A$ is entirely inherited from
@@ -56,7 +64,14 @@ $\leq_f$ is a preorder on $A$: it is reflexive and transitive.
 \end{proposition}
 \end{propositionbox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:induced-order]{Induced Order}
+  \item \hyperref[def:preorder]{Preorder}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:partial-order]{Partial Order}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\forall x \in A:\; f(x)\leq' f(x)$ (reflexivity); $\forall x,y,z \in A:\; f(x)\leq' f(y) \wedge f(y)\leq' f(z) \to f(x)\leq' f(z)$ (transitivity).
@@ -99,7 +114,13 @@ $f$ is injective.
 \end{proposition}
 \end{propositionbox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:induced-order]{Induced Order}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:injective]{Injective Function}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\leq_f$ is a partial order $\;\leftrightarrow\; \forall x,y \in A,\; f(x)\leq' f(y) \wedge f(y)\leq' f(x) \to x=y$ $\;\leftrightarrow\; \forall x,y \in A,\; f(x)=f(y) \to x=y$ (injectivity of $f$, since $\leq'$ is antisymmetric).
@@ -146,6 +167,14 @@ x \leq' y,
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:relation]{Relation}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Connection to induced orders]
 The suborder on $S \subseteq B$ is exactly the order induced by the
@@ -204,7 +233,13 @@ Every order embedding $f : (A, \leq) \to (B, \leq')$ is injective.
 \end{proposition}
 \end{propositionbox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:order-embedding]{Order Embedding}
+  \item \hyperref[def:injective]{Injective Function}
+  \item \hyperref[def:partial-order]{Partial Order}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\forall x,y \in A:\; f(x) = f(y) \to x = y$.
@@ -227,7 +262,14 @@ order isomorphism from $(A, \leq)$ to the suborder $(f(A), \leq'_{f(A)})$.
 \end{proposition}
 \end{propositionbox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:order-embedding]{Order Embedding}
+  \item \hyperref[def:image-set]{Image of a Set}
+  \item \hyperref[def:suborder]{Suborder}
+  \item \hyperref[def:partial-order]{Partial Order}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\forall x,y \in A:\; x \leq y \;\leftrightarrow\; f(x) \leq'_{f(A)} f(y)$, i.e.\ $f$ is an order isomorphism $(A,\leq)\cong(f(A),\leq')$.

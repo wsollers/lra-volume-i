@@ -17,6 +17,12 @@ For any term $t$, one may infer $t = t$.
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:term]{Term}
+\end{itemize}
+\end{dependencies}
+
 \begin{remark*}[English reading]
 Reflexivity requires no premises and holds for all terms under all
 interpretations. It is the foundational rule that allows equality reasoning to
@@ -31,6 +37,15 @@ get off the ground.
 From $t_1 = t_2$ and $\varphi[t_1/x]$, one may infer $\varphi[t_2/x]$.
 \end{definition}
 \end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:term]{Term}
+  \item \hyperref[def:formula]{Formula}
+  \item \hyperref[def:subst-notation]{Substitution Notation}
+  \item \hyperref[def:free-for]{Free for Substitution}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[English reading]
 Equality elimination permits replacing a term by an equal term in any formula

@@ -18,6 +18,12 @@ $\varnothing$.
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:empty-set]{Axiom of Empty Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{remark*}[Vacuous truth]
 Statements of the form $\forall x \in \varnothing,\; P(x)$ are
 \emph{vacuously true}: there is no element $x \in \varnothing$ for which
@@ -94,6 +100,13 @@ A \cup B \;=\; \{\, x \mid x \in A \lor x \in B \,\}.
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:set-membership]{Set and Membership}
+  \item \hyperref[ax:separation]{Axiom Schema of Separation}
+\end{itemize}
+\end{dependencies}
+
 \input{volume-i/sets-relations-functions/notes/sets/figure-union}
 
 \begin{definitionbox}{Definition (Intersection)}
@@ -106,6 +119,13 @@ A \cap B \;=\; \{\, x \mid x \in A \land x \in B \,\}.
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:set-membership]{Set and Membership}
+  \item \hyperref[ax:separation]{Axiom Schema of Separation}
+\end{itemize}
+\end{dependencies}
+
 \input{volume-i/sets-relations-functions/notes/sets/figure-intersection}
 
 \begin{definitionbox}{Definition (Set Difference)}
@@ -117,6 +137,13 @@ A \setminus B \;=\; \{\, x \mid x \in A \land x \notin B \,\}.
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:set-membership]{Set and Membership}
+  \item \hyperref[ax:separation]{Axiom Schema of Separation}
+\end{itemize}
+\end{dependencies}
 
 \input{volume-i/sets-relations-functions/notes/sets/figure-set-difference}
 
@@ -151,6 +178,13 @@ A^c \;=\; U \setminus A.
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:set-membership]{Set and Membership}
+  \item \hyperref[ax:separation]{Axiom Schema of Separation}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Cartesian Product)}
 \begin{definition}[Cartesian Product]\label{def:cartesian-product}
@@ -187,6 +221,12 @@ If $A$ has $n$ elements, then $|\mathcal{P}(A)| = 2^n$. For infinite $A$,
 Cantor's theorem shows $|\mathcal{P}(A)| > |A|$ strictly.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:power-set]{Axiom of Power Set}
+\end{itemize}
+\end{dependencies}
+
 % ---------------------------------------------------------
 % De Morgan — Theorem box (named, major result of section)
 % ---------------------------------------------------------
@@ -216,7 +256,14 @@ complements unchanged.
 \end{definition}
 \end{definitionbox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[def:complement]{Complement}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\forall$ expressions $E, E'$ over $U$: $E$ and $E'$ are dual iff $E'$ is obtained from $E$ by the substitution $\cup \mapsto \cap,\; \cap \mapsto \cup,\; \varnothing \mapsto U,\; U \mapsto \varnothing$.
@@ -230,7 +277,12 @@ replaced by its dual.
 \end{corollary}
 \end{corollarybox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:set-duality]{Set Duality}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 For any identity $\forall A_1,\dots,A_n \subseteq U:\; E(A_i,\cup,\cap,\varnothing,U) = E'(A_i,\cup,\cap,\varnothing,U)$, the dual identity $\forall A_1,\dots,A_n \subseteq U:\; E^d = E'^d$ holds, where $E^d$ replaces $\cup\leftrightarrow\cap$ and $\varnothing\leftrightarrow U$.
