@@ -49,7 +49,12 @@ From $t_1 = t_2$, one may infer $t_2 = t_1$.
 \end{theorem}
 \end{theorembox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:eq-refl]{Equality Introduction}
+  \item \hyperref[def:eq-elim]{Equality Elimination}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\forall t_1, t_2:\; t_1=t_2 \to t_2=t_1$.
@@ -63,7 +68,12 @@ From $t_1 = t_2$ and $t_2 = t_3$, one may infer $t_1 = t_3$.
 \end{theorem}
 \end{theorembox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:eq-refl]{Equality Introduction}
+  \item \hyperref[def:eq-elim]{Equality Elimination}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\forall t_1, t_2, t_3:\; t_1=t_2 \wedge t_2=t_3 \to t_1=t_3$.
@@ -78,7 +88,11 @@ $f(\dots,t_1,\dots) = f(\dots,t_2,\dots)$.
 \end{theorem}
 \end{theorembox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:eq-elim]{Equality Elimination}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\forall t_1, t_2:\; t_1=t_2 \to \forall$ function symbol $f$: $f(\dots,t_1,\dots) = f(\dots,t_2,\dots)$.
@@ -93,7 +107,11 @@ $P(\dots,t_1,\dots) \;\Leftrightarrow\; P(\dots,t_2,\dots)$.
 \end{theorem}
 \end{theorembox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:eq-elim]{Equality Elimination}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\forall t_1, t_2:\; t_1=t_2 \to \forall$ predicate symbol $P$: $P(\dots,t_1,\dots) \leftrightarrow P(\dots,t_2,\dots)$.

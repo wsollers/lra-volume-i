@@ -33,7 +33,12 @@ h \circ (g \circ f) = (h \circ g) \circ f.
 \end{theorem}
 \end{theorembox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:composition]{Composition}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\forall a \in A:\; h(g(f(a))) = h(g(f(a)))$, i.e.\ $\forall f\!:\!A\!\to\!B,\; g\!:\!B\!\to\!C,\; h\!:\!C\!\to\!D,\; \forall a \in A:\; [h \circ (g \circ f)](a) = [(h \circ g) \circ f](a)$.
@@ -51,7 +56,13 @@ f \circ \id_A = f
 \end{theorem}
 \end{theorembox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:identity]{Identity Function}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\forall f : A \to B,\; \forall a \in A:\; (f \circ \id_A)(a) = f(a)$ and $(\id_B \circ f)(a) = f(a)$.
@@ -70,7 +81,14 @@ Let $f : A \to B$ and $g : B \to C$.
 \end{theorem}
 \end{theorembox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:injective]{Injective Function}
+  \item \hyperref[def:surjective]{Surjective Function}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 (i) $(\forall a_1,a_2 \in A,\; f(a_1)=f(a_2)\to a_1=a_2) \wedge (\forall b_1,b_2\in B,\; g(b_1)=g(b_2)\to b_1=b_2) \;\to\; \forall a_1,a_2\in A,\; g(f(a_1))=g(f(a_2))\to a_1=a_2$.\\
@@ -105,7 +123,15 @@ Conversely, a function admits an inverse iff it is bijective.
 \end{theorem}
 \end{theorembox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:inverse]{Inverse Function}
+  \item \hyperref[def:bijective]{Bijective Function}
+  \item \hyperref[def:identity]{Identity Function}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\forall a \in A:\; f^{-1}(f(a)) = a$ and $\forall b \in B:\; f(f^{-1}(b)) = b$.\\
@@ -123,7 +149,14 @@ bijective and
 \end{theorem}
 \end{theorembox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:inverse]{Inverse Function}
+  \item \hyperref[def:bijective]{Bijective Function}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 $\forall c \in C:\; (g \circ f)^{-1}(c) = f^{-1}(g^{-1}(c))$.
@@ -156,7 +189,16 @@ and $f$ is bijective.
 \end{theorem}
 \end{theorembox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:left-right-inverse]{Left and Right Inverses}
+  \item \hyperref[def:injective]{Injective Function}
+  \item \hyperref[def:surjective]{Surjective Function}
+  \item \hyperref[def:bijective]{Bijective Function}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 (i) $(\exists g: B\to A,\; \forall a\in A,\; g(f(a))=a) \;\leftrightarrow\; \forall a_1,a_2\in A,\; f(a_1)=f(a_2)\to a_1=a_2$.\\
@@ -206,7 +248,16 @@ Let $f : A \to B$ and $S, T \subseteq B$. Then
 \end{theorem}
 \end{theorembox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:preimage]{Preimage}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:set-difference]{Set Difference}
+  \item \hyperref[def:complement]{Complement}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 (i) $\forall a \in A:\; a \in f^{-1}(S\cup T) \leftrightarrow (f(a)\in S \vee f(a)\in T)$.\\
@@ -227,7 +278,16 @@ Equality holds in (ii) and (iii) for all $S,T$ iff $f$ is injective.
 \end{theorem}
 \end{theorembox}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:image-set]{Image of a Set}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:set-difference]{Set Difference}
+  \item \hyperref[def:injective]{Injective Function}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Standard quantified statement]
 (i) $\forall b\in B:\; b \in f(S\cup T) \leftrightarrow (\exists a\in S,\; f(a)=b) \vee (\exists a\in T,\; f(a)=b)$.\\
