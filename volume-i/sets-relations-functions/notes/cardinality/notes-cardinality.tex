@@ -33,16 +33,16 @@ if there exists a bijection $f : A \to B$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$A \sim B \;\leftrightarrow\; \exists f: A\to B,\; (\forall a_1,a_2\in A,\; f(a_1)=f(a_2)\to a_1=a_2) \wedge (\forall b\in B,\; \exists a\in A,\; f(a)=b)$.
+\end{remark*}
+
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:bijective]{Bijective Function}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$A \sim B \;\leftrightarrow\; \exists f: A\to B,\; (\forall a_1,a_2\in A,\; f(a_1)=f(a_2)\to a_1=a_2) \wedge (\forall b\in B,\; \exists a\in A,\; f(a)=b)$.
-\end{remark*}
-
 
 \begin{remark*}[Same cardinality is an equivalence relation]
 The relation $\sim$ is an equivalence relation on the class of all sets:
@@ -87,6 +87,11 @@ for some $n \in \mathbb{N}$. A set is \emph{infinite} if it is not finite.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$A$ is finite $\;\leftrightarrow\; A = \varnothing \vee \exists n\in\mathbb{N},\; \exists f: A\to\{1,\dots,n\},\; f$ bijective. $A$ is infinite $\;\leftrightarrow\; \neg(A$ is finite$)$.
+\end{remark*}
+
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:empty-set]{Empty Set}
@@ -94,11 +99,6 @@ for some $n \in \mathbb{N}$. A set is \emph{infinite} if it is not finite.
   \item \hyperref[def:natural-numbers]{Natural Numbers}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$A$ is finite $\;\leftrightarrow\; A = \varnothing \vee \exists n\in\mathbb{N},\; \exists f: A\to\{1,\dots,n\},\; f$ bijective. $A$ is infinite $\;\leftrightarrow\; \neg(A$ is finite$)$.
-\end{remark*}
-
 
 \begin{definitionbox}{Definition (Countable and Uncountable Sets)}
 \begin{definition}[Countable and Uncountable Sets]\label{def:countable}
@@ -108,6 +108,11 @@ A set $A$ is \emph{countably infinite} if $A \sim \mathbb{N}$. A set is
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$A$ is countably infinite $\;\leftrightarrow\; \exists f: A\to\mathbb{N},\; f$ bijective. $A$ is countable $\;\leftrightarrow\; A$ finite $\vee$ $A\sim\mathbb{N}$. $A$ is uncountable $\;\leftrightarrow\; A$ infinite $\wedge \neg(A\sim\mathbb{N})$.
+\end{remark*}
+
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
@@ -115,11 +120,6 @@ A set $A$ is \emph{countably infinite} if $A \sim \mathbb{N}$. A set is
   \item \hyperref[def:natural-numbers]{Natural Numbers}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$A$ is countably infinite $\;\leftrightarrow\; \exists f: A\to\mathbb{N},\; f$ bijective. $A$ is countable $\;\leftrightarrow\; A$ finite $\vee$ $A\sim\mathbb{N}$. $A$ is uncountable $\;\leftrightarrow\; A$ infinite $\wedge \neg(A\sim\mathbb{N})$.
-\end{remark*}
-
 
 \begin{remark*}[Countable means listable]
 A set $A$ is countably infinite if and only if its elements can be arranged
@@ -140,17 +140,17 @@ Write $|A| < |B|$ if $|A| \leq |B|$ but $A \not\sim B$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$|A|\leq|B| \;\leftrightarrow\; \exists f: A\to B,\; \forall a_1,a_2\in A,\; f(a_1)=f(a_2)\to a_1=a_2$ (injection exists).
+\end{remark*}
+
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:injective]{Injective Function}
   \item \hyperref[def:same-cardinality]{Same Cardinality}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$|A|\leq|B| \;\leftrightarrow\; \exists f: A\to B,\; \forall a_1,a_2\in A,\; f(a_1)=f(a_2)\to a_1=a_2$ (injection exists).
-\end{remark*}
-
 
 \begin{remark*}[Why injections, not surjections]
 An injection $A \hookrightarrow B$ places a ``copy'' of $A$ inside $B$
@@ -288,6 +288,11 @@ particular, $|A| < |\mathcal{P}(A)|$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+$\forall A:\; \neg\exists f: A\to\mathcal{P}(A),\; \forall S\in\mathcal{P}(A),\; \exists a\in A,\; f(a)=S$. Equivalently: $\forall f: A\to\mathcal{P}(A),\; \exists D\in\mathcal{P}(A),\; \forall a\in A,\; f(a)\neq D$.
+\end{remark*}
+
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -296,11 +301,6 @@ particular, $|A| < |\mathcal{P}(A)|$.
   \item \hyperref[ax:separation]{Axiom Schema of Separation}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$\forall A:\; \neg\exists f: A\to\mathcal{P}(A),\; \forall S\in\mathcal{P}(A),\; \exists a\in A,\; f(a)=S$. Equivalently: $\forall f: A\to\mathcal{P}(A),\; \exists D\in\mathcal{P}(A),\; \forall a\in A,\; f(a)\neq D$.
-\end{remark*}
-
 
 \begin{remark*}[Proof strategy — the same diagonal idea]
 Suppose $f : A \to \mathcal{P}(A)$ is any function. Construct the set
@@ -397,6 +397,11 @@ $g : B \hookrightarrow A$, then there exists a bijection $h : A \to B$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+$\bigl(\exists f: A\hookrightarrow B\bigr) \wedge \bigl(\exists g: B\hookrightarrow A\bigr) \;\to\; \exists h: A\to B,\; h$ bijective.
+\end{remark*}
+
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:cardinality-order]{Comparing Cardinalities}
@@ -404,11 +409,6 @@ $g : B \hookrightarrow A$, then there exists a bijection $h : A \to B$.
   \item \hyperref[def:bijective]{Bijective Function}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$\bigl(\exists f: A\hookrightarrow B\bigr) \wedge \bigl(\exists g: B\hookrightarrow A\bigr) \;\to\; \exists h: A\to B,\; h$ bijective.
-\end{remark*}
-
 
 \begin{remark*}[Why this theorem is indispensable]
 In practice, proving $A \sim B$ by exhibiting an explicit bijection can be

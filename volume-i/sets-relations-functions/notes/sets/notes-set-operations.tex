@@ -216,10 +216,6 @@ subsets of $A$:
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[Size]
-If $A$ has $n$ elements, then $|\mathcal{P}(A)| = 2^n$. For infinite $A$,
-Cantor's theorem shows $|\mathcal{P}(A)| > |A|$ strictly.
-\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -227,22 +223,38 @@ Cantor's theorem shows $|\mathcal{P}(A)| > |A|$ strictly.
 \end{itemize}
 \end{dependencies}
 
+\begin{remark*}[Size]
+If $A$ has $n$ elements, then $|\mathcal{P}(A)| = 2^n$. For infinite $A$,
+Cantor's theorem shows $|\mathcal{P}(A)| > |A|$ strictly.
+\end{remark*}
+
 % ---------------------------------------------------------
 % De Morgan — Theorem box (named, major result of section)
 % ---------------------------------------------------------
 \begin{theorembox}{Theorem (De Morgan's Laws)}
-\label{thm:de-morgan}
+\begin{theorem}[De Morgan's Laws]\label{thm:de-morgan}
 Let $U$ be a universe and $A,B \subseteq U$. Then
 \[
 (A \cup B)^c = A^c \cap B^c
 \quad\text{and}\quad
 (A \cap B)^c = A^c \cup B^c.
 \]
+\hyperref[prf:de-morgan]{Go to proof.}
+\end{theorem}
 \end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 $\forall A, B \subseteq U:\; \forall x\,\bigl(x \notin A \cup B \leftrightarrow (x \notin A \wedge x \notin B)\bigr)$, and dually $\forall x\,\bigl(x \notin A \cap B \leftrightarrow (x \notin A \vee x \notin B)\bigr)$.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:complement]{Complement}
+\end{itemize}
+\end{dependencies}
+
 \begin{remark*}[Connection to propositional logic]
 De Morgan's laws mirror the propositional logic identities $\neg(P \lor Q) \equiv \neg P \land \neg Q$ and $\neg(P \land Q) \equiv \neg P \lor \neg Q$ under the correspondence $\cap \leftrightarrow \land$, $\cup \leftrightarrow \lor$, $A^c \leftrightarrow \neg A$.
 \end{remark*}
@@ -256,6 +268,10 @@ complements unchanged.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\forall$ expressions $E, E'$ over $U$: $E$ and $E'$ are dual iff $E'$ is obtained from $E$ by the substitution $\cup \mapsto \cap,\; \cap \mapsto \cup,\; \varnothing \mapsto U,\; U \mapsto \varnothing$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:union]{Union}
@@ -265,10 +281,6 @@ complements unchanged.
 \end{itemize}
 \end{dependencies}
 
-\begin{remark*}[Standard quantified statement]
-$\forall$ expressions $E, E'$ over $U$: $E$ and $E'$ are dual iff $E'$ is obtained from $E$ by the substitution $\cup \mapsto \cap,\; \cap \mapsto \cup,\; \varnothing \mapsto U,\; U \mapsto \varnothing$.
-\end{remark*}
-
 \begin{corollarybox}{Corollary}
 \begin{corollary}[\texorpdfstring{\hyperref[prf:set-duality]{Principle of Set Duality}}{Principle of Set Duality}]\label{cor:set-duality}
 Any identity involving $\cup$, $\cap$, $\varnothing$, and $U$ that holds for
@@ -277,16 +289,16 @@ replaced by its dual.
 \end{corollary}
 \end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+For any identity $\forall A_1,\dots,A_n \subseteq U:\; E(A_i,\cup,\cap,\varnothing,U) = E'(A_i,\cup,\cap,\varnothing,U)$, the dual identity $\forall A_1,\dots,A_n \subseteq U:\; E^d = E'^d$ holds, where $E^d$ replaces $\cup\leftrightarrow\cap$ and $\varnothing\leftrightarrow U$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:set-duality]{Set Duality}
   \item \hyperref[ax:extensionality]{Axiom of Extensionality}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-For any identity $\forall A_1,\dots,A_n \subseteq U:\; E(A_i,\cup,\cap,\varnothing,U) = E'(A_i,\cup,\cap,\varnothing,U)$, the dual identity $\forall A_1,\dots,A_n \subseteq U:\; E^d = E'^d$ holds, where $E^d$ replaces $\cup\leftrightarrow\cap$ and $\varnothing\leftrightarrow U$.
-\end{remark*}
 
 \begin{remark*}[Using duality in proofs]
 To prove a statement involving unions and intersections, it often suffices to

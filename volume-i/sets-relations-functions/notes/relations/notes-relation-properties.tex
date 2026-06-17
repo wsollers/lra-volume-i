@@ -22,6 +22,7 @@ In infix notation, this is the condition $\forall a\in A,\ aRa$.
 \end{definition}
 \end{definitionbox}
 
+
 \begin{remark*}[Standard quantified statement]
 Reflexivity is a universal requirement over the whole domain:
 \[
@@ -54,6 +55,7 @@ element of the domain is related to itself:
 In infix notation, this is the condition $\forall a\in A,\ \neg(aRa)$.
 \end{definition}
 \end{definitionbox}
+
 
 \begin{remark*}[Standard quantified statement]
 Irreflexivity is not the same as merely failing to be reflexive:
@@ -100,6 +102,7 @@ In infix notation, this is $\forall a,b\in A,\ aRb\rightarrow bRa$.
 \end{definition}
 \end{definitionbox}
 
+
 \begin{remark*}[Standard quantified statement]
 Symmetry is a conditional property:
 \[
@@ -135,6 +138,7 @@ $\forall a,b\in A,\ ((aRb\land bRa)\rightarrow a=b)$.
 \end{definition}
 \end{definitionbox}
 
+
 \begin{remark*}[Standard quantified statement]
 Antisymmetry forbids two-way relation cycles between distinct elements:
 \[
@@ -169,6 +173,7 @@ In infix notation, this is
 $\forall a,b\in A,\ (aRb\rightarrow\neg(bRa))$.
 \end{definition}
 \end{definitionbox}
+
 
 \begin{remark*}[Standard quantified statement]
 Asymmetry is the strict one-way condition
@@ -211,6 +216,7 @@ In infix notation, this is
 $\forall a,b,c\in A,\ ((aRb\land bRc)\rightarrow aRc)$.
 \end{definition}
 \end{definitionbox}
+
 
 \begin{remark*}[Standard quantified statement]
 Transitivity is the formal chaining law:
@@ -283,13 +289,6 @@ $R$ is a \emph{preorder} on $A$ if it is reflexive and transitive.
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:reflexive]{Reflexive Relation}
-  \item \hyperref[def:transitive]{Transitive Relation}
-\end{itemize}
-\end{dependencies}
-
 \begin{remark*}[Standard quantified statement]
 $R$ is a preorder on $A$ iff:
 \[
@@ -298,12 +297,20 @@ $R$ is a preorder on $A$ iff:
 \]
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reflexive]{Reflexive Relation}
+  \item \hyperref[def:transitive]{Transitive Relation}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Partial Order)}
 \begin{definition}[Partial Order]\label{def:partial-order}
 $R$ is a \emph{partial order} on $A$ if it is reflexive, antisymmetric, and
 transitive.
 \end{definition}
 \end{definitionbox}
+
 
 \begin{remark*}[Standard quantified statement]
 $R$ is a partial order on $A$ iff:
@@ -327,6 +334,7 @@ $R$ is a partial order on $A$ iff:
 $R$ is a \emph{total order} on $A$ if it is a partial order and is total.
 \end{definition}
 \end{definitionbox}
+
 
 \begin{remark*}[Standard quantified statement]
 $R$ is a total order on $A$ iff $R$ is a partial order on $A$ and additionally:

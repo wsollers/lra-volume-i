@@ -49,6 +49,10 @@ If $\Gamma \vdash \varphi$, then $\Gamma \models \varphi$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+$\forall \Gamma,\varphi:\; \Gamma\vdash\varphi \;\to\; \forall\mathcal{M},\forall s,\; (\forall\gamma\in\Gamma,\; \mathcal{M},s\models\gamma) \to \mathcal{M},s\models\varphi$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:fol-soundness]{Soundness}
@@ -58,10 +62,6 @@ If $\Gamma \vdash \varphi$, then $\Gamma \models \varphi$.
   \item \hyperref[ax:predicate-logic-quantifier-distribution]{Quantifier Distribution}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$\forall \Gamma,\varphi:\; \Gamma\vdash\varphi \;\to\; \forall\mathcal{M},\forall s,\; (\forall\gamma\in\Gamma,\; \mathcal{M},s\models\gamma) \to \mathcal{M},s\models\varphi$.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Gödel's Completeness Theorem

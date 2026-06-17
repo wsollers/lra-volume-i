@@ -89,6 +89,10 @@ sets: $\mathcal{C} \subseteq \tau$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\mathcal{C}$ is an open cover of $A$ $\;\leftrightarrow\;$ $(\forall C \in \mathcal{C},\; C \in \tau) \;\wedge\; (\forall x \in A,\; \exists C \in \mathcal{C},\; x \in C)$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:cover-full]{Cover}
@@ -98,10 +102,6 @@ sets: $\mathcal{C} \subseteq \tau$.
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$\mathcal{C}$ is an open cover of $A$ $\;\leftrightarrow\;$ $(\forall C \in \mathcal{C},\; C \in \tau) \;\wedge\; (\forall x \in A,\; \exists C \in \mathcal{C},\; x \in C)$.
-\end{remark*}
 
 \begin{remark*}[Why open covers]
 The emphasis on open covers in compactness is because open sets are the
@@ -171,6 +171,11 @@ to $A$.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+$A \subseteq \bigcup_{\alpha \in I} U_\alpha \;\leftrightarrow\; \neg(\forall\text{ finite }I_0\subseteq I,\; \bigcap_{\alpha\in I_0} F_\alpha \cap A \neq \varnothing)$. Reading pointwise: $\forall x\in A,\;\exists\alpha\in I,\; x\in U_\alpha \;\leftrightarrow\; \{F_\alpha\cap A\}$ fails the FIP.
+\end{remark*}
+
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:cover-full]{Cover}
@@ -180,11 +185,6 @@ to $A$.
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$A \subseteq \bigcup_{\alpha \in I} U_\alpha \;\leftrightarrow\; \neg(\forall\text{ finite }I_0\subseteq I,\; \bigcap_{\alpha\in I_0} F_\alpha \cap A \neq \varnothing)$. Reading pointwise: $\forall x\in A,\;\exists\alpha\in I,\; x\in U_\alpha \;\leftrightarrow\; \{F_\alpha\cap A\}$ fails the FIP.
-\end{remark*}
-
 
 \begin{remark*}[Proof by De Morgan]
 The duality is a direct consequence of De Morgan's law for indexed families

@@ -83,14 +83,6 @@ $\inf S$, is an element $\ell^* \in A$ satisfying:
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:bounds]{Upper and Lower Bounds}
-  \item \hyperref[def:partial-order]{Partial Order}
-  \item \hyperref[def:subset]{Subset}
-\end{itemize}
-\end{dependencies}
-
 \begin{remark*}[Standard quantified statement]
 $u^* = \sup S \;\leftrightarrow\; (\forall s \in S,\; s \leq u^*) \;\wedge\;
 (\forall u \in A,\; (\forall s \in S,\; s \leq u) \;\rightarrow\; u^* \leq u)$.
@@ -98,6 +90,14 @@ $u^* = \sup S \;\leftrightarrow\; (\forall s \in S,\; s \leq u^*) \;\wedge\;
 $\ell^* = \inf S \;\leftrightarrow\; (\forall s \in S,\; \ell^* \leq s) \;\wedge\;
 (\forall \ell \in A,\; (\forall s \in S,\; \ell \leq s) \;\rightarrow\; \ell \leq \ell^*)$.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:bounds]{Upper and Lower Bounds}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[How to read these definitions]
 \label{rem:sup-reading}
@@ -128,6 +128,11 @@ unique.  If $\inf S$ exists, it is unique.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\forall u^*, v^* \in A$: if both $u^*$ and $v^*$ satisfy the two conditions
+in the definition of $\sup S$, then $u^* = v^*$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sup-inf]{Supremum and Infimum}
@@ -135,11 +140,6 @@ unique.  If $\inf S$ exists, it is unique.
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$\forall u^*, v^* \in A$: if both $u^*$ and $v^*$ satisfy the two conditions
-in the definition of $\sup S$, then $u^* = v^*$.
-\end{remark*}
 
 \begin{remark*}[Proof idea]
 If $u^*$ and $v^*$ are both suprema, then $u^*$ is an upper bound, so
@@ -246,6 +246,11 @@ $u^* = \sup S$ if and only if:
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+$u^* = \sup S \;\leftrightarrow\; (\forall s \in S,\; s \leq u^*) \;\wedge\;
+(\forall v \in A,\; v < u^* \;\rightarrow\; \exists s \in S,\; v < s)$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sup-inf]{Supremum and Infimum}
@@ -254,11 +259,6 @@ $u^* = \sup S$ if and only if:
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$u^* = \sup S \;\leftrightarrow\; (\forall s \in S,\; s \leq u^*) \;\wedge\;
-(\forall v \in A,\; v < u^* \;\rightarrow\; \exists s \in S,\; v < s)$.
-\end{remark*}
 
 \begin{remark*}[Why this characterisation is useful]
 \label{rem:sup-char-utility}
@@ -288,6 +288,11 @@ infimum.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\forall S \subseteq A$: $\ell^*$ is the infimum of $S$ in $(A,\leq)$
+$\;\leftrightarrow\;$ $\ell^*$ is the supremum of $S$ in $(A,\geq)$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sup-inf]{Supremum and Infimum}
@@ -296,11 +301,6 @@ infimum.
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$\forall S \subseteq A$: $\ell^*$ is the infimum of $S$ in $(A,\leq)$
-$\;\leftrightarrow\;$ $\ell^*$ is the supremum of $S$ in $(A,\geq)$.
-\end{remark*}
 
 \begin{remark*}[Consequence for $\mathbb{R}$]
 \label{rem:inf-from-completeness}

@@ -34,14 +34,6 @@ f(x) \;\leq'\; f(y).
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:partial-order]{Partial Order}
-  \item \hyperref[def:function]{Function}
-  \item \hyperref[def:relation]{Relation}
-\end{itemize}
-\end{dependencies}
-
 \begin{remark*}[Intuition]
 Two elements of $A$ are compared by sending them through $f$ and comparing
 their images in $(B, \leq')$. The order on $A$ is entirely inherited from
@@ -52,6 +44,14 @@ $f$-values.
 \begin{remark*}[Standard quantified statement]
 $\forall x, y \in A,\quad x \leq_f y \;\Longleftrightarrow\; f(x) \leq' f(y)$.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:relation]{Relation}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Reflexivity and transitivity: always free
@@ -64,6 +64,10 @@ $\leq_f$ is a preorder on $A$: it is reflexive and transitive.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\forall x \in A:\; f(x)\leq' f(x)$ (reflexivity); $\forall x,y,z \in A:\; f(x)\leq' f(y) \wedge f(y)\leq' f(z) \to f(x)\leq' f(z)$ (transitivity).
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:induced-order]{Induced Order}
@@ -72,10 +76,6 @@ $\leq_f$ is a preorder on $A$: it is reflexive and transitive.
   \item \hyperref[def:partial-order]{Partial Order}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$\forall x \in A:\; f(x)\leq' f(x)$ (reflexivity); $\forall x,y,z \in A:\; f(x)\leq' f(y) \wedge f(y)\leq' f(z) \to f(x)\leq' f(z)$ (transitivity).
-\end{remark*}
 
 \begin{remark*}[Proof strategy]
 Both properties are inherited directly from $(B,\leq')$ by pulling back
@@ -114,6 +114,10 @@ $f$ is injective.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\leq_f$ is a partial order $\;\leftrightarrow\; \forall x,y \in A,\; f(x)\leq' f(y) \wedge f(y)\leq' f(x) \to x=y$ $\;\leftrightarrow\; \forall x,y \in A,\; f(x)=f(y) \to x=y$ (injectivity of $f$, since $\leq'$ is antisymmetric).
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:induced-order]{Induced Order}
@@ -121,10 +125,6 @@ $f$ is injective.
   \item \hyperref[def:injective]{Injective Function}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$\leq_f$ is a partial order $\;\leftrightarrow\; \forall x,y \in A,\; f(x)\leq' f(y) \wedge f(y)\leq' f(x) \to x=y$ $\;\leftrightarrow\; \forall x,y \in A,\; f(x)=f(y) \to x=y$ (injectivity of $f$, since $\leq'$ is antisymmetric).
-\end{remark*}
 
 \begin{remark*}[Common error]
 It is tempting to think the induced order is automatically a partial order
@@ -233,6 +233,13 @@ Every order embedding $f : (A, \leq) \to (B, \leq')$ is injective.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\forall x,y \in A:\; f(x) = f(y) \to x = y$.
+\end{remark*}
+
+
+
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-embedding]{Order Embedding}
@@ -240,13 +247,6 @@ Every order embedding $f : (A, \leq) \to (B, \leq')$ is injective.
   \item \hyperref[def:partial-order]{Partial Order}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$\forall x,y \in A:\; f(x) = f(y) \to x = y$.
-\end{remark*}
-
-
-
 
 \begin{remark*}[Proof strategy]
 Injectivity falls out of the reflection direction: if two elements have the
@@ -262,6 +262,13 @@ order isomorphism from $(A, \leq)$ to the suborder $(f(A), \leq'_{f(A)})$.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\forall x,y \in A:\; x \leq y \;\leftrightarrow\; f(x) \leq'_{f(A)} f(y)$, i.e.\ $f$ is an order isomorphism $(A,\leq)\cong(f(A),\leq')$.
+\end{remark*}
+
+
+
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-embedding]{Order Embedding}
@@ -270,13 +277,6 @@ order isomorphism from $(A, \leq)$ to the suborder $(f(A), \leq'_{f(A)})$.
   \item \hyperref[def:partial-order]{Partial Order}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$\forall x,y \in A:\; x \leq y \;\leftrightarrow\; f(x) \leq'_{f(A)} f(y)$, i.e.\ $f$ is an order isomorphism $(A,\leq)\cong(f(A),\leq')$.
-\end{remark*}
-
-
-
 
 \begin{remark*}[Consequence]
 This proposition is the order-theoretic analogue of the first isomorphism

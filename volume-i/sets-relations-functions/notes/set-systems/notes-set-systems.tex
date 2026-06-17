@@ -275,6 +275,11 @@ is a $\sigma$-algebra on $X$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+$\bigl(\forall\alpha\in I,\; \mathcal{M}_\alpha \text{ is a $\sigma$-algebra on }X\bigr) \;\to\; \bigcap_{\alpha\in I}\mathcal{M}_\alpha \text{ is a $\sigma$-algebra on }X$.\\
+Explicitly: $X\in\bigcap\mathcal{M}_\alpha$; $A\in\bigcap\mathcal{M}_\alpha \to A^c\in\bigcap\mathcal{M}_\alpha$; $\forall n,\; A_n\in\bigcap\mathcal{M}_\alpha \to \bigcup_n A_n\in\bigcap\mathcal{M}_\alpha$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sigma-algebra]{$\sigma$-Algebra}
@@ -282,11 +287,6 @@ is a $\sigma$-algebra on $X$.
   \item \hyperref[def:intersection]{Intersection}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
-$\bigl(\forall\alpha\in I,\; \mathcal{M}_\alpha \text{ is a $\sigma$-algebra on }X\bigr) \;\to\; \bigcap_{\alpha\in I}\mathcal{M}_\alpha \text{ is a $\sigma$-algebra on }X$.\\
-Explicitly: $X\in\bigcap\mathcal{M}_\alpha$; $A\in\bigcap\mathcal{M}_\alpha \to A^c\in\bigcap\mathcal{M}_\alpha$; $\forall n,\; A_n\in\bigcap\mathcal{M}_\alpha \to \bigcup_n A_n\in\bigcap\mathcal{M}_\alpha$.
-\end{remark*}
 
 \begin{remark*}[Proof]
 Check each axiom: (i) $X \in \mathcal{M}_\alpha$ for all $\alpha$, so
