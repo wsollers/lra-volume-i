@@ -21,6 +21,12 @@ substituting a term for the bound variable:
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item TODO: determine dependencies for \texttt{def:ui}.
+\end{itemize}
+\end{dependencies}
+
 \begin{remark*}[Side condition]
 The term $t$ must be free for $x$ in $\varphi$. If $t$ contains a variable
 that would become bound after substitution, the inference is invalid.
@@ -37,6 +43,12 @@ From a formula, infer a universally quantified statement:
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item TODO: determine dependencies for \texttt{def:ug}.
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Restriction on UG]
 The variable $x$ must not occur free in any undischarged assumption on which
@@ -63,6 +75,12 @@ constant (witness):
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item TODO: determine dependencies for \texttt{def:ei}.
+\end{itemize}
+\end{dependencies}
+
 \begin{remark*}[Witness discipline for EI]
 The constant $c$ must be fresh: it must not appear in $\varphi$, in any
 undischarged assumption, or in the final conclusion of the proof. The constant
@@ -86,6 +104,12 @@ From a formula containing a term, infer an existential statement:
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item TODO: determine dependencies for \texttt{def:eg}.
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[No side conditions]
 EG has no side conditions: any term $t$ may be replaced by an existentially
