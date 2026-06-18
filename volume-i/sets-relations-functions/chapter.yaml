@@ -527,7 +527,7 @@ environments:
   file: notes\set-systems\notes-set-systems.tex
   display_title: Semiring of Sets
   proof_file: null
-- label: def:ring-of-sets
+- label: def:ring-of-setsxxx
   type: def
   file: notes\set-systems\notes-set-systems.tex
   display_title: Ring of Sets
