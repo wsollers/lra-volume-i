@@ -28,16 +28,7 @@ Let $(A, \leq)$ be a poset and $a, b \in A$.  We say $b$ \emph{covers} $a$,
 written $a \lessdot b$, if $a < b$ and there is no $c \in A$ with
 $a < c < b$.
 \end{definition}
-\end{definitionbox}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:partial-order]{Partial Order}
-  \item \hyperref[def:strict-order]{Strict Order}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
+\end{definitionbox}\begin{remark*}[Standard quantified statement]
 $a \lessdot b \;\leftrightarrow\; (a < b) \;\wedge\;
 \neg(\exists c \in A,\; a < c \;\wedge\; c < b)$.
 \end{remark*}
@@ -59,6 +50,13 @@ rational strictly between them).
 % ---------------------------------------------------------
 
 \begin{definitionbox}{Definition (Hasse Diagram)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:strict-order]{Strict Order}
+\end{itemize}
+\end{dependencies}
 \begin{definition}[Hasse Diagram]\label{def:hasse}
 The \emph{Hasse diagram} of a finite poset $(A, \leq)$ is the directed graph
 whose vertices are the elements of $A$, with an upward edge from $a$ to $b$

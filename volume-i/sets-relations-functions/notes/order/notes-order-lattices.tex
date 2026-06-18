@@ -54,17 +54,7 @@ written $a \vee b$.
 The infimum $\inf\{a,b\}$ is called the \emph{meet} of $a$ and $b$,
 written $a \wedge b$.
 \end{definition}
-\end{definitionbox}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:partial-order]{Partial Order}
-  \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:sup-inf]{Supremum and Infimum}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
+\end{definitionbox}\begin{remark*}[Standard quantified statement]
 $(L, \leq)$ is a lattice $\;\leftrightarrow\;$
 $\forall a, b \in L,\;\exists\, a \vee b \in L \;\text{and}\; \exists\, a \wedge b \in L$,
 where $a \vee b$ and $a \wedge b$ satisfy the sup and inf conditions of
@@ -123,6 +113,14 @@ this restricted collection.
 % ---------------------------------------------------------
 
 \begin{definitionbox}{Definition (Complete Lattice)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:sup-inf]{Supremum and Infimum}
+\end{itemize}
+\end{dependencies}
 \begin{definition}[Complete Lattice]\label{def:complete-lattice}
 A lattice $(L, \leq)$ is a \emph{complete lattice} if every subset
 $S \subseteq L$ (including the empty set and $L$ itself) has both a
@@ -131,17 +129,7 @@ supremum and an infimum in $L$:
   \forall S \subseteq L,\quad \sup S \in L \;\text{ and }\; \inf S \in L.
 \]
 \end{definition}
-\end{definitionbox}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:lattice]{Lattice}
-  \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:sup-inf]{Supremum and Infimum}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
+\end{definitionbox}\begin{remark*}[Standard quantified statement]
 $(L, \leq)$ is a complete lattice $\;\leftrightarrow\;$
 $\forall S \subseteq L,\;\exists u^* \in L,\;\exists \ell^* \in L$ satisfying
 the sup and inf conditions of \hyperref[def:sup-inf]{Definition~(Supremum and Infimum)}.
@@ -192,6 +180,14 @@ this complete lattice.
 % ---------------------------------------------------------
 
 \begin{definitionbox}{Definition (Distributive Lattice)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:lattice]{Lattice}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:sup-inf]{Supremum and Infimum}
+\end{itemize}
+\end{dependencies}
 \begin{definition}[Distributive Lattice]\label{def:distributive-lattice}
 A lattice $(L, \leq)$ is \emph{distributive} if for all $a, b, c \in L$:
 \[
@@ -235,16 +231,7 @@ $a \in L$ if
 A \emph{Boolean lattice} (or \emph{Boolean algebra}) is a bounded distributive
 lattice in which every element has a complement.
 \end{definition}
-\end{definitionbox}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:distributive-lattice]{Distributive Lattice}
-  \item \hyperref[def:complete-lattice]{Complete Lattice}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[The power set is the canonical Boolean lattice]
+\end{definitionbox}\begin{remark*}[The power set is the canonical Boolean lattice]
 \label{rem:power-set-boolean}
 In $\mathcal{P}(X)$, the complement of a set $A$ is $A^c = X \setminus A$,
 since $A \cup A^c = X = \top$ and $A \cap A^c = \varnothing = \bot$.  The
@@ -344,3 +331,10 @@ two elements can be read off as the unique path structure in the diagram.
 The next section introduces Hasse diagrams, the duality principle, and the
 connection between duality and the passage from $\sup$ to $\inf$.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:distributive-lattice]{Distributive Lattice}
+  \item \hyperref[def:complete-lattice]{Complete Lattice}
+\end{itemize}
+\end{dependencies}
