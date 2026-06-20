@@ -14,7 +14,7 @@ has three elements, $\{1,2,3,4\}$ has four, and any two finite sets can be
 compared by counting. For infinite sets, counting breaks down, and a
 different foundation is needed. The key insight, due to Cantor, is that two
 sets have the ``same size'' if and only if their elements can be matched
-perfectly — one-to-one and onto — without any element left over on either
+perfectly --- one-to-one and onto --- without any element left over on either
 side. This single idea, made precise through the notion of a bijection, gives
 a theory of size that applies uniformly to both finite and infinite sets, and
 produces genuinely surprising results: the integers and the rationals turn out
@@ -65,7 +65,7 @@ function $f : \mathbb{N} \to E$ defined by $f(n) = 2n$ is a bijection, so
 $\mathbb{N} \sim E$. This seems paradoxical: $E$ is a proper subset of
 $\mathbb{N}$, yet the two sets have the same cardinality. This is not a
 contradiction but rather one of the defining characteristics of infinite sets
-— a phenomenon that simply cannot occur for finite sets.
+--- a phenomenon that simply cannot occur for finite sets.
 \end{example*}
 
 \begin{remark*}[Dedekind's characterization of infinite sets]
@@ -178,11 +178,11 @@ The set $\mathbb{Q}$ of rational numbers is countable.
 \end{itemize}
 \end{dependencies}
 
-\begin{remark*}[Proof strategy — diagonal enumeration]
+\begin{remark*}[Proof strategy --- diagonal enumeration]
 The argument arranges all positive rationals into an infinite two-dimensional
 array: place $p/q$ (in lowest terms, $p,q > 0$) in row $p$, column $q$. Then
-traverse the array along successive diagonals — the anti-diagonal $p + q = k$
-for $k = 2, 3, 4, \dots$ — skipping any fraction already seen. This produces
+traverse the array along successive diagonals --- the anti-diagonal $p + q = k$
+for $k = 2, 3, 4, \dots$ --- skipping any fraction already seen. This produces
 an explicit list of all positive rationals, and one then interleaves the
 negative rationals and zero. The precise details are left as a guided proof
 exercise. The core idea is: a doubly infinite list can be converted into a
@@ -190,8 +190,8 @@ singly infinite list by reading diagonals.
 \end{remark*}
 
 \begin{remark*}[What this means]
-$\mathbb{Q}$ is dense in $\mathbb{R}$ — between any two real numbers there
-is a rational — yet $\mathbb{Q}$ is countable. This means the rationals are
+$\mathbb{Q}$ is dense in $\mathbb{R}$ --- between any two real numbers there
+is a rational --- yet $\mathbb{Q}$ is countable. This means the rationals are
 in some precise sense ``thin'' even though they are everywhere. The uncountability
 of $\mathbb{R}$ that follows shows the reals are genuinely larger.
 \end{remark*}
@@ -225,7 +225,7 @@ countability. The formal proof is a standard exercise.
 \begin{remark*}[Why this theorem matters downstream]
 This result is used constantly. In topology: a countable union of nowhere-dense
 sets is called a \emph{meager} set, and Baire's theorem says a complete metric
-space is not meager — the proof requires knowing that countable unions behave
+space is not meager --- the proof requires knowing that countable unions behave
 predictably. In measure theory: a countable union of sets of measure zero has
 measure zero, by countable additivity. Whenever an argument says ``take the
 union over all $n \in \mathbb{N}$'' and needs the result to remain manageable
@@ -251,7 +251,7 @@ The set $\mathbb{R}$ of real numbers is not countable.
 \end{itemize}
 \end{dependencies}
 
-\begin{remark*}[Proof strategy — Cantor's diagonal argument]
+\begin{remark*}[Proof strategy --- Cantor's diagonal argument]
 This is one of the most important proof techniques in all of mathematics.
 Suppose, for contradiction, that $\mathbb{R}$ were countable, so its elements
 could be listed: $r_1, r_2, r_3, \dots$. Write each $r_n$ in decimal
@@ -259,12 +259,12 @@ expansion. Construct a new real number $x$ by choosing the $n$-th decimal
 digit of $x$ to differ from the $n$-th decimal digit of $r_n$ (and avoiding
 $9$ to prevent the $0.999\dots = 1$ ambiguity). Then $x \neq r_n$ for every
 $n$, because $x$ and $r_n$ differ in the $n$-th decimal place. So $x$ is not
-on the list — contradicting the assumption that the list contains every real
+on the list --- contradicting the assumption that the list contains every real
 number.
 
 The key move is the diagonal construction: to defeat every row $r_n$
 simultaneously, make $x$ disagree with row $n$ at position $n$. This
-``diagonal sweep'' is a technique that reappears in logic (Gödel's
+``diagonal sweep'' is a technique that reappears in logic (G\"{o}del's
 incompleteness theorem), computability theory (the halting problem), and the
 proof of Cantor's theorem below.
 \end{remark*}
@@ -274,7 +274,7 @@ Since $\mathbb{Q}$ is countable and $\mathbb{R}$ is uncountable, the
 irrational numbers $\mathbb{R} \setminus \mathbb{Q}$ must be uncountable:
 if they were countable, then $\mathbb{R} = \mathbb{Q} \cup (\mathbb{R}
 \setminus \mathbb{Q})$ would be a countable union of countable sets, hence
-countable — contradiction.
+countable --- contradiction.
 \end{remark*}
 
 % ---------------------------------------------------------
@@ -303,7 +303,7 @@ $\forall A:\; \neg\exists f: A\to\mathcal{P}(A),\; \forall S\in\mathcal{P}(A),\;
 \end{itemize}
 \end{dependencies}
 
-\begin{remark*}[Proof strategy — the same diagonal idea]
+\begin{remark*}[Proof strategy --- the same diagonal idea]
 Suppose $f : A \to \mathcal{P}(A)$ is any function. Construct the set
 \[
 D \;=\; \{\, a \in A \mid a \notin f(a) \,\}.
@@ -312,15 +312,15 @@ $D$ is a well-defined subset of $A$, so $D \in \mathcal{P}(A)$. Claim: $D$
 is not in the image of $f$. For suppose $D = f(a_0)$ for some $a_0 \in A$.
 Then:
 \begin{itemize}
-\item if $a_0 \in D$, then by definition $a_0 \notin f(a_0) = D$ — contradiction.
-\item if $a_0 \notin D$, then by definition $a_0 \in f(a_0) = D$ — contradiction.
+\item if $a_0 \in D$, then by definition $a_0 \notin f(a_0) = D$ --- contradiction.
+\item if $a_0 \notin D$, then by definition $a_0 \in f(a_0) = D$ --- contradiction.
 \end{itemize}
 Either case is impossible, so $D \neq f(a_0)$ for every $a_0 \in A$, and $f$
 is not surjective. Since $f$ was arbitrary, no surjection $A \to
 \mathcal{P}(A)$ exists.
 
 Notice the structure: $D$ is defined by ``$a \in D$ iff $a \notin f(a)$,''
-which is a diagonal construction — the membership of $a$ in $D$ is decided
+which is a diagonal construction --- the membership of $a$ in $D$ is decided
 by looking at position $(a,a)$ in the ``membership table'' of $f$, and then
 disagreeing. This is the abstract form of the same move used in the proof
 that $\mathbb{R}$ is uncountable.
@@ -385,18 +385,18 @@ there is no surjection $A \to \{0,1\}^A$. The notation $2^A$ is used
 interchangeably with $\{0,1\}^A$, and $|\mathcal{P}(A)| = 2^{|A|}$ is
 the general statement.
 
-In functional analysis, spaces of the form $B^A$ — functions from $A$ to
-$B$ — are the central objects of study. Knowing they are sets (with a definite
+In functional analysis, spaces of the form $B^A$ --- functions from $A$ to
+$B$ --- are the central objects of study. Knowing they are sets (with a definite
 cardinality when $A$ and $B$ are concrete) is the set-theoretic foundation
 for everything that follows.
 \end{remark*}
 
 % ---------------------------------------------------------
-% Schröder–Bernstein
+% Schr\"{o}der--Bernstein
 % ---------------------------------------------------------
 
-\begin{theorembox}{Theorem (Schröder--Bernstein Theorem)}
-\begin{theorem}[Schröder--Bernstein Theorem]\label{thm:schroder-bernstein}
+\begin{theorembox}{Theorem (Schr\"{o}der--Bernstein Theorem)}
+\begin{theorem}[Schr\"{o}der--Bernstein Theorem]\label{thm:schroder-bernstein}
 If $|A| \leq |B|$ and $|B| \leq |A|$, then $A \sim B$.
 
 Equivalently: if there exist injections $f : A \hookrightarrow B$ and
@@ -420,7 +420,7 @@ $\bigl(\exists f: A\hookrightarrow B\bigr) \wedge \bigl(\exists g: B\hookrightar
 
 \begin{remark*}[Why this theorem is indispensable]
 In practice, proving $A \sim B$ by exhibiting an explicit bijection can be
-very difficult. Schröder--Bernstein gives a two-injection strategy: find any
+very difficult. Schr\"{o}der--Bernstein gives a two-injection strategy: find any
 injection each way, and the theorem guarantees a bijection exists (even if
 you cannot describe it explicitly). This is a powerful tool for cardinality
 computations. For example, to show $|(0,1)| = |\mathbb{R}|$, find an
@@ -446,7 +446,7 @@ element $f(n)$ is written $x_n$, and the sequence is written $(x_n)_{n \in
 of the function space $X^{\mathbb{N}}$. When metric spaces and topology
 discuss convergence of sequences $x_1, x_2, x_3, \dots$ in an arbitrary space
 $X$, the formal object is always a function $\mathbb{N} \to X$, and all the
-function machinery — injectivity, composition, preimages — applies to it
+function machinery --- injectivity, composition, preimages --- applies to it
 directly.
 \end{remark*}
 
@@ -455,7 +455,7 @@ Cardinality distinguishes between the countable (manageable, listable) and the
 uncountable (genuinely larger). This distinction organizes much of what
 follows. In metric spaces: separable spaces have countable dense subsets, and
 separability is a strong structural property. In measure theory: $\sigma$-algebras
-are closed under \emph{countable} unions — not arbitrary ones — precisely because
+are closed under \emph{countable} unions --- not arbitrary ones --- precisely because
 countable operations preserve the kind of control that makes measure theory work.
 In functional analysis: $L^2$ spaces have countable orthonormal bases
 (Hilbert spaces are separable), while non-separable spaces behave very

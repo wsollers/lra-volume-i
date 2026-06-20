@@ -41,8 +41,8 @@ The definitions and theorems of the previous sections have been about
 individual sets and their operations. A second level of structure emerges
 when one asks: which \emph{collections} of sets are closed under given
 operations? This question is not abstract generality for its own sake. The
-three subjects that depend most heavily on this chapter — topology, measure
-theory, and functional analysis — each begin by specifying a particular type
+three subjects that depend most heavily on this chapter --- topology, measure
+theory, and functional analysis --- each begin by specifying a particular type
 of collection on a given set $X$. A topology specifies which subsets are
 ``open.'' A $\sigma$-algebra specifies which subsets are ``measurable.'' In
 both cases, the definition is precisely a list of closure conditions: which
@@ -97,7 +97,7 @@ $\varnothing$. Then $\mathcal{S}$ is a semiring:
 \item $[a,b) \cap [c,d) = [\max(a,c),\, \min(b,d))$, which is again a half-open
   interval (or $\varnothing$);
 \item $[a,b) \setminus [c,d)$ is either $\varnothing$, $[a,c)$, $[d,b)$, or
-  $[a,c) \sqcup [d,b)$ — in every case, a finite disjoint union of half-open
+  $[a,c) \sqcup [d,b)$ --- in every case, a finite disjoint union of half-open
   intervals.
 \end{itemize}
 This semiring is the natural starting point for constructing Lebesgue measure:
@@ -109,7 +109,7 @@ extends to the generated ring and $\sigma$-algebra.
 Lebesgue measure is most naturally defined first on a semiring, because
 semirings have enough structure to state the countable additivity condition for
 a \emph{premeasure}, yet are simple enough that explicit formulas for sets like
-$[a,b)$ are easy to write down. The general extension theorem (Carathéodory's
+$[a,b)$ are easy to write down. The general extension theorem (Carath\'{e}odory's
 theorem) then extends the premeasure to the full $\sigma$-algebra. This is why
 Kolmogorov \& Fomin introduce semirings before algebras: they are the base
 case of the extension hierarchy.
@@ -236,7 +236,7 @@ German \emph{Summe}), signalling the step up from finite to countable closure.
 
 \begin{remark*}[Why countable and not arbitrary]
 A $\sigma$-algebra is closed under countable unions but not arbitrary ones.
-This is not a deficiency — it is the right condition for measure theory.
+This is not a deficiency --- it is the right condition for measure theory.
 Measure is defined to be countably additive: if $\{A_n\}$ is a countable
 disjoint family, then $\mu\bigl(\bigcup A_n\bigr) = \sum \mu(A_n)$. Extending
 to uncountable unions would force every set to have either measure zero or
@@ -293,7 +293,7 @@ Finite intersections must be open because: if $x$ lies in the interior of
 $U_1$ and also in the interior of $U_2$, it lies in the interior of $U_1 \cap
 U_2$. This argument works for finitely many sets (take the smallest
 neighborhood). For a countably infinite intersection, the ``smallest
-neighborhood'' might shrink to nothing — consider $\bigcap_{n=1}^\infty
+neighborhood'' might shrink to nothing --- consider $\bigcap_{n=1}^\infty
 (-1/n, 1/n) = \{0\}$ in $\mathbb{R}$, which is not open. So infinite
 intersections of open sets are not required to be open.
 \end{remark*}
@@ -379,7 +379,7 @@ $\sigma(\mathcal{F})$ contains $\mathcal{F}$, and then contains everything
 that must be present in any $\sigma$-algebra that contains $\mathcal{F}$:
 complements of elements of $\mathcal{F}$, countable unions of elements of
 $\mathcal{F}$, countable unions of complements of elements of $\mathcal{F}$,
-and so on — iterating indefinitely. The generated $\sigma$-algebra is the
+and so on --- iterating indefinitely. The generated $\sigma$-algebra is the
 ``closure'' of $\mathcal{F}$ under all $\sigma$-algebraic operations. In
 practice, one specifies $\mathcal{F}$ as a convenient collection (e.g.,
 intervals) and then works with the full $\sigma$-algebra by knowing which
@@ -427,7 +427,7 @@ $\mathbb{Q}$ are an $F_\sigma$ set; the irrational numbers $\mathbb{R}
 \end{example*}
 
 \begin{remark*}[Transition]
-The four structures — semiring, ring, algebra, $\sigma$-algebra — and the
+The four structures --- semiring, ring, algebra, $\sigma$-algebra --- and the
 topology form a hierarchy of increasing closure strength. Measure theory
 builds from the bottom (semiring, ring) upward; topology is its own branch
 with a different closure pattern. The Borel $\sigma$-algebra bridges the two:
