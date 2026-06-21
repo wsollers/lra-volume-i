@@ -5,6 +5,7 @@ import csv
 from collections import defaultdict, deque
 from pathlib import Path
 
+from core.file_inventory import files_to_validate
 import dependency_graph
 
 
@@ -41,10 +42,19 @@ def proof_label(label: str) -> str:
 
 def proof_file_map(repo_root: Path) -> dict[str, str]:
     mapping: dict[str, str] = {}
-    for path in (repo_root / "volume-i").glob("**/proofs/**/prf-*.tex"):
+    for path in active_proof_files(repo_root):
         key = path.stem.removeprefix("prf-").casefold()
         mapping.setdefault(key, path.relative_to(repo_root).as_posix())
     return mapping
+
+
+def active_proof_files(repo_root: Path) -> list[Path]:
+    volume_root = repo_root / "volume-i"
+    return [
+        path
+        for path in files_to_validate(volume_root, only_reachable=True)
+        if path.name.startswith("prf-") and "proofs" in path.relative_to(volume_root).parts
+    ]
 
 
 def proof_file_for_label(proofs: dict[str, str], label: str) -> str:

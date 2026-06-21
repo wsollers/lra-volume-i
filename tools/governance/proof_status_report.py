@@ -5,6 +5,8 @@ import csv
 import re
 from pathlib import Path
 
+from core.file_inventory import files_to_validate
+
 
 ROOT = Path(__file__).resolve().parents[2]
 PROOF_FOR_RE = re.compile(r"\\LRAProofFor\{(?P<label>(?:thm|lem|prop|cor):[A-Za-z0-9-]+)\}")
@@ -58,8 +60,12 @@ def classify_proof(path: Path, repo_root: Path) -> dict[str, str]:
 
 
 def collect_rows(repo_root: Path) -> list[dict[str, str]]:
-    proof_root = repo_root / "volume-i"
-    paths = sorted(proof_root.glob("**/proofs/**/prf-*.tex"))
+    volume_root = repo_root / "volume-i"
+    paths = [
+        path
+        for path in files_to_validate(volume_root, only_reachable=True)
+        if path.name.startswith("prf-") and "proofs" in path.relative_to(volume_root).parts
+    ]
     return [classify_proof(path, repo_root) for path in paths]
 
 
