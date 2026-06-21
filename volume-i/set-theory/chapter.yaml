@@ -4,7 +4,7 @@ volume: volume-i
 status: active
 dependencies:
   prior: predicate-logic
-  next: relations-functions
+  next: relations
 path: volume-i/set-theory
 environments: []
 proof_files: []
