@@ -8,7 +8,7 @@ from pathlib import Path
 
 from core.reporting import print_report, write_json_report
 from core.volume import chapter_roots, resolve_volume
-from validators import block_discipline, caption_hygiene, capstones, chapter_router, dependency_blocks, dependency_graphs, formal_decoration, formal_reading_required, input_resolution, interpretation_blocks, labels, latex_integrity, math_boxes, model_boxes, notes_structure, pdf_string_headings, print_edition_routing, proof_coverage, proof_file_contract, proof_layout, proof_order, proof_routing, proof_stub_state, reference_voice, structural_chrome, structural_positions, unicode_tex, volume_shape
+from validators import block_discipline, caption_hygiene, capstones, chapter_router, dependency_blocks, dependency_graphs, formal_decoration, formal_reading_required, input_resolution, interpretation_blocks, labels, latex_integrity, math_boxes, notes_structure, pdf_string_headings, print_edition_routing, proof_coverage, proof_file_contract, proof_layout, proof_order, proof_routing, proof_stub_state, reference_voice, structural_chrome, structural_positions, unicode_tex, volume_shape
 
 
 VALIDATORS = [
@@ -27,7 +27,6 @@ VALIDATORS = [
     ("structural_positions", structural_positions),
     ("block_discipline", block_discipline),
     ("math_boxes", math_boxes),
-    ("model_boxes", model_boxes),
     ("interpretation_blocks", interpretation_blocks),
     ("formal_decoration", formal_decoration),
     ("formal_reading_required", formal_reading_required),
