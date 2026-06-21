@@ -1,0 +1,512 @@
+\documentclass[12pt, a4paper]{report}
+\input{common/volume-preamble}
+
+\begin{document}
+\ExplSyntaxOff
+\renewcommand{\familydefault}{\rmdefault}
+
+\chapter*{Logic Opening Cards Mockup}
+
+\section*{Shared Logical Machinery}
+
+\begin{modelbox}{Free \(\Sigma\)-Algebra and Evaluation}
+\modeldepends{Signature; inductively generated set; unique readability}
+
+\begin{modelcomponent}{Layer}
+Shared bridge machinery. Parameter: a signature \(\Sigma\). This card is
+instantiated by connective evaluation, term evaluation, parsing, and later by
+initial-algebra presentations such as \(\mathbb N\).
+\end{modelcomponent}
+
+\begin{modelcomponent}{Signature and Algebra}
+\[
+  \Sigma\text{ is a set of operation symbols},
+  \qquad
+  \operatorname{ar}:\Sigma\to\mathbb N.
+\]
+A \(\Sigma\)-algebra is a carrier \(\lvert\mathcal A\rvert\) with operations
+\[
+  f^{\mathcal A}:\lvert\mathcal A\rvert^{\operatorname{ar}(f)}
+  \to \lvert\mathcal A\rvert
+  \qquad(f\in\Sigma).
+\]
+Seeds land in the carrier; homomorphisms are maps of algebras.
+\end{modelcomponent}
+
+\begin{modelcomponent}{Free Term Algebra}
+\[
+  T_{\Sigma}(X),
+  \qquad
+  f^{T}(t_1,\ldots,t_n):=f(t_1,\ldots,t_n),
+  \qquad
+  \eta:X\to T_{\Sigma}(X).
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{Homomorphism}
+\[
+  \operatorname{Hom}(h,\mathcal A,\mathcal B)
+  \quad:\Longleftrightarrow\quad
+  h(f^{\mathcal A}(\bar a))
+  =
+  f^{\mathcal B}(h(a_1),\ldots,h(a_n))
+\]
+for every \(f\in\Sigma\) and \(\bar a\in\lvert\mathcal A\rvert^n\).
+\end{modelcomponent}
+
+\begin{modelcomponent}{Freeness Laws}
+\textbf{No junk.}
+\[
+  t\in T_{\Sigma}(X)
+  \Longrightarrow
+  t\in X\ \vee\
+  \exists f\in\Sigma\,\exists\bar t\,\bigl(t=f(\bar t)\bigr).
+\]
+\textbf{No confusion.}
+\[
+  x\neq f(\bar t),
+  \qquad
+  f(\bar s)=g(\bar t)\Longrightarrow f=g\wedge \bar s=\bar t.
+\]
+\end{modelcomponent}
+
+\begin{modelconsequences}
+  \modelconsequence{\textbf{Universal property.}
+  \[
+    \forall\mathcal A\;\forall\sigma:X\to\lvert\mathcal A\rvert\;
+    \exists!\widehat\sigma:T_{\Sigma}(X)\to\lvert\mathcal A\rvert
+  \]
+  \[
+    \operatorname{Hom}(\widehat\sigma,T_{\Sigma}(X),\mathcal A)
+    \wedge
+    \widehat\sigma\circ\eta=\sigma.
+  \]}
+  \modelconsequence{\[
+    \operatorname{eval}(\mathcal A)(\sigma):=\widehat\sigma.
+  \]}
+\end{modelconsequences}
+
+\begin{modelcomponent}{Instantiations}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lXXXX@{}}
+\toprule
+use & \(\Sigma\) & \(X\) & target \(\mathcal A\) & seed \(\sigma\) \\
+\midrule
+formula eval &
+\(\Omega\) &
+atoms &
+\(\mathbf 2\) &
+atom truth values \\
+parse &
+\(\Omega\) &
+\(X\) &
+\(T_{\Omega}(X)\) &
+\(\eta\) \\
+term eval &
+\(\Sigma_{\mathrm{term}}\) &
+\(\mathsf{Var}\) &
+\(\mathcal A_{\mathrm{term}}\) &
+assignment \(s\) \\
+\(\mathbb N\) preview &
+\(\{0^{(0)},S^{(1)}\}\) &
+\(\varnothing\) &
+\((C,c_0,\operatorname{succ})\) &
+none \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\end{modelcomponent}
+
+\begin{modelcomponent}{Worked Connective Instance}
+\[
+  \Omega=\{\neg^{(1)},\wedge^{(2)},\vee^{(2)},\to^{(2)},\leftrightarrow^{(2)}\},
+\]
+\[
+  \mathbf 2=(\{0,1\},\neg^{\mathbf 2},\wedge^{\mathbf 2},
+  \vee^{\mathbf 2},\to^{\mathbf 2},\leftrightarrow^{\mathbf 2}).
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{Boundary}
+The machine fixes one seed. Connective and term evaluation are exact
+instances. FOL quantifiers range over the assignment-indexed family
+\((\sigma_s)_s\):
+\[
+  \mathcal A,s\models\exists x\,\varphi
+  \Longleftrightarrow
+  \exists a\in A,\;\mathcal A,s[x\mapsto a]\models\varphi.
+\]
+That is the downstream cylindric/polyadic layer. The absolutely free
+\(T_{\Sigma}(X)\) is also distinct from the Lindenbaum--Tarski quotient by
+\(\vdash\)-equivalence.
+\end{modelcomponent}
+\end{modelbox}
+
+\begin{modelbox}{Consequence}
+\modeldepends{Satisfaction relation \(\models\subseteq\mathsf{Mod}\times\mathsf{Form}\)}
+
+\begin{modelcomponent}{Parameter}
+A class of models \(\mathsf{Mod}\) and a satisfaction relation
+\[
+  m\models\varphi
+  \qquad(m\in\mathsf{Mod}).
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{Semantic Consequence}
+\[
+  \Gamma\models\varphi
+  \quad:\Longleftrightarrow\quad
+  \forall m\in\mathsf{Mod}\,
+  \bigl((\forall\gamma\in\Gamma,\;m\models\gamma)\to m\models\varphi\bigr).
+\]
+\[
+  \mathrm{Cn}_{\models}(\Gamma):=\{\varphi:\Gamma\models\varphi\},
+  \qquad
+  \models\varphi:\Longleftrightarrow \varnothing\models\varphi.
+\]
+\[
+  \mathrm{Th}(m):=\{\varphi:m\models\varphi\}.
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{Bindings}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lXX@{}}
+\toprule
+logic & \(\mathsf{Mod}\) & \(m\models\varphi\) \\
+\midrule
+prop & valuations \(v\) & \(\widehat v(\varphi)=1\) \\
+FOL open & pairs \((\mathcal A,s)\) & \(\mathcal A,s\models\varphi\) \\
+FOL sentences & structures \(\mathcal A\) & \(\mathcal A\models\sigma\) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\end{modelcomponent}
+\end{modelbox}
+
+\section*{Propositional Logic}
+
+\begin{modelbox}{Theory (Propositional Logic)}
+\modeldepends{Propositional language; formula; Consequence; \(\mathrm{Cn}_{\vdash}\)}
+
+\begin{modelcomponent}{Language}
+\[
+  \mathcal L_{\mathsf P}
+  =
+  (\mathsf P,\neg,\wedge,\vee,\to,\leftrightarrow),
+  \qquad
+  \mathsf{Form}_{\mathsf P}.
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{Presented Theories}
+\[
+  T:=\mathrm{Cn}_{\vdash}(\Sigma),
+  \qquad
+  \Sigma\subseteq\mathsf{Form}_{\mathsf P},
+  \qquad
+  \mathrm{CPL}:=\mathrm{Cn}_{\vdash}(\varnothing).
+\]
+\end{modelcomponent}
+
+\begin{modelconsequences}
+  \modelconsequence{\[
+    \Gamma\vdash_{\mathrm{CPL}}\varphi
+    \quad\Longleftrightarrow\quad
+    \Gamma\models_{\mathrm{CPL}}\varphi
+    \qquad(\text{completeness}).
+  \]}
+\end{modelconsequences}
+\end{modelbox}
+
+\begin{modelbox}{Model (Classical Propositional Logic)}
+\begin{model}[Classical Propositional Logic]\label{model:classical-propositional-logic-sample}
+\modeldepends{Propositional language; valuation; Free \(\Sigma\)-Algebra and Evaluation; Consequence}
+
+\begin{modelcomponent}{Base Case of Evaluation}
+The seed is the model datum itself.
+\[
+  v:\mathsf P\to\lvert\mathbf 2\rvert,
+  \qquad
+  \lvert\mathbf 2\rvert=\{0,1\}.
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{Binding}
+\[
+  \Sigma:=\Omega,
+  \qquad
+  X:=\mathsf P,
+  \qquad
+  \text{target}:=\mathbf 2,
+  \qquad
+  \sigma:=v,
+  \qquad
+  \widehat v:=\operatorname{eval}(\mathbf 2)(v).
+\]
+\end{modelcomponent}
+
+\begin{modelbridge}
+  \bridgeclause{\[
+    v\models\varphi
+    \quad:\Longleftrightarrow\quad
+    \widehat v(\varphi)=1.
+  \]}
+\end{modelbridge}
+
+\begin{modelconsequences}
+  \modelconsequence{Connective recursion is inherited from
+  \emph{Free \(\Sigma\)-Algebra and Evaluation}.}
+  \modelconsequence{Semantic consequence, validity, and \(\mathrm{Th}(v)\) are
+  inherited from \emph{Consequence}.}
+\end{modelconsequences}
+\end{model}
+\end{modelbox}
+
+\begin{modelbox}{Definitional Extension (Propositional Logic)}
+\modeldepends{CPL; truth-function; conservative extension}
+
+\begin{modelcomponent}{Admissibility}
+A connective \(\star\) of arity \(n\) is admissible by a defining equivalence:
+\[
+  \star(\bar\varphi)\leftrightarrow\theta(\bar\varphi),
+  \qquad
+  \widehat v(\star(\bar\varphi))
+  =
+  F_{\star}(\widehat v(\varphi_1),\ldots,\widehat v(\varphi_n)).
+\]
+There is no \(\exists!\) obligation because formulas already evaluate to truth
+values.
+\end{modelcomponent}
+
+\begin{modelcomponent}{Instances}
+\[
+  \top:\equiv(p_0\to p_0),
+  \qquad
+  \bot:\equiv\neg\top,
+\]
+\[
+  \varphi\oplus\psi
+  :\equiv
+  ((\varphi\vee\psi)\wedge\neg(\varphi\wedge\psi)).
+\]
+\end{modelcomponent}
+
+\begin{modelconsequences}
+  \modelconsequence{\[
+    \mathrm{CPL}^{+}\vdash\sigma
+    \quad\Longleftrightarrow\quad
+    \mathrm{CPL}\vdash\sigma
+    \qquad(\sigma\in\mathcal L_{\mathsf P}).
+  \]}
+  \modelconsequence{Every extended formula has a base-language equivalent.}
+\end{modelconsequences}
+\end{modelbox}
+
+\clearpage
+\section*{Predicate Logic}
+
+\begin{modelbox}{Theory (First-Order Logic)}
+\modeldepends{Signature; term; formula; sentence; Consequence; \(\mathrm{Cn}_{\vdash}\)}
+
+\begin{modelcomponent}{Language}
+\[
+  \mathcal L=(\mathsf{Const}_{\mathcal L},
+  \mathsf{Func}_{\mathcal L},
+  \mathsf{Rel}_{\mathcal L},=).
+\]
+\[
+  \mathsf{Term}_{\mathcal L},
+  \qquad
+  \mathsf{Form}_{\mathcal L},
+  \qquad
+  \mathsf{Sent}_{\mathcal L}.
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{Presented Theory}
+\[
+  T:=\mathrm{Cn}_{\vdash}(\Sigma),
+  \qquad
+  \Sigma\subseteq\mathsf{Sent}_{\mathcal L}.
+\]
+\end{modelcomponent}
+
+\begin{modelconsequences}
+  \modelconsequence{\[
+    \Gamma\vdash_{\mathrm{FOL}}\varphi
+    \quad\Longleftrightarrow\quad
+    \Gamma\models_{\mathrm{FOL}}\varphi
+    \qquad(\text{completeness}).
+  \]}
+\end{modelconsequences}
+\end{modelbox}
+
+\begin{modelbox}{Model (First-Order Logic)}
+\begin{model}[First-Order Logic]\label{model:first-order-logic-sample}
+\modeldepends{\(\mathcal L\)-structure; interpretation; assignment; Free \(\Sigma\)-Algebra and Evaluation; Consequence}
+
+\begin{modelcomponent}{Inductive Case of Evaluation}
+FOL runs the shared machine twice: once for terms, then once for quantifier-free
+formulas. Quantifiers sit above that fixed-seed machine.
+\end{modelcomponent}
+
+\begin{modelcomponent}{Structure and Interpretation}
+\[
+  \mathcal A=\langle A,I\rangle,
+  \qquad
+  A\neq\varnothing.
+\]
+\[
+  I(c)\in A,
+  \qquad
+  I(f):A^n\to A,
+  \qquad
+  I(R)\subseteq A^n,
+  \qquad
+  =\text{ is logical equality on }A.
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{Two Evaluations, Stacked}
+\[
+  s:\mathsf{Var}\to A
+  \xrightarrow{\operatorname{eval}(\mathcal A_{\mathrm{term}})}
+  \llbracket\cdot\rrbracket_{\mathcal A,s}
+  \xrightarrow{\text{relation/equality tests}}
+  \sigma_s
+  \xrightarrow{\operatorname{eval}(\mathbf 2)}
+  \models_{\mathrm{qf}}.
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{[feeds seed] Term Evaluation}
+\[
+  \Sigma_{\mathrm{term}}
+  :=
+  \mathsf{Const}_{\mathcal L}\cup\mathsf{Func}_{\mathcal L},
+  \qquad
+  \mathcal A_{\mathrm{term}}
+  :=
+  (A,(I f)_{f\in\mathsf{Func}},(I c)_{c\in\mathsf{Const}}).
+\]
+\[
+  \llbracket\cdot\rrbracket_{\mathcal A,s}
+  :=
+  \operatorname{eval}(\mathcal A_{\mathrm{term}})(s).
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{[seed, computed] Atomic Seed}
+\[
+  \sigma_s\bigl(R(\bar t)\bigr)
+  :=
+  \bigl[
+    (\llbracket t_1\rrbracket_{\mathcal A,s},\ldots,
+    \llbracket t_n\rrbracket_{\mathcal A,s})
+    \in I(R)
+  \bigr],
+\]
+\[
+  \sigma_s(t_1=t_2)
+  :=
+  \bigl[
+    \llbracket t_1\rrbracket_{\mathcal A,s}
+    =
+    \llbracket t_2\rrbracket_{\mathcal A,s}
+  \bigr].
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{[connective eval, inherited] Quantifier-Free Truth}
+\[
+  \mathcal A,s\models\varphi
+  \quad:\Longleftrightarrow\quad
+  \operatorname{eval}(\mathbf 2)(\sigma_s)(\varphi)=1
+  \qquad(\varphi\text{ quantifier-free}).
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{[\(\Omega^{+}\) extension] Quantifiers}
+\[
+  \mathcal A,s\models\exists x\,\varphi
+  \quad\Longleftrightarrow\quad
+  \exists a\in A,\;\mathcal A,s[x\mapsto a]\models\varphi.
+\]
+\[
+  \mathcal A,s\models\forall x\,\varphi
+  \quad\Longleftrightarrow\quad
+  \forall a\in A,\;\mathcal A,s[x\mapsto a]\models\varphi.
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{Sentence Satisfaction}
+For \(\sigma\in\mathsf{Sent}_{\mathcal L}\), \(\mathcal A,s\models\sigma\) is
+independent of \(s\) by the coincidence lemma, so
+\[
+  \mathcal A\models\sigma
+  :=
+  \mathcal A,s\models\sigma
+  \qquad(s\text{ arbitrary}).
+\]
+\end{modelcomponent}
+
+\begin{modelconsequences}
+  \modelconsequence{Semantic consequence, \(\mathcal A\models T\), and
+  \(\mathrm{Th}(\mathcal A)\) are inherited from \emph{Consequence}.}
+  \modelconsequence{Prop is the base case: seed \(=v\). FOL is the inductive
+  case: \(s\) is evaluated into term values, then relation tests compute
+  \(\sigma_s\).}
+\end{modelconsequences}
+\end{model}
+\end{modelbox}
+
+\begin{modelbox}{Definitional Extension (First-Order Logic)}
+\modeldepends{Theory; expansion; reduct; conservativity; unique existence}
+
+\begin{modelcomponent}{Logical Abbreviation}
+\[
+  \exists!y\,\varphi(y)
+  \;:\equiv\;
+  \exists y\bigl(\varphi(y)\wedge
+  \forall y'(\varphi(y')\to y'=y)\bigr).
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{Admissibility}
+\textbf{Relation symbol \(R\), arity \(n\):}
+\[
+  \forall\bar x\,(R(\bar x)\leftrightarrow\varphi(\bar x)).
+\]
+\textbf{Function symbol \(f\), arity \(n\):}
+\[
+  T\vdash \forall\bar x\,\exists!y\,\psi(\bar x,y),
+  \qquad
+  \forall\bar x\,\forall y\,(f(\bar x)=y\leftrightarrow\psi(\bar x,y)).
+\]
+\textbf{Constant symbol \(c\):}
+\[
+  T\vdash \exists!y\,\psi(y),
+  \qquad
+  \forall y\,(c=y\leftrightarrow\psi(y)).
+\]
+\end{modelcomponent}
+
+\begin{modelconsequences}
+  \modelconsequence{\[
+    T^{+}\vdash\sigma
+    \quad\Longleftrightarrow\quad
+    T\vdash\sigma
+    \qquad(\sigma\in\mathcal L).
+  \]}
+  \modelconsequence{\[
+    \mathcal A\models T
+    \Longrightarrow
+    \exists!\mathcal A^{+}\,
+    (\mathcal A^{+}\!\upharpoonright\mathcal L=\mathcal A).
+  \]}
+\end{modelconsequences}
+\end{modelbox}
+
+\end{document}

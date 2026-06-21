@@ -1,0 +1,81 @@
+% BEGIN MODEL ARTIFACT: model:set-theory
+\begin{modelbox}{Model (Set Theory)}
+\modelid{model:set-theory}
+\modelkind{model}
+\modellayer{set-theory}
+\begin{model}[Set Theory Model]\label{model:set-theory}
+\modeldepends{model:first-order-logic; bridge:free-sigma-algebra-evaluation; theory:set-theory; bridge:consequence}
+
+\modelstructure{
+\[
+  \mathcal A=(A,E),
+  \qquad
+  A\neq\varnothing,
+  \qquad
+  E\subseteq A\times A.
+\]
+\[
+  a\mathrel E b
+  \quad:\Longleftrightarrow\quad
+  (a,b)\in E.
+\]
+\[
+  \mathcal A=\langle A,I\rangle,
+  \qquad
+  I(\in)=E.
+\]
+}
+
+\begin{modelsorts}
+  \modelsort{A}{\text{universe}}{}
+\end{modelsorts}
+
+\modelinterpretation{
+\textbf{Constants.}
+None.
+}
+
+\modelinterpretation{
+\textbf{Functions.}
+None.
+}
+
+\begin{modelrelations}
+  \modelrelation{E}{E\subseteq A\times A}{Interpretation of \(\in\).}
+\end{modelrelations}
+
+\modeldelta{
+No constant or function symbols occur in \(\mathcal L_{\in}\), so every term is
+a variable and FOL term evaluation reduces to
+\(\llbracket x\rrbracket_{\mathcal A,s}=s(x)\).
+}
+
+\modelsemanticbridge{
+\[
+  \mathcal A,s\models x\in y
+  \quad\Longleftrightarrow\quad
+  (s(x),s(y))\in E.
+\]
+}
+
+\modeltheorymodels{
+\[
+  \mathcal A\models\mathrm{ZF}
+  \quad:\Longleftrightarrow\quad
+  \forall\varphi\,(\varphi\in\mathrm{ZF}\to\mathcal A\models\varphi).
+\]
+\[
+  \mathcal A\models\mathrm{ZFC}
+  \quad:\Longleftrightarrow\quad
+  \mathcal A\models\mathrm{ZF}\wedge\mathcal A\models\mathrm{AC}.
+\]
+}
+
+\begin{modelconsequences}
+  \modelconsequence{One nonlogical symbol is interpreted: \(I(\in)=E\).}
+  \modelconsequence{\(\mathrm{Th}(\mathcal A)\) is inherited from
+  \emph{Consequence}.}
+\end{modelconsequences}
+\end{model}
+\end{modelbox}
+% END MODEL ARTIFACT: model:set-theory

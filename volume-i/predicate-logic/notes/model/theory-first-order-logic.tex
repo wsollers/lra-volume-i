@@ -1,0 +1,40 @@
+% BEGIN MODEL ARTIFACT: theory:first-order-logic
+\begin{modelbox}{Theory (First-Order Logic)}
+\modelid{theory:first-order-logic}
+\modelkind{theory}
+\modellayer{first-order-logic}
+\modeldepends{Signature; term; formula; sentence; bridge:consequence; \(\mathrm{Cn}_{\vdash}\)}
+
+\modellanguage{
+\[
+  \mathcal L=(\mathsf{Const}_{\mathcal L},
+  \mathsf{Func}_{\mathcal L},
+  \mathsf{Rel}_{\mathcal L},=).
+\]
+\[
+  \mathsf{Term}_{\mathcal L},
+  \qquad
+  \mathsf{Form}_{\mathcal L},
+  \qquad
+  \mathsf{Sent}_{\mathcal L}.
+\]
+}
+
+\modelpresentation{
+\[
+  T:=\mathrm{Cn}_{\vdash}(\Sigma),
+  \qquad
+  \Sigma\subseteq\mathsf{Sent}_{\mathcal L}.
+\]
+}
+
+\begin{modelconsequences}
+  \modelconsequence{\[
+    \Gamma\vdash_{\mathrm{FOL}}\varphi
+    \quad\Longleftrightarrow\quad
+    \Gamma\models_{\mathrm{FOL}}\varphi
+    \qquad(\text{completeness}).
+  \]}
+\end{modelconsequences}
+\end{modelbox}
+% END MODEL ARTIFACT: theory:first-order-logic

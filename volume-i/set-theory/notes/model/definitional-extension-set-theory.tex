@@ -1,0 +1,81 @@
+% BEGIN MODEL ARTIFACT: defext:set-theory
+\begin{modelbox}{Definitional Extension (Set Theory)}
+\modelid{defext:set-theory}
+\modelkind{definitional-extension}
+\modellayer{set-theory}
+\modeldepends{defext:first-order-logic; theory:set-theory; model:set-theory}
+
+\begin{modeldeltablock}
+\begin{align*}
+  \text{existence} &\leftarrow
+  \begin{gathered}[t]
+    \text{Empty Set, Pairing, Union, Power Set,}\\
+    \text{Infinity, Separation, Replacement};
+  \end{gathered}\\
+  \text{uniqueness} &\leftarrow \text{Extensionality};\\
+  \text{default value} &\leftarrow \varnothing.
+\end{align*}
+Representative-independence is delegated to quotient-specific extensions.
+\end{modeldeltablock}
+
+\begin{modelinstancesblock}
+\textbf{\(\subseteq\)} relation
+\[
+\forall x\,\forall y\,
+\bigl(x\subseteq y\leftrightarrow
+  \forall w\,(w\in x\to w\in y)\bigr).
+\]
+No unique-existence obligation.
+
+\textbf{\(\varnothing\)} constant
+\[
+\psi_{\varnothing}(y):\equiv \forall w\,\neg(w\in y),
+\qquad
+\exists!\text{ receipt: Empty Set + Extensionality}.
+\]
+\[
+\forall y\,
+\bigl(\varnothing=y\leftrightarrow \forall w\,\neg(w\in y)\bigr).
+\]
+
+\textbf{\(\{\cdot,\cdot\}\)} binary function
+\[
+\psi(x_1,x_2,y):\equiv
+\forall w\,(w\in y\leftrightarrow (w=x_1\vee w=x_2)).
+\]
+\[
+\exists!\text{ receipt: Pairing + Extensionality}.
+\]
+\[
+\forall x_1\,\forall x_2\,\forall y\,
+\bigl(\{x_1,x_2\}=y\leftrightarrow\psi(x_1,x_2,y)\bigr).
+\]
+
+\textbf{\(\bigcup\)} unary function
+\[
+\psi(x,y):\equiv
+\forall z\,(z\in y\leftrightarrow\exists w\,(w\in x\wedge z\in w)).
+\]
+\[
+\exists!\text{ receipt: Union + Extensionality}.
+\]
+\[
+\forall x\,\forall y\,
+\bigl(\textstyle\bigcup x=y\leftrightarrow\psi(x,y)\bigr).
+\]
+
+\textbf{\(\mathcal P\)} unary function
+\[
+\psi(x,y):\equiv
+\forall z\,(z\in y\leftrightarrow\forall w\,(w\in z\to w\in x)).
+\]
+\[
+\exists!\text{ receipt: Power Set + Extensionality}.
+\]
+\[
+\forall x\,\forall y\,
+\bigl(\mathcal P(x)=y\leftrightarrow\psi(x,y)\bigr).
+\]
+\end{modelinstancesblock}
+\end{modelbox}
+% END MODEL ARTIFACT: defext:set-theory

@@ -1,0 +1,44 @@
+% BEGIN MODEL ARTIFACT: defext:propositional-logic
+\begin{modelbox}{Definitional Extension (Propositional Logic)}
+\modelid{defext:propositional-logic}
+\modelkind{definitional-extension}
+\modellayer{propositional-logic}
+\modeldepends{theory:propositional-logic; truth-function; conservative extension}
+
+\modeladmissibility{
+A connective \(\star\) of arity \(n\) is admissible by a defining equivalence:
+\[
+  \star(\bar\varphi)\leftrightarrow\theta(\bar\varphi),
+  \qquad
+  \widehat v(\star(\bar\varphi))
+  =
+  F_{\star}(\widehat v(\varphi_1),\ldots,\widehat v(\varphi_n)).
+\]
+There is no \(\exists!\) obligation because formulas already evaluate to truth
+values.
+}
+
+\modelinstances{
+\[
+  \top:\equiv(p_0\to p_0),
+  \qquad
+  \bot:\equiv\neg\top,
+\]
+\[
+  \varphi\oplus\psi
+  :\equiv
+  ((\varphi\vee\psi)\wedge\neg(\varphi\wedge\psi)).
+\]
+}
+
+\begin{modelconsequences}
+  \modelconsequence{\[
+    \mathrm{CPL}^{+}\vdash\sigma
+    \quad\Longleftrightarrow\quad
+    \mathrm{CPL}\vdash\sigma
+    \qquad(\sigma\in\mathcal L_{\mathsf P}).
+  \]}
+  \modelconsequence{Every extended formula has a base-language equivalent.}
+\end{modelconsequences}
+\end{modelbox}
+% END MODEL ARTIFACT: defext:propositional-logic

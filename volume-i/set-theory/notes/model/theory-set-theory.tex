@@ -1,0 +1,117 @@
+% BEGIN MODEL ARTIFACT: theory:set-theory
+\begin{modelbox}{Theory (ZF, ZFC)}
+\modelid{theory:set-theory}
+\modelkind{theory}
+\modellayer{set-theory}
+\modeldepends{theory:first-order-logic}
+
+\modellanguage{
+\[
+  \mathcal L_{\in}=\{\in\}
+\]
+First-order language with equality. The symbol \(\in\) is binary. Equality is
+logical.
+}
+
+\modelpresentation{
+\[
+  \mathrm{ZF}:=\mathrm{Cn}_{\vdash}(\Sigma_{\mathrm{ZF}}),
+  \qquad
+  \mathrm{ZFC}:=\mathrm{Cn}_{\vdash}\bigl(\Sigma_{\mathrm{ZF}}\cup\{\mathrm{AC}\}\bigr).
+\]
+}
+
+\begin{modelaxiomsblock}
+\begin{enumerate}[leftmargin=1.6em,itemsep=2pt]
+  \item \textbf{1. Extensionality}
+  \[
+  \forall x\,\forall y\,
+  \bigl[\forall z\,(z\in x\leftrightarrow z\in y)\to x=y\bigr].
+  \]
+
+  \item \textbf{2. Empty Set}
+  \[
+  \exists x\,\forall y\,\neg(y\in x).
+  \]
+
+  \item \textbf{3. Pairing}
+  \[
+  \forall x\,\forall y\,\exists z\,\forall w\,
+  \bigl(w\in z\leftrightarrow (w=x\vee w=y)\bigr).
+  \]
+
+  \item \textbf{4. Union}
+  \[
+  \forall x\,\exists y\,\forall z\,
+  \bigl[z\in y\leftrightarrow \exists w\,(w\in x\wedge z\in w)\bigr].
+  \]
+
+  \item \textbf{5. Power Set}
+  \[
+  \forall x\,\exists y\,\forall z\,
+  \bigl[z\in y\leftrightarrow \forall w\,(w\in z\to w\in x)\bigr].
+  \]
+
+  \item \textbf{6. Infinity}
+  \[
+  \begin{aligned}
+  \exists x\,\Big[&
+    \exists y\bigl(y\in x\wedge \forall w\,\neg(w\in y)\bigr)\\
+    &{}\wedge
+    \forall y\bigl(y\in x\to
+      \exists z\,(z\in x\wedge
+        \forall w\,(w\in z\leftrightarrow (w\in y\vee w=y)))\bigr)
+  \Big].
+  \end{aligned}
+  \]
+
+  \item \textbf{7. Separation Schema}
+  For each formula \(\varphi(z,\bar w)\) in which \(y\) is not free:
+  \[
+  \forall \bar w\,\forall x\,\exists y\,\forall z\,
+  \bigl[z\in y\leftrightarrow (z\in x\wedge \varphi(z,\bar w))\bigr].
+  \]
+
+  \item \textbf{8. Replacement Schema}
+  For each formula \(\varphi(x,y,\bar w)\) in which \(B\) is not free:
+  \[
+  \begin{aligned}
+  \forall \bar w\,\forall A\,\Big[&
+    \forall x\bigl(x\in A\to \exists!y\,\varphi(x,y,\bar w)\bigr)\\
+    &{}\to
+    \exists B\,\forall y\bigl(y\in B\leftrightarrow
+      \exists x\,(x\in A\wedge \varphi(x,y,\bar w))\bigr)
+  \Big].
+  \end{aligned}
+  \]
+
+  \item \textbf{9. Foundation}
+  \[
+  \forall x\,\Bigl[
+    \exists y\,(y\in x)\to
+    \exists y\bigl(y\in x\wedge
+      \neg\exists z\,(z\in x\wedge z\in y)\bigr)
+  \Bigr].
+  \]
+\end{enumerate}
+\end{modelaxiomsblock}
+
+\begin{modeldeltablock}
+\textbf{AC}
+\[
+\begin{aligned}
+\forall x\,\Big[&
+  \bigl(\forall y\,(y\in x\to \exists z\,z\in y)\\
+  &{}\wedge
+  \forall y\,\forall y'\,
+    ((y\in x\wedge y'\in x\wedge y\neq y')\to
+      \neg\exists z\,(z\in y\wedge z\in y'))\bigr)\\
+  &{}\to
+  \exists c\,\forall y\,(y\in x\to
+    \exists!z\,(z\in y\wedge z\in c))
+\Big].
+\end{aligned}
+\]
+\end{modeldeltablock}
+\end{modelbox}
+% END MODEL ARTIFACT: theory:set-theory

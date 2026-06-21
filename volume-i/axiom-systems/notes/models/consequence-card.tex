@@ -1,0 +1,47 @@
+% BEGIN MODEL ARTIFACT: bridge:consequence
+\begin{modelbox}{Consequence}
+\modelid{bridge:consequence}
+\modelkind{bridge}
+\modellayer{shared}
+\modeldepends{Satisfaction relation \(\models\subseteq\mathsf{Mod}\times\mathsf{Form}\)}
+
+\modelparameter{
+A class of models \(\mathsf{Mod}\) and a satisfaction relation
+\[
+  m\models\varphi
+  \qquad(m\in\mathsf{Mod}).
+\]
+}
+
+\modelsemanticbridge{
+\[
+  \Gamma\models\varphi
+  \quad:\Longleftrightarrow\quad
+  \forall m\in\mathsf{Mod}\,
+  \bigl((\forall\gamma\in\Gamma,\;m\models\gamma)\to m\models\varphi\bigr).
+\]
+\[
+  \mathrm{Cn}_{\models}(\Gamma):=\{\varphi:\Gamma\models\varphi\},
+  \qquad
+  \models\varphi:\Longleftrightarrow \varnothing\models\varphi.
+\]
+\[
+  \mathrm{Th}(m):=\{\varphi:m\models\varphi\}.
+\]
+}
+
+\begin{modelbindingblock}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lXX@{}}
+\toprule
+logic & \(\mathsf{Mod}\) & \(m\models\varphi\) \\
+\midrule
+prop & valuations \(v\) & \(\widehat v(\varphi)=1\) \\
+FOL open & pairs \((\mathcal A,s)\) & \(\mathcal A,s\models\varphi\) \\
+FOL sentences & structures \(\mathcal A\) & \(\mathcal A\models\sigma\) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\end{modelbindingblock}
+\end{modelbox}
+% END MODEL ARTIFACT: bridge:consequence

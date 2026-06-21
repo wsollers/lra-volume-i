@@ -1,0 +1,137 @@
+% BEGIN MODEL ARTIFACT: bridge:free-sigma-algebra-evaluation
+\begin{modelbox}{Free \(\Sigma\)-Algebra and Evaluation}
+\modelid{bridge:free-sigma-algebra-evaluation}
+\modelkind{bridge}
+\modellayer{shared}
+\modeldepends{Signature; inductively generated set; unique readability}
+
+\begin{modelparameterblock}
+Shared bridge machinery. Parameter: a signature \(\Sigma\). This card is
+instantiated by connective evaluation, term evaluation, parsing, and later by
+initial-algebra presentations such as \(\mathbb N\).
+\end{modelparameterblock}
+
+\begin{modelstructureblock}
+\[
+  \Sigma\text{ is a set of operation symbols},
+  \qquad
+  \operatorname{ar}:\Sigma\to\mathbb N.
+\]
+A \(\Sigma\)-algebra is a carrier \(\lvert\mathcal A\rvert\) with operations
+\[
+  f^{\mathcal A}:\lvert\mathcal A\rvert^{\operatorname{ar}(f)}
+  \to \lvert\mathcal A\rvert
+  \qquad(f\in\Sigma).
+\]
+Seeds land in the carrier; homomorphisms are maps of algebras.
+\end{modelstructureblock}
+
+\begin{modelstructureblock}
+\[
+  T_{\Sigma}(X),
+  \qquad
+  f^{T}(t_1,\ldots,t_n):=f(t_1,\ldots,t_n),
+  \qquad
+  \eta:X\to T_{\Sigma}(X).
+\]
+\end{modelstructureblock}
+
+\begin{modelsemanticbridgeblock}
+\[
+  \operatorname{Hom}(h,\mathcal A,\mathcal B)
+  \quad:\Longleftrightarrow\quad
+  h(f^{\mathcal A}(\bar a))
+  =
+  f^{\mathcal B}(h(a_1),\ldots,h(a_n))
+\]
+for every \(f\in\Sigma\) and \(\bar a\in\lvert\mathcal A\rvert^n\).
+\end{modelsemanticbridgeblock}
+
+\begin{modelaxiomsblock}
+\textbf{No junk.}
+\[
+  t\in T_{\Sigma}(X)
+  \Longrightarrow
+  t\in X\ \vee\
+  \exists f\in\Sigma\,\exists\bar t\,\bigl(t=f(\bar t)\bigr).
+\]
+\textbf{No confusion.}
+\[
+  x\neq f(\bar t),
+  \qquad
+  f(\bar s)=g(\bar t)\Longrightarrow f=g\wedge \bar s=\bar t.
+\]
+\end{modelaxiomsblock}
+
+\begin{modelconsequences}
+  \modelconsequence{\textbf{Universal property.}
+  \[
+    \forall\mathcal A\;\forall\sigma:X\to\lvert\mathcal A\rvert\;
+    \exists!\widehat\sigma:T_{\Sigma}(X)\to\lvert\mathcal A\rvert
+  \]
+  \[
+    \operatorname{Hom}(\widehat\sigma,T_{\Sigma}(X),\mathcal A)
+    \wedge
+    \widehat\sigma\circ\eta=\sigma.
+  \]}
+  \modelconsequence{\[
+    \operatorname{eval}(\mathcal A)(\sigma):=\widehat\sigma.
+  \]}
+\end{modelconsequences}
+
+\begin{modelinstancesblock}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lXXXX@{}}
+\toprule
+use & \(\Sigma\) & \(X\) & target \(\mathcal A\) & seed \(\sigma\) \\
+\midrule
+formula eval &
+\(\Omega\) &
+atoms &
+\(\mathbf 2\) &
+atom truth values \\
+parse &
+\(\Omega\) &
+\(X\) &
+\(T_{\Omega}(X)\) &
+\(\eta\) \\
+term eval &
+\(\Sigma_{\mathrm{term}}\) &
+\(\mathsf{Var}\) &
+\(\mathcal A_{\mathrm{term}}\) &
+assignment \(s\) \\
+\(\mathbb N\) preview &
+\(\{0^{(0)},S^{(1)}\}\) &
+\(\varnothing\) &
+\((C,c_0,\operatorname{succ})\) &
+none \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\end{modelinstancesblock}
+
+\begin{modelinstancesblock}
+\[
+  \Omega=\{\neg^{(1)},\wedge^{(2)},\vee^{(2)},\to^{(2)},\leftrightarrow^{(2)}\},
+\]
+\[
+  \mathbf 2=(\{0,1\},\neg^{\mathbf 2},\wedge^{\mathbf 2},
+  \vee^{\mathbf 2},\to^{\mathbf 2},\leftrightarrow^{\mathbf 2}).
+\]
+\end{modelinstancesblock}
+
+\begin{modelboundaryblock}
+The machine fixes one seed. Connective and term evaluation are exact
+instances. FOL quantifiers range over the assignment-indexed family
+\((\sigma_s)_s\):
+\[
+  \mathcal A,s\models\exists x\,\varphi
+  \Longleftrightarrow
+  \exists a\in A,\;\mathcal A,s[x\mapsto a]\models\varphi.
+\]
+That is the downstream cylindric/polyadic layer. The absolutely free
+\(T_{\Sigma}(X)\) is also distinct from the Lindenbaum--Tarski quotient by
+\(\vdash\)-equivalence.
+\end{modelboundaryblock}
+\end{modelbox}
+% END MODEL ARTIFACT: bridge:free-sigma-algebra-evaluation

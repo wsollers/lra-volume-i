@@ -1,0 +1,51 @@
+% BEGIN MODEL ARTIFACT: defext:first-order-logic
+\begin{modelbox}{Definitional Extension (First-Order Logic)}
+\modelid{defext:first-order-logic}
+\modelkind{definitional-extension}
+\modellayer{first-order-logic}
+\modeldepends{theory:first-order-logic; expansion; reduct; conservativity; unique existence}
+
+\modelnote{
+\[
+  \exists!y\,\varphi(y)
+  \;:\equiv\;
+  \exists y\bigl(\varphi(y)\wedge
+  \forall y'(\varphi(y')\to y'=y)\bigr).
+\]
+}
+
+\modeladmissibility{
+\textbf{Relation symbol \(R\), arity \(n\):}
+\[
+  \forall\bar x\,(R(\bar x)\leftrightarrow\varphi(\bar x)).
+\]
+\textbf{Function symbol \(f\), arity \(n\):}
+\[
+  T\vdash \forall\bar x\,\exists!y\,\psi(\bar x,y),
+  \qquad
+  \forall\bar x\,\forall y\,(f(\bar x)=y\leftrightarrow\psi(\bar x,y)).
+\]
+\textbf{Constant symbol \(c\):}
+\[
+  T\vdash \exists!y\,\psi(y),
+  \qquad
+  \forall y\,(c=y\leftrightarrow\psi(y)).
+\]
+}
+
+\begin{modelconsequences}
+  \modelconsequence{\[
+    T^{+}\vdash\sigma
+    \quad\Longleftrightarrow\quad
+    T\vdash\sigma
+    \qquad(\sigma\in\mathcal L).
+  \]}
+  \modelconsequence{\[
+    \mathcal A\models T
+    \Longrightarrow
+    \exists!\mathcal A^{+}\,
+    (\mathcal A^{+}\!\upharpoonright\mathcal L=\mathcal A).
+  \]}
+\end{modelconsequences}
+\end{modelbox}
+% END MODEL ARTIFACT: defext:first-order-logic

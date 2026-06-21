@@ -1,0 +1,37 @@
+% BEGIN MODEL ARTIFACT: theory:propositional-logic
+\begin{modelbox}{Theory (Propositional Logic)}
+\modelid{theory:propositional-logic}
+\modelkind{theory}
+\modellayer{propositional-logic}
+\modeldepends{Propositional language; formula; bridge:consequence; \(\mathrm{Cn}_{\vdash}\)}
+
+\modellanguage{
+\[
+  \mathcal L_{\mathsf P}
+  =
+  (\mathsf P,\neg,\wedge,\vee,\to,\leftrightarrow),
+  \qquad
+  \mathsf{Form}_{\mathsf P}.
+\]
+}
+
+\modelpresentation{
+\[
+  T:=\mathrm{Cn}_{\vdash}(\Sigma),
+  \qquad
+  \Sigma\subseteq\mathsf{Form}_{\mathsf P},
+  \qquad
+  \mathrm{CPL}:=\mathrm{Cn}_{\vdash}(\varnothing).
+\]
+}
+
+\begin{modelconsequences}
+  \modelconsequence{\[
+    \Gamma\vdash_{\mathrm{CPL}}\varphi
+    \quad\Longleftrightarrow\quad
+    \Gamma\models_{\mathrm{CPL}}\varphi
+    \qquad(\text{completeness}).
+  \]}
+\end{modelconsequences}
+\end{modelbox}
+% END MODEL ARTIFACT: theory:propositional-logic

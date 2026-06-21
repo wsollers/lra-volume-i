@@ -1,0 +1,283 @@
+\documentclass[12pt, a4paper]{report}
+\input{common/volume-preamble}
+
+\begin{document}
+\ExplSyntaxOff
+\renewcommand{\familydefault}{\rmdefault}
+
+\chapter*{Set Theory Opening Cards Mockup}
+
+\section*{Theory --- Set Theory}
+
+\begin{modelbox}{Theory (ZF, ZFC)}
+\modeldepends{Theory (First-Order Logic)}
+
+\begin{modelcomponent}{Language}
+\[
+  \mathcal L_{\in}=\{\in\}
+\]
+First-order language with equality. The symbol \(\in\) is binary. Equality is
+logical.
+\end{modelcomponent}
+
+\begin{modelcomponent}{Instantiation}
+\[
+  \mathrm{ZF}:=\mathrm{Cn}(\Sigma_{\mathrm{ZF}}),
+  \qquad
+  \mathrm{ZFC}:=\mathrm{Cn}\bigl(\Sigma_{\mathrm{ZF}}\cup\{\mathrm{AC}\}\bigr).
+\]
+\end{modelcomponent}
+
+\begin{modelcomponent}{\(\Sigma_{\mathrm{ZF}}\) (Non-Logical Axioms)}
+\begin{enumerate}[leftmargin=1.6em,itemsep=2pt]
+  \item \textbf{1. Extensionality}
+  \[
+  \forall x\,\forall y\,
+  \bigl[\forall z\,(z\in x\leftrightarrow z\in y)\to x=y\bigr].
+  \]
+
+  \item \textbf{2. Empty Set}
+  \[
+  \exists x\,\forall y\,\neg(y\in x).
+  \]
+
+  \item \textbf{3. Pairing}
+  \[
+  \forall x\,\forall y\,\exists z\,\forall w\,
+  \bigl(w\in z\leftrightarrow (w=x\vee w=y)\bigr).
+  \]
+
+  \item \textbf{4. Union}
+  \[
+  \forall x\,\exists y\,\forall z\,
+  \bigl[z\in y\leftrightarrow \exists w\,(w\in x\wedge z\in w)\bigr].
+  \]
+
+  \item \textbf{5. Power Set}
+  \[
+  \forall x\,\exists y\,\forall z\,
+  \bigl[z\in y\leftrightarrow \forall w\,(w\in z\to w\in x)\bigr].
+  \]
+
+  \item \textbf{6. Infinity}
+  \[
+  \begin{aligned}
+  \exists x\,\Big[&
+    \exists y\bigl(y\in x\wedge \forall w\,\neg(w\in y)\bigr)\\
+    &{}\wedge
+    \forall y\bigl(y\in x\to
+      \exists z\,(z\in x\wedge
+        \forall w\,(w\in z\leftrightarrow (w\in y\vee w=y)))\bigr)
+  \Big].
+  \end{aligned}
+  \]
+
+  \item \textbf{7. Separation Schema}
+  For each formula \(\varphi(z,\bar w)\) in which \(y\) is not free:
+  \[
+  \forall \bar w\,\forall x\,\exists y\,\forall z\,
+  \bigl[z\in y\leftrightarrow (z\in x\wedge \varphi(z,\bar w))\bigr].
+  \]
+
+  \item \textbf{8. Replacement Schema}
+  For each formula \(\varphi(x,y,\bar w)\) in which \(B\) is not free:
+  \[
+  \begin{aligned}
+  \forall \bar w\,\forall A\,\Big[&
+    \forall x\bigl(x\in A\to \exists!y\,\varphi(x,y,\bar w)\bigr)\\
+    &{}\to
+    \exists B\,\forall y\bigl(y\in B\leftrightarrow
+      \exists x\,(x\in A\wedge \varphi(x,y,\bar w))\bigr)
+  \Big].
+  \end{aligned}
+  \]
+
+  \item \textbf{9. Foundation}
+  \[
+  \forall x\,\Bigl[
+    \exists y\,(y\in x)\to
+    \exists y\bigl(y\in x\wedge
+      \neg\exists z\,(z\in x\wedge z\in y)\bigr)
+  \Bigr].
+  \]
+\end{enumerate}
+\end{modelcomponent}
+
+\begin{modelcomponent}{Choice (ZFC Delta)}
+\textbf{AC}
+  \[
+  \begin{aligned}
+  \forall x\,\Big[&
+    \bigl(\forall y\,(y\in x\to \exists z\,z\in y)\\
+    &{}\wedge
+    \forall y\,\forall y'\,
+      ((y\in x\wedge y'\in x\wedge y\neq y')\to
+        \neg\exists z\,(z\in y\wedge z\in y'))\bigr)\\
+    &{}\to
+    \exists c\,\forall y\,(y\in x\to
+      \exists!z\,(z\in y\wedge z\in c))
+  \Big].
+  \end{aligned}
+  \]
+\end{modelcomponent}
+\end{modelbox}
+
+\clearpage
+\section*{Model --- Set Theory}
+
+\begin{modelbox}{Model (Set Theory)}
+\begin{model}[Set Theory Model]\label{model:set-theory}
+\modeldepends{Model (First-Order Logic); Free \(\Sigma\)-Algebra and Evaluation; Theory (ZF, ZFC)}
+
+\begin{modelcomponent}{Structure}
+\[
+  \mathcal A=(A,E),
+  \qquad
+  A\neq\varnothing,
+  \qquad
+  E\subseteq A\times A.
+\]
+\[
+  a\mathrel E b
+  \quad:\Longleftrightarrow\quad
+  (a,b)\in E.
+\]
+\[
+  \mathcal A=\langle A,I\rangle,
+  \qquad
+  I(\in)=E.
+\]
+\end{modelcomponent}
+
+\begin{modelsorts}
+  \modelsort{A}{\text{universe}}{}
+\end{modelsorts}
+
+\begin{modelcomponent}{Constants}
+None.
+\end{modelcomponent}
+
+\begin{modelcomponent}{Functions}
+None.
+\end{modelcomponent}
+
+\begin{modelrelations}
+  \modelrelation{E}{E\subseteq A\times A}{Interpretation of \(\in\).}
+\end{modelrelations}
+
+\begin{modelcomponent}{Term Evaluation Delta}
+No constant or function symbols occur in \(\mathcal L_{\in}\), so every term is
+a variable and FOL term evaluation reduces to \(\llbracket x\rrbracket_{\mathcal A,s}=s(x)\).
+\end{modelcomponent}
+
+\begin{modelcomponent}{Set-Theoretic Bridge Delta}
+\[
+    \mathcal A,s\models x\in y
+    \quad\Longleftrightarrow\quad
+    (s(x),s(y))\in E.
+  \]
+\end{modelcomponent}
+
+\begin{modelcomponent}{Models of the Theory}
+\[
+    \mathcal A\models\mathrm{ZF}
+    \quad:\Longleftrightarrow\quad
+    \forall\varphi\,(\varphi\in\mathrm{ZF}\to\mathcal A\models\varphi).
+\]
+\[
+    \mathcal A\models\mathrm{ZFC}
+    \quad:\Longleftrightarrow\quad
+    \mathcal A\models\mathrm{ZF}\wedge\mathcal A\models\mathrm{AC}.
+\]
+\end{modelcomponent}
+
+\begin{modelconsequences}
+  \modelconsequence{One nonlogical symbol is interpreted: \(I(\in)=E\).}
+  \modelconsequence{\[
+    \mathrm{Th}(\mathcal A)=\{\sigma:\mathcal A\models\sigma\}.
+  \]}
+\end{modelconsequences}
+\end{model}
+\end{modelbox}
+
+\clearpage
+\section*{Definitional Extension --- Set Theory}
+
+\begin{modelbox}{Definitional Extension (Set Theory)}
+\modeldepends{Definitional Extension (First-Order Logic); Theory (ZF, ZFC); Model (Set Theory)}
+
+\begin{modelcomponent}{Set-Theoretic Specialization}
+\begin{align*}
+  \text{existence} &\leftarrow
+  \begin{gathered}[t]
+    \text{Empty Set, Pairing, Union, Power Set,}\\
+    \text{Infinity, Separation, Replacement};
+  \end{gathered}\\
+  \text{uniqueness} &\leftarrow \text{Extensionality};\\
+  \text{default value} &\leftarrow \varnothing.
+\end{align*}
+Representative-independence is delegated to quotient-specific extensions.
+\end{modelcomponent}
+
+\begin{modelcomponent}{Instances}
+\textbf{\(\subseteq\)} relation
+\[
+\forall x\,\forall y\,
+\bigl(x\subseteq y\leftrightarrow
+  \forall w\,(w\in x\to w\in y)\bigr).
+\]
+No unique-existence obligation.
+
+\textbf{\(\varnothing\)} constant
+\[
+\psi_{\varnothing}(y):\equiv \forall w\,\neg(w\in y),
+\qquad
+\exists!\text{ receipt: Empty Set + Extensionality}.
+\]
+\[
+\forall y\,
+\bigl(\varnothing=y\leftrightarrow \forall w\,\neg(w\in y)\bigr).
+\]
+
+\textbf{\(\{\cdot,\cdot\}\)} binary function
+\[
+\psi(x_1,x_2,y):\equiv
+\forall w\,(w\in y\leftrightarrow (w=x_1\vee w=x_2)).
+\]
+\[
+\exists!\text{ receipt: Pairing + Extensionality}.
+\]
+\[
+\forall x_1\,\forall x_2\,\forall y\,
+\bigl(\{x_1,x_2\}=y\leftrightarrow\psi(x_1,x_2,y)\bigr).
+\]
+
+\textbf{\(\bigcup\)} unary function
+\[
+\psi(x,y):\equiv
+\forall z\,(z\in y\leftrightarrow\exists w\,(w\in x\wedge z\in w)).
+\]
+\[
+\exists!\text{ receipt: Union + Extensionality}.
+\]
+\[
+\forall x\,\forall y\,
+\bigl(\textstyle\bigcup x=y\leftrightarrow\psi(x,y)\bigr).
+\]
+
+\textbf{\(\mathcal P\)} unary function
+\[
+\psi(x,y):\equiv
+\forall z\,(z\in y\leftrightarrow\forall w\,(w\in z\to w\in x)).
+\]
+\[
+\exists!\text{ receipt: Power Set + Extensionality}.
+\]
+\[
+\forall x\,\forall y\,
+\bigl(\mathcal P(x)=y\leftrightarrow\psi(x,y)\bigr).
+\]
+\end{modelcomponent}
+\end{modelbox}
+
+\end{document}
