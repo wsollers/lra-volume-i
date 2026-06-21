@@ -8,13 +8,55 @@
 % TOOLKIT
 % ---------------------------------------------------------
 
+\begin{remark*}[Geometric picture]
+A function is a deterministic machine: every input in the domain is accepted,
+and no input can fork into two different outputs. Fibers are the level sets
+sitting over points of the codomain; they collect all inputs that the machine
+sends to the same output.
+\end{remark*}
+
 % ---------------------------------------------------------
 % Function definition
 % ---------------------------------------------------------
+\begin{definitionbox}{Definition (Functional Relation)}
+\begin{definition}[Functional Relation]\label{def:functional-relation}
+Let $R\subseteq A\times B$ be a relation. We say that $R$ is
+\emph{functional from $A$ to $B$} if each input has at most one output:
+\[
+\forall a\in A\,\forall b_1,b_2\in B,\quad
+\bigl((a,b_1)\in R\land(a,b_2)\in R\bigr)\Rightarrow b_1=b_2.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:cartesian-product-rel]{Cartesian Product}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Total Relation on a Domain)}
+\begin{definition}[Total Relation on a Domain]\label{def:total-relation-on-domain}
+Let $R\subseteq A\times B$ be a relation. We say that $R$ is \emph{total on
+$A$} if each input has at least one output:
+\[
+\forall a\in A\,\exists b\in B,\quad (a,b)\in R.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Function)}
 \begin{definition}[Function]\label{def:function}
 Let $A$ and $B$ be sets. A \emph{function} from $A$ to $B$ is a relation
-$f \subseteq A \times B$ such that:
+$f \subseteq A \times B$, together with the declared domain $A$ and codomain
+$B$, such that:
 \begin{enumerate}[label=(\roman*)]
 \item (\emph{Existence / left-total}) for every $a \in A$, there exists $b \in B$
   with $(a,b) \in f$;
@@ -41,12 +83,103 @@ conditions formalize ``defined everywhere'' (existence) and ``single-valued''
 \begin{remark*}[Function as relation]
 Every function is a relation, but not every relation is a function. The two
 conditions that distinguish functions are left-totality and right-uniqueness.
+The codomain is part of the function data, not something recoverable from the
+graph alone.
 \end{remark*}
 
-\begin{definitionbox}{Definition (Domain and Codomain)}
-\begin{definition}[Domain and Codomain]\label{def:domain-codomain}
+\begin{theorembox}{Theorem (Functional Relation Characterization of Functions)}
+\begin{theorem}[Functional Relation Characterization of Functions]\label{thm:function-total-functional-characterization}
+Let $A$ and $B$ be sets, and let $R\subseteq A\times B$. Then $R$ is a
+function from $A$ to $B$ if and only if
+\[
+\forall a\in A\,\exists! b\in B,\quad (a,b)\in R.
+\]
+Equivalently, $R$ is a function from $A$ to $B$ if and only if $R$ is total
+on $A$ and functional from $A$ to $B$.
+\hyperref[prf:function-total-functional-characterization]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:functional-relation]{Functional Relation}
+  \item \hyperref[def:total-relation-on-domain]{Total Relation on a Domain}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Partial Function)}
+\begin{definition}[Partial Function]\label{def:partial-function}
+Let $A$ and $B$ be sets. A \emph{partial function} from $A$ to $B$ is a
+functional relation $R\subseteq A\times B$. It need not be total on $A$:
+some inputs may have no output.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:functional-relation]{Functional Relation}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Partial Functions Are Functional Relations)}
+\begin{proposition}[Partial Functions Are Functional Relations]\label{prop:partial-function-functional-relation}
+For sets $A$ and $B$ and a relation $R\subseteq A\times B$, $R$ is a partial
+function from $A$ to $B$ if and only if $R$ is functional from $A$ to $B$.
+\hyperref[prf:partial-function-functional-relation]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partial-function]{Partial Function}
+  \item \hyperref[def:functional-relation]{Functional Relation}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Function Equality)}
+\begin{definition}[Function Equality]\label{def:function-equality}
+For functions $f:A\to B$ and $g:C\to D$, we write $f=g$ if
+\[
+A=C,\qquad B=D,\qquad\text{and}\qquad
+\forall a\in A,\; f(a)=g(a).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:set-equality]{Set Equality}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (One-to-Many Relations Are Not Functional)}
+\begin{proposition}[One-to-Many Relations Are Not Functional]\label{prop:one-to-many-not-functional}
+If $R\subseteq A\times B$ is one-to-many, then $R$ is not functional from $A$
+to $B$. Consequently, $R$ is not a function from $A$ to $B$.
+\hyperref[prf:one-to-many-not-functional]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:one-to-many-relation]{One-to-Many Relation}
+  \item \hyperref[def:functional-relation]{Functional Relation}
+  \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Many-to-one is allowed]
+A function may send different inputs to the same output. That is the ordinary
+many-one case in Tarski's terminology. What is forbidden for a function is not
+shared output, but one input having two distinct outputs.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Domain of a Function)}
+\begin{definition}[Domain of a Function]\label{def:domain}
 If $f$ is a function from $A$ to $B$, we write $f : A \to B$, where $A$ is
-the \emph{domain} $\dom(f)$ and $B$ the \emph{codomain} $\cod(f)$.
+the \emph{domain} $\dom(f)$.
 \end{definition}
 \end{definitionbox}
 
@@ -55,6 +188,25 @@ the \emph{domain} $\dom(f)$ and $B$ the \emph{codomain} $\cod(f)$.
   \item \hyperref[def:function]{Function}
 \end{itemize}
 \end{dependencies}
+
+\begin{definitionbox}{Definition (Codomain of a Function)}
+\begin{definition}[Codomain of a Function]\label{def:codomain}
+If $f$ is a function from $A$ to $B$, we write $f : A \to B$, where $B$ is
+the \emph{codomain} $\cod(f)$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Domain and codomain]
+The notation $f:A\to B$ records both the domain $A$ and the codomain $B$.
+The same graph may define maps into larger codomains, but surjectivity and
+bijectivity depend on the declared codomain.
+\end{remark*}
 
 \begin{definitionbox}{Definition (Image of a Function)}
 \begin{definition}[Image of a Function]\label{def:image-function}
@@ -73,6 +225,11 @@ The image may be a proper subset of the codomain.
   \item \hyperref[ax:separation]{Axiom Schema of Separation}
 \end{itemize}
 \end{dependencies}
+
+\begin{remark*}[Range and image]
+For a function viewed as its graph, the relation range and the function image
+coincide. The codomain may be larger than this range/image.
+\end{remark*}
 
 \begin{definitionbox}{Definition (Image of a Set)}
 \begin{definition}[Image of a Set]\label{def:image-set}
@@ -158,7 +315,8 @@ The \emph{graph} of $f : A \to B$ is:
 \begin{remark*}[Function as graph]
 A relation $G \subseteq A \times B$ is the graph of a function $f : A \to B$
 iff $G$ is left-total and right-unique. Functions may therefore be identified
-with their graphs: a function \emph{is} a special kind of relation.
+with their graphs only after the domain and codomain have been fixed. As bare
+sets of ordered pairs, graphs do not encode the codomain.
 \end{remark*}
 
 % ---------------------------------------------------------
@@ -178,6 +336,25 @@ f(a_1)=f(a_2) \;\Longrightarrow\; a_1=a_2.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Empty Function)}
+\begin{definition}[Empty Function]\label{def:empty-function}
+For every set $B$, the \emph{empty function} from $\varnothing$ to $B$ is the
+empty relation
+\[
+\varnothing:\varnothing\to B.
+\]
+It is the unique function with domain $\varnothing$ and codomain $B$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[def:codomain]{Codomain of a Function}
 \end{itemize}
 \end{dependencies}
 
@@ -216,15 +393,76 @@ Injectivity: each fiber has at most one element. Surjectivity: every fiber is
 nonempty. Bijectivity: every fiber has exactly one element.
 \end{remark*}
 
+\begin{propositionbox}{Proposition (One-One Relations and Converse Functionality)}
+\begin{proposition}[One-One Relations and Converse Functionality]\label{prop:one-to-one-converse-functional}
+Let $f:A\to B$ be a function, identified with its graph
+$G_f\subseteq A\times B$. Then $f$ is injective if and only if the converse
+relation $G_f^{-1}\subseteq B\times A$ is functional from $B$ to $A$.
+\hyperref[prf:one-to-one-converse-functional]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:injective]{Injective Function}
+  \item \hyperref[def:converse-relation]{Converse Relation}
+  \item \hyperref[def:functional-relation]{Functional Relation}
+  \item \hyperref[def:graph]{Graph of a Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Bijections Have Unique Correspondence Both Ways)}
+\begin{proposition}[Bijections Have Unique Correspondence Both Ways]\label{prop:bijection-unique-both-directions}
+Let $f:A\to B$ be a function. Then $f$ is bijective if and only if
+\[
+\forall a\in A\,\exists! b\in B,\quad f(a)=b,
+\]
+and
+\[
+\forall b\in B\,\exists! a\in A,\quad f(a)=b.
+\]
+\hyperref[prf:bijection-unique-both-directions]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:bijective]{Bijective Function}
+  \item \hyperref[def:injective]{Injective Function}
+  \item \hyperref[def:surjective]{Surjective Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Many-Place Functional Relation)}
+\begin{definition}[Many-Place Functional Relation]\label{def:many-place-functional-relation}
+A relation $R\subseteq A_1\times\cdots\times A_n\times B$ is
+\emph{functional in the last coordinate} if
+\[
+\forall a_1\in A_1\cdots\forall a_n\in A_n\,
+\forall b_1,b_2\in B,
+\]
+\[
+\bigl((a_1,\ldots,a_n,b_1)\in R\land
+(a_1,\ldots,a_n,b_2)\in R\bigr)\Rightarrow b_1=b_2.
+\]
+When such a relation is also total in the first $n$ coordinates, it determines
+a function of $n$ variables, written $f(a_1,\ldots,a_n)=b$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:many-place-relation]{Many-Place Relation}
+  \item \hyperref[def:functional-relation]{Functional Relation}
+\end{itemize}
+\end{dependencies}
+
 % ---------------------------------------------------------
 % Special functions
 % ---------------------------------------------------------
-\begin{definitionbox}{Definition (Identity and Inclusion)}
-\begin{definition}[Identity and Inclusion]\label{def:identity}
+\begin{definitionbox}{Definition (Identity Function)}
+\begin{definition}[Identity Function]\label{def:identity}
 The \emph{identity function} on $A$ is $\id_A : A \to A$, $\id_A(a) = a$.
-
-If $A \subseteq B$, the \emph{inclusion map} is $\iota : A \hookrightarrow B$,
-$\iota(a) = a$.
 \end{definition}
 \end{definitionbox}
 
@@ -234,8 +472,21 @@ $\iota(a) = a$.
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition (Inclusion Map)}
+\begin{definition}[Inclusion Map]\label{def:inclusion}
+If $A \subseteq B$, the \emph{inclusion map} is $\iota : A \hookrightarrow B$,
+$\iota(a) = a$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
 \begin{remark*}[Identity vs.\ inclusion]
-\label{def:inclusion}
 Both send each element to itself, but the inclusion map has a strictly larger
 codomain when $A \subsetneq B$. The inclusion map is always injective.
 \end{remark*}
@@ -245,7 +496,9 @@ codomain when $A \subsetneq B$. The inclusion map is always injective.
 $f : A \to B$ is \emph{constant} if there exists $b_0 \in B$ with
 $f(a) = b_0$ for all $a \in A$.
 \end{definition}
-\end{definitionbox}\begin{remark*}[Standard quantified statement]
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
 $f$ is constant $\;\leftrightarrow\; \exists b_0 \in B,\; \forall a \in A,\; f(a) = b_0$.
 \end{remark*}
 

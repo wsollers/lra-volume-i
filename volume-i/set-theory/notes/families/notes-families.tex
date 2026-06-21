@@ -83,6 +83,34 @@ every $x$, making the intersection the entire universe $U$. This is normally
 left undefined or requires specifying a background universe explicitly.
 \end{remark*}
 
+\begin{theorembox}{Theorem (De Morgan's Laws for Indexed Families)}
+\begin{theorem}[De Morgan's Laws for Indexed Families]\label{thm:indexed-de-morgan}
+Let $\{A_i\}_{i\in I}$ be an indexed family of subsets of a universe $U$.
+Then
+\[
+U\setminus\bigcup_{i\in I}A_i
+=
+\bigcap_{i\in I}(U\setminus A_i).
+\]
+If $I\neq\varnothing$, then
+\[
+U\setminus\bigcap_{i\in I}A_i
+=
+\bigcup_{i\in I}(U\setminus A_i).
+\]
+\hyperref[prf:indexed-de-morgan]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
+  \item \hyperref[def:indexed-union]{Indexed Union}
+  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
+  \item \hyperref[def:complement]{Complement}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Pairwise Disjoint Family)}
 \begin{definition}[Pairwise Disjoint Family]\label{def:pairwise-disjoint}
 The family $\{A_i\}_{i \in I}$ is \emph{pairwise disjoint} if

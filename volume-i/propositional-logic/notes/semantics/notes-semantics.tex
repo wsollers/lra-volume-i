@@ -750,6 +750,70 @@ Truth tables are finite because every formula contains only finitely many propos
 \end{itemize}
 \end{dependencies}
 % END GENERATED ARTIFACT: thm:finite-truth-table-propositional-logic
+% BEGIN GENERATED ARTIFACT: def:unary-boolean-function-propositional-logic
+\begin{definitionbox}{Definition (Unary Boolean Function)}
+\begin{definition}[Unary Boolean Function]
+\label{def:unary-boolean-function-propositional-logic}
+A unary Boolean function is a function
+\[
+f:\mathbb{B}\to\mathbb{B}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Definition predicate reading]
+\[
+UnaryBooleanFunction(f)
+\]
+means that \(f\) takes one truth value as input and returns one truth value.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A unary Boolean function has one input row coordinate. It is the semantic shape of a one-place truth operation such as negation.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:truth-value-propositional-logic]{Truth Value}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:unary-boolean-function-propositional-logic
+% BEGIN GENERATED ARTIFACT: def:binary-boolean-function-propositional-logic
+\begin{definitionbox}{Definition (Binary Boolean Function)}
+\begin{definition}[Binary Boolean Function]
+\label{def:binary-boolean-function-propositional-logic}
+A binary Boolean function is a function
+\[
+f:\mathbb{B}^2\to\mathbb{B},
+\]
+equivalently a function
+\[
+f:\mathbb{B}\times\mathbb{B}\to\mathbb{B}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Definition predicate reading]
+\[
+BinaryBooleanFunction(f)
+\]
+means that \(f\) takes an ordered pair of truth values as input and returns one truth value.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A binary Boolean function assigns one output truth value to each of the four input rows
+\[
+(T,T),\quad (T,F),\quad (F,T),\quad (F,F).
+\]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:truth-value-propositional-logic]{Truth Value}
+  \item \hyperref[def:unary-boolean-function-propositional-logic]{Unary Boolean Function}
+\end{itemize}
+\end{dependencies}
+% END GENERATED ARTIFACT: def:binary-boolean-function-propositional-logic
 % BEGIN GENERATED ARTIFACT: def:boolean-function-propositional-logic
 \begin{definitionbox}{Definition (Boolean Function)}
 \begin{definition}[Boolean Function]
@@ -780,9 +844,16 @@ means that \(f\) takes \(n\) truth values as input and returns one truth value.
 Boolean functions are the abstract truth-functions that formulas may represent.
 \end{remark*}
 
+\begin{remark*}[Rows versus Boolean functions]
+An input to an \(n\)-ary Boolean function is a tuple
+\((b_1,\ldots,b_n)\in\mathbb{B}^n\). These tuples are the rows of the truth table, and there are \(2^n\) of them. The Boolean function is not a single row; it is the full rule assigning exactly one truth value in \(\mathbb{B}\) to every row.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:truth-value-propositional-logic]{Truth Value}
+  \item \hyperref[def:unary-boolean-function-propositional-logic]{Unary Boolean Function}
+  \item \hyperref[def:binary-boolean-function-propositional-logic]{Binary Boolean Function}
 \end{itemize}
 \end{dependencies}
 % END GENERATED ARTIFACT: def:boolean-function-propositional-logic

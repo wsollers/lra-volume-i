@@ -8,6 +8,12 @@
 % TOOLKIT
 % ---------------------------------------------------------
 
+\begin{remark*}[Geometric picture]
+A binary relation from $A$ to $B$ can be pictured as directed edges from the
+$A$-side to the $B$-side of a bipartite diagram. The converse reverses every
+edge, and composition follows two edges in series through an intermediate set.
+\end{remark*}
+
 \begin{definitionbox}{Definition (Ordered Pair)}
 \begin{definition}[Ordered Pair]\label{def:ordered-pair}
 Let $a$ and $b$ be sets. The \emph{ordered pair} $(a,b)$ is defined (Kuratowski)
@@ -97,3 +103,517 @@ ordered pairs, constructed using operations already available. Properties of
 relations can therefore be studied with ordinary set-theoretic reasoning.
 \end{remark*}
 
+\begin{definitionbox}{Definition (Domain of a Relation)}
+\begin{definition}[Domain of a Relation]\label{def:relation-domain}
+Let $R\subseteq A\times B$ be a relation. The \emph{domain} of $R$ is
+\[
+\operatorname{Dom}(R)
+\;:=\;
+\{\,a\in A\mid \exists b\in B,\ (a,b)\in R\,\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[ax:separation]{Axiom Schema of Separation}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Range of a Relation)}
+\begin{definition}[Range of a Relation]\label{def:relation-range}
+Let $R\subseteq A\times B$ be a relation. The \emph{range} of $R$ is
+\[
+\operatorname{Ran}(R)
+\;:=\;
+\{\,b\in B\mid \exists a\in A,\ (a,b)\in R\,\}.
+\]
+Tarski also calls this class the \emph{counter-domain} or \emph{converse domain}.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[ax:separation]{Axiom Schema of Separation}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Domain and range]
+The domain records the first coordinates that occur in a relation; the range
+records the second coordinates that occur.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Converse Relation)}
+\begin{definition}[Converse Relation]\label{def:converse-relation}
+If $R\subseteq A\times B$, the \emph{converse} of $R$ is the relation
+$R^{-1}\subseteq B\times A$ defined by
+\[
+(b,a)\in R^{-1}
+\;\Longleftrightarrow\;
+(a,b)\in R.
+\]
+Equivalently, $b\,R^{-1}\,a$ iff $aRb$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:ordered-pair]{Ordered Pair}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Identity Relation)}
+\begin{definition}[Identity Relation]\label{def:relation-identity}
+For a set $A$, the \emph{identity relation} on $A$ is
+\[
+\Delta_A
+\;:=\;
+\{\, (a,a)\mid a\in A\,\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:cartesian-product-rel]{Cartesian Product}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Composition of Relations)}
+\begin{definition}[Composition of Relations]\label{def:relation-composition}
+Let $R\subseteq A\times B$ and $S\subseteq B\times C$. The
+\emph{composition} $S\circ R\subseteq A\times C$ is defined by
+\[
+(a,c)\in S\circ R
+\;\Longleftrightarrow\;
+\exists b\in B,\; (a,b)\in R \text{ and } (b,c)\in S.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:cartesian-product-rel]{Cartesian Product}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Associativity of Relation Composition)}
+\begin{theorem}[Associativity of Relation Composition]\label{thm:relation-composition-assoc}
+Let $R\subseteq A\times B$, $S\subseteq B\times C$, and
+$T\subseteq C\times D$. Then
+\[
+T\circ(S\circ R)=(T\circ S)\circ R.
+\]
+\hyperref[prf:relation-composition-assoc]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For all $a\in A$ and $d\in D$, $(a,d)\in T\circ(S\circ R)$ iff there are
+$b\in B$ and $c\in C$ with $(a,b)\in R$, $(b,c)\in S$, and $(c,d)\in T$,
+which is exactly the membership condition for $(a,d)\in (T\circ S)\circ R$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation-composition]{Composition of Relations}
+  \item \hyperref[def:relation-equality]{Relation Equality}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Identity Laws for Relation Composition)}
+\begin{theorem}[Identity Laws for Relation Composition]\label{thm:relation-composition-id}
+Let $R\subseteq A\times B$. Then
+\[
+R\circ\Delta_A=R
+\quad\text{and}\quad
+\Delta_B\circ R=R.
+\]
+\hyperref[prf:relation-composition-id]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation-identity]{Identity Relation}
+  \item \hyperref[def:relation-composition]{Composition of Relations}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Null Relation)}
+\begin{definition}[Null Relation]\label{def:null-relation}
+For sets $A$ and $B$, the \emph{null relation} from $A$ to $B$ is
+$\varnothing\subseteq A\times B$. No element of $A$ is related to any element
+of $B$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[def:cartesian-product-rel]{Cartesian Product}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Universal Relation)}
+\begin{definition}[Universal Relation]\label{def:universal-relation}
+For sets $A$ and $B$, the \emph{universal relation} from $A$ to $B$ is
+$A\times B$ itself. Every element of $A$ is related to every element of $B$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:cartesian-product-rel]{Cartesian Product}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Extreme relations]
+The null relation and universal relation are the two extreme binary relations
+from $A$ to $B$.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Relation Inclusion)}
+\begin{definition}[Relation Inclusion]\label{def:relation-inclusion}
+Let $R,S\subseteq A\times B$. Relation inclusion is ordinary set inclusion:
+\[
+R\subseteq S
+\;\Longleftrightarrow\;
+\forall a\in A\,\forall b\in B,\ ((a,b)\in R\Rightarrow (a,b)\in S),
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Relation Equality)}
+\begin{definition}[Relation Equality]\label{def:relation-equality}
+Let $R,S\subseteq A\times B$. Relation equality is ordinary set equality:
+\[
+R=S
+\;\Longleftrightarrow\;
+R\subseteq S \text{ and } S\subseteq R.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:relation-inclusion]{Relation Inclusion}
+  \item \hyperref[def:set-equality]{Set Equality}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Union of Relations)}
+\begin{definition}[Union of Relations]\label{def:relation-union}
+Let $R,S\subseteq A\times B$. The \emph{union} $R\cup S$ is the relation with
+\[
+(a,b)\in R\cup S
+\;\Longleftrightarrow\;
+(a,b)\in R \text{ or } (a,b)\in S.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:union]{Union}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Intersection of Relations)}
+\begin{definition}[Intersection of Relations]\label{def:relation-intersection}
+Let $R,S\subseteq A\times B$. The \emph{intersection} $R\cap S$ is the relation
+with
+\[
+(a,b)\in R\cap S
+\;\Longleftrightarrow\;
+(a,b)\in R \text{ and } (a,b)\in S.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:intersection]{Intersection}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Difference of Relations)}
+\begin{definition}[Difference of Relations]\label{def:relation-difference}
+Let $R,S\subseteq A\times B$. The \emph{difference} $R\setminus S$ is the
+relation with
+\[
+(a,b)\in R\setminus S
+\;\Longleftrightarrow\;
+(a,b)\in R \text{ and } (a,b)\notin S.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:set-difference]{Set Difference}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Complement of a Relation)}
+\begin{definition}[Complement of a Relation]\label{def:relation-complement}
+Let $R\subseteq A\times B$. The \emph{complement} of $R$ relative to
+$A\times B$ is
+\[
+(A\times B)\setminus R.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:set-difference]{Set Difference}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Relation algebra operations]
+Relation inclusion, equality, union, intersection, difference, and complement
+are inherited from the corresponding set operations on subsets of $A\times B$.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Converse Laws for Relation Operations)}
+\begin{theorem}[Converse Laws for Relation Operations]\label{thm:relation-converse-laws}
+Let $R,S\subseteq A\times B$, let $T\subseteq B\times C$, and take complements
+relative to the indicated Cartesian products. Then
+\[
+(R^{-1})^{-1}=R,\qquad
+(T\circ R)^{-1}=R^{-1}\circ T^{-1},
+\]
+\[
+(R\cup S)^{-1}=R^{-1}\cup S^{-1},\qquad
+(R\cap S)^{-1}=R^{-1}\cap S^{-1},
+\]
+\[
+(R\setminus S)^{-1}=R^{-1}\setminus S^{-1},\qquad
+((A\times B)\setminus R)^{-1}=(B\times A)\setminus R^{-1}.
+\]
+\hyperref[prf:relation-converse-laws]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:converse-relation]{Converse Relation}
+  \item \hyperref[def:relation-composition]{Composition of Relations}
+  \item \hyperref[def:relation-union]{Union of Relations}
+  \item \hyperref[def:relation-intersection]{Intersection of Relations}
+  \item \hyperref[def:relation-difference]{Difference of Relations}
+  \item \hyperref[def:relation-complement]{Complement of a Relation}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Relation Composition and Boolean Operations)}
+\begin{theorem}[Relation Composition and Boolean Operations]\label{thm:relation-composition-boolean}
+Let $P,Q\subseteq A\times B$, $R\subseteq B\times C$, and
+$S,T\subseteq B\times C$. Then
+\[
+R\circ(P\cup Q)=(R\circ P)\cup(R\circ Q),
+\qquad
+(S\cup T)\circ P=(S\circ P)\cup(T\circ P).
+\]
+Also,
+\[
+R\circ(P\cap Q)\subseteq(R\circ P)\cap(R\circ Q),
+\qquad
+(S\cap T)\circ P\subseteq(S\circ P)\cap(T\circ P).
+\]
+The analogous formulas for difference and complement hold only as inclusions
+or under extra hypotheses; they are not general distributive laws.
+\hyperref[prf:relation-composition-boolean]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation-composition]{Composition of Relations}
+  \item \hyperref[def:relation-union]{Union of Relations}
+  \item \hyperref[def:relation-intersection]{Intersection of Relations}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Warning on relation composition]
+Relation composition distributes over unions on both sides. It does not
+generally distribute over intersections, differences, or complements. The
+reason is existential: a pair can lie in both composed relations using two
+different middle witnesses, even when no single witness satisfies both
+conditions at once.
+\end{remark*}
+
+\begin{remark*}[Relation algebra interaction table]
+\mbox{}\par\smallskip
+\small
+\begin{tabularx}{\textwidth}{l X X}
+\toprule
+\textbf{Operation} & \textbf{Converse} & \textbf{Composition} \\
+\midrule
+Union
+& $(R\cup S)^{-1}=R^{-1}\cup S^{-1}$
+& Distributes exactly on both sides \\
+Intersection
+& $(R\cap S)^{-1}=R^{-1}\cap S^{-1}$
+& Gives $\subseteq$ in general; equality needs extra hypotheses \\
+Difference
+& $(R\setminus S)^{-1}=R^{-1}\setminus S^{-1}$
+& No general distributive equality \\
+Complement
+& $((A\times B)\setminus R)^{-1}=(B\times A)\setminus R^{-1}$
+& No general distributive equality \\
+Composition
+& $(T\circ R)^{-1}=R^{-1}\circ T^{-1}$
+& Associative with identity relation $\Delta_A$ \\
+\bottomrule
+\end{tabularx}
+\end{remark*}
+
+\begin{definitionbox}{Definition (Transitive Closure)}
+\begin{definition}[Transitive Closure]\label{def:relation-transitive-closure}
+Let $R$ be a relation on $A$. The \emph{transitive closure} of $R$ is the
+smallest transitive relation on $A$ containing $R$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:transitive]{Transitive Relation}
+  \item \hyperref[def:relation-inclusion]{Relation Inclusion}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Equivalence Closure)}
+\begin{definition}[Equivalence Closure]\label{def:relation-equivalence-closure}
+Let $R$ be a relation on $A$. The \emph{equivalence closure} of $R$ is the
+smallest equivalence relation on $A$ containing $R$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:equivalence-rel]{Equivalence Relation}
+  \item \hyperref[def:relation-inclusion]{Relation Inclusion}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (One-to-Many Relation)}
+\begin{definition}[One-to-Many Relation]\label{def:one-to-many-relation}
+Let $R\subseteq A\times B$.
+$R$ is \emph{one-to-many} if some input is related to two distinct outputs:
+\[
+\exists a\in A\,\exists b_1,b_2\in B,\quad
+(a,b_1)\in R\land (a,b_2)\in R\land b_1\neq b_2.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Many-to-One Relation)}
+\begin{definition}[Many-to-One Relation]\label{def:many-to-one-relation}
+Let $R\subseteq A\times B$.
+$R$ is \emph{many-to-one} if two distinct inputs are related to a common output:
+\[
+\exists a_1,a_2\in A\,\exists b\in B,\quad
+(a_1,b)\in R\land (a_2,b)\in R\land a_1\neq a_2.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Many-to-Many Relation)}
+\begin{definition}[Many-to-Many Relation]\label{def:many-to-many-relation}
+Let $R\subseteq A\times B$.
+$R$ is \emph{many-to-many} if it is one-to-many and many-to-one.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:one-to-many-relation]{One-to-Many Relation}
+  \item \hyperref[def:many-to-one-relation]{Many-to-One Relation}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Relation cardinality patterns]
+The one-to-many, many-to-one, and many-to-many labels classify how many inputs
+and outputs can be connected by a relation.
+\end{remark*}
+
+\begin{remark*}[Why one-to-many is not functional]
+A one-to-many relation fails the determinacy condition needed for a function:
+one input admits at least two possible outputs. A many-to-one relation may
+still be a function, because different inputs are allowed to share an output.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Many-Place Relation)}
+\begin{definition}[Many-Place Relation]\label{def:many-place-relation}
+A \emph{ternary relation} among sets $A$, $B$, and $C$ is a subset of
+$A\times B\times C$. More generally, an $n$-place relation on
+$A_1,\ldots,A_n$ is a subset of
+\[
+A_1\times\cdots\times A_n.
+\]
+For example, betweenness in geometry is naturally a three-place relation, and
+the arithmetic statement $x+y=z$ is naturally a three-place relation among
+$x$, $y$, and $z$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:cartesian-product-rel]{Cartesian Product}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Tarski-style hierarchy]
+The hierarchy used in the next chapter is:
+\[
+\begin{aligned}
+\text{relation}
+&\longrightarrow
+\text{functional relation}
+\longrightarrow
+\text{function} \\
+&\longrightarrow
+\text{one-one or onto function}
+\longrightarrow
+\text{bijection}.
+\end{aligned}
+\]
+The first step adds determinacy; the second adds totality; the later steps
+control whether outputs are shared or missed.
+\end{remark*}

@@ -42,7 +42,7 @@ h \circ (g \circ f) = (h \circ g) \circ f.
 \end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
-$\forall a \in A:\; h(g(f(a))) = h(g(f(a)))$, i.e.\ $\forall f\!:\!A\!\to\!B,\; g\!:\!B\!\to\!C,\; h\!:\!C\!\to\!D,\; \forall a \in A:\; [h \circ (g \circ f)](a) = [(h \circ g) \circ f](a)$.
+$\forall f\!:\!A\!\to\!B,\; g\!:\!B\!\to\!C,\; h\!:\!C\!\to\!D,\; \forall a \in A:\; [h \circ (g \circ f)](a) = [(h \circ g) \circ f](a)$.
 \end{remark*}
 
 \begin{dependencies}
@@ -181,12 +181,24 @@ $\forall c \in C:\; (g \circ f)^{-1}(c) = f^{-1}(g^{-1}(c))$.
 % ---------------------------------------------------------
 % One-sided inverses
 % ---------------------------------------------------------
-\begin{definitionbox}{Definition (Left and Right Inverses)}
-\begin{definition}[Left and Right Inverses]\label{def:left-right-inverse}
+\begin{definitionbox}{Definition (Left Inverse)}
+\begin{definition}[Left Inverse]\label{def:left-inverse-function}
 Let $f : A \to B$.
-
 A \emph{left inverse} of $f$ is a function $g : B \to A$ with $g \circ f = \id_A$.
+\end{definition}
+\end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:identity]{Identity Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Right Inverse)}
+\begin{definition}[Right Inverse]\label{def:right-inverse-function}
+Let $f : A \to B$.
 A \emph{right inverse} (or \emph{section}) of $f$ is a function $h : B \to A$
 with $f \circ h = \id_B$.
 \end{definition}
@@ -199,6 +211,10 @@ with $f \circ h = \id_B$.
   \item \hyperref[def:identity]{Identity Function}
 \end{itemize}
 \end{dependencies}
+
+\begin{remark*}[One-sided inverses]
+Left inverses and right inverses are the two one-sided inverse notions.
+\end{remark*}
 
 \begin{theorembox}{Theorem (One-Sided Inverses and Function Properties)}
 \begin{theorem}[One-Sided Inverses and Function Properties]\label{thm:one-sided}
@@ -222,7 +238,8 @@ and $f$ is bijective.
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:composition]{Composition}
-  \item \hyperref[def:left-right-inverse]{Left and Right Inverses}
+  \item \hyperref[def:left-inverse-function]{Left Inverse}
+  \item \hyperref[def:right-inverse-function]{Right Inverse}
   \item \hyperref[def:injective]{Injective Function}
   \item \hyperref[def:surjective]{Surjective Function}
   \item \hyperref[def:bijective]{Bijective Function}
@@ -237,11 +254,23 @@ to the Axiom of Choice.
 % ---------------------------------------------------------
 % Restriction and Extension
 % ---------------------------------------------------------
-\begin{definitionbox}{Definition (Restriction and Extension)}
-\begin{definition}[Restriction and Extension]\label{def:restriction}
+\begin{definitionbox}{Definition (Restriction)}
+\begin{definition}[Restriction]\label{def:restriction}
 Let $f : A \to B$ and $C \subseteq A$. The \emph{restriction} of $f$ to $C$
 is $f|_C : C \to B$, $f|_C(a) = f(a)$ for all $a \in C$.
+\end{definition}
+\end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:domain]{Domain}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Extension)}
+\begin{definition}[Extension]\label{def:fn-extension}
 Let $A \subseteq A'$, and let $f : A \to B$. A function $g : A' \to B$ is an
 \emph{extension} of $f$ if $g|_A = f$.
 \end{definition}
@@ -251,12 +280,13 @@ Let $A \subseteq A'$, and let $f : A \to B$. A function $g : A' \to B$ is an
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:domain-codomain]{Domain and Codomain}
+  \item \hyperref[def:restriction]{Restriction}
+  \item \hyperref[def:domain]{Domain}
+  \item \hyperref[def:codomain]{Codomain}
 \end{itemize}
 \end{dependencies}
 
 \begin{remark*}[Extensions not unique]
-\label{def:fn-extension}
 An extension agrees with $f$ on all of $A$ but may be defined on a larger
 domain $A'$. Extensions are generally not unique; uniqueness requires additional
 constraints (such as continuity in analysis or linearity in algebra), leading to
@@ -326,8 +356,85 @@ Equality holds in (ii) and (iii) for all $S,T$ iff $f$ is injective.
 \end{itemize}
 \end{dependencies}
 
+\begin{theorembox}{Theorem (Image--Preimage Adjunction)}
+\begin{theorem}[Image--Preimage Adjunction]\label{thm:image-preimage-adjunction}
+Let $f:A\to B$, let $S\subseteq A$, and let $T\subseteq B$. Then
+\[
+S\subseteq f^{-1}(f(S)),
+\qquad
+f(f^{-1}(T))\subseteq T.
+\]
+Moreover, $S=f^{-1}(f(S))$ for every $S\subseteq A$ iff $f$ is injective, and
+$f(f^{-1}(T))=T$ for every $T\subseteq B$ iff $f$ is surjective.
+\hyperref[prf:image-preimage-adjunction]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:image-set]{Image of a Set}
+  \item \hyperref[def:preimage]{Preimage}
+  \item \hyperref[def:injective]{Injective Function}
+  \item \hyperref[def:surjective]{Surjective Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Images, preimages, and Boolean operations]
+\mbox{}\par\smallskip
+\small
+\begin{tabularx}{\textwidth}{l X X}
+\toprule
+\textbf{Operation} & \textbf{Preimage law, for $S,T\subseteq B$} & \textbf{Image law, for $C,D\subseteq A$} \\
+\midrule
+Union
+& $f^{-1}(S\cup T)=f^{-1}(S)\cup f^{-1}(T)$
+& $f(C\cup D)=f(C)\cup f(D)$ \\
+Intersection
+& $f^{-1}(S\cap T)=f^{-1}(S)\cap f^{-1}(T)$
+& $f(C\cap D)\subseteq f(C)\cap f(D)$; equality for all $C,D$ iff $f$ is injective \\
+Difference
+& $f^{-1}(S\setminus T)=f^{-1}(S)\setminus f^{-1}(T)$
+& $f(C\setminus D)\supseteq f(C)\setminus f(D)$; equality for all $C,D$ iff $f$ is injective \\
+Complement
+& $f^{-1}(B\setminus S)=A\setminus f^{-1}(S)$
+& In general, $f(A\setminus C)$ need not equal $B\setminus f(C)$ \\
+\bottomrule
+\end{tabularx}
+\end{remark*}
+
+\begin{remark*}[Composition and inverse interaction]
+\mbox{}\par\smallskip
+\small
+\begin{tabularx}{\textwidth}{l X X}
+\toprule
+\textbf{Construction} & \textbf{Set-operation interaction} & \textbf{Reference} \\
+\midrule
+Composition
+& If $f:A\to B$, $g:B\to C$, and $U\subseteq C$, then
+$(g\circ f)^{-1}(U)=f^{-1}(g^{-1}(U))$.
+& \hyperref[def:composition]{Composition}, \hyperref[def:preimage]{Preimage} \\
+Inverse function
+& If $f:A\to B$ is bijective, inverse images along $f^{-1}$ are ordinary
+preimages for the function $f^{-1}:B\to A$.
+& \hyperref[def:inverse]{Inverse Function}, \hyperref[thm:inverse-char]{Inverse Characterization} \\
+Inverse of composition
+& If $f$ and $g$ are bijective, then
+$(g\circ f)^{-1}=f^{-1}\circ g^{-1}$, so inverse order reverses composition.
+& \hyperref[thm:inverse-comp]{Inverse of a Composition} \\
+One-sided inverse
+& A left inverse detects injectivity; a right inverse detects surjectivity.
+These properties control when image inclusions become equalities.
+& \hyperref[thm:one-sided]{One-Sided Inverses} \\
+\bottomrule
+\end{tabularx}
+\end{remark*}
+
 \begin{remark*}[Asymmetry between images and preimages]
-Forward images preserve unions but generally not intersections or complements.
-This asymmetry between images and preimages is fundamental and explains why
-preimages appear more naturally in topology and measure theory.
+Preimages preserve union, intersection, difference, and complement exactly.
+Forward images preserve unions exactly, but generally do not preserve
+intersections, differences, or complements. The inclusions for intersections
+and differences become equalities uniformly when the function is injective.
+This asymmetry is fundamental and explains why preimages appear more naturally
+in topology and measure theory.
 \end{remark*}

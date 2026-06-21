@@ -531,6 +531,16 @@ environments:
   file: notes\semantics\notes-semantics.tex
   display_title: Finite Truth-Table Theorem
   proof_file: null
+- label: def:unary-boolean-function-propositional-logic
+  type: def
+  file: notes\semantics\notes-semantics.tex
+  display_title: Unary Boolean Function
+  proof_file: null
+- label: def:binary-boolean-function-propositional-logic
+  type: def
+  file: notes\semantics\notes-semantics.tex
+  display_title: Binary Boolean Function
+  proof_file: null
 - label: def:boolean-function-propositional-logic
   type: def
   file: notes\semantics\notes-semantics.tex

@@ -1,4 +1,4 @@
-\section{Relations}
+\section{Relations --- Quick Reference}
 
 % relations/index.tex
 
@@ -11,6 +11,35 @@
 Ordered pair     & $(a,b) := \{\{a\},\{a,b\}\}$; identity iff both coords equal  & \hyperref[def:ordered-pair]{$\downarrow$ Def} \\
 Cartesian product & $A \times B$: all ordered pairs from $A$ and $B$             & \hyperref[def:cartesian-product-rel]{$\downarrow$ Def} \\
 Relation         & Any subset $R \subseteq A \times B$                           & \hyperref[def:relation]{$\downarrow$ Def} \\
+Domain of $R$    & Inputs that occur in $R$                                      & \hyperref[def:relation-domain]{$\downarrow$ Def} \\
+Range of $R$     & Outputs that occur in $R$                                     & \hyperref[def:relation-range]{$\downarrow$ Def} \\
+Converse         & Reverse every ordered pair                                    & \hyperref[def:converse-relation]{$\downarrow$ Def} \\
+Identity relation & Diagonal relation $\Delta_A$                                 & \hyperref[def:relation-identity]{$\downarrow$ Def} \\
+Relation composition & Compose through an intermediate witness                  & \hyperref[def:relation-composition]{$\downarrow$ Def} \\
+\bottomrule
+\end{tabular}
+\end{toolkitbox}
+
+\begin{toolkitbox}{Relation Algebra and Classification --- Quick Reference}
+\small
+\begin{tabular}{l l l}
+\toprule
+\textbf{Concept} & \textbf{Meaning} & \textbf{Detail} \\
+\midrule
+Null relation       & $\varnothing$                                               & \hyperref[def:null-relation]{$\downarrow$ Def} \\
+Universal relation  & $A\times B$                                                 & \hyperref[def:universal-relation]{$\downarrow$ Def} \\
+Relation inclusion  & $R\subseteq S$ as set inclusion                             & \hyperref[def:relation-inclusion]{$\downarrow$ Def} \\
+Relation equality   & Mutual relation inclusion                                   & \hyperref[def:relation-equality]{$\downarrow$ Def} \\
+Union of relations  & Pair belongs to at least one relation                       & \hyperref[def:relation-union]{$\downarrow$ Def} \\
+Intersection        & Pair belongs to both relations                              & \hyperref[def:relation-intersection]{$\downarrow$ Def} \\
+Difference          & Pair belongs to first relation but not second               & \hyperref[def:relation-difference]{$\downarrow$ Def} \\
+Complement          & Pairs in $A\times B$ not in $R$                             & \hyperref[def:relation-complement]{$\downarrow$ Def} \\
+Converse laws       & Converse reverses composition and preserves Boolean operations & \hyperref[thm:relation-converse-laws]{$\downarrow$ Thm} \\
+Composition laws    & Associative; distributes over unions, not all Boolean operations & \hyperref[thm:relation-composition-boolean]{$\downarrow$ Thm} \\
+One-to-many         & One input has two distinct outputs                          & \hyperref[def:one-to-many-relation]{$\downarrow$ Def} \\
+Many-to-one         & Two distinct inputs share one output                        & \hyperref[def:many-to-one-relation]{$\downarrow$ Def} \\
+Many-to-many        & One-to-many and many-to-one phenomena both occur            & \hyperref[def:many-to-many-relation]{$\downarrow$ Def} \\
+Ternary relation    & Subset of $A\times B\times C$                               & \hyperref[def:many-place-relation]{$\downarrow$ Def} \\
 \bottomrule
 \end{tabular}
 \end{toolkitbox}
