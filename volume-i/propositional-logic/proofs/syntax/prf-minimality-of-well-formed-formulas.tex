@@ -24,15 +24,98 @@ Then
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for minimality-of-well-formed-formulas.
+We prove by structural induction on \(\varphi\in\WFF\) that
+\(\varphi\in S\).
+
+If \(\varphi\) is atomic, then \(\varphi=P\) for some
+\(P\in\Prop\). Since \(\Prop\subseteq S\), it follows that
+\(\varphi=P\in S\).
+
+Suppose \(\varphi=\neg\theta\), where \(\theta\in\WFF\). By the induction
+hypothesis, \(\theta\in S\). By the second hypothesis on \(S\),
+\(\neg\theta\in S\). Hence \(\varphi\in S\).
+
+Suppose \(\varphi=(\theta\circ\psi)\), where
+\(\theta,\psi\in\WFF\) and
+\[
+\circ\in\{\land,\lor,\to,\leftrightarrow\}.
+\]
+By the induction hypothesis, \(\theta\in S\) and \(\psi\in S\). By the
+third hypothesis on \(S\), \((\theta\circ\psi)\in S\). Hence
+\(\varphi\in S\).
+
+Therefore every \(\varphi\in\WFF\) belongs to \(S\), and so
+\[
+\WFF\subseteq S.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for minimality-of-well-formed-formulas.
+The hypotheses say that \(S\) contains the atomic formulas and is closed
+under the same formation rules used to build well-formed formulas. We show
+that no well-formed formula can escape \(S\).
+
+Proceed by structural induction on well-formed formulas. The induction claim
+is:
+\[
+\text{for every }\varphi\in\WFF,\quad \varphi\in S.
+\]
+
+\emph{Base case.} Suppose \(\varphi\) is atomic. Then
+\[
+\varphi=P
+\]
+for some propositional variable \(P\in\Prop\). Since \(\Prop\subseteq S\),
+we have \(P\in S\). Therefore \(\varphi\in S\).
+
+\emph{Negation step.} Suppose \(\varphi\) is obtained by the negation
+formation rule. Then
+\[
+\varphi=\neg\theta
+\]
+for some \(\theta\in\WFF\). By the induction hypothesis, the smaller formula
+\(\theta\) already belongs to \(S\). The second hypothesis on \(S\) says that
+whenever a formula belongs to \(S\), its negation also belongs to \(S\). Hence
+\[
+\neg\theta\in S.
+\]
+Since \(\varphi=\neg\theta\), this gives \(\varphi\in S\).
+
+\emph{Binary connective step.} Suppose \(\varphi\) is obtained by a binary
+connective formation rule. Then
+\[
+\varphi=(\theta\circ\psi),
+\]
+where \(\theta,\psi\in\WFF\) and
+\[
+\circ\in\{\land,\lor,\to,\leftrightarrow\}.
+\]
+By the induction hypothesis,
+\[
+\theta\in S
+\qquad\text{and}\qquad
+\psi\in S.
+\]
+The third hypothesis on \(S\) says that \(S\) is closed under each of the
+binary connectives \(\land,\lor,\to,\leftrightarrow\). Therefore
+\[
+(\theta\circ\psi)\in S.
+\]
+Since \(\varphi=(\theta\circ\psi)\), we have \(\varphi\in S\).
+
+The base case, negation step, and binary connective step cover every way a
+well-formed formula is built. By structural induction, every member of
+\(\WFF\) belongs to \(S\). Thus
+\[
+\WFF\subseteq S.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+The proof is structural induction following the grammar for \(\WFF\). The
+base case uses \(\Prop\subseteq S\). The induction steps use the two closure
+assumptions on \(S\).
 \end{remark*}
 
 \begin{dependencies}

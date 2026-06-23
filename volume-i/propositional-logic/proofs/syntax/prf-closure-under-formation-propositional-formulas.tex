@@ -28,16 +28,67 @@ then
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for closure-under-formation-propositional-formulas.
+By the recursive definition of \(\WFF\), the negation formation rule says
+that whenever \(\varphi\in\WFF\), the formula \(\neg\varphi\) also belongs
+to \(\WFF\). Hence
+\[
+\varphi\in\WFF
+\quad\Longrightarrow\quad
+\neg\varphi\in\WFF.
+\]
+The same definition includes the binary connective formation rule: if
+\(\varphi,\psi\in\WFF\) and
+\[
+\circ\in\{\land,\lor,\to,\leftrightarrow\},
+\]
+then the composite formula \((\varphi\circ\psi)\) belongs to \(\WFF\).
+These are exactly the two closure assertions, so \(\WFF\) is closed under
+the propositional formation rules.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for closure-under-formation-propositional-formulas.
+We prove each formation rule separately.
+
+First suppose that \(\varphi\in\WFF\). One of the clauses in the definition
+of a well-formed formula is the negation clause:
+\[
+\text{if } \theta\in\WFF,\text{ then } \neg\theta\in\WFF.
+\]
+Applying this clause with \(\theta=\varphi\) gives
+\[
+\neg\varphi\in\WFF.
+\]
+
+Now suppose that \(\varphi,\psi\in\WFF\), and let
+\[
+\circ\in\{\land,\lor,\to,\leftrightarrow\}.
+\]
+Another clause in the definition of \(\WFF\) is the binary connective
+clause:
+\[
+\text{if } \theta,\eta\in\WFF
+\text{ and }
+\bullet\in\{\land,\lor,\to,\leftrightarrow\},
+\text{ then } (\theta\bullet\eta)\in\WFF.
+\]
+Applying this clause with
+\[
+\theta=\varphi,\qquad \eta=\psi,\qquad \bullet=\circ
+\]
+gives
+\[
+(\varphi\circ\psi)\in\WFF.
+\]
+
+Since the formulas \(\varphi\), \(\psi\), and the connective \(\circ\) were
+arbitrary subject to the stated hypotheses, both required closure properties
+hold.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-
+This is a definition-unpacking proof. No induction is needed: the lemma only
+uses the forward direction of the formation rules that define \(\WFF\).
 \end{remark*}
 
 \begin{dependencies}
