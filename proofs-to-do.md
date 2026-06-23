@@ -1,9 +1,10 @@
 # Volume I Proofs To Do
 
 Proof-writing order is dependency-first among active TODO proof labels, with the generated proof/status report order used as the stable tie-breaker.
-Use the empty `()` marker to record completion, for example `(✓)`.
+Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
-Total proofs to do: 129
+Open proofs to do: 127
+Completed in this tracker: 2
 
 1. () `thm:counting-boolean-functions` — **Counting Boolean Functions**
    > **Statement.** There are exactly
@@ -12,7 +13,7 @@ Total proofs to do: 129
    > \]
    > Boolean functions \(\mathbb{B}^n\to\mathbb{B}\).
 
-2. () `lem:closure-under-formation-propositional-formulas` — **Closure Under Formation**
+2. (✅) `lem:closure-under-formation-propositional-formulas` — **Closure Under Formation**
    > **Statement.** The set \(\WFF\) is closed under the propositional formation rules.
    >
    > That is, if \(\varphi\in\WFF\), then
@@ -28,7 +29,7 @@ Total proofs to do: 129
    > (\varphi\circ\psi)\in\WFF.
    > \]
 
-3. () `thm:minimality-of-well-formed-formulas` — **Minimality of Well-Formed Formulas**
+3. (✅) `thm:minimality-of-well-formed-formulas` — **Minimality of Well-Formed Formulas**
    > **Statement.** Let \(S\) be a set of strings over the propositional alphabet. Suppose:
    > - \(\Prop\subseteq S\);
    > - if \(\varphi\in S\), then \(\neg\varphi\in S\);
