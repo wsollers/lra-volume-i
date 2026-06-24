@@ -9,7 +9,7 @@ Generated from:
 - docs/governance/repo-overlays/lra-volume.md
 
 Regenerate from lra-governance.
-Emergency downstream edits must be ported upstream before the next sync.
+Emergency downstream edits must be ported upstream.
 -->
 
 # Agent Instructions
@@ -17,6 +17,13 @@ Emergency downstream edits must be ported upstream before the next sync.
 ## Global Agent Rules
 
 - Treat generated instruction files as derived artifacts.
+- Canonical governance, workflows, validators, schemas, prompts, and shared
+  scripts live in `../lra-governance`, or `F:/repos/lra-governance` on the
+  local Windows checkout. Use `LRA_GOVERNANCE_ROOT` when the checkout is
+  elsewhere.
+- Do not edit copied governance files in this repo. Leaf governance tools must
+  be wrappers that delegate to `lra-governance` and fail clearly if the
+  canonical checkout is unavailable.
 - Follow the owning repository boundary for every task.
 - Do not include secrets, credentials, tokens, or machine-local private values.
 - Do not modify mathematical content during governance or wrapper-generation tasks.
@@ -33,7 +40,7 @@ Owned concerns:
 
 - volume content only,
 - Overleaf-ready volume roots,
-- local copies of synced `common/`,
+- external `lra-common` consumed by the build environment,
 - the volume-owned bibliography shard,
 - volume-to-monorepo content sync.
 
@@ -45,8 +52,7 @@ extraction workflow rules.
 ## Agent Scope
 
 Volume agents may edit only the owning `volume-N/` content unless a task
-explicitly says otherwise. They should not edit synced `common/`,
-`bibliography/`, generated governance wrappers, or canonical YAML.
+explicitly says otherwise. They should not edit copied `common/`, generated governance wrappers, or canonical YAML. Shared LaTeX infrastructure belongs in `lra-common` and is supplied to builds by the Docker image or an explicit checkout.
 
 Volume tasks should preserve Overleaf readiness and monorepo sync shape.
 
