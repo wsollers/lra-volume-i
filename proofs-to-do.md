@@ -1050,12 +1050,12 @@ Completed in this tracker: 2
    > \]
    > In particular, if $\Phi$ is a theorem about all posets, then so is $\Phi^*$.
 
-118. () `prop:induced-preorder` — **$ _f$ is always a preorder**
+118. () `prop:induced-preorder` — **$\leq_f$ is always a preorder**
    > **Statement.**
    > For any function $f : A \to B$ and partial order $(B, \leq')$, the relation
    > $\leq_f$ is a preorder on $A$: it is reflexive and transitive.
 
-119. () `prop:induced-poset` — **$ _f$ is a partial order iff $f$ is injective**
+119. () `prop:induced-poset` — **$\leq_f$ is a partial order iff $f$ is injective**
    > **Statement.**
    > Let $(B, \leq')$ be a partially ordered set and $f : A \to B$.
    > The induced order $\leq_f$ is a partial order on $A$ if and only if
@@ -1094,7 +1094,7 @@ Completed in this tracker: 2
    > supremum, then every nonempty bounded-below subset of $(A,\leq)$ has an
    > infimum.
 
-125. () `thm:Q-countable` — **$ $ is countable**
+125. () `thm:Q-countable` — **$\mathbb{Q}$ is countable**
    > **Statement.**
    > The set $\mathbb{Q}$ of rational numbers is countable.
 
@@ -1103,7 +1103,7 @@ Completed in this tracker: 2
    > Let $\{A_n\}_{n \in \mathbb{N}}$ be a countable family of countable sets.
    > Then $\bigcup_{n=1}^{\infty} A_n$ is countable.
 
-127. () `thm:R-uncountable` — **$ $ is uncountable**
+127. () `thm:R-uncountable` — **$\mathbb{R}$ is uncountable**
    > **Statement.**
    > The set $\mathbb{R}$ of real numbers is not countable.
 
@@ -1112,7 +1112,7 @@ Completed in this tracker: 2
    > For any set $A$, there is no surjection $A \to \mathcal{P}(A)$. In
    > particular, $|A| < |\mathcal{P}(A)|$.
 
-129. () `thm:schroder-bernstein` — **Schr\" o der--Bernstein Theorem**
+129. () `thm:schroder-bernstein` — **Schr\"{o}der--Bernstein Theorem**
    > **Statement.**
    > If $|A| \leq |B|$ and $|B| \leq |A|$, then $A \sim B$.
    >
