@@ -1,0 +1,11 @@
+subject: relations
+display_title: Relations
+volume: volume-i
+status: active
+dependencies:
+  prior: set-theory
+  next: functions
+path: volume-i/book-sets/relations
+book: book-sets
+environments: []
+proof_files: []

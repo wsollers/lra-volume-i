@@ -1,0 +1,11 @@
+subject: orderings
+display_title: Orderings
+volume: volume-i
+status: active
+dependencies:
+  prior: functions
+  next: cardinality
+path: volume-i/book-sets/orderings
+book: book-sets
+environments: []
+proof_files: []

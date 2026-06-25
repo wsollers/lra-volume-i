@@ -1,0 +1,10 @@
+subject: lean
+display_title: Lean 4 Formalization
+volume: volume-i
+status: generated-stub
+dependencies:
+  prior: ''
+  next: ''
+path: volume-i/appendix-lean
+environments: []
+proof_files: []

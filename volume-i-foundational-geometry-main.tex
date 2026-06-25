@@ -1,0 +1,62 @@
+% =========================================================
+% volume-i-foundational-geometry-main.tex --- Standalone book root
+% Volume I: Logic, Sets, and Proof / Foundational Geometry
+% =========================================================
+\documentclass[12pt, a4paper]{report}
+\input{common/volume-preamble}
+
+\begin{document}
+\ExplSyntaxOff
+\renewcommand{\familydefault}{\rmdefault}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\centering
+\vspace*{3.5cm}
+
+{\Large\scshape Volume I\par}
+\vspace{0.35cm}
+{\large Logic, Sets, and Proof\par}
+
+\vspace{1.4cm}
+
+{\Huge\bfseries Foundational Geometry\par}
+
+\vspace{0.6cm}
+{\large\itshape Self-Study Notes\par}
+
+\vfill
+
+{\large William Sollers\par}
+\vspace{0.35cm}
+{\large \today\par}
+
+\vfill
+
+{\large\scshape From Cantor to Ito\par}
+\end{titlepage}
+
+\clearpage
+\thispagestyle{plain}
+\chapter*{Front Matter}
+\noindent\textbf{Series.} From Cantor to Ito\\[0.5em]
+\textbf{Volume.} Volume I: Logic, Sets, and Proof\\[0.5em]
+\textbf{Book.} Foundational Geometry
+
+\clearpage
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\input{volume-i/book-geometry/index}
+
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{%
+  bibliography/volume-i-foundations%
+}
+
+\printindex[tech]
+\printindex[dep]
+
+\end{document}

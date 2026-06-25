@@ -1,0 +1,11 @@
+volume: volume-i
+chapter:
+  volume: 5
+  topic: geometry
+  title: Trigonometry
+  path: volume-i/book-geometry/trigonometry
+
+entries: []
+
+book: book-geometry
+path: volume-i/book-geometry/trigonometry

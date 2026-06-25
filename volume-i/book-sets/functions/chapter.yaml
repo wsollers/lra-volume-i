@@ -1,0 +1,11 @@
+subject: functions
+display_title: Functions
+volume: volume-i
+status: active
+dependencies:
+  prior: relations
+  next: orderings
+path: volume-i/book-sets/functions
+book: book-sets
+environments: []
+proof_files: []
