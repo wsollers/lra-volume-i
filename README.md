@@ -1,34 +1,29 @@
 # lra-volume-i
 
-**Volume I: Mathematical Logic** — Overleaf-ready standalone repository.
-
-Part of the [Learning Real Analysis](https://github.com/wsollers/Learning-Real-Analysis) project.
+**Volume I: Logic, Sets, and Proof** — Overleaf-ready standalone repository.
 
 ## Structure
 
-```
-main.tex              — volume root (Overleaf main document)
-common/               — shared LaTeX infrastructure (synced from lra-common)
-bibliography/         — shared bibliography (synced from monorepo)
+```text
+volume-i.tex          — full-volume root (Overleaf main document)
+volume-i-<book>.tex   — individual book roots
+common/               — shared LaTeX infrastructure supplied by lra-common; ignored here
+bibliography/         — per-book bibliography shards
 volume-i/             — all LaTeX content for this volume
-  index.tex
-  <chapter>/
-    index.tex
-    chapter.yaml
-    notes/
-    proofs/
 ```
 
 ## Overleaf
 
-Link this repo to Overleaf via **Menu → GitHub**. The main document is `main.tex`.
+Upload or checkout `common/` beside this repository's TeX roots, then set the main document to `volume-i.tex` for the full volume or to one of the book roots:
 
-## common/ sync
+```text
+volume-i-foundational-geometry.tex, volume-i-mathematical-logic-and-proof.tex, volume-i-set-theory.tex
+```
 
-The `common/` directory is automatically kept in sync with `lra-common` via a GitHub Actions workflow. Do not edit files in `common/` here — edit in `lra-common` instead.
+`common/` is ignored by git in this volume repo; edit shared infrastructure in `lra-common`.
 
 ## Building locally
 
 ```powershell
-latexmk -lualatex main.tex
+python F:\repos\lra-governance\tools\governance\build_volume_docker.py --root F:\repos\lra-volume-i --common-root F:\repos\lra-common
 ```
