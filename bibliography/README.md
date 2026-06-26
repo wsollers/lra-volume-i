@@ -1,16 +1,19 @@
 # Volume Bibliography
 
-This directory is owned by $repo.
+This directory is owned by `lra-volume-i`.
 
-The standalone volume build uses:
+Bibliography shards are book-owned and used directly by this volume repository. They are not copied to a monorepo or to `lra-common`.
 
-- $bib
+Current shards:
 
-Add entries needed by this volume to that shard, then run:
+- `volume-i-foundational-geometry.bib`
+- `volume-i-mathematical-logic-and-proof.bib`
+- `volume-i-set-theory.bib`
 
-`powershell
+Add entries only to the shard for the owning book root, then run:
+
+```powershell
 python scripts/check_bibliography.py --bib-dir bibliography
-`
+```
 
-The volume sync workflow copies this shard into Learning-Real-Analysis/bibliography/.
 Do not add unrelated volume bibliography files here.
