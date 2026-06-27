@@ -1,6 +1,9 @@
 % =========================================================
 % volume-i-mathematical-logic-and-proof.tex --- Standalone book root
 % Volume I: Logic, Sets, and Proof / Mathematical Logic and Proof
+%
+% Build (local): latexmk -lualatex volume-i-mathematical-logic-and-proof.tex
+% Build (Overleaf): Menu $\to$ Main Document $\to$ volume-i-mathematical-logic-and-proof.tex
 % =========================================================
 \documentclass[12pt, a4paper]{report}
 \input{common/volume-preamble}
@@ -10,40 +13,10 @@
 \renewcommand{\familydefault}{\rmdefault}
 
 \pagenumbering{roman}
-\begin{titlepage}
-\centering
-\vspace*{3.5cm}
+\input{volume-i/frontmatter}
+\LRAFrontMatterPage{From Cantor to Ito}{Logic, Sets, and Proof}{Mathematical Logic and Proof}{Gottlob Frege}{1848-1925}{images/frege.png}
+\input{common/dedication}
 
-{\Large\scshape Volume I\par}
-\vspace{0.35cm}
-{\large Logic, Sets, and Proof\par}
-
-\vspace{1.4cm}
-
-{\Huge\bfseries Mathematical Logic and Proof\par}
-
-\vspace{0.6cm}
-{\large\itshape Self-Study Notes\par}
-
-\vfill
-
-{\large William Sollers\par}
-\vspace{0.35cm}
-{\large \today\par}
-
-\vfill
-
-{\large\scshape From Cantor to Ito\par}
-\end{titlepage}
-
-\clearpage
-\thispagestyle{plain}
-\chapter*{Front Matter}
-\noindent\textbf{Series.} From Cantor to Ito\\[0.5em]
-\textbf{Volume.} Volume I: Logic, Sets, and Proof\\[0.5em]
-\textbf{Book.} Mathematical Logic and Proof
-
-\clearpage
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}

@@ -1,5 +1,5 @@
 % =========================================================
-% volume-i.tex --- Standalone root for Volume I
+% volume-i.tex --- Standalone volume root
 % Volume I: Logic, Sets, and Proof
 %
 % Build (local): latexmk -lualatex volume-i.tex
@@ -13,10 +13,10 @@
 \renewcommand{\familydefault}{\rmdefault}
 
 \pagenumbering{roman}
-\input{volume-i/cantor-quote}
-\input{volume-i/volume-i-title}
+\input{volume-i/frontmatter}
+\LRAFrontMatterPage{From Cantor to Ito}{Logic, Sets, and Proof}{}{Georg Cantor}{1845-1918}{images/cantor.png}
+\input{common/dedication}
 
-\clearpage
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}
@@ -27,9 +27,9 @@
 \clearpage
 \bibliographystyle{plainnat}
 \bibliography{%
-  bibliography/volume-i-foundational-geometry,%
   bibliography/volume-i-mathematical-logic-and-proof,%
-  bibliography/volume-i-set-theory%
+  bibliography/volume-i-set-theory,%
+  bibliography/volume-i-foundational-geometry
 }
 
 \printindex[tech]
