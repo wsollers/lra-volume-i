@@ -10,9 +10,36 @@
 
 \begin{definitionbox}{Definition (Ordered Set)}
 \begin{definition}[Ordered Set]\label{def:ordered-set}
-An \emph{ordered set} (or \emph{partially ordered set}, \emph{poset}) is a
-pair $(A,\leq)$ where $\leq$ is a partial order on $A$: a relation that is
-reflexive, antisymmetric, and transitive.
+An \emph{ordered set} is a set equipped with an order relation. Unless
+explicitly qualified, ``ordered set'' means a
+\hyperref[def:partially-ordered-set]{partially ordered set}, and its relation
+is written $\leq$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:partial-order]{Partial Order}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Genus and species]
+``Ordered set'' is a genus term: a species is fixed by specifying which order
+relation the carrier carries --- a \hyperref[def:partial-order]{partial order}
+gives a \hyperref[def:partially-ordered-set]{poset}, a
+\hyperref[def:total-order]{total order} gives a
+\hyperref[def:totally-ordered-set]{toset}, and so on. The order relations
+themselves (preorder, partial order, total order) are defined once, in the
+Relations chapter; this chapter studies the \emph{structures} built on them and
+never restates a relation's axioms, so the two chapters cannot drift apart.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Partially Ordered Set)}
+\begin{definition}[Partially Ordered Set]\label{def:partially-ordered-set}
+A \emph{partially ordered set} is a pair $(A,\leq)$ where $A$ is a set and
+$\leq$ is a \hyperref[def:partial-order]{partial order} on $A$ (a relation that
+is reflexive, antisymmetric, and transitive).
 \end{definition}
 \end{definitionbox}
 
@@ -23,9 +50,28 @@ reflexive, antisymmetric, and transitive.
 \end{dependencies}
 
 \begin{remark*}[English reading]
-An ordered set is a set equipped with a specified way to compare elements,
-but without requiring all pairs to be comparable.
+A partially ordered set is a set with a specified way to compare elements that
+need not make every pair comparable.
 \end{remark*}
+
+\begin{definitionbox}{Definition (Order-Structure Synonyms)}
+\begin{definition}[Order-Structure Synonyms]\label{def:order-synonyms}
+The following short forms abbreviate their full names and carry no independent
+mathematical content; each resolves to the canonical structure it names:
+\begin{itemize}
+  \item \emph{poset}\label{def:poset} $:=$
+        \hyperref[def:partially-ordered-set]{partially ordered set}.
+  \item \emph{toset}\label{def:toset}, \emph{loset}\label{def:loset},
+        \emph{linearly ordered set} $:=$
+        \hyperref[def:totally-ordered-set]{totally ordered set}
+        (total order and linear order coincide, so these name one structure).
+  \item \emph{woset}\label{def:woset} $:=$
+        \hyperref[def:well-ordered-set]{well-ordered set}.
+\end{itemize}
+\end{definition}
+\end{definitionbox}
+
+\NoLocalDependencies
 
 \begin{definitionbox}{Definition (Strict Order)}
 \begin{definition}[Strict Order]\label{def:strict-order}
@@ -53,7 +99,8 @@ same information.
 \begin{definitionbox}{Definition (Comparable and Incomparable Elements)}
 \begin{definition}[Comparable and Incomparable Elements]\label{def:comparable}
 In an ordered set $(A,\leq)$, elements $a,b \in A$ are \emph{comparable} if
-$a \leq b$ or $b \leq a$; they are \emph{incomparable} if neither holds.
+$a \leq b$ or $b \leq a$; they are \emph{incomparable}
+\label{def:incomparable} if neither holds.
 \end{definition}
 \end{definitionbox}
 
@@ -69,15 +116,26 @@ Incomparable elements can only occur in partial orders. In a total order,
 every pair is comparable by definition.
 \end{remark*}
 
-\begin{definitionbox}{Definition (Total / Linear Order)}
-\begin{definition}[Total / Linear Order]\label{def:linear-order}
-An ordered set $(A,\leq)$ is a \emph{total order} (or \emph{linear order})
-if every pair of elements is comparable:
+\begin{definitionbox}{Definition (Totally Ordered Set)}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
+  \item \hyperref[def:total-order]{Total Order}
+  \item \hyperref[def:comparable]{Comparable and Incomparable Elements}
+\end{itemize}
+\end{dependencies}
+\begin{definition}[Totally Ordered Set]\label{def:totally-ordered-set}\label{def:linear-order}
+A \emph{totally ordered set} (or \emph{linearly ordered set}) is a pair
+$(A,\leq)$ where $\leq$ is a \hyperref[def:total-order]{total order} on $A$ ---
+equivalently, a partially ordered set in which every pair of elements is
+\hyperref[def:comparable]{comparable}:
 \[
 \forall a,b \in A,\; a \leq b \lor b \leq a.
 \]
 \end{definition}
-\end{definitionbox}\begin{remark*}[Examples]
+\end{definitionbox}
+
+\begin{remark*}[Examples]
 $(\mathbb{R},\leq)$ is a total order. $(\mathcal{P}(A), \subseteq)$ is a
 partial order that is generally not total.
 \end{remark*}
@@ -87,19 +145,14 @@ partial order that is generally not total.
 % ---------------------------------------------------------
 \begin{definitionbox}{Definition (Upper and Lower Bounds)}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:ordered-set]{Ordered Set}
-  \item \hyperref[def:comparable]{Comparable and Incomparable Elements}
-  \item \hyperref[def:total-order]{Total Order}
-\end{itemize}
-\end{dependencies}
 \begin{definition}[Upper and Lower Bounds]\label{def:bounds}
 Let $(A,\leq)$ be an ordered set and $S \subseteq A$.
 
-An element $u \in A$ is an \emph{upper bound} of $S$ if $\forall s \in S,\; s \leq u$.
+An element $u \in A$ is an \emph{upper bound}\label{def:upper-bound} of $S$
+if $\forall s \in S,\; s \leq u$.
 
-An element $\ell \in A$ is a \emph{lower bound} of $S$ if $\forall s \in S,\; \ell \leq s$.
+An element $\ell \in A$ is a \emph{lower bound}\label{def:lower-bound} of $S$
+if $\forall s \in S,\; \ell \leq s$.
 \end{definition}
 \end{definitionbox}
 
@@ -115,20 +168,69 @@ Bounds need not exist and need not be unique. They need not lie in $S$ itself.
 Bounds are central to the definition of completeness for ordered fields.
 \end{remark*}
 
-\begin{propositionbox}{Definition (Minimal, Maximal, Least, Greatest Elements)}
-\label{def:min-max}
-Let $S \subseteq A$ in an ordered set $(A,\leq)$.
+\begin{definitionbox}{Definition (Minimal Element)}
+\begin{definition}[Minimal Element]\label{def:order-minimal-element}\label{def:min-max}
+Let $S \subseteq A$ in an ordered set $(A,\leq)$. An element $m \in S$ is a
+\emph{minimal element} of $S$ if there is no $s \in S$ with $s < m$.
+\end{definition}
+\end{definitionbox}
 
-$m \in S$ is a \emph{minimal element} of $S$ if $\nexists s \in S$ with $s < m$.
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:strict-order]{Strict Order}
+\end{itemize}
+\end{dependencies}
 
-$M \in S$ is a \emph{maximal element} of $S$ if $\nexists s \in S$ with $M < s$.
+\begin{definitionbox}{Definition (Maximal Element)}
+\begin{definition}[Maximal Element]\label{def:order-maximal-element}
+Let $S \subseteq A$ in an ordered set $(A,\leq)$. An element $M \in S$ is a
+\emph{maximal element} of $S$ if there is no $s \in S$ with $M < s$.
+\end{definition}
+\end{definitionbox}
 
-\smallskip
-\label{def:least-greatest}
-$\ell \in S$ is the \emph{least element} if $\forall s \in S,\; \ell \leq s$.
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:strict-order]{Strict Order}
+\end{itemize}
+\end{dependencies}
 
-$g \in S$ is the \emph{greatest element} if $\forall s \in S,\; s \leq g$.
-\end{propositionbox}
+\begin{definitionbox}{Definition (Least Element)}
+\begin{definition}[Least Element]\label{def:order-least-element}\label{def:least-greatest}
+Let $S \subseteq A$ in an ordered set $(A,\leq)$. An element $\ell \in S$ is
+the \emph{least element} of $S$ if
+\[
+\forall s \in S,\; \ell \leq s.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Greatest Element)}
+\begin{definition}[Greatest Element]\label{def:order-greatest-element}
+Let $S \subseteq A$ in an ordered set $(A,\leq)$. An element $g \in S$ is
+the \emph{greatest element} of $S$ if
+\[
+\forall s \in S,\; s \leq g.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Minimal vs.\ least]
 A \emph{least} element is below every element of $S$; it must be unique if it
@@ -139,20 +241,40 @@ may be many. Every least element is minimal, but not conversely.
 % ---------------------------------------------------------
 % Order maps and isomorphisms
 % ---------------------------------------------------------
-\begin{propositionbox}{Definition (Order-Preserving Map and Isomorphism)}
-\label{def:order-pres}
-Let $(M,\leq)$ and $(M',\leq')$ be partially ordered sets.
-
-A function $f : M \to M'$ is \emph{order-preserving} (or \emph{monotone}) if
+\begin{definitionbox}{Definition (Order-Preserving Map)}
+\begin{definition}[Order-Preserving Map]\label{def:order-preserving-map}\label{def:order-pres}
+Let $(M,\leq)$ and $(M',\leq')$ be partially ordered sets. A function
+$f : M \to M'$ is \emph{order-preserving} (or \emph{monotone}) if
 \[
 \forall a,b \in M,\quad a \leq b \;\Longrightarrow\; f(a) \leq' f(b).
 \]
+\end{definition}
+\end{definitionbox}
 
-$f$ is an \emph{order isomorphism}\label{def:order-iso} if it is bijective and
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
+  \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Order Isomorphism)}
+\begin{definition}[Order Isomorphism]\label{def:order-isomorphism}\label{def:order-iso}
+Let $(M,\leq)$ and $(M',\leq')$ be partially ordered sets. A function
+$f : M \to M'$ is an \emph{order isomorphism} if it is bijective and
 \[
 \forall a,b \in M,\quad a \leq b \;\Longleftrightarrow\; f(a) \leq' f(b).
 \]
-\end{propositionbox}
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:bijective]{Bijective Function}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[Order-isomorphic posets]
 An order isomorphism preserves and reflects the order structure exactly,
@@ -165,9 +287,10 @@ identical from the order-theoretic viewpoint.
 % Well-order
 % ---------------------------------------------------------
 \begin{definitionbox}{Definition (Well-Ordered Set)}
-\begin{definition}[Well-Ordered Set]\label{def:well-order}
-An ordered set $(A,<)$ is \emph{well-ordered} if every nonempty subset
-$S \subseteq A$ has a least element:
+\begin{definition}[Well-Ordered Set]\label{def:well-ordered-set}\label{def:well-order}
+A \hyperref[def:totally-ordered-set]{totally ordered set} $(A,\leq)$ is
+\emph{well-ordered} if every nonempty subset $S \subseteq A$ has a least
+element:
 \[
 \forall S \subseteq A,\;
 \bigl(S \neq \varnothing \;\Rightarrow\; \exists m \in S \text{ s.t.\ }
@@ -178,9 +301,8 @@ m \leq s \;\forall s \in S\bigr).
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:totally-ordered-set]{Totally Ordered Set}
   \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:total-order]{Total Order}
 \end{itemize}
 \end{dependencies}
 
@@ -207,9 +329,10 @@ well-ordered set, not merely its cardinality.
 % ---------------------------------------------------------
 \begin{definitionbox}{Definition (Chain and Antichain)}
 \begin{definition}[Chain and Antichain]\label{def:chain}
-A subset $C \subseteq A$ of a poset $(A,\leq)$ is a \emph{chain} if every
-pair of elements in $C$ is comparable. It is an \emph{antichain} if no two
-distinct elements of $C$ are comparable.
+A subset $C \subseteq A$ of a poset $(A,\leq)$ is a \emph{chain}
+\label{def:order-chain} if every pair of elements in $C$ is comparable.
+It is an \emph{antichain}\label{def:order-antichain} if no two distinct
+elements of $C$ are comparable.
 \end{definition}
 \end{definitionbox}
 
