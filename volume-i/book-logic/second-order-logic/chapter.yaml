@@ -1,0 +1,11 @@
+subject: second-order-logic
+display_title: Standard Second-Order Logic
+volume: volume-i
+status: planned
+dependencies:
+  prior: ''
+  next: ''
+path: volume-i/book-logic/second-order-logic
+book: book-logic
+environments: []
+proof_files: []

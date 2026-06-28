@@ -1,0 +1,11 @@
+subject: many-sorted-first-order-logic
+display_title: Many-Sorted Logic
+volume: volume-i
+status: planned
+dependencies:
+  prior: ''
+  next: ''
+path: volume-i/book-logic/many-sorted-first-order-logic
+book: book-logic
+environments: []
+proof_files: []
