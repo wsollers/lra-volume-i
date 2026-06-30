@@ -39,19 +39,16 @@ better). This decomposition is fundamental to utility representation theory.
 \end{remark*}
 
 % ---------------------------------------------------------
-% Preorder and loset
+% Preorder and loset (defined elsewhere --- pointers only)
 % ---------------------------------------------------------
-\begin{propositionbox}{Definition (Preorder and Loset)}
-\label{def:preorder-ext}
-A binary relation $R$ on $X$ is a \emph{preorder} if it is reflexive and
-transitive.
-
-\medskip
-\label{def:loset}
-A \emph{loset} (linearly ordered set) is a pair $(X, R)$ where $R$ is a
-\emph{linear order}: a complete partial order ($R$ is reflexive, transitive,
-antisymmetric, and complete).
-\end{propositionbox}
+\begin{remark*}[Preorder and loset are defined elsewhere]
+The order relations this section uses are defined in the Relations chapter: a
+\hyperref[def:preorder]{preorder} is reflexive and transitive, and a
+\hyperref[def:total-order]{linear order} is a total (connex) partial order. The
+corresponding \emph{structure} --- the \hyperref[def:loset]{loset}, i.e.\ the
+linearly/totally ordered set --- is catalogued with the order structures in the
+Ordered Sets section. Nothing is restated here, so no definition can drift.
+\end{remark*}
 
 \begin{remark*}[Preorder vs.\ partial order]
 A preorder need not be antisymmetric: two distinct elements may satisfy
@@ -100,20 +97,19 @@ greatest. In a linear order, maximal and greatest coincide.
 % ---------------------------------------------------------
 % Transitive closure
 % ---------------------------------------------------------
-\begin{definitionbox}{Definition (Transitive Closure)}
-\begin{definition}[Transitive Closure]\label{def:trans-closure}
-The \emph{transitive closure} $T(R)$ of a binary relation $R$ on $X$ is the
-smallest transitive relation containing $R$: that is, $T(R)$ is transitive,
-$xRy \Rightarrow xT(R)y$, and no strictly smaller relation is both transitive
-and contains $R$.
-\end{definition}
-\end{definitionbox}
+\begin{remark*}[Transitive closure (defined in the Relations chapter)]
+\label{def:trans-closure}
+The \emph{transitive closure} $T(R)$ of a binary relation $R$ on $X$ --- the
+\hyperref[def:relation-transitive-closure]{smallest transitive relation
+containing $R$} --- is defined in the Relations chapter. We recall it here only
+to use it, and do not restate the definition, so the two chapters cannot drift
+apart. (For the explicit construction, see the description below.)
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:relation-transitive-closure]{Transitive Closure (Relations)}
   \item \hyperref[def:transitive]{Transitive Relation}
-  \item \hyperref[def:intersection]{Intersection}
 \end{itemize}
 \end{dependencies}
 

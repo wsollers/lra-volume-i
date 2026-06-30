@@ -327,6 +327,45 @@ $R$ is a partial order on $A$ iff:
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition (Strict Partial Order)}
+\begin{definition}[Strict Partial Order]\label{def:strict-partial-order}
+$R$ is a \emph{strict partial order} on $A$ if it is irreflexive and
+transitive.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+$R$ is a strict partial order on $A$ iff:
+\[
+(\forall a \in A,\; (a,a)\notin R)\;\wedge\;
+(\forall a,b,c \in A,\; (a,b)\in R \wedge (b,c)\in R \to (a,c)\in R).
+\]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:irreflexive]{Irreflexive Relation}
+  \item \hyperref[def:transitive]{Transitive Relation}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Asymmetry is automatic]
+Irreflexivity and transitivity together force asymmetry: if $(a,b)\in R$ and
+$(b,a)\in R$, transitivity gives $(a,a)\in R$, contradicting irreflexivity.
+Hence every strict partial order is asymmetric, and a strict partial order can
+equivalently be characterised as an asymmetric, transitive relation.
+\end{remark*}
+
+\begin{remark*}[Correspondence with partial orders]
+Strict and non-strict orders carry the same information. Given a
+\hyperref[def:partial-order]{partial order} $\leq$, the relation
+$a < b \iff (a \leq b \wedge a \neq b)$ is a strict partial order; conversely,
+given a strict partial order $<$, the relation
+$a \leq b \iff (a < b \vee a = b)$ is a partial order. The two presentations
+are interchangeable, which is why an ordered structure may be specified by
+either.
+\end{remark*}
+
 \begin{definitionbox}{Definition (Total Order)}
 \begin{definition}[Total Order]\label{def:total-order}
 $R$ is a \emph{total order} on $A$ if it is a partial order and is total.
