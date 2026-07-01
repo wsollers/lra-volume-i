@@ -113,14 +113,6 @@ this restricted collection.
 % ---------------------------------------------------------
 
 \begin{definitionbox}{Definition (Complete Lattice)}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:partial-order]{Partial Order}
-  \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:sup-inf]{Supremum and Infimum}
-\end{itemize}
-\end{dependencies}
 \begin{definition}[Complete Lattice]\label{def:complete-lattice}
 A lattice $(L, \leq)$ is a \emph{complete lattice} if every subset
 $S \subseteq L$ (including the empty set and $L$ itself) has both a
@@ -134,6 +126,14 @@ $(L, \leq)$ is a complete lattice $\;\leftrightarrow\;$
 $\forall S \subseteq L,\;\exists u^* \in L,\;\exists \ell^* \in L$ satisfying
 the sup and inf conditions of \hyperref[def:sup-inf]{Definition~(Supremum and Infimum)}.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:sup-inf]{Supremum and Infimum}
+\end{itemize}
+\end{dependencies}
 
 \begin{remark*}[The empty set forces top and bottom]
 \label{rem:complete-top-bottom}
@@ -180,14 +180,6 @@ this complete lattice.
 % ---------------------------------------------------------
 
 \begin{definitionbox}{Definition (Distributive Lattice)}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:lattice]{Lattice}
-  \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:sup-inf]{Supremum and Infimum}
-\end{itemize}
-\end{dependencies}
 \begin{definition}[Distributive Lattice]\label{def:distributive-lattice}
 A lattice $(L, \leq)$ is \emph{distributive} if for all $a, b, c \in L$:
 \[
@@ -199,6 +191,8 @@ A lattice $(L, \leq)$ is \emph{distributive} if for all $a, b, c \in L$:
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:lattice]{Lattice}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:sup-inf]{Supremum and Infimum}
 \end{itemize}
 \end{dependencies}
 

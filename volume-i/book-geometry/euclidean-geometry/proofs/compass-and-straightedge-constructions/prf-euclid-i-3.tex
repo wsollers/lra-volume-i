@@ -14,15 +14,35 @@ which cuts off from the greater a straight line segment equal to the less.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for euclid-i-3.
+Let $AB$ be the greater of the two given unequal segments and let $CD$ be the
+less. By Euclid I.2, construct from the point $A$ a segment $AD$ equal to
+$CD$. With center $A$ and distance $AD$, describe a circle meeting $AB$ at
+$E$.
+
+Since $AE$ and $AD$ are radii of the same circle, $AE=AD$. Since $AD=CD$ by
+construction, $AE=CD$ by Common Notion I. Therefore the segment $AE$ has been
+cut off from the greater segment $AB$ equal to the less segment $CD$.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for euclid-i-3.
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-3}
+
+The problem is not merely to draw a segment equal to the shorter one; Euclid
+I.2 already does that. The problem is to place such a segment on the greater
+given segment. Starting at the endpoint $A$ of the greater segment $AB$, copy
+the shorter segment $CD$ to form $AD$. A circle centered at $A$ with radius
+$AD$ records exactly that copied length in every direction from $A$.
+
+Where this circle meets the greater segment $AB$, call the point $E$. Then
+$AE$ is a radius of the circle and so is equal to $AD$. Since $AD$ was copied
+from $CD$, the cut-off segment $AE$ is equal to $CD$.
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Euclid I.3 depends on I.2 as a length-copying lemma. Once the shorter segment
+has been copied from the endpoint of the greater one, Postulate III turns that
+copied length into the cutoff point on the greater segment.
 \end{remark*}
 
 \begin{dependencies}

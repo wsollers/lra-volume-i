@@ -1,0 +1,48 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.15, line cap=round, line join=round]
+  \definecolor{euclidblue}{RGB}{30,110,190}
+  \tikzset{
+    equaltick/.style={
+      postaction={decorate},
+      decoration={markings, mark=at position 0.5 with {
+        \draw[line width=0.6pt] (0,-2.4pt)--(0,2.4pt);
+      }}
+    }
+  }
+
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2.1,0);
+  \coordinate (C) at (3.0,0);
+  \coordinate (D) at (1.05,1.65);
+  \pgfmathsetmacro{\seg}{0.9}
+  \pgfmathsetmacro{\db}{sqrt((2.1-1.05)^2+(0-1.65)^2)}
+  \pgfmathsetmacro{\scaleG}{\seg/\db}
+  \coordinate (G) at ($(B)+\scaleG*(B)-\scaleG*(D)$);
+  \pgfmathsetmacro{\dg}{\db+\seg}
+  \coordinate (L) at ($(D)!\dg/\db!(A)$);
+
+  \draw[gray!50, thin] (B) circle (\seg);
+  \draw[gray!45, thin] (D) circle (\dg);
+
+  \draw[gray!70, thin] (D) -- ($(D)!1.45!(A)$);
+  \draw[gray!70, thin] (D) -- ($(D)!1.45!(B)$);
+  \draw[gray!70, thin] (A) -- (B);
+  \draw[gray!70, thin] (D) -- (A) -- (B) -- cycle;
+
+  \draw[very thick, equaltick] (B) -- (C);
+  \draw[very thick, euclidblue, equaltick] (A) -- (L);
+  \draw[very thick, euclidblue] (B) -- (G);
+  \draw[very thick, euclidblue] (D) -- (G);
+  \draw[very thick, euclidblue] (D) -- (L);
+
+  \foreach \p/\pos in {A/below,B/below,C/below,G/below right,D/above,L/below left}{
+    \fill (\p) circle (0.023);
+    \node[\pos] at (\p) {$\p$};
+  }
+
+  \node[font=\footnotesize] at ($(B)!0.5!(C)+(0,-0.28)$) {$BC$};
+  \node[euclidblue, font=\footnotesize] at ($(A)!0.5!(L)+(-0.20,-0.16)$) {$AL=BC$};
+  \node[gray!70, font=\footnotesize] at ($(B)+(0.65,-0.70)$) {center $B$};
+  \node[gray!70, font=\footnotesize] at ($(D)+(-1.00,1.05)$) {center $D$};
+\end{tikzpicture}
+\end{center}

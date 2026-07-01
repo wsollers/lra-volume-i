@@ -14,15 +14,38 @@ straight line segment beginning at $A$ and equal to $BC$.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for euclid-i-2.
+Let $A$ be the given point and let $BC$ be the given segment. Join $AB$ and
+construct an equilateral triangle $DAB$ on $AB$ by Euclid I.1. Produce the
+straight lines $DA$ and $DB$. With center $B$ and distance $BC$, describe a
+circle meeting the produced line $DB$ at $G$. With center $D$ and distance
+$DG$, describe a circle meeting the produced line $DA$ at $L$.
+
+Since $BG=BC$ and $DL=DG$, while $DA=DB$ because $DAB$ is equilateral, the
+remainders $AL$ and $BG$ are equal. Therefore $AL=BC$. Thus from the point $A$
+a straight line segment equal to the given segment $BC$ has been constructed.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for euclid-i-2.
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-2}
+
+The role of the equilateral triangle is to create two matching initial lengths:
+$DA=DB$. After the side $DB$ is extended, the circle centered at $B$ marks a
+point $G$ with $BG=BC$. Then the circle centered at $D$ transfers the full
+length $DG$ onto the other produced side, giving $DL=DG$.
+
+Now compare the two long segments from $D$. On one side,
+$DG=DB+BG$; on the other, $DL=DA+AL$. Since $DG=DL$ and $DB=DA$, subtracting
+the equal initial parts leaves $BG=AL$. But $BG=BC$, so $AL=BC$ by Common
+Notion I. The segment $AL$ begins at the required point $A$ and has the
+required length.
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Euclid I.2 is a transfer construction. It does not assume a compass can be
+lifted and moved directly; instead it copies the length $BC$ using only
+straight lines, produced straight lines, circles, Euclid I.1, and common
+notions about equality.
 \end{remark*}
 
 \begin{dependencies}

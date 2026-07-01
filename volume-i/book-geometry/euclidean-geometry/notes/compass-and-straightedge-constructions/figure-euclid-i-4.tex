@@ -1,0 +1,30 @@
+\begin{center}
+\begin{tikzpicture}[scale=0.95, line cap=round, line join=round]
+  \definecolor{euclidblue}{RGB}{30,110,190}
+  \tikzset{
+    onetick/.style={postaction={decorate},decoration={markings,mark=at position 0.5 with {\draw (0,-2pt)--(0,2pt);}}},
+    twotick/.style={postaction={decorate},decoration={markings,mark=at position 0.45 with {\draw (0,-2pt)--(0,2pt);},mark=at position 0.55 with {\draw (0,-2pt)--(0,2pt);}}}
+  }
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2.6,0);
+  \coordinate (C) at (1.0,1.8);
+  \coordinate (D) at (4.3,0);
+  \coordinate (E) at (6.9,0);
+  \coordinate (F) at (5.3,1.8);
+  \draw[very thick, onetick] (A)--(B);
+  \draw[very thick, twotick] (A)--(C);
+  \draw[very thick, euclidblue] (B)--(C);
+  \draw[very thick, onetick] (D)--(E);
+  \draw[very thick, twotick] (D)--(F);
+  \draw[very thick, euclidblue] (E)--(F);
+  \draw (0.38,0) arc[start angle=0,end angle=61,radius=0.38];
+  \draw ($(D)+(0.38,0)$) arc[start angle=0,end angle=61,radius=0.38];
+  \foreach \p/\pos in {A/below left,B/below,C/above,D/below left,E/below,F/above}{
+    \fill (\p) circle (0.026);
+    \node[\pos] at (\p) {$\p$};
+  }
+  \node[font=\footnotesize] at (1.35,-0.45) {$AB=DE$};
+  \node[font=\footnotesize] at (5.62,-0.45) {$AC=DF$};
+  \node[euclidblue, font=\footnotesize] at (3.45,1.15) {included angles equal};
+\end{tikzpicture}
+\end{center}

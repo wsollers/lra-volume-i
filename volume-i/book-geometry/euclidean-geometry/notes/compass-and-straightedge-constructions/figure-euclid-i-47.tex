@@ -1,0 +1,40 @@
+\begin{center}
+\begin{tikzpicture}[scale=0.78, line cap=round, line join=round]
+  \definecolor{euclidblue}{RGB}{30,110,190}
+  \definecolor{euclidred}{RGB}{180,70,55}
+  \definecolor{euclidgreen}{RGB}{65,135,85}
+
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4,0);
+  \coordinate (C) at (0,3);
+  \coordinate (AB1) at (0,-4);
+  \coordinate (AB2) at (4,-4);
+  \coordinate (AC1) at (-3,0);
+  \coordinate (AC2) at (-3,3);
+  \coordinate (BC1) at ($(B)+(3,4)$);
+  \coordinate (BC2) at ($(C)+(3,4)$);
+
+  \fill[euclidblue!13] (A) -- (B) -- (AB2) -- (AB1) -- cycle;
+  \fill[euclidgreen!13] (A) -- (AC1) -- (AC2) -- (C) -- cycle;
+  \fill[euclidred!13] (B) -- (BC1) -- (BC2) -- (C) -- cycle;
+
+  \draw[very thick] (A) -- (B) -- (C) -- cycle;
+  \draw[thick, euclidblue] (A) -- (B) -- (AB2) -- (AB1) -- cycle;
+  \draw[thick, euclidgreen] (A) -- (AC1) -- (AC2) -- (C) -- cycle;
+  \draw[thick, euclidred] (B) -- (BC1) -- (BC2) -- (C) -- cycle;
+
+  \draw[thin] ($(A)+(0.34,0)$) -- ($(A)+(0.34,0.34)$) -- ($(A)+(0,0.34)$);
+  \draw[dashed, gray!60] (A) -- ($(A)+(3.0,-4.0)$);
+  \draw[dashed, gray!60] (C) -- ($(C)+(3.0,-4.0)$);
+
+  \foreach \p/\pos in {A/below left,B/below right,C/above left}{
+    \fill (\p) circle (0.035);
+    \node[\pos] at (\p) {$\p$};
+  }
+
+  \node[euclidblue] at (2,-2.2) {square on $AB$};
+  \node[euclidgreen, rotate=90] at (-1.75,1.5) {square on $AC$};
+  \node[euclidred, rotate=53] at ($(B)!0.5!(BC2)+(1.1,1.0)$) {square on $BC$};
+  \node[font=\footnotesize] at (0.65,0.42) {right angle};
+\end{tikzpicture}
+\end{center}

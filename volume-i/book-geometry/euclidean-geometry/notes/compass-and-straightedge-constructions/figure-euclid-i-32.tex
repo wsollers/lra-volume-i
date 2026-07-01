@@ -1,0 +1,21 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.1, line cap=round, line join=round]
+  \definecolor{euclidblue}{RGB}{30,110,190}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.2,0);
+  \coordinate (C) at (1.1,1.85);
+  \coordinate (L) at ($(C)+(-1.5,0)$);
+  \coordinate (R) at ($(C)+(2.4,0)$);
+  \draw[very thick] (A)--(B)--(C)--cycle;
+  \draw[very thick, euclidblue] (L)--(R);
+  \draw ($(A)+(0.34,0)$) arc[start angle=0,end angle=59,radius=0.34];
+  \draw ($(B)+(-0.34,0)$) arc[start angle=180,end angle=139,radius=0.34];
+  \draw ($(C)+(-118:0.34)$) arc[start angle=-118,end angle=-41,radius=0.34];
+  \foreach \p/\pos in {A/below left,B/below right,C/above,L/left,R/right}{
+    \fill (\p) circle (0.024);
+    \node[\pos] at (\p) {$\p$};
+  }
+  \node[euclidblue, font=\footnotesize] at ($(C)+(1.05,0.28)$) {parallel to $AB$};
+  \node[font=\footnotesize] at (1.55,-0.34) {$\angle A+\angle B+\angle C=2$ right angles};
+\end{tikzpicture}
+\end{center}

@@ -1,0 +1,54 @@
+\newpage
+\phantomsection
+\label{prf:euclid-i-46}
+\LRAProofFor{thm:euclid-i-46}
+
+\begin{remark*}[Return]
+\hyperref[thm:euclid-i-46]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Euclid I.46: Constructing a square on a segment]
+On a given straight line, to describe a square.
+\end{theorem*}
+
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-46}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let $AB$ be the given segment. At $A$, draw a perpendicular to $AB$ and cut off
+$AD$ equal to $AB$. Through $D$, draw a line parallel to $AB$; through $B$,
+draw a line parallel to $AD$. Let those two parallels meet at $C$.
+
+The quadrilateral $ABCD$ has opposite sides parallel, so it is a parallelogram.
+The construction gives one right angle, and the parallel lines transfer right
+angles to the remaining corners. Also $AD=AB$ by construction, and opposite
+sides of the parallelogram are equal. Thus all four sides are equal and all
+four angles are right angles. By the definition of a square, $ABCD$ is the
+square on $AB$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The construction first creates one side perpendicular to the given segment and
+equal to it. The two parallels then close the quadrilateral without changing
+the directions: horizontal sides stay parallel to $AB$, and vertical sides stay
+parallel to $AD$. This makes a right-angled parallelogram whose adjacent sides
+are equal, hence a square.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Construct a perpendicular equal side, close the figure with parallels, and use
+parallel transfer of right angles plus equality of opposite sides to identify a
+square.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-quadrilateral-classes]{Square}
+  \item \hyperref[thm:euclid-i-31]{Euclid I.31}
+  \item \hyperref[ax:euclid-postulate-draw-straight-line]{Euclid Postulate I}
+  \item \hyperref[ax:euclid-postulate-right-angles-equal]{Euclid Postulate IV}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

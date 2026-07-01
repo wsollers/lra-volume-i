@@ -1,0 +1,19 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.25, line cap=round, line join=round]
+  \definecolor{trigblue}{RGB}{30,110,190}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.4,0);
+  \coordinate (C) at (3.4,2.0);
+  \draw[very thick] (A)--(B)--(C)--cycle;
+  \draw (3.1,0)--(3.1,0.3)--(3.4,0.3);
+  \draw[trigblue] (0.55,0) arc[start angle=0,end angle=30.5,radius=0.55];
+  \node[trigblue] at (0.78,0.22) {$\theta$};
+  \node[below] at ($(A)!0.5!(B)$) {adjacent};
+  \node[right] at ($(B)!0.5!(C)$) {opposite};
+  \node[above left] at ($(A)!0.5!(C)$) {hypotenuse};
+  \foreach \p/\pos in {A/below left,B/below right,C/above right}{
+    \fill (\p) circle (0.025);
+    \node[\pos] at (\p) {$\p$};
+  }
+\end{tikzpicture}
+\end{center}

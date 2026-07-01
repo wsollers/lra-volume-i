@@ -1,0 +1,23 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.05, line cap=round, line join=round]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (1.8,0);
+  \coordinate (C) at (1.8,1.8);
+  \coordinate (D) at (4.0,0);
+  \coordinate (E) at (6.4,0);
+  \coordinate (F) at (6.4,{2.4*sqrt(3)});
+  \draw[very thick] (A)--(B)--(C)--cycle;
+  \draw[very thick] (D)--(E)--(F)--cycle;
+  \draw (1.55,0)--(1.55,0.25)--(1.8,0.25);
+  \draw (6.1,0)--(6.1,0.3)--(6.4,0.3);
+  \node[below] at ($(A)!0.5!(B)$) {$1$};
+  \node[right] at ($(B)!0.5!(C)$) {$1$};
+  \node[above left] at ($(A)!0.5!(C)$) {$\sqrt2$};
+  \node[below] at ($(D)!0.5!(E)$) {$1$};
+  \node[right] at ($(E)!0.5!(F)$) {$\sqrt3$};
+  \node[above left] at ($(D)!0.5!(F)$) {$2$};
+  \node at (0.55,0.18) {$45^\circ$};
+  \node at (4.56,0.18) {$60^\circ$};
+  \node at (6.05,0.58) {$30^\circ$};
+\end{tikzpicture}
+\end{center}

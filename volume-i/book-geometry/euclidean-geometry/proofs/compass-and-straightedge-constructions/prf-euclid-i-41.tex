@@ -1,0 +1,52 @@
+\newpage
+\phantomsection
+\label{prf:euclid-i-41}
+\LRAProofFor{thm:euclid-i-41}
+
+\begin{remark*}[Return]
+\hyperref[thm:euclid-i-41]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Euclid I.41: Triangle and parallelogram on the same base]
+If a parallelogram has the same base with a triangle and is in the same
+parallels, then the parallelogram is double the triangle.
+\end{theorem*}
+
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-41}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let parallelogram $ABDC$ and triangle $ABC$ have the same base $AB$ and lie
+between the same parallels. Draw the diagonal $BC$ of the parallelogram. The
+diagonal divides the parallelogram into two triangles on equal bases and in
+the same parallels. These two triangles coincide in area by the earlier
+parallel-area comparison.
+
+One of those two triangles is the given triangle $ABC$. Hence the whole
+parallelogram consists of two equal copies of that triangle, so the
+parallelogram is double the triangle.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Look at the diagonal. It cuts the parallelogram into two triangular halves.
+Because opposite sides of the parallelogram are parallel, the two halves have
+matching bases and matching altitude between the same parallel lines. Euclid
+therefore treats them as equal in area. The parallelogram is the two halves
+together, while the given triangle is one half.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Cut the parallelogram by a diagonal, compare the two triangular halves, and
+read the whole parallelogram as two equal copies of the triangle.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-parallel-straight-lines]{Parallel straight lines}
+  \item \hyperref[def:euclid-quadrilateral-classes]{Quadrilateral classes}
+  \item \hyperref[ax:euclid-common-notion-coinciding-things-equal]{Euclid Common Notion IV}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

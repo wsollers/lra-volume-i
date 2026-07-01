@@ -1,0 +1,35 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.35, line cap=round, line join=round]
+  \definecolor{euclidblue}{RGB}{30,110,190}
+  \tikzset{
+    equaltick/.style={
+      postaction={decorate},
+      decoration={markings, mark=at position 0.5 with {
+        \draw[line width=0.6pt] (0,-2.4pt)--(0,2.4pt);
+      }}
+    }
+  }
+
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2.2,0);
+  \pgfmathsetmacro{\R}{2.2}
+  \coordinate (C) at (1.1,{sqrt(3)/2*\R});
+
+  \draw[gray!55, thin] (A) circle (\R);
+  \draw[gray!55, thin] (B) circle (\R);
+
+  \draw[very thick, equaltick] (A) -- (B);
+  \draw[very thick, euclidblue, equaltick] (A) -- (C);
+  \draw[very thick, euclidblue, equaltick] (B) -- (C);
+
+  \foreach \p/\pos in {A/below left,B/below right,C/above}{
+    \fill (\p) circle (0.025);
+    \node[\pos] at (\p) {$\p$};
+  }
+
+  \node[gray!70, font=\footnotesize] at ($(A)+(-1.00,-1.10)$) {center $A$};
+  \node[gray!70, font=\footnotesize] at ($(B)+(1.00,-1.10)$) {center $B$};
+  \node[euclidblue, font=\footnotesize] at ($(A)!0.5!(C)+(-0.24,0.06)$) {$=AB$};
+  \node[euclidblue, font=\footnotesize] at ($(B)!0.5!(C)+(0.28,0.06)$) {$=AB$};
+\end{tikzpicture}
+\end{center}

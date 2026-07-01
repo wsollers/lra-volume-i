@@ -1,0 +1,283 @@
+\subsection{Trigonometric Functions from Euclidean Geometry}
+
+\begin{remark*}[Geometric intuition]
+A right triangle fixes three side lengths relative to an acute angle:
+opposite, adjacent, and hypotenuse. Similar right triangles may be larger or
+smaller, but their corresponding side ratios are unchanged. This invariance is
+what makes a trigonometric ratio a function of the angle rather than a feature
+of one drawing.
+\end{remark*}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-right-triangle-ratios}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Right-triangle trigonometric ratios]
+\label{def:right-triangle-trig-ratios}
+Let $T$ be a right triangle and let $\theta$ be one of its acute angles. Write
+\[
+  \operatorname{opp}(T,\theta),\qquad
+  \operatorname{adj}(T,\theta),\qquad
+  \operatorname{hyp}(T)
+\]
+for the side lengths opposite $\theta$, adjacent to $\theta$, and opposite the
+right angle, respectively. Define
+\[
+\sin\theta=\frac{\operatorname{opp}(T,\theta)}{\operatorname{hyp}(T)},\quad
+\cos\theta=\frac{\operatorname{adj}(T,\theta)}{\operatorname{hyp}(T)},\quad
+\tan\theta=\frac{\operatorname{opp}(T,\theta)}{\operatorname{adj}(T,\theta)},
+\]
+\[
+\cot\theta=\frac{\operatorname{adj}(T,\theta)}{\operatorname{opp}(T,\theta)},\quad
+\sec\theta=\frac{\operatorname{hyp}(T)}{\operatorname{adj}(T,\theta)},\quad
+\csc\theta=\frac{\operatorname{hyp}(T)}{\operatorname{opp}(T,\theta)}.
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+For every right triangle $T$ and every acute angle $\theta$ of $T$, the six
+displayed ratios are defined whenever the denominator in the displayed quotient
+is nonzero.
+\end{remark*}
+\begin{remark*}[Primitive and derived ratios]
+The primitive geometric ratios are sine and cosine. Tangent, cotangent, secant,
+and cosecant are convenient quotient or reciprocal ratios built from the same
+three side lengths.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-triangle-angle-classes]{Right-angled triangle}
+  \item \hyperref[def:euclid-right-angle-and-perpendicular]{Right angle and perpendicular}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Sine and cosine]
+\label{def:sine-cosine}
+For an acute Euclidean angle $\theta$, choose any right triangle $T$ having
+$\theta$ as an acute angle and set
+\[
+  \sin\theta=\frac{\operatorname{opp}(T,\theta)}{\operatorname{hyp}(T)},
+  \qquad
+  \cos\theta=\frac{\operatorname{adj}(T,\theta)}{\operatorname{hyp}(T)}.
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+For every acute Euclidean angle $\theta$, if $T$ is a right triangle having
+$\theta$ as an acute angle, then $\sin\theta$ and $\cos\theta$ are the
+opposite-over-hypotenuse and adjacent-over-hypotenuse ratios of $T$.
+\end{remark*}
+\begin{remark*}[Well-definedness debt]
+This definition depends on the similarity-invariance theorem below. Until that
+theorem is invoked, the displayed formulas describe a ratio in a chosen
+triangle, not yet a function of $\theta$ alone.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:right-triangle-trig-ratios]{Right-triangle trigonometric ratios}
+\end{itemize}
+\end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-similar-right-triangles}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Similarity invariance of trigonometric ratios]
+\label{thm:trig-ratios-similarity-invariant}
+If two right triangles have the same acute angle $\theta$, then their
+corresponding opposite-to-hypotenuse and adjacent-to-hypotenuse ratios are
+equal.
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:trig-ratios-similarity-invariant]{Go to proof.}
+\end{remark*}
+\begin{remark*}[Standard quantified statement]
+For all right triangles $T_1,T_2$ and every acute angle $\theta$, if $\theta$
+is an acute angle of both triangles, then
+\[
+\frac{\operatorname{opp}(T_1,\theta)}{\operatorname{hyp}(T_1)}
+=
+\frac{\operatorname{opp}(T_2,\theta)}{\operatorname{hyp}(T_2)}
+\quad\text{and}\quad
+\frac{\operatorname{adj}(T_1,\theta)}{\operatorname{hyp}(T_1)}
+=
+\frac{\operatorname{adj}(T_2,\theta)}{\operatorname{hyp}(T_2)}.
+\]
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:euclid-i-32]{Euclid I.32}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Well-definedness of sine and cosine]
+\label{thm:sine-cosine-well-defined}
+For each acute Euclidean angle $\theta$, the values $\sin\theta$ and
+\(\cos\theta\) are independent of the right triangle chosen to compute them.
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:sine-cosine-well-defined]{Go to proof.}
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sine-cosine]{Sine and cosine}
+  \item \hyperref[thm:trig-ratios-similarity-invariant]{Similarity invariance of trigonometric ratios}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Six trigonometric functions]
+\label{thm:six-trig-functions}
+The six right-triangle trigonometric ratios define functions of an acute
+Euclidean angle, subject to the denominator restrictions in their defining
+quotients.
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:six-trig-functions]{Go to proof.}
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:right-triangle-trig-ratios]{Right-triangle trigonometric ratios}
+  \item \hyperref[thm:sine-cosine-well-defined]{Well-definedness of sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-unit-circle-trig}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Unit-circle sine and cosine]
+\label{def:unit-circle-sine-cosine}
+Let $\theta$ be an angle in standard position, and let $P(\theta)=(x_\theta,
+y_\theta)$ be the point where its terminal ray meets the unit circle. Define
+\[
+  \cos\theta=x_\theta,\qquad \sin\theta=y_\theta.
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Debt flag]
+This definition extends sine and cosine beyond acute angles. Treating
+$\theta$ as an arbitrary real-valued radian input requires arc length and
+rectifiability machinery not yet developed in this volume.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-circle]{Circle}
+  \item \hyperref[def:cartesian-product]{Cartesian Product}
+  \item \hyperref[thm:sine-cosine-well-defined]{Well-definedness of sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Unit-circle agreement with right-triangle trigonometry]
+\label{thm:unit-circle-agrees-with-right-triangle-trig}
+For $0<\theta<90^\circ$, the unit-circle definitions of sine and cosine agree
+with the right-triangle definitions.
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:unit-circle-agrees-with-right-triangle-trig]{Go to proof.}
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sine-cosine]{Sine and cosine}
+  \item \hyperref[def:unit-circle-sine-cosine]{Unit-circle sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-tangent-line}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Extended tangent, cotangent, secant, and cosecant]
+\label{def:extended-trig-functions}
+Where the displayed denominators are nonzero, define
+\[
+  \tan\theta=\frac{\sin\theta}{\cos\theta},\quad
+  \cot\theta=\frac{\cos\theta}{\sin\theta},\quad
+  \sec\theta=\frac{1}{\cos\theta},\quad
+  \csc\theta=\frac{1}{\sin\theta}.
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Geometric reading]
+The tangent of $\theta$ is the signed height where the terminal ray meets the
+vertical tangent line $x=1$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:unit-circle-sine-cosine]{Unit-circle sine and cosine}
+  \item \hyperref[thm:unit-circle-agrees-with-right-triangle-trig]{Unit-circle agreement with right-triangle trigonometry}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Radian measure]
+\label{def:radian-measure}
+One radian is the angle that cuts off arc length $1$ on the unit circle. A full
+turn has measure $2\pi$ radians.
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Debt flag]
+This definition uses arc length intuitively. Its rigorous foundation belongs
+after rectifiable curves and the construction of $\pi$ from circumference.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:unit-circle-sine-cosine]{Unit-circle sine and cosine}
+  \item \hyperref[def:euclid-circle]{Circle}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Symmetry and periodicity of sine and cosine]
+\label{thm:trig-symmetry-periodicity}
+For every angle in the unit-circle domain,
+\[
+\cos(-\theta)=\cos\theta,\qquad \sin(-\theta)=-\sin\theta,
+\]
+and one full turn returns the same sine and cosine values.
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:trig-symmetry-periodicity]{Go to proof.}
+\end{remark*}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Pythagorean identity]
+\label{thm:pythagorean-trig-identity}
+For every angle in the unit-circle domain,
+\[
+  \cos^2\theta+\sin^2\theta=1.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:pythagorean-trig-identity]{Go to proof.}
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:euclid-i-47]{Euclid I.47}
+  \item \hyperref[def:unit-circle-sine-cosine]{Unit-circle sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Angle-sum and difference identities]
+\label{thm:trig-angle-sum-difference}
+The sine and cosine of a sum or difference of angles are determined by the
+standard angle-sum and angle-difference formulas.
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:trig-angle-sum-difference]{Go to proof.}
+\end{remark*}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-special-angles}
+
+\begin{remark*}[Special angles]
+The $45^\circ$ and $30^\circ$--$60^\circ$ values come from the isosceles right
+triangle and the bisected equilateral triangle. The radian entries use the
+radian convention above and inherit its arc-length debt.
+\end{remark*}

@@ -1,19 +1,23 @@
 \subsection*{Propositions}
 
 \begin{remark*}[Source note]
-The following construction propositions are Euclid's Propositions I.1--I.3 in
-modern theorem form, following the Heath translation of the
-\textit{Elements} \citep[Book I, Propositions 1--3]{euclid-elements-heath}.
+The following propositions are selected from Euclid's Book I in modern theorem
+form, following the Heath translation of the \textit{Elements}
+\citep[Book I]{euclid-elements-heath}. The selection is curated for the
+trigonometric construction: congruence, parallel-angle control, triangle
+angle-sum, area comparison, square construction, and the Pythagorean theorem.
 \end{remark*}
 
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[Euclid I.1: Constructing an equilateral triangle]
 \label{thm:euclid-i-1}
+\label{prop:I.1}
 Given a finite straight line segment $AB$, there exists an equilateral
 triangle $ABC$ constructed on $AB$.
 \end{theorem}
 \end{theorembox}
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-1}
 \begin{remark*}[Proof]
 \hyperref[prf:euclid-i-1]{Go to proof.}
 \end{remark*}
@@ -39,10 +43,12 @@ formalization.
 \begin{theorembox}{Theorem}
 \begin{theorem}[Euclid I.2: Copying a segment from a given point]
 \label{thm:euclid-i-2}
+\label{prop:I.2}
 Given a point $A$ and a finite straight line segment $BC$, there exists a
 straight line segment beginning at $A$ and equal to $BC$.
 \end{theorem}
 \end{theorembox}
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-2}
 \begin{remark*}[Proof]
 \hyperref[prf:euclid-i-2]{Go to proof.}
 \end{remark*}
@@ -69,10 +75,12 @@ formalization.
 \begin{theorembox}{Theorem}
 \begin{theorem}[Euclid I.3: Cutting off an equal segment]
 \label{thm:euclid-i-3}
+\label{prop:I.3}
 Given two unequal finite straight line segments, there exists a construction
 which cuts off from the greater a straight line segment equal to the less.
 \end{theorem}
 \end{theorembox}
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-3}
 \begin{remark*}[Proof]
 \hyperref[prf:euclid-i-3]{Go to proof.}
 \end{remark*}
@@ -89,6 +97,173 @@ formalization.
   \item \hyperref[thm:euclid-i-2]{Euclid I.2}
   \item \hyperref[ax:euclid-postulate-describe-circle]{Euclid Postulate III}
   \item \hyperref[ax:euclid-common-notion-things-equal-to-same]{Euclid Common Notion I}
+\end{itemize}
+\end{dependencies}
+\end{lra-not-visible}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Euclid I.4: Side-angle-side congruence]
+\label{thm:euclid-i-4}
+If two triangles have two sides equal to two sides respectively, and have the
+angles contained by the equal straight lines equal, then they also have the
+base equal to the base, the triangle equal to the triangle, and the remaining
+angles equal to the remaining angles respectively.
+\end{theorem}
+\end{theorembox}
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-4}
+\begin{remark*}[Proof]
+\hyperref[prf:euclid-i-4]{Go to proof.}
+\end{remark*}
+\begin{remark*}[Standard quantified statement]
+This is a classical Euclidean source-text clause. In this chapter it is treated
+as a named primitive statement rather than expanded into a modern first-order
+formalization.
+\end{remark*}
+\begin{lra-not-visible}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-triangle-side-classes]{Triangle side classes}
+  \item \hyperref[def:euclid-rectilinear-angle]{Rectilinear angle}
+  \item \hyperref[ax:euclid-common-notion-coinciding-things-equal]{Euclid Common Notion IV}
+\end{itemize}
+\end{dependencies}
+\end{lra-not-visible}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Euclid I.31: Drawing a parallel through a point]
+\label{thm:euclid-i-31}
+Through a given point, to draw a straight line parallel to a given straight
+line.
+\end{theorem}
+\end{theorembox}
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-31}
+\begin{remark*}[Proof]
+\hyperref[prf:euclid-i-31]{Go to proof.}
+\end{remark*}
+\begin{remark*}[Standard quantified statement]
+This is a classical Euclidean source-text clause. In this chapter it is treated
+as a named primitive statement rather than expanded into a modern first-order
+formalization.
+\end{remark*}
+\begin{lra-not-visible}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-parallel-straight-lines]{Parallel straight lines}
+  \item \hyperref[ax:euclid-postulate-draw-straight-line]{Euclid Postulate I}
+  \item \hyperref[ax:euclid-postulate-parallel]{Euclid Postulate V}
+\end{itemize}
+\end{dependencies}
+\end{lra-not-visible}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Euclid I.32: Triangle angle sum]
+\label{thm:euclid-i-32}
+In any triangle, if one of the sides is produced, then the exterior angle is
+equal to the two interior and opposite angles, and the three interior angles of
+the triangle are equal to two right angles.
+\end{theorem}
+\end{theorembox}
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-32}
+\begin{remark*}[Proof]
+\hyperref[prf:euclid-i-32]{Go to proof.}
+\end{remark*}
+\begin{remark*}[Standard quantified statement]
+This is a classical Euclidean source-text clause. In this chapter it is treated
+as a named primitive statement rather than expanded into a modern first-order
+formalization.
+\end{remark*}
+\begin{lra-not-visible}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-triangle-angle-classes]{Triangle angle classes}
+  \item \hyperref[thm:euclid-i-31]{Euclid I.31}
+  \item \hyperref[ax:euclid-postulate-parallel]{Euclid Postulate V}
+\end{itemize}
+\end{dependencies}
+\end{lra-not-visible}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Euclid I.41: Triangle and parallelogram on the same base]
+\label{thm:euclid-i-41}
+If a parallelogram has the same base with a triangle and is in the same
+parallels, then the parallelogram is double the triangle.
+\end{theorem}
+\end{theorembox}
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-41}
+\begin{remark*}[Proof]
+\hyperref[prf:euclid-i-41]{Go to proof.}
+\end{remark*}
+\begin{remark*}[Standard quantified statement]
+This is a classical Euclidean source-text clause. In this chapter it is treated
+as a named primitive statement rather than expanded into a modern first-order
+formalization.
+\end{remark*}
+\begin{lra-not-visible}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-parallel-straight-lines]{Parallel straight lines}
+  \item \hyperref[def:euclid-quadrilateral-classes]{Quadrilateral classes}
+  \item \hyperref[ax:euclid-common-notion-coinciding-things-equal]{Euclid Common Notion IV}
+\end{itemize}
+\end{dependencies}
+\end{lra-not-visible}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Euclid I.46: Constructing a square on a segment]
+\label{thm:euclid-i-46}
+On a given straight line, to describe a square.
+\end{theorem}
+\end{theorembox}
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-46}
+\begin{remark*}[Proof]
+\hyperref[prf:euclid-i-46]{Go to proof.}
+\end{remark*}
+\begin{remark*}[Standard quantified statement]
+This is a classical Euclidean source-text clause. In this chapter it is treated
+as a named primitive statement rather than expanded into a modern first-order
+formalization.
+\end{remark*}
+\begin{lra-not-visible}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-quadrilateral-classes]{Square}
+  \item \hyperref[thm:euclid-i-31]{Euclid I.31}
+  \item \hyperref[ax:euclid-postulate-draw-straight-line]{Euclid Postulate I}
+  \item \hyperref[ax:euclid-postulate-right-angles-equal]{Euclid Postulate IV}
+\end{itemize}
+\end{dependencies}
+\end{lra-not-visible}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Euclid I.47: Pythagorean theorem]
+\label{thm:euclid-i-47}
+\label{prop:I.47}
+In right-angled triangles, the square on the side subtending the right angle is
+equal to the squares on the sides containing the right angle.
+\end{theorem}
+\end{theorembox}
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-47}
+\begin{remark*}[Proof]
+\hyperref[prf:euclid-i-47]{Go to proof.}
+\end{remark*}
+\begin{remark*}[Placement]
+This proposition is pulled forward as the Book I capstone needed by the
+trigonometric definitions. Its professional proof depends on later Book I
+propositions that are not yet developed in this chapter; the proof file records
+those pending Euclidean nodes explicitly.
+\end{remark*}
+\begin{lra-not-visible}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-right-angle-and-perpendicular]{Right angle and perpendicular}
+  \item \hyperref[def:euclid-triangle-angle-classes]{Right-angled triangle}
+  \item \hyperref[def:euclid-quadrilateral-classes]{Square}
+  \item \hyperref[ax:euclid-postulate-draw-straight-line]{Euclid Postulate I}
+  \item \hyperref[ax:euclid-common-notion-add-equals]{Euclid Common Notion II}
+  \item \hyperref[ax:euclid-common-notion-subtract-equals]{Euclid Common Notion III}
+  \item \hyperref[thm:euclid-i-4]{Euclid I.4}
+  \item \hyperref[thm:euclid-i-41]{Euclid I.41}
+  \item \hyperref[thm:euclid-i-46]{Euclid I.46}
 \end{itemize}
 \end{dependencies}
 \end{lra-not-visible}

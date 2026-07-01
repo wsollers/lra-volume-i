@@ -1,0 +1,57 @@
+\newpage
+\phantomsection
+\label{prf:euclid-i-32}
+\LRAProofFor{thm:euclid-i-32}
+
+\begin{remark*}[Return]
+\hyperref[thm:euclid-i-32]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Euclid I.32: Triangle angle sum]
+In any triangle, if one of the sides is produced, then the exterior angle is
+equal to the two interior and opposite angles, and the three interior angles of
+the triangle are equal to two right angles.
+\end{theorem*}
+
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-32}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let $ABC$ be a triangle. Through $C$, draw a line parallel to $AB$ by Euclid
+I.31. The straight line $AC$ cuts the two parallels, so the angle made by $AC$
+with the parallel through $C$ equals the interior angle at $A$. Likewise, the
+straight line $BC$ cuts the two parallels, so the angle made by $BC$ with the
+parallel through $C$ equals the interior angle at $B$.
+
+At the point $C$, these two copied angles together with the original angle
+$ACB$ form a straight angle, that is, two right angles. Substituting the equal
+alternate angles for the angles at $A$ and $B$, the three interior angles of
+triangle $ABC$ are equal to two right angles. The same equal-angle comparison
+also identifies the exterior angle with the sum of the two opposite interior
+angles.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The diagram places a parallel to the base through the top vertex. The base
+angle at $A$ reappears at $C$ on one side of the triangle, and the base angle
+at $B$ reappears at $C$ on the other side. Along the parallel line through
+$C$, those two copied angles and the original vertex angle exactly fill a
+straight line. A straight line has two right angles, so the three angles of the
+triangle sum to two right angles.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Draw a parallel through one vertex, transfer the two remote angles by alternate
+interior angles, and read the three angles as a straight angle.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-triangle-angle-classes]{Triangle angle classes}
+  \item \hyperref[thm:euclid-i-31]{Euclid I.31}
+  \item \hyperref[ax:euclid-postulate-parallel]{Euclid Postulate V}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

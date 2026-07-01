@@ -158,6 +158,8 @@ The expression $\varphi[t/x]$ denotes the formula obtained from $\varphi$ by
 replacing every \emph{free} occurrence of $x$ with the term $t$, leaving bound
 occurrences of $x$ unchanged.
 \end{definition}
+\end{definitionbox}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:variable]{Variable}
@@ -166,7 +168,6 @@ occurrences of $x$ unchanged.
   \item \hyperref[def:bound-free]{Bound and Free Occurrences}
 \end{itemize}
 \end{dependencies}
-\end{definitionbox}
 
 % ---------------------------------------------------------
 % Free for Substitution
@@ -181,6 +182,8 @@ where $y$ is a variable occurring in $t$.
 Equivalently, $t$ is free for $x$ in $\varphi$ if the substitution $\varphi[t/x]$
 does not result in any variable in $t$ becoming bound.
 \end{definition}
+\end{definitionbox}
+
 \begin{remark*}[Standard quantified statement]
 The relation ``$t$ is free for $x$ in $\varphi$'' is defined by structural
 induction on formulas. It is automatic for atomic formulas. It is preserved
@@ -211,7 +214,6 @@ where $Q$ is either $\forall$ or $\exists$.
   \item \hyperref[def:fv]{Free Variables of a Formula}
 \end{itemize}
 \end{dependencies}
-\end{definitionbox}
 
 \begin{remark*}[Capture-avoiding substitution]
 A substitution $\varphi[t/x]$ is admissible only if $t$ is free for $x$ in

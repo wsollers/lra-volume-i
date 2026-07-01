@@ -1,0 +1,52 @@
+\newpage
+\phantomsection
+\label{prf:euclid-i-31}
+\LRAProofFor{thm:euclid-i-31}
+
+\begin{remark*}[Return]
+\hyperref[thm:euclid-i-31]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Euclid I.31: Drawing a parallel through a point]
+Through a given point, to draw a straight line parallel to a given straight
+line.
+\end{theorem*}
+
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-31}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let $P$ be the given point and let $AB$ be the given straight line. Draw a
+transversal from $P$ to a point on $AB$. At $P$, construct an angle equal to
+the alternate interior angle made by the transversal with $AB$, and draw the
+straight line through $P$ forming that equal angle.
+
+The two lines cut by the transversal have equal alternate interior angles.
+Euclid's parallel criterion, which rests on the parallel postulate, gives that
+the constructed line through $P$ is parallel to $AB$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The construction copies an angle rather than guessing a direction. Once the
+angle at $P$ matches the alternate angle at the given line, the transversal
+sees the same slant at both intersections. In Euclidean geometry that equality
+of alternate interior angles is exactly the signal that the two straight lines
+do not meet when produced.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Draw a transversal, copy the alternate angle at the given point, and invoke the
+parallel criterion to identify the constructed line as parallel to the given
+line.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-parallel-straight-lines]{Parallel straight lines}
+  \item \hyperref[ax:euclid-postulate-draw-straight-line]{Euclid Postulate I}
+  \item \hyperref[ax:euclid-postulate-parallel]{Euclid Postulate V}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

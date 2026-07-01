@@ -14,15 +14,47 @@ triangle $ABC$ constructed on $AB$.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for euclid-i-1.
+Let $AB$ be the given finite straight line. Describe the circle with center
+$A$ and radius $AB$, and describe the circle with center $B$ and radius $BA$.
+Let $C$ be an intersection point of the two circles, and draw the straight
+lines $CA$ and $CB$.
+
+Since $C$ lies on the circle with center $A$, $AC=AB$. Since $C$ lies on the
+circle with center $B$, $BC=BA$. Thus $AC$ and $BC$ are each equal to $AB$,
+so by Common Notion I they are equal to one another. Therefore $AB$, $BC$,
+and $CA$ are equal, and the triangle $ABC$ is equilateral.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for euclid-i-1.
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-1}
+
+The construction uses exactly the permitted tools available at this point.
+Postulate I allows the given segment $AB$ to be treated as a drawable straight
+line segment. Postulate III allows a circle with any center and distance, so we
+may draw one circle centered at $A$ with distance $AB$ and another centered at
+$B$ with distance $BA$.
+
+Choose an intersection point $C$ of the two circles. The segment $AC$ is a
+radius of the circle centered at $A$, so it equals the radius $AB$. The segment
+$BC$ is a radius of the circle centered at $B$, so it equals the radius $BA$,
+which is the same segment as $AB$. Hence all three sides of $\triangle ABC$
+are equal, and by the definition of an equilateral triangle, $\triangle ABC$ is
+equilateral.
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Construct two circles from the endpoints of the given segment, draw the two
+radii to an intersection point, and use equality through the common segment
+$AB$ to identify the three sides.
+\end{remark*}
+
+\begin{remark*}[Euclid's intersection gap]
+The proof assumes that the two circles meet. This is the classical lacuna in
+Euclid I.1: the postulates permit drawing the circles, but Euclid's stated
+axioms do not by themselves include a circle--circle intersection principle.
+Later axiomatizations add continuity or incidence assumptions that justify this
+step.
 \end{remark*}
 
 \begin{dependencies}

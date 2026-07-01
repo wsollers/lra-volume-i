@@ -1,0 +1,35 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.2, line cap=round, line join=round]
+  \definecolor{euclidblue}{RGB}{30,110,190}
+  \tikzset{
+    equaltick/.style={
+      postaction={decorate},
+      decoration={markings, mark=at position 0.5 with {
+        \draw[line width=0.6pt] (0,-2.4pt)--(0,2.4pt);
+      }}
+    }
+  }
+
+  \coordinate (A) at (0,0);
+  \coordinate (E) at (1.55,0);
+  \coordinate (B) at (3.7,0);
+  \coordinate (C) at (0,-0.9);
+  \coordinate (D) at (1.55,-0.9);
+  \pgfmathsetmacro{\r}{1.55}
+
+  \draw[gray!50, thin] (A) circle (\r);
+  \draw[very thick] (A) -- (B);
+  \draw[very thick, equaltick] (C) -- (D);
+  \draw[very thick, euclidblue, equaltick] (A) -- (E);
+
+  \foreach \p/\pos in {A/above left,E/above,B/above right,C/below left,D/below right}{
+    \fill (\p) circle (0.023);
+    \node[\pos] at (\p) {$\p$};
+  }
+
+  \node[font=\footnotesize] at ($(A)!0.5!(B)+(0,0.27)$) {greater segment};
+  \node[font=\footnotesize] at ($(C)!0.5!(D)+(0,-0.28)$) {less segment};
+  \node[euclidblue, font=\footnotesize] at ($(A)!0.5!(E)+(0,0.34)$) {$AE=CD$};
+  \node[gray!70, font=\footnotesize] at ($(A)+(-0.50,-1.50)$) {center $A$};
+\end{tikzpicture}
+\end{center}

@@ -1,0 +1,55 @@
+\newpage
+\phantomsection
+\label{prf:euclid-i-4}
+\LRAProofFor{thm:euclid-i-4}
+
+\begin{remark*}[Return]
+\hyperref[thm:euclid-i-4]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Euclid I.4: Side-angle-side congruence]
+If two triangles have two sides equal to two sides respectively, and have the
+angles contained by the equal straight lines equal, then the bases, the
+triangles, and the remaining angles are equal respectively.
+\end{theorem*}
+
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-4}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let triangles $ABC$ and $DEF$ satisfy $AB=DE$, $AC=DF$, and
+$\angle BAC=\angle EDF$. Place the point $A$ on $D$, the straight line $AB$ on
+$DE$, and the straight line $AC$ on $DF$. Since the included angles are equal,
+the two sides fall along the corresponding sides. Since $AB=DE$, the point $B$
+coincides with $E$; since $AC=DF$, the point $C$ coincides with $F$.
+
+Therefore the base $BC$ coincides with the base $EF$. By Common Notion IV,
+things which coincide are equal. Hence $BC=EF$, the whole triangle $ABC$ is
+equal to the whole triangle $DEF$, and the remaining corresponding angles are
+equal.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The diagram is meant to be read by superposition. Equal included angles allow
+one triangle to be laid on the other without rotating one side away from its
+mate. The two equal side lengths then force the two non-vertex endpoints to
+land exactly on the corresponding endpoints. Once the three vertices coincide,
+the third side and the two remaining angles coincide as well.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Superpose one triangle on the other, use the two equal sides to identify the
+endpoints, and use coincidence to conclude equality of the base and remaining
+angles.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-triangle-side-classes]{Triangle side classes}
+  \item \hyperref[def:euclid-rectilinear-angle]{Rectilinear angle}
+  \item \hyperref[ax:euclid-common-notion-coinciding-things-equal]{Euclid Common Notion IV}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

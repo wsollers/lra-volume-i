@@ -1,0 +1,82 @@
+\newpage
+\phantomsection
+\label{prf:euclid-i-47}
+\LRAProofFor{thm:euclid-i-47}
+
+\begin{remark*}[Return]
+\hyperref[thm:euclid-i-47]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Euclid I.47: Pythagorean theorem]
+In right-angled triangles, the square on the side subtending the right angle is
+equal to the squares on the sides containing the right angle.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+\input{volume-i/book-geometry/euclidean-geometry/notes/compass-and-straightedge-constructions/figure-euclid-i-47}
+
+Let $ABC$ be a right-angled triangle with right angle at $A$. Construct the
+squares on $AB$, $AC$, and $BC$ by Euclid I.46. Through $A$ draw the line
+parallel to the appropriate sides of the square on $BC$, dividing that square
+into two rectangles.
+
+By Euclid I.4, the triangles built from the side $AB$ and the corresponding
+side of the hypotenuse-square are congruent in the required side-angle-side
+comparison. By Euclid I.41, the square on $AB$ is double one of those
+triangles, and the matching rectangle in the hypotenuse-square is double the
+congruent triangle. Hence the square on $AB$ equals that rectangle. The same
+argument on the side $AC$ shows that the square on $AC$ equals the other
+rectangle in the hypotenuse-square.
+
+The two rectangles together make up the square on $BC$. Therefore, by Common
+Notion II, the square on $AB$ together with the square on $AC$ equals the
+square on $BC$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Euclid's proof is an area comparison, but not an algebraic computation of
+areas as real numbers. The square on the hypotenuse is split into two
+rectangles. One rectangle is shown equal to the square on one leg; the other
+rectangle is shown equal to the square on the other leg. Since the two
+rectangles together make up the square on the hypotenuse, the square on the
+hypotenuse equals the sum of the two leg-squares.
+
+This matters for the later trigonometric construction. When a right triangle
+is normalized so that its hypotenuse has unit length, Euclid I.47 is the
+synthetic source of the identity
+\[
+  \cos^2\theta+\sin^2\theta=1.
+\]
+The coordinate and area-algebra version of this proof belongs later, after
+Cartesian coordinates and numerical area have been licensed.
+\end{proof}
+
+\begin{remark*}[Dependency status]
+This is the Euclidean windmill proof at the level needed for the trigonometric
+construction. The local spine now records the congruence, parallel, area, and
+square-construction tools that the proof uses.
+\end{remark*}
+
+\begin{remark*}[Proof structure]
+Construct squares on the three sides of a right triangle, split the square on
+the hypotenuse into two rectangles, prove each rectangle equal to the
+corresponding square on a leg, and add the two equalities.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:euclid-right-angle-and-perpendicular]{Right angle and perpendicular}
+  \item \hyperref[def:euclid-triangle-angle-classes]{Right-angled triangle}
+  \item \hyperref[def:euclid-quadrilateral-classes]{Square}
+  \item \hyperref[ax:euclid-postulate-draw-straight-line]{Euclid Postulate I}
+  \item \hyperref[ax:euclid-common-notion-add-equals]{Euclid Common Notion II}
+  \item \hyperref[ax:euclid-common-notion-subtract-equals]{Euclid Common Notion III}
+  \item \hyperref[thm:euclid-i-4]{Euclid I.4}
+  \item \hyperref[thm:euclid-i-41]{Euclid I.41}
+  \item \hyperref[thm:euclid-i-46]{Euclid I.46}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

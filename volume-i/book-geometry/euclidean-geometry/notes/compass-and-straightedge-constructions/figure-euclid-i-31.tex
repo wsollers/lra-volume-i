@@ -1,0 +1,20 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.05, line cap=round, line join=round]
+  \definecolor{euclidblue}{RGB}{30,110,190}
+  \coordinate (A) at (-2.8,0);
+  \coordinate (B) at (2.8,0);
+  \coordinate (P) at (-0.7,1.65);
+  \coordinate (Q) at (2.6,1.65);
+  \draw[very thick] (A)--(B);
+  \draw[very thick, euclidblue] ($(P)!-0.55!(Q)$)--($(P)!1.25!(Q)$);
+  \draw[gray!65, dashed] (P)--(0.2,0);
+  \draw[gray!65, dashed] (P)--(1.1,0);
+  \foreach \p/\pos in {A/below,B/below,P/above,Q/above}{
+    \fill (\p) circle (0.026);
+    \node[\pos] at (\p) {$\p$};
+  }
+  \node[font=\footnotesize] at (0,-0.35) {given straight line};
+  \node[euclidblue, font=\footnotesize] at (1.2,1.98) {parallel through $P$};
+  \node[gray!70, font=\footnotesize] at (0.30,0.78) {equal alternate angles};
+\end{tikzpicture}
+\end{center}
