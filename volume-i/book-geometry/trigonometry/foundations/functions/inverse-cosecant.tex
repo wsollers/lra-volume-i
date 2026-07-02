@@ -1,0 +1,54 @@
+\input{volume-i/book-geometry/trigonometry/foundations/figure-inverse-cosecant}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Inverse cosecant]
+\label{def:inverse-cosecant}
+The \emph{inverse cosecant} function is the inverse of cosecant after cosecant
+is restricted to $[-\pi/2,\pi/2]\setminus\{0\}$. It is denoted by $\operatorname{arccsc}$
+or $\csc^{-1}$ and has domain $(-\infty,-1]\cup[1,\infty)$ and range
+$[-\pi/2,\pi/2]\setminus\{0\}$.
+\[
+  \operatorname{arccsc} x=\theta
+  \quad\Longleftrightarrow\quad
+  \csc\theta=x
+  \quad\text{and}\quad
+  -\frac{\pi}{2}\leq\theta\leq\frac{\pi}{2},\ \theta\neq 0.
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Domain and range]
+The cosecant function has domain
+$\mathbb{R}\setminus\{k\pi:k\in\mathbb{Z}\}$ and range
+$(-\infty,-1]\cup[1,\infty)$. The inverse cosecant function reverses the
+principal restricted cosecant function.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:extended-cosecant]{Extended cosecant}
+  \item \hyperref[def:radian-measure]{Radian measure}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Principal inverse cosecant identities]
+\label{thm:inverse-cosecant-identities}
+For every $x\in(-\infty,-1]\cup[1,\infty)$,
+\[
+  \csc(\operatorname{arccsc} x)=x.
+\]
+For every $\theta\in[-\pi/2,\pi/2]\setminus\{0\}$,
+\[
+  \operatorname{arccsc}(\csc\theta)=\theta.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+$\forall x\in(-\infty,-1]\cup[1,\infty)$, $\csc(\operatorname{arccsc} x)=x$, and
+$\forall \theta\in[-\pi/2,\pi/2]\setminus\{0\}$,
+$\operatorname{arccsc}(\csc\theta)=\theta$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-cosecant]{Inverse cosecant}
+\end{itemize}
+\end{dependencies}

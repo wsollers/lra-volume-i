@@ -1,0 +1,76 @@
+\begin{theorembox}{Theorem}
+\begin{theorem}[Cofunction identities for inverse sine and inverse cosine]
+\label{thm:inverse-trig-cofunction-identities}
+For every $x\in[-1,1]$,
+\[
+  \arcsin x+\arccos x=\frac{\pi}{2}.
+\]
+Equivalently,
+\[
+  \arccos x=\frac{\pi}{2}-\arcsin x,
+  \qquad
+  \arcsin x=\frac{\pi}{2}-\arccos x.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+$\forall x\in[-1,1]$, $\arcsin x+\arccos x=\pi/2$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-sine]{Inverse sine}
+  \item \hyperref[def:inverse-cosine]{Inverse cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Reciprocal identities for inverse secant and inverse cosecant]
+\label{thm:inverse-trig-reciprocal-identities}
+For every $x\in(-\infty,-1]\cup[1,\infty)$,
+\[
+  \operatorname{arcsec} x=\arccos\!\left(\frac{1}{x}\right),
+  \qquad
+  \operatorname{arccsc} x=\arcsin\!\left(\frac{1}{x}\right).
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in(-\infty,-1]\cup[1,\infty),\quad
+  \operatorname{arcsec} x=\arccos(1/x)
+  \quad\text{and}\quad
+  \operatorname{arccsc} x=\arcsin(1/x).
+\]
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-cosine]{Inverse cosine}
+  \item \hyperref[def:inverse-sine]{Inverse sine}
+  \item \hyperref[def:inverse-secant]{Inverse secant}
+  \item \hyperref[def:inverse-cosecant]{Inverse cosecant}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Reciprocal identity for inverse cotangent]
+\label{thm:inverse-cotangent-reciprocal-identity}
+For every nonzero real number $x$,
+\[
+  \operatorname{arccot} x=
+  \begin{cases}
+    \arctan(1/x), & x>0,\\
+    \pi+\arctan(1/x), & x<0.
+  \end{cases}
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Branch convention]
+The second case is necessary because this chapter uses the principal range
+$(0,\pi)$ for $\operatorname{arccot}$ and $(-\pi/2,\pi/2)$ for $\arctan$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-tangent]{Inverse tangent}
+  \item \hyperref[def:inverse-cotangent]{Inverse cotangent}
+\end{itemize}
+\end{dependencies}

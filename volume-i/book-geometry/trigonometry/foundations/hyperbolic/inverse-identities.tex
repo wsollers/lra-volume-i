@@ -1,0 +1,135 @@
+\begin{theorembox}{Theorem}
+\begin{theorem}[Logarithmic form of inverse hyperbolic sine]
+\label{thm:inverse-hyperbolic-sine-log-form}
+For every $x\in\mathbb{R}$,
+\[
+  \operatorname{arsinh} x=\log\!\left(x+\sqrt{x^2+1}\right).
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Let $t=\operatorname{arsinh}x$. Then $x=\sinh t=(e^t-e^{-t})/2$. With
+$z=e^t>0$, this becomes $z^2-2xz-1=0$. The positive solution is
+$z=x+\sqrt{x^2+1}$, so $t=\log z$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-hyperbolic-sine]{Inverse hyperbolic sine}
+  \item \hyperref[thm:hyperbolic-exponential-form]{Exponential form of hyperbolic sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Logarithmic form of inverse hyperbolic cosine]
+\label{thm:inverse-hyperbolic-cosine-log-form}
+For every $x\in[1,\infty)$,
+\[
+  \operatorname{arcosh} x=\log\!\left(x+\sqrt{x^2-1}\right).
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Let $t=\operatorname{arcosh}x$. Then $t\geq 0$ and
+$x=\cosh t=(e^t+e^{-t})/2$. With $z=e^t\geq 1$, this becomes
+$z^2-2xz+1=0$. The solution compatible with $z\geq 1$ is
+$z=x+\sqrt{x^2-1}$, so $t=\log z$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-hyperbolic-cosine]{Inverse hyperbolic cosine}
+  \item \hyperref[thm:hyperbolic-exponential-form]{Exponential form of hyperbolic sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Logarithmic form of inverse hyperbolic tangent]
+\label{thm:inverse-hyperbolic-tangent-log-form}
+For every $x\in(-1,1)$,
+\[
+  \operatorname{artanh} x=\frac{1}{2}\log\!\left(\frac{1+x}{1-x}\right).
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Let $t=\operatorname{artanh}x$. Then
+\[
+  x=\tanh t=\frac{e^t-e^{-t}}{e^t+e^{-t}}
+  =\frac{e^{2t}-1}{e^{2t}+1}.
+\]
+Solving gives $e^{2t}=(1+x)/(1-x)$, whose right side is positive because
+$-1<x<1$. Taking logarithms gives the formula.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-hyperbolic-tangent]{Inverse hyperbolic tangent}
+  \item \hyperref[thm:hyperbolic-exponential-form]{Exponential form of hyperbolic sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Logarithmic form of inverse hyperbolic cotangent]
+\label{thm:inverse-hyperbolic-cotangent-log-form}
+For every $x\in(-\infty,-1)\cup(1,\infty)$,
+\[
+  \operatorname{arcoth} x=\frac{1}{2}\log\!\left(\frac{x+1}{x-1}\right).
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Let $t=\operatorname{arcoth}x$. Then
+\[
+  x=\operatorname{coth}t=\frac{e^t+e^{-t}}{e^t-e^{-t}}
+  =\frac{e^{2t}+1}{e^{2t}-1}.
+\]
+Solving gives $e^{2t}=(x+1)/(x-1)$. The quotient is positive exactly on the
+stated domain, and taking logarithms gives the formula.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-hyperbolic-cotangent]{Inverse hyperbolic cotangent}
+  \item \hyperref[thm:hyperbolic-exponential-form]{Exponential form of hyperbolic sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Reciprocal form of inverse hyperbolic secant]
+\label{thm:inverse-hyperbolic-secant-reciprocal-form}
+For every $x\in(0,1]$,
+\[
+  \operatorname{arsech} x=\operatorname{arcosh}\!\left(\frac{1}{x}\right).
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Let $t=\operatorname{arsech}x$. Then $t\geq 0$ and
+$x=\operatorname{sech}t=1/\cosh t$, so $\cosh t=1/x$. Since $0<x\leq 1$,
+we have $1/x\in[1,\infty)$, and the definition of $\operatorname{arcosh}$
+gives the displayed identity.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-hyperbolic-secant]{Inverse hyperbolic secant}
+  \item \hyperref[def:inverse-hyperbolic-cosine]{Inverse hyperbolic cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Reciprocal form of inverse hyperbolic cosecant]
+\label{thm:inverse-hyperbolic-cosecant-reciprocal-form}
+For every $x\in\mathbb{R}\setminus\{0\}$,
+\[
+  \operatorname{arcsch} x=\operatorname{arsinh}\!\left(\frac{1}{x}\right).
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Let $t=\operatorname{arcsch}x$. Then
+$x=\operatorname{csch}t=1/\sinh t$, so $\sinh t=1/x$. The definition of
+$\operatorname{arsinh}$ gives the displayed identity.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-hyperbolic-cosecant]{Inverse hyperbolic cosecant}
+  \item \hyperref[def:inverse-hyperbolic-sine]{Inverse hyperbolic sine}
+\end{itemize}
+\end{dependencies}

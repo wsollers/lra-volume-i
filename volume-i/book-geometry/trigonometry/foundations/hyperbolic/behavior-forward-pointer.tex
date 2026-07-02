@@ -1,0 +1,213 @@
+\begin{remark*}[Forward pointer: behavior belongs in analysis]
+The continuity and differentiation results below are included here to keep the
+construction self-contained. Their canonical proofs belong after the limits,
+continuity, and differentiation machinery in the later analysis chapter on the
+behavior of elementary functions.
+\end{remark*}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Continuity of hyperbolic sine and cosine]
+\label{thm:hyperbolic-sinh-cosh-continuous}
+The functions $\sinh$ and $\cosh$ are continuous on $\mathbb{R}$.
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+By the exponential form,
+\[
+  \cosh t=\frac{e^t+e^{-t}}{2},
+  \qquad
+  \sinh t=\frac{e^t-e^{-t}}{2}.
+\]
+The exponential function is continuous, $t\mapsto -t$ is continuous, and sums,
+differences, scalar multiples, and compositions of continuous functions are
+continuous. Hence $\sinh$ and $\cosh$ are continuous on all of $\mathbb{R}$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:hyperbolic-exponential-form]{Exponential form of hyperbolic sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Continuity of the derived hyperbolic functions]
+\label{thm:derived-hyperbolic-functions-continuous}
+The functions $\tanh$ and $\operatorname{sech}$ are continuous on
+$\mathbb{R}$, and $\operatorname{coth}$ and $\operatorname{csch}$ are
+continuous on $\mathbb{R}\setminus\{0\}$.
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+The functions $\tanh$ and $\operatorname{sech}$ are quotients of continuous
+functions by $\cosh t$, and $\cosh t\geq 1$, so the denominator never
+vanishes. The functions $\operatorname{coth}$ and $\operatorname{csch}$ are
+quotients by $\sinh t$, and $\sinh t=0$ exactly at $t=0$. The quotient rule
+for continuous functions gives the stated domains of continuity.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-tangent]{Hyperbolic tangent}
+  \item \hyperref[def:hyperbolic-secant]{Hyperbolic secant}
+  \item \hyperref[thm:hyperbolic-sinh-cosh-continuous]{Continuity of hyperbolic sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Derivatives of hyperbolic sine and cosine]
+\label{thm:hyperbolic-sinh-cosh-derivatives}
+For every $t\in\mathbb{R}$,
+\[
+  \frac{d}{dt}\sinh t=\cosh t,
+  \qquad
+  \frac{d}{dt}\cosh t=\sinh t.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Differentiate the exponential forms:
+\[
+  \frac{d}{dt}\sinh t
+  =\frac{d}{dt}\left(\frac{e^t-e^{-t}}{2}\right)
+  =\frac{e^t+e^{-t}}{2}
+  =\cosh t,
+\]
+and
+\[
+  \frac{d}{dt}\cosh t
+  =\frac{d}{dt}\left(\frac{e^t+e^{-t}}{2}\right)
+  =\frac{e^t-e^{-t}}{2}
+  =\sinh t.
+\]
+This uses linearity of differentiation and the chain rule applied to
+$e^{-t}$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:hyperbolic-exponential-form]{Exponential form of hyperbolic sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Derivative of hyperbolic tangent]
+\label{thm:hyperbolic-tangent-derivative}
+For every $t\in\mathbb{R}$,
+\[
+  \frac{d}{dt}\tanh t=\operatorname{sech}^2 t=1-\tanh^2 t.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Use the quotient rule on $\tanh t=\sinh t/\cosh t$:
+\[
+  \frac{d}{dt}\tanh t
+  =
+  \frac{\cosh^2 t-\sinh^2 t}{\cosh^2 t}
+  =
+  \frac{1}{\cosh^2 t}
+  =
+  \operatorname{sech}^2 t.
+\]
+The identity $\operatorname{sech}^2 t=1-\tanh^2 t$ follows by dividing
+$\cosh^2 t-\sinh^2 t=1$ by $\cosh^2 t$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-tangent]{Hyperbolic tangent}
+  \item \hyperref[def:hyperbolic-secant]{Hyperbolic secant}
+  \item \hyperref[thm:hyperbolic-sinh-cosh-derivatives]{Derivatives of hyperbolic sine and cosine}
+  \item \hyperref[thm:hyperbolic-pythagorean-identity]{Hyperbolic Pythagorean identity}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Derivative of hyperbolic cotangent]
+\label{thm:hyperbolic-cotangent-derivative}
+For every $t\neq 0$,
+\[
+  \frac{d}{dt}\operatorname{coth} t=-\operatorname{csch}^2 t
+  =1-\operatorname{coth}^2 t.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Use the quotient rule on $\operatorname{coth}t=\cosh t/\sinh t$:
+\[
+  \frac{d}{dt}\operatorname{coth}t
+  =
+  \frac{\sinh^2 t-\cosh^2 t}{\sinh^2 t}
+  =
+  -\frac{1}{\sinh^2 t}
+  =
+  -\operatorname{csch}^2 t.
+\]
+The second form is obtained by dividing
+$\sinh^2 t-\cosh^2 t=-1$ by $\sinh^2 t$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-cotangent]{Hyperbolic cotangent}
+  \item \hyperref[def:hyperbolic-cosecant]{Hyperbolic cosecant}
+  \item \hyperref[thm:hyperbolic-sinh-cosh-derivatives]{Derivatives of hyperbolic sine and cosine}
+  \item \hyperref[thm:hyperbolic-pythagorean-identity]{Hyperbolic Pythagorean identity}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Derivative of hyperbolic secant]
+\label{thm:hyperbolic-secant-derivative}
+For every $t\in\mathbb{R}$,
+\[
+  \frac{d}{dt}\operatorname{sech}t
+  =-\operatorname{sech}t\,\tanh t.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Since $\operatorname{sech}t=(\cosh t)^{-1}$, the chain rule gives
+\[
+  \frac{d}{dt}\operatorname{sech}t
+  =
+  -(\cosh t)^{-2}\sinh t
+  =
+  -\frac{1}{\cosh t}\frac{\sinh t}{\cosh t}
+  =
+  -\operatorname{sech}t\,\tanh t.
+\]
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-secant]{Hyperbolic secant}
+  \item \hyperref[def:hyperbolic-tangent]{Hyperbolic tangent}
+  \item \hyperref[thm:hyperbolic-sinh-cosh-derivatives]{Derivatives of hyperbolic sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Derivative of hyperbolic cosecant]
+\label{thm:hyperbolic-cosecant-derivative}
+For every $t\neq 0$,
+\[
+  \frac{d}{dt}\operatorname{csch}t
+  =
+  -\operatorname{csch}t\,\operatorname{coth}t.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Since $\operatorname{csch}t=(\sinh t)^{-1}$, the chain rule gives
+\[
+  \frac{d}{dt}\operatorname{csch}t
+  =
+  -(\sinh t)^{-2}\cosh t
+  =
+  -\frac{1}{\sinh t}\frac{\cosh t}{\sinh t}
+  =
+  -\operatorname{csch}t\,\operatorname{coth}t.
+\]
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-cosecant]{Hyperbolic cosecant}
+  \item \hyperref[def:hyperbolic-cotangent]{Hyperbolic cotangent}
+  \item \hyperref[thm:hyperbolic-sinh-cosh-derivatives]{Derivatives of hyperbolic sine and cosine}
+\end{itemize}
+\end{dependencies}

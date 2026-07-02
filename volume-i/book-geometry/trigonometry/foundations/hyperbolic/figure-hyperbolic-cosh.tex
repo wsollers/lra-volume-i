@@ -1,0 +1,13 @@
+\begin{center}
+\input{volume-i/book-geometry/trigonometry/foundations/hyperbolic/figure-atlas-fallback}
+\begin{tikzpicture}[scale=0.86, line cap=round, line join=round]
+  \draw[atlas axes] (-3.25,0)--(3.25,0) node[right] {$t$};
+  \draw[atlas axes] (0,-0.25)--(0,3.35) node[above] {$y$};
+  \draw[dropline] (-3,1)--(3,1);
+  \glowstroke{atlasgreen}{-2.35:2.35}{0.5*(exp(\x)+exp(-\x))}
+  \node[atlasgreen!70!black] at (1.55,2.55) {$y=\cosh t$};
+  \fill[atlas dot] (0,1) node[below right] {$(0,1)$};
+\end{tikzpicture}
+
+\atlascaption{H3}{Hyperbolic cosine}{Even, with global minimum $1$ at $t=0$.}
+\end{center}

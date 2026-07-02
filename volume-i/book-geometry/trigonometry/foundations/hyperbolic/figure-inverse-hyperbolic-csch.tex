@@ -1,0 +1,13 @@
+\begin{center}
+\input{volume-i/book-geometry/trigonometry/foundations/hyperbolic/figure-atlas-fallback}
+\begin{tikzpicture}[scale=0.82, line cap=round, line join=round]
+  \draw[atlas axes] (-3.4,0)--(3.4,0) node[right] {$x$};
+  \draw[atlas axes] (0,-2.6)--(0,2.6) node[above] {$t$};
+  \draw[dropline] (0,-2.45)--(0,2.45);
+  \glowstroke{atlasblue}{0.23:3.2}{ln(1/\x+sqrt(1/(\x*\x)+1))}
+  \glowstroke{atlasblue}{-3.2:-0.23}{ln(1/\x+sqrt(1/(\x*\x)+1))}
+  \node[atlasblue] at (2.15,0.9) {$t=\operatorname{arcsch}x$};
+\end{tikzpicture}
+
+\atlascaption{HI6}{Inverse hyperbolic cosecant}{Domain and range $\mathbb{R}\setminus\{0\}$; the graph keeps the positive and negative branches.}
+\end{center}

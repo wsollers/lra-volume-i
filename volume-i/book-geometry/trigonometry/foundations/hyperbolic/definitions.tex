@@ -1,0 +1,47 @@
+\begin{definitionbox}{Definition}
+\begin{definition}[Hyperbolic sector]
+\label{def:hyperbolic-sector}
+Let $O=(0,0)$ and $V=(1,0)$. For a point $P=(u,v)$ on the right branch of
+$x^2-y^2=1$, write
+\[
+  \operatorname{HArea}(O,V,P)
+\]
+for the signed area of the region bounded by the segment $OV$, the segment
+$OP$, and the hyperbolic arc from $V$ to $P$. The sign is positive on the
+upper branch and negative on the lower branch.
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Predicate form]
+\[
+  \operatorname{Sector}(P,t)
+  \;\Longleftrightarrow\;
+  P=(u,v),\ u^2-v^2=1,\ u>0,\ \text{and}
+  2\operatorname{HArea}(O,V,P)=t.
+\]
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cartesian-product]{Cartesian Product}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Swept hyperbola point]
+\label{def:swept-hyperbola-point}
+For $t\geq 0$, let $P_t$ be the unique point on the upper right branch of
+$x^2-y^2=1$ satisfying
+\[
+  2\operatorname{HArea}(O,V,P_t)=t.
+\]
+For $t<0$, let $P_t$ be the reflection of $P_{-t}$ across the $x$-axis.
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Coordinate notation]
+The separate hyperbolic sine and cosine definitions below name the two
+coordinates of this same point. They are not independent constructions.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-sector]{Hyperbolic sector}
+\end{itemize}
+\end{dependencies}

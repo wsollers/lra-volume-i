@@ -1,0 +1,101 @@
+\begin{theorembox}{Theorem}
+\begin{theorem}[Existence of hyperbolic sector points]
+\label{thm:hyperbolic-sector-existence}
+For every $t\geq 0$, there exists a point $P=(u,v)$ on the upper right branch
+of $x^2-y^2=1$ with
+\[
+  2\operatorname{HArea}(O,V,P)=t.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Parametrize the upper right branch by the $x$-coordinate:
+\[
+  P_x=(x,\sqrt{x^2-1}),\qquad x\geq 1.
+\]
+Let
+\[
+  F(x)=2\operatorname{HArea}(O,V,P_x).
+\]
+The sector area varies continuously with $x$: the boundary point depends
+continuously on $x$, the function $\sqrt{x^2-1}$ is continuous on
+$[1,\infty)$, and the area swept over a compact interval changes continuously
+with the endpoint. Also $F(1)=0$, since the sector degenerates at $V$.
+As $x\to\infty$, the swept sector area tends to infinity. Moreover, if
+$1\leq x_1<x_2$, the sector from $V$ to $P_{x_1}$ is properly contained in
+the sector from $V$ to $P_{x_2}$, so $F(x_1)<F(x_2)$. Thus $F$ is continuous,
+strictly increasing, begins at $0$, and is unbounded. By the intermediate
+value property, every $t\geq 0$ is equal to $F(x)$ for some $x\geq 1$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-sector]{Hyperbolic sector}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Uniqueness of hyperbolic sector points]
+\label{thm:hyperbolic-sector-uniqueness}
+For every $t\geq 0$, the point $P$ in
+\hyperref[thm:hyperbolic-sector-existence]{the existence theorem} is unique.
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+The function $F(x)=2\operatorname{HArea}(O,V,P_x)$ is strictly increasing.
+Hence $F(x_1)=F(x_2)$ implies $x_1=x_2$. Since the upper right branch point
+$P_x=(x,\sqrt{x^2-1})$ is determined by $x$, the point $P$ is unique.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:hyperbolic-sector-existence]{Existence of hyperbolic sector points}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary}
+\begin{corollary}[Well-definedness of hyperbolic sine and cosine]
+\label{cor:hyperbolic-sine-cosine-well-defined}
+The assignments $\cosh,\sinh:\mathbb{R}\to\mathbb{R}$ in
+\hyperref[def:hyperbolic-cosine]{the definition of hyperbolic cosine} and
+\hyperref[def:hyperbolic-sine]{the definition of hyperbolic sine} are
+well-defined functions.
+\end{corollary}
+\end{corollarybox}
+\begin{remark*}[Proof]
+Existence supplies a sector point for each $t\geq 0$, and uniqueness makes its
+coordinates independent of choice. The even/odd extension then gives exactly
+one value for each negative parameter.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:hyperbolic-sector-existence]{Existence of hyperbolic sector points}
+  \item \hyperref[thm:hyperbolic-sector-uniqueness]{Uniqueness of hyperbolic sector points}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Fundamental hyperbolic identity]
+\label{thm:fundamental-hyperbolic-identity}
+For every $t\in\mathbb{R}$,
+\[
+  \cosh^2 t-\sinh^2 t=1.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+For $t\geq 0$, the point $P_t=(\cosh t,\sinh t)$ was chosen on the branch
+$x^2-y^2=1$, so substituting its coordinates gives
+$\cosh^2 t-\sinh^2 t=1$. For $t<0$, use the extension
+$\cosh(-t)=\cosh t$ and $\sinh(-t)=-\sinh t$ to reduce to the nonnegative
+case.
+\end{remark*}
+\begin{remark*}[Interpretation]
+This identity justifies the word \emph{hyperbolic}: it follows from membership
+on the unit hyperbola exactly as $\cos^2\theta+\sin^2\theta=1$ follows from
+membership on the unit circle.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-sine]{Hyperbolic sine}
+  \item \hyperref[def:hyperbolic-cosine]{Hyperbolic cosine}
+\end{itemize}
+\end{dependencies}

@@ -1,0 +1,16 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.05, line cap=round, line join=round]
+  \definecolor{trigblue}{RGB}{30,110,190}
+  \draw[->] (-1.35,0)--(1.35,0) node[right] {$x$};
+  \draw[->] (0,-0.15)--(0,2.1) node[above] {$\theta$};
+  \draw[gray!35] (-1,0)--(-1,1.8);
+  \draw[gray!35] (1,0)--(1,1.8);
+  \draw[gray!45,dashed] (-1,1.8)--(1,1.8);
+  \draw[very thick,trigblue,domain=-1:1,samples=80]
+    plot ({\x},{1.8*acos(\x)/180});
+  \fill (-1,1.8) circle (0.025) node[above left] {$(-1,\pi)$};
+  \fill (1,0) circle (0.025) node[below right] {$(1,0)$};
+  \node[trigblue] at (-0.42,1.16) {$\theta=\arccos x$};
+  \node[left] at (0,1.8) {$\pi$};
+\end{tikzpicture}
+\end{center}

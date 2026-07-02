@@ -1,0 +1,53 @@
+\input{volume-i/book-geometry/trigonometry/foundations/hyperbolic/figure-inverse-hyperbolic-csch}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Inverse hyperbolic cosecant]
+\label{def:inverse-hyperbolic-cosecant}
+The \emph{inverse hyperbolic cosecant} function is the inverse of
+$\operatorname{csch}$ on its full domain. It is denoted by
+$\operatorname{arcsch}$ and has domain $\mathbb{R}\setminus\{0\}$ and range
+$\mathbb{R}\setminus\{0\}$.
+\[
+  \operatorname{arcsch} x=t
+  \quad\Longleftrightarrow\quad
+  \operatorname{csch} t=x
+  \quad\text{and}\quad
+  t\neq 0.
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Domain and range]
+The regular function $\operatorname{csch}$ is undefined at $0$. Its positive
+and negative branches are one-to-one, with ranges $(0,\infty)$ and
+$(-\infty,0)$, so the inverse has domain and range
+$\mathbb{R}\setminus\{0\}$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-cosecant]{Hyperbolic cosecant}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Principal inverse hyperbolic cosecant identities]
+\label{thm:inverse-hyperbolic-cosecant-identities}
+For every $x\in\mathbb{R}\setminus\{0\}$,
+\[
+  \operatorname{csch}(\operatorname{arcsch} x)=x.
+\]
+For every $t\in\mathbb{R}\setminus\{0\}$,
+\[
+  \operatorname{arcsch}(\operatorname{csch} t)=t.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+The positive and negative branches of $\operatorname{csch}$ are one-to-one,
+and their ranges are disjoint. Therefore the two-branch inverse has the
+displayed cancellation laws.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-hyperbolic-cosecant]{Inverse hyperbolic cosecant}
+\end{itemize}
+\end{dependencies}

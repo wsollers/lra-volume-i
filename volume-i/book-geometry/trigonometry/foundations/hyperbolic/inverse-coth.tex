@@ -1,0 +1,53 @@
+\input{volume-i/book-geometry/trigonometry/foundations/hyperbolic/figure-inverse-hyperbolic-coth}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Inverse hyperbolic cotangent]
+\label{def:inverse-hyperbolic-cotangent}
+The \emph{inverse hyperbolic cotangent} function is the inverse of
+$\operatorname{coth}$ on its two natural branches. It is denoted by
+$\operatorname{arcoth}$ and has domain
+$(-\infty,-1)\cup(1,\infty)$ and range $\mathbb{R}\setminus\{0\}$.
+\[
+  \operatorname{arcoth} x=t
+  \quad\Longleftrightarrow\quad
+  \operatorname{coth} t=x
+  \quad\text{and}\quad
+  t\neq 0.
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Domain and range]
+The regular function $\operatorname{coth}$ is undefined at $0$. On
+$(0,\infty)$ its range is $(1,\infty)$, and on $(-\infty,0)$ its range is
+$(-\infty,-1)$. The inverse keeps both branches and excludes $0$ from its
+range.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-cotangent]{Hyperbolic cotangent}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Principal inverse hyperbolic cotangent identities]
+\label{thm:inverse-hyperbolic-cotangent-identities}
+For every $x\in(-\infty,-1)\cup(1,\infty)$,
+\[
+  \operatorname{coth}(\operatorname{arcoth} x)=x.
+\]
+For every $t\in\mathbb{R}\setminus\{0\}$,
+\[
+  \operatorname{arcoth}(\operatorname{coth} t)=t.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+The positive and negative branches of $\operatorname{coth}$ are each
+one-to-one, and their ranges are disjoint. Therefore the two-branch inverse
+has the displayed cancellation laws.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-hyperbolic-cotangent]{Inverse hyperbolic cotangent}
+\end{itemize}
+\end{dependencies}

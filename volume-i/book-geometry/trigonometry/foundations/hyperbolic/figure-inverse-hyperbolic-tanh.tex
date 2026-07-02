@@ -1,0 +1,16 @@
+\begin{center}
+\input{volume-i/book-geometry/trigonometry/foundations/hyperbolic/figure-atlas-fallback}
+\begin{tikzpicture}[scale=0.82, line cap=round, line join=round]
+  \draw[atlas axes] (-1.35,0)--(1.35,0) node[right] {$x$};
+  \draw[atlas axes] (0,-2.7)--(0,2.7) node[above] {$t$};
+  \draw[dropline] (-1,-2.55)--(-1,2.55);
+  \draw[dropline] (1,-2.55)--(1,2.55);
+  \glowstroke{atlasblue}{-0.93:0.93}{0.5*ln((1+\x)/(1-\x))}
+  \fill[atlas dot] (0,0) node[below right] {$0$};
+  \node[below] at (-1,0) {$-1$};
+  \node[below] at (1,0) {$1$};
+  \node[atlasblue] at (0.5,1.75) {$t=\operatorname{artanh}x$};
+\end{tikzpicture}
+
+\atlascaption{HI3}{Inverse hyperbolic tangent}{Domain $(-1,1)$ and range $\mathbb{R}$; the vertical lines $x=\pm 1$ are asymptotes.}
+\end{center}

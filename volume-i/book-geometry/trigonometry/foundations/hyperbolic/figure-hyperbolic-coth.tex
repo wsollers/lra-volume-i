@@ -1,0 +1,15 @@
+\begin{center}
+\input{volume-i/book-geometry/trigonometry/foundations/hyperbolic/figure-atlas-fallback}
+\begin{tikzpicture}[scale=0.95, line cap=round, line join=round]
+  \draw[atlas axes] (-3.25,0)--(3.25,0) node[right] {$t$};
+  \draw[atlas axes] (0,-2.6)--(0,2.6) node[above] {$y$};
+  \draw[dropline] (-3.05,1)--(3.05,1) node[right] {$1$};
+  \draw[dropline] (-3.05,-1)--(3.05,-1) node[right] {$-1$};
+  \draw[dropline] (0,-2.45)--(0,2.45);
+  \glowstroke{atlasgold}{0.35:3}{(exp(\x)+exp(-\x))/(exp(\x)-exp(-\x))}
+  \glowstroke{atlasgold}{-3:-0.35}{(exp(\x)+exp(-\x))/(exp(\x)-exp(-\x))}
+  \node[atlasgold!70!black] at (1.25,1.9) {$y=\operatorname{coth}t$};
+\end{tikzpicture}
+
+\atlascaption{H5}{Hyperbolic cotangent}{Undefined at $t=0$, with asymptotes $y=\pm 1$.}
+\end{center}

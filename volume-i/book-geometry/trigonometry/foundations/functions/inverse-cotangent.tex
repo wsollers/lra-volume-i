@@ -1,0 +1,52 @@
+\input{volume-i/book-geometry/trigonometry/foundations/figure-inverse-cotangent}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Inverse cotangent]
+\label{def:inverse-cotangent}
+The \emph{inverse cotangent} function is the inverse of cotangent after
+cotangent is restricted to the interval $(0,\pi)$. It is denoted by $\operatorname{arccot}$
+or $\cot^{-1}$ and has domain $\mathbb{R}$ and range $(0,\pi)$.
+\[
+  \operatorname{arccot} x=\theta
+  \quad\Longleftrightarrow\quad
+  \cot\theta=x
+  \quad\text{and}\quad
+  0<\theta<\pi.
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Domain and range]
+The cotangent function has domain
+$\mathbb{R}\setminus\{k\pi:k\in\mathbb{Z}\}$ and range $\mathbb{R}$. The
+inverse cotangent function reverses the principal restricted cotangent
+function, so its domain is $\mathbb{R}$ and its range is $(0,\pi)$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:extended-cotangent]{Extended cotangent}
+  \item \hyperref[def:radian-measure]{Radian measure}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Principal inverse cotangent identities]
+\label{thm:inverse-cotangent-identities}
+For every $x\in\mathbb{R}$,
+\[
+  \cot(\operatorname{arccot} x)=x.
+\]
+For every $\theta\in(0,\pi)$,
+\[
+  \operatorname{arccot}(\cot\theta)=\theta.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+$\forall x\in\mathbb{R}$, $\cot(\operatorname{arccot} x)=x$, and
+$\forall \theta\in(0,\pi)$, $\operatorname{arccot}(\cot\theta)=\theta$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-cotangent]{Inverse cotangent}
+\end{itemize}
+\end{dependencies}

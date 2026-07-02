@@ -1,0 +1,29 @@
+\begin{center}
+\input{volume-i/book-geometry/trigonometry/foundations/hyperbolic/figure-atlas-fallback}
+\begin{tikzpicture}[scale=1.45, line cap=round, line join=round]
+  \draw[atlas axes] (-0.25,0)--(3.25,0) node[right] {$x$};
+  \draw[atlas axes] (0,-0.25)--(0,2.35) node[above] {$y$};
+
+  \fill[atlasgold!20]
+    (0,0)--(1,0)
+    -- plot[domain=1:2.35,samples=90,smooth] (\x,{sqrt(\x*\x-1)})
+    -- cycle;
+  \draw[atlasgray!65, line width=0.7pt] (0,0)--(2.35,{sqrt(2.35*2.35-1)});
+  \draw[atlasgray!65, line width=0.7pt] (0,0)--(1,0);
+  \draw[atlasblue, atlas curve]
+    plot[domain=1:3.05,samples=120,smooth] (\x,{sqrt(\x*\x-1)});
+  \draw[atlasblue, atlas curve]
+    plot[domain=1:3.05,samples=120,smooth] (\x,{-sqrt(\x*\x-1)});
+
+  \coordinate (V) at (1,0);
+  \coordinate (P) at (2.35,{sqrt(2.35*2.35-1)});
+  \fill[atlas dot] (V) node[below] {$V=(1,0)$};
+  \fill[atlas dot] (P) node[above left] {$P_t=(\cosh t,\sinh t)$};
+  \draw[dropline] (P)--(2.35,0) node[below] {$\cosh t$};
+  \draw[dropline] (P)--(0,{sqrt(2.35*2.35-1)}) node[left] {$\sinh t$};
+  \node[atlasgold!70!black] at (1.24,0.48) {$t/2$};
+  \node[atlasblue] at (2.6,1.65) {$x^2-y^2=1$};
+\end{tikzpicture}
+
+\atlascaption{H1}{Hyperbolic sector}{The parameter $t$ is twice the shaded sector area.}
+\end{center}

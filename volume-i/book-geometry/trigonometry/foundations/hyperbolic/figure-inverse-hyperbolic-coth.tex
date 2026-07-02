@@ -1,0 +1,16 @@
+\begin{center}
+\input{volume-i/book-geometry/trigonometry/foundations/hyperbolic/figure-atlas-fallback}
+\begin{tikzpicture}[scale=0.82, line cap=round, line join=round]
+  \draw[atlas axes] (-3.4,0)--(3.4,0) node[right] {$x$};
+  \draw[atlas axes] (0,-2.7)--(0,2.7) node[above] {$t$};
+  \draw[dropline] (-1,-2.55)--(-1,2.55);
+  \draw[dropline] (1,-2.55)--(1,2.55);
+  \glowstroke{atlasblue}{1.12:3.2}{0.5*ln((\x+1)/(\x-1))}
+  \glowstroke{atlasblue}{-3.2:-1.12}{0.5*ln((\x+1)/(\x-1))}
+  \node[below] at (-1,0) {$-1$};
+  \node[below] at (1,0) {$1$};
+  \node[atlasblue] at (2.35,0.85) {$t=\operatorname{arcoth}x$};
+\end{tikzpicture}
+
+\atlascaption{HI4}{Inverse hyperbolic cotangent}{Domain $(-\infty,-1)\cup(1,\infty)$ and range $\mathbb{R}\setminus\{0\}$; both branches are retained.}
+\end{center}

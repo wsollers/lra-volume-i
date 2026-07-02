@@ -1,0 +1,50 @@
+\input{volume-i/book-geometry/trigonometry/foundations/hyperbolic/figure-inverse-hyperbolic-sinh}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Inverse hyperbolic sine]
+\label{def:inverse-hyperbolic-sine}
+The \emph{inverse hyperbolic sine} function is the inverse of $\sinh$ on
+its full domain. It is denoted by $\operatorname{arsinh}$ and has domain
+$\mathbb{R}$ and range $\mathbb{R}$.
+\[
+  \operatorname{arsinh} x=t
+  \quad\Longleftrightarrow\quad
+  \sinh t=x.
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Domain and range]
+The regular function $\sinh:\mathbb{R}\to\mathbb{R}$ is strictly increasing
+and has range $\mathbb{R}$. No branch restriction is needed before inverting
+it.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-sine]{Hyperbolic sine}
+  \item \hyperref[thm:hyperbolic-sector-existence]{Existence for hyperbolic sectors}
+  \item \hyperref[thm:hyperbolic-sector-uniqueness]{Uniqueness for hyperbolic sectors}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Principal inverse hyperbolic sine identities]
+\label{thm:inverse-hyperbolic-sine-identities}
+For every $x\in\mathbb{R}$,
+\[
+  \sinh(\operatorname{arsinh} x)=x.
+\]
+For every $t\in\mathbb{R}$,
+\[
+  \operatorname{arsinh}(\sinh t)=t.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Both identities are the defining cancellation laws for inverse functions,
+using that $\sinh$ is one-to-one from $\mathbb{R}$ onto $\mathbb{R}$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:inverse-hyperbolic-sine]{Inverse hyperbolic sine}
+\end{itemize}
+\end{dependencies}

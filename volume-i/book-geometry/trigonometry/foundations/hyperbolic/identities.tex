@@ -1,0 +1,152 @@
+\begin{theorembox}{Theorem}
+\begin{theorem}[Hyperbolic Pythagorean identity]
+\label{thm:hyperbolic-pythagorean-identity}
+For every $t\in\mathbb{R}$,
+\[
+  \cosh^2 t-\sinh^2 t=1.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+This is \hyperref[thm:fundamental-hyperbolic-identity]{the fundamental
+hyperbolic identity}.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:fundamental-hyperbolic-identity]{Fundamental hyperbolic identity}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Exponential form of hyperbolic sine and cosine]
+\label{thm:hyperbolic-exponential-form}
+For every $t\in\mathbb{R}$,
+\[
+  \cosh t=\frac{e^t+e^{-t}}{2},
+  \qquad
+  \sinh t=\frac{e^t-e^{-t}}{2}.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Let $u=\cosh t$ and $v=\sinh t$. The identity $u^2-v^2=1$ gives
+\[
+  (u-v)(u+v)=1.
+\]
+On the right branch, $u+v>0$, so there is a unique real number $s$ such that
+$u+v=e^s$. Then $u-v=e^{-s}$, and solving the two linear equations gives
+\[
+  u=\frac{e^s+e^{-s}}{2},
+  \qquad
+  v=\frac{e^s-e^{-s}}{2}.
+\]
+For the exponential parametrization
+\[
+  Q_s=\left(\frac{e^s+e^{-s}}{2},\frac{e^s-e^{-s}}{2}\right),
+\]
+a direct sector-area computation gives
+$2\operatorname{HArea}(O,V,Q_s)=s$. Therefore the defining sector parameter is
+$t=s$, and the displayed formulas follow. The negative case agrees with the
+even/odd extension.
+\end{remark*}
+\begin{remark*}[Construction first]
+This theorem is derived from the geometric construction. It is not the
+definition of $\cosh$ and $\sinh$ in this chapter.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-sine]{Hyperbolic sine}
+  \item \hyperref[def:hyperbolic-cosine]{Hyperbolic cosine}
+  \item \hyperref[thm:fundamental-hyperbolic-identity]{Fundamental hyperbolic identity}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Hyperbolic sum formulas]
+\label{thm:hyperbolic-sum-formulas}
+For all $a,b\in\mathbb{R}$,
+\[
+  \cosh(a+b)=\cosh a\cosh b+\sinh a\sinh b,
+\]
+\[
+  \sinh(a+b)=\sinh a\cosh b+\cosh a\sinh b.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Using the exponential form,
+\[
+  \cosh(a+b)
+  =\frac{e^{a+b}+e^{-(a+b)}}{2}.
+\]
+Expanding the right side of the claimed identity gives
+\[
+\frac{e^a+e^{-a}}{2}\frac{e^b+e^{-b}}{2}
++\frac{e^a-e^{-a}}{2}\frac{e^b-e^{-b}}{2}
+=\frac{e^{a+b}+e^{-(a+b)}}{2}.
+\]
+The proof for $\sinh(a+b)$ is the same expansion with the signs arranged so
+that the mixed exponential terms survive with the claimed signs.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:hyperbolic-exponential-form]{Exponential form of hyperbolic sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Hyperbolic double-angle formulas]
+\label{thm:hyperbolic-double-angle-formulas}
+For every $t\in\mathbb{R}$,
+\[
+  \sinh(2t)=2\sinh t\cosh t,
+\]
+\[
+  \cosh(2t)=\cosh^2 t+\sinh^2 t
+  =2\cosh^2 t-1
+  =1+2\sinh^2 t.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+Set $a=b=t$ in the hyperbolic sum formulas. The first two displayed formulas
+follow immediately. The remaining two forms of $\cosh(2t)$ follow by replacing
+$\sinh^2 t$ with $\cosh^2 t-1$, or replacing $\cosh^2 t$ with
+$1+\sinh^2 t$, using the hyperbolic Pythagorean identity.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:hyperbolic-sum-formulas]{Hyperbolic sum formulas}
+  \item \hyperref[thm:hyperbolic-pythagorean-identity]{Hyperbolic Pythagorean identity}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Hyperbolic tangent sum formula]
+\label{thm:hyperbolic-tangent-sum-formula}
+For all $a,b\in\mathbb{R}$,
+\[
+  \tanh(a+b)=
+  \frac{\tanh a+\tanh b}{1+\tanh a\tanh b}.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+By definition,
+\[
+  \tanh(a+b)=\frac{\sinh(a+b)}{\cosh(a+b)}.
+\]
+Substitute the sum formulas:
+\[
+  \frac{\sinh a\cosh b+\cosh a\sinh b}
+       {\cosh a\cosh b+\sinh a\sinh b}.
+\]
+Since $\cosh a$ and $\cosh b$ are nonzero, divide numerator and denominator by
+$\cosh a\cosh b$ to obtain the displayed identity.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic-tangent]{Hyperbolic tangent}
+  \item \hyperref[thm:hyperbolic-sum-formulas]{Hyperbolic sum formulas}
+\end{itemize}
+\end{dependencies}

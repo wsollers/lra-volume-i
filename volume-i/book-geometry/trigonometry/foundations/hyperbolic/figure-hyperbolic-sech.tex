@@ -1,0 +1,13 @@
+\begin{center}
+\input{volume-i/book-geometry/trigonometry/foundations/hyperbolic/figure-atlas-fallback}
+\begin{tikzpicture}[scale=1.0, line cap=round, line join=round]
+  \draw[atlas axes] (-3.25,0)--(3.25,0) node[right] {$t$};
+  \draw[atlas axes] (0,-0.2)--(0,1.35) node[above] {$y$};
+  \draw[dropline] (-3.05,1)--(3.05,1) node[right] {$1$};
+  \glowstroke{atlasgreen}{-3:3}{2/(exp(\x)+exp(-\x))}
+  \node[atlasgreen!70!black] at (1.55,0.72) {$y=\operatorname{sech}t$};
+  \fill[atlas dot] (0,1) node[above left] {$(0,1)$};
+\end{tikzpicture}
+
+\atlascaption{H6}{Hyperbolic secant}{Even, bell-shaped, with maximum $1$ at $t=0$.}
+\end{center}

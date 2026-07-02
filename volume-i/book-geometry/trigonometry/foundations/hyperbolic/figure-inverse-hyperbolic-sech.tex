@@ -1,0 +1,13 @@
+\begin{center}
+\input{volume-i/book-geometry/trigonometry/foundations/hyperbolic/figure-atlas-fallback}
+\begin{tikzpicture}[scale=0.82, line cap=round, line join=round]
+  \draw[atlas axes] (-0.1,0)--(1.35,0) node[right] {$x$};
+  \draw[atlas axes] (0,-0.25)--(0,2.9) node[above] {$t$};
+  \draw[dropline] (1,-0.2)--(1,2.75);
+  \glowstroke{atlasblue}{0.14:1}{ln(1/\x+sqrt(1/(\x*\x)-1))}
+  \fill[atlas dot] (1,0) node[below] {$1$};
+  \node[atlasblue] at (0.55,1.8) {$t=\operatorname{arsech}x$};
+\end{tikzpicture}
+
+\atlascaption{HI5}{Inverse hyperbolic secant}{Domain $(0,1]$ and range $[0,\infty)$; the inverse uses the nonnegative branch of $\operatorname{sech}$.}
+\end{center}
