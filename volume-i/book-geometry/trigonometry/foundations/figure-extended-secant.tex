@@ -1,0 +1,14 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.35, line cap=round, line join=round]
+  \definecolor{trigblue}{RGB}{30,110,190}
+  \coordinate (O) at (0,0);
+  \coordinate (T) at (1,{tan(38)});
+  \draw[gray!55] (O) circle (1);
+  \draw[->] (-0.25,0)--(1.35,0) node[right] {$x$};
+  \draw[->] (0,-0.2)--(0,1.35) node[above] {$y$};
+  \draw[gray!70] (1,-0.1)--(1,1.25) node[above] {$x=1$};
+  \draw[very thick,trigblue] (O)--(T);
+  \fill (T) circle (0.02) node[right] {$(1,\tan\theta)$};
+  \node[above left,trigblue] at ($(O)!0.52!(T)$) {$\sec\theta$};
+\end{tikzpicture}
+\end{center}

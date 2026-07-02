@@ -1,0 +1,18 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.55, line cap=round, line join=round]
+  \definecolor{trigblue}{RGB}{30,110,190}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (35:1);
+  \coordinate (Q) at ({cos(35)},0);
+  \draw[gray!55] (O) circle (1);
+  \draw[->] (-1.25,0)--(1.35,0) node[right] {$x$};
+  \draw[->] (0,-1.15)--(0,1.25) node[above] {$y$};
+  \draw[very thick, trigblue] (Q)--(P);
+  \draw[very thick] (O)--(P);
+  \draw[dropline] (P)--(Q);
+  \draw[trigblue] (0.32,0) arc[start angle=0,end angle=35,radius=0.32];
+  \node[trigblue] at (0.32,0.10) {$\theta$};
+  \fill (P) circle (0.022) node[above right] {$P=(x_\theta,y_\theta)$};
+  \node[right,trigblue] at ($(Q)!0.5!(P)$) {$\sin\theta=y_\theta$};
+\end{tikzpicture}
+\end{center}

@@ -1,0 +1,16 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.55, line cap=round, line join=round]
+  \definecolor{trigblue}{RGB}{30,110,190}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (38:1);
+  \coordinate (Q) at ({cos(38)},0);
+  \draw[gray!55] (O) circle (1);
+  \draw[->] (-0.15,0)--(1.25,0) node[right] {$x$};
+  \draw[->] (0,-0.15)--(0,1.15) node[above] {$y$};
+  \draw[very thick] (O)--(Q)--(P)--cycle;
+  \draw[trigblue] (0.33,0) arc[start angle=0,end angle=38,radius=0.33];
+  \node[below] at ($(O)!0.5!(Q)$) {$\cos\theta$};
+  \node[right] at ($(Q)!0.5!(P)$) {$\sin\theta$};
+  \node[above left] at ($(O)!0.5!(P)$) {$1$};
+\end{tikzpicture}
+\end{center}

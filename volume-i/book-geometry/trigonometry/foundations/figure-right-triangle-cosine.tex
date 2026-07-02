@@ -1,0 +1,17 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.25, line cap=round, line join=round]
+  \definecolor{trigblue}{RGB}{30,110,190}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.4,0);
+  \coordinate (C) at (3.4,2.0);
+  \draw[very thick] (A)--(B)--(C)--cycle;
+  \draw[line width=2.2pt,trigblue] (A)--(B);
+  \draw[line width=2.2pt,gray!65] (A)--(C);
+  \draw (3.1,0)--(3.1,0.3)--(3.4,0.3);
+  \draw[trigblue] (0.55,0) arc[start angle=0,end angle=30.5,radius=0.55];
+  \node[trigblue] at (0.78,0.22) {$\theta$};
+  \node[below,trigblue] at ($(A)!0.5!(B)$) {adjacent};
+  \node[above left] at ($(A)!0.5!(C)$) {hypotenuse};
+  \node[below] at (1.7,-0.55) {$\cos\theta=\text{adjacent}/\text{hypotenuse}$};
+\end{tikzpicture}
+\end{center}

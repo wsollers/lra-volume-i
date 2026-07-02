@@ -11,8 +11,8 @@ of one drawing.
 \input{volume-i/book-geometry/trigonometry/foundations/figure-right-triangle-ratios}
 
 \begin{definitionbox}{Definition}
-\begin{definition}[Right-triangle trigonometric ratios]
-\label{def:right-triangle-trig-ratios}
+\begin{definition}[Right-triangle sine]
+\label{def:right-triangle-sine}
 Let $T$ be a right triangle and let $\theta$ be one of its acute angles. Write
 \[
   \operatorname{opp}(T,\theta),\qquad
@@ -22,13 +22,66 @@ Let $T$ be a right triangle and let $\theta$ be one of its acute angles. Write
 for the side lengths opposite $\theta$, adjacent to $\theta$, and opposite the
 right angle, respectively. Define
 \[
-\sin\theta=\frac{\operatorname{opp}(T,\theta)}{\operatorname{hyp}(T)},\quad
-\cos\theta=\frac{\operatorname{adj}(T,\theta)}{\operatorname{hyp}(T)},\quad
-\tan\theta=\frac{\operatorname{opp}(T,\theta)}{\operatorname{adj}(T,\theta)},
+\sin\theta=\frac{\operatorname{opp}(T,\theta)}{\operatorname{hyp}(T)}.
 \]
+\end{definition}
+\end{definitionbox}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-right-triangle-cosine}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Right-triangle cosine]
+\label{def:right-triangle-cosine}
+Let $T$ be a right triangle and let $\theta$ be one of its acute angles. Define
 \[
-\cot\theta=\frac{\operatorname{adj}(T,\theta)}{\operatorname{opp}(T,\theta)},\quad
-\sec\theta=\frac{\operatorname{hyp}(T)}{\operatorname{adj}(T,\theta)},\quad
+\cos\theta=\frac{\operatorname{adj}(T,\theta)}{\operatorname{hyp}(T)}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-right-triangle-tangent}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Right-triangle tangent]
+\label{def:right-triangle-tangent}
+Let $T$ be a right triangle and let $\theta$ be one of its acute angles. Define
+\[
+\tan\theta=\frac{\operatorname{opp}(T,\theta)}{\operatorname{adj}(T,\theta)}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-right-triangle-cotangent}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Right-triangle cotangent]
+\label{def:right-triangle-cotangent}
+Let $T$ be a right triangle and let $\theta$ be one of its acute angles. Define
+\[
+\cot\theta=\frac{\operatorname{adj}(T,\theta)}{\operatorname{opp}(T,\theta)}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-right-triangle-secant}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Right-triangle secant]
+\label{def:right-triangle-secant}
+Let $T$ be a right triangle and let $\theta$ be one of its acute angles. Define
+\[
+\sec\theta=\frac{\operatorname{hyp}(T)}{\operatorname{adj}(T,\theta)}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-right-triangle-cosecant}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Right-triangle cosecant]
+\label{def:right-triangle-cosecant}
+Let $T$ be a right triangle and let $\theta$ be one of its acute angles. Define
+\[
 \csc\theta=\frac{\operatorname{hyp}(T)}{\operatorname{opp}(T,\theta)}.
 \]
 \end{definition}
@@ -50,14 +103,27 @@ three side lengths.
 \end{itemize}
 \end{dependencies}
 
+\input{volume-i/book-geometry/trigonometry/foundations/figure-sine-cosine}
+
 \begin{definitionbox}{Definition}
-\begin{definition}[Sine and cosine]
-\label{def:sine-cosine}
+\begin{definition}[Acute-angle sine]
+\label{def:acute-angle-sine}
 For an acute Euclidean angle $\theta$, choose any right triangle $T$ having
 $\theta$ as an acute angle and set
 \[
-  \sin\theta=\frac{\operatorname{opp}(T,\theta)}{\operatorname{hyp}(T)},
-  \qquad
+  \sin\theta=\frac{\operatorname{opp}(T,\theta)}{\operatorname{hyp}(T)}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-acute-angle-cosine}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Acute-angle cosine]
+\label{def:acute-angle-cosine}
+For an acute Euclidean angle $\theta$, choose any right triangle $T$ having
+$\theta$ as an acute angle and set
+\[
   \cos\theta=\frac{\operatorname{adj}(T,\theta)}{\operatorname{hyp}(T)}.
 \]
 \end{definition}
@@ -68,13 +134,14 @@ $\theta$ as an acute angle, then $\sin\theta$ and $\cos\theta$ are the
 opposite-over-hypotenuse and adjacent-over-hypotenuse ratios of $T$.
 \end{remark*}
 \begin{remark*}[Well-definedness debt]
-This definition depends on the similarity-invariance theorem below. Until that
+These definitions depend on the similarity-invariance theorem below. Until that
 theorem is invoked, the displayed formulas describe a ratio in a chosen
 triangle, not yet a function of $\theta$ alone.
 \end{remark*}
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:right-triangle-trig-ratios]{Right-triangle trigonometric ratios}
+  \item \hyperref[def:right-triangle-sine]{Right-triangle sine}
+  \item \hyperref[def:right-triangle-cosine]{Right-triangle cosine}
 \end{itemize}
 \end{dependencies}
 
@@ -110,6 +177,8 @@ is an acute angle of both triangles, then
 \end{itemize}
 \end{dependencies}
 
+\input{volume-i/book-geometry/trigonometry/foundations/figure-sine-cosine-well-defined}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Well-definedness of sine and cosine]
 \label{thm:sine-cosine-well-defined}
@@ -122,10 +191,13 @@ For each acute Euclidean angle $\theta$, the values $\sin\theta$ and
 \end{remark*}
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:sine-cosine]{Sine and cosine}
+  \item \hyperref[def:acute-angle-sine]{Acute-angle sine}
+  \item \hyperref[def:acute-angle-cosine]{Acute-angle cosine}
   \item \hyperref[thm:trig-ratios-similarity-invariant]{Similarity invariance of trigonometric ratios}
 \end{itemize}
 \end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-six-trig-functions}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[Six trigonometric functions]
@@ -140,7 +212,8 @@ quotients.
 \end{remark*}
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:right-triangle-trig-ratios]{Right-triangle trigonometric ratios}
+  \item \hyperref[def:right-triangle-sine]{Right-triangle sine}
+  \item \hyperref[def:right-triangle-cosine]{Right-triangle cosine}
   \item \hyperref[thm:sine-cosine-well-defined]{Well-definedness of sine and cosine}
 \end{itemize}
 \end{dependencies}
@@ -148,12 +221,25 @@ quotients.
 \input{volume-i/book-geometry/trigonometry/foundations/figure-unit-circle-trig}
 
 \begin{definitionbox}{Definition}
-\begin{definition}[Unit-circle sine and cosine]
-\label{def:unit-circle-sine-cosine}
+\begin{definition}[Unit-circle cosine]
+\label{def:unit-circle-cosine}
 Let $\theta$ be an angle in standard position, and let $P(\theta)=(x_\theta,
 y_\theta)$ be the point where its terminal ray meets the unit circle. Define
 \[
-  \cos\theta=x_\theta,\qquad \sin\theta=y_\theta.
+  \cos\theta=x_\theta.
+\]
+\end{definition}
+\end{definitionbox}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-unit-circle-sine}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Unit-circle sine]
+\label{def:unit-circle-sine}
+Let $\theta$ be an angle in standard position, and let $P(\theta)=(x_\theta,
+y_\theta)$ be the point where its terminal ray meets the unit circle. Define
+\[
+  \sin\theta=y_\theta.
 \]
 \end{definition}
 \end{definitionbox}
@@ -170,6 +256,8 @@ rectifiability machinery not yet developed in this volume.
 \end{itemize}
 \end{dependencies}
 
+\input{volume-i/book-geometry/trigonometry/foundations/figure-unit-circle-agreement}
+
 \begin{theorembox}{Theorem}
 \begin{theorem}[Unit-circle agreement with right-triangle trigonometry]
 \label{thm:unit-circle-agrees-with-right-triangle-trig}
@@ -182,22 +270,21 @@ with the right-triangle definitions.
 \end{remark*}
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:sine-cosine]{Sine and cosine}
-  \item \hyperref[def:unit-circle-sine-cosine]{Unit-circle sine and cosine}
+  \item \hyperref[def:acute-angle-sine]{Acute-angle sine}
+  \item \hyperref[def:acute-angle-cosine]{Acute-angle cosine}
+  \item \hyperref[def:unit-circle-cosine]{Unit-circle cosine}
+  \item \hyperref[def:unit-circle-sine]{Unit-circle sine}
 \end{itemize}
 \end{dependencies}
 
 \input{volume-i/book-geometry/trigonometry/foundations/figure-tangent-line}
 
 \begin{definitionbox}{Definition}
-\begin{definition}[Extended tangent, cotangent, secant, and cosecant]
-\label{def:extended-trig-functions}
-Where the displayed denominators are nonzero, define
+\begin{definition}[Extended tangent]
+\label{def:extended-tangent}
+Where $\cos\theta\neq 0$, define
 \[
-  \tan\theta=\frac{\sin\theta}{\cos\theta},\quad
-  \cot\theta=\frac{\cos\theta}{\sin\theta},\quad
-  \sec\theta=\frac{1}{\cos\theta},\quad
-  \csc\theta=\frac{1}{\sin\theta}.
+  \tan\theta=\frac{\sin\theta}{\cos\theta}.
 \]
 \end{definition}
 \end{definitionbox}
@@ -205,12 +292,51 @@ Where the displayed denominators are nonzero, define
 The tangent of $\theta$ is the signed height where the terminal ray meets the
 vertical tangent line $x=1$.
 \end{remark*}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-extended-cotangent}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Extended cotangent]
+\label{def:extended-cotangent}
+Where $\sin\theta\neq 0$, define
+\[
+  \cot\theta=\frac{\cos\theta}{\sin\theta}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-extended-secant}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Extended secant]
+\label{def:extended-secant}
+Where $\cos\theta\neq 0$, define
+\[
+  \sec\theta=\frac{1}{\cos\theta}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-extended-cosecant}
+
+\begin{definitionbox}{Definition}
+\begin{definition}[Extended cosecant]
+\label{def:extended-cosecant}
+Where $\sin\theta\neq 0$, define
+\[
+  \csc\theta=\frac{1}{\sin\theta}.
+\]
+\end{definition}
+\end{definitionbox}
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:unit-circle-sine-cosine]{Unit-circle sine and cosine}
+  \item \hyperref[def:unit-circle-cosine]{Unit-circle cosine}
+  \item \hyperref[def:unit-circle-sine]{Unit-circle sine}
   \item \hyperref[thm:unit-circle-agrees-with-right-triangle-trig]{Unit-circle agreement with right-triangle trigonometry}
 \end{itemize}
 \end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-radian-measure}
 
 \begin{definitionbox}{Definition}
 \begin{definition}[Radian measure]
@@ -225,10 +351,13 @@ after rectifiable curves and the construction of $\pi$ from circumference.
 \end{remark*}
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:unit-circle-sine-cosine]{Unit-circle sine and cosine}
+  \item \hyperref[def:unit-circle-cosine]{Unit-circle cosine}
+  \item \hyperref[def:unit-circle-sine]{Unit-circle sine}
   \item \hyperref[def:euclid-circle]{Circle}
 \end{itemize}
 \end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-trig-symmetry-periodicity}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[Symmetry and periodicity of sine and cosine]
@@ -243,6 +372,8 @@ and one full turn returns the same sine and cosine values.
 \begin{remark*}[Proof]
 \hyperref[prf:trig-symmetry-periodicity]{Go to proof.}
 \end{remark*}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-pythagorean-trig-identity}
 
 \begin{theorembox}{Theorem}
 \begin{theorem}[Pythagorean identity]
@@ -259,20 +390,235 @@ For every angle in the unit-circle domain,
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:euclid-i-47]{Euclid I.47}
-  \item \hyperref[def:unit-circle-sine-cosine]{Unit-circle sine and cosine}
+  \item \hyperref[def:unit-circle-cosine]{Unit-circle cosine}
+  \item \hyperref[def:unit-circle-sine]{Unit-circle sine}
 \end{itemize}
 \end{dependencies}
 
+\input{volume-i/book-geometry/trigonometry/foundations/figure-trig-reciprocal-identities}
+
 \begin{theorembox}{Theorem}
-\begin{theorem}[Angle-sum and difference identities]
-\label{thm:trig-angle-sum-difference}
-The sine and cosine of a sum or difference of angles are determined by the
-standard angle-sum and angle-difference formulas.
+\begin{theorem}[Reciprocal identities]
+\label{thm:trig-reciprocal-identities}
+Where both sides are defined,
+\[
+  \sec\theta=\frac{1}{\cos\theta},\qquad
+  \csc\theta=\frac{1}{\sin\theta},\qquad
+  \cot\theta=\frac{1}{\tan\theta}.
+\]
 \end{theorem}
 \end{theorembox}
 \begin{remark*}[Proof]
-\hyperref[prf:trig-angle-sum-difference]{Go to proof.}
+\hyperref[prf:trig-reciprocal-identities]{Go to proof.}
 \end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:extended-tangent]{Extended tangent}
+  \item \hyperref[def:extended-cotangent]{Extended cotangent}
+  \item \hyperref[def:extended-secant]{Extended secant}
+  \item \hyperref[def:extended-cosecant]{Extended cosecant}
+\end{itemize}
+\end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-trig-quotient-identities}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Quotient identities]
+\label{thm:trig-quotient-identities}
+Where both sides are defined,
+\[
+  \tan\theta=\frac{\sin\theta}{\cos\theta},\qquad
+  \cot\theta=\frac{\cos\theta}{\sin\theta}.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:trig-quotient-identities]{Go to proof.}
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:extended-tangent]{Extended tangent}
+  \item \hyperref[def:extended-cotangent]{Extended cotangent}
+\end{itemize}
+\end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-trig-tangent-pythagorean-identities}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Tangent and secant Pythagorean identities]
+\label{thm:trig-tangent-pythagorean-identities}
+Where both sides are defined,
+\[
+  1+\tan^2\theta=\sec^2\theta,
+  \qquad
+  1+\cot^2\theta=\csc^2\theta.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:trig-tangent-pythagorean-identities]{Go to proof.}
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:pythagorean-trig-identity]{Pythagorean identity}
+  \item \hyperref[thm:trig-quotient-identities]{Quotient identities}
+  \item \hyperref[thm:trig-reciprocal-identities]{Reciprocal identities}
+\end{itemize}
+\end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-trig-angle-sum-identities}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Angle-sum identities]
+\label{thm:trig-angle-sum-identities}
+For angles in the unit-circle domain,
+\[
+  \cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta,
+\]
+\[
+  \sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:trig-angle-sum-identities]{Go to proof.}
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:pythagorean-trig-identity]{Pythagorean identity}
+\end{itemize}
+\end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-trig-angle-difference-identities}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Angle-difference identities]
+\label{thm:trig-angle-difference-identities}
+For angles in the unit-circle domain,
+\[
+  \cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta,
+\]
+\[
+  \sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:trig-angle-difference-identities]{Go to proof.}
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:trig-angle-sum-identities]{Angle-sum identities}
+  \item \hyperref[thm:trig-symmetry-periodicity]{Symmetry and periodicity of sine and cosine}
+\end{itemize}
+\end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-trig-double-angle-identities}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Double-angle identities]
+\label{thm:trig-double-angle-identities}
+For angles in the unit-circle domain,
+\[
+  \sin(2\theta)=2\sin\theta\cos\theta,
+\]
+\[
+  \cos(2\theta)=\cos^2\theta-\sin^2\theta
+  =2\cos^2\theta-1
+  =1-2\sin^2\theta.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:trig-double-angle-identities]{Go to proof.}
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:trig-angle-sum-identities]{Angle-sum identities}
+  \item \hyperref[thm:pythagorean-trig-identity]{Pythagorean identity}
+\end{itemize}
+\end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-trig-half-angle-identities}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Half-angle identities]
+\label{thm:trig-half-angle-identities}
+Where the signs are chosen according to the quadrant of $\theta/2$,
+\[
+  \sin\frac{\theta}{2}=\pm\sqrt{\frac{1-\cos\theta}{2}},
+  \qquad
+  \cos\frac{\theta}{2}=\pm\sqrt{\frac{1+\cos\theta}{2}}.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:trig-half-angle-identities]{Go to proof.}
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:trig-double-angle-identities]{Double-angle identities}
+\end{itemize}
+\end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-trig-product-to-sum-identities}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Product-to-sum identities]
+\label{thm:trig-product-to-sum-identities}
+For angles in the unit-circle domain,
+\[
+\sin\alpha\cos\beta
+=\frac{\sin(\alpha+\beta)+\sin(\alpha-\beta)}{2},
+\]
+\[
+\cos\alpha\cos\beta
+=\frac{\cos(\alpha+\beta)+\cos(\alpha-\beta)}{2},
+\]
+\[
+\sin\alpha\sin\beta
+=\frac{\cos(\alpha-\beta)-\cos(\alpha+\beta)}{2}.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:trig-product-to-sum-identities]{Go to proof.}
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:trig-angle-sum-identities]{Angle-sum identities}
+  \item \hyperref[thm:trig-angle-difference-identities]{Angle-difference identities}
+\end{itemize}
+\end{dependencies}
+
+\input{volume-i/book-geometry/trigonometry/foundations/figure-trig-sum-to-product-identities}
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Sum-to-product identities]
+\label{thm:trig-sum-to-product-identities}
+For angles in the unit-circle domain,
+\[
+\sin u+\sin v
+=2\sin\frac{u+v}{2}\cos\frac{u-v}{2},
+\]
+\[
+\cos u+\cos v
+=2\cos\frac{u+v}{2}\cos\frac{u-v}{2},
+\]
+\[
+\cos u-\cos v
+=-2\sin\frac{u+v}{2}\sin\frac{u-v}{2}.
+\]
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Proof]
+\hyperref[prf:trig-sum-to-product-identities]{Go to proof.}
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:trig-product-to-sum-identities]{Product-to-sum identities}
+\end{itemize}
+\end{dependencies}
 
 \input{volume-i/book-geometry/trigonometry/foundations/figure-special-angles}
 

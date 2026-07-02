@@ -1,0 +1,22 @@
+\begin{center}
+\begin{tikzpicture}[scale=0.95, line cap=round, line join=round]
+  \definecolor{trigblue}{RGB}{30,110,190}
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2.4,0);
+  \coordinate (C) at (2.4,1.4);
+  \coordinate (D) at (4.2,0);
+  \coordinate (E) at (7.2,0);
+  \coordinate (F) at (7.2,1.75);
+  \draw[very thick] (A)--(B)--(C)--cycle;
+  \draw[very thick] (D)--(E)--(F)--cycle;
+  \draw[trigblue] (0.45,0) arc[start angle=0,end angle=30.3,radius=0.45];
+  \draw[trigblue] (4.65,0) arc[start angle=0,end angle=30.3,radius=0.45];
+  \node[trigblue] at (0.68,0.18) {$\theta$};
+  \node[trigblue] at (4.88,0.18) {$\theta$};
+  \node[below] at (1.2,0) {$a$};
+  \node[right] at (2.4,0.7) {$b$};
+  \node[below] at (5.7,0) {$ka$};
+  \node[right] at (7.2,0.88) {$kb$};
+  \node[below] at (3.6,-0.55) {same angle, same ratios};
+\end{tikzpicture}
+\end{center}

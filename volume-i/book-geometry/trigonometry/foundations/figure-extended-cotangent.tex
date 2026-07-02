@@ -1,0 +1,15 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.3, line cap=round, line join=round]
+  \definecolor{trigblue}{RGB}{30,110,190}
+  \coordinate (O) at (0,0);
+  \coordinate (T) at ({cot(38)},1);
+  \draw[gray!55] (O) circle (1);
+  \draw[->] (-0.2,0)--(1.55,0) node[right] {$x$};
+  \draw[->] (0,-0.2)--(0,1.35) node[above] {$y$};
+  \draw[gray!70] (-0.15,1)--(1.35,1) node[right] {$y=1$};
+  \draw[very thick,trigblue] (O)--(T);
+  \draw[very thick] (0,1)--(T);
+  \fill (T) circle (0.02) node[above] {$(\cot\theta,1)$};
+  \node[above] at ($(0,1)!0.5!(T)$) {$\cot\theta$};
+\end{tikzpicture}
+\end{center}

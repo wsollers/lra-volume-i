@@ -1,0 +1,17 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.35, line cap=round, line join=round]
+  \definecolor{trigblue}{RGB}{30,110,190}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (38:1);
+  \coordinate (Q) at ({cos(38)},0);
+  \coordinate (T) at (1,{tan(38)});
+  \draw[gray!55] (O) circle (1);
+  \draw[->] (-0.2,0)--(1.35,0) node[right] {$x$};
+  \draw[->] (0,-0.2)--(0,1.35) node[above] {$y$};
+  \draw[gray!70] (1,-0.1)--(1,1.25);
+  \draw[very thick] (O)--(Q)--(P)--cycle;
+  \draw[very thick,trigblue] (O)--(T);
+  \draw[very thick,trigblue] (1,0)--(T);
+  \node[right,trigblue] at (1,0.4) {$\tan\theta=\sin\theta/\cos\theta$};
+\end{tikzpicture}
+\end{center}

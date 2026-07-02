@@ -1,0 +1,14 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.25, line cap=round, line join=round]
+  \definecolor{trigblue}{RGB}{30,110,190}
+  \draw[gray!55] (0,0) circle (1.2);
+  \draw[->] (-1.35,0)--(1.45,0) node[right] {$x$};
+  \draw[->] (0,-0.25)--(0,1.35) node[above] {$y$};
+  \draw[very thick,trigblue] (0,0)--(64:1.2);
+  \draw[very thick] (0,0)--(32:1.2);
+  \draw[trigblue] (0.4,0) arc[start angle=0,end angle=64,radius=0.4];
+  \draw (0.65,0) arc[start angle=0,end angle=32,radius=0.65];
+  \node[trigblue] at (0.42,0.25) {$\theta$};
+  \node at (0.7,0.2) {$\theta/2$};
+\end{tikzpicture}
+\end{center}

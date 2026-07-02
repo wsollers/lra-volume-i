@@ -1,0 +1,16 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.35, line cap=round, line join=round]
+  \definecolor{trigblue}{RGB}{30,110,190}
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (35:1);
+  \coordinate (Q) at (-35:1);
+  \draw[gray!55] (O) circle (1);
+  \draw[->] (-1.25,0)--(1.35,0) node[right] {$x$};
+  \draw[->] (0,-1.15)--(0,1.25) node[above] {$y$};
+  \draw[very thick,trigblue] (O)--(P);
+  \draw[very thick,trigblue] (O)--(Q);
+  \draw[dropline] (P)--({cos(35)},0)--(Q);
+  \fill (P) circle (0.02) node[above right] {$\theta$};
+  \fill (Q) circle (0.02) node[below right] {$-\theta$};
+\end{tikzpicture}
+\end{center}
