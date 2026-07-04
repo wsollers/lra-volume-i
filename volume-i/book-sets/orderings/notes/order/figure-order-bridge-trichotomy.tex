@@ -1,0 +1,26 @@
+\begin{tikzpicture}[
+  >=Stealth,
+  x=1.0cm,
+  y=1.0cm,
+  every node/.style={font=\small}
+]
+  \draw[->, gray!70] (-3.2,0) -- (3.2,0);
+  \foreach \x/\lab in {-2/x,0/y,2/x}
+    \fill (\x,0) circle (1.6pt);
+  \node[below] at (-2,0) {$x$};
+  \node[below] at (0,0) {$y$};
+  \node[below] at (2,0) {$x$};
+
+  \draw[blue, thick, ->] (-2,0.35) -- (0,0.35);
+  \node[above] at (-1,0.35) {$x<y$};
+
+  \draw[black, thick] (-0.35,-1.0) -- (0.35,-1.0);
+  \fill (0,-1.0) circle (1.6pt);
+  \node[below] at (0,-1.0) {$x=y$};
+
+  \draw[red!70!black, thick, ->] (2,0.35) -- (0,0.35);
+  \node[above] at (1,0.35) {$y<x$};
+
+  \node[align=center] at (0,-1.85)
+    {$x<y \Longleftrightarrow x\leq y\ \text{and}\ x\neq y$};
+\end{tikzpicture}

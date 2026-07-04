@@ -96,6 +96,84 @@ $a \leq b \iff (a < b \lor a=b)$. The two formulations carry exactly the
 same information.
 \end{remark*}
 
+\begin{definitionbox}{Definition (Non-Strict Order Induced by a Strict Order)}
+\begin{definition}[Non-Strict Order Induced by a Strict Order]\label{def:non-strict-order-induced-by-strict-order}
+Let $<$ be a strict order on $S$. Define $\leq$ by
+\[
+x\leq y \;\Longleftrightarrow\; (x<y\lor x=y).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:strict-order]{Strict Order}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Strict Order Induced by a Linear Order)}
+\begin{theorem}[Strict Order Induced by a Linear Order]\label{thm:strict-order-induced-by-linear-order}
+If $\leq$ is a linear order on $S$ and
+\[
+x<y \;\Longleftrightarrow\; (x\leq y\land x\neq y),
+\]
+then $<$ is a strict linear order on $S$.
+\hyperref[prf:strict-order-induced-by-linear-order]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:strict-order]{Strict Order}
+  \item \hyperref[def:total-order]{Total Order}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Linear Order Induced by a Strict Linear Order)}
+\begin{theorem}[Linear Order Induced by a Strict Linear Order]\label{thm:linear-order-induced-by-strict-linear-order}
+If $<$ is a strict linear order on $S$ and
+\[
+x\leq y \;\Longleftrightarrow\; (x<y\lor x=y),
+\]
+then $\leq$ is a linear order on $S$.
+\hyperref[prf:linear-order-induced-by-strict-linear-order]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:strict-order]{Strict Order}
+  \item \hyperref[def:non-strict-order-induced-by-strict-order]{Non-Strict Order Induced by a Strict Order}
+  \item \hyperref[def:total-order]{Total Order}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Trichotomy for Linear Orders)}
+\begin{theorem}[Trichotomy for Linear Orders]\label{thm:trichotomy-for-linear-orders}
+If $\leq$ is a linear order on $S$, then for all $x,y\in S$, exactly one of
+the following holds:
+\[
+x<y,\qquad x=y,\qquad y<x.
+\]
+\hyperref[prf:trichotomy-for-linear-orders]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:strict-order]{Strict Order}
+  \item \hyperref[def:total-order]{Total Order}
+\end{itemize}
+\end{dependencies}
+
+\begin{figure}[htbp]
+\centering
+\input{volume-i/book-sets/orderings/notes/order/figure-order-bridge-trichotomy}
+\caption{The strict order induced by a non-strict linear order separates
+comparison into the three trichotomy cases.}
+\label{fig:order-bridge-trichotomy}
+\end{figure}
+
 \begin{definitionbox}{Definition (Comparable and Incomparable Elements)}
 \begin{definition}[Comparable and Incomparable Elements]\label{def:comparable}
 In an ordered set $(A,\leq)$, elements $a,b \in A$ are \emph{comparable} if
@@ -125,7 +203,7 @@ every pair is comparable by definition.
 \end{dependencies}
 
 \begin{definitionbox}{Definition (Totally Ordered Set)}
-\begin{definition}[Totally Ordered Set]\label{def:totally-ordered-set}\label{def:linear-order}
+\begin{definition}[Totally Ordered Set]\label{def:totally-ordered-set}
 A \emph{totally ordered set} (or \emph{linearly ordered set}) is a pair
 $(A,\leq)$ where $\leq$ is a \hyperref[def:total-order]{total order} on $A$ ---
 equivalently, a partially ordered set in which every pair of elements is
@@ -259,6 +337,24 @@ $f : M \to M'$ is \emph{order-preserving} (or \emph{monotone}) if
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition (Order-Reversing Map)}
+\begin{definition}[Order-Reversing Map]\label{def:order-reversing-map}
+Let $(A,\leq_A)$ and $(B,\leq_B)$ be ordered sets. A function $f:A\to B$ is
+\emph{order-reversing} if
+\[
+x\leq_A y \;\Longrightarrow\; f(y)\leq_B f(x)
+\]
+for all $x,y\in A$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Order Isomorphism)}
 \begin{definition}[Order Isomorphism]\label{def:order-isomorphism}\label{def:order-iso}
 Let $(M,\leq)$ and $(M',\leq')$ be partially ordered sets. A function
@@ -283,6 +379,25 @@ including comparability, minimal and maximal elements, and bounds. Two posets
 are \emph{order-isomorphic} if such a map exists; they are structurally
 identical from the order-theoretic viewpoint.
 \end{remark*}
+
+\begin{theorembox}{Theorem (Order Isomorphisms Preserve and Reflect Order)}
+\begin{theorem}[Order Isomorphisms Preserve and Reflect Order]\label{thm:order-isomorphisms-preserve-and-reflect-order}
+Let $(A,\leq_A)$ and $(B,\leq_B)$ be ordered sets. If $f:A\to B$ is an order
+isomorphism, then for all $x,y\in A$,
+\[
+x\leq_A y \;\Longleftrightarrow\; f(x)\leq_B f(y).
+\]
+\hyperref[prf:order-isomorphisms-preserve-and-reflect-order]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:order-isomorphism]{Order Isomorphism}
+  \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
+  \item \hyperref[def:bijective]{Bijective Function}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Well-order
