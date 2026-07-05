@@ -4,7 +4,7 @@ Proof-writing order is dependency-first among active TODO proof labels, with the
 Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
 Open proofs to do: 131
-Completed in this tracker: 11
+Completed in this tracker: 0
 
 1. () `thm:logical-equivalence-equivalence-relation` — **Logical Equivalence is an Equivalence Relation**
    > **Statement.**
@@ -460,77 +460,47 @@ Completed in this tracker: 11
    > \]
    > Boolean functions \(\mathbb{B}^n\to\mathbb{B}\).
 
-52. (✅) `lem:closure-under-formation-propositional-formulas` — **Closure Under Formation**
-   > **Statement.**
-   > The set \(\WFF\) is closed under the propositional formation rules.
-   >
-   > That is, if \(\varphi\in\WFF\), then
-   > \[
-   > \neg\varphi\in\WFF.
-   > \]
-   > If \(\varphi,\psi\in\WFF\) and
-   > \[
-   > \circ\in\{\land,\lor,\to,\leftrightarrow\},
-   > \]
-   > then
-   > \[
-   > (\varphi\circ\psi)\in\WFF.
-   > \]
-
-53. (✅) `thm:minimality-of-well-formed-formulas` — **Minimality of Well-Formed Formulas**
-   > **Statement.**
-   > Let \(S\) be a set of strings over the propositional alphabet. Suppose:
-   > - \(\Prop\subseteq S\);
-   > - if \(\varphi\in S\), then \(\neg\varphi\in S\);
-   > - if \(\varphi,\psi\in S\) and
-   >  \(\circ\in\{\land,\lor,\to,\leftrightarrow\}\), then
-   >  \((\varphi\circ\psi)\in S\).
-   > Then
-   > \[
-   > \WFF\subseteq S.
-   > \]
-
-54. () `thm:unique-syntax-tree-propositional-formulas` — **Unique Syntax Tree for Propositional Formulas**
+52. () `thm:unique-syntax-tree-propositional-formulas` — **Unique Syntax Tree for Propositional Formulas**
    > **Statement.**
    > Every propositional well-formed formula has a unique parse tree.
 
-55. () `lem:proper-subformula-depth-propositional-logic` — **Proper Subformula Depth**
+53. () `lem:proper-subformula-depth-propositional-logic` — **Proper Subformula Depth**
    > **Statement.**
    > If \(\psi\) is a proper subformula of \(\varphi\), then
    > \[
    > \operatorname{depth}(\psi)<\operatorname{depth}(\varphi).
    > \]
 
-56. () `lem:finiteness-of-subformulas-propositional-formulas` — **Finiteness of Subformulas**
+54. () `lem:finiteness-of-subformulas-propositional-formulas` — **Finiteness of Subformulas**
    > **Statement.**
    > For every \(\varphi\in\WFF\), the set \(\operatorname{Sub}(\varphi)\) is finite.
 
-57. () `thm:eq-sym` — **Symmetry of Equality**
+55. () `thm:eq-sym` — **Symmetry of Equality**
    > **Statement.**
    > From $t_1 = t_2$, one may infer $t_2 = t_1$.
 
-58. () `thm:eq-trans` — **Transitivity of Equality**
+56. () `thm:eq-trans` — **Transitivity of Equality**
    > **Statement.**
    > From $t_1 = t_2$ and $t_2 = t_3$, one may infer $t_1 = t_3$.
 
-59. () `thm:eq-term` — **Term Substitution under Equality**
+57. () `thm:eq-term` — **Term Substitution under Equality**
    > **Statement.**
    > If $t_1 = t_2$, then for any function symbol $f$,
    > $f(\dots,t_1,\dots) = f(\dots,t_2,\dots)$.
 
-60. () `thm:eq-pred` — **Predicate Substitution under Equality**
+58. () `thm:eq-pred` — **Predicate Substitution under Equality**
    > **Statement.**
    > If $t_1 = t_2$ and $P$ is an $n$-ary predicate symbol, then
    > $P(\dots,t_1,\dots) \;\Leftrightarrow\; P(\dots,t_2,\dots)$.
 
-61. () `thm:fol-sound` — **Soundness of First-Order Logic**
+59. () `thm:fol-sound` — **Soundness of First-Order Logic**
    > **Statement.**
    > The standard inference rules for first-order logic (UI, UG, EI, EG, and the
    > propositional rules) are sound: they preserve truth in all structures.
    >
    > If $\Gamma \vdash \varphi$, then $\Gamma \models \varphi$.
 
-62. () `thm:qneg` — **Quantifier Negation Laws**
+60. () `thm:qneg` — **Quantifier Negation Laws**
    > **Statement.**
    > For every formula \(\varphi\),
    > \[
@@ -539,7 +509,7 @@ Completed in this tracker: 11
    > \neg\exists x\,\varphi \equiv \forall x\,\neg\varphi.
    > \]
 
-63. () `thm:neg-bounded` — **Negation of Bounded Quantifiers**
+61. () `thm:neg-bounded` — **Negation of Bounded Quantifiers**
    > **Statement.**
    > Let \(A\) be a set and let \(\varphi\) be a formula. Then
    > \[
@@ -548,21 +518,21 @@ Completed in this tracker: 11
    > \neg(\exists x\in A\,\varphi)\equiv \forall x\in A\,\neg\varphi.
    > \]
 
-64. () `thm:universal-implies-existential` — **Universal Implies Existential**
+62. () `thm:universal-implies-existential` — **Universal Implies Existential**
    > **Statement.**
    > Over nonempty domains,
    > \[
    > \forall x\,\varphi(x)\models \exists x\,\varphi(x).
    > \]
 
-65. () `thm:existential-not-universal` — **Existential Does Not Imply Universal**
+63. () `thm:existential-not-universal` — **Existential Does Not Imply Universal**
    > **Statement.**
    > In general,
    > \[
    > \exists x\,\varphi(x)\not\models \forall x\,\varphi(x).
    > \]
 
-66. () `thm:uniform-witness-implies-dependent-witness` — **Uniform Witness Implies Dependent Witness**
+64. () `thm:uniform-witness-implies-dependent-witness` — **Uniform Witness Implies Dependent Witness**
    > **Statement.**
    > For every formula \(\varphi(x,y)\),
    > \[
@@ -571,7 +541,7 @@ Completed in this tracker: 11
    > \forall x\,\exists y\,\varphi(x,y).
    > \]
 
-67. () `thm:dependent-witness-not-uniform` — **Dependent Witness Need Not Be Uniform**
+65. () `thm:dependent-witness-not-uniform` — **Dependent Witness Need Not Be Uniform**
    > **Statement.**
    > In general,
    > \[
@@ -580,7 +550,7 @@ Completed in this tracker: 11
    > \exists y\,\forall x\,\varphi(x,y).
    > \]
 
-68. () `thm:qdist` — **Valid Quantifier Distribution**
+66. () `thm:qdist` — **Valid Quantifier Distribution**
    > **Statement.**
    > For all formulas \(\varphi,\psi\),
    > \[
@@ -594,7 +564,7 @@ Completed in this tracker: 11
    > (\exists x\,\varphi)\lor(\exists x\,\psi).
    > \]
 
-69. () `thm:rename` — **Renaming Bound Variables**
+67. () `thm:rename` — **Renaming Bound Variables**
    > **Statement.**
    > If \(y\) is free for \(x\) in \(\varphi\) and no capture is introduced, then
    > \[
@@ -603,12 +573,12 @@ Completed in this tracker: 11
    > \exists x\,\varphi\equiv\exists y\,\varphi[y/x].
    > \]
 
-70. () `thm:pnf` — **Existence of Prenex Normal Form**
+68. () `thm:pnf` — **Existence of Prenex Normal Form**
    > **Statement.**
    > Every first-order formula is logically equivalent to some formula in prenex
    > normal form.
 
-71. () `thm:quantifier-double-negation` — **Double Negation and Quantifiers**
+69. () `thm:quantifier-double-negation` — **Double Negation and Quantifiers**
    > **Statement.**
    > For every formula \(\varphi\),
    > \[
@@ -617,7 +587,7 @@ Completed in this tracker: 11
    > \neg\neg\exists x\,\varphi \equiv \exists x\,\varphi.
    > \]
 
-72. () `thm:qcomm` — **Same-Type Quantifier Commutation**
+70. () `thm:qcomm` — **Same-Type Quantifier Commutation**
    > **Statement.**
    > Quantifiers of the same type commute:
    > \[
@@ -626,7 +596,7 @@ Completed in this tracker: 11
    > \exists x\,\exists y\,\varphi \equiv \exists y\,\exists x\,\varphi.
    > \]
 
-73. () `thm:mixed-quantifiers-do-not-commute` — **Mixed Quantifiers Do Not Commute**
+71. () `thm:mixed-quantifiers-do-not-commute` — **Mixed Quantifiers Do Not Commute**
    > **Statement.**
    > In general,
    > \[
@@ -635,7 +605,7 @@ Completed in this tracker: 11
    > \exists y\,\forall x\,\varphi.
    > \]
 
-74. () `thm:invalid-quantifier-distribution` — **Invalid Quantifier Distribution**
+72. () `thm:invalid-quantifier-distribution` — **Invalid Quantifier Distribution**
    > **Statement.**
    > In general,
    > \[
@@ -649,7 +619,7 @@ Completed in this tracker: 11
    > (\exists x\,\varphi)\land(\exists x\,\psi).
    > \]
 
-75. () `thm:vacuous` — **Vacuous Quantification**
+73. () `thm:vacuous` — **Vacuous Quantification**
    > **Statement.**
    > If \(x\) does not occur free in \(\varphi\), then
    > \[
@@ -658,7 +628,7 @@ Completed in this tracker: 11
    > \exists x\,\varphi\equiv\varphi.
    > \]
 
-76. () `lem:subst-terms` — **Substitution Lemma for Terms**
+74. () `lem:subst-terms` — **Substitution Lemma for Terms**
    > **Statement.**
    > Let \(\mathcal M\) be a structure, let \(s\) be a variable assignment, let
    > \(x\) be a variable, and let \(t\) and \(u\) be terms. Then
@@ -669,7 +639,7 @@ Completed in this tracker: 11
    > s[x\mapsto\llbracket u\rrbracket_{\mathcal M,s}]}.
    > \]
 
-77. () `lem:subst-formulas` — **Substitution Lemma for Formulas**
+75. () `lem:subst-formulas` — **Substitution Lemma for Formulas**
    > **Statement.**
    > Let \(\varphi\) be a formula and let \(u\) be a term free for \(x\) in
    > \(\varphi\). For every structure \(\mathcal M\) and assignment \(s\),
@@ -679,7 +649,7 @@ Completed in this tracker: 11
    > \mathcal M,s[x\mapsto\llbracket u\rrbracket_{\mathcal M,s}]\models\varphi.
    > \]
 
-78. () `prop:universal-translation-pattern` — **Universal Translation Pattern**
+76. () `prop:universal-translation-pattern` — **Universal Translation Pattern**
    > **Statement.**
    > In a broad domain, an English statement of the form ``All \(A\) are \(B\)''
    > is translated by
@@ -687,7 +657,7 @@ Completed in this tracker: 11
    > \forall x\,(A(x)\to B(x)).
    > \]
 
-79. () `prop:existential-translation-pattern` — **Existential Translation Pattern**
+77. () `prop:existential-translation-pattern` — **Existential Translation Pattern**
    > **Statement.**
    > In a broad domain, an English statement of the form ``Some \(A\) are \(B\)''
    > is translated by
@@ -695,7 +665,7 @@ Completed in this tracker: 11
    > \exists x\,(A(x)\land B(x)).
    > \]
 
-80. () `prop:conditional-translation-pattern` — **Conditional Translation Pattern**
+78. () `prop:conditional-translation-pattern` — **Conditional Translation Pattern**
    > **Statement.**
    > An English statement of the form ``If \(A\), then \(B\)'' is translated by
    > \[
@@ -703,28 +673,28 @@ Completed in this tracker: 11
    > \]
    > with quantifiers placed according to the variables occurring in \(A\) and \(B\).
 
-81. () `prop:negation-translation-pattern` — **Negation Translation Pattern**
+79. () `prop:negation-translation-pattern` — **Negation Translation Pattern**
    > **Statement.**
    > The negation of a translated quantified statement is obtained by negating the
    > whole formula and then pushing the negation inward using the quantifier
    > negation laws.
 
-82. () `prop:a-o-contradictory-predicate-logic` — **A-O Contradiction**
+80. () `prop:a-o-contradictory-predicate-logic` — **A-O Contradiction**
    > **Statement.**
    > The \(A\)-form \(\forall x\,(A(x)\to B(x))\) and the \(O\)-form
    > \(\exists x\,(A(x)\land \neg B(x))\) are contradictory: exactly one of them is
    > true.
 
-83. () `prop:e-i-contradictory-predicate-logic` — **E-I Contradiction**
+81. () `prop:e-i-contradictory-predicate-logic` — **E-I Contradiction**
    > **Statement.**
    > The \(E\)-form \(\forall x\,(A(x)\to \neg B(x))\) and the \(I\)-form
    > \(\exists x\,(A(x)\land B(x))\) are contradictory: exactly one of them is true.
 
-84. () `prop:existential-import-contrariety-predicate-logic` — **Contrariety Requires Existential Import**
+82. () `prop:existential-import-contrariety-predicate-logic` — **Contrariety Requires Existential Import**
    > **Statement.**
    > If \(\exists x\,A(x)\), then the \(A\)-form and \(E\)-form cannot both be true.
 
-85. () `prop:fip-duality` — **FIP--Cover Duality**
+83. () `prop:fip-duality` — **FIP--Cover Duality**
    > **Statement.**
    > Let $X$ be a set, $A \subseteq X$, and $\{U_\alpha\}_{\alpha \in I}$ a
    > family of subsets of $X$. Let $F_\alpha = U_\alpha^c = X \setminus U_\alpha$.
@@ -738,7 +708,7 @@ Completed in this tracker: 11
    > only if the family of closed complements $\{F_\alpha\}$ has the FIP relative
    > to $A$.
 
-86. () `thm:indexed-de-morgan` — **De Morgan's Laws for Indexed Families**
+84. () `thm:indexed-de-morgan` — **De Morgan's Laws for Indexed Families**
    > **Statement.**
    > Let $\{A_i\}_{i\in I}$ be an indexed family of subsets of a universe $U$.
    > Then
@@ -754,7 +724,7 @@ Completed in this tracker: 11
    > \bigcup_{i\in I}(U\setminus A_i).
    > \]
 
-87. () `thm:commutativity` — **Commutativity of Union and Intersection**
+85. () `thm:commutativity` — **Commutativity of Union and Intersection**
    > **Statement.**
    > Let $A,B$ be sets. Then
    > \[
@@ -763,7 +733,7 @@ Completed in this tracker: 11
    > A \cap B = B \cap A.
    > \]
 
-88. () `thm:associativity` — **Associativity of Union and Intersection**
+86. () `thm:associativity` — **Associativity of Union and Intersection**
    > **Statement.**
    > Let $A,B,C$ be sets. Then
    > \[
@@ -772,7 +742,7 @@ Completed in this tracker: 11
    > (A \cap B) \cap C = A \cap (B \cap C).
    > \]
 
-89. () `thm:distributivity` — **Distributive Laws**
+87. () `thm:distributivity` — **Distributive Laws**
    > **Statement.**
    > Let $A,B,C$ be sets. Then
    > \[
@@ -782,7 +752,7 @@ Completed in this tracker: 11
    > A \cup (B \cap C) = (A \cup B) \cap (A \cup C).
    > \]
 
-90. () `thm:identity-absorption` — **Identity and Absorption Laws**
+88. () `thm:identity-absorption` — **Identity and Absorption Laws**
    > **Statement.**
    > Let $A,B$ be sets and $U$ a universe with $A \subseteq U$. Then
    > \[
@@ -796,14 +766,14 @@ Completed in this tracker: 11
    > A \cap (A \cup B) = A.
    > \]
 
-91. () `thm:involution` — **Involution of Complement**
+89. () `thm:involution` — **Involution of Complement**
    > **Statement.**
    > For any $A \subseteq U$,
    > \[
    > (A^c)^c = A.
    > \]
 
-92. () `thm:de-morgan` — **De Morgan's Laws**
+90. () `thm:de-morgan` — **De Morgan's Laws**
    > **Statement.**
    > Let $U$ be a universe and $A,B \subseteq U$. Then
    > \[
@@ -812,13 +782,13 @@ Completed in this tracker: 11
    > (A \cap B)^c = A^c \cup B^c.
    > \]
 
-93. () `cor:set-duality` — **Principle of Set Duality**
+91. () `cor:set-duality` — **Principle of Set Duality**
    > **Statement.**
    > Any identity involving $\cup$, $\cap$, $\varnothing$, and $U$ that holds for
    > all subsets of a universe remains valid when each operation and constant is
    > replaced by its dual.
 
-94. () `lem:rep-independence` — **Representative Independence Lemma**
+92. () `lem:rep-independence` — **Representative Independence Lemma**
    > **Statement.**
    > Let $R$ be an equivalence relation on $A$. For any $a,b \in A$,
    > \[
@@ -827,7 +797,7 @@ Completed in this tracker: 11
    > (a,b) \in R.
    > \]
 
-95. () `thm:equiv-partition` — **Equivalence Relations and Partitions**
+93. () `thm:equiv-partition` — **Equivalence Relations and Partitions**
    > **Statement.**
    > Let $A$ be a set.
    > - [label=(\roman*)]
@@ -841,7 +811,7 @@ Completed in this tracker: 11
    > is an equivalence relation on $A$.
    > - These constructions are inverse: $R_{A/R} = R$ and $A/R_{\mathcal{P}} = \mathcal{P}$.
 
-96. () `thm:quotient-universal` — **Universal Property of the Quotient Map**
+94. () `thm:quotient-universal` — **Universal Property of the Quotient Map**
    > **Statement.**
    > Let $R$ be an equivalence relation on $A$, let $\pi : A \to A/R$ be the
    > canonical surjection, and let $f : A \to B$ be any function. Then $f$ is
@@ -853,7 +823,7 @@ Completed in this tracker: 11
    > \]
    > When it exists, $\bar{f}$ is defined by $\bar{f}([a]) = f(a)$.
 
-97. () `thm:ordered-pair-unique` — **Uniqueness of Ordered Pairs**
+95. () `thm:ordered-pair-unique` — **Uniqueness of Ordered Pairs**
    > **Statement.**
    > For any sets $a,b,c,d$,
    > \[
@@ -862,7 +832,7 @@ Completed in this tracker: 11
    > (a = c \land b = d).
    > \]
 
-98. () `thm:relation-composition-assoc` — **Associativity of Relation Composition**
+96. () `thm:relation-composition-assoc` — **Associativity of Relation Composition**
    > **Statement.**
    > Let $R\subseteq A\times B$, $S\subseteq B\times C$, and
    > $T\subseteq C\times D$. Then
@@ -870,7 +840,7 @@ Completed in this tracker: 11
    > T\circ(S\circ R)=(T\circ S)\circ R.
    > \]
 
-99. () `thm:relation-composition-id` — **Identity Laws for Relation Composition**
+97. () `thm:relation-composition-id` — **Identity Laws for Relation Composition**
    > **Statement.**
    > Let $R\subseteq A\times B$. Then
    > \[
@@ -879,7 +849,7 @@ Completed in this tracker: 11
    > \Delta_B\circ R=R.
    > \]
 
-100. () `thm:relation-converse-laws` — **Converse Laws for Relation Operations**
+98. () `thm:relation-converse-laws` — **Converse Laws for Relation Operations**
    > **Statement.**
    > Let $R,S\subseteq A\times B$, let $T\subseteq B\times C$, and take complements
    > relative to the indicated Cartesian products. Then
@@ -896,7 +866,7 @@ Completed in this tracker: 11
    > ((A\times B)\setminus R)^{-1}=(B\times A)\setminus R^{-1}.
    > \]
 
-101. () `thm:relation-composition-boolean` — **Relation Composition and Boolean Operations**
+99. () `thm:relation-composition-boolean` — **Relation Composition and Boolean Operations**
    > **Statement.**
    > Let $P,Q\subseteq A\times B$, $R\subseteq B\times C$, and
    > $S,T\subseteq B\times C$. Then
@@ -914,14 +884,14 @@ Completed in this tracker: 11
    > The analogous formulas for difference and complement hold only as inclusions
    > or under extra hypotheses; they are not general distributive laws.
 
-102. () `thm:comp-assoc` — **Associativity of Composition**
+100. () `thm:comp-assoc` — **Associativity of Composition**
    > **Statement.**
    > For $f : A \to B$, $g : B \to C$, $h : C \to D$:
    > \[
    > h \circ (g \circ f) = (h \circ g) \circ f.
    > \]
 
-103. () `thm:comp-id` — **Identity and Composition**
+101. () `thm:comp-id` — **Identity and Composition**
    > **Statement.**
    > For any $f : A \to B$:
    > \[
@@ -930,7 +900,7 @@ Completed in this tracker: 11
    > \id_B \circ f = f.
    > \]
 
-104. () `thm:comp-inj-surj` — **Injectivity and Surjectivity Under Composition**
+102. () `thm:comp-inj-surj` — **Injectivity and Surjectivity Under Composition**
    > **Statement.**
    > Let $f : A \to B$ and $g : B \to C$.
    > - [label=(\roman*)]
@@ -939,7 +909,7 @@ Completed in this tracker: 11
    > - If $g \circ f$ is injective, then $f$ is injective.
    > - If $g \circ f$ is surjective, then $g$ is surjective.
 
-105. () `thm:inverse-char` — **Characterization of Inverse Functions**
+103. () `thm:inverse-char` — **Characterization of Inverse Functions**
    > **Statement.**
    > Let $f : A \to B$ be bijective. Then
    > \[
@@ -949,7 +919,7 @@ Completed in this tracker: 11
    > \]
    > Conversely, a function admits an inverse iff it is bijective.
 
-106. () `thm:inverse-comp` — **Inverse of a Composition**
+104. () `thm:inverse-comp` — **Inverse of a Composition**
    > **Statement.**
    > Let $f : A \to B$ and $g : B \to C$ be bijective. Then $g \circ f$ is
    > bijective and
@@ -957,7 +927,7 @@ Completed in this tracker: 11
    > (g \circ f)^{-1} = f^{-1} \circ g^{-1}.
    > \]
 
-107. () `thm:one-sided` — **One-Sided Inverses and Function Properties**
+105. () `thm:one-sided` — **One-Sided Inverses and Function Properties**
    > **Statement.**
    > Let $f : A \to B$.
    > - [label=(\roman*)]
@@ -966,7 +936,7 @@ Completed in this tracker: 11
    > - If $f$ has both a left inverse $g$ and a right inverse $h$, then $g = h$
    > and $f$ is bijective.
 
-108. () `thm:preimage-ops` — **Preimages Preserve Set Operations**
+106. () `thm:preimage-ops` — **Preimages Preserve Set Operations**
    > **Statement.**
    > Let $f : A \to B$ and $S, T \subseteq B$. Then
    > - [label=(\roman*)]
@@ -975,7 +945,7 @@ Completed in this tracker: 11
    > - $f^{-1}(S \setminus T) = f^{-1}(S) \setminus f^{-1}(T)$,
    > - $f^{-1}(S^c) = (f^{-1}(S))^c$.
 
-109. () `thm:image-ops` — **Images and Set Operations**
+107. () `thm:image-ops` — **Images and Set Operations**
    > **Statement.**
    > Let $f : A \to B$ and $S, T \subseteq A$. Then
    > - [label=(\roman*)]
@@ -984,7 +954,7 @@ Completed in this tracker: 11
    > - $f(S \setminus T) \supseteq f(S) \setminus f(T)$.
    > Equality holds in (ii) and (iii) for all $S,T$ iff $f$ is injective.
 
-110. () `thm:image-preimage-adjunction` — **Image--Preimage Adjunction**
+108. () `thm:image-preimage-adjunction` — **Image--Preimage Adjunction**
    > **Statement.**
    > Let $f:A\to B$, let $S\subseteq A$, and let $T\subseteq B$. Then
    > \[
@@ -995,7 +965,7 @@ Completed in this tracker: 11
    > Moreover, $S=f^{-1}(f(S))$ for every $S\subseteq A$ iff $f$ is injective, and
    > $f(f^{-1}(T))=T$ for every $T\subseteq B$ iff $f$ is surjective.
 
-111. () `thm:function-total-functional-characterization` — **Functional Relation Characterization of Functions**
+109. () `thm:function-total-functional-characterization` — **Functional Relation Characterization of Functions**
    > **Statement.**
    > Let $A$ and $B$ be sets, and let $R\subseteq A\times B$. Then $R$ is a
    > function from $A$ to $B$ if and only if
@@ -1005,23 +975,23 @@ Completed in this tracker: 11
    > Equivalently, $R$ is a function from $A$ to $B$ if and only if $R$ is total
    > on $A$ and functional from $A$ to $B$.
 
-112. () `prop:partial-function-functional-relation` — **Partial Functions Are Functional Relations**
+110. () `prop:partial-function-functional-relation` — **Partial Functions Are Functional Relations**
    > **Statement.**
    > For sets $A$ and $B$ and a relation $R\subseteq A\times B$, $R$ is a partial
    > function from $A$ to $B$ if and only if $R$ is functional from $A$ to $B$.
 
-113. () `prop:one-to-many-not-functional` — **One-to-Many Relations Are Not Functional**
+111. () `prop:one-to-many-not-functional` — **One-to-Many Relations Are Not Functional**
    > **Statement.**
    > If $R\subseteq A\times B$ is one-to-many, then $R$ is not functional from $A$
    > to $B$. Consequently, $R$ is not a function from $A$ to $B$.
 
-114. () `prop:one-to-one-converse-functional` — **One-One Relations and Converse Functionality**
+112. () `prop:one-to-one-converse-functional` — **One-One Relations and Converse Functionality**
    > **Statement.**
    > Let $f:A\to B$ be a function, identified with its graph
    > $G_f\subseteq A\times B$. Then $f$ is injective if and only if the converse
    > relation $G_f^{-1}\subseteq B\times A$ is functional from $B$ to $A$.
 
-115. () `prop:bijection-unique-both-directions` — **Bijections Have Unique Correspondence Both Ways**
+113. () `prop:bijection-unique-both-directions` — **Bijections Have Unique Correspondence Both Ways**
    > **Statement.**
    > Let $f:A\to B$ be a function. Then $f$ is bijective if and only if
    > \[
@@ -1032,12 +1002,12 @@ Completed in this tracker: 11
    > \forall b\in B\,\exists! a\in A,\quad f(a)=b.
    > \]
 
-116. () `cor:complete-preorder-extension` — **Complete preorder extension**
+114. () `cor:complete-preorder-extension` — **Complete preorder extension**
    > **Statement.**
    > For any nonempty set $X$ and preorder $\succsim$ on $X$, there exists a
    > complete preorder that is an extension of $\succsim$.
 
-117. () `prop:order-duality` — **Duality Principle for Posets**
+115. () `prop:order-duality` — **Duality Principle for Posets**
    > **Statement.**
    > Let $\Phi$ be any first-order statement about a poset $(A, \leq)$ expressed
    > using only the relation $\leq$. Let $\Phi^*$ be the statement obtained from
@@ -1050,32 +1020,33 @@ Completed in this tracker: 11
    > \]
    > In particular, if $\Phi$ is a theorem about all posets, then so is $\Phi^*$.
 
-118. () `prop:induced-preorder` — **$\leq_f$ is always a preorder**
+116. () `prop:induced-preorder` — **$\leq_f$ is always a preorder**
    > **Statement.**
    > For any function $f : A \to B$ and partial order $(B, \leq')$, the relation
    > $\leq_f$ is a preorder on $A$: it is reflexive and transitive.
 
-119. () `prop:induced-poset` — **$\leq_f$ is a partial order iff $f$ is injective**
+117. () `prop:induced-poset` — **$\leq_f$ is a partial order iff $f$ is injective**
    > **Statement.**
    > Let $(B, \leq')$ be a partially ordered set and $f : A \to B$.
-   > The induced order $\leq_f$ is a partial order on $A$ if and only if
+   > The induced order $\leq_f
+   > $ is a partial order on $A$ if and only if
    > $f$ is injective.
 
-120. () `prop:embedding-injective` — **Order embeddings are injective**
+118. () `prop:embedding-injective` — **Order embeddings are injective**
    > **Statement.**
    > Every order embedding $f : (A, \leq) \to (B, \leq')$ is injective.
 
-121. () `prop:embedding-iso` — **Order embedding is isomorphism onto image**
+119. () `prop:embedding-iso` — **Order embedding is isomorphism onto image**
    > **Statement.**
    > If $f : (A, \leq) \to (B, \leq')$ is an order embedding, then $f$ is an
    > order isomorphism from $(A, \leq)$ to the suborder $(f(A), \leq'_{f(A)})$.
 
-122. () `prop:sup-unique` — **Uniqueness of Supremum and Infimum**
+120. () `prop:sup-unique` — **Uniqueness of Supremum and Infimum**
    > **Statement.**
    > Let $(A, \leq)$ be a poset and $S \subseteq A$. If $\sup S$ exists, it is
    > unique. If $\inf S$ exists, it is unique.
 
-123. () `prop:sup-char` — **Characterisation of Supremum**
+121. () `prop:sup-char` — **Characterisation of Supremum**
    > **Statement.**
    > Let $(A, \leq)$ be a poset, $S \subseteq A$, and $u^* \in A$. Then
    > $u^* = \sup S$ if and only if:
@@ -1084,7 +1055,7 @@ Completed in this tracker: 11
    > - for every $v \in A$ with $v < u^*$, there exists $s \in S$ with
    >  $v < s$.
 
-124. () `prop:sup-inf-duality` — **Duality of Supremum and Infimum**
+122. () `prop:sup-inf-duality` — **Duality of Supremum and Infimum**
    > **Statement.**
    > Let $(A, \leq)$ be a poset and $S \subseteq A$. Then
    > $\inf_{(A,\leq)} S = \sup_{(A,\geq)} S$,
@@ -1094,7 +1065,7 @@ Completed in this tracker: 11
    > supremum, then every nonempty bounded-below subset of $(A,\leq)$ has an
    > infimum.
 
-125. () `thm:strict-order-induced-by-linear-order` — **Strict Order Induced by a Linear Order**
+123. () `thm:strict-order-induced-by-linear-order` — **Strict Order Induced by a Linear Order**
    > **Statement.**
    > If $\leq$ is a linear order on $S$ and
    > \[
@@ -1102,7 +1073,7 @@ Completed in this tracker: 11
    > \]
    > then $<$ is a strict linear order on $S$.
 
-126. () `thm:linear-order-induced-by-strict-linear-order` — **Linear Order Induced by a Strict Linear Order**
+124. () `thm:linear-order-induced-by-strict-linear-order` — **Linear Order Induced by a Strict Linear Order**
    > **Statement.**
    > If $<$ is a strict linear order on $S$ and
    > \[
@@ -1110,7 +1081,7 @@ Completed in this tracker: 11
    > \]
    > then $\leq$ is a linear order on $S$.
 
-127. () `thm:trichotomy-for-linear-orders` — **Trichotomy for Linear Orders**
+125. () `thm:trichotomy-for-linear-orders` — **Trichotomy for Linear Orders**
    > **Statement.**
    > If $\leq$ is a linear order on $S$, then for all $x,y\in S$, exactly one of
    > the following holds:
@@ -1118,7 +1089,7 @@ Completed in this tracker: 11
    > x<y,\qquad x=y,\qquad y<x.
    > \]
 
-128. () `thm:order-isomorphisms-preserve-and-reflect-order` — **Order Isomorphisms Preserve and Reflect Order**
+126. () `thm:order-isomorphisms-preserve-and-reflect-order` — **Order Isomorphisms Preserve and Reflect Order**
    > **Statement.**
    > Let $(A,\leq_A)$ and $(B,\leq_B)$ be ordered sets. If $f:A\to B$ is an order
    > isomorphism, then for all $x,y\in A$,
@@ -1126,74 +1097,27 @@ Completed in this tracker: 11
    > x\leq_A y \;\Longleftrightarrow\; f(x)\leq_B f(y).
    > \]
 
-129. () `thm:Q-countable` — **$\mathbb{Q}$ is countable**
+127. () `thm:Q-countable` — **$\mathbb{Q}$ is countable**
    > **Statement.**
    > The set $\mathbb{Q}$ of rational numbers is countable.
 
-130. () `thm:countable-union` — **Countable union of countable sets is countable**
+128. () `thm:countable-union` — **Countable union of countable sets is countable**
    > **Statement.**
    > Let $\{A_n\}_{n \in \mathbb{N}}$ be a countable family of countable sets.
    > Then $\bigcup_{n=1}^{\infty} A_n$ is countable.
 
-131. () `thm:R-uncountable` — **$\mathbb{R}$ is uncountable**
+129. () `thm:R-uncountable` — **$\mathbb{R}$ is uncountable**
    > **Statement.**
    > The set $\mathbb{R}$ of real numbers is not countable.
 
-132. () `thm:cantor` — **Cantor's Theorem**
+130. () `thm:cantor` — **Cantor's Theorem**
    > **Statement.**
    > For any set $A$, there is no surjection $A \to \mathcal{P}(A)$. In
    > particular, $|A| < |\mathcal{P}(A)|$.
 
-133. () `thm:schroder-bernstein` — **Schr\"{o}der--Bernstein Theorem**
+131. () `thm:schroder-bernstein` — **Schr\"{o}der--Bernstein Theorem**
    > **Statement.**
    > If $|A| \leq |B|$ and $|B| \leq |A|$, then $A \sim B$.
    >
    > Equivalently: if there exist injections $f : A \hookrightarrow B$ and
    > $g : B \hookrightarrow A$, then there exists a bijection $h : A \to B$.
-
-134. (✅) `thm:euclid-i-1` — **Euclid I.1: Constructing an equilateral triangle**
-   > **Statement.**
-   > Given a finite straight line segment $AB$, there exists an equilateral
-   > triangle $ABC$ constructed on $AB$.
-
-135. (✅) `thm:euclid-i-2` — **Euclid I.2: Copying a segment from a given point**
-   > **Statement.**
-   > Given a point $A$ and a finite straight line segment $BC$, there exists a
-   > straight line segment beginning at $A$ and equal to $BC$.
-
-136. (✅) `thm:euclid-i-3` — **Euclid I.3: Cutting off an equal segment**
-   > **Statement.**
-   > Given two unequal finite straight line segments, there exists a construction
-   > which cuts off from the greater a straight line segment equal to the less.
-
-137. (✅) `thm:euclid-i-4` — **Euclid I.4: Side-angle-side congruence**
-   > **Statement.**
-   > If two triangles have two sides equal to two sides respectively, and have the
-   > angles contained by the equal straight lines equal, then they also have the
-   > base equal to the base, the triangle equal to the triangle, and the remaining
-   > angles equal to the remaining angles respectively.
-
-138. (✅) `thm:euclid-i-31` — **Euclid I.31: Drawing a parallel through a point**
-   > **Statement.**
-   > Through a given point, to draw a straight line parallel to a given straight
-   > line.
-
-139. (✅) `thm:euclid-i-32` — **Euclid I.32: Triangle angle sum**
-   > **Statement.**
-   > In any triangle, if one of the sides is produced, then the exterior angle is
-   > equal to the two interior and opposite angles, and the three interior angles of
-   > the triangle are equal to two right angles.
-
-140. (✅) `thm:euclid-i-41` — **Euclid I.41: Triangle and parallelogram on the same base**
-   > **Statement.**
-   > If a parallelogram has the same base with a triangle and is in the same
-   > parallels, then the parallelogram is double the triangle.
-
-141. (✅) `thm:euclid-i-46` — **Euclid I.46: Constructing a square on a segment**
-   > **Statement.**
-   > On a given straight line, to describe a square.
-
-142. (✅) `thm:euclid-i-47` — **Euclid I.47: Pythagorean theorem**
-   > **Statement.**
-   > In right-angled triangles, the square on the side subtending the right angle is
-   > equal to the squares on the sides containing the right angle.
