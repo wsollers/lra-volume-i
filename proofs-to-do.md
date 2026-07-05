@@ -4,7 +4,7 @@ Proof-writing order is dependency-first among active TODO proof labels, with the
 Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
 Open proofs to do: 131
-Completed in this tracker: 7
+Completed in this tracker: 11
 
 1. () `thm:logical-equivalence-equivalence-relation` — **Logical Equivalence is an Equivalence Relation**
    > **Statement.**
@@ -1050,64 +1050,32 @@ Completed in this tracker: 7
    > \]
    > In particular, if $\Phi$ is a theorem about all posets, then so is $\Phi^*$.
 
-118. () `thm:strict-order-induced-by-linear-order` — **Strict Order Induced by a Linear Order**
-   > **Statement.**
-   > If $\leq$ is a linear order on $S$ and
-   > \[
-   > x<y \;\Longleftrightarrow\; (x\leq y\land x\neq y),
-   > \]
-   > then $<$ is a strict linear order on $S$.
-
-119. () `thm:linear-order-induced-by-strict-linear-order` — **Linear Order Induced by a Strict Linear Order**
-   > **Statement.**
-   > If $<$ is a strict linear order on $S$ and
-   > \[
-   > x\leq y \;\Longleftrightarrow\; (x<y\lor x=y),
-   > \]
-   > then $\leq$ is a linear order on $S$.
-
-120. () `thm:trichotomy-for-linear-orders` — **Trichotomy for Linear Orders**
-   > **Statement.**
-   > If $\leq$ is a linear order on $S$, then for all $x,y\in S$, exactly one of
-   > the following holds:
-   > \[
-   > x<y,\qquad x=y,\qquad y<x.
-   > \]
-
-121. () `thm:order-isomorphisms-preserve-and-reflect-order` — **Order Isomorphisms Preserve and Reflect Order**
-   > **Statement.**
-   > Let $(A,\leq_A)$ and $(B,\leq_B)$ be ordered sets. If $f:A\to B$ is an
-   > order isomorphism, then for all $x,y\in A$,
-   > \[
-   > x\leq_A y \;\Longleftrightarrow\; f(x)\leq_B f(y).
-   > \]
-
-122. () `prop:induced-preorder` — **$\leq_f$ is always a preorder**
+118. () `prop:induced-preorder` — **$\leq_f$ is always a preorder**
    > **Statement.**
    > For any function $f : A \to B$ and partial order $(B, \leq')$, the relation
    > $\leq_f$ is a preorder on $A$: it is reflexive and transitive.
 
-123. () `prop:induced-poset` — **$\leq_f$ is a partial order iff $f$ is injective**
+119. () `prop:induced-poset` — **$\leq_f$ is a partial order iff $f$ is injective**
    > **Statement.**
    > Let $(B, \leq')$ be a partially ordered set and $f : A \to B$.
    > The induced order $\leq_f$ is a partial order on $A$ if and only if
    > $f$ is injective.
 
-124. () `prop:embedding-injective` — **Order embeddings are injective**
+120. () `prop:embedding-injective` — **Order embeddings are injective**
    > **Statement.**
    > Every order embedding $f : (A, \leq) \to (B, \leq')$ is injective.
 
-125. () `prop:embedding-iso` — **Order embedding is isomorphism onto image**
+121. () `prop:embedding-iso` — **Order embedding is isomorphism onto image**
    > **Statement.**
    > If $f : (A, \leq) \to (B, \leq')$ is an order embedding, then $f$ is an
    > order isomorphism from $(A, \leq)$ to the suborder $(f(A), \leq'_{f(A)})$.
 
-126. () `prop:sup-unique` — **Uniqueness of Supremum and Infimum**
+122. () `prop:sup-unique` — **Uniqueness of Supremum and Infimum**
    > **Statement.**
    > Let $(A, \leq)$ be a poset and $S \subseteq A$. If $\sup S$ exists, it is
    > unique. If $\inf S$ exists, it is unique.
 
-127. () `prop:sup-char` — **Characterisation of Supremum**
+123. () `prop:sup-char` — **Characterisation of Supremum**
    > **Statement.**
    > Let $(A, \leq)$ be a poset, $S \subseteq A$, and $u^* \in A$. Then
    > $u^* = \sup S$ if and only if:
@@ -1116,7 +1084,7 @@ Completed in this tracker: 7
    > - for every $v \in A$ with $v < u^*$, there exists $s \in S$ with
    >  $v < s$.
 
-128. () `prop:sup-inf-duality` — **Duality of Supremum and Infimum**
+124. () `prop:sup-inf-duality` — **Duality of Supremum and Infimum**
    > **Statement.**
    > Let $(A, \leq)$ be a poset and $S \subseteq A$. Then
    > $\inf_{(A,\leq)} S = \sup_{(A,\geq)} S$,
@@ -1125,6 +1093,38 @@ Completed in this tracker: 7
    > In particular: if every nonempty bounded-above subset of $(A,\leq)$ has a
    > supremum, then every nonempty bounded-below subset of $(A,\leq)$ has an
    > infimum.
+
+125. () `thm:strict-order-induced-by-linear-order` — **Strict Order Induced by a Linear Order**
+   > **Statement.**
+   > If $\leq$ is a linear order on $S$ and
+   > \[
+   > x<y \;\Longleftrightarrow\; (x\leq y\land x\neq y),
+   > \]
+   > then $<$ is a strict linear order on $S$.
+
+126. () `thm:linear-order-induced-by-strict-linear-order` — **Linear Order Induced by a Strict Linear Order**
+   > **Statement.**
+   > If $<$ is a strict linear order on $S$ and
+   > \[
+   > x\leq y \;\Longleftrightarrow\; (x<y\lor x=y),
+   > \]
+   > then $\leq$ is a linear order on $S$.
+
+127. () `thm:trichotomy-for-linear-orders` — **Trichotomy for Linear Orders**
+   > **Statement.**
+   > If $\leq$ is a linear order on $S$, then for all $x,y\in S$, exactly one of
+   > the following holds:
+   > \[
+   > x<y,\qquad x=y,\qquad y<x.
+   > \]
+
+128. () `thm:order-isomorphisms-preserve-and-reflect-order` — **Order Isomorphisms Preserve and Reflect Order**
+   > **Statement.**
+   > Let $(A,\leq_A)$ and $(B,\leq_B)$ be ordered sets. If $f:A\to B$ is an order
+   > isomorphism, then for all $x,y\in A$,
+   > \[
+   > x\leq_A y \;\Longleftrightarrow\; f(x)\leq_B f(y).
+   > \]
 
 129. () `thm:Q-countable` — **$\mathbb{Q}$ is countable**
    > **Statement.**
@@ -1151,29 +1151,49 @@ Completed in this tracker: 7
    > Equivalently: if there exist injections $f : A \hookrightarrow B$ and
    > $g : B \hookrightarrow A$, then there exists a bijection $h : A \to B$.
 
-134. (✅) `thm:euclid-i-4` — **Euclid I.4: Side-angle-side congruence**
+134. (✅) `thm:euclid-i-1` — **Euclid I.1: Constructing an equilateral triangle**
+   > **Statement.**
+   > Given a finite straight line segment $AB$, there exists an equilateral
+   > triangle $ABC$ constructed on $AB$.
+
+135. (✅) `thm:euclid-i-2` — **Euclid I.2: Copying a segment from a given point**
+   > **Statement.**
+   > Given a point $A$ and a finite straight line segment $BC$, there exists a
+   > straight line segment beginning at $A$ and equal to $BC$.
+
+136. (✅) `thm:euclid-i-3` — **Euclid I.3: Cutting off an equal segment**
+   > **Statement.**
+   > Given two unequal finite straight line segments, there exists a construction
+   > which cuts off from the greater a straight line segment equal to the less.
+
+137. (✅) `thm:euclid-i-4` — **Euclid I.4: Side-angle-side congruence**
    > **Statement.**
    > If two triangles have two sides equal to two sides respectively, and have the
    > angles contained by the equal straight lines equal, then they also have the
    > base equal to the base, the triangle equal to the triangle, and the remaining
    > angles equal to the remaining angles respectively.
 
-135. (✅) `thm:euclid-i-31` — **Euclid I.31: Drawing a parallel through a point**
+138. (✅) `thm:euclid-i-31` — **Euclid I.31: Drawing a parallel through a point**
    > **Statement.**
    > Through a given point, to draw a straight line parallel to a given straight
    > line.
 
-136. (✅) `thm:euclid-i-32` — **Euclid I.32: Triangle angle sum**
+139. (✅) `thm:euclid-i-32` — **Euclid I.32: Triangle angle sum**
    > **Statement.**
    > In any triangle, if one of the sides is produced, then the exterior angle is
    > equal to the two interior and opposite angles, and the three interior angles of
    > the triangle are equal to two right angles.
 
-137. (✅) `thm:euclid-i-41` — **Euclid I.41: Triangle and parallelogram on the same base**
+140. (✅) `thm:euclid-i-41` — **Euclid I.41: Triangle and parallelogram on the same base**
    > **Statement.**
    > If a parallelogram has the same base with a triangle and is in the same
    > parallels, then the parallelogram is double the triangle.
 
-138. (✅) `thm:euclid-i-46` — **Euclid I.46: Constructing a square on a segment**
+141. (✅) `thm:euclid-i-46` — **Euclid I.46: Constructing a square on a segment**
    > **Statement.**
    > On a given straight line, to describe a square.
+
+142. (✅) `thm:euclid-i-47` — **Euclid I.47: Pythagorean theorem**
+   > **Statement.**
+   > In right-angled triangles, the square on the side subtending the right angle is
+   > equal to the squares on the sides containing the right angle.
