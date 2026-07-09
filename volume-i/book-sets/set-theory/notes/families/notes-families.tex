@@ -58,6 +58,18 @@ The \emph{union} of the indexed family $\{A_i\}_{i \in I}$ is:
 \end{itemize}
 \end{dependencies}
 
+\begin{remark*}[Arbitrary unions]
+An arbitrary union over a collection $\mathcal{C}$ of sets is the indexed
+union whose indices are the members of the collection:
+\[
+\bigcup_{C\in\mathcal{C}} C
+=
+\{\, x \mid \exists C\in\mathcal{C},\; x\in C \,\}.
+\]
+Thus unions over finite, countable, or uncountable collections use the same
+definition; only the size of the indexing collection changes.
+\end{remark*}
+
 \begin{definitionbox}{Definition (Indexed Intersection)}
 \begin{definition}[Indexed Intersection]\label{def:indexed-intersection}
 For $I \neq \varnothing$, the \emph{intersection} of $\{A_i\}_{i \in I}$ is:
@@ -81,6 +93,18 @@ For $I \neq \varnothing$, the \emph{intersection} of $\{A_i\}_{i \in I}$ is:
 If $I = \varnothing$, then $\forall i \in I, x \in A_i$ holds vacuously for
 every $x$, making the intersection the entire universe $U$. This is normally
 left undefined or requires specifying a background universe explicitly.
+\end{remark*}
+
+\begin{remark*}[Finite intersections]
+Finite intersections are the special case of indexed intersections where the
+index set $I$ is finite and nonempty:
+\[
+\bigcap_{i\in I}A_i
+=
+\{\,x\mid \forall i\in I,\; x\in A_i\,\}.
+\]
+In topology, ``closed under finite intersections'' refers to this finite
+nonempty indexed case.
 \end{remark*}
 
 \begin{theorembox}{Theorem (De Morgan's Laws for Indexed Families)}
@@ -108,6 +132,35 @@ U\setminus\bigcap_{i\in I}A_i
   \item \hyperref[def:indexed-union]{Indexed Union}
   \item \hyperref[def:indexed-intersection]{Indexed Intersection}
   \item \hyperref[def:complement]{Complement}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Distributive Laws for Indexed Families)}
+\begin{theorem}[Distributive Laws for Indexed Families]\label{thm:indexed-distributivity}
+Let $A\subseteq U$ and let $\{B_i\}_{i\in I}$ be an indexed family of subsets
+of a universe $U$. Then
+\[
+A\cap\bigcup_{i\in I}B_i
+=
+\bigcup_{i\in I}(A\cap B_i).
+\]
+If $I\neq\varnothing$, then
+\[
+A\cup\bigcap_{i\in I}B_i
+=
+\bigcap_{i\in I}(A\cup B_i).
+\]
+\hyperref[prf:indexed-distributivity]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
+  \item \hyperref[def:indexed-union]{Indexed Union}
+  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
 \end{itemize}
 \end{dependencies}
 

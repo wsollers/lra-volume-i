@@ -32,6 +32,7 @@
 \hyperref[def:identity]{Identity}           & $\id_A(a) = a$                                              \\
 \hyperref[def:inclusion]{Inclusion map}      & $\iota : A \hookrightarrow B$, $\iota(a) = a$ for $A \subseteq B$ \\
 \hyperref[def:composition]{Composition}        & $(g \circ f)(a) = g(f(a))$                                  \\
+\hyperref[def:invertible-function]{Invertible}       & Some $g:B\to A$ satisfies $g\circ f=\id_A$ and $f\circ g=\id_B$ \\
 \hyperref[def:inverse]{Inverse}            & Defined for bijections; $f^{-1} \circ f = \id_A$            \\
 \hyperref[def:left-inverse-function]{Left inverse}       & $g\circ f=\id_A$                                           \\
 \hyperref[def:right-inverse-function]{Right inverse}      & $f\circ h=\id_B$                                           \\
@@ -57,8 +58,10 @@
 \hyperref[thm:inverse-comp]{Inverse of composition}    & $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$     & verify both sides \\
 \hyperref[thm:one-sided]{One-sided inverses}        & Left inverse $\iff$ injective; right $\iff$ surjective  & \\
 \hyperref[thm:preimage-ops]{Preimage preserves ops}    & $f^{-1}$ commutes with $\cup,\cap,\setminus,c$  & element-wise \\
+\hyperref[thm:indexed-preimage-ops]{Indexed preimage ops} & $f^{-1}$ commutes with indexed $\cup$ and $\cap$ & element-wise \\
 \hyperref[thm:image-ops]{Image and set ops}         & Images preserve $\cup$; contain $\subseteq$ for $\cap$  & counterexample \\
 \hyperref[thm:image-preimage-adjunction]{Image/preimage adjunction}  & $S\subseteq f^{-1}(f(S))$, $f(f^{-1}(T))\subseteq T$  & element-wise \\
+\hyperref[prop:preimage-under-inverse-function]{Preimage under inverse} & $(f^{-1})^{-1}(S)=f(S)$ for bijective $f$ & element-wise \\
 \bottomrule
 \end{tabular}
 \end{toolkitbox}

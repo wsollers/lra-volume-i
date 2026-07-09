@@ -1,0 +1,38 @@
+\begin{tikzpicture}[atlas, x=1cm, y=1cm, >=Stealth, every node/.style={font=\small}]
+  \node[atlas label] at (-2.1,2.65) {Preimage of a set};
+  \draw[atlasgray, line width=0.7pt] (-3.85,-0.1) ellipse (0.75 and 1.65);
+  \draw[atlasgray, line width=0.7pt] (-1.55,-0.1) ellipse (0.7 and 1.65);
+  \draw[atlasgold, line width=1pt, rounded corners=8pt] (-2.05,0.05) rectangle (-1.05,1.0);
+  \node[atlas label] at (-3.85,1.75) {$A$};
+  \node[atlas label] at (-1.55,1.75) {$B$};
+  \node[atlas label] at (-1.05,1.15) {$T$};
+
+  \node[atlas dot, label={[atlas label,left]$a_1$}] (pa1) at (-3.85,0.85) {};
+  \node[atlas dot, label={[atlas label,left]$a_2$}] (pa2) at (-3.85,0.05) {};
+  \node[atlas dot, label={[atlas label,left]$a_3$}] (pa3) at (-3.85,-1.05) {};
+  \node[atlas dot, label={[atlas label,right]$b_1$}] (pb1) at (-1.55,0.55) {};
+  \node[atlas dot, label={[atlas label,right]$b_2$}] (pb2) at (-1.55,-1.05) {};
+
+  \draw[atlasblue, atlas probe, ->] (pa1) -- (pb1);
+  \draw[atlasblue, atlas probe, ->] (pa2) -- (pb1);
+  \draw[atlasblue, atlas probe, ->] (pa3) -- (pb2);
+  \draw[atlasgreen, line width=1pt, rounded corners=8pt] (-4.42,-0.17) rectangle (-3.28,1.08);
+  \node[atlas label] at (-3.85,-1.95) {$f^{-1}(T)\subseteq A$};
+
+  \node[atlas label] at (2.0,2.65) {Inverse function};
+  \draw[atlasgray, line width=0.7pt] (0.25,-0.1) ellipse (0.7 and 1.45);
+  \draw[atlasgray, line width=0.7pt] (2.45,-0.1) ellipse (0.7 and 1.45);
+  \node[atlas label] at (0.25,1.55) {$A$};
+  \node[atlas label] at (2.45,1.55) {$B$};
+
+  \node[atlas dot, label={[atlas label,left]$a_1$}] (ia1) at (0.25,0.65) {};
+  \node[atlas dot, label={[atlas label,left]$a_2$}] (ia2) at (0.25,-0.85) {};
+  \node[atlas dot, label={[atlas label,right]$b_1$}] (ib1) at (2.45,0.65) {};
+  \node[atlas dot, label={[atlas label,right]$b_2$}] (ib2) at (2.45,-0.85) {};
+
+  \draw[atlasblue, atlas probe, ->] (ia1) -- (ib1);
+  \draw[atlasblue, atlas probe, ->] (ia2) -- (ib2);
+  \draw[atlasred, atlas probe, ->, bend left=18] (ib1) to (ia1);
+  \draw[atlasred, atlas probe, ->, bend right=18] (ib2) to (ia2);
+  \node[atlas label] at (1.35,-1.95) {$f^{-1}:B\to A$};
+\end{tikzpicture}

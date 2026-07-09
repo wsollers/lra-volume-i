@@ -18,6 +18,40 @@ foundational controversy surrounding it.
 \end{remark*}
 
 % ---------------------------------------------------------
+% Equivalent formulations
+% ---------------------------------------------------------
+\begin{theorembox}{Theorem (Alternative Forms of the Axiom of Choice)}
+\label{thm:ac-alternative-forms}
+Over ZF set theory, the following statements are equivalent.
+\begin{enumerate}
+  \item \textbf{Axiom of Choice.} Every indexed family of nonempty sets has a
+        choice function.
+  \item \textbf{Pairwise-disjoint choice form.} If
+        $\{A_\lambda\}_{\lambda\in\Lambda}$ is an indexed family of nonempty
+        pairwise disjoint sets, then there is a set
+        $B\subseteq\bigcup_{\lambda\in\Lambda}A_\lambda$ such that
+        $B\cap A_\lambda$ has exactly one element for each
+        $\lambda\in\Lambda$.
+  \item \textbf{Zorn's Lemma.} If each chain in a nonempty partially ordered
+        set has an upper bound, then the ordered set has a maximal element.
+  \item \textbf{Zermelo's Well-Ordering Theorem.} Every set can be
+        well-ordered.
+  \item \textbf{Tukey's Lemma.} Every nonempty family $\mathcal{F}$ of sets of
+        finite character has a maximal element, where finite character means
+        that $X\in\mathcal{F}$ exactly when every finite subset of $X$ belongs
+        to $\mathcal{F}$.
+\end{enumerate}
+\end{theorembox}
+
+\begin{remark*}[How to read the equivalences]
+These are not different axioms for this book; they are interchangeable tools.
+The usual selection-function statement is the official axiom. Zorn's Lemma is
+often the most useful proof engine, the well-ordering theorem is the order
+theoretic form, and Tukey's Lemma packages maximality arguments for families
+controlled by their finite subfamilies.
+\end{remark*}
+
+% ---------------------------------------------------------
 % Zorn's Lemma
 % ---------------------------------------------------------
 \begin{theorembox}{Zorn's Lemma}

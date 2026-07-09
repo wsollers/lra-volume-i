@@ -1,0 +1,60 @@
+\newpage
+\phantomsection
+\label{prf:preimage-under-inverse-function}
+\LRAProofFor{prop:preimage-under-inverse-function}
+
+\begin{remark*}[Return]
+\hyperref[prop:preimage-under-inverse-function]{Return to Proposition}
+\end{remark*}
+
+\begin{proposition*}[Preimage Under an Inverse Function]
+Let $f:A\to B$ be bijective, and let $S\subseteq A$. Then
+\[
+(f^{-1})^{-1}(S)=f(S),
+\]
+where $(f^{-1})^{-1}(S)$ denotes the preimage of $S$ under the inverse
+function $f^{-1}:B\to A$.
+\end{proposition*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+For $b\in B$,
+\[
+b\in (f^{-1})^{-1}(S)
+\iff f^{-1}(b)\in S
+\iff b=f(a)\text{ for some }a\in S
+\iff b\in f(S).
+\]
+Thus $(f^{-1})^{-1}(S)=f(S)$ by extensionality.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Both sets are subsets of $B$, so it is enough to compare their elements. Let
+$b\in B$. By the definition of preimage under the function $f^{-1}:B\to A$,
+\[
+b\in (f^{-1})^{-1}(S)
+\quad\Longleftrightarrow\quad
+f^{-1}(b)\in S.
+\]
+Since $f$ is bijective, $f^{-1}(b)$ is the unique element $a\in A$ such that
+$f(a)=b$. Therefore $f^{-1}(b)\in S$ exactly when $b=f(a)$ for some
+$a\in S$, which is exactly the condition $b\in f(S)$. Hence the two sets have
+the same elements.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Unpack the outer preimage notation first, then use the defining property of
+the inverse function.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:image-set]{Image of a Set}
+  \item \hyperref[def:preimage]{Preimage}
+  \item \hyperref[def:inverse]{Inverse Function}
+  \item \hyperref[def:bijective]{Bijective Function}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

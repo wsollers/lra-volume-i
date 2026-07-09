@@ -111,6 +111,27 @@ individually.
 % ---------------------------------------------------------
 % Inverse functions
 % ---------------------------------------------------------
+\begin{definitionbox}{Definition (Invertible Function)}
+\begin{definition}[Invertible Function]\label{def:invertible-function}
+Let $f : A \to B$ be a function. We say that $f$ is \emph{invertible} if
+there exists a function $g : B \to A$ such that
+\[
+g \circ f = \id_A
+\quad\text{and}\quad
+f \circ g = \id_B.
+\]
+Such a function $g$ is called an \emph{inverse} of $f$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:identity]{Identity Function}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Inverse Function)}
 \begin{definition}[Inverse Function]\label{def:inverse}
 Let $f : A \to B$ be bijective. The \emph{inverse function} is
@@ -121,6 +142,7 @@ $f^{-1} : B \to A$ defined by: $f^{-1}(b) = a$ iff $f(a) = b$.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
+  \item \hyperref[def:invertible-function]{Invertible Function}
   \item \hyperref[def:bijective]{Bijective Function}
   \item \hyperref[def:identity]{Identity Function}
 \end{itemize}
@@ -148,6 +170,7 @@ Converse: $(\exists g: B\to A,\; g\circ f = \id_A \wedge f\circ g = \id_B) \;\le
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:invertible-function]{Invertible Function}
   \item \hyperref[def:inverse]{Inverse Function}
   \item \hyperref[def:bijective]{Bijective Function}
   \item \hyperref[def:identity]{Identity Function}
@@ -214,7 +237,18 @@ with $f \circ h = \id_B$.
 
 \begin{remark*}[One-sided inverses]
 Left inverses and right inverses are the two one-sided inverse notions.
+A left inverse reverses $f$ on the domain side, so it can exist only when
+different inputs do not collapse to the same output. A right inverse chooses
+one input over each codomain element, so it can exist only when every codomain
+element is actually hit.
 \end{remark*}
+
+\begin{figure}[htbp]
+\centering
+\input{volume-i/book-sets/functions/notes/functions/figure-one-sided-inverses}
+\caption{Left and right inverses impose different one-sided requirements.}
+\label{fig:one-sided-inverses}
+\end{figure}
 
 \begin{theorembox}{Theorem (One-Sided Inverses and Function Properties)}
 \begin{theorem}[One-Sided Inverses and Function Properties]\label{thm:one-sided}
@@ -327,6 +361,53 @@ Let $f : A \to B$ and $S, T \subseteq B$. Then
 \end{itemize}
 \end{dependencies}
 
+\subsubsection*{Indexed Preimage Operations}
+
+\begin{theorembox}{Theorem (Preimages Preserve Indexed Set Operations)}
+\begin{theorem}[Preimages Preserve Indexed Set Operations]\label{thm:indexed-preimage-ops}
+Let $f:A\to B$ and let $\{T_i\}_{i\in I}$ be an indexed family of subsets of
+$B$. Then
+\[
+f^{-1}\!\left(\bigcup_{i\in I}T_i\right)
+=
+\bigcup_{i\in I}f^{-1}(T_i).
+\]
+If $I\neq\varnothing$, then
+\[
+f^{-1}\!\left(\bigcap_{i\in I}T_i\right)
+=
+\bigcap_{i\in I}f^{-1}(T_i).
+\]
+\hyperref[prf:indexed-preimage-ops]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+$\forall a\in A:\; a\in f^{-1}(\bigcup_{i\in I}T_i)
+\leftrightarrow \exists i\in I,\; f(a)\in T_i$.\\
+If $I\neq\varnothing$, then
+$\forall a\in A:\; a\in f^{-1}(\bigcap_{i\in I}T_i)
+\leftrightarrow \forall i\in I,\; f(a)\in T_i$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Preimage turns membership in a union or intersection back into the same
+logical condition on the input side. When $I=\mathbb{N}$, these identities say
+that preimages commute with countable unions and countable intersections.
+Topology uses the arbitrary union case for open sets and the finite, countable,
+or arbitrary intersection cases according to the structure under discussion.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:preimage]{Preimage}
+  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
+  \item \hyperref[def:indexed-union]{Indexed Union}
+  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem (Images and Set Operations)}
 \begin{theorem}[Images and Set Operations]\label{thm:image-ops}
 Let $f : A \to B$ and $S, T \subseteq A$. Then
@@ -377,6 +458,34 @@ $f(f^{-1}(T))=T$ for every $T\subseteq B$ iff $f$ is surjective.
   \item \hyperref[def:preimage]{Preimage}
   \item \hyperref[def:injective]{Injective Function}
   \item \hyperref[def:surjective]{Surjective Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Preimage Under an Inverse Function)}
+\begin{proposition}[Preimage Under an Inverse Function]\label{prop:preimage-under-inverse-function}
+Let $f:A\to B$ be bijective, and let $S\subseteq A$. Then
+\[
+(f^{-1})^{-1}(S)=f(S),
+\]
+where $(f^{-1})^{-1}(S)$ denotes the preimage of $S$ under the inverse
+function $f^{-1}:B\to A$.
+\hyperref[prf:preimage-under-inverse-function]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Notation warning]
+The inner $f^{-1}$ is the inverse function. The outer ${}^{-1}(S)$ is
+preimage notation applied to that inverse function. Thus the proposition says
+that pulling $S\subseteq A$ back along $f^{-1}:B\to A$ gives the same subset of
+$B$ as pushing $S$ forward along $f:A\to B$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:image-set]{Image of a Set}
+  \item \hyperref[def:preimage]{Preimage}
+  \item \hyperref[def:inverse]{Inverse Function}
+  \item \hyperref[def:bijective]{Bijective Function}
 \end{itemize}
 \end{dependencies}
 
