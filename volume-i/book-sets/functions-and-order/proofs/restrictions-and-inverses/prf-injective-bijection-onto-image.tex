@@ -1,0 +1,42 @@
+\newpage
+\phantomsection
+\label{prf:injective-bijection-onto-image}
+\LRAProofFor{thm:injective-bijection-onto-image}
+
+\begin{remark*}[Return]
+\hyperref[thm:injective-bijection-onto-image]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Injective Maps Are Bijections Onto Their Images]
+If $f:A\to B$ is injective, then $f_{\operatorname{im}}:A\to\im(f)$ is
+bijective.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+By \hyperref[prop:corestriction-surjective]{corestriction surjectivity},
+$f_{\operatorname{im}}$ is surjective. If
+$f_{\operatorname{im}}(a_1)=f_{\operatorname{im}}(a_2)$, then
+$f(a_1)=f(a_2)$, so $a_1=a_2$ by injectivity of $f$. Hence
+$f_{\operatorname{im}}$ is injective and surjective.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The image codomain removes missed targets, so surjectivity is automatic.
+Injectivity is unchanged because the values are still the original values of
+$f$. Thus the corestricted map is both injective and surjective.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:injective-bijection-onto-image]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

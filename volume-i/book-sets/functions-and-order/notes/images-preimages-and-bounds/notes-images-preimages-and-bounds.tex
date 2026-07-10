@@ -1,0 +1,116 @@
+
+\subsection*{Upper Sets, Lower Sets, and Bounds}
+
+\begin{definitionbox}{Definition (Upper and Lower Set)}
+\begin{definition}[Upper and Lower Set]\label{def:upper-lower-set}
+Let $(P,\leq)$ be an ordered set and let $U,L\subseteq P$.
+\begin{enumerate}[label=(\roman*)]
+\item $U$ is an \emph{upper set} if $u\in U$ and $u\leq p$ imply $p\in U$.
+\item $L$ is a \emph{lower set} if $\ell\in L$ and $p\leq \ell$ imply
+$p\in L$.
+\end{enumerate}
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+The upper-set predicate is
+\[
+\forall u\in U\,\forall p\in P,\quad u\leq p\Rightarrow p\in U.
+\]
+Its failure is concrete:
+\[
+\exists u\in U\,\exists p\in P,\quad u\leq p\ \land\ p\notin U.
+\]
+\end{remark*}
+
+\begin{definitionbox}{Definition (Bounded Image)}
+\begin{definition}[Bounded Image]\label{def:bounded-image}
+Let $f:A\to P$ be a function into an ordered set $(P,\leq)$.
+\begin{enumerate}[label=(\roman*)]
+\item $f$ is \emph{bounded above} if $f(A)$ has an upper bound in $P$.
+\item $f$ is \emph{bounded below} if $f(A)$ has a lower bound in $P$.
+\item $f$ is \emph{bounded} if it is bounded above and bounded below.
+\end{enumerate}
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:image-function]{Image of a Function}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Boundedness Is Image Boundedness)}
+\begin{proposition}[Boundedness Is Image Boundedness]\label{prop:boundedness-image-boundedness}
+For a function $f:A\to P$ into an ordered set, $f$ is bounded above if and
+only if there exists $p\in P$ such that
+\[
+\forall a\in A,\quad f(a)\leq p.
+\]
+The analogous statement holds for bounded below.
+\hyperref[prf:boundedness-image-boundedness]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:bounded-image]{Bounded Image}
+  \item \hyperref[def:image-function]{Image of a Function}
+\end{itemize}
+\end{dependencies}
+
+\subsection*{Preimages Preserve Order Regions}
+
+\begin{theorembox}{Theorem (Preimages of Upper and Lower Sets)}
+\begin{theorem}[Preimages of Upper and Lower Sets]\label{thm:preimage-upper-lower-sets}
+Let $f:(P,\leq)\to(Q,\leq')$ be order-preserving.
+\begin{enumerate}[label=(\roman*)]
+\item If $U\subseteq Q$ is an upper set, then $f^{-1}(U)$ is an upper set in $P$.
+\item If $L\subseteq Q$ is a lower set, then $f^{-1}(L)$ is a lower set in $P$.
+\end{enumerate}
+If $f$ is order-reversing, then preimages of upper sets are lower sets, and
+preimages of lower sets are upper sets.
+\hyperref[prf:preimage-upper-lower-sets]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:upper-lower-set]{Upper and Lower Set}
+  \item \hyperref[def:preimage]{Preimage}
+  \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
+  \item \hyperref[def:order-reversing-map]{Order-Reversing Map}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+Preimages already preserve Boolean set operations exactly. With monotonicity,
+they also preserve the order-shape of upper and lower regions. Images usually
+need stronger hypotheses before they behave as cleanly.
+\end{remark*}
+
+\begin{propositionbox}{Proposition (Images of Chains)}
+\begin{proposition}[Images of Chains Under Monotone Maps]\label{prop:images-chains-monotone}
+If $C$ is a chain in a partially ordered set $P$ and
+$f:P\to Q$ is order-preserving or order-reversing, then $f(C)$ is a chain in
+$Q$.
+\hyperref[prf:images-chains-monotone]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
+  \item \hyperref[def:image-set]{Image of a Set}
+  \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
+\end{itemize}
+\end{dependencies}

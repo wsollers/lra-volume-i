@@ -1,0 +1,41 @@
+\newpage
+\phantomsection
+\label{prf:set-difference-monotone-left}
+\LRAProofFor{thm:set-difference-monotone-left}
+
+\begin{remark*}[Return]
+\hyperref[thm:set-difference-monotone-left]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Set Difference is Inclusion-Monotone in the Left Argument]
+If $A\subseteq B$, then $A\setminus C\subseteq B\setminus C$.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Assume $A\subseteq B$. Let $x\in A\setminus C$. Then $x\in A$ and
+$x\notin C$. Since $A\subseteq B$, we have $x\in B$. Therefore
+$x\in B\setminus C$, so $A\setminus C\subseteq B\setminus C$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Changing the left argument of a difference changes the positive membership
+condition. The exclusion condition $x\notin C$ stays fixed. If an element is
+in $A\setminus C$, it has both $x\in A$ and $x\notin C$. The inclusion
+$A\subseteq B$ upgrades $x\in A$ to $x\in B$, while preserving
+$x\notin C$, so the element belongs to $B\setminus C$.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:set-difference-monotone-left]{Proof target}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:set-difference]{Set Difference}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

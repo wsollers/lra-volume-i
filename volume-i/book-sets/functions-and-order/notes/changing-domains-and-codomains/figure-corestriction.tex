@@ -1,0 +1,23 @@
+\begin{tikzpicture}[atlas, x=1cm, y=1cm, >=Stealth, every node/.style={font=\small}]
+  \draw[atlasgray, line width=0.7pt] (-3.4,0) ellipse (0.7 and 1.45);
+  \draw[atlasgray, line width=0.7pt] (-0.9,0) ellipse (0.95 and 1.65);
+  \draw[atlasgold, line width=1pt, rounded corners=7pt] (-1.45,-0.9) rectangle (-0.35,0.95);
+
+  \node[atlas label] at (-3.4,1.65) {$A$};
+  \node[atlas label] at (-0.9,1.85) {$B$};
+  \node[atlas label] at (-0.9,-1.18) {$\im(f)$};
+
+  \node[atlas dot, label={[atlas label,left]$a_1$}] (a1) at (-3.4,0.85) {};
+  \node[atlas dot, label={[atlas label,left]$a_2$}] (a2) at (-3.4,0.05) {};
+  \node[atlas dot, label={[atlas label,left]$a_3$}] (a3) at (-3.4,-0.75) {};
+  \node[atlas dot, label={[atlas label,right]$y_1$}] (b1) at (-0.9,0.55) {};
+  \node[atlas dot, label={[atlas label,right]$y_2$}] (b2) at (-0.9,-0.55) {};
+  \node[atlas dot, label={[atlas label,right]$z$}] (b3) at (-0.9,1.25) {};
+
+  \draw[atlasblue, atlas probe, ->] (a1) -- (b1);
+  \draw[atlasblue, atlas probe, ->] (a2) -- (b1);
+  \draw[atlasblue, atlas probe, ->] (a3) -- (b2);
+
+  \node[atlas label] at (1.25,0.55) {$A\to B$: not onto if $z$ is missed};
+  \node[atlas label] at (1.25,-0.35) {$A\to\im(f)$: onto by definition};
+\end{tikzpicture}

@@ -1,0 +1,43 @@
+\newpage
+\phantomsection
+\label{prf:order-embedding-isomorphism-onto-image}
+\LRAProofFor{thm:order-embedding-isomorphism-onto-image}
+
+\begin{remark*}[Return]
+\hyperref[thm:order-embedding-isomorphism-onto-image]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Order Embedding Is Isomorphism Onto Image]
+An order embedding is an order isomorphism onto its image.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+The corestriction to the image is surjective. The order embedding is injective,
+so the corestriction is bijective. For $x,y\in A$,
+\[
+x\leq y \quad\Longleftrightarrow\quad f(x)\leq' f(y),
+\]
+because the map preserves and reflects order. Thus the bijection preserves
+and reflects order between $A$ and the induced ordered subset $f(A)$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Passing to the image removes missed targets. Order embedding already supplies
+the exact order equivalence between inputs and their outputs. Therefore the
+map identifies $A$ with the ordered subset $f(A)$.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:order-embedding-isomorphism-onto-image]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

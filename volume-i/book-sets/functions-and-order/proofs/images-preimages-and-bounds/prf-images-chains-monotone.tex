@@ -1,0 +1,42 @@
+\newpage
+\phantomsection
+\label{prf:images-chains-monotone}
+\LRAProofFor{prop:images-chains-monotone}
+
+\begin{remark*}[Return]
+\hyperref[prop:images-chains-monotone]{Return to Proposition}
+\end{remark*}
+
+\begin{proposition*}[Images of Chains Under Monotone Maps]
+If $C$ is a chain and $f$ is order-preserving or order-reversing, then
+$f(C)$ is a chain.
+\end{proposition*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Take $u,v\in f(C)$. Then $u=f(c_1)$ and $v=f(c_2)$ for some
+$c_1,c_2\in C$. Since $C$ is a chain, either $c_1\leq c_2$ or
+$c_2\leq c_1$. An order-preserving map keeps that comparison between $u$ and
+$v$; an order-reversing map reverses it. In either case $u$ and $v$ are
+comparable.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+A chain is a set where every two elements can be compared. A monotone or
+antitone map may collapse elements or reverse comparisons, but it does not
+turn a comparable pair into an incomparable pair.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:images-chains-monotone]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

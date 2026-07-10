@@ -1,0 +1,50 @@
+\newpage
+\phantomsection
+\label{prf:union-monotone-inclusion}
+\LRAProofFor{thm:union-monotone-inclusion}
+
+\begin{remark*}[Return]
+\hyperref[thm:union-monotone-inclusion]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Union is Inclusion-Monotone]
+If $A\subseteq B$, then $A\cup C\subseteq B\cup C$ and
+$C\cup A\subseteq C\cup B$.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Assume $A\subseteq B$. Let $x\in A\cup C$. Then $x\in A$ or $x\in C$.
+If $x\in A$, then $x\in B$, so $x\in B\cup C$. If $x\in C$, then
+$x\in B\cup C$ directly. Hence $A\cup C\subseteq B\cup C$.
+
+Now let $x\in C\cup A$. Then $x\in C$ or $x\in A$. If $x\in C$, then
+$x\in C\cup B$. If $x\in A$, then $x\in B$, so $x\in C\cup B$.
+Therefore $C\cup A\subseteq C\cup B$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Read $A\subseteq B$ as the quantified statement
+\[
+\forall x\,(x\in A\Rightarrow x\in B).
+\]
+To prove $A\cup C\subseteq B\cup C$, start with an arbitrary element of
+$A\cup C$. Membership in a union gives two cases. The $C$-case already places
+the element in the larger union, and the $A$-case moves to $B$ by
+$A\subseteq B$. The proof for $C\cup A\subseteq C\cup B$ is the same
+argument with the common set written first.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:union-monotone-inclusion]{Proof target}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:union]{Union}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

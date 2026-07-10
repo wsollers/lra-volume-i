@@ -1,0 +1,42 @@
+\newpage
+\phantomsection
+\label{prf:set-difference-antitone-right}
+\LRAProofFor{thm:set-difference-antitone-right}
+
+\begin{remark*}[Return]
+\hyperref[thm:set-difference-antitone-right]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Set Difference is Inclusion-Antitone in the Right Argument]
+If $C\subseteq D$, then $A\setminus D\subseteq A\setminus C$.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Assume $C\subseteq D$. Let $x\in A\setminus D$. Then $x\in A$ and
+$x\notin D$. If $x\in C$, then $x\in D$, contradicting $x\notin D$.
+Therefore $x\notin C$. Since $x\in A$ and $x\notin C$, we have
+$x\in A\setminus C$. Hence $A\setminus D\subseteq A\setminus C$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Changing the right argument of a difference changes the exclusion condition.
+A larger set on the right removes more elements, so difference is antitone in
+that argument. The proof uses the contrapositive reading of $C\subseteq D$:
+if $x\notin D$, then $x\notin C$. Combined with the unchanged fact $x\in A$,
+this gives $x\in A\setminus C$.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:set-difference-antitone-right]{Proof target}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:set-difference]{Set Difference}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

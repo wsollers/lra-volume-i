@@ -1,0 +1,39 @@
+\newpage
+\phantomsection
+\label{prf:enlarge-codomain-preserves-injective}
+\LRAProofFor{prop:enlarge-codomain-preserves-injective}
+
+\begin{remark*}[Return]
+\hyperref[prop:enlarge-codomain-preserves-injective]{Return to Proposition}
+\end{remark*}
+
+\begin{proposition*}[Enlarging Codomain Preserves Injectivity]
+Let $f:A\to B$ be injective and suppose $B\subseteq D$. Define
+$g:A\to D$ by $g(a)=f(a)$. Then $g$ is injective.
+\end{proposition*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+If $g(a_1)=g(a_2)$, then $f(a_1)=f(a_2)$ by the definition of $g$. Since
+$f$ is injective, $a_1=a_2$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Changing to a larger codomain does not change any output value. It only changes
+where the same output is allowed to live. Therefore it cannot create a new
+collision among domain elements.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:enlarge-codomain-preserves-injective]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

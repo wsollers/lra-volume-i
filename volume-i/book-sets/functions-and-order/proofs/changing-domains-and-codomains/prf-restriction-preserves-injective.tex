@@ -1,0 +1,38 @@
+\newpage
+\phantomsection
+\label{prf:restriction-preserves-injective}
+\LRAProofFor{prop:restriction-preserves-injective}
+
+\begin{remark*}[Return]
+\hyperref[prop:restriction-preserves-injective]{Return to Proposition}
+\end{remark*}
+
+\begin{proposition*}[Domain Restriction Preserves Injectivity]
+If $f:A\to B$ is injective and $C\subseteq A$, then $f|_C:C\to B$ is injective.
+\end{proposition*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let $c_1,c_2\in C$ and suppose $f|_C(c_1)=f|_C(c_2)$. Then
+$f(c_1)=f(c_2)$. Since $f$ is injective, $c_1=c_2$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+A restriction has fewer inputs but the same values on those inputs. If two
+surviving inputs collide under the restriction, they also collide under the
+original function. Injectivity of the original function rules this out.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:restriction-preserves-injective]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

@@ -1,0 +1,113 @@
+
+\subsection*{Preserving Versus Reflecting Order}
+
+\begin{definitionbox}{Definition (Order-Reflecting Map)}
+\begin{definition}[Order-Reflecting Map]\label{def:order-reflecting-map}
+Let $(A,\leq)$ and $(B,\leq')$ be ordered sets. A function $f:A\to B$ is
+\emph{order-reflecting} if
+\[
+f(x)\leq' f(y)\quad\Longrightarrow\quad x\leq y
+\]
+for all $x,y\in A$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+Order-preserving pushes an inequality forward. Order-reflecting pulls an
+inequality back. Together they say
+\[
+x\leq y \quad\Longleftrightarrow\quad f(x)\leq' f(y).
+\]
+\end{remark*}
+
+\begin{definitionbox}{Definition (Order Embedding, Function-Property Form)}
+\begin{definition}[Order Embedding, Function-Property Form]\label{def:order-embedding-function-form}
+An \emph{order embedding} is a function that is both order-preserving and
+order-reflecting.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
+  \item \hyperref[def:order-reflecting-map]{Order-Reflecting Map}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+This is the same notion as \hyperref[def:order-embedding]{Order Embedding} in
+the orderings chapter, restated here to emphasize the function-property
+decomposition.
+\end{remark*}
+
+\begin{propositionbox}{Proposition (Order Embeddings Are Injective, Revisited)}
+\begin{proposition}[Order Embeddings Are Injective, Revisited]\label{prop:order-embedding-injective-revisited}
+Every order embedding between partial orders is injective.
+\hyperref[prf:order-embedding-injective-revisited]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:order-embedding-function-form]{Order Embedding, Function-Property Form}
+  \item \hyperref[def:injective]{Injective Function}
+  \item \hyperref[def:antisymmetric]{Antisymmetric Relation}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+An order-preserving map can collapse distinct comparable elements. An
+order-reflecting map cannot: if $f(x)=f(y)$, then both $f(x)\leq' f(y)$ and
+$f(y)\leq' f(x)$ hold. Reflection gives $x\leq y$ and $y\leq x$, and
+antisymmetry gives $x=y$.
+\end{remark*}
+
+\subsection*{Isomorphisms Onto Images}
+
+\begin{theorembox}{Theorem (Order Embedding Is Isomorphism Onto Image)}
+\begin{theorem}[Order Embedding Is Isomorphism Onto Image]\label{thm:order-embedding-isomorphism-onto-image}
+Let $f:(A,\leq)\to(B,\leq')$ be an order embedding. Then the corestriction
+\[
+f_{\operatorname{im}}:(A,\leq)\to(f(A),\leq'_{f(A)})
+\]
+is an order isomorphism.
+\hyperref[prf:order-embedding-isomorphism-onto-image]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:corestriction-to-image]{Corestriction to the Image}
+  \item \hyperref[def:order-embedding-function-form]{Order Embedding, Function-Property Form}
+  \item \hyperref[def:order-isomorphism]{Order Isomorphism}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Inverse of an Order Isomorphism)}
+\begin{theorem}[Inverse of an Order Isomorphism]\label{thm:inverse-order-isomorphism}
+If $f:(A,\leq)\to(B,\leq')$ is an order isomorphism, then
+$f^{-1}:(B,\leq')\to(A,\leq)$ is an order isomorphism.
+\hyperref[prf:inverse-order-isomorphism]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:order-isomorphism]{Order Isomorphism}
+  \item \hyperref[def:inverse]{Inverse Function}
+  \item \hyperref[def:order-reflecting-map]{Order-Reflecting Map}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+A bijective order-preserving map should not be treated as an order isomorphism
+until the inverse is known to be order-preserving, or equivalently until the
+map is known to reflect order.
+\end{remark*}

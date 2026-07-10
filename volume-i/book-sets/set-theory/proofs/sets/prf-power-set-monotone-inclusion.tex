@@ -1,0 +1,43 @@
+\newpage
+\phantomsection
+\label{prf:power-set-monotone-inclusion}
+\LRAProofFor{thm:power-set-monotone-inclusion}
+
+\begin{remark*}[Return]
+\hyperref[thm:power-set-monotone-inclusion]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Power Set is Inclusion-Monotone]
+If $A\subseteq B$, then $\mathcal{P}(A)\subseteq\mathcal{P}(B)$.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Assume $A\subseteq B$. Let $S\in\mathcal{P}(A)$. Then $S\subseteq A$.
+To show $S\subseteq B$, let $x\in S$. Since $S\subseteq A$, we have
+$x\in A$. Since $A\subseteq B$, we have $x\in B$. Thus $S\subseteq B$,
+so $S\in\mathcal{P}(B)$. Therefore
+$\mathcal{P}(A)\subseteq\mathcal{P}(B)$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+An element of $\mathcal{P}(A)$ is not usually an element of $A$; it is a
+subset of $A$. Thus the proof uses two levels of arbitrary choice. First take
+an arbitrary $S\in\mathcal{P}(A)$. Then prove $S\subseteq B$ by taking an
+arbitrary $x\in S$. The chain $x\in S\Rightarrow x\in A\Rightarrow x\in B$
+shows that every subset of $A$ is also a subset of $B$.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:power-set-monotone-inclusion]{Proof target}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:power-set]{Power Set}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

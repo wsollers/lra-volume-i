@@ -1,0 +1,45 @@
+\newpage
+\phantomsection
+\label{prf:image-factorization}
+\LRAProofFor{prop:image-factorization}
+
+\begin{remark*}[Return]
+\hyperref[prop:image-factorization]{Return to Proposition}
+\end{remark*}
+
+\begin{proposition*}[Image Factorization]
+Let $f:A\to B$ and let $\iota:\im(f)\hookrightarrow B$ be the inclusion map.
+Then $f=\iota\circ f_{\operatorname{im}}$.
+\end{proposition*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+For each $a\in A$,
+\[
+(\iota\circ f_{\operatorname{im}})(a)
+=\iota(f_{\operatorname{im}}(a))
+=\iota(f(a))
+=f(a).
+\]
+The two functions have the same domain and codomain and agree pointwise.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The corestriction first regards $f(a)$ as an element of $\im(f)$. The inclusion
+then regards that same element as an element of $B$. No value changes, so the
+composition is the original function.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:image-factorization]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

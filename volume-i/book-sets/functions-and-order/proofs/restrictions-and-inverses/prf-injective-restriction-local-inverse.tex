@@ -1,0 +1,42 @@
+\newpage
+\phantomsection
+\label{prf:injective-restriction-local-inverse}
+\LRAProofFor{prop:injective-restriction-local-inverse}
+
+\begin{remark*}[Return]
+\hyperref[prop:injective-restriction-local-inverse]{Return to Proposition}
+\end{remark*}
+
+\begin{proposition*}[Injective Restriction Gives a Local Inverse]
+Let $f:A\to B$ and $C\subseteq A$. If $f|_C:C\to B$ is injective, then
+$f|_C:C\to f(C)$ is bijective and therefore has an inverse $f(C)\to C$.
+\end{proposition*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+The map $f|_C:C\to f(C)$ is surjective by
+\hyperref[prop:restricted-map-onto-image]{the restricted-image proposition}.
+It is injective by the hypothesis. Hence it is bijective, so the inverse
+function exists.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The restriction removes all inputs outside $C$. If no two remaining inputs
+collide, and if the codomain is exactly the set of values those inputs produce,
+then the restricted map matches each value in $f(C)$ with exactly one input in
+$C$.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:injective-restriction-local-inverse]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

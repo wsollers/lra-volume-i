@@ -1,0 +1,145 @@
+
+\begin{remark*}[Chapter orientation]
+The basic function chapter studies maps as relations with declared domains and
+codomains. The orderings chapter adds ordered sets and order-preserving maps.
+This chapter studies what happens when those two viewpoints are used together:
+change the domain, change the codomain, restrict to useful pieces, and track
+which properties survive.
+\end{remark*}
+
+\begin{toolkitbox}{Changing Domains and Codomains --- Quick Reference}
+\small
+\begin{tabularx}{\textwidth}{l X}
+\toprule
+\textbf{Construction} & \textbf{Effect} \\
+\midrule
+Restrict domain & May improve injectivity; preserves any property checked only on surviving inputs. \\
+Corestrict to image & Turns every function into a surjection onto its image. \\
+Enlarge codomain & Preserves injectivity; may destroy surjectivity. \\
+Extend domain & May destroy injectivity, boundedness, or monotonicity. \\
+Pass to image & Gives the natural codomain for an inverse-on-image when the map is injective. \\
+\bottomrule
+\end{tabularx}
+\end{toolkitbox}
+
+\subsection*{Corestriction and Same-Graph Changes}
+
+\begin{definitionbox}{Definition (Corestriction to the Image)}
+\begin{definition}[Corestriction to the Image]\label{def:corestriction-to-image}
+Let $f:A\to B$ be a function. The \emph{corestriction of $f$ to its image} is
+the function
+\[
+f_{\operatorname{im}}:A\to \im(f),
+\qquad
+f_{\operatorname{im}}(a)=f(a).
+\]
+It has the same domain and same values as $f$, but its codomain is
+$\im(f)$ instead of $B$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:image-function]{Image of a Function}
+  \item \hyperref[def:codomain]{Codomain of a Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+The statement ``$f_{\operatorname{im}}$ is onto'' reads
+\[
+\forall y\in\im(f)\,\exists a\in A,\quad f_{\operatorname{im}}(a)=y.
+\]
+This is true by the definition of image: membership in $\im(f)$ already means
+being equal to $f(a)$ for at least one input.
+\end{remark*}
+
+\begin{propositionbox}{Proposition (Corestriction Is Surjective)}
+\begin{proposition}[Corestriction Is Surjective]\label{prop:corestriction-surjective}
+For every function $f:A\to B$, the corestriction
+$f_{\operatorname{im}}:A\to\im(f)$ is surjective.
+\hyperref[prf:corestriction-surjective]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:image-function]{Image of a Function}
+  \item \hyperref[def:surjective]{Surjective Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{figure}[htbp]
+\centering
+\input{volume-i/book-sets/functions-and-order/notes/changing-domains-and-codomains/figure-corestriction}
+\caption{Changing only the codomain from $B$ to $\im(f)$ turns $f$ into a surjection.}
+\label{fig:corestriction-to-image}
+\end{figure}
+
+\begin{propositionbox}{Proposition (Image Factorization)}
+\begin{proposition}[Image Factorization]\label{prop:image-factorization}
+Let $f:A\to B$ and let $\iota:\im(f)\hookrightarrow B$ be the inclusion map.
+Then
+\[
+f=\iota\circ f_{\operatorname{im}}.
+\]
+Thus every function factors as a surjection onto its image followed by an
+inclusion.
+\hyperref[prf:image-factorization]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:corestriction-to-image]{Corestriction to the Image}
+  \item \hyperref[def:inclusion]{Inclusion Map}
+  \item \hyperref[def:composition]{Composition}
+\end{itemize}
+\end{dependencies}
+
+\subsection*{Restriction and Extension}
+
+\begin{propositionbox}{Proposition (Domain Restriction Preserves Injectivity)}
+\begin{proposition}[Domain Restriction Preserves Injectivity]\label{prop:restriction-preserves-injective}
+If $f:A\to B$ is injective and $C\subseteq A$, then the restriction
+$f|_C:C\to B$ is injective.
+\hyperref[prf:restriction-preserves-injective]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:restriction]{Restriction}
+  \item \hyperref[def:injective]{Injective Function}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+The contrapositive is often the useful form: if some restriction $f|_C$ is not
+injective, then $f$ is not injective. A collision inside a smaller domain is
+also a collision in the larger domain.
+\end{remark*}
+
+\begin{propositionbox}{Proposition (Enlarging Codomain Preserves Injectivity)}
+\begin{proposition}[Enlarging Codomain Preserves Injectivity]\label{prop:enlarge-codomain-preserves-injective}
+Let $f:A\to B$ be injective and suppose $B\subseteq D$. Define
+$g:A\to D$ by $g(a)=f(a)$. Then $g$ is injective.
+\hyperref[prf:enlarge-codomain-preserves-injective]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:codomain]{Codomain of a Function}
+  \item \hyperref[def:injective]{Injective Function}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+Surjectivity is codomain-sensitive. The same rule may be onto $B$ but fail to
+be onto a larger codomain $D$ because new target elements have been added.
+Injectivity is different: it only asks whether two domain elements collide.
+\end{remark*}

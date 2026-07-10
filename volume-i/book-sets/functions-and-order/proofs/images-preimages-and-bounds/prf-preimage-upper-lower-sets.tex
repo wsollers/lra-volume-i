@@ -1,0 +1,42 @@
+\newpage
+\phantomsection
+\label{prf:preimage-upper-lower-sets}
+\LRAProofFor{thm:preimage-upper-lower-sets}
+
+\begin{remark*}[Return]
+\hyperref[thm:preimage-upper-lower-sets]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Preimages of Upper and Lower Sets]
+Order-preserving maps pull upper sets back to upper sets and lower sets back
+to lower sets; order-reversing maps swap the two.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let $f$ be order-preserving and let $U$ be an upper set in $Q$. If
+$x\in f^{-1}(U)$ and $x\leq y$, then $f(x)\in U$ and
+$f(x)\leq' f(y)$. Since $U$ is upper, $f(y)\in U$, so $y\in f^{-1}(U)$.
+The lower-set case is dual. If $f$ is order-reversing, $x\leq y$ gives
+$f(y)\leq' f(x)$, which swaps the upper and lower arguments.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Membership in a preimage means the output lies in the target set. Monotonicity
+transports the domain comparison to a target comparison. The upper- or
+lower-set property then keeps the new output inside the target set.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:preimage-upper-lower-sets]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

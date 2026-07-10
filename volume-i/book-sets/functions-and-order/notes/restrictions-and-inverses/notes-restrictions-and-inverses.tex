@@ -1,0 +1,101 @@
+
+\subsection*{Inverses After Restriction}
+
+\begin{remark*}[Main idea]
+Many functions are not invertible as originally stated. They may fail because
+two inputs collide, because the codomain is too large, or both. Restricting
+the domain can remove collisions; corestricting the codomain to the image
+removes unused target elements.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Injective Maps Are Bijections Onto Their Images)}
+\begin{theorem}[Injective Maps Are Bijections Onto Their Images]\label{thm:injective-bijection-onto-image}
+If $f:A\to B$ is injective, then the corestriction
+$f_{\operatorname{im}}:A\to\im(f)$ is bijective. Hence it has an inverse
+\[
+f_{\operatorname{im}}^{-1}:\im(f)\to A.
+\]
+\hyperref[prf:injective-bijection-onto-image]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Comment]
+The inverse-on-image is the function determined by
+\[
+\forall y\in\im(f)\,\exists! a\in A,\quad f(a)=y.
+\]
+Existence comes from $y\in\im(f)$; uniqueness comes from injectivity.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:corestriction-to-image]{Corestriction to the Image}
+  \item \hyperref[def:injective]{Injective Function}
+  \item \hyperref[def:bijective]{Bijective Function}
+  \item \hyperref[def:inverse]{Inverse Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Restricted Map Is Onto Its Restricted Image)}
+\begin{proposition}[Restricted Map Is Onto Its Restricted Image]\label{prop:restricted-map-onto-image}
+Let $f:A\to B$ and let $C\subseteq A$. Then
+\[
+f|_C:C\to f(C)
+\]
+is surjective.
+\hyperref[prf:restricted-map-onto-image]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:restriction]{Restriction}
+  \item \hyperref[def:image-set]{Image of a Set}
+  \item \hyperref[def:surjective]{Surjective Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Injective Restriction Gives a Local Inverse)}
+\begin{proposition}[Injective Restriction Gives a Local Inverse]\label{prop:injective-restriction-local-inverse}
+Let $f:A\to B$ and $C\subseteq A$. If $f|_C:C\to B$ is injective, then
+\[
+f|_C:C\to f(C)
+\]
+is bijective and therefore has an inverse $f(C)\to C$.
+\hyperref[prf:injective-restriction-local-inverse]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:restricted-map-onto-image]{Restricted Map Is Onto Its Restricted Image}
+  \item \hyperref[def:injective]{Injective Function}
+  \item \hyperref[def:inverse]{Inverse Function}
+\end{itemize}
+\end{dependencies}
+
+\subsection*{Failure Modes for Invertibility}
+
+\begin{remark*}[Comment]
+To make $f:A\to B$ invertible, two independent failures must be repaired:
+\begin{enumerate}[label=(\roman*)]
+\item \emph{Collision failure}: there exist $a_1\neq a_2$ with
+  $f(a_1)=f(a_2)$. This prevents injectivity.
+\item \emph{Missed-target failure}: there exists $b\in B$ such that no
+  $a\in A$ satisfies $f(a)=b$. This prevents surjectivity.
+\end{enumerate}
+Domain restriction addresses collisions. Corestriction to the image addresses
+missed targets.
+\end{remark*}
+
+\begin{remark*}[Negation form]
+The negation of injectivity is not just ``not one-to-one''; it is the usable
+predicate
+\[
+\exists a_1,a_2\in A,\quad a_1\neq a_2\ \land\ f(a_1)=f(a_2).
+\]
+The negation of surjectivity is
+\[
+\exists b\in B,\quad \forall a\in A,\ f(a)\neq b.
+\]
+\end{remark*}

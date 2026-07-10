@@ -253,6 +253,158 @@ Cantor's theorem shows $|\mathcal{P}(A)| > |A|$ strictly.
 \end{remark*}
 
 % ---------------------------------------------------------
+% Monotonicity under inclusion
+% ---------------------------------------------------------
+\begin{definitionbox}{Definition (Inclusion-Monotone Set Operation)}
+\begin{definition}[Inclusion-Monotone Set Operation]\label{def:inclusion-monotone-set-operation}
+A set operation $F$ is \emph{inclusion-monotone} in an argument if replacing
+that argument by a larger set can only enlarge the value of the operation.
+For a one-variable operation, this means
+\[
+A\subseteq B \quad\Longrightarrow\quad F(A)\subseteq F(B).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Inclusion-Antitone Set Operation)}
+\begin{definition}[Inclusion-Antitone Set Operation]\label{def:inclusion-antitone-set-operation}
+A set operation $F$ is \emph{inclusion-antitone} in an argument if replacing
+that argument by a larger set can only shrink the value of the operation:
+\[
+A\subseteq B \quad\Longrightarrow\quad F(B)\subseteq F(A).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Union is Inclusion-Monotone)}
+\begin{theorem}[Union is Inclusion-Monotone]\label{thm:union-monotone-inclusion}
+If $A\subseteq B$, then
+\[
+A\cup C\subseteq B\cup C
+\quad\text{and}\quad
+C\cup A\subseteq C\cup B.
+\]
+\hyperref[prf:union-monotone-inclusion]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:union]{Union}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+The first implication reads
+\[
+\forall x,\quad x\in A\cup C \Rightarrow x\in B\cup C,
+\]
+assuming $\forall x\,(x\in A\Rightarrow x\in B)$. To disprove such an
+inclusion, find a witness $x\in A\cup C$ with $x\notin B\cup C$.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Intersection is Inclusion-Monotone)}
+\begin{theorem}[Intersection is Inclusion-Monotone]\label{thm:intersection-monotone-inclusion}
+If $A\subseteq B$, then
+\[
+A\cap C\subseteq B\cap C
+\quad\text{and}\quad
+C\cap A\subseteq C\cap B.
+\]
+\hyperref[prf:intersection-monotone-inclusion]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:intersection]{Intersection}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Power Set is Inclusion-Monotone)}
+\begin{theorem}[Power Set is Inclusion-Monotone]\label{thm:power-set-monotone-inclusion}
+If $A\subseteq B$, then
+\[
+\mathcal{P}(A)\subseteq\mathcal{P}(B).
+\]
+\hyperref[prf:power-set-monotone-inclusion]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:power-set]{Power Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Complement is Inclusion-Antitone)}
+\begin{theorem}[Complement is Inclusion-Antitone]\label{thm:complement-antitone-inclusion}
+Let complements be taken relative to a fixed universe $U$. If
+$A\subseteq B\subseteq U$, then
+\[
+B^c\subseteq A^c.
+\]
+\hyperref[prf:complement-antitone-inclusion]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:complement]{Complement}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Set Difference is Inclusion-Monotone in the Left Argument)}
+\begin{theorem}[Set Difference is Inclusion-Monotone in the Left Argument]\label{thm:set-difference-monotone-left}
+If $A\subseteq B$, then
+\[
+A\setminus C\subseteq B\setminus C.
+\]
+\hyperref[prf:set-difference-monotone-left]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:set-difference]{Set Difference}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Set Difference is Inclusion-Antitone in the Right Argument)}
+\begin{theorem}[Set Difference is Inclusion-Antitone in the Right Argument]\label{thm:set-difference-antitone-right}
+If $C\subseteq D$, then
+\[
+A\setminus D\subseteq A\setminus C.
+\]
+\hyperref[prf:set-difference-antitone-right]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:set-difference]{Set Difference}
+\end{itemize}
+\end{dependencies}
+
+% ---------------------------------------------------------
 % De Morgan --- Theorem box (named, major result of section)
 % ---------------------------------------------------------
 \begin{theorembox}{Theorem (De Morgan's Laws)}

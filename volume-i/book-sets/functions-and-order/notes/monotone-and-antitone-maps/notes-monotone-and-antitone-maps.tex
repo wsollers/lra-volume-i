@@ -1,0 +1,126 @@
+
+\subsection*{Order-Preserving and Order-Reversing Behavior}
+
+\begin{remark*}[Order-reversing terminology]
+The orderings chapter defines an \hyperref[def:order-reversing-map]{order-reversing map}.
+Such maps are also called \emph{antitone}. This section uses that existing
+definition and studies how order-preserving and order-reversing maps interact
+with injectivity, restriction, composition, and inverse behavior.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
+  \item \hyperref[def:order-reversing-map]{Order-Reversing Map}
+  \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Strictly Monotone Map)}
+\begin{definition}[Strictly Monotone Map]\label{def:strictly-monotone-map-functions-order}
+Let $(M,\leq)$ and $(M',\leq')$ be ordered sets, and write $x<y$ for
+$x\leq y$ and $x\neq y$.
+\begin{enumerate}[label=(\roman*)]
+\item $f:M\to M'$ is \emph{strictly order-preserving} if
+$x<y$ implies $f(x)<' f(y)$.
+\item $f:M\to M'$ is \emph{strictly order-reversing} if
+$x<y$ implies $f(y)<' f(x)$.
+\end{enumerate}
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
+  \item \hyperref[def:order-reversing-map]{Order-Reversing Map}
+  \item \hyperref[def:strict-partial-order]{Strict Partial Order}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+In many analysis texts, ``monotone'' can mean increasing or decreasing, and
+``strictly monotone'' means strictly increasing or strictly decreasing. In this
+chapter, plain monotone means order-preserving unless the order-reversing case
+is named explicitly.
+\end{remark*}
+
+\begin{propositionbox}{Proposition (Constant Maps Are Monotone)}
+\begin{proposition}[Constant Maps Are Monotone]\label{prop:constant-maps-monotone}
+Let $(M,\leq)$ and $(M',\leq')$ be ordered sets. Every constant function
+$f:M\to M'$ is order-preserving.
+\hyperref[prf:constant-maps-monotone]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:constant]{Constant Function}
+  \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
+  \item \hyperref[def:reflexive]{Reflexive Relation}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+The preceding proposition is the standard warning: monotone does not imply
+injective. If $M$ has two distinct elements, a constant map is monotone but
+not injective.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Strict Monotonicity Implies Injectivity on Linear Orders)}
+\begin{theorem}[Strict Monotonicity Implies Injectivity on Linear Orders]\label{thm:strict-monotone-injective-linear}
+Let $(L,\leq)$ be a linear order and let $(P,\leq')$ be a partial order.
+If $f:L\to P$ is strictly order-preserving or strictly order-reversing, then
+$f$ is injective.
+\hyperref[prf:strict-monotone-injective-linear]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:strictly-monotone-map-functions-order]{Strictly Monotone Map}
+  \item \hyperref[def:totally-ordered-set]{Totally Ordered Set}
+  \item \hyperref[def:injective]{Injective Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+If a strictly monotone map on a linear order is not injective, then two
+comparable distinct inputs must have been sent to the same output. That
+contradicts strictness, because strictness demands a strict inequality between
+their outputs.
+\end{remark*}
+
+\subsection*{Composition Rules}
+
+\begin{theorembox}{Theorem (Composition Rules for Monotonicity)}
+\begin{theorem}[Composition Rules for Monotonicity]\label{thm:monotone-composition-rules}
+Let $f:A\to B$ and $g:B\to C$ be functions between ordered sets.
+\begin{enumerate}[label=(\roman*)]
+\item If $f$ and $g$ are order-preserving, then $g\circ f$ is order-preserving.
+\item If $f$ and $g$ are order-reversing, then $g\circ f$ is order-preserving.
+\item If exactly one of $f$ and $g$ is order-reversing and the other is
+order-preserving, then $g\circ f$ is order-reversing.
+\end{enumerate}
+\hyperref[prf:monotone-composition-rules]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
+  \item \hyperref[def:order-reversing-map]{Order-Reversing Map}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Comment]
+The first item expands to
+\[
+a_1\leq a_2
+\Longrightarrow
+f(a_1)\leq' f(a_2)
+\Longrightarrow
+g(f(a_1))\leq'' g(f(a_2)).
+\]
+The other cases differ only by the direction of the second inequality.
+\end{remark*}

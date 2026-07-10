@@ -1,0 +1,43 @@
+\newpage
+\phantomsection
+\label{prf:complement-antitone-inclusion}
+\LRAProofFor{thm:complement-antitone-inclusion}
+
+\begin{remark*}[Return]
+\hyperref[thm:complement-antitone-inclusion]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Complement is Inclusion-Antitone]
+Let complements be taken relative to a fixed universe $U$. If
+$A\subseteq B\subseteq U$, then $B^c\subseteq A^c$.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Assume $A\subseteq B\subseteq U$. Let $x\in B^c$. Then $x\in U$ and
+$x\notin B$. If $x\in A$, then $x\in B$ because $A\subseteq B$, contradicting
+$x\notin B$. Hence $x\notin A$. Since $x\in U$ and $x\notin A$, we have
+$x\in A^c$. Therefore $B^c\subseteq A^c$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Complement reverses inclusion. The larger set $B$ has more elements removed
+from the universe, so its complement is smaller. The proof converts this
+intuition into a witness argument: an element outside $B$ cannot be inside
+$A$, because every element of $A$ is forced into $B$. Thus every element of
+$B^c$ is also an element of $A^c$.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:complement-antitone-inclusion]{Proof target}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:complement]{Complement}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

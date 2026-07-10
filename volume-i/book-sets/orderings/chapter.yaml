@@ -4,7 +4,7 @@ volume: volume-i
 status: active
 dependencies:
   prior: functions
-  next: cardinality
+  next: functions-and-order
 path: volume-i/book-sets/orderings
 book: book-sets
 environments: []

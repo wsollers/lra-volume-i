@@ -1,0 +1,42 @@
+\newpage
+\phantomsection
+\label{prf:inverse-order-isomorphism}
+\LRAProofFor{thm:inverse-order-isomorphism}
+
+\begin{remark*}[Return]
+\hyperref[thm:inverse-order-isomorphism]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Inverse of an Order Isomorphism]
+If $f:(A,\leq)\to(B,\leq')$ is an order isomorphism, then
+$f^{-1}:(B,\leq')\to(A,\leq)$ is an order isomorphism.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Since $f$ is bijective, $f^{-1}$ exists and is bijective. Let
+$b_1\leq' b_2$ in $B$. Write $a_i=f^{-1}(b_i)$. Then
+$f(a_1)\leq' f(a_2)$, so order-reflection for $f$ gives $a_1\leq a_2$.
+Thus $f^{-1}$ is order-preserving. The same argument applied to $f$ shows
+that $f^{-1}$ also reflects order.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+An order isomorphism says that comparing outputs is equivalent to comparing
+their unique inputs. The inverse map simply names those unique inputs, so it
+preserves the order comparison in the reverse direction as well.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:inverse-order-isomorphism]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

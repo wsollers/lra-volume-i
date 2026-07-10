@@ -1,0 +1,40 @@
+\newpage
+\phantomsection
+\label{prf:composition-order-embeddings}
+\LRAProofFor{prop:composition-order-embeddings}
+
+\begin{remark*}[Return]
+\hyperref[prop:composition-order-embeddings]{Return to Proposition}
+\end{remark*}
+
+\begin{proposition*}[Composition of Order Embeddings]
+The composition of two order embeddings is an order embedding.
+\end{proposition*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let $f:A\to B$ and $g:B\to C$ be order embeddings. If $x\leq y$, then
+$f(x)\leq f(y)$ and hence $g(f(x))\leq g(f(y))$, so $g\circ f$ preserves
+order. Conversely, if $g(f(x))\leq g(f(y))$, order-reflection for $g$ gives
+$f(x)\leq f(y)$, and order-reflection for $f$ gives $x\leq y$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Preservation follows by pushing the inequality through both maps. Reflection
+follows by pulling the inequality back through the second map and then through
+the first map.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:composition-order-embeddings]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

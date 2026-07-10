@@ -1,0 +1,41 @@
+\newpage
+\phantomsection
+\label{prf:corestriction-surjective}
+\LRAProofFor{prop:corestriction-surjective}
+
+\begin{remark*}[Return]
+\hyperref[prop:corestriction-surjective]{Return to Proposition}
+\end{remark*}
+
+\begin{proposition*}[Corestriction Is Surjective]
+For every function $f:A\to B$, the corestriction
+$f_{\operatorname{im}}:A\to\im(f)$ is surjective.
+\end{proposition*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let $y\in\im(f)$. By definition of image, there is $a\in A$ such that
+$f(a)=y$. Since $f_{\operatorname{im}}(a)=f(a)$, we have
+$f_{\operatorname{im}}(a)=y$. Hence every element of $\im(f)$ is hit.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+To prove surjectivity, start with an arbitrary element of the codomain
+$\im(f)$. Such an element is in the image exactly when it is equal to $f(a)$
+for some input $a$. The corestricted function has the same value as $f$ at
+that input, so it reaches the chosen element.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:corestriction-surjective]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

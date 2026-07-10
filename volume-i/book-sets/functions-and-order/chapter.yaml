@@ -1,0 +1,24 @@
+subject: functions-and-order
+display_title: "Functions and Order"
+volume: volume-i
+status: active
+sections:
+  - subject: changing-domains-and-codomains
+    display_title: "Changing Domains and Codomains"
+  - subject: restrictions-and-inverses
+    display_title: "Restrictions and Inverses"
+  - subject: monotone-and-antitone-maps
+    display_title: "Monotone and Antitone Maps"
+  - subject: order-embeddings-and-isomorphisms
+    display_title: "Order Embeddings and Isomorphisms"
+  - subject: images-preimages-and-bounds
+    display_title: "Images, Preimages, and Bounds"
+  - subject: composition-and-failure-modes
+    display_title: "Composition and Failure Modes"
+dependencies:
+  prior: orderings
+  next: cardinality
+path: volume-i/book-sets/functions-and-order
+book: book-sets
+environments: []
+proof_files: []

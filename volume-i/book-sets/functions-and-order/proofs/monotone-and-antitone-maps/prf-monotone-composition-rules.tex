@@ -1,0 +1,42 @@
+\newpage
+\phantomsection
+\label{prf:monotone-composition-rules}
+\LRAProofFor{thm:monotone-composition-rules}
+
+\begin{remark*}[Return]
+\hyperref[thm:monotone-composition-rules]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Composition Rules for Monotonicity]
+Order-preserving and order-reversing maps compose according to the parity of
+the number of reversals.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let $a_1\leq a_2$. If both maps preserve order, then
+$f(a_1)\leq f(a_2)$ and $g(f(a_1))\leq g(f(a_2))$. If both reverse order,
+then $f(a_2)\leq f(a_1)$ and applying $g$ reverses again, giving
+$g(f(a_1))\leq g(f(a_2))$. If exactly one map reverses order, the final
+inequality is reversed.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Track the direction of the inequality through the two maps. A preserving map
+keeps the direction. A reversing map flips it. Two flips cancel; one flip
+remains.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:monotone-composition-rules]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

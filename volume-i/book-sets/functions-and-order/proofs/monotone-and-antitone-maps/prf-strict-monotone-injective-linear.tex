@@ -1,0 +1,43 @@
+\newpage
+\phantomsection
+\label{prf:strict-monotone-injective-linear}
+\LRAProofFor{thm:strict-monotone-injective-linear}
+
+\begin{remark*}[Return]
+\hyperref[thm:strict-monotone-injective-linear]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Strict Monotonicity Implies Injectivity on Linear Orders]
+Let $(L,\leq)$ be a linear order and let $(P,\leq')$ be a partial order.
+If $f:L\to P$ is strictly order-preserving or strictly order-reversing, then
+$f$ is injective.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Suppose $x\neq y$ in $L$. Since $L$ is linear, either $x<y$ or $y<x$.
+If $f$ is strictly order-preserving, the corresponding outputs are strictly
+ordered, so they are not equal. If $f$ is strictly order-reversing, the outputs
+are strictly ordered in the opposite direction, so they are again not equal.
+Thus distinct inputs have distinct outputs.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Linearity guarantees that two different inputs can be compared. Strict
+monotonicity turns that strict comparison into a strict comparison of outputs.
+Strictly comparable outputs cannot be equal, which is exactly injectivity.
+\end{proof}
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:strict-monotone-injective-linear]{Proof target}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+

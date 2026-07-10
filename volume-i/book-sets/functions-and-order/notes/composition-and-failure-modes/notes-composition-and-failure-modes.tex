@@ -1,0 +1,88 @@
+
+\subsection*{Property Transport}
+
+\begin{toolkitbox}{Property Transport Under Common Operations}
+\small
+\begin{tabularx}{\textwidth}{l X}
+\toprule
+\textbf{Property} & \textbf{Transport rule} \\
+\midrule
+Injective & Preserved by restriction of domain and enlargement of codomain. \\
+Surjective & Created by corestriction to the image; may fail after codomain enlargement. \\
+Bijective & Equivalent to injective plus surjective; stable under inverse and composition. \\
+Order-preserving & Preserved by restriction and by composition with order-preserving maps. \\
+Order-reversing & Composes with parity: one reversal reverses, two reversals preserve. \\
+Order embedding & Preserved by composition and becomes an isomorphism onto the image. \\
+\bottomrule
+\end{tabularx}
+\end{toolkitbox}
+
+\begin{propositionbox}{Proposition (Restriction Preserves Monotonicity)}
+\begin{proposition}[Restriction Preserves Monotonicity]\label{prop:restriction-preserves-monotonicity}
+Let $f:(P,\leq)\to(Q,\leq')$ be order-preserving, and let $C\subseteq P$
+with the induced order. Then $f|_C:C\to Q$ is order-preserving. The analogous
+statement holds for order-reversing maps.
+\hyperref[prf:restriction-preserves-monotonicity]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:restriction]{Restriction}
+  \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
+  \item \hyperref[def:order-reversing-map]{Order-Reversing Map}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Composition of Order Embeddings)}
+\begin{proposition}[Composition of Order Embeddings]\label{prop:composition-order-embeddings}
+The composition of two order embeddings is an order embedding.
+\hyperref[prf:composition-order-embeddings]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:order-embedding-function-form]{Order Embedding, Function-Property Form}
+\end{itemize}
+\end{dependencies}
+
+\subsection*{Failure Mode Checklist}
+
+\begin{remark*}[Failure mode checklist]
+When a desired property fails, identify the failed predicate.
+\begin{enumerate}[label=(\roman*)]
+\item Injectivity fails by a collision: $a_1\neq a_2$ but $f(a_1)=f(a_2)$.
+\item Surjectivity fails by a missed target: some $b$ has no preimage.
+\item Order-preservation fails by a reversed witness: $x\leq y$ but
+  $f(x)\nleq' f(y)$.
+\item Order-reflection fails by a false pullback: $f(x)\leq' f(y)$ but
+  $x\nleq y$.
+\item Upper-set preservation fails by an element inside the set and a larger
+  element outside it.
+\end{enumerate}
+These witnesses usually indicate the repair: restrict the domain, change the
+codomain, add order-reflection, or pass to an image.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Chapter Synthesis)}
+\begin{theorem}[Chapter Synthesis]\label{thm:fo-synthesis}
+Let $f:(A,\leq)\to(B,\leq')$ be a function between partially ordered sets.
+\begin{enumerate}[label=(\roman*)]
+\item If $f$ is injective, then $f:A\to f(A)$ is bijective.
+\item If $f$ is an order embedding, then $f:A\to f(A)$ is an order isomorphism.
+\item If $f$ is order-preserving, then preimages of upper sets are upper sets
+and preimages of lower sets are lower sets.
+\end{enumerate}
+\hyperref[prf:fo-synthesis]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:injective-bijection-onto-image]{Injective Maps Are Bijections Onto Their Images}
+  \item \hyperref[thm:order-embedding-isomorphism-onto-image]{Order Embedding Is Isomorphism Onto Image}
+  \item \hyperref[thm:preimage-upper-lower-sets]{Preimages of Upper and Lower Sets}
+\end{itemize}
+\end{dependencies}
