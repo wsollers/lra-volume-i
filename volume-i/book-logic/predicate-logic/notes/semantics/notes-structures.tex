@@ -50,7 +50,7 @@ Equality may be included as a distinguished logical predicate.
 together with the usual logical connectives, quantifiers, and punctuation.
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \(\operatorname{FirstOrderLanguage}(L)\) means that \(L\) supplies the variable
 stock, logical symbols, and arity-indexed non-logical symbols used to form
 first-order terms and formulas.
@@ -73,7 +73,7 @@ when positive-arity symbols have no arity, or when the logical grammar is not
 specified.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\mathsf{Const}_{L}}_{\text{constant symbols}}
 \qquad
@@ -135,7 +135,7 @@ for each \(c\in\mathsf{Const}_{\mathcal L}\),
 \(P\in\mathsf{Pred}_{\mathcal L}^{(n)}\).
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \(\operatorname{Structure}(M,L)\) means that \(M\) is a structure for the
 first-order language \(L\).
 \end{remark*}
@@ -158,7 +158,7 @@ A proposed structure fails if the domain is empty, if a symbol is left
 uninterpreted, or if the assigned object has the wrong arity or type.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{D=\varnothing}_{\text{empty domain}}
 \quad\lor\quad
@@ -209,7 +209,7 @@ s \text{ is a variable assignment for } \mathcal M
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \(\operatorname{VariableAssignment}(s,M)\) means that \(s\) assigns a domain
 element of \(M\) to each variable of the language of \(M\).
 \end{remark*}
@@ -232,7 +232,7 @@ An assignment fails when it leaves a variable without a value or assigns a
 value outside the domain.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\mathrm{dom}(s)\neq\mathsf{Var}_{\mathcal L}}_{\text{missing variable value}}
 \quad\lor\quad
@@ -277,7 +277,7 @@ s[x\mapsto d](y)=s(y) \Longleftrightarrow y\neq x.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \(\operatorname{ModifiedAssignment}(s,x,d,s')\) means that \(s'\) is the
 assignment obtained from \(s\) by sending \(x\) to \(d\) and leaving every
 other variable unchanged.
@@ -301,7 +301,7 @@ A proposed modified assignment fails if it does not change \(x\) to \(d\), or
 if it changes some variable other than \(x\).
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{s'(x)\neq d}_{\text{target variable not updated}}
 \quad\lor\quad
@@ -353,7 +353,7 @@ I(f)\bigl(\llbracket t_1\rrbracket_{\mathcal M,s},\ldots,
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \(\operatorname{TermEvaluation}(M,s,t,a)\) means that the term \(t\) evaluates
 to the domain element \(a\) in \(M\) under \(s\).
 \end{remark*}
@@ -374,7 +374,7 @@ Term evaluation fails to have the proposed value when a variable, constant, or
 function-application clause computes a different domain element.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{s(x)\neq a}_{\text{variable case}}
 \quad\lor\quad
