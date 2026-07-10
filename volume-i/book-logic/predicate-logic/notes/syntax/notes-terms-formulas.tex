@@ -73,7 +73,7 @@ x,y,z,x_0,x_1,x_2,\ldots .
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \(\operatorname{Variable}(x)\) means \(x\in\mathsf{Var}_{\mathcal L}\).
 \end{remark*}
 
@@ -94,7 +94,7 @@ such as a constant symbol, function symbol, predicate symbol, connective, or
 punctuation mark.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{c}_{\text{constant symbol}}
 \qquad
@@ -147,7 +147,7 @@ taking input terms.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \(\operatorname{ConstantSymbol}(c)\) means
 \(c\in\mathsf{Const}_{\mathcal L}\).
 \end{remark*}
@@ -168,7 +168,7 @@ A symbol fails to be a constant symbol when it is not in the language, is
 logical punctuation, or has positive arity.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{x}_{\text{variable}}
 \qquad
@@ -222,7 +222,7 @@ f(t_1,\ldots,t_n).
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \(\operatorname{FunctionSymbol}(f)\) means
 \(f\in\mathsf{Func}_{\mathcal L}^{(n)}\) for some \(n\geq 1\).
 \end{remark*}
@@ -244,7 +244,7 @@ predicate symbol, logical symbol, punctuation mark, or has no assigned positive
 arity.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{c}_{\text{arity }0}
 \qquad
@@ -299,7 +299,7 @@ P(t_1,\ldots,t_n).
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \(\operatorname{PredicateSymbol}(P)\) means
 \(P\in\mathsf{Pred}_{\mathcal L}^{(n)}\) for some \(n\geq 1\).
 \end{remark*}
@@ -321,7 +321,7 @@ side of the language, is a logical symbol, is punctuation, or has no assigned
 positive arity as a predicate symbol.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{x}_{\text{variable}}
 \qquad
@@ -389,7 +389,7 @@ f(t_1,\ldots,t_n)\in S
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \(\operatorname{Term}(t)\) means \(t\in\mathsf{Term}_{\mathcal L}\).
 \end{remark*}
 
@@ -424,7 +424,7 @@ quantifier at the outer syntactic level, when a function symbol has too few or
 too many input terms, or when punctuation does not match the arity pattern.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{P(x)}_{\text{atomic formula, not a term}}
 \qquad
@@ -483,7 +483,7 @@ t_1,\ldots,t_n\in\mathsf{Term}_{\mathcal L}
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \(\operatorname{AtomicFormula}(\varphi)\) means
 \(\varphi\in\mathsf{Atom}_{\mathcal L}\).
 \end{remark*}
@@ -506,7 +506,7 @@ input is not a term, or when a logical connective or quantifier has already
 been applied.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{f(x)}_{\text{term, not formula}}
 \qquad
@@ -604,7 +604,7 @@ strings satisfying:
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \(\operatorname{WellFormedFormula}(\varphi)\) means
 \(\varphi\in\mathsf{Form}_{\mathcal L}\).
 \end{remark*}
@@ -642,7 +642,7 @@ uses a quantifier without a variable and formula, has unmatched punctuation, or
 cannot be produced by finitely many formation steps.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{f(x)}_{\text{term only}}
 \qquad
@@ -694,7 +694,7 @@ logical connective or a quantifier.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{MolecularFormula}(\varphi)
 \coloneqq
@@ -723,7 +723,7 @@ well-formed formula at all or because it is an atomic formula with no outer
 logical construction.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{x}_{\text{not a formula}}
 \qquad
