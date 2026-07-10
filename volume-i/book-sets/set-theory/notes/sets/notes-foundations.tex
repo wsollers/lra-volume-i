@@ -15,6 +15,25 @@ Two sets are equal iff they have the same elements.
 \end{axiom}
 \end{axiombox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\forall B,\quad
+  A=B \iff \forall x,\ (x\in A\leftrightarrow x\in B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SetEqual}(A,B)
+  \iff
+  \forall x,\ (x\in A\leftrightarrow x\in B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Sets are identified entirely by their members.
+\end{remark*}
+
 \NoLocalDependencies
 
 \begin{axiombox}{Axiom (Empty Set)}
@@ -26,6 +45,24 @@ There exists a set with no elements.
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists A\,\forall x,\ x\notin A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{EmptySet}(A)
+  \iff
+  \forall x,\ x\notin A.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+There is a set with no elements.
+\end{remark*}
 
 \NoLocalDependencies
 
@@ -39,6 +76,25 @@ For any two sets, there exists a set containing exactly those two sets.
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\forall B\,\exists C\,\forall x,\quad
+  x\in C \iff (x=A\vee x=B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PairingSet}(C,A,B)
+  \iff
+  \forall x,\ (x\in C\leftrightarrow (x=A\vee x=B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Any two sets can be collected into a set containing exactly those two objects.
+\end{remark*}
 
 \NoLocalDependencies
 
@@ -55,6 +111,25 @@ those sets.
 \end{axiom}
 \end{axiombox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\exists U\,\forall x,\quad
+  x\in U \iff \exists B,\ (B\in A\wedge x\in B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{UnionFamilySet}(U,A)
+  \iff
+  \forall x,\ (x\in U\leftrightarrow \exists B,\ (B\in A\wedge x\in B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The members of all sets in a set-indexed family can be collected into one set.
+\end{remark*}
+
 \NoLocalDependencies
 
 \begin{axiombox}{Axiom (Power Set)}
@@ -67,6 +142,25 @@ For any set, there exists a set of all its subsets.
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\exists P\,\forall x,\quad
+  x\in P \iff x\subseteq A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PowerSet}(P,A)
+  \iff
+  \forall x,\ (x\in P\leftrightarrow \operatorname{Subset}(x,A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every set has a set whose members are exactly its subsets.
+\end{remark*}
 
 \NoLocalDependencies
 
@@ -82,6 +176,27 @@ There exists an infinite set.
 \end{axiom}
 \end{axiombox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists A,\quad
+  \varnothing\in A\wedge
+  \forall x,\ (x\in A\to x\cup\{x\}\in A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{InductiveSet}(A)
+  \iff
+  \varnothing\in A\wedge
+  \forall x,\ (x\in A\to x\cup\{x\}\in A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+There is a set closed under the successor operation starting from the empty set.
+\end{remark*}
+
 \NoLocalDependencies
 
 \begin{axiombox}{Axiom Schema (Separation)}
@@ -95,6 +210,25 @@ elements satisfying that property. For any formula $\varphi(x)$,
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\exists B\,\forall x,\quad
+  x\in B \iff (x\in A\wedge \varphi(x)).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SeparationSubset}(B,A,\varphi)
+  \iff
+  \forall x,\ (x\in B\leftrightarrow (x\in A\wedge \varphi(x))).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A definable property can carve out a subset of an already given set.
+\end{remark*}
 
 \NoLocalDependencies
 
@@ -115,6 +249,27 @@ of $A$ under $\varphi$ is a set. For any formula $\varphi(x,y)$,
 \end{axiom}
 \end{axiombox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A,\quad
+  \bigl(\forall x\in A\,\exists!y\,\varphi(x,y)\bigr)
+  \to
+  \exists B\,\forall y,\ (y\in B\leftrightarrow \exists x\in A\,\varphi(x,y)).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{ReplacementImage}(B,A,\varphi)
+  \iff
+  \forall y,\ (y\in B\leftrightarrow \exists x\in A\,\varphi(x,y)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The image of a set under a definable functional relation is again a set.
+\end{remark*}
+
 \NoLocalDependencies
 
 \begin{axiombox}{Axiom (Foundation)}
@@ -128,6 +283,26 @@ Every nonempty set has an $\in$-minimal element.
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A,\quad
+  A\neq\varnothing \to \exists x\in A,\ x\cap A=\varnothing.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{FoundationMinimalElement}(x,A)
+  \iff
+  x\in A\wedge x\cap A=\varnothing.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every nonempty set has an element disjoint from it, preventing infinite
+descending membership chains.
+\end{remark*}
 
 \NoLocalDependencies
 
@@ -146,6 +321,28 @@ For any family of nonempty sets, there exists a selection function.
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A,\quad
+  \bigl(\forall B\in A,\ B\neq\varnothing\bigr)
+  \to
+  \exists f\,\forall B\in A,\ f(B)\in B.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{ChoiceFunction}(f,A)
+  \iff
+  \forall B\in A,\ f(B)\in B.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every family of nonempty sets has a function choosing one element from each
+member of the family.
+\end{remark*}
 
 \NoLocalDependencies
 
@@ -166,21 +363,30 @@ governing them.
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[English reading]
-Primitive means we do not define these in terms of simpler concepts.
-Rather, we fix their meaning implicitly by stating the axioms they must obey.
-This is the standard approach in formal mathematics: rules of behaviour replace
+\begin{remark*}[Standard quantified statement]
+The expression $x\in A$ is a primitive membership assertion.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Set theory begins with objects called sets and a primitive relation expressing
+membership of one object in another.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Primitive means that set and membership are not defined in terms of simpler
+concepts. Their meaning is fixed implicitly by stating the axioms they must
+obey. This is the standard approach in formal mathematics: rules of behavior replace
 informal definitions.
 \end{remark*}
 
-\begin{remark*}[Consequence]
+\begin{remark*}[Exposition]
 All subsequent notions---subsets, ordered pairs, relations, functions,
 number systems---are \emph{definitions} introduced within this axiomatic
 framework. Every proved result is a \emph{theorem} derived logically from the
 axioms via the rules of inference.
 \end{remark*}
 
-\begin{remark*}[Role of the axioms]
+\begin{remark*}[Exposition]
 The axioms are not statements to be proved, but rules specifying how $\in$
 behaves and which sets are permitted to exist. From this point onward, set
 theory functions as the underlying language of mathematics: all reasoning
@@ -188,9 +394,7 @@ about mathematical objects is ultimately grounded in these axioms, even when
 they are not cited explicitly.
 \end{remark*}
 
-\DefinitionalRoot
-
-\begin{remark*}[Separation vs.\ Replacement]
+\begin{remark*}[Exposition]
 Separation is a schema: one axiom instance per definable property $\varphi$.
 It carves out subsets of an already-existing set. Replacement is strictly
 stronger: it can produce sets whose elements are not already contained in any
@@ -198,9 +402,11 @@ pre-existing set, allowing the construction of large stages of the cumulative
 hierarchy.
 \end{remark*}
 
-\begin{remark*}[Axiom of Choice and right inverses]
+\begin{remark*}[Exposition]
 The Axiom of Choice is equivalent to many statements used later in analysis,
 including Zorn's Lemma, the well-ordering theorem, and the statement that every
 surjective function has a right inverse. It is independent of the other ZFC
 axioms.
 \end{remark*}
+
+\DefinitionalRoot

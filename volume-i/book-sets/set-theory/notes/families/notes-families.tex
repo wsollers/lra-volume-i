@@ -8,7 +8,7 @@
 % TOOLKIT
 % ---------------------------------------------------------
 
-\begin{remark*}[Motivation]
+\begin{remark*}[Exposition]
 Many set-theoretic constructions require not just pairs of sets but
 infinite families. Indexed families provide the formal language for
 partitions, equivalence classes, unions over countably or uncountably many
@@ -26,18 +26,30 @@ with $F(i)$ typically written $A_i$. The family is denoted $\{A_i\}_{i \in I}$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{IndexedFamily}(F,I,U)
+  \iff
+  F:I\to\mathcal{P}(U).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An indexed family is a function whose values are sets in a fixed universe.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+An indexed family is formally a \emph{function}, not a set of sets.
+Different indices may correspond to the same set: $i \neq j$ does not imply
+$A_i \neq A_j$. This distinction matters for quotient constructions.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:power-set]{Power Set}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Family vs.\ set of sets]
-An indexed family is formally a \emph{function}, not a set of sets.
-Different indices may correspond to the same set: $i \neq j$ does not imply
-$A_i \neq A_j$. This distinction matters for equivalence class constructions.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Indexed Union)}
 \begin{definition}[Indexed Union]\label{def:indexed-union}
@@ -50,15 +62,28 @@ The \emph{union} of the indexed family $\{A_i\}_{i \in I}$ is:
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
-  \item \hyperref[def:union]{Union}
-  \item \hyperref[def:existential-q]{Existential Formula}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x,\quad
+  x\in\bigcup_{i\in I}A_i
+  \iff
+  \exists i\in I,\ x\in A_i.
+\]
+\end{remark*}
 
-\begin{remark*}[Arbitrary unions]
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{IndexedUnionSet}(U,F,I)
+  \iff
+  \forall x,\ (x\in U\leftrightarrow \exists i\in I,\ x\in A_i).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The indexed union keeps every element that appears in at least one indexed set.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 An arbitrary union over a collection $\mathcal{C}$ of sets is the indexed
 union whose indices are the members of the collection:
 \[
@@ -69,6 +94,14 @@ union whose indices are the members of the collection:
 Thus unions over finite, countable, or uncountable collections use the same
 definition; only the size of the indexing collection changes.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:existential-q]{Existential Formula}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Indexed Intersection)}
 \begin{definition}[Indexed Intersection]\label{def:indexed-intersection}
@@ -81,21 +114,35 @@ For $I \neq \varnothing$, the \emph{intersection} of $\{A_i\}_{i \in I}$ is:
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
-  \item \hyperref[def:intersection]{Intersection}
-  \item \hyperref[def:universal-q]{Universal Formula}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x,\quad
+  x\in\bigcap_{i\in I}A_i
+  \iff
+  \forall i\in I,\ x\in A_i.
+\]
+\end{remark*}
 
-\begin{remark*}[Why $I \neq \varnothing$ is required]
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{IndexedIntersectionSet}(J,F,I)
+  \iff
+  \forall x,\ (x\in J\leftrightarrow \forall i\in I,\ x\in A_i).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The indexed intersection keeps exactly the elements appearing in every indexed
+set.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 If $I = \varnothing$, then $\forall i \in I, x \in A_i$ holds vacuously for
 every $x$, making the intersection the entire universe $U$. This is normally
 left undefined or requires specifying a background universe explicitly.
 \end{remark*}
 
-\begin{remark*}[Finite intersections]
+\begin{remark*}[Exposition]
 Finite intersections are the special case of indexed intersections where the
 index set $I$ is finite and nonempty:
 \[
@@ -106,6 +153,14 @@ index set $I$ is finite and nonempty:
 In topology, ``closed under finite intersections'' refers to this finite
 nonempty indexed case.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:universal-q]{Universal Formula}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (De Morgan's Laws for Indexed Families)}
 \begin{theorem}[De Morgan's Laws for Indexed Families]\label{thm:indexed-de-morgan}
@@ -125,6 +180,23 @@ U\setminus\bigcap_{i\in I}A_i
 \hyperref[prf:indexed-de-morgan]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  U\setminus\bigcup_{i\in I}A_i
+  =
+  \bigcap_{i\in I}(U\setminus A_i),
+  \qquad
+  I\neq\varnothing\to
+  U\setminus\bigcap_{i\in I}A_i
+  =
+  \bigcup_{i\in I}(U\setminus A_i).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complement exchanges indexed unions with indexed intersections.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -154,6 +226,24 @@ A\cup\bigcap_{i\in I}B_i
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  A\cap\bigcup_{i\in I}B_i
+  =
+  \bigcup_{i\in I}(A\cap B_i),
+  \qquad
+  I\neq\varnothing\to
+  A\cup\bigcap_{i\in I}B_i
+  =
+  \bigcap_{i\in I}(A\cup B_i).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Union and intersection distribute over indexed families in the same way they
+distribute over binary operations.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:indexed-family]{Indexed Family of Sets}
@@ -174,6 +264,25 @@ i \neq j \rightarrow A_i \cap A_j = \varnothing.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall i,j\in I,\quad
+  i\neq j\to A_i\cap A_j=\varnothing.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PairwiseDisjointFamily}(F,I)
+  \iff
+  \forall i,j\in I,\ (i\neq j\to A_i\cap A_j=\varnothing).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Pairwise disjointness means distinct indexed sets have no common elements.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:indexed-family]{Indexed Family of Sets}
@@ -192,11 +301,24 @@ A collection $\mathcal{C} \subseteq \mathcal{P}(A)$ is a \emph{cover} of $A$ if
 \end{definition}
 \end{definitionbox}
 
-\NoLocalDependencies
-
 \begin{remark*}[Standard quantified statement]
 $\mathcal{C}$ covers $A$ $\;\leftrightarrow\; \forall x \in A,\; \exists C \in \mathcal{C},\; x \in C$.
 \end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Covers}(\mathcal{C},A)
+  \iff
+  \forall x\in A,\ \exists C\in\mathcal{C},\ x\in C.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A cover supplies at least one member of the collection containing each point of
+the covered set.
+\end{remark*}
+
+\NoLocalDependencies
 
 \begin{exposition}
 \vspace{1em}
@@ -219,6 +341,35 @@ f : I \to \bigcup_{i \in I} A_i
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  f\in\prod_{i\in I}A_i
+  \iff
+  f:I\to\bigcup_{i\in I}A_i
+  \wedge
+  \forall i\in I,\ f(i)\in A_i.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An element of an arbitrary Cartesian product chooses one element from each
+indexed set.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+An element of $\prod_{i \in I} A_i$ is a \emph{choice function}: a function
+that assigns to each index $i$ an element of the corresponding set $A_i$.
+For finite $I = \{1,\dots,n\}$, this reduces to the familiar $n$-tuple
+$(a_1,\dots,a_n)$.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+For infinite $I$, the product $\prod_{i \in I} A_i$ is nonempty iff a choice
+function exists. This existence is not guaranteed by the other ZFC axioms:
+it is equivalent to the Axiom of Choice. Thus the Axiom of Choice is
+precisely the assertion that arbitrary products of nonempty sets are nonempty.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:indexed-family]{Indexed Family of Sets}
@@ -226,17 +377,3 @@ f : I \to \bigcup_{i \in I} A_i
   \item \hyperref[def:indexed-union]{Indexed Union}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Elements as choice functions]
-An element of $\prod_{i \in I} A_i$ is a \emph{choice function}: a function
-that assigns to each index $i$ an element of the corresponding set $A_i$.
-For finite $I = \{1,\dots,n\}$, this reduces to the familiar $n$-tuple
-$(a_1,\dots,a_n)$.
-\end{remark*}
-
-\begin{remark*}[Axiom of Choice connection]
-For infinite $I$, the product $\prod_{i \in I} A_i$ is nonempty iff a choice
-function exists. This existence is not guaranteed by the other ZFC axioms:
-it is equivalent to the Axiom of Choice. Thus the Axiom of Choice is
-precisely the assertion that arbitrary products of nonempty sets are nonempty.
-\end{remark*}

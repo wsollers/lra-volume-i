@@ -8,7 +8,7 @@
 % TOOLKIT
 % ---------------------------------------------------------
 
-\begin{remark*}[Geometric picture]
+\begin{remark*}[Exposition]
 A function is a deterministic machine: every input in the domain is accepted,
 and no input can fork into two different outputs. Fibers are the level sets
 sitting over points of the codomain; they collect all inputs that the machine
@@ -29,6 +29,28 @@ Let $R\subseteq A\times B$ be a relation. We say that $R$ is
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{FunctionalRelation}(R,A,B)
+  \iff
+  \forall a\in A\,\forall b_1,b_2\in B,\ 
+  ((a,b_1)\in R\wedge(a,b_2)\in R)\to b_1=b_2.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{FunctionalRelation}(R,A,B)
+  \iff
+  \forall a\in A\,\forall b_1,b_2\in B,\ 
+  ((a,b_1)\in R\wedge(a,b_2)\in R)\to b_1=b_2.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A functional relation assigns at most one output to each input.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -45,6 +67,26 @@ $A$} if each input has at least one output:
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{TotalOnDomain}(R,A,B)
+  \iff
+  \forall a\in A,\ \exists b\in B,\ (a,b)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{TotalOnDomain}(R,A,B)
+  \iff
+  \forall a\in A,\ \exists b\in B,\ (a,b)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Totality on a domain means every declared input has at least one output.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -67,25 +109,47 @@ If $(a,b) \in f$ we write $f(a) = b$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Function}(f,A,B)
+  \iff
+  \forall a\in A\,\exists! b\in B,\ (a,b)\in f.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Function}(f,A,B)
+  \iff
+  \operatorname{TotalOnDomain}(f,A,B)\wedge
+  \operatorname{FunctionalRelation}(f,A,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A function is a total and single-valued relation from its domain to its
+codomain.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+A function is a rule assigning to each input exactly one output. The two
+conditions formalize ``defined everywhere'' (existence) and ``single-valued''
+(uniqueness).
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Every function is a relation, but not every relation is a function. The two
+conditions that distinguish functions are left-totality and right-uniqueness.
+The codomain is part of the function data, not something recoverable from the
+graph alone.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
   \item \hyperref[def:cartesian-product-rel]{Cartesian Product}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[English reading]
-A function is a rule assigning to each input exactly one output. The two
-conditions formalize ``defined everywhere'' (existence) and ``single-valued''
-(uniqueness).
-\end{remark*}
-
-\begin{remark*}[Function as relation]
-Every function is a relation, but not every relation is a function. The two
-conditions that distinguish functions are left-totality and right-uniqueness.
-The codomain is part of the function data, not something recoverable from the
-graph alone.
-\end{remark*}
 
 \begin{theorembox}{Theorem (Functional Relation Characterization of Functions)}
 \begin{theorem}[Functional Relation Characterization of Functions]\label{thm:function-total-functional-characterization}
@@ -99,6 +163,28 @@ on $A$ and functional from $A$ to $B$.
 \hyperref[prf:function-total-functional-characterization]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  R\text{ is a function }A\to B
+  \iff
+  \forall a\in A\,\exists! b\in B,\ (a,b)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Function}(R,A,B)
+  \iff
+  \operatorname{TotalOnDomain}(R,A,B)\wedge
+  \operatorname{FunctionalRelation}(R,A,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The total-and-functional relation conditions are exactly the usual
+unique-output condition for functions.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -116,6 +202,19 @@ some inputs may have no output.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{PartialFunction}(R,A,B)
+  \iff
+  R\subseteq A\times B\wedge \operatorname{FunctionalRelation}(R,A,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A partial function is allowed to be undefined at some inputs but remains
+single-valued where it is defined.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:functional-relation]{Functional Relation}
@@ -129,6 +228,19 @@ function from $A$ to $B$ if and only if $R$ is functional from $A$ to $B$.
 \hyperref[prf:partial-function-functional-relation]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{PartialFunction}(R,A,B)
+  \iff
+  \operatorname{FunctionalRelation}(R,A,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Partial functions are exactly functional relations when totality is not
+required.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -147,6 +259,30 @@ A=C,\qquad B=D,\qquad\text{and}\qquad
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  f=g
+  \iff
+  A=C\wedge B=D\wedge \forall a\in A,\ f(a)=g(a).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{FunctionEqual}(f,g)
+  \iff
+  \operatorname{DomainOfFunction}(f,A)\wedge
+  \operatorname{DomainOfFunction}(g,A)\wedge
+  \operatorname{CodomainOfFunction}(f,B)\wedge
+  \operatorname{CodomainOfFunction}(g,B)\wedge
+  \forall a\in A,\ f(a)=g(a).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Function equality requires agreement of domain, codomain, and all values.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -162,6 +298,24 @@ to $B$. Consequently, $R$ is not a function from $A$ to $B$.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{OneToManyRelation}(R,A,B)\to
+  \neg\operatorname{FunctionalRelation}(R,A,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+One input with two distinct outputs violates the uniqueness condition for
+functions.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+A function may send different inputs to the same output. That is the ordinary
+many-one case in Tarski's terminology. What is forbidden for a function is not
+shared output, but one input having two distinct outputs.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:one-to-many-relation]{One-to-Many Relation}
@@ -170,18 +324,24 @@ to $B$. Consequently, $R$ is not a function from $A$ to $B$.
 \end{itemize}
 \end{dependencies}
 
-\begin{remark*}[Many-to-one is allowed]
-A function may send different inputs to the same output. That is the ordinary
-many-one case in Tarski's terminology. What is forbidden for a function is not
-shared output, but one input having two distinct outputs.
-\end{remark*}
-
 \begin{definitionbox}{Definition (Domain of a Function)}
 \begin{definition}[Domain of a Function]\label{def:domain}
 If $f$ is a function from $A$ to $B$, we write $f : A \to B$, where $A$ is
 the \emph{domain} $\dom(f)$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{DomainOfFunction}(f,A)
+  \iff
+  f:A\to B\text{ for some }B.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The domain is the declared set of admissible inputs.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -196,17 +356,29 @@ the \emph{codomain} $\cod(f)$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{CodomainOfFunction}(f,B)
+  \iff
+  f:A\to B\text{ for some }A.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The codomain is the declared target set, whether or not every target is hit.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The notation $f:A\to B$ records both the domain $A$ and the codomain $B$.
+The same graph may define maps into larger codomains, but surjectivity and
+bijectivity depend on the declared codomain.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Domain and codomain]
-The notation $f:A\to B$ records both the domain $A$ and the codomain $B$.
-The same graph may define maps into larger codomains, but surjectivity and
-bijectivity depend on the declared codomain.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Image of a Function)}
 \begin{definition}[Image of a Function]\label{def:image-function}
@@ -218,6 +390,37 @@ The image may be a proper subset of the codomain.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  b\in\im(f)
+  \iff
+  \exists a\in A,\ f(a)=b.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{ImageElement}(b,f,A)
+  \iff
+  \exists a\in A,\ f(a)=b.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The image is the subset of the codomain actually attained by the function.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+For a function viewed as its graph, the relation range and the function image
+coincide. The codomain may be larger than this range/image.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The chapter \hyperref[ch:functions-and-order]{Functions and Order} uses the
+image as a replacement codomain: every function is surjective onto its image,
+and an injective function becomes bijective after corestricting to its image.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -225,17 +428,6 @@ The image may be a proper subset of the codomain.
   \item \hyperref[ax:separation]{Axiom Schema of Separation}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Range and image]
-For a function viewed as its graph, the relation range and the function image
-coincide. The codomain may be larger than this range/image.
-\end{remark*}
-
-\begin{remark*}[Forward to functions and order]
-The chapter \hyperref[ch:functions-and-order]{Functions and Order} uses the
-image as a replacement codomain: every function is surjective onto its image,
-and an injective function becomes bijective after corestricting to its image.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Image of a Set)}
 \begin{definition}[Image of a Set]\label{def:image-set}
@@ -246,6 +438,18 @@ f(S) \;:=\; \{\, f(a) \mid a \in S \,\}.
 Note $f(A) = \im(f)$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  y\in f(S)
+  \iff
+  \exists a\in S,\ f(a)=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The image of a subset collects the values attained on that subset.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -264,6 +468,34 @@ f^{-1}(T) \;:=\; \{\, a \in A \mid f(a) \in T \,\}.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  a\in f^{-1}(T)
+  \iff
+  a\in A\wedge f(a)\in T.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PreimageElement}(a,f,T)
+  \iff
+  f(a)\in T.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The preimage pulls a set of target values back to the inputs that land in it.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+$f^{-1}(T)$ does \emph{not} denote an inverse function. It is defined for any
+function $f$, regardless of whether $f$ is injective or bijective.
+It sends a subset of the codomain back to a subset of the domain. An inverse
+function, when it exists, sends individual elements of the codomain back to
+individual elements of the domain.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -271,14 +503,6 @@ f^{-1}(T) \;:=\; \{\, a \in A \mid f(a) \in T \,\}.
   \item \hyperref[ax:separation]{Axiom Schema of Separation}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Preimage notation warning]
-$f^{-1}(T)$ does \emph{not} denote an inverse function. It is defined for any
-function $f$, regardless of whether $f$ is injective or bijective.
-It sends a subset of the codomain back to a subset of the domain. An inverse
-function, when it exists, sends individual elements of the codomain back to
-individual elements of the domain.
-\end{remark*}
 
 \begin{figure}[htbp]
 \centering
@@ -296,18 +520,30 @@ f^{-1}(\{b\}) \;=\; \{\, a \in A \mid f(a) = b \,\}.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  a\in f^{-1}(\{b\})
+  \iff
+  f(a)=b.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A fiber is the set of all inputs with one fixed output value.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The collection $\{f^{-1}(\{b\}) \mid b \in \im(f)\}$ is a partition of $A$.
+Every function thus induces an equivalence relation $a_1 \sim_f a_2 \iff f(a_1) = f(a_2)$,
+whose equivalence classes are precisely the fibers.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:preimage]{Preimage}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Fibers partition the domain]
-The collection $\{f^{-1}(\{b\}) \mid b \in \im(f)\}$ is a partition of $A$.
-Every function thus induces an equivalence relation $a_1 \sim_f a_2 \iff f(a_1) = f(a_2)$,
-whose equivalence classes are precisely the fibers.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Graph of a Function)}
 \begin{definition}[Graph of a Function]\label{def:graph}
@@ -320,6 +556,25 @@ The \emph{graph} of $f : A \to B$ is:
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  (a,b)\in\operatorname{Graph}(f)
+  \iff
+  a\in A\wedge b=f(a).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The graph records every input together with its unique output.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+A relation $G \subseteq A \times B$ is the graph of a function $f : A \to B$
+iff $G$ is left-total and right-unique. Functions may therefore be identified
+with their graphs only after the domain and codomain have been fixed. As bare
+sets of ordered pairs, graphs do not encode the codomain.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -327,13 +582,6 @@ The \emph{graph} of $f : A \to B$ is:
   \item \hyperref[def:cartesian-product]{Cartesian Product}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Function as graph]
-A relation $G \subseteq A \times B$ is the graph of a function $f : A \to B$
-iff $G$ is left-total and right-unique. Functions may therefore be identified
-with their graphs only after the domain and codomain have been fixed. As bare
-sets of ordered pairs, graphs do not encode the codomain.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Injectivity / Surjectivity / Bijectivity
@@ -348,6 +596,26 @@ f(a_1)=f(a_2) \;\Longrightarrow\; a_1=a_2.
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Injective}(f)
+  \iff
+  \forall a_1,a_2\in A,\ (f(a_1)=f(a_2)\to a_1=a_2).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Injective}(f)
+  \iff
+  \forall a_1,a_2\in A,\ (f(a_1)=f(a_2)\to a_1=a_2).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Injectivity means that equal outputs can only come from equal inputs.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -365,6 +633,16 @@ empty relation
 It is the unique function with domain $\varnothing$ and codomain $B$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{EmptyFunction}(\varnothing,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The empty function has no inputs and therefore no value assignments.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -384,6 +662,26 @@ Equivalently, $\im(f) = B$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Surjective}(f)
+  \iff
+  \forall b\in B,\ \exists a\in A,\ f(a)=b.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Surjective}(f)
+  \iff
+  \forall b\in B,\ \exists a\in A,\ f(a)=b.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Surjectivity means every declared target is hit by at least one input.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -396,6 +694,23 @@ $f : A \to B$ is \emph{bijective} if it is both injective and surjective.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bijective}(f)
+  \iff
+  \operatorname{Injective}(f)\wedge\operatorname{Surjective}(f).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Bijectivity means that each target has exactly one input mapping to it.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Injectivity: each fiber has at most one element. Surjectivity: every fiber is
+nonempty. Bijectivity: every fiber has exactly one element.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -403,11 +718,6 @@ $f : A \to B$ is \emph{bijective} if it is both injective and surjective.
   \item \hyperref[def:surjective]{Surjective Function}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Fiber interpretation]
-Injectivity: each fiber has at most one element. Surjectivity: every fiber is
-nonempty. Bijectivity: every fiber has exactly one element.
-\end{remark*}
 
 \begin{propositionbox}{Proposition (One-One Relations and Converse Functionality)}
 \begin{proposition}[One-One Relations and Converse Functionality]\label{prop:one-to-one-converse-functional}
@@ -417,6 +727,18 @@ relation $G_f^{-1}\subseteq B\times A$ is functional from $B$ to $A$.
 \hyperref[prf:one-to-one-converse-functional]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Injective}(f)
+  \iff
+  \operatorname{FunctionalRelation}(G_f^{-1},B,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Injectivity of a function is exactly functionality of its converse graph.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -440,6 +762,27 @@ and
 \hyperref[prf:bijection-unique-both-directions]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bijective}(f)
+  \iff
+  \forall b\in B\,\exists!a\in A,\ f(a)=b.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Bijective}(f)
+  \iff
+  \operatorname{Injective}(f)\wedge\operatorname{Surjective}(f).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A bijection gives unique correspondence from inputs to outputs and from outputs
+back to inputs.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -466,6 +809,26 @@ a function of $n$ variables, written $f(a_1,\ldots,a_n)=b$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall a_1\in A_1\cdots\forall a_n\in A_n\,\forall b_1,b_2\in B,\quad
+  ((a_1,\ldots,a_n,b_1)\in R\wedge(a_1,\ldots,a_n,b_2)\in R)\to b_1=b_2.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{ManyPlaceFunctionalRelation}(R,A_1,\ldots,A_n,B)
+  \iff
+  \forall \vec a\,\forall b_1,b_2\in B,\
+  ((\vec a,b_1)\in R\wedge(\vec a,b_2)\in R)\to b_1=b_2.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A many-place functional relation is single-valued in its output coordinate.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:many-place-relation]{Many-Place Relation}
@@ -482,6 +845,16 @@ The \emph{identity function} on $A$ is $\id_A : A \to A$, $\id_A(a) = a$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall a\in A,\quad \id_A(a)=a.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The identity function returns each input unchanged.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -495,17 +868,27 @@ $\iota(a) = a$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  A\subseteq B\to \forall a\in A,\ \iota(a)=a.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The inclusion map views elements of a subset as elements of the larger set.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Both send each element to itself, but the inclusion map has a strictly larger
+codomain when $A \subsetneq B$. The inclusion map is always injective.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Identity vs.\ inclusion]
-Both send each element to itself, but the inclusion map has a strictly larger
-codomain when $A \subsetneq B$. The inclusion map is always injective.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Constant Function)}
 \begin{definition}[Constant Function]\label{def:constant}
@@ -516,6 +899,18 @@ $f(a) = b_0$ for all $a \in A$.
 
 \begin{remark*}[Standard quantified statement]
 $f$ is constant $\;\leftrightarrow\; \exists b_0 \in B,\; \forall a \in A,\; f(a) = b_0$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{ConstantFunction}(f)
+  \iff
+  \exists b_0\in B,\ \forall a\in A,\ f(a)=b_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A constant function sends every input to one fixed output.
 \end{remark*}
 
 \begin{dependencies}

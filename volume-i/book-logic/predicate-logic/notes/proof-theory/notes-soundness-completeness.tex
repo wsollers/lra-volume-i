@@ -19,6 +19,15 @@ A proof system is \emph{sound} if every provable formula is valid:
 \]
 \end{definition}
 \end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+For every admissible object satisfying the hypotheses of the statement, the
+assertion holds in the formal language under discussion.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -35,6 +44,19 @@ A proof system is \emph{complete} if every valid formula is provable:
 \]
 \end{definition}
 \end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+For every admissible object satisfying the hypotheses of the statement, the
+assertion holds in the formal language under discussion.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
+\end{remark*}
+
+% ---------------------------------------------------------
+% Soundness Theorem for FOL
+% ---------------------------------------------------------
 
 \begin{dependencies}
 \begin{itemize}
@@ -43,9 +65,6 @@ A proof system is \emph{complete} if every valid formula is provable:
 \end{itemize}
 \end{dependencies}
 
-% ---------------------------------------------------------
-% Soundness Theorem for FOL
-% ---------------------------------------------------------
 \begin{theorembox}{Theorem (Soundness of First-Order Logic)}
 \begin{theorem}[Soundness of First-Order Logic]\label{thm:fol-sound}
 The standard inference rules for first-order logic (UI, UG, EI, EG, and the
@@ -55,9 +74,18 @@ If $\Gamma \vdash \varphi$, then $\Gamma \models \varphi$.
 \hyperref[prf:fol-sound]{Go to proof.}
 \end{theorem}
 \end{theorembox}
-
 \begin{remark*}[Standard quantified statement]
 $\forall \Gamma,\varphi:\; \Gamma\vdash\varphi \;\to\; \forall\mathcal{M},\forall s,\; (\forall\gamma\in\Gamma,\; \mathcal{M},s\models\gamma) \to \mathcal{M},s\models\varphi$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The predicate form records the relation or property named by the statement in
+the displayed logical context.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
 \end{remark*}
 
 \begin{dependencies}
@@ -73,7 +101,9 @@ $\forall \Gamma,\varphi:\; \Gamma\vdash\varphi \;\to\; \forall\mathcal{M},\foral
 % ---------------------------------------------------------
 % G\"{o}del's Completeness Theorem
 % ---------------------------------------------------------
+
 \begin{theorembox}{Theorem (G\"{o}del's Completeness Theorem)}
+\begin{theorem}[G\"{o}del's Completeness Theorem]
 \label{thm:godel-complete}
 First-order logic is complete: every logically valid formula is provable.
 \[
@@ -81,20 +111,39 @@ First-order logic is complete: every logically valid formula is provable.
 \]
 Equivalently: if a set of sentences $\Gamma$ is consistent (has no proof of
 contradiction), then $\Gamma$ has a model.
+\hyperref[prf:godel-complete]{\textit{Go to proof.}}
+\end{theorem}
 \end{theorembox}
+\begin{remark*}[Standard quantified statement]
+For every admissible object satisfying the hypotheses of the statement, the
+assertion holds in the formal language under discussion.
+\end{remark*}
 
-\begin{remark*}[English reading]
-Soundness ensures proofs do not lead us astray: we cannot prove false statements
-from true premises. Completeness ensures proofs are powerful enough: every
-statement that is true in all models can be established by a formal proof.
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
+\end{remark*}
+
+
+\begin{remark*}[Exposition]
+Soundness ensures proofs do not lead from true premises to false conclusions.
+Completeness ensures proofs are powerful enough: every statement that is true
+in all models can be established by a formal proof.
 
 Together, soundness and completeness show that syntactic provability ($\vdash$)
 and semantic entailment ($\models$) coincide for first-order logic.
 \end{remark*}
 
-\begin{remark*}[Completeness vs.\ incompleteness]
+\begin{remark*}[Exposition]
 G\"{o}del's completeness theorem (1930) should not be confused with his
 incompleteness theorems (1931). The completeness theorem concerns first-order
 logic as a proof system. The incompleteness theorems concern the limitations of
 formal theories capable of expressing arithmetic, and are a separate result.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:fol-satisfaction]{Satisfaction}
+  \item \hyperref[def:log-consequence]{Logical Consequence}
+\end{itemize}
+\end{dependencies}

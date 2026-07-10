@@ -51,16 +51,20 @@ not well formed or is a sentence.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-An expression fails to be an open formula when it is not a well-formed formula
+\begin{description}
+  \item[Exposition.] An expression fails to be an open formula when it is not a well-formed formula
 or when all of its variables are bound.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{\varphi\notin\mathsf{Form}_{\mathcal L}}_{\text{not well formed}}
 \quad\lor\quad
 \underbrace{\mathsf{FV}(\varphi)=\varnothing}_{\text{sentence, not open}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -125,18 +129,22 @@ the relation determined by \(\varphi\) in \(M\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A proposed definable relation fails when at least one tuple is included or
+\begin{description}
+  \item[Exposition.] A proposed definable relation fails when at least one tuple is included or
 excluded differently from the satisfaction condition imposed by the formula.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{(a_1,\ldots,a_n)\in R \land
 \mathcal M,s[\vec x\mapsto\vec a]\not\models\varphi}_{\text{extra tuple}}
 \quad\lor\quad
 \underbrace{(a_1,\ldots,a_n)\notin R \land
 \mathcal M,s[\vec x\mapsto\vec a]\models\varphi}_{\text{missing tuple}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

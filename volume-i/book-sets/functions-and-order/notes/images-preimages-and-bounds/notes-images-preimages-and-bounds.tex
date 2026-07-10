@@ -12,14 +12,39 @@ $p\in L$.
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
-  \item \hyperref[def:subset]{Subset}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+  U\text{ is upper}
+  \iff
+  \forall u\in U\,\forall p\in P,\ (u\leq p\to p\in U),
+\]
+and
+\[
+  L\text{ is lower}
+  \iff
+  \forall \ell\in L\,\forall p\in P,\ (p\leq \ell\to p\in L).
+\]
+\end{remark*}
 
-\begin{remark*}[Comment]
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{UpperSet}(U,P,\leq)
+  \iff
+  \forall u\in U\,\forall p\in P,\ (u\leq p\to p\in U).
+\]
+\[
+  \operatorname{LowerSet}(L,P,\leq)
+  \iff
+  \forall \ell\in L\,\forall p\in P,\ (p\leq \ell\to p\in L).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Upper sets contain everything above each of their elements; lower sets contain
+everything below each of their elements.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The upper-set predicate is
 \[
 \forall u\in U\,\forall p\in P,\quad u\leq p\Rightarrow p\in U.
@@ -29,6 +54,13 @@ Its failure is concrete:
 \exists u\in U\,\exists p\in P,\quad u\leq p\ \land\ p\notin U.
 \]
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Bounded Image)}
 \begin{definition}[Bounded Image]\label{def:bounded-image}
@@ -40,6 +72,26 @@ Let $f:A\to P$ be a function into an ordered set $(P,\leq)$.
 \end{enumerate}
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f\text{ is bounded above}
+  \iff
+  \exists p\in P,\ \forall a\in A,\ f(a)\leq p.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  f\text{ is bounded above}
+  \iff
+  \exists p\in P,\ \operatorname{UpperBound}(p,f(A),P).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Boundedness of a function means boundedness of its image in the codomain order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -60,6 +112,26 @@ The analogous statement holds for bounded below.
 \hyperref[prf:boundedness-image-boundedness]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f(A)\text{ is bounded above}
+  \iff
+  \exists p\in P,\ \forall a\in A,\ f(a)\leq p.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  f(A)\text{ is bounded above}
+  \iff
+  \exists p\in P,\ \operatorname{UpperBound}(p,f(A),P).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An upper bound for the image is exactly an element above every function value.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -83,6 +155,26 @@ preimages of lower sets are upper sets.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{OrderPreserving}(f)
+  \wedge \operatorname{UpperSet}(U,Q,\leq')
+  \to
+  \operatorname{UpperSet}(f^{-1}(U),P,\leq).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Order-preserving preimages pull upper regions back to upper regions and lower
+regions back to lower regions.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Preimages already preserve Boolean set operations exactly. With monotonicity,
+they also preserve the order-shape of upper and lower regions. Images usually
+need stronger hypotheses before they behave as cleanly.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:upper-lower-set]{Upper and Lower Set}
@@ -92,12 +184,6 @@ preimages of lower sets are upper sets.
 \end{itemize}
 \end{dependencies}
 
-\begin{remark*}[Comment]
-Preimages already preserve Boolean set operations exactly. With monotonicity,
-they also preserve the order-shape of upper and lower regions. Images usually
-need stronger hypotheses before they behave as cleanly.
-\end{remark*}
-
 \begin{propositionbox}{Proposition (Images of Chains)}
 \begin{proposition}[Images of Chains Under Monotone Maps]\label{prop:images-chains-monotone}
 If $C$ is a chain in a partially ordered set $P$ and
@@ -106,6 +192,21 @@ $Q$.
 \hyperref[prf:images-chains-monotone]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Chain}(C,P,\leq)
+  \wedge
+  (\operatorname{OrderPreserving}(f)\vee\operatorname{OrderReversing}(f))
+  \to
+  \operatorname{Chain}(f(C),Q,\leq').
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Monotone or antitone maps send comparable pairs to comparable pairs, so images
+of chains remain chains.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

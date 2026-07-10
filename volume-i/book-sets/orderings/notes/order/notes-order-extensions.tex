@@ -6,127 +6,133 @@
 \subsection{Order Extensions}
 
 % ---------------------------------------------------------
-% TOOLKIT
-% ---------------------------------------------------------
-
-% ---------------------------------------------------------
 % Symmetric and asymmetric parts
 % ---------------------------------------------------------
+
 \begin{definitionbox}{Definition (Symmetric and Asymmetric Parts)}
 \begin{definition}[Symmetric and Asymmetric Parts]\label{def:sym-asym}
-For any binary relation $R$ on $X$, define:
-\begin{itemize}
-  \item the \emph{symmetric part}: $xIy \iff xRy \text{ and } yRx$
-  \item the \emph{asymmetric part}: $xPy \iff xRy \text{ but not } yRx$
-\end{itemize}
-Note that $R = P \cup I$.
+For any binary relation $R$ on $X$, the \emph{symmetric part} $I$ and
+\emph{asymmetric part} $P$ are defined by
+\[
+  xIy \Longleftrightarrow (xRy \wedge yRx),
+  \qquad
+  xPy \Longleftrightarrow (xRy \wedge \neg yRx).
+\]
+Then $R=P\cup I$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+$\forall x,y\in X,\; xIy\leftrightarrow(xRy\wedge yRx)$ and
+$\forall x,y\in X,\; xPy\leftrightarrow(xRy\wedge\neg yRx)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{SymmetricPart}(I,R,X)$ records the mutually related pairs of
+$R$, and $\operatorname{AsymmetricPart}(P,R,X)$ records the pairs whose reverse
+does not belong to $R$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every relation decomposes into a part where both directions hold and a part
+where only one direction holds.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+In decision theory, $R$ often encodes a weak preference relation. The symmetric
+part is then indifference, and the asymmetric part is strict preference. The
+same decomposition is useful for any relation that distinguishes weak and
+strict comparison.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Preorders and linear orders are defined elsewhere. A preorder is reflexive and
+transitive, while a linear order is a total partial order. This section uses
+those definitions rather than restating them.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+A preorder need not be antisymmetric: two distinct elements may satisfy $xRy$
+and $yRx$ simultaneously. Adding antisymmetry promotes a preorder to a partial
+order. Every partial order is a preorder, but not conversely.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
   \item \hyperref[def:union]{Union}
   \item \hyperref[def:set-difference]{Set Difference}
+  \item \hyperref[def:preorder]{Preorder}
+  \item \hyperref[def:total-order]{Linear Order}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Preference-theoretic reading]
-In decision theory, $R$ encodes a preference relation: $xRy$ means ``$x$ is
-at least as good as $y$.'' Then $I$ is the \emph{indifference} relation
-(equally good) and $P$ is the \emph{strict preference} relation (strictly
-better). This decomposition is fundamental to utility representation theory.
-\end{remark*}
-
-% ---------------------------------------------------------
-% Preorder and loset (defined elsewhere --- pointers only)
-% ---------------------------------------------------------
-\begin{remark*}[Preorder and loset are defined elsewhere]
-The order relations this section uses are defined in the Relations chapter: a
-\hyperref[def:preorder]{preorder} is reflexive and transitive, and a
-\hyperref[def:total-order]{linear order} is a total (connex) partial order. The
-corresponding \emph{structure} --- the \hyperref[def:loset]{loset}, i.e.\ the
-linearly/totally ordered set --- is catalogued with the order structures in the
-Ordered Sets section. Nothing is restated here, so no definition can drift.
-\end{remark*}
-
-\begin{remark*}[Preorder vs.\ partial order]
-A preorder need not be antisymmetric: two distinct elements may satisfy
-$xRy$ and $yRx$ simultaneously (they are ``indifferent'' but not equal).
-Adding antisymmetry promotes a preorder to a partial order. Every partial
-order is a preorder, but not conversely.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Maximal elements vs. upper bounds
 % ---------------------------------------------------------
+
 \begin{definitionbox}{Definition (Maximal Elements and Upper Bounds)}
 \begin{definition}[Maximal Elements and Upper Bounds]\label{def:maximal-upper}
-Let $\succsim$ be a binary relation on $X$.
-\begin{itemize}
-  \item The set of \emph{maximal elements} of $X$ is
-    \[
-      \mathrm{Max}(X, \succsim)
-      = \{ x \in X \mid y \succsim x \text{ for no } y \in X \text{ with }
-          y \neq x \}.
-    \]
-  \item The set of \emph{upper bounds} of $X$ is
-    \[
-      M(X, \succsim)
-      = \{ x \in X \mid x \succsim y \text{ for all } y \in X \}.
-    \]
-\end{itemize}
+Let $\succsim$ be a binary relation on $X$. The set of \emph{maximal elements}
+of $X$ is
+\[
+  \mathrm{Max}(X,\succsim)
+  = \{x\in X\mid \text{there is no } y\in X \text{ with } y\neq x
+      \text{ and } y\succsim x\}.
+\]
+The set of \emph{upper bounds} of $X$ is
+\[
+  M(X,\succsim)
+  = \{x\in X\mid \forall y\in X,\; x\succsim y\}.
+\]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+$x\in\mathrm{Max}(X,\succsim)\leftrightarrow
+x\in X\wedge\neg(\exists y\in X,\; y\neq x\wedge y\succsim x)$, and
+$x\in M(X,\succsim)\leftrightarrow x\in X\wedge\forall y\in X,\; x\succsim y$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{MaximalElement}(x,X,\mathsf{OrderedSet}(X,\succsim))$ means that
+nothing in $X$ lies strictly above $x$, while
+$\operatorname{UpperBound}(x,X,\mathsf{OrderedSet}(X,\succsim))$ means that
+$x$ lies above every element of $X$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Maximality forbids a strictly better element; being an upper bound requires
+being at least as high as every element.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+A greatest element is always maximal when it exists, but a maximal element need
+not be greatest. In a linear order, maximal and greatest coincide because every
+pair of elements is comparable.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The transitive closure $T(R)$ of a binary relation $R$ on $X$ is the smallest
+transitive relation containing $R$, as defined in the Relations chapter.
+Equivalently, it records the pairs connected by finite $R$-chains. This
+section uses that existing definition without restating it.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
   \item \hyperref[def:bounds]{Upper and Lower Bounds}
   \item \hyperref[def:strict-order]{Strict Order}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Maximal vs.\ greatest]
-A maximal element has nothing strictly above it; an upper bound (greatest
-element) is above everything. In a partial order, the greatest element is
-unique if it exists and is always maximal, but maximal elements need not be
-greatest. In a linear order, maximal and greatest coincide.
-\end{remark*}
-
-% ---------------------------------------------------------
-% Transitive closure
-% ---------------------------------------------------------
-\begin{remark*}[Transitive closure (defined in the Relations chapter)]
-\label{def:trans-closure}
-The \emph{transitive closure} $T(R)$ of a binary relation $R$ on $X$ --- the
-\hyperref[def:relation-transitive-closure]{smallest transitive relation
-containing $R$} --- is defined in the Relations chapter. We recall it here only
-to use it, and do not restate the definition, so the two chapters cannot drift
-apart. (For the explicit construction, see the description below.)
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:relation-transitive-closure]{Transitive Closure (Relations)}
+  \item \hyperref[def:relation-transitive-closure]{Transitive Closure}
   \item \hyperref[def:transitive]{Transitive Relation}
 \end{itemize}
 \end{dependencies}
 
-\begin{remark*}[Constructive description]
-Define $R^0 = R$ and $xR^m y$ if there exist $z_1, \ldots, z_m \in X$ such
-that $xRz_1 R \cdots R z_m Ry$. Then
-\[
-  T(R) = R \;\cup\; \bigcup_{m \in \mathbb{N}} R^m.
-\]
-Existence follows from the fact that the intersection of any collection of
-transitive relations is transitive, so the intersection of all transitive
-supersets of $R$ is the smallest such relation.
-\end{remark*}
-
 % ---------------------------------------------------------
 % Extensions of preorders
 % ---------------------------------------------------------
+
 \begin{definitionbox}{Definition (Extension of a Preorder)}
 \begin{definition}[Extension of a Preorder]\label{def:preorder-extension}
 Let $\succsim$ be a preorder on $X$. A preorder $\succsim'$ is an
@@ -140,57 +146,115 @@ A \emph{complete extension} is an extension that is also complete.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{PreorderExtension}(\succsim',\succsim,X)\leftrightarrow
+\operatorname{Preorder}(\succsim',X)\wedge
+\forall x,y\in X,\; (x\succsim y\to x\succsim' y)\wedge
+(x\succ y\to x\succ' y)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{PreorderExtension}(\succsim',\succsim,X)$ means that the new
+preorder keeps every weak comparison and every strict comparison from the old
+preorder.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An extension fills in undecided comparisons without reversing the original
+strict order information.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The purpose of an extension is to promote a partial ranking to a more complete
+ranking while preserving the original judgements.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:preorder]{Preorder}
   \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:sym-asym]{Symmetric and Asymmetric Parts}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[What extensions do]
-An extension of $\succsim$ ``fills in'' the comparisons left undecided by
-$\succsim$ without reversing any existing strict comparison. The goal is to
-promote a partial ranking to a total ranking while respecting the original
-judgements.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Szpilrajn's Theorem
 % ---------------------------------------------------------
+
 \begin{theorembox}{Theorem (Szpilrajn, 1930)}
-\label{thm:szpilrajn}
+\begin{theorem}[Szpilrajn Extension Theorem]\label{thm:szpilrajn}
 For any nonempty set $X$ and partial order $\succsim$ on $X$, there exists a
 linear order that is an extension of $\succsim$.
+\hyperref[prf:szpilrajn]{\textit{Go to proof.}}
+\end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Proof sketch via Hausdorff Maximum Principle]
-Let $T_X$ be the set of all partial orders on $X$ extending $\succsim$,
-ordered by inclusion. By the Hausdorff Maximum Principle (equivalent to
-AC), $T_X$ has a maximal chain; its union $\succsim^*$ is a partial order
-extending $\succsim$. If $\succsim^*$ were not complete, one could enlarge
-it via transitive closure, contradicting maximality. Hence $\succsim^*$ is a
-linear order extending $\succsim$.
-
-\medskip
-\noindent\textit{Dependence on AC.} The theorem is equivalent to the Axiom
-of Choice for infinite sets; no proof avoiding AC is known.
+\begin{remark*}[Standard quantified statement]
+$\forall X\neq\varnothing,\;\forall \succsim,\;
+\operatorname{PartialOrder}(\succsim,X)\to
+\exists \succsim^*,\; \operatorname{TotalOrder}(\succsim^*,X)\wedge
+\operatorname{PreorderExtension}(\succsim^*,\succsim,X)$.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+$\operatorname{PreorderExtension}(\succsim^*,\succsim,X)$ says the linear order
+$\succsim^*$ extends the given partial order $\succsim$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every partial order can be completed to a linear order, assuming the standard
+choice principles used in the proof.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The usual proof orders the set of all partial-order extensions by inclusion
+and applies the Hausdorff Maximum Principle. A maximal extension must be
+linear; otherwise an incomparable pair can be added and closed transitively,
+contradicting maximality.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+For infinite sets, this theorem depends on choice principles equivalent to the
+Axiom of Choice.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:total-order]{Linear Order}
+  \item \hyperref[def:preorder-extension]{Extension of a Preorder}
+  \item \hyperref[thm:hausdorff]{Hausdorff Maximum Principle}
+\end{itemize}
+\end{dependencies}
+
 \begin{corollarybox}{Corollary (Complete preorder extension)}
-\begin{corollary}[Complete preorder extension]
-\label{cor:complete-preorder-extension}
+\begin{corollary}[Complete Preorder Extension]\label{cor:complete-preorder-extension}
 For any nonempty set $X$ and preorder $\succsim$ on $X$, there exists a
 complete preorder that is an extension of $\succsim$.
 \hyperref[prf:complete-preorder-extension]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
 
-\begin{remark*}[Proof]
-\hyperref[prf:complete-preorder-extension]{Proof details.}
+\begin{remark*}[Standard quantified statement]
+$\forall X\neq\varnothing,\;\forall \succsim,\;
+\operatorname{Preorder}(\succsim,X)\to
+\exists \succsim',\; \operatorname{CompletePreorderExtension}(\succsim',\succsim,X)$.
 \end{remark*}
 
-\begin{remark*}[Standard quantified statement]
-$\forall X \neq \varnothing,\; \forall \succsim$ preorder on $X$: $\exists \succsim'$ complete preorder on $X$ s.t.\ $(x \succsim y \to x \succsim' y) \wedge (x \succ y \to x \succ' y)$.
+\begin{remark*}[Predicate reading]
+$\operatorname{CompletePreorderExtension}(\succsim',\succsim,X)$ means that
+$\succsim'$ is a complete preorder on $X$ and extends $\succsim$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every preorder admits a complete preorder extension after quotienting by
+indifference and linearly extending the quotient order.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The proof passes to the quotient by the symmetric part, applies Szpilrajn's
+theorem to the induced partial order on the quotient, and pulls the resulting
+linear order back to $X$.
 \end{remark*}
 
 \begin{dependencies}
@@ -199,55 +263,95 @@ $\forall X \neq \varnothing,\; \forall \succsim$ preorder on $X$: $\exists \succ
   \item \hyperref[def:preorder-extension]{Extension of a Preorder}
   \item \hyperref[def:quotient-set]{Quotient Set}
   \item \hyperref[def:sym-asym]{Symmetric and Asymmetric Parts}
+  \item \hyperref[thm:szpilrajn]{Szpilrajn Extension Theorem}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Proof]
-Pass to the quotient $X/{\sim}$ (where $\sim$ is the symmetric part), apply
-Szpilrajn's Theorem to obtain a linear order on $X/{\sim}$, then pull back
-to a complete preorder on $X$.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Only Weak Cycles (OWC)
 % ---------------------------------------------------------
-\begin{definitionbox}{Definition and Proposition (Only Weak Cycles)}
-\begin{definition}[and Proposition (Only Weak Cycles)]\label{def:owc}
-Let $\succsim$ be a binary relation on $X$ with asymmetric part $\succ$ and
-transitive closure $T(\succsim)$. We say $\succsim$ satisfies \emph{only weak
-cycles} (OWC) if
-\[
-  xT(\succsim)y \;\Rightarrow\; \lnot(y \succ x).
-\]
 
-\medskip
-\noindent\textbf{Proposition.} A binary relation $\succsim$ on a nonempty
-set $X$ can be extended to a complete preorder if and only if it satisfies
-OWC.
+\begin{definitionbox}{Definition (Only Weak Cycles)}
+\begin{definition}[Only Weak Cycles]\label{def:owc}
+Let $\succsim$ be a binary relation on $X$ with asymmetric part $\succ$ and
+transitive closure $T(\succsim)$. The relation $\succsim$ satisfies
+\emph{only weak cycles} (OWC) if
+\[
+  xT(\succsim)y \;\Rightarrow\; \neg(y \succ x).
+\]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+$\operatorname{OnlyWeakCycles}(\succsim,X)\leftrightarrow
+\forall x,y\in X,\; xT(\succsim)y\to\neg(y\succ x)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{OnlyWeakCycles}(\succsim,X)$ means that no finite chain of weak
+comparisons can be reversed by a strict comparison.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+OWC rules out strict reversals around cycles generated by weak comparisons.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+OWC prohibits a chain
+$x_1 \succsim x_2 \succsim \cdots \succsim x_n$ together with a strict
+reversal $x_n\succ x_1$. Such a configuration cannot survive inside a complete
+preorder extension.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
   \item \hyperref[def:sym-asym]{Symmetric and Asymmetric Parts}
-  \item \hyperref[def:trans-closure]{Transitive Closure}
-  \item \hyperref[def:preorder-extension]{Extension of a Preorder}
+  \item \hyperref[def:relation-transitive-closure]{Transitive Closure}
 \end{itemize}
 \end{dependencies}
 
-\begin{remark*}[Intuition for OWC]
-OWC prohibits the following: there is a ``chain'' of weak preferences
-$x_1 \succsim x_2 \succsim \cdots \succsim x_n$ but a strict reversal
-$x_n \succ x_1$. Such a configuration cannot be extended to a complete
-preorder because the chain forces $x_1 \succsim' x_n$ in any extension, but
-strict preference $x_n \succ x_1$ in the extension would mean
-$x_n \succsim' x_1$ but not $x_1 \succsim' x_n$ --- contradicting
-$x_1 \succsim' x_n$.
+\begin{propositionbox}{Proposition (Only Weak Cycles Characterization)}
+\begin{proposition}[Only Weak Cycles Characterization]\label{prop:owc-characterization}
+A binary relation $\succsim$ on a nonempty set $X$ can be extended to a
+complete preorder if and only if it satisfies only weak cycles.
+\hyperref[prf:owc-characterization]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+$\forall X\neq\varnothing,\;\forall \succsim,\;
+(\exists \succsim',\operatorname{CompletePreorderExtension}(\succsim',\succsim,X))
+\leftrightarrow \operatorname{OnlyWeakCycles}(\succsim,X)$.
 \end{remark*}
 
-\begin{remark*}[Transition to AC]
-Szpilrajn's Theorem relies on Zorn's Lemma / Hausdorff Maximum Principle,
-which are equivalent to the Axiom of Choice. The next section develops
-these equivalences directly.
+\begin{remark*}[Predicate reading]
+$\operatorname{OnlyWeakCycles}(\succsim,X)$ is exactly the obstruction-free
+condition for extending $\succsim$ to a complete preorder.
 \end{remark*}
+
+\begin{remark*}[Interpretation]
+Complete preorder extensions exist precisely when weak cycles do not contain
+strict reversals.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+If a strict reversal exists along a weak chain, every extension must preserve
+the chain and the strict reversal, producing a contradiction. Conversely, when
+only weak cycles hold, the relation can be extended by applying the extension
+principle to the preorder generated by its transitive closure.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Szpilrajn's theorem relies on Zorn's Lemma or the Hausdorff Maximum Principle,
+which are equivalent to the Axiom of Choice. The next section develops these
+equivalences directly.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:owc]{Only Weak Cycles}
+  \item \hyperref[def:preorder-extension]{Extension of a Preorder}
+  \item \hyperref[cor:complete-preorder-extension]{Complete Preorder Extension}
+\end{itemize}
+\end{dependencies}

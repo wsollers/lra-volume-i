@@ -17,14 +17,18 @@ is written $\leq$.
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:relation]{Relation}
-  \item \hyperref[def:partial-order]{Partial Order}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+$\mathsf{OrderedSet}(A,\leq)$ means that $A$ is a set equipped with an order
+relation $\leq$; by default in this text, the order relation is a partial
+order.
+\end{remark*}
 
-\begin{remark*}[Genus and species]
+\begin{remark*}[Interpretation]
+An ordered set is the structure obtained by pairing a carrier set with a
+specified comparison relation.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 ``Ordered set'' is a genus term: a species is fixed by specifying which order
 relation the carrier carries --- a \hyperref[def:partial-order]{partial order}
 gives a \hyperref[def:partially-ordered-set]{poset}, a
@@ -35,6 +39,13 @@ Relations chapter; this chapter studies the \emph{structures} built on them and
 never restates a relation's axioms, so the two chapters cannot drift apart.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:partial-order]{Partial Order}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Partially Ordered Set)}
 \begin{definition}[Partially Ordered Set]\label{def:partially-ordered-set}
 A \emph{partially ordered set} is a pair $(A,\leq)$ where $A$ is a set and
@@ -43,16 +54,31 @@ is reflexive, antisymmetric, and transitive).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\mathsf{PartiallyOrderedSet}(A,\leq)\;\leftrightarrow\;
+\operatorname{PartialOrder}(\leq,A)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{PartialOrder}(\leq,A)$ means that $\leq$ is reflexive,
+antisymmetric, and transitive on $A$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A partially ordered set supplies a comparison relation that may leave some
+pairs incomparable.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+A partially ordered set is a set with a specified way to compare elements that
+need not make every pair comparable.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:partial-order]{Partial Order}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[English reading]
-A partially ordered set is a set with a specified way to compare elements that
-need not make every pair comparable.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Order-Structure Synonyms)}
 \begin{definition}[Order-Structure Synonyms]\label{def:order-synonyms}
@@ -71,6 +97,17 @@ mathematical content; each resolves to the canonical structure it names:
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\mathsf{poset}:=\mathsf{PartiallyOrderedSet}$,
+$\mathsf{toset}:=\mathsf{TotallyOrderedSet}$, and
+$\mathsf{woset}:=\mathsf{WellOrderedSet}$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+These abbreviations are aliases for previously or subsequently defined order
+structures; they introduce no separate mathematical condition.
+\end{remark*}
+
 \NoLocalDependencies
 
 \begin{definitionbox}{Definition (Strict Order)}
@@ -82,19 +119,33 @@ a < b \;\;\Longleftrightarrow\;\; (a \leq b \land a \neq b).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\forall a,b\in A,\; a<b \leftrightarrow (a\leq b\wedge a\neq b)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{StrictPartialOrder}(<,A)$ is the strict relation obtained from
+the non-strict order $\leq$ by excluding equality.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The strict order keeps exactly the non-equality comparisons from the
+non-strict order.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The relation $<$ is irreflexive and transitive. Conversely, given any strict
+partial order $<$, one recovers a non-strict order by setting
+$a \leq b \iff (a < b \lor a=b)$. The two formulations carry exactly the
+same information.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-set]{Ordered Set}
   \item \hyperref[def:partial-order]{Partial Order}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Strict and non-strict are equivalent]
-The relation $<$ is irreflexive and transitive. Conversely, given any strict
-partial order $<$, one recovers a non-strict order by setting
-$a \leq b \iff (a < b \lor a=b)$. The two formulations carry exactly the
-same information.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Non-Strict Order Induced by a Strict Order)}
 \begin{definition}[Non-Strict Order Induced by a Strict Order]\label{def:non-strict-order-induced-by-strict-order}
@@ -104,6 +155,20 @@ x\leq y \;\Longleftrightarrow\; (x<y\lor x=y).
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+$\forall x,y\in S,\; x\leq y \leftrightarrow (x<y\vee x=y)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{PartialOrder}(\leq,S)$ is induced from the strict order $<$ by
+adjoining equality.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A non-strict order can be recovered from a strict order by allowing equality as
+an additional comparison case.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -121,6 +186,23 @@ then $<$ is a strict linear order on $S$.
 \hyperref[prf:strict-order-induced-by-linear-order]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+$\operatorname{TotalOrder}(\leq,S)\wedge
+(\forall x,y\in S,\; x<y\leftrightarrow x\leq y\wedge x\neq y)
+\;\Rightarrow\;\operatorname{StrictPartialOrder}(<,S)$, with total
+comparability in the strict trichotomy sense.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{StrictPartialOrder}(<,S)$ is obtained by deleting equality from
+the linear order $\leq$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Removing equality from a linear order produces the corresponding strict linear
+order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -140,6 +222,22 @@ then $\leq$ is a linear order on $S$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{StrictPartialOrder}(<,S)\wedge
+(\forall x,y\in S,\; x\leq y\leftrightarrow x<y\vee x=y)
+\;\Rightarrow\;\operatorname{TotalOrder}(\leq,S)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{TotalOrder}(\leq,S)$ is recovered from the strict linear order
+$<$ by adjoining equality.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Adding equality back to a strict linear order recovers the corresponding
+non-strict linear order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strict-order]{Strict Order}
@@ -158,6 +256,20 @@ x<y,\qquad x=y,\qquad y<x.
 \hyperref[prf:trichotomy-for-linear-orders]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+$\operatorname{TotalOrder}(\leq,S)\Rightarrow
+\forall x,y\in S,\; \text{exactly one of } x<y,\;x=y,\;y<x \text{ holds}$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{Trichotomy}(<,S)$ means that each pair of elements of $S$ falls
+into exactly one of the two strict comparisons or equality.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Trichotomy is the strict-order form of total comparability.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -182,14 +294,17 @@ $a \leq b$ or $b \leq a$; they are \emph{incomparable}
 \end{definition}
 \end{definitionbox}
 
-\NoLocalDependencies
-
 \begin{remark*}[Standard quantified statement]
 $a,b$ comparable $\;\leftrightarrow\; a \leq b \vee b \leq a$. \quad
 $a,b$ incomparable $\;\leftrightarrow\; \neg(a \leq b) \wedge \neg(b \leq a)$.
 \end{remark*}
 
-\begin{remark*}[Incomparable elements]
+\begin{remark*}[Interpretation]
+Comparability records whether the order relates the two elements in at least
+one direction. Incomparability records failure in both directions.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 Incomparable elements can only occur in partial orders. In a total order,
 every pair is comparable by definition.
 \end{remark*}
@@ -213,6 +328,21 @@ equivalently, a partially ordered set in which every pair of elements is
 \]
 \end{definition}
 \end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+$\mathsf{TotallyOrderedSet}(A,\leq)\;\leftrightarrow\;
+\operatorname{TotalOrder}(\leq,A)\;\leftrightarrow\;
+\forall a,b\in A,\; a\leq b\vee b\leq a$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{TotalOrder}(\leq,A)$ means that $\leq$ is a partial order on
+$A$ and any two elements of $A$ are comparable.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A total order has no incomparable pairs.
+\end{remark*}
+
 \begin{remark*}[Examples]
 $(\mathbb{R},\leq)$ is a total order. $(\mathcal{P}(A), \subseteq)$ is a
 partial order that is generally not total.
@@ -240,6 +370,30 @@ if $\forall s \in S,\; \ell \leq s$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{UpperBound}(u,S,\mathsf{OrderedSet}(A,\leq))
+\leftrightarrow u\in A\wedge \forall s\in S,\;s\leq u$, and
+$\operatorname{LowerBound}(\ell,S,\mathsf{OrderedSet}(A,\leq))
+\leftrightarrow \ell\in A\wedge \forall s\in S,\;\ell\leq s$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{UpperBound}(u,S,\mathsf{OrderedSet}(A,\leq))$ says that $u$
+lies above every element of $S$ in the ordered set $(A,\leq)$.
+$\operatorname{LowerBound}(\ell,S,\mathsf{OrderedSet}(A,\leq))$ says that
+$\ell$ lies below every element of $S$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Bounds compare one ambient element with all elements of a subset. They need not
+belong to the subset being bounded.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Bounds need not exist and need not be unique. They need not lie in $S$ itself.
+Bounds are central to the definition of completeness for ordered fields.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-set]{Ordered Set}
@@ -247,17 +401,27 @@ if $\forall s \in S,\; \ell \leq s$.
 \end{itemize}
 \end{dependencies}
 
-\begin{remark*}[Consequence]
-Bounds need not exist and need not be unique. They need not lie in $S$ itself.
-Bounds are central to the definition of completeness for ordered fields.
-\end{remark*}
-
 \begin{definitionbox}{Definition (Minimal Element)}
 \begin{definition}[Minimal Element]\label{def:order-minimal-element}\label{def:min-max}
 Let $S \subseteq A$ in an ordered set $(A,\leq)$. An element $m \in S$ is a
 \emph{minimal element} of $S$ if there is no $s \in S$ with $s < m$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+$\operatorname{MinimalElement}(m,S,\mathsf{OrderedSet}(A,\leq))
+\leftrightarrow m\in S\wedge \neg\exists s\in S,\;s<m$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{MinimalElement}(m,S,\mathsf{OrderedSet}(A,\leq))$ means no
+element of $S$ is strictly below $m$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A minimal element has no smaller competitor inside the subset, but it need not
+be below every element of the subset.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -273,6 +437,21 @@ Let $S \subseteq A$ in an ordered set $(A,\leq)$. An element $M \in S$ is a
 \emph{maximal element} of $S$ if there is no $s \in S$ with $M < s$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+$\operatorname{MaximalElement}(M,S,\mathsf{OrderedSet}(A,\leq))
+\leftrightarrow M\in S\wedge \neg\exists s\in S,\;M<s$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{MaximalElement}(M,S,\mathsf{OrderedSet}(A,\leq))$ means no
+element of $S$ is strictly above $M$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A maximal element has no larger competitor inside the subset, but it need not
+be above every element of the subset.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -292,6 +471,20 @@ the \emph{least element} of $S$ if
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{LeastElement}(\ell,S,\mathsf{OrderedSet}(A,\leq))
+\leftrightarrow \ell\in S\wedge \forall s\in S,\;\ell\leq s$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{LeastElement}(\ell,S,\mathsf{OrderedSet}(A,\leq))$ means
+$\ell$ is an element of $S$ below every element of $S$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A least element is a global bottom element of the subset.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-set]{Ordered Set}
@@ -309,18 +502,32 @@ the \emph{greatest element} of $S$ if
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{GreatestElement}(g,S,\mathsf{OrderedSet}(A,\leq))
+\leftrightarrow g\in S\wedge \forall s\in S,\;s\leq g$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{GreatestElement}(g,S,\mathsf{OrderedSet}(A,\leq))$ means $g$
+is an element of $S$ above every element of $S$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A greatest element is a global top element of the subset.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+A \emph{least} element is below every element of $S$; it must be unique if it
+exists. A \emph{minimal} element merely has nothing below it within $S$; there
+may be many. Every least element is minimal, but not conversely.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-set]{Ordered Set}
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Minimal vs.\ least]
-A \emph{least} element is below every element of $S$; it must be unique if it
-exists. A \emph{minimal} element merely has nothing below it within $S$; there
-may be many. Every least element is minimal, but not conversely.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Order maps and isomorphisms
@@ -335,19 +542,35 @@ $f : M \to M'$ is \emph{order-preserving} (or \emph{monotone}) if
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{OrderPreserving}(f,\mathsf{PartiallyOrderedSet}(M,\leq),
+\mathsf{PartiallyOrderedSet}(M',\leq'))\leftrightarrow
+\forall a,b\in M,\; a\leq b\Rightarrow f(a)\leq' f(b)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{OrderPreserving}(f,\mathsf{PartiallyOrderedSet}(M,\leq),
+\mathsf{PartiallyOrderedSet}(M',\leq'))$ means that $f$ carries ordered pairs
+in the domain to ordered pairs in the codomain.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An order-preserving map respects the direction of comparison.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The chapter \hyperref[ch:functions-and-order]{Functions and Order} develops
+the function-theoretic consequences of monotonicity: strict monotonicity and
+injectivity, preimages of upper and lower sets, order embeddings, and inverses
+onto images.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
   \item \hyperref[def:function]{Function}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Forward to functions and order]
-The chapter \hyperref[ch:functions-and-order]{Functions and Order} develops
-the function-theoretic consequences of monotonicity: strict monotonicity and
-injectivity, preimages of upper and lower sets, order embeddings, and inverses
-onto images.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Order-Reversing Map)}
 \begin{definition}[Order-Reversing Map]\label{def:order-reversing-map}
@@ -359,6 +582,22 @@ x\leq_A y \;\Longrightarrow\; f(y)\leq_B f(x)
 for all $x,y\in A$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+$\operatorname{OrderReversing}(f,\mathsf{OrderedSet}(A,\leq_A),
+\mathsf{OrderedSet}(B,\leq_B))\leftrightarrow
+\forall x,y\in A,\; x\leq_A y\Rightarrow f(y)\leq_B f(x)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{OrderReversing}(f,\mathsf{OrderedSet}(A,\leq_A),
+\mathsf{OrderedSet}(B,\leq_B))$ means that $f$ reverses the direction of every
+comparison from the domain order to the codomain order.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An order-reversing map turns larger inputs into smaller outputs.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -377,6 +616,31 @@ $f : M \to M'$ is an \emph{order isomorphism} if it is bijective and
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{OrderIsomorphism}(f,\mathsf{PartiallyOrderedSet}(M,\leq),
+\mathsf{PartiallyOrderedSet}(M',\leq'))\leftrightarrow
+\operatorname{Bijective}(f)\wedge
+\forall a,b\in M,\;a\leq b\leftrightarrow f(a)\leq' f(b)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{OrderIsomorphism}(f,\mathsf{PartiallyOrderedSet}(M,\leq),
+\mathsf{PartiallyOrderedSet}(M',\leq'))$ means that $f$ is bijective and both
+preserves and reflects order.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An order isomorphism is a structure-preserving relabeling of a partially
+ordered set.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+An order isomorphism preserves and reflects the order structure exactly,
+including comparability, minimal and maximal elements, and bounds. Two posets
+are \emph{order-isomorphic} if such a map exists; they are structurally
+identical from the order-theoretic viewpoint.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
@@ -384,13 +648,6 @@ $f : M \to M'$ is an \emph{order isomorphism} if it is bijective and
   \item \hyperref[def:bijective]{Bijective Function}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Order-isomorphic posets]
-An order isomorphism preserves and reflects the order structure exactly,
-including comparability, minimal and maximal elements, and bounds. Two posets
-are \emph{order-isomorphic} if such a map exists; they are structurally
-identical from the order-theoretic viewpoint.
-\end{remark*}
 
 \begin{theorembox}{Theorem (Order Isomorphisms Preserve and Reflect Order)}
 \begin{theorem}[Order Isomorphisms Preserve and Reflect Order]\label{thm:order-isomorphisms-preserve-and-reflect-order}
@@ -402,6 +659,23 @@ x\leq_A y \;\Longleftrightarrow\; f(x)\leq_B f(y).
 \hyperref[prf:order-isomorphisms-preserve-and-reflect-order]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+$\operatorname{OrderIsomorphism}(f,\mathsf{OrderedSet}(A,\leq_A),
+\mathsf{OrderedSet}(B,\leq_B))\Rightarrow
+\forall x,y\in A,\;x\leq_A y\leftrightarrow f(x)\leq_B f(y)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{OrderIsomorphism}(f,\mathsf{OrderedSet}(A,\leq_A),
+\mathsf{OrderedSet}(B,\leq_B))$ entails both order preservation and order
+reflection.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An order isomorphism loses no order information: comparisons can be checked
+before or after applying the map.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -427,30 +701,45 @@ m \leq s \;\forall s \in S\bigr).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\mathsf{WellOrderedSet}(A,\leq)\leftrightarrow
+\mathsf{TotallyOrderedSet}(A,\leq)\wedge
+\forall S\subseteq A,\; S\neq\varnothing\Rightarrow
+\exists m\in S,\;\forall s\in S,\;m\leq s$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\mathsf{WellOrderedSet}(A,\leq)$ means that the total order on $A$ gives every
+nonempty subset a least element.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A well-order is a total order with no nonempty subset lacking a first element.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Every well-ordered set is totally ordered. The well-ordering condition is
+strictly stronger: it requires a least element in every nonempty subset,
+not just in $A$ as a whole.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+$(\mathbb{N},\leq)$ is well-ordered. $(\mathbb{Z},\leq)$ is not: the set
+$\{\dots,-3,-2,-1\}$ has no least element. $(\mathbb{R},\leq)$ is not:
+$(0,1)$ has no least element.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+An ordinal number represents the order type of a well-ordered set under order
+isomorphism, not merely its cardinality.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:totally-ordered-set]{Totally Ordered Set}
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Well-order implies total order]
-Every well-ordered set is totally ordered. The well-ordering condition is
-strictly stronger: it requires a least element in every nonempty subset,
-not just in $A$ as a whole.
-\end{remark*}
-
-\begin{example*}[Well-order examples]
-$(\mathbb{N},\leq)$ is well-ordered. $(\mathbb{Z},\leq)$ is not: the set
-$\{\dots,-3,-2,-1\}$ has no least element. $(\mathbb{R},\leq)$ is not:
-$(0,1)$ has no least element.
-\end{example*}
-
-\begin{remark*}[Connection to ordinal numbers]
-An \emph{ordinal number} is defined as an equivalence class of well-ordered
-sets under order isomorphism: it measures the \emph{order type} of a
-well-ordered set, not merely its cardinality.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Chains, antichains, initial segments
@@ -464,12 +753,23 @@ elements of $C$ are comparable.
 \end{definition}
 \end{definitionbox}
 
-\NoLocalDependencies
-
 \begin{remark*}[Standard quantified statement]
 $C$ is a chain $\;\leftrightarrow\; \forall a,b \in C,\; a \leq b \vee b \leq a$.\\
 $C$ is an antichain $\;\leftrightarrow\; \forall a,b \in C,\; a \neq b \to \neg(a \leq b) \wedge \neg(b \leq a)$.
 \end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{Chain}(C,\mathsf{PartiallyOrderedSet}(A,\leq))$ means every two
+elements of $C$ are comparable. $\operatorname{Antichain}(C,\mathsf{PartiallyOrderedSet}(A,\leq))$
+means no two distinct elements of $C$ are comparable.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A chain is a totally ordered subset of a poset. An antichain is a subset whose
+distinct elements remain mutually incomparable.
+\end{remark*}
+
+\NoLocalDependencies
 
 \begin{definitionbox}{Definition (Initial Segment)}
 \begin{definition}[Initial Segment]\label{def:initial-segment}
@@ -480,18 +780,27 @@ a \in I \text{ and } b \leq a \;\Rightarrow\; b \in I.
 \end{definition}
 \end{definitionbox}
 
-\NoLocalDependencies
-
 \begin{remark*}[Standard quantified statement]
 $I$ is an initial segment $\;\leftrightarrow\; \forall a \in I,\; \forall b \in A,\; b \leq a \to b \in I$.
 \end{remark*}
 
-\begin{remark*}[Transition]
+\begin{remark*}[Predicate reading]
+$\operatorname{InitialSegment}(I,\mathsf{OrderedSet}(A,\leq))$ means that $I$
+is downward closed in $(A,\leq)$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An initial segment contains everything below each of its elements.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 Ordered sets provide the abstract framework for order structures on the real
 numbers, function spaces, and metric spaces. In later sections, order
 interacts with topology and analysis through intervals, monotone functions,
 and the completeness axiom for $\mathbb{R}$.
 \end{remark*}
+
+\NoLocalDependencies
 
 % ---------------------------------------------------------
 % Directed Sets and Nets
@@ -505,6 +814,45 @@ exists $k \in I$ with $i \leq k$ and $j \leq k$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{DirectedSet}(I,\leq)\leftrightarrow
+\operatorname{Preorder}(\leq,I)\wedge
+\forall i,j\in I,\;\exists k\in I,\;i\leq k\wedge j\leq k$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{DirectedSet}(I,\leq)$ means every pair of indices has a common
+upper bound in $I$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Directedness supplies enough order structure to move beyond any finite amount
+of index information.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+In a directed set, any two elements can always be dominated by a third. The
+condition does not require a maximum element to exist, only that no two
+elements are incomparable in a final way: there is always a common upper bound
+available. Every totally ordered set is directed by taking $k=\max(i,j)$, but
+directed sets can be far more general.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+\begin{enumerate}[label=(\roman*)]
+\item $(\mathbb{N}, \leq)$ is directed: given $m, n \in \mathbb{N}$, take
+$k = \max(m,n)$.
+\item The collection of all finite subsets of a set $X$, ordered by inclusion,
+is directed: given finite sets $F_1, F_2 \subseteq X$, take $k = F_1 \cup F_2$.
+\item The set of all open neighborhoods of a point $x$ in a topological space,
+ordered by reverse inclusion ($U \leq V$ iff $U \supseteq V$), is directed:
+given neighborhoods $U$ and $V$ of $x$, take $k = U \cap V$.
+\item A partially ordered set is directed if and only if every finite subset has
+an upper bound. Partially ordered sets that are not directed can have maximal
+elements with no common upper bound.
+\end{enumerate}
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:partial-order]{Partial Order}
@@ -512,31 +860,6 @@ exists $k \in I$ with $i \leq k$ and $j \leq k$.
   \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[What directed means]
-In a directed set, any two elements can always be ``dominated'' by a third.
-The condition does not require a maximum element to exist, only that no two
-elements are ever incomparable in a final way: there is always a common
-upper bound available. Every totally ordered set is directed (take $k =
-\max(i,j)$), but directed sets can be far more general.
-\end{remark*}
-
-\begin{example*}[Canonical directed sets]
-\begin{enumerate}[label=(\roman*)]
-\item $(\mathbb{N}, \leq)$ is directed: given $m, n \in \mathbb{N}$, take
-$k = \max(m,n)$.
-\item The collection of all finite subsets of a set $X$, ordered by inclusion,
-is directed: given finite sets $F_1, F_2 \subseteq X$, take $k = F_1 \cup
-F_2$.
-\item The set of all open neighborhoods of a point $x$ in a topological space,
-ordered by reverse inclusion ($U \leq V$ iff $U \supseteq V$), is directed:
-given neighborhoods $U$ and $V$ of $x$, take $k = U \cap V$, which is also
-a neighborhood of $x$.
-\item A partially ordered set is directed if and only if every finite subset
-has an upper bound. Partially ordered sets that are \emph{not} directed have
-``incomparable maximal elements'' --- elements with no common upper bound.
-\end{enumerate}
-\end{example*}
 
 \begin{definitionbox}{Definition (Net)}
 \begin{definition}[Net]\label{def:net}
@@ -546,26 +869,33 @@ net is written $(x_i)_{i \in I}$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{Net}(x,I,X)\leftrightarrow
+\operatorname{DirectedSet}(I,\leq)\wedge \operatorname{Function}(x,I,X)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{Net}(x,I,X)$ means that $x$ is a function from a directed index
+set $I$ into $X$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A net is a generalized sequence whose indices are directed rather than merely
+natural-number ordered.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+A sequence is a net with index set $(\mathbb{N}, \leq)$. Nets are the correct
+generalization of sequences to general topological spaces: in a metric space,
+sequences suffice to detect all topological properties (closure, continuity,
+compactness). In a general topological space, sequences can fail to detect
+these properties, so nets are needed. The definition of net is placed here
+because it is purely order-theoretic: a directed index set and a function.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:directed-set]{Directed Set}
   \item \hyperref[def:function]{Function}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Nets generalize sequences]
-A sequence is a net with index set $(\mathbb{N}, \leq)$. Nets are the correct
-generalization of sequences to general topological spaces: in a metric space,
-sequences suffice to detect all topological properties (closure, continuity,
-compactness). In a general topological space, sequences can fail to detect
-these properties --- one needs nets. Specifically, a subset $A$ of a
-topological space is closed if and only if every convergent net in $A$ has
-its limit in $A$; and a function is continuous if and only if it preserves
-limits of nets.
-
-The definition of net is placed here because it is purely order-theoretic:
-a directed index set and a function. The analytic content --- what it means
-for a net to converge --- belongs to topology and functional analysis. By
-establishing the set-theoretic definition now, those chapters can immediately
-state convergence conditions without set-theoretic digression.
-\end{remark*}

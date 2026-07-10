@@ -26,6 +26,19 @@ statement holds for order-reversing maps.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{OrderPreserving}(f)\wedge C\subseteq P
+  \to
+  \operatorname{OrderPreserving}(f|_C).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Restricting the domain preserves order behavior because every surviving
+comparison was already a comparison in the original domain.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:restriction]{Restriction}
@@ -41,6 +54,19 @@ The composition of two order embeddings is an order embedding.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{OrderEmbedding}(f)\wedge\operatorname{OrderEmbedding}(g)
+  \to
+  \operatorname{OrderEmbedding}(g\circ f).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Composition preserves the combination of order preservation and order
+reflection.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:composition]{Composition}
@@ -50,20 +76,29 @@ The composition of two order embeddings is an order embedding.
 
 \subsection*{Failure Mode Checklist}
 
-\begin{remark*}[Failure mode checklist]
+\begin{remark*}[Failure modes]
+\begin{itemize}
+\item[Exposition.]
 When a desired property fails, identify the failed predicate.
-\begin{enumerate}[label=(\roman*)]
-\item Injectivity fails by a collision: $a_1\neq a_2$ but $f(a_1)=f(a_2)$.
-\item Surjectivity fails by a missed target: some $b$ has no preimage.
-\item Order-preservation fails by a reversed witness: $x\leq y$ but
-  $f(x)\nleq' f(y)$.
-\item Order-reflection fails by a false pullback: $f(x)\leq' f(y)$ but
-  $x\nleq y$.
-\item Upper-set preservation fails by an element inside the set and a larger
-  element outside it.
-\end{enumerate}
 These witnesses usually indicate the repair: restrict the domain, change the
 codomain, add order-reflection, or pass to an image.
+\item[Injectivity failure.]
+\[
+  \exists a_1,a_2,\quad a_1\neq a_2\wedge f(a_1)=f(a_2).
+\]
+\item[Surjectivity failure.]
+\[
+  \exists b,\quad \forall a,\ f(a)\neq b.
+\]
+\item[Order-preservation failure.]
+\[
+  \exists x,y,\quad x\leq y\wedge f(x)\nleq' f(y).
+\]
+\item[Order-reflection failure.]
+\[
+  \exists x,y,\quad f(x)\leq' f(y)\wedge x\nleq y.
+\]
+\end{itemize}
 \end{remark*}
 
 \begin{theorembox}{Theorem (Chapter Synthesis)}
@@ -78,6 +113,21 @@ and preimages of lower sets are lower sets.
 \hyperref[prf:fo-synthesis]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Injective}(f)\to \operatorname{Bijective}(f:A\to f(A)),
+\]
+\[
+  \operatorname{OrderEmbedding}(f)\to
+  \operatorname{OrderIsomorphism}(f:A\to f(A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The main repair operations are corestriction to the image and pulling
+order-shaped sets back by monotone maps.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

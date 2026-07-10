@@ -18,6 +18,19 @@ Let $f : A \to B$ and $g : B \to C$. The \emph{composition} $g \circ f : A \to C
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\forall a\in A,\; (g\circ f)(a)=g(f(a))$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Composition applies $f$ first and then applies $g$ to the output. The codomain
+of $f$ must match the domain of $g$ so that the second evaluation is defined.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Composition is generally not commutative: $g \circ f \neq f \circ g$ even
+when both are defined.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -25,11 +38,6 @@ Let $f : A \to B$ and $g : B \to C$. The \emph{composition} $g \circ f : A \to C
   \item \hyperref[def:cartesian-product-rel]{Cartesian Product}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Non-commutativity]
-Composition is generally not commutative: $g \circ f \neq f \circ g$ even
-when both are defined.
-\end{remark*}
 
 \begin{theorembox}{Theorem (Associativity of Composition)}
 \begin{theorem}[Associativity of Composition]\label{thm:comp-assoc}
@@ -43,6 +51,16 @@ h \circ (g \circ f) = (h \circ g) \circ f.
 
 \begin{remark*}[Standard quantified statement]
 $\forall f\!:\!A\!\to\!B,\; g\!:\!B\!\to\!C,\; h\!:\!C\!\to\!D,\; \forall a \in A:\; [h \circ (g \circ f)](a) = [(h \circ g) \circ f](a)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{AssociativeComposition}(f,g,h)$ means that the two possible
+parenthesizations of $h\circ g\circ f$ agree as functions on $A$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Associativity says parentheses do not matter for a composable string of three
+functions. Only the order of the functions matters.
 \end{remark*}
 
 \begin{dependencies}
@@ -66,6 +84,17 @@ f \circ \id_A = f
 
 \begin{remark*}[Standard quantified statement]
 $\forall f : A \to B,\; \forall a \in A:\; (f \circ \id_A)(a) = f(a)$ and $(\id_B \circ f)(a) = f(a)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{IdentityNeutralForComposition}(f,\id_A,\id_B)$ means that the
+identity on the domain is a right identity for $f$ and the identity on the
+codomain is a left identity for $f$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Identity functions do nothing under composition. They allow the function $f$ to
+be compared with longer composites without changing its action.
 \end{remark*}
 
 \begin{dependencies}
@@ -93,6 +122,29 @@ Let $f : A \to B$ and $g : B \to C$.
 (i) $(\forall a_1,a_2 \in A,\; f(a_1)=f(a_2)\to a_1=a_2) \wedge (\forall b_1,b_2\in B,\; g(b_1)=g(b_2)\to b_1=b_2) \;\to\; \forall a_1,a_2\in A,\; g(f(a_1))=g(f(a_2))\to a_1=a_2$.\\
 (iii) $(\forall a_1,a_2\in A,\; g(f(a_1))=g(f(a_2))\to a_1=a_2) \;\to\; \forall a_1,a_2\in A,\; f(a_1)=f(a_2)\to a_1=a_2$.
 \end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{Injective}(f)$ and $\operatorname{Injective}(g)$ imply
+$\operatorname{Injective}(g\circ f)$. The predicate
+$\operatorname{Surjective}(f)$ and $\operatorname{Surjective}(g)$ imply
+$\operatorname{Surjective}(g\circ f)$. Conversely,
+$\operatorname{Injective}(g\circ f)$ implies $\operatorname{Injective}(f)$, and
+$\operatorname{Surjective}(g\circ f)$ implies $\operatorname{Surjective}(g)$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Composing two injective maps preserves the absence of collisions, and composing
+two surjective maps preserves the ability to hit every target. If a composite
+has one of these properties, only the factor closest to the relevant side is
+forced to have it.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+In (iii), $g$ need not be injective. In (iv), $f$ need not be surjective.
+Bijectivity of $g \circ f$ does not imply bijectivity of either $f$ or $g$
+individually.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -101,12 +153,6 @@ Let $f : A \to B$ and $g : B \to C$.
   \item \hyperref[def:surjective]{Surjective Function}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Sharpness of the implications]
-In (iii), $g$ need not be injective. In (iv), $f$ need not be surjective.
-Bijectivity of $g \circ f$ does not imply bijectivity of either $f$ or $g$
-individually.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Inverse functions
@@ -124,6 +170,17 @@ Such a function $g$ is called an \emph{inverse} of $f$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{Invertible}(f)\;\leftrightarrow\;\exists g:B\to A,\;
+g\circ f=\id_A \wedge f\circ g=\id_B$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An invertible function can be undone from both sides. The same inverse returns
+inputs after applying $f$ and also reaches each codomain element from its chosen
+input.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -138,6 +195,15 @@ Let $f : A \to B$ be bijective. The \emph{inverse function} is
 $f^{-1} : B \to A$ defined by: $f^{-1}(b) = a$ iff $f(a) = b$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+$\forall b\in B,\; f^{-1}(b)=a \leftrightarrow f(a)=b$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The inverse function reverses a bijection by sending each output back to its
+unique input.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -166,6 +232,18 @@ $\forall a \in A:\; f^{-1}(f(a)) = a$ and $\forall b \in B:\; f(f^{-1}(b)) = b$.
 Converse: $(\exists g: B\to A,\; g\circ f = \id_A \wedge f\circ g = \id_B) \;\leftrightarrow\; f$ is bijective.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+$\operatorname{Bijective}(f)$ is equivalent to the existence of a function
+$g:B\to A$ satisfying $\operatorname{LeftInverse}(g,f)$ and
+$\operatorname{RightInverse}(g,f)$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Being bijective is exactly the condition that makes the inverse function a
+two-sided inverse. Injectivity supplies uniqueness of the input, and
+surjectivity supplies existence of an input.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -192,6 +270,11 @@ bijective and
 $\forall c \in C:\; (g \circ f)^{-1}(c) = f^{-1}(g^{-1}(c))$.
 \end{remark*}
 
+\begin{remark*}[Interpretation]
+To undo a composite, undo the last function first. The inverse of a composition
+therefore reverses the order of the original functions.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -211,6 +294,16 @@ A \emph{left inverse} of $f$ is a function $g : B \to A$ with $g \circ f = \id_A
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{LeftInverse}(g,f)\;\leftrightarrow\; g:B\to A \wedge
+g\circ f=\id_A$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A left inverse recovers every input after applying $f$. It rules out collisions
+among inputs of $f$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -227,6 +320,24 @@ with $f \circ h = \id_B$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{RightInverse}(h,f)\;\leftrightarrow\; h:B\to A \wedge
+f\circ h=\id_B$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A right inverse chooses an input above each codomain element. It can exist only
+when every codomain element is hit by $f$.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Left inverses and right inverses are the two one-sided inverse notions.
+A left inverse reverses $f$ on the domain side, so it can exist only when
+different inputs do not collapse to the same output. A right inverse chooses
+one input over each codomain element, so it can exist only when every codomain
+element is actually hit.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -234,14 +345,6 @@ with $f \circ h = \id_B$.
   \item \hyperref[def:identity]{Identity Function}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[One-sided inverses]
-Left inverses and right inverses are the two one-sided inverse notions.
-A left inverse reverses $f$ on the domain side, so it can exist only when
-different inputs do not collapse to the same output. A right inverse chooses
-one input over each codomain element, so it can exist only when every codomain
-element is actually hit.
-\end{remark*}
 
 \begin{figure}[htbp]
 \centering
@@ -268,6 +371,25 @@ and $f$ is bijective.
 (ii) $(\exists h: B\to A,\; \forall b\in B,\; f(h(b))=b) \;\leftrightarrow\; \forall b\in B,\; \exists a\in A,\; f(a)=b$.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+$\exists g\,\operatorname{LeftInverse}(g,f)$ is equivalent to
+$\operatorname{Injective}(f)$, with the stated empty-domain convention.
+$\exists h\,\operatorname{RightInverse}(h,f)$ is equivalent to
+$\operatorname{Surjective}(f)$. Having both one-sided inverses forces
+$\operatorname{Bijective}(f)$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left inverses detect whether information was lost, while right inverses detect
+whether every target can be chosen from. When both exist, the two choices agree
+and give the ordinary inverse.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The existence of a right inverse for every surjective function is equivalent
+to the Axiom of Choice.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -280,11 +402,6 @@ and $f$ is bijective.
 \end{itemize}
 \end{dependencies}
 
-\begin{remark*}[Axiom of Choice]
-The existence of a right inverse for every surjective function is equivalent
-to the Axiom of Choice.
-\end{remark*}
-
 % ---------------------------------------------------------
 % Restriction and Extension
 % ---------------------------------------------------------
@@ -294,6 +411,15 @@ Let $f : A \to B$ and $C \subseteq A$. The \emph{restriction} of $f$ to $C$
 is $f|_C : C \to B$, $f|_C(a) = f(a)$ for all $a \in C$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+$\forall a\in C,\; f|_C(a)=f(a)$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Restriction keeps the same rule but narrows the domain. This can remove inputs
+that caused unwanted behavior, such as collisions.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -310,6 +436,31 @@ Let $A \subseteq A'$, and let $f : A \to B$. A function $g : A' \to B$ is an
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+$\operatorname{Extension}(g,f)\;\leftrightarrow\; A\subseteq A' \wedge
+g:A'\to B \wedge \forall a\in A,\; g(a)=f(a)$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An extension preserves the old function on its original domain while assigning
+values on a larger domain.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+An extension agrees with $f$ on all of $A$ but may be defined on a larger
+domain $A'$. Extensions are generally not unique; uniqueness requires additional
+constraints (such as continuity in analysis or linearity in algebra), leading to
+important results like the Tietze Extension Theorem and the Hahn--Banach
+Theorem.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The chapter \hyperref[ch:functions-and-order]{Functions and Order} studies
+how restricting the domain, corestricting to the image, or enlarging the
+codomain changes injectivity, surjectivity, inverse-on-image behavior, and
+monotonicity.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -319,21 +470,6 @@ Let $A \subseteq A'$, and let $f : A \to B$. A function $g : A' \to B$ is an
   \item \hyperref[def:codomain]{Codomain}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Extensions not unique]
-An extension agrees with $f$ on all of $A$ but may be defined on a larger
-domain $A'$. Extensions are generally not unique; uniqueness requires additional
-constraints (such as continuity in analysis or linearity in algebra), leading to
-important results like the Tietze Extension Theorem and the Hahn--Banach
-Theorem.
-\end{remark*}
-
-\begin{remark*}[Forward to controlled restrictions]
-The chapter \hyperref[ch:functions-and-order]{Functions and Order} studies
-how restricting the domain, corestricting to the image, or enlarging the
-codomain changes injectivity, surjectivity, inverse-on-image behavior, and
-monotonicity.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Image and Preimage Laws
@@ -355,6 +491,20 @@ Let $f : A \to B$ and $S, T \subseteq B$. Then
 (i) $\forall a \in A:\; a \in f^{-1}(S\cup T) \leftrightarrow (f(a)\in S \vee f(a)\in T)$.\\
 (ii) $\forall a \in A:\; a \in f^{-1}(S\cap T) \leftrightarrow (f(a)\in S \wedge f(a)\in T)$.\\
 (iv) $\forall a \in A:\; a \in f^{-1}(S^c) \leftrightarrow f(a)\notin S$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{PreimagePreservesUnion}(f,S,T)$,
+$\operatorname{PreimagePreservesIntersection}(f,S,T)$,
+$\operatorname{PreimagePreservesDifference}(f,S,T)$, and
+$\operatorname{PreimagePreservesComplement}(f,S)$ mean that preimage converts
+the corresponding set operation in $B$ into the same set operation in $A$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Preimage laws are exact because membership in a preimage is just a statement
+about where $f(a)$ belongs. Logical connectives are preserved when pulled back
+to the domain.
 \end{remark*}
 
 \begin{dependencies}
@@ -397,6 +547,13 @@ $\forall a\in A:\; a\in f^{-1}(\bigcap_{i\in I}T_i)
 \leftrightarrow \forall i\in I,\; f(a)\in T_i$.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+$\operatorname{PreimagePreservesIndexedUnion}(f,\{T_i\}_{i\in I})$ and
+$\operatorname{PreimagePreservesIndexedIntersection}(f,\{T_i\}_{i\in I})$ mean
+that preimage commutes with the indexed union, and with the indexed intersection
+when the index set is nonempty.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Preimage turns membership in a union or intersection back into the same
 logical condition on the input side. When $I=\mathbb{N}$, these identities say
@@ -433,6 +590,19 @@ Equality holds in (ii) and (iii) for all $S,T$ iff $f$ is injective.
 (ii) $\forall b\in B:\; (\exists a\in S\cap T,\; f(a)=b) \to (\exists a\in S,\; f(a)=b) \wedge (\exists a\in T,\; f(a)=b)$; equality iff $f$ injective.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+$\operatorname{ImagePreservesUnion}(f,S,T)$ means that $f(S\cup T)=f(S)\cup
+f(T)$. The predicates $\operatorname{ImageIntersectionInclusion}(f,S,T)$ and
+$\operatorname{ImageDifferenceInclusion}(f,S,T)$ record the one-sided image
+laws, with equality uniformly when $\operatorname{Injective}(f)$ holds.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Forward images preserve unions because an input can come from either side.
+Intersections and differences lose information unless the function is
+injective.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -458,6 +628,27 @@ $f(f^{-1}(T))=T$ for every $T\subseteq B$ iff $f$ is surjective.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+$\forall S\subseteq A,\; S\subseteq f^{-1}(f(S))$ and
+$\forall T\subseteq B,\; f(f^{-1}(T))\subseteq T$. Moreover,
+$(\forall S\subseteq A,\; S=f^{-1}(f(S)))\leftrightarrow
+\operatorname{Injective}(f)$, and $(\forall T\subseteq B,\;
+f(f^{-1}(T))=T)\leftrightarrow \operatorname{Surjective}(f)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+$\operatorname{ImagePreimageAdjunction}(f,S,T)$ records the inclusions
+$S\subseteq f^{-1}(f(S))$ and $f(f^{-1}(T))\subseteq T$, together with the
+injective and surjective equality criteria.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Sending a set forward and then pulling it back can add points that collide with
+the original set. Pulling back and then sending forward cannot leave the target
+set. Injectivity and surjectivity are exactly the conditions that turn these
+inclusions into equalities.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -480,23 +671,23 @@ function $f^{-1}:B\to A$.
 \end{proposition}
 \end{propositionbox}
 
-\begin{remark*}[Notation warning]
+\begin{remark*}[Standard quantified statement]
+$\forall b\in B,\; b\in (f^{-1})^{-1}(S)\leftrightarrow b\in f(S)$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Preimage under the inverse function is the same operation as forward image
+under the original bijection.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The inner $f^{-1}$ is the inverse function. The outer ${}^{-1}(S)$ is
 preimage notation applied to that inverse function. Thus the proposition says
 that pulling $S\subseteq A$ back along $f^{-1}:B\to A$ gives the same subset of
 $B$ as pushing $S$ forward along $f:A\to B$.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:image-set]{Image of a Set}
-  \item \hyperref[def:preimage]{Preimage}
-  \item \hyperref[def:inverse]{Inverse Function}
-  \item \hyperref[def:bijective]{Bijective Function}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Images, preimages, and Boolean operations]
+\begin{remark*}[Exposition]
 \mbox{}\par\smallskip
 \small
 \begin{tabularx}{\textwidth}{l X X}
@@ -519,7 +710,7 @@ Complement
 \end{tabularx}
 \end{remark*}
 
-\begin{remark*}[Composition and inverse interaction]
+\begin{remark*}[Exposition]
 \mbox{}\par\smallskip
 \small
 \begin{tabularx}{\textwidth}{l X X}
@@ -546,7 +737,7 @@ These properties control when image inclusions become equalities.
 \end{tabularx}
 \end{remark*}
 
-\begin{remark*}[Asymmetry between images and preimages]
+\begin{remark*}[Exposition]
 Preimages preserve union, intersection, difference, and complement exactly.
 Forward images preserve unions exactly, but generally do not preserve
 intersections, differences, or complements. The inclusions for intersections
@@ -554,3 +745,12 @@ and differences become equalities uniformly when the function is injective.
 This asymmetry is fundamental and explains why preimages appear more naturally
 in topology and measure theory.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:image-set]{Image of a Set}
+  \item \hyperref[def:preimage]{Preimage}
+  \item \hyperref[def:inverse]{Inverse Function}
+  \item \hyperref[def:bijective]{Bijective Function}
+\end{itemize}
+\end{dependencies}

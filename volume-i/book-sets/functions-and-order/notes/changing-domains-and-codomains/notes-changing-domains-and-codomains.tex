@@ -1,5 +1,5 @@
 
-\begin{remark*}[Chapter orientation]
+\begin{remark*}[Exposition]
 The basic function chapter studies maps as relations with declared domains and
 codomains. The orderings chapter adds ordered sets and order-preserving maps.
 This chapter studies what happens when those two viewpoints are used together:
@@ -38,15 +38,20 @@ $\im(f)$ instead of $B$.
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:function]{Function}
-  \item \hyperref[def:image-function]{Image of a Function}
-  \item \hyperref[def:codomain]{Codomain of a Function}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+  f_{\operatorname{im}}:A\to\im(f),
+  \qquad
+  \forall a\in A,\ f_{\operatorname{im}}(a)=f(a).
+\]
+\end{remark*}
 
-\begin{remark*}[Comment]
+\begin{remark*}[Interpretation]
+Corestriction keeps the same rule and domain while replacing the codomain by
+the image.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The statement ``$f_{\operatorname{im}}$ is onto'' reads
 \[
 \forall y\in\im(f)\,\exists a\in A,\quad f_{\operatorname{im}}(a)=y.
@@ -55,6 +60,14 @@ This is true by the definition of image: membership in $\im(f)$ already means
 being equal to $f(a)$ for at least one input.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:image-function]{Image of a Function}
+  \item \hyperref[def:codomain]{Codomain of a Function}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Proposition (Corestriction Is Surjective)}
 \begin{proposition}[Corestriction Is Surjective]\label{prop:corestriction-surjective}
 For every function $f:A\to B$, the corestriction
@@ -62,6 +75,17 @@ $f_{\operatorname{im}}:A\to\im(f)$ is surjective.
 \hyperref[prf:corestriction-surjective]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall f:A\to B,\quad
+  \operatorname{Surjective}(f_{\operatorname{im}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every function is onto its own image after corestriction.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -90,6 +114,17 @@ inclusion.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall a\in A,\quad f(a)=(\iota\circ f_{\operatorname{im}})(a).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Any function factors through its image by first mapping onto the image and then
+including the image in the original codomain.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:corestriction-to-image]{Corestriction to the Image}
@@ -108,6 +143,25 @@ $f|_C:C\to B$ is injective.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Injective}(f)
+  \wedge C\subseteq A
+  \to
+  \operatorname{Injective}(f|_C).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Removing inputs cannot create a collision that was not already present.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The contrapositive is often the useful form: if some restriction $f|_C$ is not
+injective, then $f$ is not injective. A collision inside a smaller domain is
+also a collision in the larger domain.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:restriction]{Restriction}
@@ -115,12 +169,6 @@ $f|_C:C\to B$ is injective.
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Comment]
-The contrapositive is often the useful form: if some restriction $f|_C$ is not
-injective, then $f$ is not injective. A collision inside a smaller domain is
-also a collision in the larger domain.
-\end{remark*}
 
 \begin{propositionbox}{Proposition (Enlarging Codomain Preserves Injectivity)}
 \begin{proposition}[Enlarging Codomain Preserves Injectivity]\label{prop:enlarge-codomain-preserves-injective}
@@ -130,6 +178,27 @@ $g:A\to D$ by $g(a)=f(a)$. Then $g$ is injective.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Injective}(f)
+  \wedge B\subseteq D
+  \wedge \forall a\in A,\ g(a)=f(a)
+  \to
+  \operatorname{Injective}(g).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Injectivity depends on equality of values, not on unused elements added to the
+codomain.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Surjectivity is codomain-sensitive. The same rule may be onto $B$ but fail to
+be onto a larger codomain $D$ because new target elements have been added.
+Injectivity is different: it only asks whether two domain elements collide.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:codomain]{Codomain of a Function}
@@ -137,9 +206,3 @@ $g:A\to D$ by $g(a)=f(a)$. Then $g$ is injective.
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Comment]
-Surjectivity is codomain-sensitive. The same rule may be onto $B$ but fail to
-be onto a larger codomain $D$ because new target elements have been added.
-Injectivity is different: it only asks whether two domain elements collide.
-\end{remark*}

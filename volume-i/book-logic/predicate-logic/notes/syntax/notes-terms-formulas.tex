@@ -89,13 +89,16 @@ symbols of \(\mathcal L\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A symbol fails to be a variable when it belongs to a different syntactic role,
+\begin{description}
+  \item[Exposition.] A symbol fails to be a variable when it belongs to a different syntactic role,
 such as a constant symbol, function symbol, predicate symbol, connective, or
 punctuation mark.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{c}_{\text{constant symbol}}
 \qquad
 \underbrace{f}_{\text{function symbol}}
@@ -104,6 +107,7 @@ punctuation mark.
 \qquad
 \underbrace{\forall}_{\text{logical symbol}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -164,18 +168,22 @@ non-logical symbol of \(\mathcal L\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A symbol fails to be a constant symbol when it is not in the language, is
+\begin{description}
+  \item[Exposition.] A symbol fails to be a constant symbol when it is not in the language, is
 logical punctuation, or has positive arity.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{x}_{\text{variable}}
 \qquad
 \underbrace{f}_{\text{positive arity}}
 \qquad
 \underbrace{(}_{\text{punctuation}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -239,19 +247,23 @@ function symbol of \(\mathcal L\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A symbol fails to be a function symbol when it is a variable, constant symbol,
+\begin{description}
+  \item[Exposition.] A symbol fails to be a function symbol when it is a variable, constant symbol,
 predicate symbol, logical symbol, punctuation mark, or has no assigned positive
 arity.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{c}_{\text{arity }0}
 \qquad
 \underbrace{P}_{\text{predicate symbol}}
 \qquad
 \underbrace{\neg}_{\text{logical symbol}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -316,13 +328,16 @@ predicate symbol of \(\mathcal L\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A symbol fails to be a predicate symbol when it belongs to the term-forming
+\begin{description}
+  \item[Exposition.] A symbol fails to be a predicate symbol when it belongs to the term-forming
 side of the language, is a logical symbol, is punctuation, or has no assigned
 positive arity as a predicate symbol.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{x}_{\text{variable}}
 \qquad
 \underbrace{c}_{\text{constant symbol}}
@@ -331,6 +346,7 @@ positive arity as a predicate symbol.
 \qquad
 \underbrace{\exists}_{\text{logical symbol}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -419,19 +435,23 @@ the term-formation clauses.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A string fails to be a term when it uses a predicate symbol, connective, or
+\begin{description}
+  \item[Exposition.] A string fails to be a term when it uses a predicate symbol, connective, or
 quantifier at the outer syntactic level, when a function symbol has too few or
 too many input terms, or when punctuation does not match the arity pattern.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{P(x)}_{\text{atomic formula, not a term}}
 \qquad
 \underbrace{f(x,y)}_{\text{wrong arity if }f\text{ is unary}}
 \qquad
 \underbrace{\forall x}_{\text{quantifier fragment}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -500,20 +520,24 @@ predicate symbol applied to the required number of terms.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A string fails to be atomic when it does not begin with a predicate symbol,
+\begin{description}
+  \item[Exposition.] A string fails to be atomic when it does not begin with a predicate symbol,
 when the predicate symbol receives the wrong number of term inputs, when an
 input is not a term, or when a logical connective or quantifier has already
 been applied.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{f(x)}_{\text{term, not formula}}
 \qquad
 \underbrace{P(x,y)}_{\text{wrong arity if }P\text{ is unary}}
 \qquad
 \underbrace{\neg P(x)}_{\text{molecular formula}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -550,6 +574,11 @@ formulas and closes under the logical connectives and quantifiers of the
 language.
 \end{definition}
 \end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+For every admissible object satisfying the hypotheses of the statement, the
+assertion holds in the formal language under discussion.
+\end{remark*}
+
 
 \begin{remark*}[Interpretation]
 The language supplies the symbols and formation rules; the formula notion is
@@ -637,13 +666,16 @@ generated by the formula-formation clauses.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A string fails to be well formed when it is a bare term, has a missing operand,
+\begin{description}
+  \item[Exposition.] A string fails to be well formed when it is a bare term, has a missing operand,
 uses a quantifier without a variable and formula, has unmatched punctuation, or
 cannot be produced by finitely many formation steps.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{f(x)}_{\text{term only}}
 \qquad
 \underbrace{P(x)\land}_{\text{missing right formula}}
@@ -652,6 +684,7 @@ cannot be produced by finitely many formation steps.
 \qquad
 \underbrace{(P(x)}_{\text{unmatched punctuation}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -718,19 +751,23 @@ either not a well-formed formula or is atomic.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A string fails to be a molecular formula either because it is not a
+\begin{description}
+  \item[Exposition.] A string fails to be a molecular formula either because it is not a
 well-formed formula at all or because it is an atomic formula with no outer
 logical construction.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{x}_{\text{not a formula}}
 \qquad
 \underbrace{P(x)}_{\text{atomic formula}}
 \qquad
 \underbrace{P(x)\land}_{\text{not well formed}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

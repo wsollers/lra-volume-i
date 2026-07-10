@@ -85,7 +85,6 @@ requires. When constants are treated as $0$-ary function symbols, the codomain
 is enlarged to include $0$.
 \end{definition}
 \end{definitionbox}
-
 \begin{remark*}[Standard quantified statement]
 For every $s\in\mathcal{F}\cup\mathcal{R}$, there is a unique positive
 integer $n$ such that $\operatorname{ar}(s)=n$. If $f\in\mathcal{F}$ and
@@ -161,7 +160,6 @@ Because its arity is $0$, the symbol $c$ is already a well-formed term and
 takes no input terms.
 \end{definition}
 \end{definitionbox}
-
 \begin{remark*}[Standard quantified statement]
 If $c\in\mathcal{F}$ and $\operatorname{ar}(c)=0$, then
 $c\in\operatorname{Terms}(\mathcal{L})$. In a structure
@@ -171,6 +169,12 @@ element of the domain:
   \forall c\in\mathcal{C},\ \exists! e\in M,\ \mathcal{I}(c)=e.
 \]
 \end{remark*}
+
+\begin{remark*}[Predicate reading]
+The predicate form records the relation or property named by the statement in
+the displayed logical context.
+\end{remark*}
+
 
 \begin{remark*}[Interpretation]
 A constant symbol is syntactically rigid: unlike a variable, it does not vary
@@ -257,14 +261,7 @@ because it returns a truth value. Under the standard interpretation,
 $<$ denotes the set of ordered pairs $(a,b)$ such that $a$ is less than $b$.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:signature]{Signature}
-  \item \hyperref[def:arity]{Arity}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Structural remarks]
+\begin{remark*}[Exposition]
 The same signature may support different choices of axioms later in the
 chapter. For example, a single arithmetic vocabulary can be used with stronger
 or weaker axiom sets.
@@ -273,3 +270,11 @@ The same signature may also be read over different mathematical universes once
 interpretations are introduced. At this stage, the signature itself records
 only the common vocabulary; it does not choose any particular interpretation.
 \end{remark*}
+
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:signature]{Signature}
+  \item \hyperref[def:arity]{Arity}
+\end{itemize}
+\end{dependencies}

@@ -20,6 +20,21 @@ substituting a term for the bound variable:
 \]
 \end{definition}
 \end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+For every admissible object satisfying the hypotheses of the statement, the
+assertion holds in the formal language under discussion.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
+\end{remark*}
+
+
+\begin{remark*}[Exposition]
+The term $t$ must be free for $x$ in $\varphi$. If $t$ contains a variable
+that would become bound after substitution, the inference is invalid.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -28,11 +43,6 @@ substituting a term for the bound variable:
   \item \hyperref[def:free-for]{Free for Substitution}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Side condition]
-The term $t$ must be free for $x$ in $\varphi$. If $t$ contains a variable
-that would become bound after substitution, the inference is invalid.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Universal Generalization
@@ -45,22 +55,24 @@ From a formula, infer a universally quantified statement:
 \]
 \end{definition}
 \end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+For every admissible object satisfying the hypotheses of the statement, the
+assertion holds in the formal language under discussion.
+\end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:universal-q]{Universal Quantifier}
-  \item \hyperref[def:formula]{Formula}
-  \item \hyperref[def:bound-free]{Bound and Free Occurrences}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
+\end{remark*}
 
-\begin{remark*}[Restriction on UG]
+
+\begin{remark*}[Exposition]
 The variable $x$ must not occur free in any undischarged assumption on which
 $\varphi$ depends. This restriction ensures that $x$ is truly arbitrary ---
 not tied to a specific hypothesis about $x$.
 \end{remark*}
 
-\begin{remark*}[Arbitrary element argument]
+\begin{remark*}[Exposition]
 To prove $\forall x\,\varphi(x)$, fix an arbitrary element $x$ (introducing no
 special assumptions about $x$), prove $\varphi(x)$, and then apply UG. The
 variable $x$ must remain unconstrained throughout.
@@ -69,6 +81,15 @@ variable $x$ must remain unconstrained throughout.
 % ---------------------------------------------------------
 % Existential Instantiation
 % ---------------------------------------------------------
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:universal-q]{Universal Quantifier}
+  \item \hyperref[def:subst-notation]{Substitution Notation}
+  \item \hyperref[def:free-for]{Free for Substitution}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Existential Instantiation --- EI)}
 \begin{definition}[Existential Instantiation --- EI]\label{def:ei}
 From an existentially quantified statement, infer an instance with a fresh
@@ -78,24 +99,25 @@ constant (witness):
 \]
 \end{definition}
 \end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+For every admissible object satisfying the hypotheses of the statement, the
+assertion holds in the formal language under discussion.
+\end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:existential-q]{Existential Quantifier}
-  \item \hyperref[def:constant-symbol]{Constant Symbol}
-  \item \hyperref[def:subst-notation]{Substitution Notation}
-  \item \hyperref[def:free-for]{Free for Substitution}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
+\end{remark*}
 
-\begin{remark*}[Witness discipline for EI]
+
+\begin{remark*}[Exposition]
 The constant $c$ must be fresh: it must not appear in $\varphi$, in any
 undischarged assumption, or in the final conclusion of the proof. The constant
 represents an arbitrary but fixed witness to the existential claim, not a
 specific known object.
 \end{remark*}
 
-\begin{remark*}[Common error]
+\begin{remark*}[Exposition]
 Using a witness constant introduced by EI outside its allowed scope, or
 choosing $c$ before establishing the existential premise, invalidates the proof.
 \end{remark*}
@@ -103,6 +125,15 @@ choosing $c$ before establishing the existential premise, invalidates the proof.
 % ---------------------------------------------------------
 % Existential Generalization
 % ---------------------------------------------------------
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:universal-q]{Universal Quantifier}
+  \item \hyperref[def:subst-notation]{Substitution Notation}
+  \item \hyperref[def:free-for]{Free for Substitution}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Existential Generalization --- EG)}
 \begin{definition}[Existential Generalization --- EG]\label{def:eg}
 From a formula containing a term, infer an existential statement:
@@ -111,6 +142,29 @@ From a formula containing a term, infer an existential statement:
 \]
 \end{definition}
 \end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+For every admissible object satisfying the hypotheses of the statement, the
+assertion holds in the formal language under discussion.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
+\end{remark*}
+
+
+\begin{remark*}[Exposition]
+EG has no side conditions: any term $t$ may be replaced by an existentially
+quantified variable. To prove $\exists x\,\varphi(x)$, explicitly exhibit a
+term $t$ such that $\varphi(t)$ holds, then apply EG.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+To refute $\forall x\,\varphi(x)$: produce a single term $t$ such that
+$\neg\varphi(t)$ holds. To refute $\exists x\,\varphi(x)$: show that $\varphi(t)$
+fails for every term $t$ in the domain.
+\end{remark*}
+
 
 \begin{dependencies}
 \begin{itemize}
@@ -119,15 +173,3 @@ From a formula containing a term, infer an existential statement:
   \item \hyperref[def:subst-notation]{Substitution Notation}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[No side conditions]
-EG has no side conditions: any term $t$ may be replaced by an existentially
-quantified variable. To prove $\exists x\,\varphi(x)$, explicitly exhibit a
-term $t$ such that $\varphi(t)$ holds, then apply EG.
-\end{remark*}
-
-\begin{remark*}[Counterexample argument]
-To refute $\forall x\,\varphi(x)$: produce a single term $t$ such that
-$\neg\varphi(t)$ holds. To refute $\exists x\,\varphi(x)$: show that $\varphi(t)$
-fails for every term $t$ in the domain.
-\end{remark*}

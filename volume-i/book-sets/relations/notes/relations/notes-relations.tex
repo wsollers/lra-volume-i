@@ -24,6 +24,26 @@ as
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall a\,\forall b\,\exists p\,
+  \bigl(p=(a,b)\wedge p=\{\{a\},\{a,b\}\}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{OrderedPair}(p,a,b)
+  \iff
+  p=\{\{a\},\{a,b\}\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An ordered pair packages two objects in a way that remembers which component
+is first and which component is second.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[ax:pairing]{Axiom of Pairing}
@@ -45,6 +65,31 @@ For any sets $a,b,c,d$,
 \begin{remark*}[Standard quantified statement]
 $\forall a, b, c, d:\; (a,b) = (c,d) \;\leftrightarrow\; (a = c \wedge b = d)$.
 \end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{OrderedPair}(p,a,b)
+  \wedge
+  \operatorname{OrderedPair}(q,c,d)
+  \wedge p=q
+  \iff
+  (a=c\wedge b=d).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Equality of ordered pairs is componentwise equality. The theorem is the
+justification for using ordered-pair notation as ordered data rather than as
+an unordered set.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The purpose of the Kuratowski definition is purely to guarantee the uniqueness
+theorem above. Once $(a,b) = (c,d) \iff a=c \land b=d$ is established,
+ordered pairs may be treated as primitives with this property and the
+encoding.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-pair]{Ordered Pair}
@@ -52,13 +97,6 @@ $\forall a, b, c, d:\; (a,b) = (c,d) \;\leftrightarrow\; (a = c \wedge b = d)$.
   \item \hyperref[ax:extensionality]{Axiom of Extensionality}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Kuratowski encoding]
-The purpose of the Kuratowski definition is purely to guarantee the uniqueness
-theorem above. Once $(a,b) = (c,d) \iff a=c \land b=d$ is established,
-we may treat ordered pairs as a primitive with this property and forget the
-encoding.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Cartesian Product --- as foundation for relations)}
 \begin{definition}[Cartesian Product --- as foundation for relations]\label{def:cartesian-product-rel}
@@ -70,6 +108,29 @@ A \times B
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\forall B\,\forall x,\quad
+  x\in A\times B
+  \iff
+  \exists a\in A\,\exists b\in B,\ x=(a,b).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{CartesianProduct}(P,A,B)
+  \iff
+  \forall x,\ x\in P \leftrightarrow
+  \exists a\in A\,\exists b\in B,\ x=(a,b).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Cartesian product is the set of all ordered pairs whose first coordinate
+comes from $A$ and whose second coordinate comes from $B$.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -89,6 +150,38 @@ When $A = B$ we say $R$ is a \emph{relation on $A$}.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  R \text{ is a relation from } A \text{ to } B
+  \iff
+  R\subseteq A\times B.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationFrom}(R,A,B)
+  \iff
+  R\subseteq A\times B.
+\]
+\[
+  \operatorname{RelationOn}(R,A)
+  \iff
+  \operatorname{RelationFrom}(R,A,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A relation is a set of ordered pairs. It may relate some inputs to no outputs,
+one output, or many outputs unless additional function-like conditions are
+imposed later.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Relations introduce no new foundational objects: they are simply sets of
+ordered pairs, constructed using operations already available. Properties of
+relations can therefore be studied with ordinary set-theoretic reasoning.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -96,12 +189,6 @@ When $A = B$ we say $R$ is a \emph{relation on $A$}.
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Relations as structured sets]
-Relations introduce no new foundational objects: they are simply sets of
-ordered pairs, constructed using operations already available. Properties of
-relations can therefore be studied with ordinary set-theoretic reasoning.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Domain of a Relation)}
 \begin{definition}[Domain of a Relation]\label{def:relation-domain}
@@ -113,6 +200,28 @@ Let $R\subseteq A\times B$ be a relation. The \emph{domain} of $R$ is
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall a\in A,\quad
+  a\in\operatorname{Dom}(R)
+  \iff
+  \exists b\in B,\ (a,b)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationDomainElement}(a,R,A,B)
+  \iff
+  a\in A \wedge \exists b\in B,\ (a,b)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The domain of a relation records exactly the first coordinates that actually
+occur in related pairs.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -133,17 +242,39 @@ Tarski also calls this class the \emph{counter-domain} or \emph{converse domain}
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall b\in B,\quad
+  b\in\operatorname{Ran}(R)
+  \iff
+  \exists a\in A,\ (a,b)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationRangeElement}(b,R,A,B)
+  \iff
+  b\in B \wedge \exists a\in A,\ (a,b)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The range of a relation records exactly the second coordinates that actually
+occur in related pairs.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The domain records the first coordinates that occur in a relation; the range
+records the second coordinates that occur.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
   \item \hyperref[ax:separation]{Axiom Schema of Separation}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Domain and range]
-The domain records the first coordinates that occur in a relation; the range
-records the second coordinates that occur.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Converse Relation)}
 \begin{definition}[Converse Relation]\label{def:converse-relation}
@@ -157,6 +288,27 @@ $R^{-1}\subseteq B\times A$ defined by
 Equivalently, $b\,R^{-1}\,a$ iff $aRb$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall a\in A\,\forall b\in B,\quad
+  (b,a)\in R^{-1}
+  \iff
+  (a,b)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{ConverseRelationElement}(b,a,R)
+  \iff
+  (a,b)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The converse relation reverses every ordered pair of the original relation.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -176,6 +328,28 @@ For a set $A$, the \emph{identity relation} on $A$ is
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\,\forall y,\quad
+  (x,y)\in\Delta_A
+  \iff
+  x\in A \wedge y\in A \wedge x=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{IdentityRelation}(\Delta_A,A)
+  \iff
+  \forall x\,\forall y,\ ((x,y)\in\Delta_A \leftrightarrow x\in A \wedge y\in A \wedge x=y).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The identity relation is the diagonal relation on $A$: each element is related
+only to itself.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -194,6 +368,28 @@ Let $R\subseteq A\times B$ and $S\subseteq B\times C$. The
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall a\in A\,\forall c\in C,\quad
+  (a,c)\in S\circ R
+  \iff
+  \exists b\in B,\ ((a,b)\in R\wedge(b,c)\in S).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationCompositionElement}(a,c,S,R)
+  \iff
+  \exists b,\ ((a,b)\in R\wedge(b,c)\in S).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Relation composition follows an $R$-step and then an $S$-step through a shared
+middle element.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -219,6 +415,12 @@ $b\in B$ and $c\in C$ with $(a,b)\in R$, $(b,c)\in S$, and $(c,d)\in T$,
 which is exactly the membership condition for $(a,d)\in (T\circ S)\circ R$.
 \end{remark*}
 
+\begin{remark*}[Interpretation]
+Associativity says that a three-step relational path has the same endpoints
+regardless of whether the first two steps or the last two steps are grouped
+first.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation-composition]{Composition of Relations}
@@ -238,6 +440,21 @@ R\circ\Delta_A=R
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall R\subseteq A\times B,\quad
+  R\circ\Delta_A=R
+  \wedge
+  \Delta_B\circ R=R.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Composing with the identity relation leaves a relation unchanged on the
+appropriate side, just as composing a function with an identity function leaves
+the function unchanged.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation-identity]{Identity Relation}
@@ -252,6 +469,26 @@ $\varnothing\subseteq A\times B$. No element of $A$ is related to any element
 of $B$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  R=\varnothing \subseteq A\times B
+  \iff
+  \forall a\in A\,\forall b\in B,\ (a,b)\notin R.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{NullRelation}(R,A,B)
+  \iff
+  R=\varnothing \wedge R\subseteq A\times B.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The null relation has no arrows from $A$ to $B$.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -268,17 +505,37 @@ $A\times B$ itself. Every element of $A$ is related to every element of $B$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  R=A\times B
+  \iff
+  \forall a\in A\,\forall b\in B,\ (a,b)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{UniversalRelation}(R,A,B)
+  \iff
+  R=A\times B.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The universal relation relates every element of $A$ to every element of $B$.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The null relation and universal relation are the two extreme binary relations
+from $A$ to $B$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
   \item \hyperref[def:cartesian-product-rel]{Cartesian Product}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Extreme relations]
-The null relation and universal relation are the two extreme binary relations
-from $A$ to $B$.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Relation Inclusion)}
 \begin{definition}[Relation Inclusion]\label{def:relation-inclusion}
@@ -290,6 +547,27 @@ R\subseteq S
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  R\subseteq S
+  \iff
+  \forall a\in A\,\forall b\in B,\ ((a,b)\in R\to(a,b)\in S).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationInclusion}(R,S,A,B)
+  \iff
+  \forall a\in A\,\forall b\in B,\ ((a,b)\in R\to(a,b)\in S).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Relation inclusion is ordinary subset inclusion applied to sets of ordered
+pairs.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -308,6 +586,30 @@ R\subseteq S \text{ and } S\subseteq R.
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  R=S
+  \iff
+  \operatorname{RelationInclusion}(R,S,A,B)
+  \wedge
+  \operatorname{RelationInclusion}(S,R,A,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationEquality}(R,S,A,B)
+  \iff
+  \operatorname{RelationInclusion}(R,S,A,B)
+  \wedge
+  \operatorname{RelationInclusion}(S,R,A,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two relations are equal when they contain exactly the same ordered pairs.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -328,6 +630,28 @@ Let $R,S\subseteq A\times B$. The \emph{union} $R\cup S$ is the relation with
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall a\in A\,\forall b\in B,\quad
+  (a,b)\in R\cup S
+  \iff
+  ((a,b)\in R\vee(a,b)\in S).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationFrom}(R\cup S,A,B)
+  \iff
+  \forall a\in A\,\forall b\in B,\ ((a,b)\in R\cup S \leftrightarrow ((a,b)\in R\vee(a,b)\in S)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Union of relations keeps every ordered pair that appears in at least one of
+the two relations.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -346,6 +670,28 @@ with
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall a\in A\,\forall b\in B,\quad
+  (a,b)\in R\cap S
+  \iff
+  ((a,b)\in R\wedge(a,b)\in S).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationFrom}(R\cap S,A,B)
+  \iff
+  \forall a\in A\,\forall b\in B,\ ((a,b)\in R\cap S \leftrightarrow ((a,b)\in R\wedge(a,b)\in S)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Intersection of relations keeps exactly the ordered pairs that appear in both
+relations.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -366,6 +712,28 @@ relation with
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall a\in A\,\forall b\in B,\quad
+  (a,b)\in R\setminus S
+  \iff
+  ((a,b)\in R\wedge(a,b)\notin S).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationFrom}(R\setminus S,A,B)
+  \iff
+  \forall a\in A\,\forall b\in B,\ ((a,b)\in R\setminus S \leftrightarrow ((a,b)\in R\wedge(a,b)\notin S)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Difference of relations keeps the ordered pairs in $R$ after removing the
+ordered pairs that also lie in $S$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -383,17 +751,39 @@ $A\times B$ is
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall a\in A\,\forall b\in B,\quad
+  (a,b)\in (A\times B)\setminus R
+  \iff
+  (a,b)\notin R.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationFrom}((A\times B)\setminus R,A,B)
+  \iff
+  \forall a\in A\,\forall b\in B,\ ((a,b)\in (A\times B)\setminus R \leftrightarrow (a,b)\notin R).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The complement of a relation is computed relative to a fixed Cartesian
+product, so it consists of the missing ordered pairs in that ambient product.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Relation inclusion, equality, union, intersection, difference, and complement
+are inherited from the corresponding set operations on subsets of $A\times B$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
   \item \hyperref[def:set-difference]{Set Difference}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Relation algebra operations]
-Relation inclusion, equality, union, intersection, difference, and complement
-are inherited from the corresponding set operations on subsets of $A\times B$.
-\end{remark*}
 
 \begin{theorembox}{Theorem (Converse Laws for Relation Operations)}
 \begin{theorem}[Converse Laws for Relation Operations]\label{thm:relation-converse-laws}
@@ -414,6 +804,31 @@ relative to the indicated Cartesian products. Then
 \hyperref[prf:relation-converse-laws]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall R,S\subseteq A\times B\,\forall T\subseteq B\times C,
+  \quad
+  (R^{-1})^{-1}=R
+  \wedge
+  (T\circ R)^{-1}=R^{-1}\circ T^{-1},
+\]
+with converse also preserving union, intersection, difference, and relative
+complement as stated above.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationEquality}((R^{-1})^{-1},R,A,B)
+  \wedge
+  \operatorname{RelationEquality}((T\circ R)^{-1},R^{-1}\circ T^{-1},C,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking converses reverses the order of relation composition and commutes with
+the Boolean operations inherited from sets.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -447,15 +862,30 @@ or under extra hypotheses; they are not general distributive laws.
 \end{theorem}
 \end{theorembox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:relation-composition]{Composition of Relations}
-  \item \hyperref[def:relation-union]{Union of Relations}
-  \item \hyperref[def:relation-intersection]{Intersection of Relations}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall P,Q\subseteq A\times B\,\forall R\subseteq B\times C,\quad
+  R\circ(P\cup Q)=(R\circ P)\cup(R\circ Q),
+\]
+and relation composition over intersections gives the stated inclusions in
+general.
+\end{remark*}
 
-\begin{remark*}[Warning on relation composition]
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationEquality}(R\circ(P\cup Q),(R\circ P)\cup(R\circ Q),A,C)
+  \wedge
+  \operatorname{RelationInclusion}(R\circ(P\cap Q),(R\circ P)\cap(R\circ Q),A,C).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Composition distributes exactly over union because a middle witness can be
+chosen from either side of the union. For intersection, the two composed
+relations may use different middle witnesses.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 Relation composition distributes over unions on both sides. It does not
 generally distribute over intersections, differences, or complements. The
 reason is existential: a pair can lie in both composed relations using two
@@ -463,7 +893,7 @@ different middle witnesses, even when no single witness satisfies both
 conditions at once.
 \end{remark*}
 
-\begin{remark*}[Relation algebra interaction table]
+\begin{remark*}[Exposition]
 \mbox{}\par\smallskip
 \small
 \begin{tabularx}{\textwidth}{l X X}
@@ -489,12 +919,46 @@ Composition
 \end{tabularx}
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation-composition]{Composition of Relations}
+  \item \hyperref[def:relation-union]{Union of Relations}
+  \item \hyperref[def:relation-intersection]{Intersection of Relations}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Transitive Closure)}
 \begin{definition}[Transitive Closure]\label{def:relation-transitive-closure}
 Let $R$ be a relation on $A$. The \emph{transitive closure} of $R$ is the
 smallest transitive relation on $A$ containing $R$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  T \text{ is the transitive closure of } R
+  \iff
+  R\subseteq T
+  \wedge \operatorname{Transitive}(T,A)
+  \wedge
+  \forall U,\ ((R\subseteq U\wedge \operatorname{Transitive}(U,A))\to T\subseteq U).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationInclusion}(R,T,A,A)
+  \wedge
+  \operatorname{Transitive}(T,A)
+  \wedge
+  \forall U,\ ((\operatorname{RelationInclusion}(R,U,A,A)\wedge \operatorname{Transitive}(U,A))\to \operatorname{RelationInclusion}(T,U,A,A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The transitive closure adds exactly the relation pairs needed to make
+transitive chaining valid.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -510,6 +974,32 @@ Let $R$ be a relation on $A$. The \emph{equivalence closure} of $R$ is the
 smallest equivalence relation on $A$ containing $R$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  E \text{ is the equivalence closure of } R
+  \iff
+  R\subseteq E
+  \wedge \operatorname{EquivalenceRelation}(E,A)
+  \wedge
+  \forall U,\ ((R\subseteq U\wedge \operatorname{EquivalenceRelation}(U,A))\to E\subseteq U).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{RelationInclusion}(R,E,A,A)
+  \wedge
+  \operatorname{EquivalenceRelation}(E,A)
+  \wedge
+  \forall U,\ ((\operatorname{RelationInclusion}(R,U,A,A)\wedge \operatorname{EquivalenceRelation}(U,A))\to \operatorname{RelationInclusion}(E,U,A,A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The equivalence closure adds exactly the relation pairs needed to make the
+relation reflexive, symmetric, and transitive.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -530,6 +1020,25 @@ $R$ is \emph{one-to-many} if some input is related to two distinct outputs:
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists a\in A\,\exists b_1,b_2\in B,\quad
+  (a,b_1)\in R\wedge(a,b_2)\in R\wedge b_1\neq b_2.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{OneToManyRelation}(R,A,B)
+  \iff
+  \exists a\in A\,\exists b_1,b_2\in B,\ ((a,b_1)\in R\wedge(a,b_2)\in R\wedge b_1\neq b_2).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+One-to-many means that at least one input has two distinct related outputs.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -547,6 +1056,25 @@ $R$ is \emph{many-to-one} if two distinct inputs are related to a common output:
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists a_1,a_2\in A\,\exists b\in B,\quad
+  (a_1,b)\in R\wedge(a_2,b)\in R\wedge a_1\neq a_2.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{ManyToOneRelation}(R,A,B)
+  \iff
+  \exists a_1,a_2\in A\,\exists b\in B,\ ((a_1,b)\in R\wedge(a_2,b)\in R\wedge a_1\neq a_2).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Many-to-one means that two distinct inputs share at least one related output.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -560,23 +1088,48 @@ $R$ is \emph{many-to-many} if it is one-to-many and many-to-one.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  R \text{ is many-to-many}
+  \iff
+  \operatorname{OneToManyRelation}(R,A,B)
+  \wedge
+  \operatorname{ManyToOneRelation}(R,A,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{ManyToManyRelation}(R,A,B)
+  \iff
+  \operatorname{OneToManyRelation}(R,A,B)
+  \wedge
+  \operatorname{ManyToOneRelation}(R,A,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Many-to-many combines both failures of uniqueness: one input can branch to
+multiple outputs, and multiple inputs can share an output.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The one-to-many, many-to-one, and many-to-many labels classify how many inputs
+and outputs can be connected by a relation.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+A one-to-many relation fails the determinacy condition needed for a function:
+one input admits at least two possible outputs. A many-to-one relation may
+still be a function, because different inputs are allowed to share an output.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:one-to-many-relation]{One-to-Many Relation}
   \item \hyperref[def:many-to-one-relation]{Many-to-One Relation}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Relation cardinality patterns]
-The one-to-many, many-to-one, and many-to-many labels classify how many inputs
-and outputs can be connected by a relation.
-\end{remark*}
-
-\begin{remark*}[Why one-to-many is not functional]
-A one-to-many relation fails the determinacy condition needed for a function:
-one input admits at least two possible outputs. A many-to-one relation may
-still be a function, because different inputs are allowed to share an output.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Many-Place Relation)}
 \begin{definition}[Many-Place Relation]\label{def:many-place-relation}
@@ -592,14 +1145,27 @@ $x$, $y$, and $z$.
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:relation]{Relation}
-  \item \hyperref[def:cartesian-product-rel]{Cartesian Product}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{ManyPlaceRelation}(R,n,(A_i)_{i=1}^n)
+  \iff
+  R\subseteq A_1\times\cdots\times A_n.
+\]
+\end{remark*}
 
-\begin{remark*}[Tarski-style hierarchy]
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{ManyPlaceRelation}(R,n,(A_i)_{i=1}^n)
+  \iff
+  R\subseteq A_1\times\cdots\times A_n.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An $n$-place relation relates $n$ coordinates at a time rather than just two.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The hierarchy used in the next chapter is:
 \[
 \begin{aligned}
@@ -617,3 +1183,10 @@ The hierarchy used in the next chapter is:
 The first step adds determinacy; the second adds totality; the later steps
 control whether outputs are shared or missed.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relation]{Relation}
+  \item \hyperref[def:cartesian-product-rel]{Cartesian Product}
+\end{itemize}
+\end{dependencies}

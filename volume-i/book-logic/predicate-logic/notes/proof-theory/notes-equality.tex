@@ -16,18 +16,28 @@
 For any term $t$, one may infer $t = t$.
 \end{definition}
 \end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+For every admissible object satisfying the hypotheses of the statement, the
+assertion holds in the formal language under discussion.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
+\end{remark*}
+
+
+\begin{remark*}[Exposition]
+Reflexivity requires no premises and holds for all terms under all
+interpretations. It is the foundational rule that allows equality reasoning to
+get off the ground.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:term]{Term}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[English reading]
-Reflexivity requires no premises and holds for all terms under all
-interpretations. It is the foundational rule that allows equality reasoning to
-get off the ground.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Equality Elimination
@@ -37,17 +47,18 @@ get off the ground.
 From $t_1 = t_2$ and $\varphi[t_1/x]$, one may infer $\varphi[t_2/x]$.
 \end{definition}
 \end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+For every admissible object satisfying the hypotheses of the statement, the
+assertion holds in the formal language under discussion.
+\end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:term]{Term}
-  \item \hyperref[def:formula]{Formula}
-  \item \hyperref[def:subst-notation]{Substitution Notation}
-  \item \hyperref[def:free-for]{Free for Substitution}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
+\end{remark*}
 
-\begin{remark*}[English reading]
+
+\begin{remark*}[Exposition]
 Equality elimination permits replacing a term by an equal term in any formula
 position, provided the substitution is capture-avoiding. This formalizes the
 intuition that equal things can be substituted for each other.
@@ -57,22 +68,35 @@ intuition that equal things can be substituted for each other.
 % Derived Rules
 % ---------------------------------------------------------
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:term]{Term}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem (Symmetry of Equality)}
 \begin{theorem}[Symmetry of Equality]\label{thm:eq-sym}
 From $t_1 = t_2$, one may infer $t_2 = t_1$.
 \hyperref[prf:eq-sym]{Go to proof.}
 \end{theorem}
 \end{theorembox}
-
 \begin{remark*}[Standard quantified statement]
 $\forall t_1, t_2:\; t_1=t_2 \to t_2=t_1$.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The predicate form says that equality is symmetric: any ordered pair of equal
+terms may be read in either order.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Symmetry licenses reversing an established equality without adding new
+mathematical information.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:eq-refl]{Equality Introduction}
-  \item \hyperref[def:eq-elim]{Equality Elimination}
+  \item \hyperref[def:term]{Term}
 \end{itemize}
 \end{dependencies}
 
@@ -82,14 +106,23 @@ From $t_1 = t_2$ and $t_2 = t_3$, one may infer $t_1 = t_3$.
 \hyperref[prf:eq-trans]{Go to proof.}
 \end{theorem}
 \end{theorembox}
-
 \begin{remark*}[Standard quantified statement]
 $\forall t_1, t_2, t_3:\; t_1=t_2 \wedge t_2=t_3 \to t_1=t_3$.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The predicate form says that equality is transitive: two consecutive equality
+links compose into one equality conclusion.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Transitivity is the equality rule that lets a proof chain substitutions through
+intermediate terms.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:term]{Term}
   \item \hyperref[def:eq-refl]{Equality Introduction}
   \item \hyperref[def:eq-elim]{Equality Elimination}
 \end{itemize}
@@ -102,10 +135,20 @@ $f(\dots,t_1,\dots) = f(\dots,t_2,\dots)$.
 \hyperref[prf:eq-term]{Go to proof.}
 \end{theorem}
 \end{theorembox}
-
 \begin{remark*}[Standard quantified statement]
 $\forall t_1, t_2:\; t_1=t_2 \to \forall$ function symbol $f$: $f(\dots,t_1,\dots) = f(\dots,t_2,\dots)$.
 \end{remark*}
+
+\begin{remark*}[Predicate reading]
+The predicate form records the relation or property named by the statement in
+the displayed logical context.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
+\end{remark*}
+
 
 
 \begin{dependencies}
@@ -121,9 +164,33 @@ $P(\dots,t_1,\dots) \;\Leftrightarrow\; P(\dots,t_2,\dots)$.
 \hyperref[prf:eq-pred]{Go to proof.}
 \end{theorem}
 \end{theorembox}
-
 \begin{remark*}[Standard quantified statement]
 $\forall t_1, t_2:\; t_1=t_2 \to \forall$ predicate symbol $P$: $P(\dots,t_1,\dots) \leftrightarrow P(\dots,t_2,\dots)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The predicate form records the relation or property named by the statement in
+the displayed logical context.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
+\end{remark*}
+
+
+
+\begin{remark*}[Exposition]
+These derived rules collectively express that functions and predicates
+\emph{respect equality}: equal inputs produce equal outputs (for functions) or
+equivalent propositions (for predicates). Together they amount to the principle
+of Leibniz substitutivity.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+When substituting equals for equals, the substitution must be made consistently.
+Replacing a term by an equal in one occurrence but not another in the same
+formula can produce incorrect conclusions.
 \end{remark*}
 
 
@@ -132,16 +199,3 @@ $\forall t_1, t_2:\; t_1=t_2 \to \forall$ predicate symbol $P$: $P(\dots,t_1,\do
   \item \hyperref[def:eq-elim]{Equality Elimination}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Summary]
-These derived rules collectively express that functions and predicates
-\emph{respect equality}: equal inputs produce equal outputs (for functions) or
-equivalent propositions (for predicates). Together they amount to the principle
-of Leibniz substitutivity.
-\end{remark*}
-
-\begin{remark*}[Common error]
-When substituting equals for equals, the substitution must be made consistently.
-Replacing a term by an equal in one occurrence but not another in the same
-formula can produce incorrect conclusions.
-\end{remark*}

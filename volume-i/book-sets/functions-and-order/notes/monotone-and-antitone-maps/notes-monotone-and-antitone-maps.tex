@@ -1,7 +1,7 @@
 
 \subsection*{Order-Preserving and Order-Reversing Behavior}
 
-\begin{remark*}[Order-reversing terminology]
+\begin{remark*}[Exposition]
 The orderings chapter defines an \hyperref[def:order-reversing-map]{order-reversing map}.
 Such maps are also called \emph{antitone}. This section uses that existing
 definition and studies how order-preserving and order-reversing maps interact
@@ -29,6 +29,40 @@ $x<y$ implies $f(y)<' f(x)$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x,y\in M,\quad
+  x<y\to f(x)<'f(y)
+  \qquad\text{or}\qquad
+  x<y\to f(y)<'f(x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{StrictOrderPreserving}(f,M,M')
+  \iff
+  \forall x,y\in M,\ (x<y\to f(x)<'f(y)).
+\]
+\[
+  \operatorname{StrictOrderReversing}(f,M,M')
+  \iff
+  \forall x,y\in M,\ (x<y\to f(y)<'f(x)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict monotonicity turns strict input comparisons into strict output
+comparisons, preserving or reversing their direction.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+In many analysis texts, ``monotone'' can mean increasing or decreasing, and
+``strictly monotone'' means strictly increasing or strictly decreasing. In this
+chapter, plain monotone means order-preserving unless the order-reversing case
+is named explicitly.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
@@ -36,13 +70,6 @@ $x<y$ implies $f(y)<' f(x)$.
   \item \hyperref[def:strict-partial-order]{Strict Partial Order}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Comment]
-In many analysis texts, ``monotone'' can mean increasing or decreasing, and
-``strictly monotone'' means strictly increasing or strictly decreasing. In this
-chapter, plain monotone means order-preserving unless the order-reversing case
-is named explicitly.
-\end{remark*}
 
 \begin{propositionbox}{Proposition (Constant Maps Are Monotone)}
 \begin{proposition}[Constant Maps Are Monotone]\label{prop:constant-maps-monotone}
@@ -52,6 +79,25 @@ $f:M\to M'$ is order-preserving.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{ConstantFunction}(f)
+  \to
+  \operatorname{OrderPreserving}(f,\leq,\leq').
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A constant function preserves order because all comparable inputs have equal
+outputs, and reflexivity supplies the output comparison.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The preceding proposition is the standard warning: monotone does not imply
+injective. If $M$ has two distinct elements, a constant map is monotone but
+not injective.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:constant]{Constant Function}
@@ -59,12 +105,6 @@ $f:M\to M'$ is order-preserving.
   \item \hyperref[def:reflexive]{Reflexive Relation}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Comment]
-The preceding proposition is the standard warning: monotone does not imply
-injective. If $M$ has two distinct elements, a constant map is monotone but
-not injective.
-\end{remark*}
 
 \begin{theorembox}{Theorem (Strict Monotonicity Implies Injectivity on Linear Orders)}
 \begin{theorem}[Strict Monotonicity Implies Injectivity on Linear Orders]\label{thm:strict-monotone-injective-linear}
@@ -75,6 +115,27 @@ $f$ is injective.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{TotalOrder}(L,\leq)
+  \wedge
+  f\text{ is strictly order-preserving or strictly order-reversing}
+  \to
+  \operatorname{Injective}(f).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+On a linear order, strict monotonicity separates every pair of distinct inputs.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+If a strictly monotone map on a linear order is not injective, then two
+comparable distinct inputs must have been sent to the same output. That
+contradicts strictness, because strictness demands a strict inequality between
+their outputs.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:strictly-monotone-map-functions-order]{Strictly Monotone Map}
@@ -82,13 +143,6 @@ $f$ is injective.
   \item \hyperref[def:injective]{Injective Function}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Comment]
-If a strictly monotone map on a linear order is not injective, then two
-comparable distinct inputs must have been sent to the same output. That
-contradicts strictness, because strictness demands a strict inequality between
-their outputs.
-\end{remark*}
 
 \subsection*{Composition Rules}
 
@@ -105,15 +159,21 @@ order-preserving, then $g\circ f$ is order-reversing.
 \end{theorem}
 \end{theorembox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:composition]{Composition}
-  \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
-  \item \hyperref[def:order-reversing-map]{Order-Reversing Map}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{OrderPreserving}(f)\wedge\operatorname{OrderPreserving}(g)
+  \to \operatorname{OrderPreserving}(g\circ f),
+\]
+with two reversing factors preserving order and exactly one reversing factor
+reversing order.
+\end{remark*}
 
-\begin{remark*}[Comment]
+\begin{remark*}[Interpretation]
+Composition multiplies order direction: two reversals cancel, and one reversal
+reverses.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The first item expands to
 \[
 a_1\leq a_2
@@ -124,3 +184,11 @@ g(f(a_1))\leq'' g(f(a_2)).
 \]
 The other cases differ only by the direction of the second inequality.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
+  \item \hyperref[def:order-reversing-map]{Order-Reversing Map}
+\end{itemize}
+\end{dependencies}

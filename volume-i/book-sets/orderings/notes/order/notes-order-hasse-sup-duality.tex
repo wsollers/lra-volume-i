@@ -28,16 +28,28 @@ Let $(A, \leq)$ be a poset and $a, b \in A$.  We say $b$ \emph{covers} $a$,
 written $a \lessdot b$, if $a < b$ and there is no $c \in A$ with
 $a < c < b$.
 \end{definition}
-\end{definitionbox}\begin{remark*}[Standard quantified statement]
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
 $a \lessdot b \;\leftrightarrow\; (a < b) \;\wedge\;
 \neg(\exists c \in A,\; a < c \;\wedge\; c < b)$.
 \end{remark*}
 
-\begin{remark*}[Intuition]
-\label{rem:cover-intuition}
+\begin{remark*}[Predicate reading]
+$\operatorname{CoverRelation}(a,b,\mathsf{PartiallyOrderedSet}(A,\leq))$
+means that $b$ covers $a$ in the poset: $a$ is strictly below $b$ and no
+element of $A$ lies strictly between them.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A cover relation records an immediate strict comparison with no intermediate
+element.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The cover relation strips the partial order down to its ``essential edges.''
-If $a \lessdot b$, then $b$ is the \emph{immediate successor} of $a$: you
-cannot insert anything between them.  In a finite poset, every strict
+If $a \lessdot b$, then $b$ is the \emph{immediate successor} of $a$: no
+element can be inserted between them.  In a finite poset, every strict
 relation $a < b$ factors as a finite chain of cover steps:
 $a = a_0 \lessdot a_1 \lessdot \cdots \lessdot a_k = b$.  In an infinite
 poset, this factorisation may fail (e.g., in $(\mathbb{R}, \leq)$, no two
@@ -71,16 +83,23 @@ whenever $a \lessdot b$.  Three graphical conventions apply:
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:partial-order]{Partial Order}
-  \item \hyperref[def:cover-relation]{Cover Relation}
-  \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+$\operatorname{HasseDiagram}(G,\mathsf{PartiallyOrderedSet}(A,\leq))$ means
+the vertices of $G$ are the elements of $A$ and its edges are exactly the cover
+relations $a\lessdot b$, drawn upward with reflexive and transitive edges
+suppressed.
+\end{remark*}
 
-\begin{remark*}[How to recover the full order]
-\label{rem:hasse-recovery}
+\begin{remark*}[Predicate reading]
+$\operatorname{HasseDiagram}(G,\mathsf{PartiallyOrderedSet}(A,\leq))$ records
+the cover relation of a finite poset as a graph.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A Hasse diagram is a lossless visual compression of a finite poset.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The full order can be read back from the Hasse diagram: $a \leq b$ if and
 only if either $a = b$ or there is an upward path in the diagram from $a$ to
 $b$ (a sequence of cover edges going strictly upward).  The diagram is therefore
@@ -88,8 +107,16 @@ a lossless encoding of the partial order, compressed by removing the redundant
 reflexive and transitive edges.
 \end{remark*}
 
-\begin{example*}[Divisibility on $\{1,2,3,4,6,12\}$]
-\label{ex:hasse-divisibility}
+\begin{remark*}[Exposition]
+For infinite posets such as $(\mathbb{N}, \leq)$, the cover relation is
+well-defined ($n \lessdot n+1$) but the full diagram cannot be drawn.  In
+$(\mathbb{R}, \leq)$ or $(\mathbb{Q}, \leq)$, the cover relation is empty:
+no two elements are in a cover relation.  Hasse diagrams are a practical
+visualisation tool for finite or schematic examples and should not be used
+as a proof device in infinite settings.
+\end{remark*}
+
+\begin{remark*}[Examples]
 Order the set $D = \{1, 2, 3, 4, 6, 12\}$ by divisibility ($a \leq b$ iff
 $a \mid b$).  The covers are:
 \[
@@ -111,10 +138,9 @@ they sit at the same level with no path connecting them.  The join
 $4 \vee 6 = 12 = \mathrm{lcm}(4,6)$ and the meet $4 \wedge 6 = 2 = \gcd(4,6)$
 are readable from the diagram as the lowest common ancestor and the highest
 common descendant, respectively.
-\end{example*}
+\end{remark*}
 
-\begin{example*}[Power set $\mathcal{P}(\{a,b,c\})$ under inclusion]
-\label{ex:hasse-power-set}
+\begin{remark*}[Examples]
 The Hasse diagram of $(\mathcal{P}(\{a,b,c\}), \subseteq)$ has four levels:
 $\varnothing$ at the bottom; the three singletons $\{a\},\{b\},\{c\}$ one
 level up; the three two-element sets $\{a,b\},\{a,c\},\{b,c\}$ above those;
@@ -122,17 +148,15 @@ and $\{a,b,c\}$ at the top.  Each singleton is covered by the two two-element
 sets containing it.  This diagram is the Boolean lattice $B_3$: it has a
 bottom ($\varnothing$), a top ($\{a,b,c\}$), and every element has a complement
 ($A' = \{a,b,c\} \setminus A$).
-\end{example*}
-
-\begin{remark*}[Limitation to finite posets]
-\label{rem:hasse-infinite}
-For infinite posets such as $(\mathbb{N}, \leq)$, the cover relation is
-well-defined ($n \lessdot n+1$) but the full diagram cannot be drawn.  In
-$(\mathbb{R}, \leq)$ or $(\mathbb{Q}, \leq)$, the cover relation is empty:
-no two elements are in a cover relation.  Hasse diagrams are a practical
-visualisation tool for finite or schematic examples and should not be used
-as a proof device in infinite settings.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:cover-relation]{Cover Relation}
+  \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Dual Poset
@@ -146,21 +170,35 @@ $(A, \leq^{\mathrm{op}})$.
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:partial-order]{Partial Order}
-  \item \hyperref[def:relation]{Relation}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+$\mathsf{DualPoset}(A,\geq)\leftrightarrow
+\mathsf{PartiallyOrderedSet}(A,\leq)\wedge
+\forall a,b\in A,\;a\geq b\leftrightarrow b\leq a$.
+\end{remark*}
 
-\begin{remark*}[Intuition]
-\label{rem:dual-intuition}
+\begin{remark*}[Predicate reading]
+$\mathsf{DualPoset}(A,\geq)$ is the order structure obtained from
+$\mathsf{PartiallyOrderedSet}(A,\leq)$ by reversing the comparison relation.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The dual poset keeps the same carrier set and reverses every comparison.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The dual poset is obtained by flipping the Hasse diagram upside down.  Every
 structural feature is preserved but reflected: elements at the top are now at
 the bottom, minimal elements become maximal, upper bounds become lower bounds,
 and suprema become infima and vice versa (as established in
 Proposition~\ref{prop:sup-inf-duality}).
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:relation]{Relation}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Duality Principle
@@ -189,18 +227,20 @@ language of $\leq$: $(A,\leq)\models\Phi \;\leftrightarrow\; (A,\geq)\models\Phi
 where $\Phi^*$ substitutes $\geq$ for every $\leq$.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:partial-order]{Partial Order}
-  \item \hyperref[def:relation]{Relation}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Predicate reading]
+$\operatorname{OrderDuality}(\Phi,\Phi^*,\mathsf{PartiallyOrderedSet}(A,\leq))$
+means that $\Phi$ holds in the original poset exactly when the dual statement
+$\Phi^*$ holds in the dual poset.
+\end{remark*}
 
-\begin{remark*}[Theorems come in pairs at no extra cost]
-\label{rem:duality-pairs}
+\begin{remark*}[Interpretation]
+Reversing the order relation turns every valid poset statement into a valid
+dual statement.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The duality principle means every proved theorem about posets automatically
-yields a second theorem --- its dual --- without any additional work.  You will
-encounter this repeatedly in analysis.  Here are the most important instances:
+yields a second theorem: its dual. Important instances include:
 \begin{itemize}
   \item \emph{Supremum $\leftrightarrow$ Infimum.}  Every theorem about
         $\sup$ yields a theorem about $\inf$ by duality.  In particular,
@@ -227,8 +267,7 @@ encounter this repeatedly in analysis.  Here are the most important instances:
 \end{itemize}
 \end{remark*}
 
-\begin{remark*}[Transition]
-\label{rem:hasse-transition}
+\begin{remark*}[Exposition]
 The order vocabulary developed across the order sections --- partial orders,
 total orders, well-orders, bounds, suprema, infima, lattices, directed sets,
 and duality --- is the complete toolkit for order-theoretic reasoning in analysis.
@@ -238,3 +277,11 @@ constructions, both of which use only the vocabulary established here.  In
 Volume~III, metric space arguments, the definition of compactness, and the
 construction of Lebesgue measure all draw on this vocabulary repeatedly.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:dual-poset]{Dual Poset}
+  \item \hyperref[def:relation]{Relation}
+\end{itemize}
+\end{dependencies}

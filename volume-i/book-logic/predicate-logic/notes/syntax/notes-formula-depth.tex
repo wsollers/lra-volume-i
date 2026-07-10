@@ -32,6 +32,30 @@ $\mathrm{depth}(\varphi)$, is a natural number defined recursively:
 \end{enumerate}
 \end{definition}
 \end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+For every admissible object satisfying the hypotheses of the statement, the
+assertion holds in the formal language under discussion.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The statement records the named logical notion or result together with its
+intended syntactic or semantic role.
+\end{remark*}
+
+
+\begin{remark*}[Exposition]
+The depth of a formula measures the maximum number of logical formation steps
+required to build the formula from atomic formulas. It corresponds to the height
+of the formula's syntactic parse tree.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Formula depth is the standard measure used in structural induction proofs over
+first-order formulas. The base case is depth~$0$ (atomic formulas); the
+inductive step handles each formation rule and assumes the result holds for
+sub-formulas of strictly smaller depth.
+\end{remark*}
+
 
 \begin{dependencies}
 \begin{itemize}
@@ -41,16 +65,3 @@ $\mathrm{depth}(\varphi)$, is a natural number defined recursively:
   \item \hyperref[def:existential-q]{Existential Quantifier}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[English reading]
-The depth of a formula measures the maximum number of logical formation steps
-required to build the formula from atomic formulas. It corresponds to the height
-of the formula's syntactic parse tree.
-\end{remark*}
-
-\begin{remark*}[Proof strategy]
-Formula depth is the standard measure used in structural induction proofs over
-first-order formulas. The base case is depth~$0$ (atomic formulas); the
-inductive step handles each formation rule and assumes the result holds for
-sub-formulas of strictly smaller depth.
-\end{remark*}

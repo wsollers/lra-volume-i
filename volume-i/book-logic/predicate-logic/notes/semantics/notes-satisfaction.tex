@@ -78,20 +78,24 @@ satisfied in \(M\) under \(s\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Satisfaction fails according to the outermost formation rule of the formula:
+\begin{description}
+  \item[Exposition.] Satisfaction fails according to the outermost formation rule of the formula:
 an atomic tuple can miss the interpreted relation, equality can compare
 different term values, a connective can have the wrong truth pattern, or a
 quantifier can have a counterexample or lack a witness.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{(\llbracket t_i\rrbracket)\notin I(P)}_{\text{atomic failure}}
 \quad
 \underbrace{\llbracket t_1\rrbracket\neq\llbracket t_2\rrbracket}_{\text{equality failure}}
 \quad
 \underbrace{\exists d\in D\;(\mathcal M,s[x\mapsto d]\not\models\psi)}_{\text{universal failure}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -150,17 +154,21 @@ false in \(M\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Truth in a structure fails when some assignment makes the sentence fail. For
+\begin{description}
+  \item[Exposition.] Truth in a structure fails when some assignment makes the sentence fail. For
 sentences, this is independent of assignment, but the quantified form keeps the
 definition uniform with satisfaction.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{\exists s}_{\text{assignment witness}}
 \quad
 \underbrace{\mathcal M,s\not\models\varphi}_{\text{satisfaction failure}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -211,17 +219,21 @@ assignment make \(\varphi\) fail.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Validity fails by a counterexample structure together with an assignment.
+\begin{description}
+  \item[Exposition.] Validity fails by a counterexample structure together with an assignment.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{\mathcal M}_{\text{counterexample structure}}
 \qquad
 \underbrace{s}_{\text{counterexample assignment}}
 \qquad
 \underbrace{\mathcal M,s\not\models\varphi}_{\text{failure of satisfaction}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -271,18 +283,22 @@ assignment satisfy \(\varphi\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Satisfiability fails only globally: every attempted structure and assignment
+\begin{description}
+  \item[Exposition.] Satisfiability fails only globally: every attempted structure and assignment
 fails to satisfy the formula.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{\forall \mathcal M}_{\text{all structures}}
 \quad
 \underbrace{\forall s}_{\text{all assignments}}
 \quad
 \underbrace{\mathcal M,s\not\models\varphi}_{\text{no satisfying instance}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

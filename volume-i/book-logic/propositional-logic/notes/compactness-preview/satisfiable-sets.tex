@@ -53,12 +53,15 @@ means that every truth assignment fails on at least one formula in \(\Gamma\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Satisfiability fails when every truth assignment is blocked by at least one
+\begin{description}
+  \item[Exposition.] Satisfiability fails when every truth assignment is blocked by at least one
 formula in \(\Gamma\).
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \neg\operatorname{SatisfiableSet}(\Gamma)
 \Longleftrightarrow
 \forall v\,\Bigl(\operatorname{TruthAssignment}(v)\Rightarrow
@@ -66,6 +69,7 @@ formula in \(\Gamma\).
 \]
 Thus \(\Gamma\) is not satisfiable exactly when every truth assignment is
 defeated by at least one formula from \(\Gamma\).
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

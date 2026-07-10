@@ -19,18 +19,40 @@ When $R$ is clear from context, we write $[a]$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A,\quad
+  x\in [a]_R
+  \iff
+  (a,x)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{EquivalenceClass}(C,a,R,A)
+  \iff
+  \forall x,\ (x\in C \leftrightarrow x\in A \wedge (a,x)\in R).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An equivalence class collects all elements that are equivalent to a fixed
+representative.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+$[a]_R$ is the set of all elements that $R$ declares ``the same as $a$.''
+Two elements lie in the same class iff they are related: this is precisely
+the Representative Independence Lemma below.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:equivalence-rel]{Equivalence Relation}
   \item \hyperref[def:relation]{Relation}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[English reading]
-$[a]_R$ is the set of all elements that $R$ declares ``the same as $a$.''
-Two elements lie in the same class iff they are related: this is precisely
-the Representative Independence Lemma below.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Quotient Set)}
 \begin{definition}[Quotient Set]\label{def:quotient-set}
@@ -40,6 +62,27 @@ A / R \;:=\; \{\, [a]_R \mid a \in A \,\}.
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall C,\quad
+  C\in A/R
+  \iff
+  \exists a\in A,\ C=[a]_R.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{QuotientSet}(Q,A,R)
+  \iff
+  \forall C,\ (C\in Q \leftrightarrow \exists a\in A,\ \operatorname{EquivalenceClass}(C,a,R,A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The quotient set replaces elements of $A$ by their equivalence classes.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -57,6 +100,10 @@ of equivalence classes.
 
 \begin{remark*}[Standard quantified statement]
 $\mathrm{index}(R) = |A/R| = |\{[a]_R \mid a \in A\}|$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The index counts how many equivalence classes the relation creates.
 \end{remark*}
 
 \begin{dependencies}
@@ -77,11 +124,37 @@ The \emph{canonical surjection} (quotient map) is the function
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[Forward reference]
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall a\in A,\quad
+  \pi(a)=[a]_R.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{CanonicalQuotientMap}(\pi,A,R,A/R)
+  \iff
+  \forall a\in A,\ \pi(a)=[a]_R.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The canonical quotient map sends each element to the class it represents.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 This definition uses the function vocabulary developed in the next chapter.
 It is included here because quotient sets are naturally introduced with their
 canonical map; proofs using its function-theoretic properties may be revisited
 after the function chapter.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+$\pi$ is surjective by construction. Elements $a, b \in A$ satisfy
+$\pi(a) = \pi(b)$ iff $(a,b) \in R$. The canonical surjection is the
+prototype for all quotient constructions: it reappears as the quotient
+homomorphism in algebra and the quotient map in topology.
 \end{remark*}
 
 \begin{dependencies}
@@ -92,13 +165,6 @@ after the function chapter.
   \item \hyperref[def:surjective]{Surjective Function}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Properties of $\pi$]
-$\pi$ is surjective by construction. Elements $a, b \in A$ satisfy
-$\pi(a) = \pi(b)$ iff $(a,b) \in R$. The canonical surjection is the
-prototype for all quotient constructions: it reappears as the quotient
-homomorphism in algebra and the quotient map in topology.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Partition)}
 \begin{definition}[Partition]\label{def:partition}
@@ -114,6 +180,41 @@ The sets $P \in \mathcal{P}$ are called the \emph{blocks} of the partition.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Partition}(\mathcal{P},A)
+  \iff
+  \Bigl(\forall P\in\mathcal{P},\ P\neq\varnothing\Bigr)
+  \wedge
+  \Bigl(\forall P,Q\in\mathcal{P},\ P\neq Q\to P\cap Q=\varnothing\Bigr)
+  \wedge
+  \bigcup_{P\in\mathcal{P}}P=A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Partition}(\mathcal{P},A)
+  \iff
+  \Bigl(\forall P\in\mathcal{P},\ P\neq\varnothing\Bigr)
+  \wedge
+  \Bigl(\forall P,Q\in\mathcal{P},\ P\neq Q\to P\cap Q=\varnothing\Bigr)
+  \wedge
+  \operatorname{Covers}(\mathcal{P},A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A partition cuts a set into nonempty pieces with no overlap between distinct
+pieces and no elements left uncovered.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Every partition of $A$ is a cover of $A$ whose members are nonempty and
+pairwise disjoint. Partitions are precisely the covers satisfying the
+disjointness condition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:subset]{Subset}
@@ -123,12 +224,6 @@ The sets $P \in \mathcal{P}$ are called the \emph{blocks} of the partition.
   \item \hyperref[def:cover-full]{Cover}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Partition vs.\ cover]
-Every partition of $A$ is a cover of $A$ whose members are nonempty and
-pairwise disjoint. Partitions are precisely the covers satisfying the
-disjointness condition.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Core Lemma and Theorem
@@ -149,6 +244,27 @@ Let $R$ be an equivalence relation on $A$. For any $a,b \in A$,
 \begin{remark*}[Standard quantified statement]
 $\forall a, b \in A:\; [a]_R = [b]_R \;\leftrightarrow\; (a,b)\in R$.
 \end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \forall a,b\in A,\quad
+  \operatorname{SetEqual}([a]_R,[b]_R)
+  \iff
+  (a,b)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The equivalence class does not depend on the chosen representative: two
+representatives determine the same class exactly when they are equivalent.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+This lemma is the key fact underlying well-definedness of functions on quotient
+sets: a function $f : A \to B$ defined by $f([a]) = \cdots$ is well-defined
+iff the formula gives the same output for all representatives of $[a]$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:equivalence-rel]{Equivalence Relation}
@@ -157,12 +273,6 @@ $\forall a, b \in A:\; [a]_R = [b]_R \;\leftrightarrow\; (a,b)\in R$.
   \item \hyperref[def:quotient-set]{Quotient Set}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Well-definedness on quotient sets]
-This lemma is the key fact underlying well-definedness of functions on quotient
-sets: a function $f : A \to B$ defined by $f([a]) = \cdots$ is well-defined
-iff the formula gives the same output for all representatives of $[a]$.
-\end{remark*}
 
 \begin{theorembox}{Theorem (Equivalence Relations and Partitions)}
 \begin{theorem}[Equivalence Relations and Partitions]\label{thm:equiv-partition}
@@ -186,6 +296,43 @@ is an equivalence relation on $A$.
 (i) $\forall a \in A,\; [a]_R \neq \varnothing$; $\forall a,b \in A,\; [a]_R \neq [b]_R \to [a]_R \cap [b]_R = \varnothing$; $\bigcup_{a \in A}[a]_R = A$.\\
 (ii) $\forall a,b \in A:\; (a,b) \in R_{\mathcal{P}} \;\leftrightarrow\; \exists P \in \mathcal{P},\; a \in P \wedge b \in P$.
 \end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{EquivalenceRelation}(R,A)
+  \to
+  \operatorname{Partition}(A/R,A),
+\]
+\[
+  \operatorname{Partition}(\mathcal{P},A)
+  \to
+  \operatorname{EquivalenceRelation}(R_{\mathcal{P}},A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Equivalence relations and partitions encode the same structure: one describes
+when elements are related, and the other describes the resulting blocks.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+This theorem establishes a bijection between equivalence relations on $A$
+and partitions of $A$. The two perspectives---``same block'' (partition) and
+``related'' (equivalence relation)---are interchangeable and each is more
+natural in different contexts.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+On any set $A$:
+\begin{enumerate}
+\item The \emph{equality relation} $(a,b) \in R \iff a=b$ gives singleton
+classes $[a] = \{a\}$ and the finest partition of $A$.
+\item The \emph{universal relation} $R = A \times A$ gives $[a] = A$ for all
+$a$, and the coarsest partition (one block).
+\end{enumerate}
+All other equivalence relations on $A$ lie strictly between these extremes.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:equivalence-rel]{Equivalence Relation}
@@ -196,24 +343,6 @@ is an equivalence relation on $A$.
   \item \hyperref[def:composition]{Composition}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Duality of perspectives]
-This theorem establishes a bijection between equivalence relations on $A$
-and partitions of $A$. The two perspectives---``same block'' (partition) and
-``related'' (equivalence relation)---are interchangeable and each is more
-natural in different contexts.
-\end{remark*}
-
-\begin{example*}[Extremal equivalence relations]
-On any set $A$:
-\begin{enumerate}
-\item The \emph{equality relation} $(a,b) \in R \iff a=b$ gives singleton
-classes $[a] = \{a\}$ and the finest partition of $A$.
-\item The \emph{universal relation} $R = A \times A$ gives $[a] = A$ for all
-$a$, and the coarsest partition (one block).
-\end{enumerate}
-All other equivalence relations on $A$ lie strictly between these extremes.
-\end{example*}
 
 % ---------------------------------------------------------
 % Universal Property of Quotient Maps
@@ -235,27 +364,34 @@ When it exists, $\bar{f}$ is defined by $\bar{f}([a]) = f(a)$.
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Forward reference]
+\begin{remark*}[Standard quantified statement]
+\[
+  \Bigl(\forall a,b \in A,\; (a,b)\in R \to f(a) = f(b)\Bigr)
+  \leftrightarrow
+  \Bigl(\exists!\,\bar f:A/R\to B,\; \forall a\in A,\ \bar f([a])=f(a)\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{ConstantOnEquivalenceClasses}(f,R,A)
+  \iff
+  \exists!\,\bar f:A/R\to B,\ f=\bar f\circ\pi.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A function factors through the quotient exactly when it assigns the same value
+to every member of each equivalence class.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 This universal property depends on functions, surjectivity, and composition.
 It is stated here to complete the quotient-set picture, but its dependency
 ceiling is intentionally forward-looking.
 \end{remark*}
 
-\begin{remark*}[Standard quantified statement]
-$\bigl(\forall a,b \in A,\; (a,b)\in R \to f(a) = f(b)\bigr) \;\leftrightarrow\; \bigl(\exists!\, \bar{f} : A/R \to B,\; \forall a \in A,\; \bar{f}([a]) = f(a)\bigr)$.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:equivalence-rel]{Equivalence Relation}
-  \item \hyperref[def:canonical-surj]{Canonical Surjection}
-  \item \hyperref[def:quotient-set]{Quotient Set}
-  \item \hyperref[def:function]{Function}
-  \item \hyperref[def:composition]{Composition}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Why this is called the universal property]
+\begin{remark*}[Exposition]
 The condition $f = \bar{f} \circ \pi$ says the diagram commutes: going
 from $A$ to $B$ directly via $f$ gives the same result as going first to
 $A/R$ via $\pi$ and then to $B$ via $\bar{f}$. The word ``universal''
@@ -268,7 +404,7 @@ element of $A/R$ is $[a]$ for some $a$, so $\bar{f}([a]) = f(a)$ is the
 only possible definition.
 \end{remark*}
 
-\begin{remark*}[Well-definedness is the key verification]
+\begin{remark*}[Exposition]
 The heart of the theorem is well-definedness: the formula $\bar{f}([a]) =
 f(a)$ could be ambiguous if $[a] = [b]$ but $f(a) \neq f(b)$. The hypothesis
 that $f$ is constant on equivalence classes is precisely what prevents this:
@@ -282,7 +418,7 @@ the same answer for all representatives. The universal property tells exactly
 what condition on $f$ makes this work.
 \end{remark*}
 
-\begin{remark*}[Where this appears downstream]
+\begin{remark*}[Exposition]
 This theorem is not an abstract curiosity. It is the engine behind:
 \begin{itemize}
 \item \emph{Integer construction}: the integers $\mathbb{Z}$ are defined as
@@ -299,3 +435,13 @@ the finest topology on $A/R$ making $\pi$ continuous --- a condition stated
 precisely via the universal property.
 \end{itemize}
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:equivalence-rel]{Equivalence Relation}
+  \item \hyperref[def:canonical-surj]{Canonical Surjection}
+  \item \hyperref[def:quotient-set]{Quotient Set}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:composition]{Composition}
+\end{itemize}
+\end{dependencies}

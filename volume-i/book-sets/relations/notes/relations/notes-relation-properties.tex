@@ -38,6 +38,20 @@ the identity axiom
 which forces equality to behave reflexively in every structure.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Reflexive}(R,A)
+  \iff
+  \forall a\in A,\ (a,a)\in R.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Reflexivity says that the relation includes every diagonal pair $(a,a)$ from
+$A\times A$. It is a global condition on the whole carrier, not a condition on
+only the elements that happen to occur in some related pair.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -78,18 +92,32 @@ axiom
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Irreflexive}(R,A)
+  \iff
+  \forall a\in A,\ (a,a)\notin R.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Irreflexivity says that the relation avoids the entire diagonal of
+$A\times A$. It is stronger than failing to be reflexive, because it requires
+every element to fail self-relation.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+A relation may be neither reflexive nor irreflexive (if some but not all
+elements satisfy $(a,a)\in R$). However, a relation cannot be both reflexive
+and irreflexive unless $A = \varnothing$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
   \item \hyperref[def:universal-q]{Universal Formula}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Independence of reflexive and irreflexive]
-A relation may be neither reflexive nor irreflexive (if some but not all
-elements satisfy $(a,a)\in R$). However, a relation cannot be both reflexive
-and irreflexive unless $A = \varnothing$.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Symmetric Relation)}
 \begin{definition}[Symmetric Relation]\label{def:symmetric}
@@ -116,6 +144,19 @@ equality, symmetry is expressed by the identity axiom
 \[
   \forall x\forall y\,(x=y\rightarrow y=x).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Symmetric}(R,A)
+  \iff
+  \forall a,b\in A,\ ((a,b)\in R \to (b,a)\in R).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Symmetry says that every directed relation arrow can be reversed. It imposes
+no requirement that unrelated pairs become related.
 \end{remark*}
 
 \begin{dependencies}
@@ -152,6 +193,19 @@ axiomatizations of partial orders, antisymmetry is usually written
 \[
   \forall x\forall y\,((x\leq y\land y\leq x)\rightarrow x=y).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Antisymmetric}(R,A)
+  \iff
+  \forall a,b\in A,\ (((a,b)\in R\land(b,a)\in R)\to a=b).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Antisymmetry allows two-way relation only when both endpoints are the same
+element. It permits self-relation and therefore differs from asymmetry.
 \end{remark*}
 
 \begin{dependencies}
@@ -191,18 +245,31 @@ orders, the typical first-order axiom is
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Asymmetric}(R,A)
+  \iff
+  \forall a,b\in A,\ ((a,b)\in R\to (b,a)\notin R).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Asymmetry says that relation can occur in at most one direction between any
+ordered pair of elements. Substituting $a=b$ also rules out self-relation.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Every asymmetric relation is antisymmetric, but not conversely. $\leq$ on
+$\mathbb{R}$ is antisymmetric but not asymmetric (since $1 \leq 1$). Strict
+order $<$ is both asymmetric and irreflexive.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
   \item \hyperref[def:universal-q]{Universal Formula}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Asymmetric vs.\ antisymmetric]
-Every asymmetric relation is antisymmetric, but not conversely. $\leq$ on
-$\mathbb{R}$ is antisymmetric but not asymmetric (since $1 \leq 1$). Strict
-order $<$ is both asymmetric and irreflexive.
-\end{remark*}
 
 \begin{definitionbox}{Definition (Transitive Relation)}
 \begin{definition}[Transitive Relation]\label{def:transitive}
@@ -234,6 +301,19 @@ relations; together with reflexivity and antisymmetry, it gives partial
 orders.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Transitive}(R,A)
+  \iff
+  \forall a,b,c\in A,\ (((a,b)\in R\land(b,c)\in R)\to(a,c)\in R).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Transitivity says that an $R$-step from $a$ to $b$ followed by an $R$-step
+from $b$ to $c$ forces a direct $R$-step from $a$ to $c$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -251,6 +331,28 @@ $R$ is \emph{total} (or \emph{connex}) if every pair is comparable:
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{TotalRelation}(R,A)
+  \iff
+  \forall a,b \in A,\ ((a,b)\in R \lor (b,a)\in R).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{TotalRelation}(R,A)
+  \iff
+  \forall a,b \in A,\ ((a,b)\in R \lor (b,a)\in R).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A total relation makes every pair of elements comparable in at least one
+direction. It does not by itself assert reflexivity, antisymmetry, or
+transitivity.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relation]{Relation}
@@ -266,7 +368,9 @@ $R$ is \emph{total} (or \emph{connex}) if every pair is comparable:
 $R$ is an \emph{equivalence relation} on $A$ if it is reflexive, symmetric,
 and transitive.
 \end{definition}
-\end{definitionbox}\begin{remark*}[Standard quantified statement]
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
 $R$ is an equivalence relation on $A$ iff:
 \[
 (\forall a \in A,\; (a,a)\in R)\;\wedge\;
@@ -275,7 +379,22 @@ $R$ is an equivalence relation on $A$ iff:
 \]
 \end{remark*}
 
-\begin{remark*}[Role in mathematics]
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{EquivalenceRelation}(R,A)
+  \iff
+  \operatorname{Reflexive}(R,A)
+  \wedge \operatorname{Symmetric}(R,A)
+  \wedge \operatorname{Transitive}(R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An equivalence relation formalizes sameness relative to a chosen criterion.
+Its three component properties make equivalence classes well behaved.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 Equivalence relations axiomatize the idea of ``sameness up to a chosen
 criterion.'' They partition sets into equivalence classes and are the basis
 for quotient constructions throughout algebra, topology, and analysis.
@@ -303,6 +422,21 @@ $R$ is a preorder on $A$ iff:
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Preorder}(R,A)
+  \iff
+  \operatorname{Reflexive}(R,A)
+  \wedge \operatorname{Transitive}(R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A preorder has enough structure to compare elements reflexively and chain
+comparisons transitively, but it may identify distinct elements as mutually
+comparable.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reflexive]{Reflexive Relation}
@@ -325,6 +459,21 @@ $R$ is a partial order on $A$ iff:
 (\forall a,b \in A,\; (a,b)\in R \wedge (b,a)\in R \to a=b)\;\wedge\;
 (\forall a,b,c \in A,\; (a,b)\in R \wedge (b,c)\in R \to (a,c)\in R).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PartialOrder}(R,A)
+  \iff
+  \operatorname{Reflexive}(R,A)
+  \wedge \operatorname{Antisymmetric}(R,A)
+  \wedge \operatorname{Transitive}(R,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A partial order is a preorder in which mutual comparability forces equality.
+This removes the identification ambiguity that can occur in preorders.
 \end{remark*}
 
 \begin{dependencies}
@@ -350,21 +499,29 @@ $R$ is a strict partial order on $A$ iff:
 \]
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:irreflexive]{Irreflexive Relation}
-  \item \hyperref[def:transitive]{Transitive Relation}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{StrictPartialOrder}(R,A)
+  \iff
+  \operatorname{Irreflexive}(R,A)
+  \wedge \operatorname{Transitive}(R,A).
+\]
+\end{remark*}
 
-\begin{remark*}[Asymmetry is automatic]
+\begin{remark*}[Interpretation]
+A strict partial order records strict comparison directly. Irreflexivity
+forbids equality-like self-comparison, while transitivity preserves chains of
+strict comparisons.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 Irreflexivity and transitivity together force asymmetry: if $(a,b)\in R$ and
 $(b,a)\in R$, transitivity gives $(a,a)\in R$, contradicting irreflexivity.
 Hence every strict partial order is asymmetric, and a strict partial order can
 equivalently be characterised as an asymmetric, transitive relation.
 \end{remark*}
 
-\begin{remark*}[Correspondence with partial orders]
+\begin{remark*}[Exposition]
 Strict and non-strict orders carry the same information. Given a
 \hyperref[def:partial-order]{partial order} $\leq$, the relation
 $a < b \iff (a \leq b \wedge a \neq b)$ is a strict partial order; conversely,
@@ -373,6 +530,13 @@ $a \leq b \iff (a < b \vee a = b)$ is a partial order. The two presentations
 are interchangeable, which is why an ordered structure may be specified by
 either.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:irreflexive]{Irreflexive Relation}
+  \item \hyperref[def:transitive]{Transitive Relation}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Total Order)}
 \begin{definition}[Total Order]\label{def:total-order}
@@ -388,29 +552,42 @@ $R$ is a total order on $A$ iff $R$ is a partial order on $A$ and additionally:
 \]
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:partial-order]{Partial Order}
-  \item \hyperref[def:total-rel]{Total Relation}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{TotalOrder}(R,A)
+  \iff
+  \operatorname{PartialOrder}(R,A)
+  \wedge \operatorname{TotalRelation}(R,A).
+\]
+\end{remark*}
 
-\begin{remark*}[Using structural properties in proofs]
+\begin{remark*}[Interpretation]
+A total order is a partial order with comparability for every pair of
+elements. It rules out incomparable pairs while retaining antisymmetry and
+transitivity.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 When $R$ is asserted to be an equivalence relation or partial order, this is
 shorthand for the conjunction of its defining properties. In proofs, cite
 only the specific component needed: ``since $R$ is a partial order,
 antisymmetry implies \dots'' rather than restating all properties.
 \end{remark*}
 
-\begin{example*}[Using a structural property in a proof]
-Let $R$ be an equivalence relation on $A$. For any $a,b \in A$,
-$(a,b) \in R \Rightarrow [a] = [b]$, where $[a] = \{x \in A \mid (a,x) \in R\}$.
-\end{example*}
-
-
-
-\begin{remark*}[Properties are logically independent]
+\begin{remark*}[Exposition]
 No basic property implies another in general. A relation may be transitive
 without being reflexive, or symmetric without being transitive. The structural
 classes are distinguished precisely by requiring specific combinations.
 \end{remark*}
+
+\begin{example*}[Examples]
+Let $R$ be an equivalence relation on $A$. For any $a,b \in A$,
+$(a,b) \in R \Rightarrow [a] = [b]$, where $[a] = \{x \in A \mid (a,x) \in R\}$.
+\end{example*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:total-rel]{Total Relation}
+\end{itemize}
+\end{dependencies}

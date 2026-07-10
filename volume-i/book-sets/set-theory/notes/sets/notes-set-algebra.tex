@@ -8,7 +8,7 @@
 % TOOLKIT
 % ---------------------------------------------------------
 
-\begin{remark*}[Algebraic structure of set operations]
+\begin{remark*}[Exposition]
 The operations $\cup$, $\cap$, and complement satisfy algebraic laws analogous
 to those of logical connectives. Together they endow $\mathcal{P}(U)$ with
 the structure of a \emph{Boolean algebra}. These laws justify manipulation
@@ -30,6 +30,18 @@ A \cap B = B \cap A.
 
 \begin{remark*}[Standard quantified statement]
 $\forall A, B:\; \forall x\,(x \in A \cup B \leftrightarrow x \in B \cup A)$ and $\forall x\,(x \in A \cap B \leftrightarrow x \in B \cap A)$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SetEqual}(A\cup B,B\cup A)
+  \wedge
+  \operatorname{SetEqual}(A\cap B,B\cap A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Union and intersection do not depend on the order of their two arguments.
 \end{remark*}
 
 \begin{dependencies}
@@ -56,6 +68,18 @@ Let $A,B,C$ be sets. Then
 $\forall A, B, C:\; \forall x\,\bigl((x \in (A \cup B) \cup C) \leftrightarrow (x \in A \cup (B \cup C))\bigr)$, and analogously for $\cap$.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SetEqual}((A\cup B)\cup C,A\cup(B\cup C))
+  \wedge
+  \operatorname{SetEqual}((A\cap B)\cap C,A\cap(B\cap C)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Union and intersection can be regrouped without changing the resulting set.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[ax:extensionality]{Axiom of Extensionality}
@@ -79,6 +103,18 @@ A \cup (B \cap C) = (A \cup B) \cap (A \cup C).
 
 \begin{remark*}[Standard quantified statement]
 $\forall A, B, C:\; \forall x\,\bigl(x \in A \cap (B \cup C) \leftrightarrow x \in (A \cap B) \cup (A \cap C)\bigr)$, and dually for $\cup$ over $\cap$.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SetEqual}(A\cap(B\cup C),(A\cap B)\cup(A\cap C))
+  \wedge
+  \operatorname{SetEqual}(A\cup(B\cap C),(A\cup B)\cap(A\cup C)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Intersection distributes over union, and union distributes over intersection.
 \end{remark*}
 
 \begin{dependencies}
@@ -111,6 +147,23 @@ $\forall A \subseteq U:\; \forall x\,(x \in A \cup \varnothing \leftrightarrow x
 Absorption: $\forall A, B:\; \forall x\,(x \in A \cup (A \cap B) \leftrightarrow x \in A)$, and dually.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SetEqual}(A\cup\varnothing,A)
+  \wedge
+  \operatorname{SetEqual}(A\cap U,A)
+  \wedge
+  \operatorname{SetEqual}(A\cup(A\cap B),A)
+  \wedge
+  \operatorname{SetEqual}(A\cap(A\cup B),A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The empty set and universe act as identities for the appropriate operations,
+and absorption removes redundant nested occurrences of $A$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[ax:extensionality]{Axiom of Extensionality}
@@ -135,14 +188,17 @@ For any $A \subseteq U$,
 $\forall A \subseteq U:\; \forall x\,(x \in (A^c)^c \leftrightarrow x \in A)$.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
-  \item \hyperref[def:complement]{Complement}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SetEqual}((A^c)^c,A).
+\]
+\end{remark*}
 
-\begin{remark*}[Non-commutative and non-associative operations]
+\begin{remark*}[Interpretation]
+Taking the complement twice returns the original set.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 Set difference $\setminus$ is neither commutative nor associative:
 \[
 A \setminus B \neq B \setminus A,
@@ -158,10 +214,17 @@ A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C).
 These follow from $A \setminus B = A \cap B^c$ together with De Morgan's laws.
 \end{remark*}
 
-\begin{remark*}[Cartesian product]
+\begin{remark*}[Exposition]
 The Cartesian product $\times$ is not commutative, is associative only up to
 canonical isomorphism, and distributes over union in each coordinate:
 \[
 A \times (B \cup C) = (A \times B) \cup (A \times C).
 \]
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+  \item \hyperref[def:complement]{Complement}
+\end{itemize}
+\end{dependencies}

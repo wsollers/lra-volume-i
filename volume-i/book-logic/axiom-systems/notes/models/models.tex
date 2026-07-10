@@ -124,7 +124,7 @@ domain supplies the objects, and the interpretation explains how the symbols
 refer to objects, operations, and relations on that domain.
 \end{remark*}
 
-\begin{remark*}[Type-theoretic reading]
+\begin{remark*}[Exposition]
 In dependent type theory, this bundled data can be viewed schematically as
 \[
 \sum_{M:\mathrm{Type}}
@@ -203,7 +203,6 @@ interpreted by the corresponding truth operations, and quantifiers range over
 all elements of $M$.
 \end{definition}
 \end{definitionbox}
-
 \begin{remark*}[Standard quantified statement]
 For terms $t_1,\ldots,t_n$ and an $n$-ary relation symbol $R$,
 \[
@@ -231,13 +230,19 @@ and
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The predicate form records the relation or property named by the statement in
+the displayed logical context.
+\end{remark*}
+
+
 \begin{remark*}[Interpretation]
 Satisfaction is the semantic test for a statement. Once the symbols have been
 interpreted in a structure, the statement can be checked as true or false in
 that setting.
 \end{remark*}
 
-\begin{remark*}[Sentences]
+\begin{remark*}[Exposition]
 If $\varphi$ is a sentence, then it has no free variables, so its truth does
 not depend on the initial assignment $s$. In that case the notation is
 shortened from $\mathfrak{M}\vDash\varphi[s]$ to $\mathfrak{M}\vDash\varphi$.
@@ -261,7 +266,6 @@ $\Gamma\vDash\varphi$} is a structure $\mathfrak{M}$ that satisfies every
 sentence in $\Gamma$ but does not satisfy $\varphi$.
 \end{definition}
 \end{definitionbox}
-
 \begin{remark*}[Standard quantified statement]
 For $\Gamma\subseteq\operatorname{Sent}(\mathcal{L})$ and
 $\varphi\in\operatorname{Sent}(\mathcal{L})$,
@@ -282,12 +286,18 @@ Equivalently, for classical closed sentences,
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The predicate form records the relation or property named by the statement in
+the displayed logical context.
+\end{remark*}
+
+
 \begin{remark*}[Interpretation]
 A countermodel shows that the theory does not force the statement. It keeps
 the axioms true while making the proposed statement false.
 \end{remark*}
 
-\begin{remark*}[Special cases]
+\begin{remark*}[Exposition]
 If $\Gamma=\emptyset$, then a countermodel to validity of $\varphi$ is a
 structure $\mathfrak{M}$ such that $\mathfrak{M}\vDash\neg\varphi$. For a
 theory $T$, models of $T$ satisfying $\varphi$ and models of $T$ satisfying
@@ -295,7 +305,7 @@ $\neg\varphi$ witness the independence pattern: the theory alone does not
 settle $\varphi$.
 \end{remark*}
 
-\begin{remark*}[Lean reading]
+\begin{remark*}[Exposition]
 In a mechanized setting, invalidity is witnessed by constructing semantic
 data:
 \[

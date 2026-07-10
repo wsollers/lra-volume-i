@@ -34,6 +34,26 @@ A \;\subseteq\; \bigcup_{C \in \mathcal{C}} C.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \mathcal{C}\text{ covers }A
+  \iff
+  \forall x\in A,\ \exists C\in\mathcal{C},\ x\in C.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Covers}(\mathcal{C},A)
+  \iff
+  \forall x\in A,\ \exists C\in\mathcal{C},\ x\in C.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A cover supplies at least one set containing each element of the covered set.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:subset]{Subset}
@@ -47,6 +67,20 @@ $\mathcal{C}'$ is a \emph{subcover} of $\mathcal{C}$ if $\mathcal{C}'
 \subseteq \mathcal{C}$ and $\mathcal{C}'$ is still a cover of $A$.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \mathcal{C}'\text{ is a subcover of }\mathcal{C}\text{ for }A
+  \iff
+  \mathcal{C}'\subseteq\mathcal{C}
+  \wedge
+  \operatorname{Covers}(\mathcal{C}',A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A subcover is a smaller collection that still covers the same set.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -63,15 +97,24 @@ $|\mathcal{C}'| < \infty$.
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:cover-full]{Cover}
-  \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
-  \item \hyperref[def:subset]{Subset}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+  \mathcal{C}'\text{ is a finite subcover of }\mathcal{C}\text{ for }A
+  \iff
+  \mathcal{C}'\subseteq\mathcal{C}
+  \wedge
+  \operatorname{Covers}(\mathcal{C}',A)
+  \wedge
+  \operatorname{FiniteSet}(\mathcal{C}').
+\]
+\end{remark*}
 
-\begin{remark*}[The key question]
+\begin{remark*}[Interpretation]
+A finite subcover covers the same set using only finitely many members of the
+original cover.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The condition of being a cover is easy to satisfy: take $\mathcal{C} =
 \mathcal{P}(A)$ and it is trivially a cover. The interesting question is
 whether large covers can be replaced by smaller ones --- specifically, finite
@@ -80,6 +123,14 @@ A finite subcover is just as good for covering purposes, but is finite and
 therefore tractable. When a finite subcover always exists, no matter which
 cover one starts with, the space is called compact.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cover-full]{Cover}
+  \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Open Cover)}
 \begin{definition}[Open Cover]\label{def:open-cover}
@@ -93,6 +144,30 @@ sets: $\mathcal{C} \subseteq \tau$.
 $\mathcal{C}$ is an open cover of $A$ $\;\leftrightarrow\;$ $(\forall C \in \mathcal{C},\; C \in \tau) \;\wedge\; (\forall x \in A,\; \exists C \in \mathcal{C},\; x \in C)$.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{OpenCover}(\mathcal{C},A,(X,\tau))
+  \iff
+  \operatorname{Covers}(\mathcal{C},A)
+  \wedge
+  \forall C\in\mathcal{C},\ C\in\tau.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An open cover is a cover whose covering sets are open in the ambient
+topological space.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The emphasis on open covers in compactness is because open sets are the
+sets one controls in a topological space. An open cover $\{U_\alpha\}$ of
+$A$ means: every point of $A$ has at least one $U_\alpha$ containing it. A
+finite subcover then gives a list of finitely many open sets whose union
+already contains all of $A$. Compactness says this reduction is always
+possible, which is a very strong structural property.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:cover-full]{Cover}
@@ -102,15 +177,6 @@ $\mathcal{C}$ is an open cover of $A$ $\;\leftrightarrow\;$ $(\forall C \in \mat
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Why open covers]
-The emphasis on open covers in compactness is because open sets are the
-sets one controls in a topological space. An open cover $\{U_\alpha\}$ of
-$A$ means: every point of $A$ has at least one $U_\alpha$ containing it. A
-finite subcover then gives a list of finitely many open sets whose union
-already contains all of $A$. Compactness says this reduction is always
-possible, which is a very strong structural property.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Finite Intersection Property
@@ -127,16 +193,34 @@ for all finite $\mathcal{F}' \subseteq \mathcal{F}$,
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:intersection]{Intersection}
-  \item \hyperref[def:empty-set]{Empty Set}
-  \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+  \mathcal{F}\text{ has the FIP}
+  \iff
+  \forall \mathcal{F}'\subseteq\mathcal{F},\
+  \operatorname{FiniteSet}(\mathcal{F}')
+  \to
+  \bigcap_{F\in\mathcal{F}'}F\neq\varnothing.
+\]
+\end{remark*}
 
-\begin{remark*}[How to read the FIP]
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{FiniteIntersectionProperty}(\mathcal{F})
+  \iff
+  \forall \mathcal{F}'\subseteq\mathcal{F},\
+  \operatorname{FiniteSet}(\mathcal{F}')
+  \to
+  \bigcap_{F\in\mathcal{F}'}F\neq\varnothing.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The finite intersection property says that no finite subcollection has empty
+intersection.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The FIP is a consistency condition: no finite list of sets from $\mathcal{F}$
 is mutually exclusive. It does \emph{not} say the entire intersection
 $\bigcap_{F \in \mathcal{F}} F$ is nonempty --- only that every \emph{finite}
@@ -149,6 +233,15 @@ But $\bigcap_{n=1}^\infty (0,1/n) = \varnothing$. Compact spaces are
 characterized by the property that the FIP implies nonempty total
 intersection.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % FIP--Cover duality
@@ -175,18 +268,20 @@ to $A$.
 $A \subseteq \bigcup_{\alpha \in I} U_\alpha \;\leftrightarrow\; \neg(\forall\text{ finite }I_0\subseteq I,\; \bigcap_{\alpha\in I_0} F_\alpha \cap A \neq \varnothing)$. Reading pointwise: $\forall x\in A,\;\exists\alpha\in I,\; x\in U_\alpha \;\leftrightarrow\; \{F_\alpha\cap A\}$ fails the FIP.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Covers}(\{U_\alpha\}_{\alpha\in I},A)
+  \iff
+  \neg\operatorname{FiniteIntersectionProperty}(\{F_\alpha\cap A\}_{\alpha\in I}).
+\]
+\end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:cover-full]{Cover}
-  \item \hyperref[def:fip]{Finite Intersection Property}
-  \item \hyperref[def:complement]{Complement}
-  \item \hyperref[def:intersection]{Intersection}
-  \item \hyperref[def:subset]{Subset}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Interpretation]
+Covering by a family is equivalent to failure of the finite intersection
+property for the relative complements.
+\end{remark*}
 
-\begin{remark*}[Proof by De Morgan]
+\begin{remark*}[Exposition]
 The duality is a direct consequence of De Morgan's law for indexed families
 (Theorem~\ref{thm:indexed-de-morgan}). The family $\{U_\alpha\}$ fails to cover
 $A$ means:
@@ -202,7 +297,7 @@ A \cap \bigcap_\alpha F_\alpha \neq \varnothing.
 Applying this to every finite subcollection gives the equivalence with the FIP.
 \end{remark*}
 
-\begin{remark*}[Why this duality matters for compactness]
+\begin{remark*}[Exposition]
 Compactness has two equivalent formulations:
 \begin{enumerate}[label=(\roman*)]
 \item Every open cover has a finite subcover.
@@ -217,11 +312,21 @@ and metric spaces, the only new content is the geometric meaning --- the
 set-theoretic equivalence is established here.
 \end{remark*}
 
-\begin{example*}[Nested closed sets and FIP]
+\begin{remark*}[Exposition]
 In $\mathbb{R}$, the family $\{[n, \infty) : n \in \mathbb{N}\}$ has the FIP:
 any finite subcollection $\{[n_1,\infty), \dots, [n_k,\infty)\}$ has
 intersection $[\max(n_i), \infty) \neq \varnothing$. But
 $\bigcap_{n=1}^\infty [n, \infty) = \varnothing$. This shows $\mathbb{R}$ is
 not compact (the family of closed sets has the FIP but empty total
 intersection). A compact space would not allow this failure.
-\end{example*}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cover-full]{Cover}
+  \item \hyperref[def:fip]{Finite Intersection Property}
+  \item \hyperref[def:complement]{Complement}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}

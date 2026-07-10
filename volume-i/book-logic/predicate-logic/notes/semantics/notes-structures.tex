@@ -68,19 +68,23 @@ required syntactic stock or arity assignment.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A proposed language fails when its non-logical symbols are not sorted by role,
+\begin{description}
+  \item[Exposition.] A proposed language fails when its non-logical symbols are not sorted by role,
 when positive-arity symbols have no arity, or when the logical grammar is not
 specified.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{\mathsf{Const}_{L}}_{\text{constant symbols}}
 \qquad
 \underbrace{\mathsf{Func}_{L}^{(n)}}_{\text{function symbols with arity}}
 \qquad
 \underbrace{\mathsf{Pred}_{L}^{(n)}}_{\text{predicate symbols with arity}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -154,12 +158,15 @@ structure for \(L\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A proposed structure fails if the domain is empty, if a symbol is left
+\begin{description}
+  \item[Exposition.] A proposed structure fails if the domain is empty, if a symbol is left
 uninterpreted, or if the assigned object has the wrong arity or type.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{D=\varnothing}_{\text{empty domain}}
 \quad\lor\quad
 \underbrace{I(c)\notin D}_{\text{bad constant value}}
@@ -168,6 +175,7 @@ uninterpreted, or if the assigned object has the wrong arity or type.
 \quad\lor\quad
 \underbrace{I(P)\not\subseteq D^n}_{\text{bad predicate relation}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -228,16 +236,20 @@ function assigning each variable a domain element of \(M\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-An assignment fails when it leaves a variable without a value or assigns a
+\begin{description}
+  \item[Exposition.] An assignment fails when it leaves a variable without a value or assigns a
 value outside the domain.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{\mathrm{dom}(s)\neq\mathsf{Var}_{\mathcal L}}_{\text{missing variable value}}
 \quad\lor\quad
 \underbrace{s(x)\notin D}_{\text{value outside domain}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -297,16 +309,20 @@ one-variable update of \(s\) at \(x\) with value \(d\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-A proposed modified assignment fails if it does not change \(x\) to \(d\), or
+\begin{description}
+  \item[Exposition.] A proposed modified assignment fails if it does not change \(x\) to \(d\), or
 if it changes some variable other than \(x\).
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{s'(x)\neq d}_{\text{target variable not updated}}
 \quad\lor\quad
 \underbrace{\exists y\neq x\;(s'(y)\neq s(y))}_{\text{unwanted extra change}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -370,18 +386,22 @@ of \(t\) in \(M\) under \(s\).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Term evaluation fails to have the proposed value when a variable, constant, or
+\begin{description}
+  \item[Exposition.] Term evaluation fails to have the proposed value when a variable, constant, or
 function-application clause computes a different domain element.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\[
+\begin{description}
+  \item[Exposition.] \[
 \underbrace{s(x)\neq a}_{\text{variable case}}
 \quad\lor\quad
 \underbrace{I(c)\neq a}_{\text{constant case}}
 \quad\lor\quad
 \underbrace{I(f)(a_1,\ldots,a_n)\neq a}_{\text{function case}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

@@ -1,7 +1,7 @@
 
 \subsection*{Inverses After Restriction}
 
-\begin{remark*}[Main idea]
+\begin{remark*}[Exposition]
 Many functions are not invertible as originally stated. They may fail because
 two inputs collide, because the codomain is too large, or both. Restricting
 the domain can remove collisions; corestricting the codomain to the image
@@ -19,7 +19,18 @@ f_{\operatorname{im}}^{-1}:\im(f)\to A.
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Comment]
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Injective}(f)\to \operatorname{Bijective}(f_{\operatorname{im}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An injective function becomes bijective when its codomain is changed to its
+image.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 The inverse-on-image is the function determined by
 \[
 \forall y\in\im(f)\,\exists! a\in A,\quad f(a)=y.
@@ -47,6 +58,23 @@ is surjective.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall y\in f(C),\ \exists c\in C,\quad f|_C(c)=y.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Surjective}(f|_C:C\to f(C)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Restricting the codomain to the restricted image makes the restricted map
+surjective by definition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:restriction]{Restriction}
@@ -66,6 +94,19 @@ is bijective and therefore has an inverse $f(C)\to C$.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Injective}(f|_C)
+  \to
+  \operatorname{Bijective}(f|_C:C\to f(C)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Injectivity on a restricted domain plus corestriction to the restricted image
+gives a local inverse.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[prop:restricted-map-onto-image]{Restricted Map Is Onto Its Restricted Image}
@@ -76,19 +117,26 @@ is bijective and therefore has an inverse $f(C)\to C$.
 
 \subsection*{Failure Modes for Invertibility}
 
-\begin{remark*}[Comment]
+\begin{remark*}[Failure modes]
+\begin{itemize}
+\item[Exposition.]
 To make $f:A\to B$ invertible, two independent failures must be repaired:
-\begin{enumerate}[label=(\roman*)]
-\item \emph{Collision failure}: there exist $a_1\neq a_2$ with
-  $f(a_1)=f(a_2)$. This prevents injectivity.
-\item \emph{Missed-target failure}: there exists $b\in B$ such that no
-  $a\in A$ satisfies $f(a)=b$. This prevents surjectivity.
-\end{enumerate}
 Domain restriction addresses collisions. Corestriction to the image addresses
 missed targets.
+\item[Collision failure.]
+\[
+  \exists a_1,a_2\in A,\quad a_1\neq a_2\wedge f(a_1)=f(a_2).
+\]
+This failure prevents injectivity.
+\item[Missed-target failure.]
+\[
+  \exists b\in B,\quad \forall a\in A,\ f(a)\neq b.
+\]
+This failure prevents surjectivity.
+\end{itemize}
 \end{remark*}
 
-\begin{remark*}[Negation form]
+\begin{remark*}[Negated quantified statement]
 The negation of injectivity is not just ``not one-to-one''; it is the usable
 predicate
 \[

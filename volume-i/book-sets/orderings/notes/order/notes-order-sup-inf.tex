@@ -13,13 +13,12 @@
 % ---------------------------------------------------------
 
 \begin{exposition}
-Every student of analysis encounters the least upper bound property of
-$\mathbb{R}$ early and prominently.  But this property is not a peculiarity
+The least upper bound property of $\mathbb{R}$ appears early and prominently
+in analysis.  This property is not a peculiarity
 of real numbers: it is an order-theoretic concept that can be formulated in
-any partially ordered set.  Before we reach $\mathbb{R}$, it is essential to
-understand supremum and infimum in their natural habitat --- abstract ordered
-sets --- so that when the completeness axiom appears in Volume~II, you will
-recognise exactly what it is asserting and why $\mathbb{Q}$ fails to satisfy it.
+any partially ordered set.  Before the completeness axiom appears in Volume~II,
+supremum and infimum are developed in their natural habitat: abstract ordered
+sets.
 \end{exposition}
 
 \begin{exposition}
@@ -39,9 +38,9 @@ later theorems will feel inevitable rather than arbitrary.
 \begin{exposition}
 The definition of upper and lower bound was given in
 \hyperref[def:bounds]{the Ordered Sets section}.  For convenience
-we recall: $u \in A$ is an \emph{upper bound} of $S \subseteq A$ if
+this section recalls: $u \in A$ is an \emph{upper bound} of $S \subseteq A$ if
 $\forall s \in S,\ s \leq u$; a \emph{lower bound} satisfies the
-reverse.  We say $S$ is \emph{bounded above} (resp.\ \emph{bounded below},
+reverse.  The set $S$ is \emph{bounded above} (resp.\ \emph{bounded below},
 \emph{bounded}) if it has at least one upper (resp.\ lower, both) bound.
 \end{exposition}
 
@@ -91,6 +90,31 @@ $\ell^* = \inf S \;\leftrightarrow\; (\forall s \in S,\; \ell^* \leq s) \;\wedge
 (\forall \ell \in A,\; (\forall s \in S,\; \ell \leq s) \;\rightarrow\; \ell \leq \ell^*)$.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+$\operatorname{LeastUpperBound}(u^*,S,\mathsf{PartiallyOrderedSet}(A,\leq))$
+means that $u^*$ is an upper bound of $S$ and is below every other upper bound
+of $S$. $\operatorname{GreatestLowerBound}(\ell^*,S,\mathsf{PartiallyOrderedSet}(A,\leq))$
+means that $\ell^*$ is a lower bound of $S$ and is above every other lower
+bound of $S$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The supremum is the best possible upper bound, and the infimum is the best
+possible lower bound, measured inside the ambient ordered set.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Condition (i) says $u^*$ is a candidate: it stands above everything in $S$.
+Condition (ii) says $u^*$ is the best candidate: it is at most as large as any
+other upper bound. Together they say that $u^*$ is the unique element of $A$
+that is simultaneously an upper bound of $S$ and no larger than any other upper
+bound.
+
+A useful restatement of condition (ii) is its contrapositive: if $v < u^*$,
+then $v$ is not an upper bound of $S$, meaning there exists some $s \in S$ with
+$v < s$. This is the usual working form in analysis.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:bounds]{Upper and Lower Bounds}
@@ -98,23 +122,6 @@ $\ell^* = \inf S \;\leftrightarrow\; (\forall s \in S,\; \ell^* \leq s) \;\wedge
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[How to read these definitions]
-\label{rem:sup-reading}
-Condition (i) says $u^*$ is a \emph{candidate}: it stands above everything in
-$S$. Condition (ii) says $u^*$ is the \emph{best} candidate: it is at most as
-large as any other upper bound.  Together they say: $u^*$ is the unique
-element of $A$ that is simultaneously an upper bound of $S$ and no larger than
-any other upper bound.
-
-A useful restatement of condition (ii) is its contrapositive: if $v < u^*$,
-then $v$ is \emph{not} an upper bound of $S$, meaning there exists some
-$s \in S$ with $v < s$.  This is how the condition is typically used in
-proofs in analysis: to verify that $u^* = \sup S$, you show (i) $u^*$
-is an upper bound, and (ii) for every $\varepsilon > 0$, the value
-$u^* - \varepsilon$ is \emph{not} an upper bound, i.e., there exists
-$s \in S$ with $s > u^* - \varepsilon$.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Uniqueness
@@ -134,15 +141,18 @@ $\forall u^*, v^* \in A$: if both $u^*$ and $v^*$ satisfy the two conditions
 in the definition of $\sup S$, then $u^* = v^*$.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:sup-inf]{Supremum and Infimum}
-  \item \hyperref[def:partial-order]{Partial Order}
-  \item \hyperref[def:subset]{Subset}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Predicate reading]
+$\operatorname{LeastUpperBound}(u^*,S,\mathsf{PartiallyOrderedSet}(A,\leq))$
+and $\operatorname{LeastUpperBound}(v^*,S,\mathsf{PartiallyOrderedSet}(A,\leq))$
+imply $u^*=v^*$; the analogous uniqueness holds for greatest lower bounds.
+\end{remark*}
 
-\begin{remark*}[Proof idea]
+\begin{remark*}[Interpretation]
+Suprema and infima, when they exist, are single determined elements of the
+ambient ordered set.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 If $u^*$ and $v^*$ are both suprema, then $u^*$ is an upper bound, so
 the minimality of $v^*$ gives $v^* \leq u^*$; and symmetrically $u^* \leq v^*$.
 Antisymmetry of the partial order then forces $u^* = v^*$.  This is a
@@ -154,8 +164,7 @@ in a partial order, they must be equal.
 % Sup need not lie in S; max vs sup
 % ---------------------------------------------------------
 
-\begin{remark*}[Supremum need not belong to $S$]
-\label{rem:max-vs-sup}
+\begin{remark*}[Exposition]
 The set $S = (0,1) \subseteq \mathbb{R}$ is open: it contains neither
 endpoint.  Yet $\sup S = 1$ and $\inf S = 0$.  Neither $0$ nor $1$
 belongs to $S$.
@@ -177,15 +186,14 @@ ever attaining it.
 % Sup need not exist
 % ---------------------------------------------------------
 
-\begin{remark*}[Supremum need not exist]
-\label{rem:sup-nonexistence}
+\begin{remark*}[Exposition]
 Being bounded above is necessary but not sufficient for a supremum to exist.
 Consider $S = \{r \in \mathbb{Q} : r^2 < 2\}$ in the poset $(\mathbb{Q},\leq)$.
 Every element of $S$ satisfies $r < 2$, so $2 \in \mathbb{Q}$ is an upper
 bound.  But the candidate supremum would need to be $\sqrt{2}$, and
 $\sqrt{2} \notin \mathbb{Q}$.  Any rational upper bound $q > \sqrt{2}$ is not
 the least upper bound, because $\frac{q + \sqrt{2}}{2}$ is a smaller upper
-bound (and is also irrational, which means we can always find a rational
+bound (and is also irrational, which means there is always a rational
 strictly between any rational upper bound and $\sqrt{2}$, and that rational is
 still an upper bound).  In short: $S$ is bounded above in $\mathbb{Q}$, but
 $\sup S$ does not exist in $\mathbb{Q}$.
@@ -200,8 +208,7 @@ satisfy every other ordered field axiom but fail this one.
 % Examples
 % ---------------------------------------------------------
 
-\begin{example*}[Sup and inf in divisibility]
-\label{ex:sup-divisibility}
+\begin{remark*}[Exposition]
 Order the set $D = \{1,2,3,4,6,12\}$ by divisibility: $a \leq b$ iff $a \mid b$.
 Take $S = \{4, 6\}$.
 
@@ -217,10 +224,9 @@ The common divisors are $\{1,2\}$; the greatest is $2$, so $\inf S = 2 =
 This example reveals a deep pattern: in any divisibility poset, $\sup$ computes
 the least common multiple and $\inf$ computes the greatest common divisor.
 Order theory and number theory are speaking the same language.
-\end{example*}
+\end{remark*}
 
-\begin{example*}[Sup and inf for function spaces]
-\label{ex:sup-functions}
+\begin{remark*}[Exposition]
 Let $B(X)$ be the set of bounded real-valued functions on a set $X$, ordered
 pointwise: $f \leq g$ iff $f(x) \leq g(x)$ for all $x \in X$.  For a
 collection $\{f_\alpha\}$ of bounded functions, the pointwise supremum is
@@ -228,7 +234,15 @@ $(\sup_\alpha f_\alpha)(x) = \sup_\alpha f_\alpha(x)$.  In measure theory and
 integration theory, one constantly takes suprema and infima of sequences of
 functions; this example shows that such operations are instances of the
 abstract sup/inf defined here.
-\end{example*}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sup-inf]{Supremum and Infimum}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Useful characterisation
@@ -253,6 +267,27 @@ $u^* = \sup S \;\leftrightarrow\; (\forall s \in S,\; s \leq u^*) \;\wedge\;
 (\forall v \in A,\; v < u^* \;\rightarrow\; \exists s \in S,\; v < s)$.
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+$\operatorname{LeastUpperBound}(u^*,S,\mathsf{PartiallyOrderedSet}(A,\leq))$
+is equivalent to $u^*$ being an upper bound of $S$ and every element strictly
+below $u^*$ failing to be an upper bound.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The characterization replaces comparison with all upper bounds by a local
+failure test below the proposed supremum.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Condition (ii) here is the contrapositive of the minimality condition in
+the definition. In analysis, this is the working form: to check that $u^*$ is
+the supremum, nothing strictly below $u^*$ may be an
+upper bound.  In $\mathbb{R}$ this becomes: for every $\varepsilon > 0$,
+there exists $s \in S$ with $s > u^* - \varepsilon$.  This is the exact
+form used in the proof that $\sup$ interacts correctly with limits,
+integrals, and measures.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sup-inf]{Supremum and Infimum}
@@ -261,17 +296,6 @@ $u^* = \sup S \;\leftrightarrow\; (\forall s \in S,\; s \leq u^*) \;\wedge\;
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Why this characterisation is useful]
-\label{rem:sup-char-utility}
-Condition (ii) here is the contrapositive of the minimality condition in
-the definition.  In analysis this is the working form: to check that
-$u^*$ is the supremum, you verify that nothing strictly below $u^*$ is an
-upper bound.  In $\mathbb{R}$ this becomes: for every $\varepsilon > 0$,
-there exists $s \in S$ with $s > u^* - \varepsilon$.  This is the exact
-form used in the proof that $\sup$ interacts correctly with limits,
-integrals, and measures.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Duality
@@ -296,30 +320,24 @@ $\forall S \subseteq A$: $\ell^*$ is the infimum of $S$ in $(A,\leq)$
 $\;\leftrightarrow\;$ $\ell^*$ is the supremum of $S$ in $(A,\geq)$.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:sup-inf]{Supremum and Infimum}
-  \item \hyperref[def:partial-order]{Partial Order}
-  \item \hyperref[prop:order-duality]{Duality Principle for Posets}
-  \item \hyperref[def:subset]{Subset}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Interpretation]
+Infimum in an order is supremum in the dual order. Lower-bound statements can
+therefore be obtained by reversing the order relation.
+\end{remark*}
 
-\begin{remark*}[Consequence for $\mathbb{R}$]
-\label{rem:inf-from-completeness}
+\begin{remark*}[Exposition]
 This proposition explains why the completeness axiom for $\mathbb{R}$ is
 stated only for suprema: the infimum statement comes for free by duality.
 The axiom says every nonempty bounded-above subset has a supremum; the
 proposition immediately gives that every nonempty bounded-below subset has
-an infimum.  You will use this constantly without comment in Volume~II.
+an infimum.
 \end{remark*}
 
 % ---------------------------------------------------------
 % Connection to sup/inf of sequences
 % ---------------------------------------------------------
 
-\begin{remark*}[Sequences and sup/inf]
-\label{rem:seq-sup-inf}
+\begin{remark*}[Exposition]
 A sequence $(a_n)_{n=1}^{\infty}$ in $\mathbb{R}$ is a function
 $\mathbb{N} \to \mathbb{R}$, so its range $\{a_n : n \in \mathbb{N}\}$ is a
 subset of $\mathbb{R}$.  The quantities $\sup_n a_n$ and $\inf_n a_n$ are
@@ -338,8 +356,7 @@ $\mathbb{R}$.  Mastering the abstract definitions here makes those formulas
 transparent rather than mysterious.
 \end{remark*}
 
-\begin{remark*}[Transition]
-\label{rem:transition-to-lattice}
+\begin{remark*}[Exposition]
 Supremum and infimum are defined for arbitrary subsets of a poset, but they
 need not always exist.  When \emph{every} two-element subset $\{a,b\}$ has
 both a supremum and an infimum, the poset has enough structure to define
@@ -348,3 +365,12 @@ This additional structure is called a \emph{lattice}, and it is developed in
 the next section.  Lattices are the precise abstract setting for the
 $\sigma$-algebras and topologies encountered in measure theory and topology.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sup-inf]{Supremum and Infimum}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[prop:order-duality]{Duality Principle for Posets}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}

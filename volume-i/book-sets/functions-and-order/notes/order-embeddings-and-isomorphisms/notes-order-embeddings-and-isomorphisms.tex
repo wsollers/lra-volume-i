@@ -12,20 +12,39 @@ for all $x,y\in A$.
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:function]{Function}
-  \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x,y\in A,\quad
+  f(x)\leq' f(y)\to x\leq y.
+\]
+\end{remark*}
 
-\begin{remark*}[Comment]
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{OrderReflecting}(f,\leq,\leq')
+  \iff
+  \forall x,y\in A,\ (f(x)\leq' f(y)\to x\leq y).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An order-reflecting map pulls output comparisons back to input comparisons.
+\end{remark*}
+
+\begin{remark*}[Exposition]
 Order-preserving pushes an inequality forward. Order-reflecting pulls an
 inequality back. Together they say
 \[
 x\leq y \quad\Longleftrightarrow\quad f(x)\leq' f(y).
 \]
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Order Embedding, Function-Property Form)}
 \begin{definition}[Order Embedding, Function-Property Form]\label{def:order-embedding-function-form}
@@ -34,18 +53,31 @@ order-reflecting.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{OrderEmbedding}(f)
+  \iff
+  \operatorname{OrderPreserving}(f)\wedge\operatorname{OrderReflecting}(f).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An order embedding preserves and reflects order, so it identifies the domain
+with an ordered copy of its image.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+This is the same notion as \hyperref[def:order-embedding]{Order Embedding} in
+the orderings chapter, restated here to emphasize the function-property
+decomposition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-preserving-map]{Order-Preserving Map}
   \item \hyperref[def:order-reflecting-map]{Order-Reflecting Map}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Comment]
-This is the same notion as \hyperref[def:order-embedding]{Order Embedding} in
-the orderings chapter, restated here to emphasize the function-property
-decomposition.
-\end{remark*}
 
 \begin{propositionbox}{Proposition (Order Embeddings Are Injective, Revisited)}
 \begin{proposition}[Order Embeddings Are Injective, Revisited]\label{prop:order-embedding-injective-revisited}
@@ -54,6 +86,23 @@ Every order embedding between partial orders is injective.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{OrderEmbedding}(f)\to \operatorname{Injective}(f).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Order embeddings between partial orders cannot collapse two distinct inputs.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+An order-preserving map can collapse distinct comparable elements. An
+order-reflecting map cannot: if $f(x)=f(y)$, then both $f(x)\leq' f(y)$ and
+$f(y)\leq' f(x)$ hold. Reflection gives $x\leq y$ and $y\leq x$, and
+antisymmetry gives $x=y$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-embedding-function-form]{Order Embedding, Function-Property Form}
@@ -61,13 +110,6 @@ Every order embedding between partial orders is injective.
   \item \hyperref[def:antisymmetric]{Antisymmetric Relation}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Comment]
-An order-preserving map can collapse distinct comparable elements. An
-order-reflecting map cannot: if $f(x)=f(y)$, then both $f(x)\leq' f(y)$ and
-$f(y)\leq' f(x)$ hold. Reflection gives $x\leq y$ and $y\leq x$, and
-antisymmetry gives $x=y$.
-\end{remark*}
 
 \subsection*{Isomorphisms Onto Images}
 
@@ -81,6 +123,19 @@ is an order isomorphism.
 \hyperref[prf:order-embedding-isomorphism-onto-image]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{OrderEmbedding}(f)
+  \to
+  \operatorname{OrderIsomorphism}(f_{\operatorname{im}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An order embedding becomes an order isomorphism after the codomain is restricted
+to the image.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -98,6 +153,23 @@ $f^{-1}:(B,\leq')\to(A,\leq)$ is an order isomorphism.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{OrderIsomorphism}(f)\to \operatorname{OrderIsomorphism}(f^{-1}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The inverse of an order isomorphism preserves the same order structure in the
+reverse direction.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+A bijective order-preserving map should not be treated as an order isomorphism
+until the inverse is known to be order-preserving, or equivalently until the
+map is known to reflect order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:order-isomorphism]{Order Isomorphism}
@@ -105,9 +177,3 @@ $f^{-1}:(B,\leq')\to(A,\leq)$ is an order isomorphism.
   \item \hyperref[def:order-reflecting-map]{Order-Reflecting Map}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Comment]
-A bijective order-preserving map should not be treated as an order isomorphism
-until the inverse is known to be order-preserving, or equivalently until the
-map is known to reflect order.
-\end{remark*}
