@@ -30,7 +30,7 @@ where each \(Q_i\in\{\forall,\exists\}\) and each \(x_i\) is a variable.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{QuantifierPrefix}(\Pi)\) means that \(\Pi\) is a finite string
+\(\Pi\in\mathsf{QuantifierPrefix}\) means that \(\Pi\) is a finite string
 of quantifier-variable pairs.
 \end{remark*}
 
@@ -64,7 +64,7 @@ Q_1x_1\cdots Q_nx_n\,\psi \text{ has matrix } \psi,
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{Matrix}(\psi,\Phi)\) means that \(\psi\) is the matrix of the
+\(\psi\in\mathsf{Matrix}(\Phi)\) means that \(\psi\) is the matrix of the
 formula \(\Phi\).
 \end{remark*}
 
@@ -101,7 +101,7 @@ quantifier-free.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{PrenexFormula}(\Phi)\) means that all quantifiers of \(\Phi\)
+\(\Phi\in\mathsf{PrenexFormula}\) means that all quantifiers of \(\Phi\)
 occur in an initial prefix.
 \end{remark*}
 
@@ -151,7 +151,7 @@ exactly when \(\psi\) is prenex and \(\varphi\equiv\psi\).
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{PrenexNormalForm}(\psi,\varphi)\) means that \(\psi\) is a
+\(\psi\in\mathsf{PrenexNormalForm}(\varphi)\) means that \(\psi\) is a
 prenex formula logically equivalent to \(\varphi\).
 \end{remark*}
 
@@ -210,7 +210,7 @@ normal form.
 
 \begin{remark*}[Predicate reading]
 \(\forall\varphi\,
-\exists\psi\,\operatorname{PrenexNormalForm}(\psi,\varphi)\).
+\exists\psi\,\psi\in\mathsf{PrenexNormalForm}(\varphi)\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]

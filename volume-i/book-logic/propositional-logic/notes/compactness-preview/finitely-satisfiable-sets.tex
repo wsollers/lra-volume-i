@@ -44,10 +44,10 @@ A finite subset is a finite test case cut out of a larger set of formulas.
 Let \(\Gamma\subseteq\WFF\). The set \(\Gamma\) is finitely satisfiable if every
 finite subset of \(\Gamma\) is satisfiable.
 \[
-\operatorname{FinitelySatisfiableSet}(\Gamma)
+\operatorname{FinitelySatisfiable}(\Gamma)
 \Longleftrightarrow
 \forall\Delta\,\Bigl((\Delta\subseteq\Gamma\land \Delta\text{ is finite})
-\Rightarrow \operatorname{SatisfiableSet}(\Delta)\Bigr).
+\Rightarrow \operatorname{Satisfiable}(\Delta)\Bigr).
 \]
 \end{definition}
 \end{definitionbox}
@@ -57,13 +57,13 @@ finite subset of \(\Gamma\) is satisfiable.
 \Gamma\text{ is finitely satisfiable}
 \Longleftrightarrow
 \forall\Delta\,\Bigl((\Delta\subseteq\Gamma\land \Delta\text{ is finite})
-\Rightarrow \exists v\,(\operatorname{TruthAssignment}(v)\land v\models\Delta)\Bigr).
+\Rightarrow \exists v\,(v\in\mathsf{TruthAssignment}\land v\models\Delta)\Bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{FinitelySatisfiableSet}(\Gamma)
+\operatorname{FinitelySatisfiable}(\Gamma)
 \]
 means that every finite portion of \(\Gamma\) has at least one satisfying truth
 assignment.
@@ -71,16 +71,16 @@ assignment.
 
 \begin{remark*}[Negated quantified statement]
 \[
-\neg\operatorname{FinitelySatisfiableSet}(\Gamma)
+\neg\operatorname{FinitelySatisfiable}(\Gamma)
 \Longleftrightarrow
 \exists\Delta\,\Bigl(\Delta\subseteq\Gamma\land \Delta\text{ is finite}\land
-\operatorname{UnsatisfiableSet}(\Delta)\Bigr).
+\operatorname{Unsatisfiable}(\Delta)\Bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{FinitelySatisfiableSet}(\Gamma)
+\neg\operatorname{FinitelySatisfiable}(\Gamma)
 \]
 means that some finite subset of \(\Gamma\) already has no satisfying truth
 assignment.
@@ -96,10 +96,10 @@ unsatisfiable.
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.] \[
-\neg\operatorname{FinitelySatisfiableSet}(\Gamma)
+\neg\operatorname{FinitelySatisfiable}(\Gamma)
 \Longleftrightarrow
 \exists\Delta\,\Bigl(\Delta\subseteq\Gamma\land \Delta\text{ is finite}\land
-\operatorname{UnsatisfiableSet}(\Delta)\Bigr).
+\operatorname{Unsatisfiable}(\Delta)\Bigr).
 \]
 So failure of finite satisfiability is witnessed by one finite unsatisfiable
 subcollection.

@@ -51,7 +51,7 @@ together with the usual logical connectives, quantifiers, and punctuation.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{FirstOrderLanguage}(L)\) means that \(L\) supplies the variable
+\(L\in\mathsf{FirstOrderLanguage}\) means that \(L\) supplies the variable
 stock, logical symbols, and arity-indexed non-logical symbols used to form
 first-order terms and formulas.
 \end{remark*}
@@ -63,7 +63,7 @@ L \text{ is not equipped with the required first-order symbol classes and aritie
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{FirstOrderLanguage}(L)\) means that \(L\) lacks some
+\(L\notin\mathsf{FirstOrderLanguage}\) means that \(L\) lacks some
 required syntactic stock or arity assignment.
 \end{remark*}
 
@@ -140,7 +140,7 @@ for each \(c\in\mathsf{Const}_{\mathcal L}\),
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{Structure}(M,L)\) means that \(M\) is a structure for the
+\(M\in\mathsf{Structure}(L)\) means that \(M\) is a structure for the
 first-order language \(L\).
 \end{remark*}
 
@@ -153,7 +153,7 @@ I \text{ fails to assign the required object, function, or relation to some symb
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{Structure}(M,L)\) means that \(M\) is not a well-formed
+\(M\notin\mathsf{Structure}(L)\) means that \(M\) is not a well-formed
 structure for \(L\).
 \end{remark*}
 
@@ -218,7 +218,7 @@ s \text{ is a variable assignment for } \mathcal M
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{VariableAssignment}(s,M)\) means that \(s\) assigns a domain
+\(s\in\mathsf{VariableAssignment}(M)\) means that \(s\) assigns a domain
 element of \(M\) to each variable of the language of \(M\).
 \end{remark*}
 
@@ -231,7 +231,7 @@ element of \(M\) to each variable of the language of \(M\).
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{VariableAssignment}(s,M)\) means that \(s\) is not a
+\(s\notin\mathsf{VariableAssignment}(M)\) means that \(s\) is not a
 function assigning each variable a domain element of \(M\).
 \end{remark*}
 
@@ -290,7 +290,7 @@ s[x\mapsto d](y)=s(y) \Longleftrightarrow y\neq x.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{ModifiedAssignment}(s,x,d,s')\) means that \(s'\) is the
+\(s'\in\mathsf{ModifiedAssignment}(s,x,d)\) means that \(s'\) is the
 assignment obtained from \(s\) by sending \(x\) to \(d\) and leaving every
 other variable unchanged.
 \end{remark*}
@@ -304,7 +304,7 @@ s'(x)\neq d
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{ModifiedAssignment}(s,x,d,s')\) means that \(s'\) is not the
+\(s'\notin\mathsf{ModifiedAssignment}(s,x,d)\) means that \(s'\) is not the
 one-variable update of \(s\) at \(x\) with value \(d\).
 \end{remark*}
 
@@ -370,7 +370,7 @@ I(f)\bigl(\llbracket t_1\rrbracket_{\mathcal M,s},\ldots,
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{TermEvaluation}(M,s,t,a)\) means that the term \(t\) evaluates
+\(a\in\mathsf{TermEvaluation}(M,s,t)\) means that the term \(t\) evaluates
 to the domain element \(a\) in \(M\) under \(s\).
 \end{remark*}
 
@@ -381,7 +381,7 @@ to the domain element \(a\) in \(M\) under \(s\).
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{TermEvaluation}(M,s,t,a)\) means that \(a\) is not the value
+\(a\notin\mathsf{TermEvaluation}(M,s,t)\) means that \(a\) is not the value
 of \(t\) in \(M\) under \(s\).
 \end{remark*}
 

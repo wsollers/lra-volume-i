@@ -14,17 +14,17 @@ satisfiable, then \(\Gamma\) is satisfiable.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{FinitelySatisfiableSet}(\Gamma)
+\operatorname{FinitelySatisfiable}(\Gamma)
 \Rightarrow
-\operatorname{SatisfiableSet}(\Gamma).
+\operatorname{Satisfiable}(\Gamma).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{FinitelySatisfiableSet}(\Gamma)
+\operatorname{FinitelySatisfiable}(\Gamma)
 \Rightarrow
-\operatorname{SatisfiableSet}(\Gamma)
+\operatorname{Satisfiable}(\Gamma)
 \]
 means that passing every finite satisfiability test is enough to produce a
 truth assignment for all of \(\Gamma\).
@@ -32,16 +32,16 @@ truth assignment for all of \(\Gamma\).
 
 \begin{remark*}[Negated quantified statement]
 \[
-\operatorname{FinitelySatisfiableSet}(\Gamma)\land
-\neg\operatorname{SatisfiableSet}(\Gamma)
+\operatorname{FinitelySatisfiable}(\Gamma)\land
+\neg\operatorname{Satisfiable}(\Gamma)
 \]
 is the direct negation of the compactness implication.
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{FinitelySatisfiableSet}(\Gamma)\land
-\neg\operatorname{SatisfiableSet}(\Gamma)
+\operatorname{FinitelySatisfiable}(\Gamma)\land
+\neg\operatorname{Satisfiable}(\Gamma)
 \]
 would mean that all finite tests pass but the full set has no satisfying truth
 assignment.
@@ -50,10 +50,10 @@ assignment.
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.] \[
-\neg\operatorname{SatisfiableSet}(\Gamma)
+\neg\operatorname{Satisfiable}(\Gamma)
 \Rightarrow
 \exists\Delta\,\Bigl(\Delta\subseteq\Gamma\land \Delta\text{ is finite}\land
-\neg\operatorname{SatisfiableSet}(\Delta)\Bigr).
+\neg\operatorname{Satisfiable}(\Delta)\Bigr).
 \]
 Compactness says that unsatisfiability cannot first appear only at the infinite
 level.
@@ -63,18 +63,18 @@ level.
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.] \[
-\operatorname{UnsatisfiableSet}(\Gamma)
+\operatorname{Unsatisfiable}(\Gamma)
 \Rightarrow
-\exists\Delta\,\operatorname{FiniteUnsatisfiabilityWitness}(\Delta,\Gamma).
+\exists\Delta\,\operatorname{Witness}(\Delta,\Gamma).
 \]
 \end{description}
 \end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
 \[
-\operatorname{UnsatisfiableSet}(\Gamma)
+\operatorname{Unsatisfiable}(\Gamma)
 \Rightarrow
-\exists\Delta\,\operatorname{FiniteUnsatisfiabilityWitness}(\Delta,\Gamma).
+\exists\Delta\,\operatorname{Witness}(\Delta,\Gamma).
 \]
 \end{remark*}
 

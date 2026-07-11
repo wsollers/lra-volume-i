@@ -18,7 +18,7 @@ For a formula \(\ell\in\WFF\),
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Literal}(\ell)
+\ell\in\mathsf{Literal}
 \]
 means that \(\ell\) is an atomic propositional variable or the negation of one
 atomic propositional variable.
@@ -68,7 +68,7 @@ For a formula \(\ell\in\WFF\),
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{PositiveLiteral}(\ell)
+\ell\in\mathsf{PositiveLiteral}
 \]
 means that \(\ell\) is a literal whose sign is positive.
 \end{remark*}
@@ -109,7 +109,7 @@ For a formula \(\ell\in\WFF\),
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NegativeLiteral}(\ell)
+\ell\in\mathsf{NegativeLiteral}
 \]
 means that \(\ell\) is a literal whose sign is negative.
 \end{remark*}
@@ -200,7 +200,7 @@ The empty clause is treated separately as the empty disjunction.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Clause}(C)
+C\in\mathsf{Clause}
 \]
 means that \(C\) is built by finitely disjoining literals.
 \end{remark*}
@@ -248,7 +248,7 @@ The empty conjunction is treated separately.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Term}(T)
+T\in\mathsf{Term}
 \]
 means that \(T\) is built by finitely conjoining literals.
 \end{remark*}
@@ -292,7 +292,7 @@ The empty clause is the disjunction over no literals and has truth value
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{EmptyClause}(C)
+C\in\mathsf{EmptyClause}
 \]
 means that \(C\) is the clause with no disjuncts.
 \end{remark*}
@@ -327,7 +327,7 @@ The empty conjunction is the conjunction over no literals and has truth value
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{EmptyConjunction}(T)
+T\in\mathsf{EmptyConjunction}
 \]
 means that \(T\) is the term with no conjuncts.
 \end{remark*}

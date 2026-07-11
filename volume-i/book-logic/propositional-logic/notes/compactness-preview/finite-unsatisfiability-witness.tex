@@ -13,7 +13,7 @@ unsatisfiability witness for \(\Gamma\) if \(\Delta\) is unsatisfiable.
 \[
 \Delta\text{ is an unsatisfiability witness for }\Gamma
 \Longleftrightarrow
-\Delta\subseteq\Gamma\land \operatorname{UnsatisfiableSet}(\Delta).
+\Delta\subseteq\Gamma\land \operatorname{Unsatisfiable}(\Delta).
 \]
 \end{remark*}
 
@@ -21,7 +21,7 @@ unsatisfiability witness for \(\Gamma\) if \(\Delta\) is unsatisfiable.
 \[
 \Delta\subseteq\Gamma
 \quad\text{and}\quad
-\operatorname{UnsatisfiableSet}(\Delta)
+\operatorname{Unsatisfiable}(\Delta)
 \]
 means that the formulas in \(\Delta\) already explain why the larger set
 \(\Gamma\) cannot be satisfied, provided \(\Delta\) is part of \(\Gamma\).
@@ -47,10 +47,10 @@ Let \(\Gamma\subseteq\WFF\). A subset \(\Delta\subseteq\Gamma\) is a finite
 unsatisfiability witness for \(\Gamma\) if \(\Delta\) is finite and
 unsatisfiable.
 \[
-\operatorname{FiniteUnsatisfiabilityWitness}(\Delta,\Gamma)
+\operatorname{Witness}(\Delta,\Gamma)
 \Longleftrightarrow
 \Delta\subseteq\Gamma\land \Delta\text{ is finite}\land
-\operatorname{UnsatisfiableSet}(\Delta).
+\operatorname{Unsatisfiable}(\Delta).
 \]
 \end{definition}
 \end{definitionbox}
@@ -60,13 +60,13 @@ unsatisfiable.
 \Delta\text{ is a finite unsatisfiability witness for }\Gamma
 \Longleftrightarrow
 \Delta\subseteq\Gamma\land \Delta\text{ is finite}\land
-\operatorname{UnsatisfiableSet}(\Delta).
+\operatorname{Unsatisfiable}(\Delta).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{FiniteUnsatisfiabilityWitness}(\Delta,\Gamma)
+\operatorname{Witness}(\Delta,\Gamma)
 \]
 means that \(\Delta\) is a finite subset of \(\Gamma\) and that \(\Delta\)
 already has no satisfying truth assignment.
@@ -101,17 +101,17 @@ Let \(\Gamma\subseteq\WFF\). If there exists a finite
 
 \begin{remark*}[Standard quantified statement]
 \[
-\exists\Delta\,\operatorname{FiniteUnsatisfiabilityWitness}(\Delta,\Gamma)
+\exists\Delta\,\operatorname{Witness}(\Delta,\Gamma)
 \Rightarrow
-\operatorname{UnsatisfiableSet}(\Gamma).
+\operatorname{Unsatisfiable}(\Gamma).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\exists\Delta\,\operatorname{FiniteUnsatisfiabilityWitness}(\Delta,\Gamma)
+\exists\Delta\,\operatorname{Witness}(\Delta,\Gamma)
 \Rightarrow
-\operatorname{UnsatisfiableSet}(\Gamma)
+\operatorname{Unsatisfiable}(\Gamma)
 \]
 means that a single finite unsatisfiable subcollection forces the whole set
 \(\Gamma\) to be unsatisfiable.
@@ -127,10 +127,10 @@ finite subset \(\Delta\subseteq\Gamma\) remained unsatisfiable.
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.] \[
-\operatorname{SatisfiableSet}(\Gamma)
+\operatorname{Satisfiable}(\Gamma)
 \Rightarrow
 \forall\Delta\,\bigl(\Delta\subseteq\Gamma\Rightarrow
-\operatorname{SatisfiableSet}(\Delta)\bigr).
+\operatorname{Satisfiable}(\Delta)\bigr).
 \]
 If the whole set has a satisfying truth assignment, each subset inherits one.
 \end{description}
@@ -138,18 +138,18 @@ If the whole set has a satisfying truth assignment, each subset inherits one.
 
 \begin{remark*}[Contrapositive quantified statement]
 \[
-\operatorname{SatisfiableSet}(\Gamma)
+\operatorname{Satisfiable}(\Gamma)
 \Rightarrow
 \forall\Delta\,\bigl(\Delta\subseteq\Gamma\Rightarrow
-\operatorname{SatisfiableSet}(\Delta)\bigr).
+\operatorname{Satisfiable}(\Delta)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Contrapositive predicate reading]
 \[
-\operatorname{SatisfiableSet}(\Gamma)
+\operatorname{Satisfiable}(\Gamma)
 \Rightarrow
-\operatorname{FinitelySatisfiableSet}(\Gamma)
+\operatorname{FinitelySatisfiable}(\Gamma)
 \]
 means that one truth assignment for all of \(\Gamma\) also satisfies every
 finite subset of \(\Gamma\).
@@ -183,17 +183,17 @@ subset of \(\Gamma\) is satisfiable.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{SatisfiableSet}(\Gamma)
+\operatorname{Satisfiable}(\Gamma)
 \Rightarrow
-\operatorname{FinitelySatisfiableSet}(\Gamma).
+\operatorname{FinitelySatisfiable}(\Gamma).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{SatisfiableSet}(\Gamma)
+\operatorname{Satisfiable}(\Gamma)
 \Rightarrow
-\operatorname{FinitelySatisfiableSet}(\Gamma)
+\operatorname{FinitelySatisfiable}(\Gamma)
 \]
 means that full satisfiability automatically gives finite satisfiability.
 \end{remark*}

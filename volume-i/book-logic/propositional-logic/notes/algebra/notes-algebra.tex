@@ -12,7 +12,7 @@ with \(\varphi,\psi\in\WFF\). Each instance of the schema says that the two form
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{PropositionalEquivalenceLaw}(\varphi,\psi)
+(\varphi,\psi)\in\mathsf{PropositionalEquivalenceLaw}
 \Longleftrightarrow
 \varphi,\psi\in\WFF
 \land
@@ -22,7 +22,7 @@ with \(\varphi,\psi\in\WFF\). Each instance of the schema says that the two form
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{PropositionalEquivalenceLaw}(\varphi,\psi)
+(\varphi,\psi)\in\mathsf{PropositionalEquivalenceLaw}
 \]
 means that \(\varphi\equiv\psi\) is a valid logical-equivalence schema.
 \end{remark*}
@@ -177,7 +177,7 @@ and
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-&(\operatorname{Tautology}(\top)\land \operatorname{Contradiction}(\bot))
+&(\operatorname{IsTautology}(\top)\land \operatorname{Contradiction}(\bot))
 \to
 (\forall\varphi\in\WFF)\\
 &\quad
@@ -513,7 +513,7 @@ A formula context \(C[-]\) is a well-formed formula with one distinguished place
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{FormulaContext}(C[-])
+C[-]\in\mathsf{FormulaContext}
 \Longrightarrow
 (\forall\varphi\in\WFF)(C[\varphi]\in\WFF).
 \]
@@ -521,7 +521,7 @@ A formula context \(C[-]\) is a well-formed formula with one distinguished place
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{FormulaContext}(C[-])
+C[-]\in\mathsf{FormulaContext}
 \]
 means that \(C[-]\) is a one-hole propositional formula context.
 \end{remark*}
@@ -572,7 +572,7 @@ C[\varphi]\equiv C[\psi].
 (\forall\varphi,\psi\in\WFF)
 (\forall C[-])
 \left[
-\operatorname{FormulaContext}(C[-])
+C[-]\in\mathsf{FormulaContext}
 \land
 \varphi\equiv\psi
 \to

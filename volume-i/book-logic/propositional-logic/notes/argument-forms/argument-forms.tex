@@ -17,14 +17,14 @@ premise formulas and one conclusion formula.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{ArgumentForm}(\Gamma,\varphi)
+(\Gamma,\varphi)\in\mathsf{ArgumentForm}
 \Longleftrightarrow
 \Gamma\subseteq\WFF\text{ is finite and }\varphi\in\WFF.
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{ArgumentForm}(\Gamma,\varphi)\) means that \(\Gamma\) is the set
+\((\Gamma,\varphi)\in\mathsf{ArgumentForm}\) means that \(\Gamma\) is the set
 or finite list of premises and \(\varphi\) is the conclusion.
 \end{remark*}
 
@@ -53,7 +53,7 @@ An argument form with premises \(\Gamma\) and conclusion \(\varphi\) is
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{ValidArgumentForm}(\Gamma,\varphi)
+\operatorname{Valid}(\Gamma,\varphi)
 \Longleftrightarrow
 (\forall v)\bigl((\forall\gamma\in\Gamma)(v\models\gamma)
 \to v\models\varphi\bigr).
@@ -61,7 +61,7 @@ An argument form with premises \(\Gamma\) and conclusion \(\varphi\) is
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{ValidArgumentForm}(\Gamma,\varphi)\) means that truth of all
+\(\operatorname{Valid}(\Gamma,\varphi)\) means that truth of all
 premises forces truth of the conclusion under every truth assignment.
 \end{remark*}
 
@@ -92,14 +92,14 @@ truth assignment that satisfies every premise in \(\Gamma\) and does not satisfy
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{CounterexampleAssignment}(v,\Gamma,\varphi)
+v\in\mathsf{CounterexampleAssignment}(\Gamma,\varphi)
 \Longleftrightarrow
 (\forall\gamma\in\Gamma)(v\models\gamma)\land v\not\models\varphi.
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{CounterexampleAssignment}(v,\Gamma,\varphi)\) means that \(v\)
+\(v\in\mathsf{CounterexampleAssignment}(\Gamma,\varphi)\) means that \(v\)
 shows the premises can all be true while the conclusion is false.
 \end{remark*}
 
@@ -129,9 +129,9 @@ table makes every formula in \(\Gamma\) true and \(\varphi\) false.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{ValidArgumentForm}(\Gamma,\varphi)
+\operatorname{Valid}(\Gamma,\varphi)
 \Longleftrightarrow
-\neg(\exists v)\operatorname{CounterexampleAssignment}(v,\Gamma,\varphi).
+\neg(\exists v)\bigl(v\in\mathsf{CounterexampleAssignment}(\Gamma,\varphi)\bigr).
 \]
 \end{remark*}
 

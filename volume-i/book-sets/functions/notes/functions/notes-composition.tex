@@ -494,10 +494,10 @@ Let $f : A \to B$ and $S, T \subseteq B$. Then
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{PreimagePreservesUnion}(f,S,T)$,
-$\operatorname{PreimagePreservesIntersection}(f,S,T)$,
-$\operatorname{PreimagePreservesDifference}(f,S,T)$, and
-$\operatorname{PreimagePreservesComplement}(f,S)$ mean that preimage converts
+$\operatorname{PreservesUnion}(f,S,T)$,
+$\operatorname{PreservesIntersection}(f,S,T)$,
+$\operatorname{PreservesDifference}(f,S,T)$, and
+$\operatorname{PreservesComplement}(f,S)$ mean that preimage converts
 the corresponding set operation in $B$ into the same set operation in $A$.
 \end{remark*}
 
@@ -548,8 +548,8 @@ $\forall a\in A:\; a\in f^{-1}(\bigcap_{i\in I}T_i)
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{PreimagePreservesIndexedUnion}(f,\{T_i\}_{i\in I})$ and
-$\operatorname{PreimagePreservesIndexedIntersection}(f,\{T_i\}_{i\in I})$ mean
+$\operatorname{PreservesIndexedUnion}(f,\{T_i\}_{i\in I})$ and
+$\operatorname{PreservesIndexedIntersection}(f,\{T_i\}_{i\in I})$ mean
 that preimage commutes with the indexed union, and with the indexed intersection
 when the index set is nonempty.
 \end{remark*}
@@ -591,9 +591,9 @@ Equality holds in (ii) and (iii) for all $S,T$ iff $f$ is injective.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{ImagePreservesUnion}(f,S,T)$ means that $f(S\cup T)=f(S)\cup
-f(T)$. The predicates $\operatorname{ImageIntersectionInclusion}(f,S,T)$ and
-$\operatorname{ImageDifferenceInclusion}(f,S,T)$ record the one-sided image
+$\operatorname{PreservesUnion}(f,S,T)$ means that $f(S\cup T)=f(S)\cup
+f(T)$. The predicates $\operatorname{MapsInto}(f,S,T)$ and
+$\operatorname{MapsInto}(f,S,T)$ record the one-sided image
 laws, with equality uniformly when $\operatorname{Injective}(f)$ holds.
 \end{remark*}
 

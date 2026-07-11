@@ -16,7 +16,7 @@ value assigned to \(P\).
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{TruthAssignment}(v)
+v\in\mathsf{TruthAssignment}
 \Longleftrightarrow
 v:\Prop\to\mathbb{B}.
 \]
@@ -24,7 +24,7 @@ v:\Prop\to\mathbb{B}.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{TruthAssignment}(v)
+v\in\mathsf{TruthAssignment}
 \]
 means that \(v\) assigns exactly one truth value to each propositional variable.
 \end{remark*}
@@ -72,7 +72,7 @@ is the set \(\Prop\) of propositional variables.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{TruthAssignment}(v)\Longrightarrow \operatorname{dom}(v)=\Prop.
+v\in\mathsf{TruthAssignment}\Longrightarrow \operatorname{dom}(v)=\Prop.
 \]
 \end{remark*}
 
@@ -156,7 +156,7 @@ conjunction, disjunction, material implication, and biconditional.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ExtendedTruthAssignment}(\widehat v,v)
+\widehat v\in\mathsf{ExtendedTruthAssignment}(v)
 \]
 means that \(\widehat v\) is the recursively defined truth-value function on
 \(\WFF\) induced by the atomic truth assignment \(v\).
@@ -266,10 +266,10 @@ recursive truth clauses for
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{TruthAssignment}(v)
+v\in\mathsf{TruthAssignment}
 \Longrightarrow
 \exists!\widehat v\,
-\operatorname{ExtendedTruthAssignment}(\widehat v,v).
+\widehat v\in\mathsf{ExtendedTruthAssignment}(v).
 \]
 \end{remark*}
 
@@ -307,7 +307,7 @@ if
 \[
 v\models\varphi
 \Longleftrightarrow
-\operatorname{TruthAssignment}(v)
+v\in\mathsf{TruthAssignment}
 \land
 \varphi\in\WFF
 \land
@@ -358,7 +358,7 @@ if \(v\models\gamma\) for every \(\gamma\in\Gamma\).
 \[
 v\models\Gamma
 \Longleftrightarrow
-\operatorname{TruthAssignment}(v)
+v\in\mathsf{TruthAssignment}
 \land
 \Gamma\subseteq\WFF
 \land
@@ -406,7 +406,7 @@ and a final column recording the value of \(\widehat v(\varphi)\) for any truth 
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{TruthTable}(\varphi)
+\mathsf{TruthTable}(\varphi)
 \Longleftrightarrow
 \varphi\in\WFF
 \land
@@ -452,7 +452,7 @@ if every truth assignment satisfies \(\varphi\).
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Tautology}(\varphi)
+\operatorname{IsTautology}(\varphi)
 \]
 means \(\models\varphi\).
 \end{remark*}
@@ -514,7 +514,7 @@ A formula \(\varphi\in\WFF\) is satisfiable if at least one truth assignment sat
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{SatisfiableFormula}(\varphi)
+\operatorname{Satisfiable}(\varphi)
 \Longleftrightarrow
 \varphi\in\WFF
 \land
@@ -524,7 +524,7 @@ A formula \(\varphi\in\WFF\) is satisfiable if at least one truth assignment sat
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{SatisfiableFormula}(\varphi)
+\operatorname{Satisfiable}(\varphi)
 \]
 means that \(\varphi\) is true under at least one truth assignment.
 \end{remark*}
@@ -552,9 +552,9 @@ A formula \(\varphi\in\WFF\) is a contingency if it is satisfiable but not a tau
 \[
 \operatorname{Contingency}(\varphi)
 \Longleftrightarrow
-\operatorname{SatisfiableFormula}(\varphi)
+\operatorname{Satisfiable}(\varphi)
 \land
-\neg \operatorname{Tautology}(\varphi).
+\neg \operatorname{IsTautology}(\varphi).
 \]
 \end{remark*}
 
@@ -739,7 +739,7 @@ Every propositional formula has a finite truth table. More precisely, if \(\oper
 \left[
 |\operatorname{Var}(\varphi)|=n
 \to
-\operatorname{TruthTable}(\varphi)\text{ has }2^n\text{ rows}
+\mathsf{TruthTable}(\varphi)\text{ has }2^n\text{ rows}
 \right].
 \]
 \end{remark*}

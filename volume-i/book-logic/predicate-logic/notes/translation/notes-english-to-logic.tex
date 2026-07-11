@@ -25,7 +25,7 @@ K \text{ specifies a domain and readings for each non-logical symbol used.}
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{TranslationKey}(K)\) means that \(K\) supplies the domain and
+\(K\in\mathsf{TranslationKey}\) means that \(K\) supplies the domain and
 symbol readings needed to parse a translated formula.
 \end{remark*}
 
@@ -72,7 +72,7 @@ D \text{ is the domain of discourse }
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{DomainOfDiscourse}(D,K)\) means that \(D\) is the domain fixed
+\(D\in\mathsf{DomainOfDiscourse}(K)\) means that \(D\) is the domain fixed
 by the translation key \(K\).
 \end{remark*}
 
@@ -121,15 +121,15 @@ and an \(n\)-ary relation symbol names a relation among \(n\) objects.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{TranslationPredicateSymbol}(P,K)\) records that \(P\) has a
-fixed predicate reading in \(K\), and \(\operatorname{TranslationRelationSymbol}(R,n,K)\)
+\(P\in\mathsf{TranslationPredicateSymbol}(K)\) records that \(P\) has a
+fixed predicate reading in \(K\), and \(R\in\mathsf{TranslationRelationSymbol}(n,K)\)
 records that \(R\) is used with arity \(n\) in \(K\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
 Object-language predicate symbols such as \(P,Q,R\) are symbols inside the
 formal language. Metalinguistic predicate readings such as
-\(\operatorname{Term}(t)\) or \(\operatorname{AtomicFormula}(\varphi)\) are
+\(t\in\mathsf{Term}\) or \(\varphi\in\mathsf{AtomicFormula}\) are
 repository descriptions of syntax; they are not formulas being translated.
 \end{remark*}
 
@@ -174,8 +174,8 @@ binding.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{TranslationConstant}(c,K)\) means that \(c\) names a fixed
-object in \(K\), and \(\operatorname{TranslationVariable}(x,K)\) means that
+\(c\in\mathsf{TranslationConstant}(K)\) means that \(c\) names a fixed
+object in \(K\), and \(x\in\mathsf{TranslationVariable}(K)\) means that
 \(x\) is used as a variable in translations governed by \(K\).
 \end{remark*}
 
@@ -223,7 +223,7 @@ is translated by
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{UniversalTranslationPattern}(A,B)\) records the implication
+\((A,B)\in\mathsf{UniversalTranslationPattern}\) records the implication
 schema for translating universal restricted claims.
 \end{remark*}
 
@@ -270,7 +270,7 @@ is translated by
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{ExistentialTranslationPattern}(A,B)\) records the conjunction
+\((A,B)\in\mathsf{ExistentialTranslationPattern}\) records the conjunction
 schema for translating existential restricted claims.
 \end{remark*}
 
@@ -317,7 +317,7 @@ A\to B.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{ConditionalTranslationPattern}(A,B)\) records the implication
+\((A,B)\in\mathsf{ConditionalTranslationPattern}\) records the implication
 schema for conditional English.
 \end{remark*}
 
@@ -362,7 +362,7 @@ negation laws.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{NegationTranslationPattern}(\varphi,\psi)\) records that
+\((\varphi,\psi)\in\mathsf{NegationTranslationPattern}\) records that
 \(\psi\) is obtained from \(\neg\varphi\) by pushing negation through the
 quantifiers and connectives.
 \end{remark*}
@@ -430,8 +430,8 @@ The formulas \(\forall x\exists y\,R(x,y)\) and
 witness \(y\) to depend on \(x\); the second requires one \(y\) that works for
 every \(x\). Symbols such as \(A(x)\), \(B(x)\), and \(R(x,y)\) are
 object-language formula patterns used in translations. Expressions such as
-\(\operatorname{TranslationKey}(K)\), \(\operatorname{Term}(t)\), and
-\(\operatorname{AtomicFormula}(\varphi)\) are metalinguistic predicate readings
+\(K\in\mathsf{TranslationKey}\), \(t\in\mathsf{Term}\), and
+\(\varphi\in\mathsf{AtomicFormula}\) are metalinguistic predicate readings
 used by the project to describe mathematical objects.
 \[
 \begin{array}{lll}

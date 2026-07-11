@@ -194,7 +194,7 @@ relations can therefore be studied with ordinary set-theoretic reasoning.
 \begin{definition}[Domain of a Relation]\label{def:relation-domain}
 Let $R\subseteq A\times B$ be a relation. The \emph{domain} of $R$ is
 \[
-\operatorname{Dom}(R)
+\operatorname{dom}(R)
 \;:=\;
 \{\,a\in A\mid \exists b\in B,\ (a,b)\in R\,\}.
 \]
@@ -204,7 +204,7 @@ Let $R\subseteq A\times B$ be a relation. The \emph{domain} of $R$ is
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a\in A,\quad
-  a\in\operatorname{Dom}(R)
+  a\in\operatorname{dom}(R)
   \iff
   \exists b\in B,\ (a,b)\in R.
 \]
@@ -234,7 +234,7 @@ occur in related pairs.
 \begin{definition}[Range of a Relation]\label{def:relation-range}
 Let $R\subseteq A\times B$ be a relation. The \emph{range} of $R$ is
 \[
-\operatorname{Ran}(R)
+\operatorname{ran}(R)
 \;:=\;
 \{\,b\in B\mid \exists a\in A,\ (a,b)\in R\,\}.
 \]
@@ -245,7 +245,7 @@ Tarski also calls this class the \emph{counter-domain} or \emph{converse domain}
 \begin{remark*}[Standard quantified statement]
 \[
   \forall b\in B,\quad
-  b\in\operatorname{Ran}(R)
+  b\in\operatorname{ran}(R)
   \iff
   \exists a\in A,\ (a,b)\in R.
 \]
