@@ -21,6 +21,7 @@ foundational controversy surrounding it.
 % Equivalent formulations
 % ---------------------------------------------------------
 \begin{theorembox}{Theorem (Alternative Forms of the Axiom of Choice)}
+\begin{theorem}[Alternative Forms of the Axiom of Choice]
 \label{thm:ac-alternative-forms}
 Over ZF set theory, the following statements are equivalent.
 \begin{enumerate}
@@ -41,9 +42,16 @@ Over ZF set theory, the following statements are equivalent.
         that $X\in\mathcal{F}$ exactly when every finite subset of $X$ belongs
         to $\mathcal{F}$.
 \end{enumerate}
+\hyperref[prf:ac-alternative-forms]{\textit{Go to proof.}}
+\end{theorem}
 \end{theorembox}
 
-\begin{remark*}[How to read the equivalences]
+\begin{remark*}[Standard quantified statement]
+Over ZF, the Axiom of Choice, the pairwise-disjoint choice form, Zorn's
+Lemma, the Well-Ordering Theorem, and Tukey's Lemma are equivalent.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 These are not different axioms for this book; they are interchangeable tools.
 The usual selection-function statement is the official axiom. Zorn's Lemma is
 often the most useful proof engine, the well-ordering theorem is the order
@@ -51,23 +59,39 @@ theoretic form, and Tukey's Lemma packages maximality arguments for families
 controlled by their finite subfamilies.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:choice]{Axiom of Choice}
+  \item \hyperref[def:arbitrary-product]{Arbitrary Cartesian Product}
+  \item \hyperref[def:well-ordered-set]{Well-Ordered Set}
+\end{itemize}
+\end{dependencies}
+
 % ---------------------------------------------------------
 % Zorn's Lemma
 % ---------------------------------------------------------
 \begin{theorembox}{Zorn's Lemma}
+\begin{theorem}[Zorn's Lemma]
 \label{thm:zorn}
 Let $(P, \leq)$ be a poset in which every chain (loset) has an upper bound
 in $P$. Then $P$ has at least one maximal element.
+\hyperref[prf:zorn]{\textit{Go to proof.}}
+\end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Reading Zorn's Lemma]
+\begin{remark*}[Standard quantified statement]
+If $(P,\leq)$ is a nonempty partially ordered set and every chain in $P$ has
+an upper bound in $P$, then $P$ has a maximal element.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 The hypothesis ``every chain has an upper bound'' does \emph{not} require
 the bound to lie in the chain itself. The conclusion gives a maximal
 element: an element above which nothing in $P$ sits. In a partial order,
 there may be many maximal elements; Zorn guarantees at least one.
 \end{remark*}
 
-\begin{remark*}[Typical proof pattern using Zorn's Lemma]
+\begin{remark*}[Exposition]
 To show an object of type $X$ exists with a maximal property:
 \begin{enumerate}
   \item Partially order candidate objects by inclusion (or extension).
@@ -80,24 +104,40 @@ This pattern recurs throughout algebra and analysis: maximal ideals,
 algebraic bases (Hamel bases), maximal consistent sets, and Szpilrajn's Theorem.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:ac-alternative-forms]{Alternative Forms of the Axiom of Choice}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+\end{itemize}
+\end{dependencies}
+
 % ---------------------------------------------------------
 % Hausdorff Maximum Principle
 % ---------------------------------------------------------
 \begin{theorembox}{Hausdorff Maximum Principle}
+\begin{theorem}[Hausdorff Maximum Principle]
 \label{thm:hausdorff}
 In every poset $(P, \leq)$ there exists a $\subseteq$-maximal chain; that
 is, a chain $C \subseteq P$ such that no chain $C' \subseteq P$ strictly
 contains $C$.
+\hyperref[prf:hausdorff]{\textit{Go to proof.}}
+\end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Relation to Zorn]
+\begin{remark*}[Standard quantified statement]
+For every partially ordered set $(P,\leq)$, there exists a chain
+$C\subseteq P$ that is maximal among chains under inclusion.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 The Hausdorff Maximum Principle is an immediate corollary of Zorn's Lemma:
 take the poset of chains ordered by inclusion; every chain of chains is
 bounded by its union; Zorn gives a maximal chain. Conversely, Hausdorff
 implies Zorn. Both are equivalent to AC over ZF.
 \end{remark*}
 
-\begin{remark*}[Application: Szpilrajn via Hausdorff]
+\begin{remark*}[Exposition]
 In the proof of Szpilrajn's Theorem (\hyperref[thm:szpilrajn]{$\uparrow$ Thm}), let
 $T_X$ be the set of all partial orders on $X$ extending $\succsim$, ordered
 by $\subseteq$. By the Hausdorff Maximum Principle, $T_X$ has a maximal chain
@@ -108,8 +148,16 @@ transitivity), contradicting maximality of $A$. Hence $\succsim^*$ is a
 linear order. \qed
 \end{remark*}
 
-\begin{remark*}[Transition]
+\begin{remark*}[Exposition]
 Zorn's Lemma is the workhorse for existence proofs throughout abstract
 algebra and analysis. It first appears in the project context here and at
 the proof stubs in \S11 of the Chapter~VIII exercises.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:zorn]{Zorn's Lemma}
+  \item \hyperref[def:partial-order]{Partial Order}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+\end{itemize}
+\end{dependencies}
