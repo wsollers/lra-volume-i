@@ -47,21 +47,21 @@
 
 \begin{toolkitbox}{Composition \& Inverses --- Quick Reference}
 \small
-\begin{tabular}{l l l}
+\begin{tabular}{l p{0.68\linewidth}}
 \toprule
-\textbf{Result}  & \textbf{Statement}  & \textbf{Proof method} \\
+\textbf{Name}  & \textbf{Meaning} \\
 \midrule
-\hyperref[thm:comp-assoc]{Associativity of $\circ$}  & $h \circ (g \circ f) = (h \circ g) \circ f$  & element-wise \\
-\hyperref[thm:comp-id]{Identity and $\circ$}      & $f \circ \id_A = \id_B \circ f = f$           & element-wise \\
-\hyperref[thm:comp-inj-surj]{Inj/Surj under $\circ$}    & Closed under composition; partial converses   & element-wise \\
-\hyperref[thm:inverse-char]{Inverse characterization}  & $f^{-1}\circ f = \id_A$, $f \circ f^{-1} = \id_B$  & bijectivity \\
-\hyperref[thm:inverse-comp]{Inverse of composition}    & $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$     & verify both sides \\
-\hyperref[thm:one-sided]{One-sided inverses}        & Left inverse $\iff$ injective; right $\iff$ surjective  & \\
-\hyperref[thm:preimage-ops]{Preimage preserves ops}    & $f^{-1}$ commutes with $\cup,\cap,\setminus,c$  & element-wise \\
-\hyperref[thm:indexed-preimage-ops]{Indexed preimage ops} & $f^{-1}$ commutes with indexed $\cup$ and $\cap$ & element-wise \\
-\hyperref[thm:image-ops]{Image and set ops}         & Images preserve $\cup$; contain $\subseteq$ for $\cap$  & counterexample \\
-\hyperref[thm:image-preimage-adjunction]{Image/preimage adjunction}  & $S\subseteq f^{-1}(f(S))$, $f(f^{-1}(T))\subseteq T$  & element-wise \\
-\hyperref[prop:preimage-under-inverse-function]{Preimage under inverse} & $(f^{-1})^{-1}(S)=f(S)$ for bijective $f$ & element-wise \\
+\hyperref[thm:comp-assoc]{Associativity of $\circ$}  & $h \circ (g \circ f) = (h \circ g) \circ f$; proved element-wise \\
+\hyperref[thm:comp-id]{Identity and $\circ$}      & $f \circ \id_A = \id_B \circ f = f$; proved element-wise \\
+\hyperref[thm:comp-inj-surj]{Inj/Surj under $\circ$}    & Closed under composition, with partial converses; proved element-wise \\
+\hyperref[thm:inverse-char]{Inverse characterization}  & $f^{-1}\circ f = \id_A$ and $f \circ f^{-1} = \id_B$ characterize bijectivity \\
+\hyperref[thm:inverse-comp]{Inverse of composition}    & $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$ by verifying both sides \\
+\hyperref[thm:one-sided]{One-sided inverses}        & Left inverse iff injective; right inverse iff surjective \\
+\hyperref[thm:preimage-ops]{Preimage preserves ops}    & $f^{-1}$ commutes with $\cup,\cap,\setminus,c$ by element-wise proof \\
+\hyperref[thm:indexed-preimage-ops]{Indexed preimage ops} & $f^{-1}$ commutes with indexed $\cup$ and $\cap$ \\
+\hyperref[thm:image-ops]{Image and set ops}         & Images preserve $\cup$ and contain $\subseteq$ for $\cap$; counterexamples mark failures \\
+\hyperref[thm:image-preimage-adjunction]{Image/preimage adjunction}  & $S\subseteq f^{-1}(f(S))$ and $f(f^{-1}(T))\subseteq T$ \\
+\hyperref[prop:preimage-under-inverse-function]{Preimage under inverse} & $(f^{-1})^{-1}(S)=f(S)$ for bijective $f$ \\
 \bottomrule
 \end{tabular}
 \end{toolkitbox}

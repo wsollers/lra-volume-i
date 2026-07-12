@@ -48,25 +48,25 @@
 
 \begin{toolkitbox}{Relational Properties --- Quick Reference}
 \small
-\begin{tabular}{l l l}
+\begin{tabular}{l p{0.68\linewidth}}
 \toprule
-\textbf{Property}  & \textbf{Formal definition}  & \textbf{Canonical example} \\
+\textbf{Name}  & \textbf{Meaning} \\
 \midrule
-\hyperref[def:reflexive]{Reflexive}       & $\forall a,\; (a,a)\in R$                            & $=$ on any set      \\
-\hyperref[def:irreflexive]{Irreflexive}     & $\forall a,\; (a,a)\notin R$                         & $<$ on $\mathbb{N}$ \\
-\hyperref[def:symmetric]{Symmetric}       & $(a,b)\in R \Rightarrow (b,a)\in R$                  & ``same age as''     \\
-\hyperref[def:antisymmetric]{Antisymmetric}   & $(a,b),(b,a)\in R \Rightarrow a=b$                   & $\leq$ on $\mathbb{N}$ \\
-\hyperref[def:asymmetric]{Asymmetric}      & $(a,b)\in R \Rightarrow (b,a)\notin R$               & $<$ on $\mathbb{N}$ \\
-\hyperref[def:transitive]{Transitive}      & $(a,b),(b,c)\in R \Rightarrow (a,c)\in R$            & $\leq$ on $\mathbb{N}$ \\
-\hyperref[def:total-rel]{Total (Connex)}  & $(a,b)\in R \lor (b,a)\in R$                         & $\leq$ on $\mathbb{R}$ \\
+\hyperref[def:reflexive]{Reflexive}       & $\forall a,\; (a,a)\in R$; example: $=$ on any set \\
+\hyperref[def:irreflexive]{Irreflexive}     & $\forall a,\; (a,a)\notin R$; example: $<$ on $\mathbb{N}$ \\
+\hyperref[def:symmetric]{Symmetric}       & $(a,b)\in R \Rightarrow (b,a)\in R$; example: ``same age as'' \\
+\hyperref[def:antisymmetric]{Antisymmetric}   & $(a,b),(b,a)\in R \Rightarrow a=b$; example: $\leq$ on $\mathbb{N}$ \\
+\hyperref[def:asymmetric]{Asymmetric}      & $(a,b)\in R \Rightarrow (b,a)\notin R$; example: $<$ on $\mathbb{N}$ \\
+\hyperref[def:transitive]{Transitive}      & $(a,b),(b,c)\in R \Rightarrow (a,c)\in R$; example: $\leq$ on $\mathbb{N}$ \\
+\hyperref[def:total-rel]{Total (Connex)}  & $(a,b)\in R \lor (b,a)\in R$; example: $\leq$ on $\mathbb{R}$ \\
 \midrule
-\multicolumn{3}{l}{\textit{Structural classes formed by combining properties:}} \\
+\multicolumn{2}{l}{\textit{Structural classes formed by combining properties:}} \\
 \midrule
-\hyperref[def:equivalence-rel]{Equivalence}     & Reflexive + Symmetric + Transitive                   & $=$ on any set      \\
-\hyperref[def:preorder]{Preorder}        & Reflexive + Transitive                               & $\leq$ on $\mathbb{N}$ \\
-\hyperref[def:partial-order]{Partial order}   & Reflexive + Antisymmetric + Transitive               & $\subseteq$ on $\mathcal{P}(A)$ \\
-\hyperref[def:strict-partial-order]{Strict partial order}   & Irreflexive + Transitive ($\Rightarrow$ Asymmetric)  & $<$ on $\mathbb{R}$ \\
-\hyperref[def:total-order]{Total order}     & Partial order + Total                                & $\leq$ on $\mathbb{R}$ \\
+\hyperref[def:equivalence-rel]{Equivalence}     & Reflexive + symmetric + transitive; example: $=$ on any set \\
+\hyperref[def:preorder]{Preorder}        & Reflexive + transitive; example: $\leq$ on $\mathbb{N}$ \\
+\hyperref[def:partial-order]{Partial order}   & Reflexive + antisymmetric + transitive; example: $\subseteq$ on $\mathcal{P}(A)$ \\
+\hyperref[def:strict-partial-order]{Strict partial order}   & Irreflexive + transitive, hence asymmetric; example: $<$ on $\mathbb{R}$ \\
+\hyperref[def:total-order]{Total order}     & Partial order + totality; example: $\leq$ on $\mathbb{R}$ \\
 \bottomrule
 \end{tabular}
 \end{toolkitbox}
