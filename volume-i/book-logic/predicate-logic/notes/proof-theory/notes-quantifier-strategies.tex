@@ -209,7 +209,8 @@ the pattern $\forall\varepsilon\,\exists\delta\,\cdots$. Understanding the
 proof structure of such statements is the direct payoff of this section.
 \end{exposition}
 
-\begin{propositionbox}{Proof Skeleton: $\forall x\,\exists y\,\varphi(x,y)$}
+\begin{remark*}[Exposition]
+\textbf{Proof Skeleton: $\forall x\,\exists y\,\varphi(x,y)$.}
 \begin{enumerate}[label=\textbf{Step \arabic*.}]
 \item \textbf{Fix arbitrary $x$.} \quad (Opening move for the outer $\forall$; $x$ is
   unspecified. This is Strategy 1.)
@@ -223,24 +224,11 @@ proof structure of such statements is the direct payoff of this section.
 \end{enumerate}
 The key insight: $y$ is chosen \emph{after} $x$ is fixed, so $y$ is allowed
 to depend on $x$.
-\end{propositionbox}
-\begin{remark*}[Standard quantified statement]
-For every admissible object satisfying the hypotheses of the statement, the
-assertion holds in the formal language under discussion.
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-The predicate form records the relation or property named by the statement in
-the displayed logical context.
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-The statement records the named logical notion or result together with its
-intended syntactic or semantic role.
 \end{remark*}
 
 
-\begin{propositionbox}{Proof Skeleton: $\exists y\,\forall x\,\varphi(x,y)$}
+\begin{remark*}[Exposition]
+\textbf{Proof Skeleton: $\exists y\,\forall x\,\varphi(x,y)$.}
 \begin{enumerate}[label=\textbf{Step \arabic*.}]
 \item \textbf{Define $y$.} \quad (The witness for $\exists y$ must be chosen \emph{before}
   $x$ is introduced. This $y$ must work for \emph{every} $x$.)
@@ -252,20 +240,6 @@ intended syntactic or semantic role.
 \end{enumerate}
 The key contrast: $y$ is chosen \emph{before} $x$, so $y$ cannot depend on
 $x$. This is why $\exists y\,\forall x$ is a much stronger claim.
-\end{propositionbox}
-\begin{remark*}[Standard quantified statement]
-For every admissible object satisfying the hypotheses of the statement, the
-assertion holds in the formal language under discussion.
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-The predicate form records the relation or property named by the statement in
-the displayed logical context.
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-The statement records the named logical notion or result together with its
-intended syntactic or semantic role.
 \end{remark*}
 
 
