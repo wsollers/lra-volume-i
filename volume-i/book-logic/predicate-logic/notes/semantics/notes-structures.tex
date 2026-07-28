@@ -82,7 +82,7 @@ specified.
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.] The named branch below records the displayed failure mode.
-\item[\mathsf{Language} fails.] \[
+\item[\(\mathsf{Language}\) fails.] \[
 \underbrace{\mathsf{Const}_{L}}_{\text{constant symbols}}
 \qquad
 \underbrace{\mathsf{Func}_{L}^{(n)}}_{\text{function symbols with arity}}
@@ -180,7 +180,7 @@ uninterpreted, or if the assigned object has the wrong arity or type.
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.] The named branch below records the displayed failure mode.
-\item[\mathsf{Structure} fails.] \[
+\item[\(\mathsf{Structure}\) fails.] \[
 \underbrace{D=\varnothing}_{\text{empty domain}}
 \quad\lor\quad
 \underbrace{I(c)\notin D}_{\text{bad constant value}}
@@ -267,7 +267,7 @@ value outside the domain.
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.] The named branch below records the displayed failure mode.
-\item[\mathsf{VariableAssignment} fails.] \[
+\item[\(\mathsf{VariableAssignment}\) fails.] \[
 \underbrace{\mathrm{dom}(s)\neq\mathsf{Var}_{\mathcal L}}_{\text{missing variable value}}
 \quad\lor\quad
 \underbrace{s(x)\notin D}_{\text{value outside domain}}.
@@ -349,7 +349,7 @@ if it changes some variable other than \(x\).
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.] The named branch below records the displayed failure mode.
-\item[\mathsf{ModifiedAssignment} fails.] \[
+\item[\(\mathsf{ModifiedAssignment}\) fails.] \[
 \underbrace{s'(x)\neq d}_{\text{target variable not updated}}
 \quad\lor\quad
 \underbrace{\exists y\neq x\;(s'(y)\neq s(y))}_{\text{unwanted extra change}}.
@@ -435,7 +435,7 @@ function-application clause computes a different domain element.
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.] The named branch below records the displayed failure mode.
-\item[\mathsf{TermEvaluation} fails.] \[
+\item[\(\mathsf{TermEvaluation}\) fails.] \[
 \underbrace{s(x)\neq a}_{\text{variable case}}
 \quad\lor\quad
 \underbrace{I(c)\neq a}_{\text{constant case}}
