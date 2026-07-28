@@ -54,7 +54,9 @@ $\forall f\!:\!A\!\to\!B,\; g\!:\!B\!\to\!C,\; h\!:\!C\!\to\!D,\; \forall a \in 
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{AssociativeComposition}(f,g,h)$ means that the two possible
+\[
+  \operatorname{AssociativeComposition}(f,g,h)
+\] means that the two possible
 parenthesizations of $h\circ g\circ f$ agree as functions on $A$.
 \end{remark*}
 
@@ -87,7 +89,9 @@ $\forall f : A \to B,\; \forall a \in A:\; (f \circ \id_A)(a) = f(a)$ and $(\id_
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{IdentityNeutralForComposition}(f,\id_A,\id_B)$ means that the
+\[
+  \operatorname{IdentityNeutralForComposition}(f,\id_A,\id_B)
+\] means that the
 identity on the domain is a right identity for $f$ and the identity on the
 codomain is a left identity for $f$.
 \end{remark*}
@@ -124,7 +128,9 @@ Let $f : A \to B$ and $g : B \to C$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{Injective}(f)$ and $\operatorname{Injective}(g)$ imply
+\[
+  \operatorname{Injective}(f)
+\] and $\operatorname{Injective}(g)$ imply
 $\operatorname{Injective}(g\circ f)$. The predicate
 $\operatorname{Surjective}(f)$ and $\operatorname{Surjective}(g)$ imply
 $\operatorname{Surjective}(g\circ f)$. Conversely,
@@ -233,7 +239,9 @@ Converse: $(\exists g: B\to A,\; g\circ f = \id_A \wedge f\circ g = \id_B) \;\le
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{Bijective}(f)$ is equivalent to the existence of a function
+\[
+  \operatorname{Bijective}(f)
+\] is equivalent to the existence of a function
 $g:B\to A$ satisfying $\operatorname{LeftInverse}(g,f)$ and
 $\operatorname{RightInverse}(g,f)$.
 \end{remark*}
@@ -372,7 +380,9 @@ and $f$ is bijective.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\exists g\,\operatorname{LeftInverse}(g,f)$ is equivalent to
+\[
+  \exists g\,\operatorname{LeftInverse}(g,f)
+\] is equivalent to
 $\operatorname{Injective}(f)$, with the stated empty-domain convention.
 $\exists h\,\operatorname{RightInverse}(h,f)$ is equivalent to
 $\operatorname{Surjective}(f)$. Having both one-sided inverses forces
@@ -494,7 +504,9 @@ Let $f : A \to B$ and $S, T \subseteq B$. Then
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{PreservesUnion}(f,S,T)$,
+\[
+  \operatorname{PreservesUnion}(f,S,T)
+\],
 $\operatorname{PreservesIntersection}(f,S,T)$,
 $\operatorname{PreservesDifference}(f,S,T)$, and
 $\operatorname{PreservesComplement}(f,S)$ mean that preimage converts
@@ -548,7 +560,9 @@ $\forall a\in A:\; a\in f^{-1}(\bigcap_{i\in I}T_i)
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{PreservesIndexedUnion}(f,\{T_i\}_{i\in I})$ and
+\[
+  \operatorname{PreservesIndexedUnion}(f,\{T_i\}_{i\in I})
+\] and
 $\operatorname{PreservesIndexedIntersection}(f,\{T_i\}_{i\in I})$ mean
 that preimage commutes with the indexed union, and with the indexed intersection
 when the index set is nonempty.
@@ -591,7 +605,9 @@ Equality holds in (ii) and (iii) for all $S,T$ iff $f$ is injective.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{PreservesUnion}(f,S,T)$ means that $f(S\cup T)=f(S)\cup
+\[
+  \operatorname{PreservesUnion}(f,S,T)
+\] means that $f(S\cup T)=f(S)\cup
 f(T)$. The predicates $\operatorname{MapsInto}(f,S,T)$ and
 $\operatorname{MapsInto}(f,S,T)$ record the one-sided image
 laws, with equality uniformly when $\operatorname{Injective}(f)$ holds.
@@ -637,7 +653,9 @@ f(f^{-1}(T))=T)\leftrightarrow \operatorname{Surjective}(f)$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{ImagePreimageAdjunction}(f,S,T)$ records the inclusions
+\[
+  \operatorname{ImagePreimageAdjunction}(f,S,T)
+\] records the inclusions
 $S\subseteq f^{-1}(f(S))$ and $f(f^{-1}(T))\subseteq T$, together with the
 injective and surjective equality criteria.
 \end{remark*}

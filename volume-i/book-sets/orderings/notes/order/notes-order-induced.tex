@@ -35,7 +35,9 @@ $\forall x,y\in A,\; x\leq_f y \leftrightarrow f(x)\leq' f(y)$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{InducedOrder}(\leq_f,f,\mathsf{PartiallyOrderedSet}(B,\leq'))$
+\[
+  \operatorname{InducedOrder}(\leq_f,f,\mathsf{PartiallyOrderedSet}(B,\leq'))
+\]
 means that $\leq_f$ compares elements of $A$ by applying $f$ and comparing
 their images in the ordered set $(B,\leq')$.
 \end{remark*}
@@ -76,7 +78,9 @@ $\forall f:A\to B,\; \mathsf{PartiallyOrderedSet}(B,\leq') \to
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{Preorder}(\leq_f,A)$ means that the induced relation is
+\[
+  \operatorname{Preorder}(\leq_f,A)
+\] means that the induced relation is
 reflexive and transitive on $A$.
 \end{remark*}
 
@@ -121,7 +125,9 @@ $x\sim_f y \leftrightarrow (x\leq_f y \wedge y\leq_f x)
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{FunctionIndistinguishable}(x,y,f,\mathsf{PartiallyOrderedSet}(B,\leq'))$
+\[
+  \operatorname{FunctionIndistinguishable}(x,y,f,\mathsf{PartiallyOrderedSet}(B,\leq'))
+\]
 means that $x$ and $y$ cannot be separated by the order after applying $f$.
 \end{remark*}
 
@@ -161,7 +167,9 @@ $\forall x,y\in A,\; x\leq_f y\leftrightarrow f(x)\leq' f(y)$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{PartialOrder}(\leq_f,A)$ holds exactly when
+\[
+  \operatorname{PartialOrder}(\leq_f,A)
+\] holds exactly when
 $\operatorname{Injective}(f,A,B)$ holds, because antisymmetry of the pullback
 is equivalent to $f$ separating distinct elements of $A$.
 \end{remark*}
@@ -219,7 +227,9 @@ $\forall x,y\in S,\; x\leq'_S y \leftrightarrow x\leq' y$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{Suborder}(\leq'_S,S,\mathsf{PartiallyOrderedSet}(B,\leq'))$
+\[
+  \operatorname{Suborder}(\leq'_S,S,\mathsf{PartiallyOrderedSet}(B,\leq'))
+\]
 means that $S$ carries the order inherited from the ambient poset $B$.
 \end{remark*}
 
@@ -265,7 +275,9 @@ $\operatorname{OrderEmbedding}(f,\mathsf{PartiallyOrderedSet}(A,\leq),
 
 \begin{remark*}[Predicate reading]
 $\operatorname{OrderEmbedding}(f,\mathsf{PartiallyOrderedSet}(A,\leq),
-\mathsf{PartiallyOrderedSet}(B,\leq'))$ means that $f$ both preserves and
+\mathsf{PartiallyOrderedSet}(B,\leq'))\[
+  means that
+\]f$ both preserves and
 reflects order.
 \end{remark*}
 
@@ -310,7 +322,9 @@ $\operatorname{OrderEmbedding}(f,\mathsf{PartiallyOrderedSet}(A,\leq),
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-$\operatorname{Injective}(f,A,B)$ follows from order reflection and
+\[
+  \operatorname{Injective}(f,A,B)
+\] follows from order reflection and
 antisymmetry in the domain.
 \end{remark*}
 
@@ -347,13 +361,13 @@ $\operatorname{OrderEmbedding}(f,\mathsf{PartiallyOrderedSet}(A,\leq),
 \mathsf{PartiallyOrderedSet}(f(A),\leq'_{f(A)}))$.
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+
+
+\begin{remark*}[Interpretation]
 $\operatorname{OrderIsomorphism}(f,\mathsf{PartiallyOrderedSet}(A,\leq),
 \mathsf{PartiallyOrderedSet}(f(A),\leq'_{f(A)}))$ means that the order
 embedding becomes bijective after its codomain is restricted to its image.
-\end{remark*}
 
-\begin{remark*}[Interpretation]
 Every order embedding identifies the domain with an ordered substructure of
 the codomain.
 \end{remark*}

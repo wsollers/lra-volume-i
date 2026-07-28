@@ -43,12 +43,6 @@ A finite subset is a finite test case cut out of a larger set of formulas.
 \label{def:finitely-satisfiable-set-of-propositional-formulas}
 Let \(\Gamma\subseteq\WFF\). The set \(\Gamma\) is finitely satisfiable if every
 finite subset of \(\Gamma\) is satisfiable.
-\[
-\operatorname{FinitelySatisfiable}(\Gamma)
-\Longleftrightarrow
-\forall\Delta\,\Bigl((\Delta\subseteq\Gamma\land \Delta\text{ is finite})
-\Rightarrow \operatorname{Satisfiable}(\Delta)\Bigr).
-\]
 \end{definition}
 \end{definitionbox}
 
@@ -95,7 +89,8 @@ unsatisfiable.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{FinitelySatisfiable} fails.] \[
 \neg\operatorname{FinitelySatisfiable}(\Gamma)
 \Longleftrightarrow
 \exists\Delta\,\Bigl(\Delta\subseteq\Gamma\land \Delta\text{ is finite}\land
@@ -103,6 +98,10 @@ unsatisfiable.
 \]
 So failure of finite satisfiability is witnessed by one finite unsatisfiable
 subcollection.
+  In predicate-reading form this is recorded as
+  \[
+  \neg\operatorname{FinitelySatisfiable}(\Gamma)
+  \]
 \end{description}
 \end{remark*}
 

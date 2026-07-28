@@ -330,6 +330,32 @@ v\not\models\varphi
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+v\not\models\varphi
+\Longleftrightarrow
+\widehat v(\varphi)=\mathrm{False}.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The failure mode records the negation of formula
+  satisfaction.
+  \item[\(\operatorname{SatisfiesFormula}\) fails.] Satisfaction of the formula
+  fails when the extended truth assignment evaluates the formula as false:
+  \[
+  v\not\models\varphi
+  \Longleftrightarrow
+  \widehat v(\varphi)=\mathrm{False}.
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \neg\operatorname{SatisfiesFormula}(v,\varphi).
+  \]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The notation \(v\models\varphi\) means that the formula \(\varphi\) is true under the truth assignment \(v\).
 \end{remark*}
@@ -379,6 +405,32 @@ v\not\models\Gamma
 \Longleftrightarrow
 \exists\gamma\in\Gamma\text{ such that }v\not\models\gamma.
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+v\not\models\Gamma
+\Longleftrightarrow
+\exists\gamma\in\Gamma\text{ such that }v\not\models\gamma.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The failure mode records the negation of simultaneous
+  satisfaction of a set.
+  \item[\(\operatorname{SatisfiesSet}\) fails.] Satisfaction of the set fails
+  when at least one formula in the set is not satisfied:
+  \[
+  v\not\models\Gamma
+  \Longleftrightarrow
+  \exists\gamma\in\Gamma\text{ such that }v\not\models\gamma.
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \neg\operatorname{SatisfiesSet}(v,\Gamma).
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -623,6 +675,43 @@ v\not\models\varphi
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\Gamma\not\models\varphi
+\Longleftrightarrow
+\exists v:\Prop\to\mathbb{B}
+\left[
+v\models\Gamma
+\land
+v\not\models\varphi
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The failure mode records the countermodel form of failed
+  logical consequence.
+  \item[\(\operatorname{LogicalConsequence}\) fails.] Logical consequence
+  fails when there is a countermodel assignment satisfying every premise but
+  not the conclusion:
+  \[
+  \Gamma\not\models\varphi
+  \Longleftrightarrow
+  \exists v:\Prop\to\mathbb{B}
+  \left[
+  v\models\Gamma
+  \land
+  v\not\models\varphi
+  \right].
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \neg\operatorname{LogicalConsequence}(\Gamma,\varphi).
+  \]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Logical consequence means truth preservation from premises to conclusion. There is no truth assignment under which all premises are true and the conclusion is false.
 \end{remark*}
@@ -706,9 +795,18 @@ w|_{\operatorname{Var}(\varphi)}
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The predicate form records the relation or property named by the statement in
-the displayed logical context.
+\[
+(\forall\varphi\in\WFF)
+(\forall v,w:\Prop\to\mathbb{B})
+\left[
+(\forall P\in\operatorname{Var}(\varphi))(v(P)=w(P))
+\to
+\widehat v(\varphi)=\widehat w(\varphi)
+\right].
+\]
 \end{remark*}
+
+
 
 
 \begin{remark*}[Interpretation]

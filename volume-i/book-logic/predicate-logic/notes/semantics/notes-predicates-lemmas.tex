@@ -33,7 +33,9 @@ displayed as \(\varphi(x_1,\ldots,x_n)\).
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\varphi\in\mathsf{OpenFormula}\) means that \(\varphi\) is a
+\[
+  \varphi\in\mathsf{OpenFormula}
+\] means that \(\varphi\) is a
 well-formed formula with at least one free variable.
 \end{remark*}
 
@@ -46,7 +48,9 @@ well-formed formula with at least one free variable.
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\varphi\notin\mathsf{OpenFormula}\) means that \(\varphi\) is either
+\[
+  \varphi\notin\mathsf{OpenFormula}
+\] means that \(\varphi\) is either
 not well formed or is a sentence.
 \end{remark*}
 
@@ -59,11 +63,16 @@ or when all of its variables are bound.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\mathsf{OpenFormula} fails.] \[
 \underbrace{\varphi\notin\mathsf{Form}_{\mathcal L}}_{\text{not well formed}}
 \quad\lor\quad
 \underbrace{\mathsf{FV}(\varphi)=\varnothing}_{\text{sentence, not open}}.
 \]
+  In predicate-reading form this is recorded as
+  \[
+    \varphi\notin\mathsf{OpenFormula}
+  \]
 \end{description}
 \end{remark*}
 
@@ -113,7 +122,9 @@ R_{\varphi}^{\mathcal M}
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{DefinableRelation}(R,\varphi,M)\) means that \(R\) is the
+\[
+  \operatorname{DefinableRelation}(R,\varphi,M)
+\] means that \(R\) is the
 relation on the domain of \(M\) determined by \(\varphi\) in \(M\).
 \end{remark*}
 
@@ -124,7 +135,9 @@ R\neq R_{\varphi}^{\mathcal M}.
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{DefinableRelation}(R,\varphi,M)\) means that \(R\) is not
+\[
+  \neg\operatorname{DefinableRelation}(R,\varphi,M)
+\] means that \(R\) is not
 the relation determined by \(\varphi\) in \(M\).
 \end{remark*}
 
@@ -137,13 +150,18 @@ excluded differently from the satisfaction condition imposed by the formula.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{DefinableRelation} fails.] \[
 \underbrace{(a_1,\ldots,a_n)\in R \land
 \mathcal M,s[\vec x\mapsto\vec a]\not\models\varphi}_{\text{extra tuple}}
 \quad\lor\quad
 \underbrace{(a_1,\ldots,a_n)\notin R \land
 \mathcal M,s[\vec x\mapsto\vec a]\models\varphi}_{\text{missing tuple}}.
 \]
+  In predicate-reading form this is recorded as
+  \[
+    \neg\operatorname{DefinableRelation}(R,\varphi,M)
+  \]
 \end{description}
 \end{remark*}
 
@@ -186,11 +204,21 @@ s[x\mapsto\llbracket u\rrbracket_{\mathcal M,s}]}.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-Term substitution commutes with semantic term evaluation in a fixed structure
-and assignment.
+\[
+\forall t\,\forall u\quad
+\llbracket t[u/x]\rrbracket_{\mathcal M,s}
+=
+\llbracket t\rrbracket_{\mathcal M,\,
+s[x\mapsto\llbracket u\rrbracket_{\mathcal M,s}]}.
+\]
 \end{remark*}
 
+
+
 \begin{remark*}[Interpretation]
+Term substitution commutes with semantic term evaluation in a fixed structure
+and assignment.
+
 The lemma says that syntactically substituting a term before evaluation gives
 the same domain element as first evaluating the substituting term and then
 updating the assignment.
@@ -232,11 +260,24 @@ u \text{ free for } x \text{ in } \varphi
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-Formula substitution commutes with satisfaction when the substituted term is
-free for the variable being replaced.
+\[
+\forall \varphi\,\forall u\quad
+u \text{ free for } x \text{ in } \varphi
+\Rightarrow
+\bigl(
+\mathcal M,s\models\varphi[u/x]
+\Longleftrightarrow
+\mathcal M,s[x\mapsto\llbracket u\rrbracket_{\mathcal M,s}]\models\varphi
+\bigr).
+\]
 \end{remark*}
 
+
+
 \begin{remark*}[Interpretation]
+Formula substitution commutes with satisfaction when the substituted term is
+free for the variable being replaced.
+
 This lemma connects the syntactic substitution operation from the syntax
 section with the semantic modified-assignment operation from the semantics
 section. The free-for condition prevents variable capture.

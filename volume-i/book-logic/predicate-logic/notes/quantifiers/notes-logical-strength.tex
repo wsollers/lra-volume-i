@@ -34,7 +34,9 @@ A \text{ is stronger than } B
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{StrongerFormula}(A,B)\) means that \(A\) entails \(B\), but
+\[
+  \operatorname{StrongerFormula}(A,B)
+\] means that \(A\) entails \(B\), but
 \(B\) does not entail \(A\).
 \end{remark*}
 
@@ -44,6 +46,40 @@ A\not\models B
 \quad\text{or}\quad
 B\models A.
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+A\not\models B
+\quad\text{or}\quad
+B\models A.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The failure modes follow the two clauses in the negated
+  stronger-formula predicate.
+  \item[\(\operatorname{StrongerFormula}(A,B)\) entailment clause fails.] The
+  stronger-formula predicate fails if \(A\) does not entail \(B\):
+  \[
+  A\not\models B.
+  \]
+  In predicate-reading form this contributes to
+  \[
+  \neg\operatorname{StrongerFormula}(A,B).
+  \]
+  \item[\(\operatorname{StrongerFormula}(A,B)\) strictness clause fails.] The
+  stronger-formula predicate also fails if \(B\) entails \(A\), so \(A\) is not
+  strictly stronger than \(B\):
+  \[
+  B\models A.
+  \]
+  In predicate-reading form this contributes to
+  \[
+  \neg\operatorname{StrongerFormula}(A,B).
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -81,7 +117,9 @@ B\not\models A.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{WeakerFormula}(B,A)\) means that \(B\) is entailed by \(A\) but
+\[
+  \operatorname{WeakerFormula}(B,A)
+\] means that \(B\) is entailed by \(A\) but
 does not entail \(A\).
 \end{remark*}
 
@@ -114,7 +152,9 @@ Q_1x_1\cdots Q_nx_n\,\psi
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{QuantifierOrder}(\Phi,(Q_1,\ldots,Q_n))\) records the order of
+\[
+  \operatorname{QuantifierOrder}(\Phi,(Q_1,\ldots,Q_n))
+\] records the order of
 the quantifiers in the prefix of \(\Phi\).
 \end{remark*}
 
@@ -152,7 +192,9 @@ Over nonempty domains,
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{LogicalConsequence}(\{\forall x\,\varphi(x)\},\exists x\,\varphi(x))\).
+\[
+  \operatorname{LogicalConsequence}(\{\forall x\,\varphi(x)\},\exists x\,\varphi(x))
+\].
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -188,7 +230,9 @@ In general,
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\neg\operatorname{LogicalConsequence}(\{\exists x\,\varphi(x)\},\forall x\,\varphi(x))\).
+\[
+  \neg\operatorname{LogicalConsequence}(\{\exists x\,\varphi(x)\},\forall x\,\varphi(x))
+\].
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -231,8 +275,10 @@ For every formula \(\varphi(x,y)\),
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{LogicalConsequence}(\{\exists y\,\forall x\,\varphi(x,y)\},
-\forall x\,\exists y\,\varphi(x,y))\).
+\[
+\operatorname{LogicalConsequence}(\{\exists y\,\forall x\,\varphi(x,y)\},
+\forall x\,\exists y\,\varphi(x,y))
+\].
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -272,8 +318,10 @@ In general,
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\neg\operatorname{LogicalConsequence}(\{\forall x\,\exists y\,\varphi(x,y)\},
-\exists y\,\forall x\,\varphi(x,y))\).
+\[
+\neg\operatorname{LogicalConsequence}(\{\forall x\,\exists y\,\varphi(x,y)\},
+\exists y\,\forall x\,\varphi(x,y))
+\].
 \end{remark*}
 
 \begin{remark*}[Interpretation]

@@ -62,7 +62,9 @@ conditions for \(\neg,\land,\lor,\to,\leftrightarrow\); and
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{Satisfaction}(M,s,\varphi)\) means
+\[
+  \operatorname{Satisfaction}(M,s,\varphi)
+\] means
 \(\mathcal M,s\models\varphi\).
 \end{remark*}
 
@@ -73,7 +75,9 @@ conditions for \(\neg,\land,\lor,\to,\leftrightarrow\); and
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{Satisfaction}(M,s,\varphi)\) means that \(\varphi\) is not
+\[
+  \neg\operatorname{Satisfaction}(M,s,\varphi)
+\] means that \(\varphi\) is not
 satisfied in \(M\) under \(s\).
 \end{remark*}
 
@@ -88,13 +92,18 @@ quantifier can have a counterexample or lack a witness.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{Satisfies} fails.] \[
 \underbrace{(\llbracket t_i\rrbracket)\notin I(P)}_{\text{atomic failure}}
 \quad
 \underbrace{\llbracket t_1\rrbracket\neq\llbracket t_2\rrbracket}_{\text{equality failure}}
 \quad
 \underbrace{\exists d\in D\;(\mathcal M,s[x\mapsto d]\not\models\psi)}_{\text{universal failure}}.
 \]
+  In predicate-reading form this is recorded as
+  \[
+    \neg\operatorname{Satisfaction}(M,s,\varphi)
+  \]
 \end{description}
 \end{remark*}
 
@@ -136,7 +145,9 @@ sentence \(\varphi\) is \emph{true in} \(\mathcal M\), written
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{TruthInStructure}(M,\varphi)\) means
+\[
+  \operatorname{TruthInStructure}(M,\varphi)
+\] means
 \(\mathcal M\models\varphi\).
 \end{remark*}
 
@@ -149,7 +160,9 @@ sentence \(\varphi\) is \emph{true in} \(\mathcal M\), written
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{TruthInStructure}(M,\varphi)\) means that \(\varphi\) is
+\[
+  \neg\operatorname{TruthInStructure}(M,\varphi)
+\] means that \(\varphi\) is
 false in \(M\).
 \end{remark*}
 
@@ -163,11 +176,16 @@ definition uniform with satisfaction.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{TruthInStructure} fails.] \[
 \underbrace{\exists s}_{\text{assignment witness}}
 \quad
 \underbrace{\mathcal M,s\not\models\varphi}_{\text{satisfaction failure}}.
 \]
+  In predicate-reading form this is recorded as
+  \[
+    \neg\operatorname{TruthInStructure}(M,\varphi)
+  \]
 \end{description}
 \end{remark*}
 
@@ -201,7 +219,9 @@ language of \(\varphi\) and every variable assignment \(s\) for \(\mathcal M\).
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{Valid}(\varphi)\) means that \(\varphi\) is satisfied in
+\[
+  \operatorname{Valid}(\varphi)
+\] means that \(\varphi\) is satisfied in
 every structure under every assignment.
 \end{remark*}
 
@@ -214,7 +234,9 @@ every structure under every assignment.
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{Valid}(\varphi)\) means that some structure and
+\[
+  \neg\operatorname{Valid}(\varphi)
+\] means that some structure and
 assignment make \(\varphi\) fail.
 \end{remark*}
 
@@ -226,13 +248,18 @@ assignment make \(\varphi\) fail.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{Valid} fails.] \[
 \underbrace{\mathcal M}_{\text{counterexample structure}}
 \qquad
 \underbrace{s}_{\text{counterexample assignment}}
 \qquad
 \underbrace{\mathcal M,s\not\models\varphi}_{\text{failure of satisfaction}}.
 \]
+  In predicate-reading form this is recorded as
+  \[
+    \neg\operatorname{Valid}(\varphi)
+  \]
 \end{description}
 \end{remark*}
 
@@ -265,7 +292,9 @@ A formula \(\varphi\) is \emph{satisfiable} exactly when there are a structure
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{Satisfiable}(\varphi)\) means that \(\varphi\) is
+\[
+  \operatorname{Satisfiable}(\varphi)
+\] means that \(\varphi\) is
 satisfied in at least one structure under at least one assignment.
 \end{remark*}
 
@@ -278,7 +307,9 @@ satisfied in at least one structure under at least one assignment.
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{Satisfiable}(\varphi)\) means that no structure and
+\[
+  \neg\operatorname{Satisfiable}(\varphi)
+\] means that no structure and
 assignment satisfy \(\varphi\).
 \end{remark*}
 
@@ -291,13 +322,18 @@ fails to satisfy the formula.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{Satisfiable} fails.] \[
 \underbrace{\forall \mathcal M}_{\text{all structures}}
 \quad
 \underbrace{\forall s}_{\text{all assignments}}
 \quad
 \underbrace{\mathcal M,s\not\models\varphi}_{\text{no satisfying instance}}.
 \]
+  In predicate-reading form this is recorded as
+  \[
+    \neg\operatorname{Satisfiable}(\varphi)
+  \]
 \end{description}
 \end{remark*}
 

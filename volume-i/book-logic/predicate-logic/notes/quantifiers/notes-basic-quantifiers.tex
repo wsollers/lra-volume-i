@@ -39,7 +39,9 @@ x\in\mathsf{Var}_{\mathcal L}
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\Phi\in\mathsf{UniversalFormula}\) means that \(\Phi\) is a formula
+\[
+  \Phi\in\mathsf{UniversalFormula}
+\] means that \(\Phi\) is a formula
 whose outermost constructor is a universal quantifier.
 \end{remark*}
 
@@ -47,6 +49,28 @@ whose outermost constructor is a universal quantifier.
 \[
 \Phi \text{ is not of the form } \forall x\,\varphi.
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \Phi \text{ is not of the form } \forall x\,\varphi.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The failure mode records the negation of the universal
+  formula predicate.
+  \item[\(\mathsf{UniversalFormula}\) fails.] The formula fails to be universal
+  exactly when its outermost constructor is not a universal quantifier:
+  \[
+  \Phi \text{ is not of the form } \forall x\,\varphi.
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \Phi\notin\mathsf{UniversalFormula}.
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -91,7 +115,9 @@ x\in\mathsf{Var}_{\mathcal L}
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\Phi\in\mathsf{ExistentialFormula}\) means that \(\Phi\) is a formula
+\[
+  \Phi\in\mathsf{ExistentialFormula}
+\] means that \(\Phi\) is a formula
 whose outermost constructor is an existential quantifier.
 \end{remark*}
 
@@ -99,6 +125,29 @@ whose outermost constructor is an existential quantifier.
 \[
 \Phi \text{ is not of the form } \exists x\,\varphi.
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \Phi \text{ is not of the form } \exists x\,\varphi.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The failure mode records the negation of the existential
+  formula predicate.
+  \item[\(\mathsf{ExistentialFormula}\) fails.] The formula fails to be
+  existential exactly when its outermost constructor is not an existential
+  quantifier:
+  \[
+  \Phi \text{ is not of the form } \exists x\,\varphi.
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \Phi\notin\mathsf{ExistentialFormula}.
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -148,7 +197,9 @@ specified set or predicate:
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\Phi\in\mathsf{BoundedQuantifier}\) means that \(\Phi\) uses a
+\[
+  \Phi\in\mathsf{BoundedQuantifier}
+\] means that \(\Phi\) uses a
 restricted universal or existential quantifier.
 \end{remark*}
 
@@ -156,6 +207,29 @@ restricted universal or existential quantifier.
 \[
 \Phi \text{ is not an abbreviation of either displayed bounded form.}
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \Phi \text{ is not an abbreviation of either displayed bounded form.}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The failure mode records the negation of the bounded
+  quantifier predicate.
+  \item[\(\mathsf{BoundedQuantifier}\) fails.] The expression fails to be a
+  bounded-quantifier form when it is not one of the displayed restricted
+  universal or existential abbreviations:
+  \[
+  \Phi \text{ is not an abbreviation of either displayed bounded form.}
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \Phi\notin\mathsf{BoundedQuantifier}.
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -198,7 +272,9 @@ A \emph{sentence} is a well-formed formula with no free variables.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\varphi\in\mathsf{Sentence}\) means that \(\varphi\) is a well-formed
+\[
+  \varphi\in\mathsf{Sentence}
+\] means that \(\varphi\) is a well-formed
 formula with no free variables.
 \end{remark*}
 
@@ -208,6 +284,39 @@ formula with no free variables.
 \quad\text{or}\quad
 \mathsf{FV}(\varphi)\neq\varnothing.
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\varphi\notin\mathsf{Form}_{\mathcal L}
+\quad\text{or}\quad
+\mathsf{FV}(\varphi)\neq\varnothing.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The failure modes follow the two clauses in the negated
+  sentence predicate.
+  \item[\(\mathsf{Form}_{\mathcal L}\) fails.] The sentence predicate fails if
+  the expression is not a well-formed formula:
+  \[
+  \varphi\notin\mathsf{Form}_{\mathcal L}.
+  \]
+  In predicate-reading form this contributes to
+  \[
+  \varphi\notin\mathsf{Sentence}.
+  \]
+  \item[\(\mathsf{FV}(\varphi)\neq\varnothing\).] The sentence predicate also
+  fails if the formula has at least one free variable:
+  \[
+  \mathsf{FV}(\varphi)\neq\varnothing.
+  \]
+  In predicate-reading form this contributes to
+  \[
+  \varphi\notin\mathsf{Sentence}.
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -249,7 +358,9 @@ variable.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\varphi\in\mathsf{OpenFormula}\) means that \(\varphi\) has at least one
+\[
+  \varphi\in\mathsf{OpenFormula}
+\] means that \(\varphi\) has at least one
 free variable.
 \end{remark*}
 
@@ -259,6 +370,39 @@ free variable.
 \quad\text{or}\quad
 \mathsf{FV}(\varphi)=\varnothing.
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\varphi\notin\mathsf{Form}_{\mathcal L}
+\quad\text{or}\quad
+\mathsf{FV}(\varphi)=\varnothing.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The failure modes follow the two clauses in the negated
+  open-formula predicate.
+  \item[\(\mathsf{Form}_{\mathcal L}\) fails.] The open-formula predicate fails
+  if the expression is not a well-formed formula:
+  \[
+  \varphi\notin\mathsf{Form}_{\mathcal L}.
+  \]
+  In predicate-reading form this contributes to
+  \[
+  \varphi\notin\mathsf{OpenFormula}.
+  \]
+  \item[\(\mathsf{FV}(\varphi)=\varnothing\).] The open-formula predicate also
+  fails if no variable occurs free:
+  \[
+  \mathsf{FV}(\varphi)=\varnothing.
+  \]
+  In predicate-reading form this contributes to
+  \[
+  \varphi\notin\mathsf{OpenFormula}.
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -300,7 +444,9 @@ Q\in\{\forall,\exists\}.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\varphi\in\mathsf{Scope}(x)\) means that \(\varphi\) is the scope governed
+\[
+  \varphi\in\mathsf{Scope}(x)
+\] means that \(\varphi\) is the scope governed
 by the quantifier binding \(x\).
 \end{remark*}
 
@@ -308,6 +454,28 @@ by the quantifier binding \(x\).
 \[
 \varphi \text{ is not the formula governed by the displayed quantifier on } x.
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \varphi \text{ is not the formula governed by the displayed quantifier on } x.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The failure mode records the negation of the displayed
+  scope predicate.
+  \item[\(\mathsf{Scope}(x)\) fails.] The scope predicate fails when
+  \(\varphi\) is not the formula governed by the displayed quantifier on \(x\):
+  \[
+  \varphi \text{ is not the formula governed by the displayed quantifier on } x.
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \varphi\notin\mathsf{Scope}(x).
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -355,11 +523,23 @@ Let \(A\) be a set and let \(\varphi\) be a formula. Then
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The theorem records the negation law for bounded universal and bounded
-existential formulas.
+\[
+\neg\forall x\,(x\in A\to\varphi)
+\equiv
+\exists x\,(x\in A\land\neg\varphi),
+\qquad
+\neg\exists x\,(x\in A\land\varphi)
+\equiv
+\forall x\,(x\in A\to\neg\varphi).
+\]
 \end{remark*}
 
+
+
 \begin{remark*}[Interpretation]
+The theorem records the negation law for bounded universal and bounded
+existential formulas.
+
 The domain restriction is preserved under negation. What changes is the
 quantifier and the inner assertion.
 \end{remark*}

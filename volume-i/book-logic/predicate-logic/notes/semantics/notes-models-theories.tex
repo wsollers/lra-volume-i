@@ -29,7 +29,9 @@ language of \(\varphi\). The structure \(\mathcal M\) is a \emph{model of}
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{ModelOfSentence}(M,\varphi)\) means that \(M\) is a model of
+\[
+  \operatorname{ModelOfSentence}(M,\varphi)
+\] means that \(M\) is a model of
 the sentence \(\varphi\).
 \end{remark*}
 
@@ -42,7 +44,9 @@ the sentence \(\varphi\).
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{ModelOfSentence}(M,\varphi)\) means that \(\varphi\) is not
+\[
+  \neg\operatorname{ModelOfSentence}(M,\varphi)
+\] means that \(\varphi\) is not
 true in \(M\).
 \end{remark*}
 
@@ -55,11 +59,16 @@ structure.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{Satisfies} fails.] \[
 \underbrace{\mathcal M}_{\text{proposed structure}}
 \qquad
 \underbrace{\mathcal M\not\models\varphi}_{\text{sentence false in the structure}}.
 \]
+  In predicate-reading form this is recorded as
+  \[
+    \neg\operatorname{ModelOfSentence}(M,\varphi)
+  \]
 \end{description}
 \end{remark*}
 
@@ -93,7 +102,9 @@ written \(\mathcal M\models T\), exactly when
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{ModelOfTheory}(M,T)\) means that \(M\) is a model of every
+\[
+  \operatorname{ModelOfTheory}(M,T)
+\] means that \(M\) is a model of every
 sentence in \(T\).
 \end{remark*}
 
@@ -106,7 +117,9 @@ sentence in \(T\).
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{ModelOfTheory}(M,T)\) means that at least one sentence of
+\[
+  \neg\operatorname{ModelOfTheory}(M,T)
+\] means that at least one sentence of
 \(T\) is false in \(M\).
 \end{remark*}
 
@@ -119,11 +132,16 @@ that is false in the structure.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{Satisfies} fails.] \[
 \underbrace{\exists \theta\in T}_{\text{failed sentence}}
 \qquad
 \underbrace{\mathcal M\not\models\theta}_{\text{not true in the structure}}.
 \]
+  In predicate-reading form this is recorded as
+  \[
+    \neg\operatorname{ModelOfTheory}(M,T)
+  \]
 \end{description}
 \end{remark*}
 
@@ -155,7 +173,9 @@ T \text{ is a theory}
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(T\in\mathsf{Theory}\) means that \(T\) is a set of sentences in a fixed
+\[
+  T\in\mathsf{Theory}
+\] means that \(T\) is a set of sentences in a fixed
 first-order language.
 \end{remark*}
 
@@ -166,7 +186,9 @@ first-order language.
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(T\notin\mathsf{Theory}\) means that \(T\) is not a set consisting only
+\[
+  T\notin\mathsf{Theory}
+\] means that \(T\) is not a set consisting only
 of sentences of the fixed language.
 \end{remark*}
 
@@ -179,11 +201,16 @@ than a sentence of the fixed language.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\mathsf{Theory} fails.] \[
 \underbrace{\theta\in T}_{\text{member of the proposed theory}}
 \qquad
 \underbrace{\theta \text{ is not a sentence}}_{\text{bad member}}.
 \]
+  In predicate-reading form this is recorded as
+  \[
+    T\notin\mathsf{Theory}
+  \]
 \end{description}
 \end{remark*}
 
@@ -219,7 +246,9 @@ T\models\varphi
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{LogicalConsequence}(T,\varphi)\) means that every model of
+\[
+  \operatorname{LogicalConsequence}(T,\varphi)
+\] means that every model of
 \(T\) is a model of \(\varphi\).
 \end{remark*}
 
@@ -232,7 +261,9 @@ T\not\models\varphi
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{LogicalConsequence}(T,\varphi)\) means that some structure
+\[
+  \neg\operatorname{LogicalConsequence}(T,\varphi)
+\] means that some structure
 models \(T\) while failing \(\varphi\).
 \end{remark*}
 
@@ -245,11 +276,16 @@ sentences of \(T\) but not satisfying \(\varphi\).
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{LogicalConsequence} fails.] \[
 \underbrace{\mathcal M\models T}_{\text{premises true}}
 \qquad
 \underbrace{\mathcal M\not\models\varphi}_{\text{conclusion false}}.
 \]
+  In predicate-reading form this is recorded as
+  \[
+    \neg\operatorname{LogicalConsequence}(T,\varphi)
+  \]
 \end{description}
 \end{remark*}
 
@@ -287,7 +323,9 @@ Two sentences \(\varphi\) and \(\psi\) are \emph{logically equivalent}, written
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{LogicalEquivalence}(\varphi,\psi)\) means that \(\varphi\) and
+\[
+  \operatorname{LogicalEquivalence}(\varphi,\psi)
+\] means that \(\varphi\) and
 \(\psi\) have the same truth value in every structure.
 \end{remark*}
 
@@ -302,7 +340,9 @@ Two sentences \(\varphi\) and \(\psi\) are \emph{logically equivalent}, written
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{LogicalEquivalence}(\varphi,\psi)\) means that some
+\[
+  \neg\operatorname{LogicalEquivalence}(\varphi,\psi)
+\] means that some
 structure separates the two sentences.
 \end{remark*}
 
@@ -315,11 +355,16 @@ same structure.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{LogicalEquivalence} fails.] \[
 \underbrace{\mathcal M\models\varphi \land \mathcal M\not\models\psi}_{\text{first separation}}
 \quad\lor\quad
 \underbrace{\mathcal M\models\psi \land \mathcal M\not\models\varphi}_{\text{second separation}}.
 \]
+  In predicate-reading form this is recorded as
+  \[
+    \neg\operatorname{LogicalEquivalence}(\varphi,\psi)
+  \]
 \end{description}
 \end{remark*}
 

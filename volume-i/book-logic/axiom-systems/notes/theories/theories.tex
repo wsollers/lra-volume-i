@@ -132,9 +132,19 @@ $T\vdash\varphi$ exactly when $T\vDash\varphi$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The predicate form records the relation or property named by the statement in
-the displayed logical context.
+\[
+\varphi\in\mathsf{Theorem}(T)
+  \iff \exists d\ (d:T\vdash\varphi).
+\]
+\[
+T\vDash\varphi
+  \iff
+  \forall\mathfrak{M}\,
+  \bigl(\mathfrak{M}\vDash T \implies \mathfrak{M}\vDash\varphi\bigr).
+\]
 \end{remark*}
+
+
 
 
 \begin{remark*}[Interpretation]
@@ -176,10 +186,7 @@ the completeness theorem says that $\Gamma\vDash\varphi$ exactly when
 $\Gamma\vdash\varphi$.
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
-The predicate form records the relation or property named by the statement in
-the displayed logical context.
-\end{remark*}
+
 
 
 \begin{remark*}[Interpretation]

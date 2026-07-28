@@ -25,7 +25,9 @@ K \text{ specifies a domain and readings for each non-logical symbol used.}
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(K\in\mathsf{TranslationKey}\) means that \(K\) supplies the domain and
+\[
+  K\in\mathsf{TranslationKey}
+\] means that \(K\) supplies the domain and
 symbol readings needed to parse a translated formula.
 \end{remark*}
 
@@ -72,7 +74,9 @@ D \text{ is the domain of discourse }
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(D\in\mathsf{DomainOfDiscourse}(K)\) means that \(D\) is the domain fixed
+\[
+  D\in\mathsf{DomainOfDiscourse}(K)
+\] means that \(D\) is the domain fixed
 by the translation key \(K\).
 \end{remark*}
 
@@ -121,7 +125,9 @@ and an \(n\)-ary relation symbol names a relation among \(n\) objects.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(P\in\mathsf{TranslationPredicateSymbol}(K)\) records that \(P\) has a
+\[
+  P\in\mathsf{TranslationPredicateSymbol}(K)
+\] records that \(P\) has a
 fixed predicate reading in \(K\), and \(R\in\mathsf{TranslationRelationSymbol}(n,K)\)
 records that \(R\) is used with arity \(n\) in \(K\).
 \end{remark*}
@@ -174,7 +180,9 @@ binding.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(c\in\mathsf{TranslationConstant}(K)\) means that \(c\) names a fixed
+\[
+  c\in\mathsf{TranslationConstant}(K)
+\] means that \(c\) names a fixed
 object in \(K\), and \(x\in\mathsf{TranslationVariable}(K)\) means that
 \(x\) is used as a variable in translations governed by \(K\).
 \end{remark*}
@@ -223,7 +231,9 @@ is translated by
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\((A,B)\in\mathsf{UniversalTranslationPattern}\) records the implication
+\[
+  (A,B)\in\mathsf{UniversalTranslationPattern}
+\] records the implication
 schema for translating universal restricted claims.
 \end{remark*}
 
@@ -270,7 +280,9 @@ is translated by
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\((A,B)\in\mathsf{ExistentialTranslationPattern}\) records the conjunction
+\[
+  (A,B)\in\mathsf{ExistentialTranslationPattern}
+\] records the conjunction
 schema for translating existential restricted claims.
 \end{remark*}
 
@@ -317,7 +329,9 @@ A\to B.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\((A,B)\in\mathsf{ConditionalTranslationPattern}\) records the implication
+\[
+  (A,B)\in\mathsf{ConditionalTranslationPattern}
+\] records the implication
 schema for conditional English.
 \end{remark*}
 
@@ -362,7 +376,9 @@ negation laws.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\((\varphi,\psi)\in\mathsf{NegationTranslationPattern}\) records that
+\[
+  (\varphi,\psi)\in\mathsf{NegationTranslationPattern}
+\] records that
 \(\psi\) is obtained from \(\neg\varphi\) by pushing negation through the
 quantifiers and connectives.
 \end{remark*}
@@ -413,7 +429,9 @@ connective scope.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{ScopeAmbiguity}(E,\varphi,\psi)\) means that the English
+\[
+  \operatorname{ScopeAmbiguity}(E,\varphi,\psi)
+\] means that the English
 sentence \(E\) can reasonably be translated by \(\varphi\) or by \(\psi\), and
 the difference is a scope difference.
 \end{remark*}

@@ -188,9 +188,21 @@ Equivalently, in contrapositive form,
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The predicate form records the relation or property named by the statement in
-the displayed logical context.
+\[
+\operatorname{RelCon}(T_1,T_0)
+  \quad\Longleftrightarrow\quad
+  \bigl(\neg\exists d_0\,(d_0:T_0\vdash\bot)\bigr)
+  \implies
+  \bigl(\neg\exists d_1\,(d_1:T_1\vdash\bot)\bigr).
+\]
+\[
+\exists d_1\,(d_1:T_1\vdash\bot)
+  \implies
+  \exists d_0\,(d_0:T_0\vdash\bot).
+\]
 \end{remark*}
+
+
 
 
 \begin{remark*}[Interpretation]

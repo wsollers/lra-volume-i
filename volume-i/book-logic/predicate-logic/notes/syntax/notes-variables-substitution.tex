@@ -260,9 +260,22 @@ where $Q$ is either $\forall$ or $\exists$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The predicate form records the relation or property named by the statement in
-the displayed logical context.
+\[
+t\text{ free for }x\text{ in }\neg\varphi
+  \iff
+  t\text{ free for }x\text{ in }\varphi,
+\]
+\[
+t\text{ free for }x\text{ in }Qy\,\varphi
+  \iff
+  \bigl(x\text{ is not free in }Qy\,\varphi\bigr)
+  \text{ or }
+  \bigl(y\notin\operatorname{Var}(t)
+    \text{ and }t\text{ is free for }x\text{ in }\varphi\bigr),
+\]
 \end{remark*}
+
+
 
 \begin{remark*}[Interpretation]
 The statement records the named logical notion or result together with its

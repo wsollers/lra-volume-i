@@ -79,9 +79,12 @@ $\forall \Gamma,\varphi:\; \Gamma\vdash\varphi \;\to\; \forall\mathcal{M},\foral
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The predicate form records the relation or property named by the statement in
-the displayed logical context.
+\[
+  \forall \Gamma,\varphi:\; \Gamma\vdash\varphi \;\to\; \forall\mathcal{M},\forall s,\; (\forall\gamma\in\Gamma,\; \mathcal{M},s\models\gamma) \to \mathcal{M},s\models\varphi
+\]
 \end{remark*}
+
+
 
 \begin{remark*}[Interpretation]
 The statement records the named logical notion or result together with its

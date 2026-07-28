@@ -30,7 +30,9 @@ where each \(Q_i\in\{\forall,\exists\}\) and each \(x_i\) is a variable.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\Pi\in\mathsf{QuantifierPrefix}\) means that \(\Pi\) is a finite string
+\[
+  \Pi\in\mathsf{QuantifierPrefix}
+\] means that \(\Pi\) is a finite string
 of quantifier-variable pairs.
 \end{remark*}
 
@@ -64,7 +66,9 @@ Q_1x_1\cdots Q_nx_n\,\psi \text{ has matrix } \psi,
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\psi\in\mathsf{Matrix}(\Phi)\) means that \(\psi\) is the matrix of the
+\[
+  \psi\in\mathsf{Matrix}(\Phi)
+\] means that \(\psi\) is the matrix of the
 formula \(\Phi\).
 \end{remark*}
 
@@ -101,7 +105,9 @@ quantifier-free.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\Phi\in\mathsf{PrenexFormula}\) means that all quantifiers of \(\Phi\)
+\[
+  \Phi\in\mathsf{PrenexFormula}
+\] means that all quantifiers of \(\Phi\)
 occur in an initial prefix.
 \end{remark*}
 
@@ -110,6 +116,31 @@ occur in an initial prefix.
 \Phi \text{ is not of the form } Q_1x_1\cdots Q_nx_n\,\psi
 \text{ with } \psi \text{ quantifier-free.}
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\Phi \text{ is not of the form } Q_1x_1\cdots Q_nx_n\,\psi
+\text{ with } \psi \text{ quantifier-free.}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The failure mode records the negation of the prenex-form
+  predicate.
+  \item[\(\mathsf{PrenexFormula}\) fails.] The prenex predicate fails when the
+  formula cannot be written as an initial quantifier prefix followed by a
+  quantifier-free matrix:
+  \[
+  \Phi \text{ is not of the form } Q_1x_1\cdots Q_nx_n\,\psi
+  \text{ with } \psi \text{ quantifier-free.}
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \Phi\notin\mathsf{PrenexFormula}.
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -151,7 +182,9 @@ exactly when \(\psi\) is prenex and \(\varphi\equiv\psi\).
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\psi\in\mathsf{PrenexNormalForm}(\varphi)\) means that \(\psi\) is a
+\[
+  \psi\in\mathsf{PrenexNormalForm}(\varphi)
+\] means that \(\psi\) is a
 prenex formula logically equivalent to \(\varphi\).
 \end{remark*}
 
@@ -209,8 +242,10 @@ normal form.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\forall\varphi\,
-\exists\psi\,\psi\in\mathsf{PrenexNormalForm}(\varphi)\).
+\[
+\forall\varphi\,
+\exists\psi\,\psi\in\mathsf{PrenexNormalForm}(\varphi)
+\].
 \end{remark*}
 
 \begin{remark*}[Interpretation]

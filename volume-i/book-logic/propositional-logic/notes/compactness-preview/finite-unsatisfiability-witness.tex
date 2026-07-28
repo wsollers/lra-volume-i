@@ -46,12 +46,6 @@ jointly satisfiable.
 Let \(\Gamma\subseteq\WFF\). A subset \(\Delta\subseteq\Gamma\) is a finite
 unsatisfiability witness for \(\Gamma\) if \(\Delta\) is finite and
 unsatisfiable.
-\[
-\operatorname{Witness}(\Delta,\Gamma)
-\Longleftrightarrow
-\Delta\subseteq\Gamma\land \Delta\text{ is finite}\land
-\operatorname{Unsatisfiable}(\Delta).
-\]
 \end{definition}
 \end{definitionbox}
 
@@ -126,13 +120,21 @@ finite subset \(\Delta\subseteq\Gamma\) remained unsatisfiable.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
-\operatorname{Satisfiable}(\Gamma)
-\Rightarrow
-\forall\Delta\,\bigl(\Delta\subseteq\Gamma\Rightarrow
-\operatorname{Satisfiable}(\Delta)\bigr).
-\]
-If the whole set has a satisfying truth assignment, each subset inherits one.
+  \item[Exposition.] The named branch below is the direct failed-implication
+  form of the theorem.
+  \item[\(\operatorname{Witness}\) hypothesis with \(\operatorname{Unsatisfiable}\) conclusion failure.] The theorem would fail only if a finite
+  unsatisfiability witness existed while the whole set were satisfiable:
+  \[
+  \exists\Delta\,\bigl(\operatorname{Witness}(\Delta,\Gamma)
+  \land
+  \operatorname{Satisfiable}(\Gamma)\bigr).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \exists\Delta\,\operatorname{Witness}(\Delta,\Gamma)
+  \land
+  \neg\operatorname{Unsatisfiable}(\Gamma).
+  \]
 \end{description}
 \end{remark*}
 

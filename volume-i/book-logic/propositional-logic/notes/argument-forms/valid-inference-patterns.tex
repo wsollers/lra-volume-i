@@ -26,7 +26,9 @@ is valid.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-Whenever \(\varphi\) and \(\varphi\to\psi\) are both true, \(\psi\) must be true.
+Whenever \[
+  \varphi
+\] and \(\varphi\to\psi\) are both true, \(\psi\) must be true.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -63,7 +65,9 @@ is valid.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-If \(\varphi\) would imply \(\psi\), and \(\psi\) is false, then \(\varphi\) must be false.
+If \[
+  \varphi
+\] would imply \(\psi\), and \(\psi\) is false, then \(\varphi\) must be false.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -100,7 +104,9 @@ is valid.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-Conditional implication composes: if \(\varphi\) forces \(\psi\), and \(\psi\) forces \(\chi\), then \(\varphi\) forces \(\chi\).
+Conditional implication composes: if \[
+  \varphi
+\] forces \(\psi\), and \(\psi\) forces \(\chi\), then \(\varphi\) forces \(\chi\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -136,7 +142,9 @@ is valid.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-If at least one of \(\varphi\) or \(\psi\) is true and \(\varphi\) is false, then \(\psi\) must be true.
+If at least one of \[
+  \varphi
+\] or \(\psi\) is true and \(\varphi\) is false, then \(\psi\) must be true.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -171,11 +179,11 @@ is valid.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
-A true formula remains true when placed as one disjunct of a disjunction.
-\end{remark*}
+
 
 \begin{remark*}[Interpretation]
+A true formula remains true when placed as one disjunct of a disjunction.
+
 Addition introduces a disjunction from a known true disjunct.
 \end{remark*}
 
@@ -206,11 +214,11 @@ is valid.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
-If a conjunction is true, then each conjunct is true.
-\end{remark*}
+
 
 \begin{remark*}[Interpretation]
+If a conjunction is true, then each conjunct is true.
+
 Simplification extracts a component from a true conjunction.
 \end{remark*}
 
@@ -241,11 +249,11 @@ is valid.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
-If two formulas are both true, then their conjunction is true.
-\end{remark*}
+
 
 \begin{remark*}[Interpretation]
+If two formulas are both true, then their conjunction is true.
+
 Conjunction introduction combines independently established formulas into one conjunction.
 \end{remark*}
 
@@ -280,6 +288,11 @@ is valid.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
+\[
+(\forall\varphi,\psi,\chi,\theta\in\WFF)
+\operatorname{Valid}(\{\varphi\to\chi,\psi\to\theta,\varphi\lor\psi\},\chi\lor\theta).
+\]
+
 If one of two antecedents holds, and each antecedent has its own consequence,
 then at least one corresponding consequence holds.
 \end{remark*}
@@ -321,6 +334,11 @@ is valid.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
+\[
+(\forall\varphi,\psi,\chi,\theta\in\WFF)
+\operatorname{Valid}(\{\varphi\to\chi,\psi\to\theta,\neg\chi\lor\neg\theta\},\neg\varphi\lor\neg\psi).
+\]
+
 If at least one consequent fails, and each antecedent would force its
 consequent, then at least one antecedent must fail.
 \end{remark*}

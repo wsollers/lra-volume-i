@@ -49,7 +49,8 @@ assignment.
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{Satisfiable} fails.] \[
 \neg\operatorname{Satisfiable}(\Gamma)
 \Rightarrow
 \exists\Delta\,\Bigl(\Delta\subseteq\Gamma\land \Delta\text{ is finite}\land
@@ -57,16 +58,27 @@ assignment.
 \]
 Compactness says that unsatisfiability cannot first appear only at the infinite
 level.
+  In predicate-reading form this is recorded as
+  \[
+  \operatorname{FinitelySatisfiable}(\Gamma)\land
+  \neg\operatorname{Satisfiable}(\Gamma)
+  \]
 \end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{Satisfiable} fails.] \[
 \operatorname{Unsatisfiable}(\Gamma)
 \Rightarrow
 \exists\Delta\,\operatorname{Witness}(\Delta,\Gamma).
 \]
+  In predicate-reading form this is recorded as
+  \[
+  \operatorname{FinitelySatisfiable}(\Gamma)\land
+  \neg\operatorname{Satisfiable}(\Gamma)
+  \]
 \end{description}
 \end{remark*}
 
@@ -79,7 +91,9 @@ level.
 \end{remark*}
 
 \begin{remark*}[Contrapositive predicate reading]
-The contrapositive says that if \(\Gamma\) is unsatisfiable, then the failure is
+The contrapositive says that if \[
+  \Gamma
+\] is unsatisfiable, then the failure is
 already witnessed by some finite subset of \(\Gamma\).
 \end{remark*}
 

@@ -33,7 +33,9 @@ For every formula \(\varphi\),
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{LogicalEquivalence}(\neg\forall x\,\varphi,\exists x\,\neg\varphi)\)
+\[
+  \operatorname{LogicalEquivalence}(\neg\forall x\,\varphi,\exists x\,\neg\varphi)
+\]
 and
 \(\operatorname{LogicalEquivalence}(\neg\exists x\,\varphi,\forall x\,\neg\varphi)\).
 \end{remark*}
@@ -74,7 +76,9 @@ For every formula \(\varphi\),
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{LogicalEquivalence}(\neg\neg Qx\,\varphi,Qx\,\varphi)\) for
+\[
+  \operatorname{LogicalEquivalence}(\neg\neg Qx\,\varphi,Qx\,\varphi)
+\] for
 \(Q\in\{\forall,\exists\}\).
 \end{remark*}
 
@@ -112,11 +116,20 @@ Quantifiers of the same type commute:
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The theorem asserts logical equivalence after swapping adjacent quantifiers of
-the same type.
+\[
+\forall \varphi\in\mathsf{Form}_{\mathcal L}\quad
+\forall x\,\forall y\,\varphi \equiv \forall y\,\forall x\,\varphi
+\quad\text{and}\quad
+\exists x\,\exists y\,\varphi \equiv \exists y\,\exists x\,\varphi.
+\]
 \end{remark*}
 
+
+
 \begin{remark*}[Interpretation]
+The theorem asserts logical equivalence after swapping adjacent quantifiers of
+the same type.
+
 Two universal choices can be checked in either order, and two existential
 witnesses can be selected in either order.
 \end{remark*}
@@ -152,8 +165,10 @@ In general,
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\neg\operatorname{LogicalEquivalence}(\forall x\,\exists y\,\varphi,
-\exists y\,\forall x\,\varphi)\) in general.
+\[
+\neg\operatorname{LogicalEquivalence}(\forall x\,\exists y\,\varphi,
+\exists y\,\forall x\,\varphi)
+\] in general.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -201,11 +216,25 @@ and
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed universal-conjunction and existential-disjunction distributions
-are logical equivalences.
+\[
+\forall \varphi,\psi\in\mathsf{Form}_{\mathcal L}\quad
+\forall x\,(\varphi\land\psi)
+\equiv
+(\forall x\,\varphi)\land(\forall x\,\psi)
+\]
+\[
+\exists x\,(\varphi\lor\psi)
+\equiv
+(\exists x\,\varphi)\lor(\exists x\,\psi).
+\]
 \end{remark*}
 
+
+
 \begin{remark*}[Interpretation]
+The displayed universal-conjunction and existential-disjunction distributions
+are logical equivalences.
+
 Universal quantification distributes over conjunction because both conjuncts
 must hold for every value. Existential quantification distributes over
 disjunction because a witness for either disjunct witnesses the disjunction.
@@ -253,6 +282,13 @@ In general,
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
+\[
+\exists \varphi,\psi\in\mathsf{Form}_{\mathcal L}\quad
+\forall x\,(\varphi\lor\psi)
+\not\equiv
+(\forall x\,\varphi)\lor(\forall x\,\psi),
+\]
+
 The displayed distribution patterns are not logical equivalences in general.
 \end{remark*}
 
@@ -291,11 +327,21 @@ x\notin\mathsf{FV}(\varphi)
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-Vacuous quantification preserves logical equivalence when the quantified
-variable is not free in the scope.
+\[
+x\notin\mathsf{FV}(\varphi)
+\Rightarrow
+(\forall x\,\varphi\equiv\varphi)
+\land
+(\exists x\,\varphi\equiv\varphi).
+\]
 \end{remark*}
 
+
+
 \begin{remark*}[Interpretation]
+Vacuous quantification preserves logical equivalence when the quantified
+variable is not free in the scope.
+
 A quantifier that binds no occurrence has no semantic effect.
 \end{remark*}
 
@@ -329,11 +375,21 @@ y \text{ free for } x \text{ in } \varphi
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-Renaming bound variables preserves logical equivalence when the renaming is
-capture-avoiding.
+\[
+y \text{ free for } x \text{ in } \varphi
+\Rightarrow
+(\forall x\,\varphi\equiv\forall y\,\varphi[y/x])
+\land
+(\exists x\,\varphi\equiv\exists y\,\varphi[y/x]).
+\]
 \end{remark*}
 
+
+
 \begin{remark*}[Interpretation]
+Renaming bound variables preserves logical equivalence when the renaming is
+capture-avoiding.
+
 Bound variable names are placeholders. Renaming them changes notation, not
 meaning, provided no free variable becomes captured.
 \end{remark*}

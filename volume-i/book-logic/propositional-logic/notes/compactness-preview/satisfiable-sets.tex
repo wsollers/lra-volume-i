@@ -12,11 +12,6 @@ formulas}, \(v\models\Gamma\) means that \(v\models\gamma\) for every
 \label{def:satisfiable-set-of-propositional-formulas}
 Let \(\Gamma\subseteq\WFF\). The set \(\Gamma\) is satisfiable if there exists a
 truth assignment \(v\) such that \(v\models\Gamma\).
-\[
-\operatorname{Satisfiable}(\Gamma)
-\Longleftrightarrow
-\exists v\,\bigl(v\in\mathsf{TruthAssignment}\land v\models\Gamma\bigr).
-\]
 \end{definition}
 \end{definitionbox}
 
@@ -61,7 +56,8 @@ formula in \(\Gamma\).
 
 \begin{remark*}[Failure modes]
 \begin{description}
-  \item[Exposition.] \[
+  \item[Exposition.] The named branch below records the displayed failure mode.
+\item[\operatorname{Satisfiable} fails.] \[
 \neg\operatorname{Satisfiable}(\Gamma)
 \Longleftrightarrow
 \forall v\,\Bigl(v\in\mathsf{TruthAssignment}\Rightarrow
@@ -69,6 +65,10 @@ formula in \(\Gamma\).
 \]
 Thus \(\Gamma\) is not satisfiable exactly when every truth assignment is
 defeated by at least one formula from \(\Gamma\).
+  In predicate-reading form this is recorded as
+  \[
+  \neg\operatorname{Satisfiable}(\Gamma)
+  \]
 \end{description}
 \end{remark*}
 
@@ -92,11 +92,6 @@ of those requirements can be met by the same truth assignment.
 \label{def:unsatisfiable-set-of-propositional-formulas}
 Let \(\Gamma\subseteq\WFF\). The set \(\Gamma\) is unsatisfiable if it is not
 satisfiable.
-\[
-\operatorname{Unsatisfiable}(\Gamma)
-\Longleftrightarrow
-\neg\operatorname{Satisfiable}(\Gamma).
-\]
 \end{definition}
 \end{definitionbox}
 
@@ -129,6 +124,23 @@ means that no truth assignment makes every formula in \(\Gamma\) true.
 \neg\operatorname{Unsatisfiable}(\Gamma)
 \]
 means that \(\Gamma\) has at least one satisfying truth assignment.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The failure mode records the negation of unsatisfiability.
+  \item[\(\operatorname{Unsatisfiable}\) fails.] The unsatisfiability predicate
+  fails exactly when a satisfying truth assignment exists:
+  \[
+  \neg\operatorname{Unsatisfiable}(\Gamma)
+  \Longleftrightarrow
+  \operatorname{Satisfiable}(\Gamma).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \neg\operatorname{Unsatisfiable}(\Gamma).
+  \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
