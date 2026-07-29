@@ -20,6 +20,7 @@ element of the domain is related to itself:
 \]
 In infix notation, this is the condition $\forall a\in A,\ aRa$.
 \end{definition}
+\LeanFormalizes{def:reflexive}{lra-lean}{LRA.VolumeI.Relations.NamedRelations}{Reflexive}{pending}
 \end{definitionbox}
 
 
@@ -68,6 +69,7 @@ element of the domain is related to itself:
 \]
 In infix notation, this is the condition $\forall a\in A,\ \neg(aRa)$.
 \end{definition}
+\LeanFormalizes{def:irreflexive}{lra-lean}{LRA.VolumeI.Relations.NamedRelations}{Irreflexive}{pending}
 \end{definitionbox}
 
 
@@ -128,6 +130,7 @@ related pair also appears in the reverse order:
 \]
 In infix notation, this is $\forall a,b\in A,\ aRb\rightarrow bRa$.
 \end{definition}
+\LeanFormalizes{def:symmetric}{lra-lean}{LRA.VolumeI.Relations.NamedRelations}{Symmetric}{pending}
 \end{definitionbox}
 
 
@@ -177,6 +180,7 @@ two elements related in both directions must be equal:
 In infix notation, this is
 $\forall a,b\in A,\ ((aRb\land bRa)\rightarrow a=b)$.
 \end{definition}
+\LeanFormalizes{def:antisymmetric}{lra-lean}{LRA.VolumeI.Relations.NamedRelations}{Antisymmetric}{pending}
 \end{definitionbox}
 
 
@@ -226,6 +230,7 @@ related pair excludes the reverse pair:
 In infix notation, this is
 $\forall a,b\in A,\ (aRb\rightarrow\neg(bRa))$.
 \end{definition}
+\LeanFormalizes{def:asymmetric}{lra-lean}{LRA.VolumeI.Relations.NamedRelations}{Asymmetric}{pending}
 \end{definitionbox}
 
 
@@ -282,6 +287,7 @@ two composable related pairs collapse to a direct related pair:
 In infix notation, this is
 $\forall a,b,c\in A,\ ((aRb\land bRc)\rightarrow aRc)$.
 \end{definition}
+\LeanFormalizes{def:transitive}{lra-lean}{LRA.VolumeI.Relations.NamedRelations}{Transitive}{pending}
 \end{definitionbox}
 
 
@@ -329,6 +335,7 @@ $R$ is \emph{total} (or \emph{connex}) if every pair is comparable:
 (a,b) \in R \lor (b,a) \in R.
 \]
 \end{definition}
+\LeanFormalizes{def:total-rel}{lra-lean}{LRA.VolumeI.Relations.NamedRelations}{Total}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
@@ -368,6 +375,7 @@ transitivity.
 $R$ is an \emph{equivalence relation} on $A$ if it is reflexive, symmetric,
 and transitive.
 \end{definition}
+\LeanFormalizes{def:equivalence-rel}{lra-lean}{LRA.VolumeI.Relations.NamedRelations}{Equivalence}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
@@ -412,6 +420,7 @@ for quotient constructions throughout algebra, topology, and analysis.
 \begin{definition}[Preorder]\label{def:preorder}
 $R$ is a \emph{preorder} on $A$ if it is reflexive and transitive.
 \end{definition}
+\LeanFormalizes{def:preorder}{lra-lean}{LRA.VolumeI.Order.Posets}{Preorder}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
@@ -449,6 +458,7 @@ comparable.
 $R$ is a \emph{partial order} on $A$ if it is reflexive, antisymmetric, and
 transitive.
 \end{definition}
+\LeanFormalizes{def:partial-order}{lra-lean}{LRA.VolumeI.Order.Posets}{PartialOrder}{pending}
 \end{definitionbox}
 
 
@@ -489,6 +499,7 @@ This removes the identification ambiguity that can occur in preorders.
 $R$ is a \emph{strict partial order} on $A$ if it is irreflexive and
 transitive.
 \end{definition}
+\LeanFormalizes{def:strict-partial-order-relations}{lra-lean}{LRA.VolumeI.Order.Posets}{StrictOrder}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
@@ -542,6 +553,7 @@ either.
 \begin{definition}[Total Order]\label{def:total-order}
 $R$ is a \emph{total order} on $A$ if it is a partial order and is total.
 \end{definition}
+\LeanFormalizes{def:total-order}{lra-lean}{LRA.VolumeI.Order.Total}{TotalOrder}{pending}
 \end{definitionbox}
 
 

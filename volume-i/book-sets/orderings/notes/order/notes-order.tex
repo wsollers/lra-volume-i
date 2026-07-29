@@ -231,6 +231,7 @@ same information.
 \end{itemize}
 \end{dependencies}
 
+
 \begin{definitionbox}{Definition (Non-Strict Order Induced by a Strict Order)}
 \begin{definition}[Non-Strict Order Induced by a Strict Order]\label{def:non-strict-order-induced-by-strict-order}
 Let $<$ be a strict order on $S$. Define $\leq$ by
@@ -238,6 +239,7 @@ Let $<$ be a strict order on $S$. Define $\leq$ by
 x\leq y \;\Longleftrightarrow\; (x<y\lor x=y).
 \]
 \end{definition}
+\LeanFormalizes{def:non-strict-order-induced-by-strict-order}{lra-lean}{LRA.VolumeI.Order.Relations}{LessThanOrEqual}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
@@ -558,6 +560,7 @@ in $S$ itself.
 Let $S \subseteq A$ in an ordered set $(A,\leq)$. An element $m \in S$ is a
 \emph{minimal element} of $S$ if there is no $s \in S$ with $s < m$.
 \end{definition}
+\LeanFormalizes{def:order-minimal-element}{lra-lean}{LRA.VolumeI.Order.Bounds}{MinimalElement}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
@@ -625,6 +628,7 @@ the \emph{least element} of $S$ if
 \forall s \in S,\; \ell \leq s.
 \]
 \end{definition}
+\LeanFormalizes{def:order-least-element}{lra-lean}{LRA.VolumeI.Order.Bounds}{LeastElement}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
@@ -879,6 +883,7 @@ element:
 m \leq s \;\forall s \in S\bigr).
 \]
 \end{definition}
+\LeanFormalizes{def:well-ordered-set}{lra-lean}{LRA.VolumeI.Order.Completeness}{WellOrder}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
