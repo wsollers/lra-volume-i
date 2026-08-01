@@ -26,12 +26,18 @@ Representative-independence is delegated to quotient-specific extensions.
   \forall w\,(w\in x\to w\in y)\bigr).
 \]
 No unique-existence obligation.
+This is a bare relational abbreviation: it introduces a new way to write
+\(\forall w\,(w\in x\to w\in y)\), not a new set-forming operation. In Lean,
+this corresponds to the definitional surface
+\texttt{LRA.VolumeI.Set.LRASet.Subset}.
 
 \textbf{\(\varnothing\)} constant
 \[
 \psi_{\varnothing}(y):\equiv \forall w\,\neg(w\in y),
-\qquad
-\exists!\text{ receipt: Empty Set + Extensionality}.
+\]
+\[
+\exists!\text{ licensed by }
+\hyperref[thm:empty-set-exists-unique]{Existence and Uniqueness of the Empty Set}.
 \]
 \[
 \forall y\,
@@ -44,7 +50,8 @@ No unique-existence obligation.
 \forall w\,(w\in y\leftrightarrow (w=x_1\vee w=x_2)).
 \]
 \[
-\exists!\text{ receipt: Pairing + Extensionality}.
+\exists!\text{ licensed by }
+\hyperref[thm:pairing-output-exists-unique]{Existence and Uniqueness of Pairing's Output}.
 \]
 \[
 \forall x_1\,\forall x_2\,\forall y\,
@@ -57,7 +64,8 @@ No unique-existence obligation.
 \forall z\,(z\in y\leftrightarrow\exists w\,(w\in x\wedge z\in w)).
 \]
 \[
-\exists!\text{ receipt: Union + Extensionality}.
+\exists!\text{ licensed by }
+\hyperref[thm:union-output-exists-unique]{Existence and Uniqueness of Union's Output}.
 \]
 \[
 \forall x\,\forall y\,
@@ -70,7 +78,8 @@ No unique-existence obligation.
 \forall z\,(z\in y\leftrightarrow\forall w\,(w\in z\to w\in x)).
 \]
 \[
-\exists!\text{ receipt: Power Set + Extensionality}.
+\exists!\text{ licensed by }
+\hyperref[thm:power-set-output-exists-unique]{Existence and Uniqueness of Power Set's Output}.
 \]
 \[
 \forall x\,\forall y\,

@@ -1,0 +1,50 @@
+\newpage
+\phantomsection
+\label{prf:relative-complement-exists-unique}
+\LRAProofFor{cor:relative-complement-exists-unique}
+
+\begin{remark*}[Return]
+\hyperref[cor:relative-complement-exists-unique]{Return to Corollary}
+\end{remark*}
+
+\begin{corollary*}[Existence and Uniqueness of Relative Complement]
+Let $U$ be a fixed ambient set. For every set $A$, the relative complement
+\[
+  A^c:=U\setminus A
+\]
+exists and is unique. This is a relative construction; ZFC has no absolute
+complement operation over a universal set of all sets.
+\end{corollary*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Fix the ambient set \(U\) and a set \(A\). By the set-difference corollary, the
+set \(U\setminus A\) exists and is unique. This set is the relative complement
+of \(A\) in \(U\). The construction depends on the chosen ambient \(U\); ZFC
+does not provide a universal set of all sets from which an absolute complement
+could be formed.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+\textbf{Step 1.} Complement must be read relative to a fixed ambient set \(U\).
+There is no all-encompassing set of all sets in ZFC.
+
+\textbf{Step 2.} With \(U\) fixed, define \(A^c\) as \(U\setminus A\).
+
+\textbf{Step 3.} The set-difference corollary proves that this output exists
+and is unique.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Relative complement is set difference with the fixed ambient set in the left
+argument.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[cor:set-difference-exists-unique]{Existence and Uniqueness of Set Difference}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

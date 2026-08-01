@@ -1,0 +1,55 @@
+\newpage
+\phantomsection
+\label{prf:empty-set-exists-unique}
+\LRAProofFor{thm:empty-set-exists-unique}
+
+\begin{remark*}[Return]
+\hyperref[thm:empty-set-exists-unique]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Existence and Uniqueness of the Empty Set]
+There exists a unique set $E$ such that no object is an element of $E$:
+\[
+  \exists! E\,\forall x,\ x\notin E.
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+By the Axiom of Empty Set, there is a set $E$ such that
+\(\forall x,\ x\notin E\). This gives existence.
+
+Suppose \(E'\) is another set with no elements. Then for every \(x\),
+both \(x\in E\) and \(x\in E'\) are false, so
+\[
+  x\in E\leftrightarrow x\in E'.
+\]
+By Extensionality, \(E=E'\). Hence the empty set exists and is unique.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+\textbf{Step 1.} The Axiom of Empty Set states exactly that at least one set
+has no elements. Choose such a set and call it \(E\).
+
+\textbf{Step 2.} Let \(E'\) be any other set with no elements. For an arbitrary
+object \(x\), \(x\in E\) is false and \(x\in E'\) is false. Therefore
+\(x\in E\leftrightarrow x\in E'\).
+
+\textbf{Step 3.} Since the equivalence holds for every \(x\), the two sets
+have the same elements. Extensionality gives \(E=E'\). Thus the witness from
+Step 1 is unique.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Use the named Empty Set axiom for existence and Extensionality for uniqueness.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:empty-set]{Axiom of Empty Set}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

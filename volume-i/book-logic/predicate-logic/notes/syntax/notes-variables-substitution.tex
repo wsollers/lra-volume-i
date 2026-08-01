@@ -114,6 +114,8 @@ is defined recursively:
   \item $\mathrm{FV}(\exists x\,\varphi) = \mathrm{FV}(\varphi) \setminus \{x\}$.
 \end{enumerate}
 \end{definition}
+\LeanFormalizes{def:fv}{lra-lean}{LRA.VolumeI.Logic.Syntax.FirstOrder.FreeVariables}{freeVariables}{pending}
+\LeanFormalizes{def:fv}{lra-lean}{LRA.VolumeI.Logic.Syntax.FirstOrder.FreeVariablesInTerm}{freeVariablesInTerm}{pending}
 \end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 For every admissible object satisfying the hypotheses of the statement, the
@@ -158,6 +160,8 @@ A \emph{sentence} (or \emph{closed formula}) is a formula with no free variables
 
 Formally, $\varphi$ is a sentence if and only if $\mathrm{FV}(\varphi) = \varnothing$.
 \end{definition}
+\LeanFormalizes{def:sentence}{lra-lean}{LRA.VolumeI.Logic.Syntax.FirstOrder.Sentence}{IsClosedFormula}{pending}
+\LeanFormalizes{def:sentence}{lra-lean}{LRA.VolumeI.Logic.Syntax.FirstOrder.Sentence}{Sentence}{pending}
 \end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 For every admissible object satisfying the hypotheses of the statement, the
@@ -199,6 +203,8 @@ The expression $\varphi[t/x]$ denotes the formula obtained from $\varphi$ by
 replacing every \emph{free} occurrence of $x$ with the term $t$, leaving bound
 occurrences of $x$ unchanged.
 \end{definition}
+\LeanFormalizes{def:subst-notation}{lra-lean}{LRA.VolumeI.Logic.Syntax.FirstOrder.Substitute}{substitute}{pending}
+\LeanFormalizes{def:subst-notation}{lra-lean}{LRA.VolumeI.Logic.Syntax.FirstOrder.SubstituteInTerm}{substituteInTerm}{pending}
 \end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 For every admissible object satisfying the hypotheses of the statement, the
@@ -236,6 +242,7 @@ where $y$ is a variable occurring in $t$.
 Equivalently, $t$ is free for $x$ in $\varphi$ if the substitution $\varphi[t/x]$
 does not result in any variable in $t$ becoming bound.
 \end{definition}
+\LeanFormalizes{def:free-for}{lra-lean}{LRA.VolumeI.Logic.Syntax.FirstOrder.IsSubstitutable}{IsSubstitutable}{pending}
 \end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 The relation ``$t$ is free for $x$ in $\varphi$'' is defined by structural

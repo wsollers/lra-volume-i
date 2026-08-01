@@ -12,6 +12,7 @@ v:\Prop\to\mathbb{B}.
 For each propositional variable \(P\in\Prop\), the value \(v(P)\) is the truth
 value assigned to \(P\).
 \end{definition}
+\LeanFormalizes{def:truth-assignment-propositional-logic}{lra-lean}{LRA.VolumeI.Logic.Model.Propositional.PropositionalModel}{PropositionalModel}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
@@ -143,6 +144,10 @@ and
 \widehat v(\varphi)=\widehat v(\psi).
 \]
 \end{definition}
+\LeanFormalizes{def:extended-truth-assignment-propositional-logic}{lra-lean}{LRA.VolumeI.Logic.Syntax.Propositional.Formula}{evaluate}{pending}
+\LeanFormalizes{def:extended-truth-assignment-propositional-logic}{lra-lean}{LRA.VolumeI.Logic.Syntax.Propositional.Formula}{Formula.and_evaluatesToConjunction}{pending}
+\LeanFormalizes{def:extended-truth-assignment-propositional-logic}{lra-lean}{LRA.VolumeI.Logic.Syntax.Propositional.Formula}{Formula.or_evaluatesToDisjunction}{pending}
+\LeanFormalizes{def:extended-truth-assignment-propositional-logic}{lra-lean}{LRA.VolumeI.Logic.Syntax.Propositional.Formula}{Formula.iff_evaluatesToBiconditional}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
@@ -301,6 +306,7 @@ if
 \widehat v(\varphi)=\mathrm{True}.
 \]
 \end{definition}
+\LeanFormalizes{def:satisfaction-propositional-formula}{lra-lean}{LRA.VolumeI.Logic.Model.Propositional.PropositionalModel}{PropositionalModel.satisfies}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
@@ -378,6 +384,7 @@ v\models\Gamma,
 \]
 if \(v\models\gamma\) for every \(\gamma\in\Gamma\).
 \end{definition}
+\LeanFormalizes{def:satisfaction-set-propositional-logic}{lra-lean}{LRA.VolumeI.Logic.Model.Propositional.ModelsAndTheories}{ModelsOfTheory}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
@@ -490,6 +497,7 @@ A formula \(\varphi\in\WFF\) is a tautology, written
 \]
 if every truth assignment satisfies \(\varphi\).
 \end{definition}
+\LeanFormalizes{def:tautology-propositional-logic}{lra-lean}{LRA.VolumeI.Logic.Model.Propositional.ModelsAndTheories}{IsValid}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
@@ -638,6 +646,7 @@ Let \(\Gamma\subseteq\WFF\) and \(\varphi\in\WFF\). The formula \(\varphi\) is a
 \]
 if every truth assignment satisfying \(\Gamma\) also satisfies \(\varphi\).
 \end{definition}
+\LeanFormalizes{def:logical-consequence-propositional-logic}{lra-lean}{LRA.VolumeI.Logic.Model.Propositional.ModelsAndTheories}{SemanticConsequence}{pending}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]

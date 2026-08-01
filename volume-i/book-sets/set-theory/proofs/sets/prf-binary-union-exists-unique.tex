@@ -1,0 +1,56 @@
+\newpage
+\phantomsection
+\label{prf:binary-union-exists-unique}
+\LRAProofFor{cor:binary-union-exists-unique}
+
+\begin{remark*}[Return]
+\hyperref[cor:binary-union-exists-unique]{Return to Corollary}
+\end{remark*}
+
+\begin{corollary*}[Existence and Uniqueness of Binary Union]
+For any sets $A$ and $B$, the set
+\[
+  A\cup B:=\bigcup\{A,B\}
+\]
+exists and is unique.
+\end{corollary*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+By the pairing-output theorem, the pair set \(\{A,B\}\) exists and is unique.
+Apply the union-output theorem to that set. The resulting unique set \(C\)
+satisfies
+\[
+  x\in C\leftrightarrow \exists W\,(W\in\{A,B\}\wedge x\in W).
+\]
+Since \(W\in\{A,B\}\) iff \(W=A\) or \(W=B\), this is equivalent to
+\[
+  x\in C\leftrightarrow(x\in A\vee x\in B).
+\]
+Thus \(A\cup B=\bigcup\{A,B\}\) exists and is unique.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+\textbf{Step 1.} First collect the two input sets into the pair set
+\(\{A,B\}\). Pairing licenses this object.
+
+\textbf{Step 2.} Apply the Union axiom, through the union-output theorem, to
+the pair set. This collects every element of every member of \(\{A,B\}\).
+
+\textbf{Step 3.} The members of \(\{A,B\}\) are exactly \(A\) and \(B\), so an
+object is collected exactly when it lies in \(A\) or in \(B\).
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Binary union is not a primitive ZFC operation; it is Pairing followed by Union.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:pairing-output-exists-unique]{Existence and Uniqueness of Pairing's Output}
+  \item \hyperref[thm:union-output-exists-unique]{Existence and Uniqueness of Union's Output}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

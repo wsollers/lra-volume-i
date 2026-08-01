@@ -1,0 +1,52 @@
+\newpage
+\phantomsection
+\label{prf:intersection-exists-unique}
+\LRAProofFor{cor:intersection-exists-unique}
+
+\begin{remark*}[Return]
+\hyperref[cor:intersection-exists-unique]{Return to Corollary}
+\end{remark*}
+
+\begin{corollary*}[Existence and Uniqueness of Intersection]
+For any sets $A$ and $B$, the set
+\[
+  A\cap B:=\{\,x\in A\mid x\in B\,\}
+\]
+exists and is unique.
+\end{corollary*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Apply the existence and uniqueness theorem for Separation to the source set
+\(A\) and the formula \(\varphi(x)\) given by \(x\in B\). The resulting unique
+set \(C\) satisfies
+\[
+  \forall x,\quad x\in C\leftrightarrow(x\in A\wedge x\in B),
+\]
+which is exactly the set denoted \(A\cap B\).
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+\textbf{Step 1.} To form an intersection, start with the already existing set
+\(A\).
+
+\textbf{Step 2.} Use Separation with the property \(x\in B\). It carves out
+exactly those elements of \(A\) that also lie in \(B\).
+
+\textbf{Step 3.} The separation theorem includes uniqueness, so the object
+defined by this membership condition is well determined.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Intersection is the separated subset of \(A\) determined by membership in
+\(B\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:separation-output-exists-unique]{Existence and Uniqueness of Separation's Output}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

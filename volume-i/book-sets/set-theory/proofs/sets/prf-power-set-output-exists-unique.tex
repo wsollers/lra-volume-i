@@ -1,0 +1,57 @@
+\newpage
+\phantomsection
+\label{prf:power-set-output-exists-unique}
+\LRAProofFor{thm:power-set-output-exists-unique}
+
+\begin{remark*}[Return]
+\hyperref[thm:power-set-output-exists-unique]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Existence and Uniqueness of Power Set's Output]
+For any set $A$, there exists a unique set $P$ whose elements are exactly the
+subsets of $A$:
+\[
+  \forall A\,\exists! P\,\forall S,\quad
+  S\in P\leftrightarrow S\subseteq A.
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Fix a set \(A\). By the Axiom of Power Set, there is a set \(P\) such that
+\[
+  \forall S,\quad S\in P\leftrightarrow S\subseteq A.
+\]
+If \(P'\) satisfies the same biconditional, then for every \(S\),
+\[
+  S\in P\leftrightarrow S\subseteq A\leftrightarrow S\in P'.
+\]
+By Extensionality, \(P=P'\). Hence the power-set output exists and is unique.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+\textbf{Step 1.} Fix \(A\). The Power Set axiom gives a set \(P\) whose
+members are exactly the subsets of \(A\).
+
+\textbf{Step 2.} Let \(P'\) be another such set. For any object \(S\), the
+statement \(S\in P\) is equivalent to \(S\subseteq A\), and the same condition
+is equivalent to \(S\in P'\).
+
+\textbf{Step 3.} Therefore \(P\) and \(P'\) have the same elements. By
+Extensionality, \(P=P'\).
+\end{proof}
+
+\begin{remark*}[Proof structure]
+The Power Set axiom provides the witness; Extensionality identifies all
+witnesses satisfying the same subset-membership criterion.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:power-set]{Axiom of Power Set}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

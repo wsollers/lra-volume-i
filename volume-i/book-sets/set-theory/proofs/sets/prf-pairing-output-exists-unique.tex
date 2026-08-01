@@ -1,0 +1,60 @@
+\newpage
+\phantomsection
+\label{prf:pairing-output-exists-unique}
+\LRAProofFor{thm:pairing-output-exists-unique}
+
+\begin{remark*}[Return]
+\hyperref[thm:pairing-output-exists-unique]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Existence and Uniqueness of Pairing's Output]
+For any sets $x_1$ and $x_2$, there exists a unique set $P$ whose elements are
+exactly $x_1$ and $x_2$:
+\[
+  \forall x_1\,\forall x_2\,\exists! P\,\forall w,\quad
+  w\in P\leftrightarrow (w=x_1\vee w=x_2).
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Fix sets \(x_1\) and \(x_2\). By Pairing, there is a set \(P\) such that
+\[
+  \forall w,\quad w\in P\leftrightarrow(w=x_1\vee w=x_2).
+\]
+Now suppose \(P'\) satisfies the same biconditional. Then for every \(w\),
+\[
+  w\in P\leftrightarrow(w=x_1\vee w=x_2)\leftrightarrow w\in P'.
+\]
+Thus \(P\) and \(P'\) have the same elements. By Extensionality, \(P=P'\).
+Since \(x_1,x_2\) were arbitrary, the pairing output exists and is unique for
+all inputs.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+\textbf{Step 1.} Fix the two inputs \(x_1\) and \(x_2\). Pairing gives a set
+\(P\) whose elements are precisely objects equal to \(x_1\) or to \(x_2\).
+
+\textbf{Step 2.} Let \(P'\) be any other set with that same defining property.
+For an arbitrary \(w\), membership in \(P\) is equivalent to
+\(w=x_1\vee w=x_2\), and that same condition is equivalent to membership in
+\(P'\).
+
+\textbf{Step 3.} Therefore \(P\) and \(P'\) have exactly the same members.
+Extensionality identifies them, so the output is unique.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Instantiate Pairing at the two inputs, then compare any two witnesses by their
+membership biconditionals.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:pairing]{Axiom of Pairing}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

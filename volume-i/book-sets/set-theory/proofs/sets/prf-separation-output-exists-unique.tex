@@ -1,0 +1,59 @@
+\newpage
+\phantomsection
+\label{prf:separation-output-exists-unique}
+\LRAProofFor{thm:separation-output-exists-unique}
+
+\begin{remark*}[Return]
+\hyperref[thm:separation-output-exists-unique]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Existence and Uniqueness of Separation's Output]
+Let $A$ be a set and let $\varphi(x)$ be a formula. There exists a unique set
+$B$ whose elements are exactly the elements of $A$ satisfying $\varphi$:
+\[
+  \forall A\,\exists! B\,\forall x,\quad
+  x\in B\leftrightarrow (x\in A\wedge \varphi(x)).
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Fix a set \(A\) and a formula \(\varphi(x)\). The Separation schema instance
+for \(\varphi\) gives a set \(B\) such that
+\[
+  \forall x,\quad x\in B\leftrightarrow(x\in A\wedge\varphi(x)).
+\]
+If \(B'\) also satisfies this biconditional, then for every \(x\),
+\[
+  x\in B\leftrightarrow(x\in A\wedge\varphi(x))\leftrightarrow x\in B'.
+\]
+By Extensionality, \(B=B'\). Thus the separated set exists and is unique.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+\textbf{Step 1.} Fix the source set \(A\) and the formula \(\varphi(x)\).
+Separation applies only relative to an already existing set, so it produces a
+subset \(B\) of \(A\) whose elements are exactly those satisfying \(\varphi\).
+
+\textbf{Step 2.} Let \(B'\) be any other set with the same defining condition.
+For arbitrary \(x\), membership in \(B\) and membership in \(B'\) are both
+equivalent to \(x\in A\wedge\varphi(x)\).
+
+\textbf{Step 3.} Since this holds for every \(x\), the two candidates have the
+same members. Extensionality gives \(B=B'\).
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Instantiate the Separation schema for the chosen formula, then use
+Extensionality to prove uniqueness of the separated subset.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:separation]{Axiom Schema of Separation}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

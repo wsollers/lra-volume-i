@@ -1,0 +1,52 @@
+\newpage
+\phantomsection
+\label{prf:set-difference-exists-unique}
+\LRAProofFor{cor:set-difference-exists-unique}
+
+\begin{remark*}[Return]
+\hyperref[cor:set-difference-exists-unique]{Return to Corollary}
+\end{remark*}
+
+\begin{corollary*}[Existence and Uniqueness of Set Difference]
+For any sets $A$ and $B$, the set
+\[
+  A\setminus B:=\{\,x\in A\mid x\notin B\,\}
+\]
+exists and is unique.
+\end{corollary*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Apply the existence and uniqueness theorem for Separation to the source set
+\(A\) and the formula \(\varphi(x)\) given by \(x\notin B\). The resulting
+unique set \(C\) satisfies
+\[
+  \forall x,\quad x\in C\leftrightarrow(x\in A\wedge x\notin B),
+\]
+which is exactly the set denoted \(A\setminus B\).
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+\textbf{Step 1.} Begin with \(A\), because set difference keeps only elements
+already in \(A\).
+
+\textbf{Step 2.} Separate by the condition \(x\notin B\). The separated subset
+contains exactly the elements of \(A\) that are not members of \(B\).
+
+\textbf{Step 3.} The separation theorem also proves uniqueness, so the notation
+\(A\setminus B\) names a determined set.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Set difference is the separated subset of the left input determined by
+nonmembership in the right input.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:separation-output-exists-unique]{Existence and Uniqueness of Separation's Output}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
