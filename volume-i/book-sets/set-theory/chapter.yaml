@@ -3,7 +3,7 @@ display_title: Set Theory
 volume: volume-i
 status: active
 dependencies:
-  prior: predicate-logic
+  prior: axiomatic-equality
   next: relations
 path: volume-i/book-sets/set-theory
 book: book-sets

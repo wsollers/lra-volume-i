@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZFC Model Theory Cards — Five Approaches</title>
+<style>
+  :root{
+    --bg:#0b0d13;
+    --panel:#161a23;
+    --panel-2:#10141d;
+    --border:#2a3040;
+    --text:#e8ebf2;
+    --muted:#9aa2b5;
+    --blue:#5b8def;
+    --orange:#e5a04f;
+    --red:#e0616f;
+    --green:#5fbf8f;
+    --violet:#b18cff;
+    --cyan:#58c7d9;
+    --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Georgia,"Iowan Old Style",serif;
+    padding:40px 20px 64px;
+  }
+  h1{
+    margin:0;
+    text-align:center;
+    font-size:1.55rem;
+  }
+  .subtitle{
+    max-width:760px;
+    margin:8px auto 32px;
+    text-align:center;
+    color:var(--muted);
+    font-family:var(--mono);
+    font-size:.82rem;
+    line-height:1.55;
+  }
+  .cards{
+    max-width:900px;
+    margin:0 auto;
+    display:grid;
+    gap:22px;
+  }
+  .card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .card-head{
+    padding:18px 22px 14px;
+    border-bottom:1px solid var(--border);
+  }
+  .card.native .card-head{border-top:4px solid var(--blue);}
+  .card.expansion .card-head{border-top:4px solid var(--green);}
+  .card.zones .card-head{border-top:4px solid var(--orange);}
+  .card.algebra .card-head{border-top:4px solid var(--violet);}
+  .card.unlocks .card-head{border-top:4px solid var(--cyan);}
+  .kicker{
+    margin:0 0 5px;
+    color:var(--muted);
+    font-family:var(--mono);
+    font-size:.68rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .native .kicker{color:var(--blue);}
+  .expansion .kicker{color:var(--green);}
+  .zones .kicker{color:var(--orange);}
+  .algebra .kicker{color:var(--violet);}
+  .unlocks .kicker{color:var(--cyan);}
+  .card-title{
+    margin:0;
+    font-size:1.12rem;
+  }
+  .card-body{
+    padding:16px 22px 20px;
+  }
+  .row{
+    display:grid;
+    grid-template-columns:minmax(120px, 180px) 1fr;
+    gap:14px;
+    padding:9px 0;
+    border-bottom:1px solid #1f2432;
+    align-items:start;
+  }
+  .row:last-child{border-bottom:none;}
+  .k{
+    color:var(--muted);
+    font-family:var(--mono);
+    font-size:.78rem;
+    line-height:1.35;
+  }
+  .v{
+    font-size:.91rem;
+    line-height:1.55;
+  }
+  .m{
+    font-family:var(--mono);
+    font-size:.88rem;
+    color:var(--text);
+  }
+  .note{
+    display:block;
+    color:var(--muted);
+    font-size:.79rem;
+    margin-top:3px;
+  }
+  .section-label{
+    margin:16px 0 3px;
+    padding-top:12px;
+    border-top:1px dashed var(--border);
+    color:var(--green);
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .section-label:first-child{
+    margin-top:0;
+    padding-top:0;
+    border-top:none;
+  }
+  .pill{
+    display:inline-block;
+    margin:2px 5px 2px 0;
+    padding:1px 8px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    background:var(--panel-2);
+    font-family:var(--mono);
+    font-size:.82rem;
+  }
+  .none{
+    color:var(--red);
+    border-color:rgba(224,97,111,.75);
+    border-style:dashed;
+  }
+  .callout{
+    margin-top:14px;
+    padding:12px 14px;
+    background:var(--panel-2);
+    border:1px solid var(--border);
+    border-left:3px solid var(--green);
+    border-radius:8px;
+    color:#c9ceda;
+    font-size:.84rem;
+    line-height:1.58;
+  }
+  .mini-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:10px;
+    margin-top:8px;
+  }
+  .mini{
+    min-height:92px;
+    padding:11px 12px;
+    background:var(--panel-2);
+    border:1px solid var(--border);
+    border-radius:8px;
+  }
+  .mini b{
+    display:block;
+    margin-bottom:5px;
+    font-family:var(--mono);
+    color:var(--text);
+    font-size:.75rem;
+  }
+  .mini span{
+    color:var(--muted);
+    font-size:.8rem;
+    line-height:1.45;
+  }
+  @media (max-width:680px){
+    body{padding:28px 12px 48px;}
+    .row{grid-template-columns:1fr;}
+    .mini-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<h1>ZFC Model-Theory Card — Five Candidate Forms</h1>
+<p class="subtitle">Each version separates the native first-order interface from the set-building tools unlocked later by axioms, definitions, order, lattice, relations, and functions.</p>
+
+<main class="cards">
+
+  <section class="card native">
+    <div class="card-head">
+      <p class="kicker">Approach 1 · Strict Native Language</p>
+      <h2 class="card-title">The Bare ℒ-Structure of ZFC</h2>
+    </div>
+    <div class="card-body">
+      <p class="section-label">Signature ℒ∈</p>
+      <div class="row">
+        <div class="k">Language</div>
+        <div class="v"><span class="m">ℒ∈ = { ∈ }</span><span class="note">first-order logic with equality, plus one non-logical binary relation symbol</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Relation Symbols</div>
+        <div class="v"><span class="pill">∈ : 2</span><span class="note">membership is the only primitive mathematical vocabulary</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Function Symbols</div>
+        <div class="v"><span class="pill none">none</span><span class="note">there are no native operations: no union, intersection, power set, complement, pair, ordered pair, image, or preimage symbols</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Constant Symbols</div>
+        <div class="v"><span class="pill none">none</span><span class="note">even ∅ is not primitive in the strict language; it is uniquely defined by an axiom</span></div>
+      </div>
+      <p class="section-label">Structure 𝔐</p>
+      <div class="row">
+        <div class="k">Form</div>
+        <div class="v"><span class="m">𝔐 = ⟨ M, E ⟩</span><span class="note">M is a nonempty domain; E ⊆ M × M interprets membership</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Satisfaction</div>
+        <div class="v"><span class="m">𝔐 ⊨ ZFC</span><span class="note">the axioms are sentences about E; the structure is just the domain plus its membership relation</span></div>
+      </div>
+      <div class="callout"><b>Best use:</b> this is the mathematically clean bedrock card. It protects the distinction between primitive language and everything constructed from it.</div>
+    </div>
+  </section>
+
+  <section class="card expansion">
+    <div class="card-head">
+      <p class="kicker">Approach 2 · Definitional Expansion</p>
+      <h2 class="card-title">ZFC with a Named Empty Set</h2>
+    </div>
+    <div class="card-body">
+      <p class="section-label">Expanded Signature ℒ∈,∅</p>
+      <div class="row">
+        <div class="k">Language</div>
+        <div class="v"><span class="m">ℒ∈,∅ = { ∈, ∅ }</span><span class="note">a conservative pedagogical expansion of the strict language</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Relation Symbols</div>
+        <div class="v"><span class="pill">∈ : 2</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Constant Symbols</div>
+        <div class="v"><span class="pill">∅ : 0</span><span class="note">licensed because ZFC proves unique existence: ∃x∀y(y∉x), and Extensionality gives uniqueness</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Function Symbols</div>
+        <div class="v"><span class="pill none">none</span><span class="note">adding ∅ does not make union, power set, or pairing primitive operations</span></div>
+      </div>
+      <p class="section-label">Structure 𝔐</p>
+      <div class="row">
+        <div class="k">Form</div>
+        <div class="v"><span class="m">𝔐 = ⟨ M, E, e ⟩</span><span class="note">e ∈ M interprets the constant ∅; if 𝔐 ⊨ ZFC, then no element of M is E-related to e</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Guardrail</div>
+        <div class="v">This is notation management, not a new set-theoretic operation.</div>
+      </div>
+      <div class="callout"><b>Best use:</b> this is friendlier for readers because it matches how proofs are written, while still marking ∅ as definitional rather than operational.</div>
+    </div>
+  </section>
+
+  <section class="card zones">
+    <div class="card-head">
+      <p class="kicker">Approach 3 · Three-Zone Bedrock</p>
+      <h2 class="card-title">Primitive, Axiom-Given, Derived</h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="k">Primitive Zone</div>
+        <div class="v"><span class="pill">carrier M</span><span class="pill">membership E</span><span class="pill">equality =</span><span class="note">the model-theoretic interface: objects and membership facts</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Axiom-Given Zone</div>
+        <div class="v"><span class="pill">∅</span><span class="pill">{a,b}</span><span class="pill">⋃F</span><span class="pill">𝒫(A)</span><span class="pill">ω</span><span class="note">existence tools guaranteed by axioms, usually with uniqueness up to Extensionality when appropriate</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Derived Zone</div>
+        <div class="v"><span class="pill">A∪B</span><span class="pill">A∩B</span><span class="pill">A\B</span><span class="pill">Aᶜ</span><span class="pill">A△B</span><span class="note">operations defined from membership, separation, union, pairing, and the chosen ambient context</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Later Unlocks</div>
+        <div class="v"><span class="pill">⊆</span><span class="pill">relations</span><span class="pill">functions</span><span class="pill">images</span><span class="pill">preimages</span><span class="note">these become new interfaces once their chapters define them</span></div>
+      </div>
+      <div class="callout"><b>Best use:</b> this is probably the strongest chapter-opening card because it says what exists now, what the axioms unlock, and what gets structurally reused later.</div>
+    </div>
+  </section>
+
+  <section class="card algebra">
+    <div class="card-head">
+      <p class="kicker">Approach 4 · Universal-Algebra Shadow</p>
+      <h2 class="card-title">The Local Algebra of Subsets of U</h2>
+    </div>
+    <div class="card-body">
+      <p class="section-label">Not ZFC's Primitive Language</p>
+      <div class="row">
+        <div class="k">Carrier</div>
+        <div class="v"><span class="m">𝒫(U)</span><span class="note">once an ambient set U is fixed, its subsets form an algebraic universe</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Constants</div>
+        <div class="v"><span class="pill">∅</span><span class="pill">U</span><span class="note">bottom and top of the subset order</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Operations</div>
+        <div class="v"><span class="pill">∪ : 2</span><span class="pill">∩ : 2</span><span class="pill">ᶜ : 1</span><span class="pill">\ : 2</span><span class="pill">△ : 2</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Order Relation</div>
+        <div class="v"><span class="m">⊆</span><span class="note">turns 𝒫(U) into a Boolean lattice: joins are unions, meets are intersections</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Laws</div>
+        <div class="v">associativity, commutativity, distributivity, identities, absorption, complements, De Morgan, monotonicity</div>
+      </div>
+      <div class="callout"><b>Best use:</b> this is the “signature card before the topic” style. It should come after the model-theory bedrock, not replace it.</div>
+    </div>
+  </section>
+
+  <section class="card unlocks">
+    <div class="card-head">
+      <p class="kicker">Approach 5 · Bedrock Plus Tool Belt</p>
+      <h2 class="card-title">Recommended Combined Card</h2>
+    </div>
+    <div class="card-body">
+      <p class="section-label">Native Model-Theoretic Interface</p>
+      <div class="row">
+        <div class="k">Language</div>
+        <div class="v"><span class="m">ℒ∈ = FOL= + {∈}</span><span class="note">one binary relation, no native operations, no native constants in the strict presentation</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Structure</div>
+        <div class="v"><span class="m">𝔐 = ⟨ M, E ⟩</span><span class="note">M is the universe of the model; E interprets membership inside that universe</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Theory</div>
+        <div class="v"><span class="m">ZFC</span><span class="note">Extensionality, Empty Set, Pairing, Union, Power Set, Infinity, Separation, Replacement, Foundation, Choice</span></div>
+      </div>
+      <div class="row">
+        <div class="k">Bridge</div>
+        <div class="v"><span class="m">𝔐 ⊨ ZFC</span><span class="note">the satisfaction relation says the structure makes every ZFC axiom true</span></div>
+      </div>
+      <p class="section-label">Unlocked Set-Theoretic Toolkit</p>
+      <div class="mini-grid">
+        <div class="mini"><b>Native</b><span>membership, equality, variables, quantifiers, formulas</span></div>
+        <div class="mini"><b>Axiom-Given</b><span>empty set, pairs, unions over sets, power sets, infinite set, subsets by separation, images by replacement</span></div>
+        <div class="mini"><b>Derived Set Operations</b><span>binary union/intersection, complement in U, difference, symmetric difference, subset order</span></div>
+        <div class="mini"><b>Structural Echo</b><span>bottom/top, join/meet, Boolean algebra, subobjects, pullback-like preimage behavior after functions exist</span></div>
+      </div>
+      <div class="callout"><b>Recommended wording:</b> ZFC has one primitive non-logical symbol, ∈. Everything else is either defined from membership or guaranteed by the axioms, then reorganized by later chapters as order, lattice, relation, function, and categorical structure.</div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>

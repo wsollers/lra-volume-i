@@ -1,12 +1,19 @@
-\begin{center}
-\begin{tikzpicture}[scale=0.85]
-  \begin{scope}
-    \clip (-1,0) circle (1.5);
-    \fill[pattern=north east lines] (1,0) circle (1.5);
-  \end{scope}
-  \draw (-1,0) circle (1.5);
-  \draw ( 1,0) circle (1.5);
-  \node at (-2.2,-1.6) {$A$};
-  \node at ( 2.2,-1.6) {$B$};
+\begin{tikzpicture}[lra categorical diagram]
+  \node[lra cat native object] (A) at (0,1.65)
+    {\LraCatObject{A}{\{x:x\in A\}}};
+  \node[lra cat native object] (B) at (4.2,1.65)
+    {\LraCatObject{B}{\{x:x\in B\}}};
+
+  \node[lra cat result object] (AnB) at (2.1,0)
+    {\LraCatObject{A\cap B}{\{x:x\in A\land x\in B\}}};
+
+  \node[lra cat native object] (D) at (2.1,-1.65)
+    {\LraCatObject{D}{D\subseteq A,\ D\subseteq B}};
+
+  \draw[lra cat result arrow] (AnB) -- node[lra cat label,above left]{include} (A);
+  \draw[lra cat result arrow] (AnB) -- node[lra cat label,above right]{include} (B);
+  \draw[lra cat universal arrow] (D) -- node[lra cat label,right]{greatest lower bound} (AnB);
+
+  \node[lra cat note] at (2.1,-2.35)
+    {\(A\cap B\) is the largest set contained in both \(A\) and \(B\)};
 \end{tikzpicture}
-\end{center}

@@ -1,10 +1,19 @@
-\begin{center}
-\begin{tikzpicture}[scale=0.85]
-  \fill[pattern=north east lines] (-1,0) circle (1.5);
-  \fill[pattern=north east lines] ( 1,0) circle (1.5);
-  \draw (-1,0) circle (1.5);
-  \draw ( 1,0) circle (1.5);
-  \node at (-2.2,-1.6) {$A$};
-  \node at ( 2.2,-1.6) {$B$};
+\begin{tikzpicture}[lra categorical diagram]
+  \node[lra cat native object] (A) at (0,1.65)
+    {\LraCatObject{A}{\{x:x\in A\}}};
+  \node[lra cat native object] (B) at (4.2,1.65)
+    {\LraCatObject{B}{\{x:x\in B\}}};
+
+  \node[lra cat result object] (AuB) at (2.1,0)
+    {\LraCatObject{A\cup B}{\{x:x\in A\lor x\in B\}}};
+
+  \node[lra cat native object] (C) at (2.1,-1.65)
+    {\LraCatObject{C}{A\subseteq C,\ B\subseteq C}};
+
+  \draw[lra cat left arrow] (A) -- node[lra cat label,above left]{include} (AuB);
+  \draw[lra cat right arrow] (B) -- node[lra cat label,above right]{include} (AuB);
+  \draw[lra cat universal arrow] (AuB) -- node[lra cat label,right]{least upper bound} (C);
+
+  \node[lra cat note] at (2.1,-2.35)
+    {\(A\cup B\) is the smallest set containing both \(A\) and \(B\)};
 \end{tikzpicture}
-\end{center}

@@ -1,18 +1,18 @@
 % =========================================================
-% Equality Rules
+% Term Equality Rules
 % =========================================================
 
-\subsection{Proof Theory: Equality Rules}
+\subsection{Deduction Rules: Term Equality}
 
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
 
 % ---------------------------------------------------------
-% Equality Introduction (Reflexivity)
+% Term Equality Introduction (Reflexivity)
 % ---------------------------------------------------------
-\begin{definitionbox}{Definition (Equality Introduction --- Reflexivity)}
-\begin{definition}[Equality Introduction --- Reflexivity]\label{def:eq-refl}
+\begin{definitionbox}{Definition (Term Equality Introduction --- Reflexivity)}
+\begin{definition}[Term Equality Introduction --- Reflexivity]\label{def:eq-refl}
 For any term $t$, one may infer $t = t$.
 \end{definition}
 \end{definitionbox}
@@ -28,22 +28,23 @@ intended syntactic or semantic role.
 
 
 \begin{remark*}[Exposition]
-Reflexivity requires no premises and holds for all terms under all
-interpretations. It is the foundational rule that allows equality reasoning to
-get off the ground.
+Term reflexivity requires no premises and holds for all terms under all
+interpretations. It is the local deduction rule that starts term-equality
+reasoning.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:term]{Term}
+  \item \hyperref[ax:axiomatic-equality-reflexivity]{Reflexivity of Equality}
 \end{itemize}
 \end{dependencies}
 
 % ---------------------------------------------------------
-% Equality Elimination
+% Term Equality Elimination
 % ---------------------------------------------------------
-\begin{definitionbox}{Definition (Equality Elimination --- Substitution of Equals)}
-\begin{definition}[Equality Elimination --- Substitution of Equals]\label{def:eq-elim}
+\begin{definitionbox}{Definition (Term Equality Elimination --- Substitution of Equals)}
+\begin{definition}[Term Equality Elimination --- Substitution of Equals]\label{def:eq-elim}
 From $t_1 = t_2$ and $\varphi[t_1/x]$, one may infer $\varphi[t_2/x]$.
 \end{definition}
 \end{definitionbox}
@@ -59,9 +60,10 @@ intended syntactic or semantic role.
 
 
 \begin{remark*}[Exposition]
-Equality elimination permits replacing a term by an equal term in any formula
-position, provided the substitution is capture-avoiding. This formalizes the
-intuition that equal things can be substituted for each other.
+Term equality elimination permits replacing a term by an equal term in any
+formula position, provided the substitution is capture-avoiding. The fuller
+identity principle is developed separately; here the rule is recorded as part
+of the first-order deduction toolkit.
 \end{remark*}
 
 % ---------------------------------------------------------
@@ -71,11 +73,12 @@ intuition that equal things can be substituted for each other.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:term]{Term}
+  \item \hyperref[ax:axiomatic-equality-substitution]{Substitution of Identicals}
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Symmetry of Equality)}
-\begin{theorem}[Symmetry of Equality]\label{thm:eq-sym}
+\begin{theorembox}{Theorem (Symmetry of Term Equality)}
+\begin{theorem}[Symmetry of Term Equality]\label{thm:eq-sym}
 From $t_1 = t_2$, one may infer $t_2 = t_1$.
 \hyperref[prf:eq-sym]{Go to proof.}
 \end{theorem}
@@ -93,21 +96,22 @@ $\forall t_1, t_2:\; t_1=t_2 \to t_2=t_1$.
 
 
 \begin{remark*}[Interpretation]
-The predicate form says that equality is symmetric: any ordered pair of equal
-terms may be read in either order.
+The predicate form says that term equality is symmetric: any ordered pair of
+equal terms may be read in either order.
 
-Symmetry licenses reversing an established equality without adding new
+Symmetry licenses reversing an established term equality without adding new
 mathematical information.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:term]{Term}
+  \item \hyperref[thm:axiomatic-equality-symmetry]{Symmetry of Equality}
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Transitivity of Equality)}
-\begin{theorem}[Transitivity of Equality]\label{thm:eq-trans}
+\begin{theorembox}{Theorem (Transitivity of Term Equality)}
+\begin{theorem}[Transitivity of Term Equality]\label{thm:eq-trans}
 From $t_1 = t_2$ and $t_2 = t_3$, one may infer $t_1 = t_3$.
 \hyperref[prf:eq-trans]{Go to proof.}
 \end{theorem}
@@ -125,23 +129,24 @@ $\forall t_1, t_2, t_3:\; t_1=t_2 \wedge t_2=t_3 \to t_1=t_3$.
 
 
 \begin{remark*}[Interpretation]
-The predicate form says that equality is transitive: two consecutive equality
-links compose into one equality conclusion.
+The predicate form says that term equality is transitive: two consecutive
+term-equality links compose into one term-equality conclusion.
 
-Transitivity is the equality rule that lets a proof chain substitutions through
+Transitivity is the rule that lets a proof chain substitutions through
 intermediate terms.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:term]{Term}
-  \item \hyperref[def:eq-refl]{Equality Introduction}
-  \item \hyperref[def:eq-elim]{Equality Elimination}
+  \item \hyperref[def:eq-refl]{Term Equality Introduction}
+  \item \hyperref[def:eq-elim]{Term Equality Elimination}
+  \item \hyperref[thm:axiomatic-equality-transitivity]{Transitivity of Equality}
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Term Substitution under Equality)}
-\begin{theorem}[Term Substitution under Equality]\label{thm:eq-term}
+\begin{theorembox}{Theorem (Function-Term Substitution under Term Equality)}
+\begin{theorem}[Function-Term Substitution under Term Equality]\label{thm:eq-term}
 If $t_1 = t_2$, then for any function symbol $f$,
 $f(\dots,t_1,\dots) = f(\dots,t_2,\dots)$.
 \hyperref[prf:eq-term]{Go to proof.}
@@ -161,20 +166,21 @@ $\forall t_1, t_2:\; t_1=t_2 \to \forall$ function symbol $f$: $f(\dots,t_1,\dot
 
 
 \begin{remark*}[Interpretation]
-The statement records the named logical notion or result together with its
-intended syntactic or semantic role.
+Equal input terms may be substituted inside a function-term expression without
+changing the denoted output term.
 \end{remark*}
 
 
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:eq-elim]{Equality Elimination}
+  \item \hyperref[def:eq-elim]{Term Equality Elimination}
+  \item \hyperref[thm:axiomatic-equality-function-congruence]{Function Congruence}
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Predicate Substitution under Equality)}
-\begin{theorem}[Predicate Substitution under Equality]\label{thm:eq-pred}
+\begin{theorembox}{Theorem (Predicate Substitution under Term Equality)}
+\begin{theorem}[Predicate Substitution under Term Equality]\label{thm:eq-pred}
 If $t_1 = t_2$ and $P$ is an $n$-ary predicate symbol, then
 $P(\dots,t_1,\dots) \;\Leftrightarrow\; P(\dots,t_2,\dots)$.
 \hyperref[prf:eq-pred]{Go to proof.}
@@ -194,28 +200,28 @@ $\forall t_1, t_2:\; t_1=t_2 \to \forall$ predicate symbol $P$: $P(\dots,t_1,\do
 
 
 \begin{remark*}[Interpretation]
-The statement records the named logical notion or result together with its
-intended syntactic or semantic role.
+Equal input terms may be substituted inside an atomic predicate without
+changing the truth value of the predicate.
 \end{remark*}
 
 
 
 \begin{remark*}[Exposition]
-These derived rules collectively express that functions and predicates
-\emph{respect equality}: equal inputs produce equal outputs (for functions) or
-equivalent propositions (for predicates). Together they amount to the principle
-of Leibniz substitutivity.
+These derived rules collectively express that function and predicate symbols
+respect term equality: equal inputs produce equal outputs for function terms
+and equivalent propositions for predicate formulas.
 \end{remark*}
 
 \begin{remark*}[Exposition]
-When substituting equals for equals, the substitution must be made consistently.
-Replacing a term by an equal in one occurrence but not another in the same
-formula can produce incorrect conclusions.
+When substituting equal terms, the substitution must be made consistently.
+Replacing a term by an equal term in one occurrence but not another in the same
+formula can change the intended statement.
 \end{remark*}
 
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:eq-elim]{Equality Elimination}
+  \item \hyperref[def:eq-elim]{Term Equality Elimination}
+  \item \hyperref[thm:axiomatic-equality-relation-congruence]{Relation Congruence}
 \end{itemize}
 \end{dependencies}

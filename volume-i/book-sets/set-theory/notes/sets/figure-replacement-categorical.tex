@@ -1,0 +1,22 @@
+\begin{tikzpicture}[lra categorical diagram, x=1cm, y=1cm]
+  \node[lra cat native object, minimum width=2.8cm] (A) at (0,1.3)
+    {\LraCatObject{A}{\{x:x\in A\}}};
+  \node[lra cat native object, minimum width=3.2cm] (phi) at (6,1.3)
+    {\LraCatObjectText{\varphi(x,y)}{functional on \(A\)}};
+
+  \node[lra cat result object, minimum width=5.0cm] (condition) at (3,-0.3)
+    {\LraCatObject{\exists x\in A\,\varphi(x,y)}
+      {\{y:\exists x\in A,\ \varphi(x,y)\}}};
+
+  \node[lra cat result object, minimum width=3.4cm] (B) at (3,-1.9)
+    {\LraCatObjectText{B}{replacement image}};
+
+  \draw[lra cat left arrow] (A) -- node[lra cat label,above left]{domain set} (condition);
+  \draw[lra cat right arrow] (phi) -- node[lra cat label,above right]{definable image} (condition);
+  \draw[lra cat result arrow] (condition) -- node[lra cat label,right]{Replacement} (B);
+  \draw[lra cat universal arrow] (A) to[bend right=18]
+    node[lra cat label,below]{\(\varphi\)-image} (B);
+
+  \node[lra cat note] at (3,-2.75)
+    {definable functional images of sets are sets};
+\end{tikzpicture}

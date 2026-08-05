@@ -1,0 +1,25 @@
+\begin{tikzpicture}[lra categorical diagram, x=1cm, y=1cm]
+  \node[lra cat native object, minimum width=3.0cm] (family) at (3,1.4)
+    {\LraCatObject{A}{\{B:B\in A\}}};
+
+  \node[lra cat left object, minimum width=3.0cm] (member) at (0.4,0)
+    {\LraCatObjectPlain{B\in A}};
+  \node[lra cat right object, minimum width=3.0cm] (element) at (5.6,0)
+    {\LraCatObjectPlain{x\in B}};
+
+  \node[lra cat result object, minimum width=4.9cm] (condition) at (3,-1.35)
+    {\LraCatObject{\exists B\,(B\in A\land x\in B)}
+      {\{x:\exists B\in A,\ x\in B\}}};
+
+  \node[lra cat result object, minimum width=3.2cm] (union) at (3,-2.9)
+    {\LraCatObject{\bigcup A}{\{x:\exists B\in A,\ x\in B\}}};
+
+  \draw[lra cat left arrow] (family) -- node[lra cat label,above left]{choose member} (member);
+  \draw[lra cat right arrow] (member) -- node[lra cat label,above]{inspect element} (element);
+  \draw[lra cat result arrow] (member) -- (condition);
+  \draw[lra cat result arrow] (element) -- (condition);
+  \draw[lra cat result arrow] (condition) -- node[lra cat label,right]{Union} (union);
+
+  \node[lra cat note] at (3,-3.75)
+    {flatten a family by collecting elements of its members};
+\end{tikzpicture}

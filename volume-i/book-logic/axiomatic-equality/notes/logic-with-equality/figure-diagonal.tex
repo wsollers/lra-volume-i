@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1cm, y=1cm, >=Stealth]
+  \node[draw, rounded corners=2pt, minimum width=1.8cm, minimum height=0.75cm]
+    (A) at (0,0) {\(A\)};
+  \node[draw, rounded corners=2pt, minimum width=2.6cm, minimum height=0.75cm]
+    (AA) at (4.5,0) {\(A\times A\)};
+  \draw[->] (A) -- node[above] {\(\Delta_A\)} (AA);
+  \draw[->, gray] (A.north) to[out=70,in=110]
+    node[above] {\footnotesize first} (AA.north);
+  \draw[->, gray] (A.south) to[out=-70,in=-110]
+    node[below] {\footnotesize second} (AA.south);
+  \node[font=\footnotesize] at (2.25,-1.0)
+    {\(\Delta_A(a)=(a,a)\)};
+\end{tikzpicture}

@@ -3,8 +3,8 @@ display_title: ''
 volume: volume-i
 status: in-progress
 dependencies:
-  prior: ''
-  next: ''
+  prior: axiomatic-equality
+  next: many-sorted-first-order-logic
 path: volume-i/book-logic/predicate-logic
 book: book-logic
 environments:
@@ -21,32 +21,32 @@ environments:
 - label: def:eq-refl
   type: def
   file: notes\proof-theory\notes-equality.tex
-  display_title: Equality Introduction — Reflexivity
+  display_title: Term Equality Introduction — Reflexivity
   proof_file: null
 - label: def:eq-elim
   type: def
   file: notes\proof-theory\notes-equality.tex
-  display_title: Equality Elimination — Substitution of Equals
+  display_title: Term Equality Elimination — Substitution of Equals
   proof_file: null
 - label: thm:eq-sym
   type: thm
   file: notes\proof-theory\notes-equality.tex
-  display_title: Symmetry of Equality
+  display_title: Symmetry of Term Equality
   proof_file: null
 - label: thm:eq-trans
   type: thm
   file: notes\proof-theory\notes-equality.tex
-  display_title: Transitivity of Equality
+  display_title: Transitivity of Term Equality
   proof_file: null
 - label: thm:eq-term
   type: thm
   file: notes\proof-theory\notes-equality.tex
-  display_title: Term Substitution under Equality
+  display_title: Function-Term Substitution under Term Equality
   proof_file: null
 - label: thm:eq-pred
   type: thm
   file: notes\proof-theory\notes-equality.tex
-  display_title: Predicate Substitution under Equality
+  display_title: Predicate Substitution under Term Equality
   proof_file: null
 - label: def:ui
   type: def

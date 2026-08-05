@@ -16,7 +16,7 @@ sections:
   - subject: composition-and-failure-modes
     display_title: "Composition and Failure Modes"
 dependencies:
-  prior: orderings
+  prior: lattices
   next: cardinality
 path: volume-i/book-sets/functions-and-order
 book: book-sets

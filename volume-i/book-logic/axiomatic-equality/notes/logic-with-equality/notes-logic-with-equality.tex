@@ -1,0 +1,463 @@
+% =========================================================
+% Axiomatic Equality
+% =========================================================
+
+\subsection{The Pure Language of Equality}
+
+\begin{definitionbox}{Definition (Pure Language of Equality)}
+\begin{definition}[Pure Language of Equality]\label{def:axiomatic-equality-language}
+The \emph{pure language of equality}, denoted \(\mathcal L_{=}\), is the
+language whose only distinguished logical relation is equality:
+\[
+  \mathcal L_{=}=\{=\}.
+\]
+It has no constant symbols, no function symbols, and no non-logical relation
+symbols.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \mathsf{Const}_{\mathcal L_=}=\varnothing,\qquad
+  \mathsf{Func}_{\mathcal L_=}=\varnothing,\qquad
+  \mathsf{Rel}_{\mathcal L_=}^{\mathrm{nonlogical}}=\varnothing.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The point of this language is to isolate the bare logical idea of identity
+before adding subject-specific vocabulary such as membership, order, addition,
+or distance.
+\end{remark*}
+
+\DefinitionalRoot
+
+\begin{definitionbox}{Definition (Equality Structure)}
+\begin{definition}[Equality Structure]\label{def:axiomatic-equality-structure}
+An \(\mathcal L_{=}\)-structure is a pair
+\[
+  \mathcal M=(M,=^{\mathcal M})
+\]
+where \(M\neq\varnothing\) and equality is interpreted as the diagonal identity
+relation
+\[
+  =^{\mathcal M}=\Delta_M
+  =\{(x,x):x\in M\}\subseteq M\times M.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \mathcal M=(M,=^{\mathcal M})
+  \quad\text{with}\quad
+  M\neq\varnothing
+  \quad\text{and}\quad
+  =^{\mathcal M}=\Delta_M.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \mathsf{EqualityStructure}(\mathcal M,M)
+  \Longleftrightarrow
+  M\neq\varnothing
+  \;\wedge\;
+  =^{\mathcal M}=\Delta_M.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Once the domain \(M\) is chosen, the equality interpretation is fixed. Equality
+is not an arbitrary binary relation selected independently of the domain.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:axiomatic-equality-language]{Pure Language of Equality}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Distinctness)}
+\begin{definition}[Distinctness]\label{def:distinctness}
+The symbol \(\neq\) abbreviates non-identity:
+\[
+  x\neq y
+  \quad\Longleftrightarrow\quad
+  \neg(x=y).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  x\neq y
+  \Longleftrightarrow
+  \neg(x=y).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Distinctness is not a new primitive relation. It is notation for the negation
+of equality.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:axiomatic-equality-language]{Pure Language of Equality}
+\end{itemize}
+\end{dependencies}
+
+\subsection{Axioms}
+
+\begin{axiombox}{Axiom (Reflexivity of Equality)}
+\begin{axiom}[Reflexivity of Equality]\label{ax:axiomatic-equality-reflexivity}
+Every object is identical to itself:
+\[
+  \forall x\,(x=x).
+\]
+\end{axiom}
+\end{axiombox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\,(x=x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \mathsf{Identical}(x,x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Reflexivity is the minimal identity law: every object may be replaced by
+itself.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:axiomatic-equality-language]{Pure Language of Equality}
+\end{itemize}
+\end{dependencies}
+
+\begin{axiombox}{Axiom Schema (Substitution of Identicals)}
+\begin{axiom}[Substitution of Identicals]\label{ax:axiomatic-equality-substitution}
+For every formula \(\phi(x)\), if two objects are identical, then \(\phi\) has
+the same truth value on both:
+\[
+  \forall x\,\forall y\,
+  \bigl(x=y\to(\phi(x)\leftrightarrow\phi(y))\bigr).
+\]
+\end{axiom}
+\end{axiombox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\,\forall y\,
+  \bigl(x=y\to(\phi(x)\leftrightarrow\phi(y))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  x=y
+  \Longrightarrow
+  \bigl(\mathsf{PropertyHolds}(\phi,x)
+  \leftrightarrow
+  \mathsf{PropertyHolds}(\phi,y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is Leibniz's law: identical objects are indiscernible by any formula of
+the language.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:axiomatic-equality-reflexivity]{Reflexivity of Equality}
+\end{itemize}
+\end{dependencies}
+
+\subsection{Immediate Theorems}
+
+\begin{theorembox}{Theorem (Symmetry of Equality)}
+\begin{theorem}[Symmetry of Equality]\label{thm:axiomatic-equality-symmetry}
+If \(x\) equals \(y\), then \(y\) equals \(x\):
+\[
+  \forall x\,\forall y\,(x=y\to y=x).
+\]
+\hyperref[prf:axiomatic-equality-symmetry]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\,\forall y\,(x=y\to y=x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \mathsf{Equal}(x,y)\Longrightarrow \mathsf{Equal}(y,x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Let \(\phi(z)\) be the formula \(z=x\). By reflexivity, \(\phi(x)\), namely
+\(x=x\), is true. If \(x=y\), substitution transfers \(\phi\) from \(x\) to
+\(y\), yielding \(y=x\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:axiomatic-equality-reflexivity]{Reflexivity of Equality}
+  \item \hyperref[ax:axiomatic-equality-substitution]{Substitution of Identicals}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Transitivity of Equality)}
+\begin{theorem}[Transitivity of Equality]\label{thm:axiomatic-equality-transitivity}
+If \(x=y\) and \(y=z\), then \(x=z\):
+\[
+  \forall x\,\forall y\,\forall z\,
+  \bigl((x=y\land y=z)\to x=z\bigr).
+\]
+\hyperref[prf:axiomatic-equality-transitivity]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\,\forall y\,\forall z\,
+  \bigl((x=y\land y=z)\to x=z\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \mathsf{Equal}(x,y)\land\mathsf{Equal}(y,z)
+  \Longrightarrow
+  \mathsf{Equal}(x,z).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Let \(\phi(w)\) be the formula \(x=w\). From \(x=y\), \(\phi(y)\) is true. From
+\(y=z\), substitution transfers \(\phi\) from \(y\) to \(z\), giving \(x=z\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:axiomatic-equality-substitution]{Substitution of Identicals}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Equality is an Equivalence Relation)}
+\begin{theorem}[Equality is an Equivalence Relation]\label{thm:axiomatic-equality-equivalence-relation}
+Equality is reflexive, symmetric, and transitive.
+\[
+  \mathsf{Reflexive}(=)\land\mathsf{Symmetric}(=)\land\mathsf{Transitive}(=).
+\]
+\hyperref[prf:axiomatic-equality-equivalence-relation]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \bigl[\forall x(x=x)\bigr]
+  \land
+  \bigl[\forall x\,\forall y(x=y\to y=x)\bigr]
+  \land
+  \bigl[\forall x\,\forall y\,\forall z((x=y\land y=z)\to x=z)\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \mathsf{EquivalenceRelation}(=).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Equality is the first and strictest equivalence relation: it identifies only an
+object with itself.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:axiomatic-equality-reflexivity]{Reflexivity of Equality}
+  \item \hyperref[thm:axiomatic-equality-symmetry]{Symmetry of Equality}
+  \item \hyperref[thm:axiomatic-equality-transitivity]{Transitivity of Equality}
+\end{itemize}
+\end{dependencies}
+
+\subsection{Congruence and Well-Defined Operations}
+
+\begin{theorembox}{Theorem (Function Congruence)}
+\begin{theorem}[Function Congruence]\label{thm:axiomatic-equality-function-congruence}
+For any unary function symbol \(f\),
+\[
+  \forall x\,\forall y\,(x=y\to f(x)=f(y)).
+\]
+More generally, equal inputs in each coordinate yield equal outputs.
+\hyperref[prf:axiomatic-equality-function-congruence]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\,\forall y\,(x=y\to f(x)=f(y)).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \mathsf{Equal}(x,y)\Longrightarrow \mathsf{Equal}(f(x),f(y)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Function congruence is the logical reason operations are well-defined: applying
+the same operation to identical inputs cannot produce different outputs.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:axiomatic-equality-substitution]{Substitution of Identicals}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Relation Congruence)}
+\begin{theorem}[Relation Congruence]\label{thm:axiomatic-equality-relation-congruence}
+For any relation symbol \(R\),
+\[
+  \forall x\,\forall y\,
+  \bigl(x=y\to(R(x,z)\leftrightarrow R(y,z))\bigr),
+\]
+with the analogous rule in every coordinate.
+\hyperref[prf:axiomatic-equality-relation-congruence]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\,\forall y\,
+  \bigl(x=y\to(R(x,z)\leftrightarrow R(y,z))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \mathsf{Equal}(x,y)\Longrightarrow
+  \bigl(\mathsf{Related}(R,x,z)\leftrightarrow\mathsf{Related}(R,y,z)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Relation congruence says identical objects have the same relational behavior
+with respect to every relation expressible in the language.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:axiomatic-equality-substitution]{Substitution of Identicals}
+\end{itemize}
+\end{dependencies}
+
+\subsection{Definitions Unlocked by Equality}
+
+\begin{definitionbox}{Definition (Unique Existence)}
+\begin{definition}[Unique Existence]\label{def:axiomatic-equality-unique-existence}
+For a formula \(\psi(x)\), the expression \(\exists!x\,\psi(x)\) means
+\[
+  \exists!x\,\psi(x)
+  \quad\Longleftrightarrow\quad
+  \exists x\bigl(\psi(x)\land
+  \forall y(\psi(y)\to y=x)\bigr).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists!x\,\psi(x)
+  \Longleftrightarrow
+  \exists x\bigl(\psi(x)\land
+  \forall y(\psi(y)\to y=x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \mathsf{UniqueWitness}(\psi)
+  \Longleftrightarrow
+  \text{there is exactly one object satisfying }\psi.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Uniqueness is existence plus an equality test: every other witness must be the
+same object as the chosen witness.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:distinctness]{Distinctness}
+  \item \hyperref[thm:axiomatic-equality-equivalence-relation]{Equality is an Equivalence Relation}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Two-Element Bounds)}
+\begin{definition}[Two-Element Bounds]\label{def:two-element-bounds}
+Equality allows finite-size constraints to be expressed internally:
+\[
+  \text{at least two:}\quad
+  \exists x\,\exists y\,\neg(x=y),
+\]
+and
+\[
+  \text{at most two:}\quad
+  \forall x\,\forall y\,\forall z\,
+  (x=y\lor y=z\lor x=z).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists x\,\exists y\,\neg(x=y)
+  \qquad\text{and}\qquad
+  \forall x\,\forall y\,\forall z\,
+  (x=y\lor y=z\lor x=z).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \mathsf{AtLeastTwo}(M)
+  \qquad\text{and}\qquad
+  \mathsf{AtMostTwo}(M).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Before number theory is available, equality already lets the language compare
+objects and express small cardinal constraints.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:distinctness]{Distinctness}
+\end{itemize}
+\end{dependencies}
+
+\subsection{Bridge to First-Order Logic with Equality}
+
+\begin{remark*}[Exposition]
+Plain first-order logic need not include equality. Hereafter, Predicate Logic
+is read as first-order logic with equality: the ordinary first-order syntax
+plus the identity symbol governed by the axioms above.
+\end{remark*}

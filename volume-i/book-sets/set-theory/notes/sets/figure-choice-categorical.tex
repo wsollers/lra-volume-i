@@ -1,0 +1,21 @@
+\begin{tikzpicture}[lra categorical diagram, x=1cm, y=1cm]
+  \node[lra cat native object, minimum width=3.2cm] (family) at (3,1.4)
+    {\LraCatObject{A}{\{B:B\in A,\ B\neq\varnothing\}}};
+
+  \node[lra cat left object, minimum width=2.8cm] (member) at (0.4,-0.1)
+    {\LraCatObjectPlain{B\in A}};
+  \node[lra cat right object, minimum width=2.8cm] (choice) at (5.6,-0.1)
+    {\LraCatObjectPlain{f(B)\in B}};
+
+  \node[lra cat result object, minimum width=4.2cm] (selector) at (3,-1.8)
+    {\LraCatObjectText{f}{selector / choice function}};
+
+  \draw[lra cat left arrow] (family) -- node[lra cat label,above left]{nonempty member} (member);
+  \draw[lra cat right arrow] (member) -- node[lra cat label,above]{select} (choice);
+  \draw[lra cat result arrow] (choice) -- node[lra cat label,right]{Choice} (selector);
+  \draw[lra cat universal arrow] (selector) to[bend right=18]
+    node[lra cat label,below]{one value per \(B\)} (member);
+
+  \node[lra cat note] at (3,-2.65)
+    {a coherent selector chooses one element from each nonempty member};
+\end{tikzpicture}

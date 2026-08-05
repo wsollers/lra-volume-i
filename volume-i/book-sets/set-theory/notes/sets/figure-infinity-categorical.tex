@@ -1,0 +1,22 @@
+\begin{tikzpicture}[lra categorical diagram, x=1cm, y=1cm]
+  \node[lra cat native object, minimum width=2.8cm] (empty) at (0,1.1)
+    {\LraCatObjectPlain{\varnothing}};
+  \node[lra cat right object, minimum width=3.0cm] (succ) at (6,1.1)
+    {\LraCatObject{s(x)}{x\cup\{x\}}};
+
+  \node[lra cat result object, minimum width=4.8cm] (closed) at (3,-0.5)
+    {\LraCatObject{\varnothing\in I\ \land\ x\in I\Rightarrow s(x)\in I}
+      {inductive closure condition}};
+
+  \node[lra cat result object, minimum width=2.8cm] (I) at (3,-2.1)
+    {\LraCatObjectText{I}{inductive set}};
+
+  \draw[lra cat left arrow] (empty) -- node[lra cat label,above left]{base} (closed);
+  \draw[lra cat right arrow] (succ) -- node[lra cat label,above right]{step} (closed);
+  \draw[lra cat result arrow] (closed) -- node[lra cat label,right]{Infinity} (I);
+  \draw[lra cat universal arrow] (I.east) to[out=15,in=-50]
+    node[lra cat label,right]{closed under \(s\)} (succ.east);
+
+  \node[lra cat note] at (3,-2.95)
+    {one set contains the base point and remains closed under successor};
+\end{tikzpicture}

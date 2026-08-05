@@ -1,0 +1,21 @@
+\begin{tikzpicture}[lra categorical diagram, x=1cm, y=1cm]
+  \node[lra cat native object, minimum width=3.0cm] (A) at (0,1.3)
+    {\LraCatObject{A}{\{x:x\in A\}}};
+  \node[lra cat native object, minimum width=3.0cm] (phi) at (6,1.3)
+    {\LraCatObjectText{\varphi}{predicate on elements}};
+
+  \node[lra cat result object, minimum width=4.8cm] (condition) at (3,-0.3)
+    {\LraCatObject{x\in A\land\varphi(x)}
+      {\{x:x\in A\land\varphi(x)\}}};
+
+  \node[lra cat result object, minimum width=3.4cm] (B) at (3,-1.9)
+    {\LraCatObject{B}{\{x\in A:\varphi(x)\}}};
+
+  \draw[lra cat left arrow] (A) -- node[lra cat label,above left]{bound source} (condition);
+  \draw[lra cat right arrow] (phi) -- node[lra cat label,above right]{filter} (condition);
+  \draw[lra cat result arrow] (condition) -- node[lra cat label,right]{Separation} (B);
+  \draw[lra cat universal arrow] (B) -- node[lra cat label,above]{subobject} (A);
+
+  \node[lra cat note] at (3,-2.75)
+    {a predicate cuts a subset from an already available set};
+\end{tikzpicture}

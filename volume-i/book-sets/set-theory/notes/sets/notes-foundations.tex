@@ -15,6 +15,17 @@ Two sets are equal iff they have the same elements.
 \end{axiom}
 \end{axiombox}
 
+\begin{lracategoricalcard}{Categorical Rendering --- Extensionality}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-extensionality-membership-profile}
+\end{center}
+\smallskip
+\noindent\footnotesize
+The axiom turns a logical comparison of membership profiles into equality:
+two boxes name the same set exactly when every element-test gives the same
+truth value.
+\end{lracategoricalcard}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall A\,\forall B,\quad
@@ -46,6 +57,17 @@ There exists a set with no elements.
 \end{axiom}
 \end{axiombox}
 
+\begin{lracategoricalcard}{Categorical Rendering --- Empty Set}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-empty-set-categorical}
+\end{center}
+\smallskip
+\noindent\footnotesize
+The axiom supplies a set whose membership test is always false. Later, this
+same object behaves as the bottom subset of an ambient universe and as the
+initial object of \(\mathbf{Set}\).
+\end{lracategoricalcard}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \exists A\,\forall x,\ x\notin A.
@@ -76,6 +98,16 @@ For any two sets, there exists a set containing exactly those two sets.
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{lracategoricalcard}{Categorical Rendering --- Pairing}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-pairing-categorical}
+\end{center}
+\smallskip
+\noindent\footnotesize
+The axiom turns two given objects into one set with a two-case membership
+condition: an element of the pair is exactly \(A\) or \(B\).
+\end{lracategoricalcard}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -111,6 +143,16 @@ those sets.
 \end{axiom}
 \end{axiombox}
 
+\begin{lracategoricalcard}{Categorical Rendering --- Union}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-union-axiom-categorical}
+\end{center}
+\smallskip
+\noindent\footnotesize
+The axiom flattens a set-indexed family: an element belongs to \(\bigcup A\)
+exactly when it belongs to some member of \(A\).
+\end{lracategoricalcard}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall A\,\exists U\,\forall x,\quad
@@ -142,6 +184,16 @@ For any set, there exists a set of all its subsets.
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{lracategoricalcard}{Categorical Rendering --- Power Set}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-power-set-categorical}
+\end{center}
+\smallskip
+\noindent\footnotesize
+The axiom turns the subobject relation into a set of objects: the elements of
+\(\mathcal P(A)\) are exactly the subsets of \(A\).
+\end{lracategoricalcard}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -175,6 +227,16 @@ There exists an infinite set.
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{lracategoricalcard}{Categorical Rendering --- Infinity}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-infinity-categorical}
+\end{center}
+\smallskip
+\noindent\footnotesize
+The axiom supplies an inductive set: it contains the empty set and remains
+closed under the successor operation \(x\mapsto x\cup\{x\}\).
+\end{lracategoricalcard}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -210,6 +272,17 @@ elements satisfying that property. For any formula $\varphi(x)$,
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{lracategoricalcard}{Categorical Rendering --- Separation}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-separation-categorical}
+\end{center}
+\smallskip
+\noindent\footnotesize
+The schema cuts a definable subobject out of an existing set. The source set
+\(A\) bounds the construction; the predicate only filters what is already
+there.
+\end{lracategoricalcard}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -249,6 +322,16 @@ of $A$ under $\varphi$ is a set. For any formula $\varphi(x,y)$,
 \end{axiom}
 \end{axiombox}
 
+\begin{lracategoricalcard}{Categorical Rendering --- Replacement}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-replacement-categorical}
+\end{center}
+\smallskip
+\noindent\footnotesize
+The schema says that a definable functional relation sends a set-sized domain
+to a set-sized image.
+\end{lracategoricalcard}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall A,\quad
@@ -283,6 +366,16 @@ Every nonempty set has an $\in$-minimal element.
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{lracategoricalcard}{Categorical Rendering --- Foundation}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-foundation-categorical}
+\end{center}
+\smallskip
+\noindent\footnotesize
+The axiom forces every nonempty membership region to have an
+\(\in\)-minimal element, ruling out infinite descent through membership.
+\end{lracategoricalcard}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -321,6 +414,16 @@ For any family of nonempty sets, there exists a selection function.
 \]
 \end{axiom}
 \end{axiombox}
+
+\begin{lracategoricalcard}{Categorical Rendering --- Choice}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-choice-categorical}
+\end{center}
+\smallskip
+\noindent\footnotesize
+The axiom supplies a coherent selector for a family of nonempty sets: one
+chosen element from each member of the family.
+\end{lracategoricalcard}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -362,6 +465,44 @@ in more basic terms. Their meaning is determined entirely by the axioms
 governing them.
 \end{definition}
 \end{definitionbox}
+
+\begin{lraprimitiveinterfacecard}{Primitive Interface --- Set and Membership}
+\LraPrimitiveExplainer{%
+The expression \(x\in A\) is not defined from earlier machinery. It is the
+basic relation ZFC starts with; the axioms explain how this relation behaves
+and which objects must exist.}
+
+\LraPrimitiveTwoColumnRow{%
+\begin{lraprimitiveobjectsblock}
+\LraPrimitiveMathRow{Carrier}{\text{sets}}{the objects of discourse}
+\LraPrimitiveMathRow{Variables}{x,A,B,C,\ldots}{range over sets unless context says otherwise}
+\end{lraprimitiveobjectsblock}
+}{%
+\begin{lraprimitiverelationblock}
+\LraPrimitiveMathRow{Symbol}{x\in A}{membership is primitive}
+\LraPrimitiveMathRow{Arity}{2}{one object is tested as an element of another}
+\end{lraprimitiverelationblock}
+}
+
+\LraPrimitiveTwoColumnRow{%
+\begin{lraprimitivelogicblock}
+\LraPrimitiveLogicRow{Equality}{A=B}
+  {identity of objects, constrained by Extensionality}
+  {A=B\iff \forall x\,(x\in A\leftrightarrow x\in B)}
+\LraPrimitiveMathRow{Negation}{x\notin A}{shorthand for \(\neg(x\in A)\)}
+\end{lraprimitivelogicblock}
+}{%
+\begin{lraprimitiveinclusionblock}
+\LraPrimitiveLogicRow{Subset}{A\subseteq B}
+  {object comparison induced by membership}
+  {A\subseteq B\iff \forall x\,(x\in A\Rightarrow x\in B)}
+\end{lraprimitiveinclusionblock}
+}
+
+\begin{lraprimitivepictureblock}
+\LraPrimitiveMembershipPicture{x}{A}
+\end{lraprimitivepictureblock}
+\end{lraprimitiveinterfacecard}
 
 \begin{remark*}[Standard quantified statement]
 The expression $x\in A$ is a primitive membership assertion.

@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1cm, y=1cm, >=Stealth]
+  \node[draw, rounded corners=2pt, minimum width=2.3cm, minimum height=0.75cm]
+    (E) at (0,0) {\(\mathrm{Eq}(f,g)\)};
+  \node[draw, rounded corners=2pt, minimum width=1.6cm, minimum height=0.75cm]
+    (A) at (3.6,0) {\(A\)};
+  \node[draw, rounded corners=2pt, minimum width=1.6cm, minimum height=0.75cm]
+    (B) at (7,0) {\(B\)};
+  \draw[->] (E) -- node[above] {\(e\)} (A);
+  \draw[->] (A) to[bend left=16] node[above] {\(f\)} (B);
+  \draw[->] (A) to[bend right=16] node[below] {\(g\)} (B);
+  \node[font=\footnotesize] at (3.5,-1.0)
+    {inputs where \(f\) and \(g\) agree};
+\end{tikzpicture}

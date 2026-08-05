@@ -1,0 +1,21 @@
+\begin{tikzpicture}[lra categorical diagram]
+  \node[lra cat native object] (A) at (0,1.6)
+    {\LraCatObject{A}{\{x:x\in A\}}};
+  \node[lra cat native object] (B) at (4.8,1.6)
+    {\LraCatObject{B}{\{x:x\in B\}}};
+
+  \node[lra cat left object] (join) at (2.4,0.35)
+    {\LraCatObject{A\cup B}{\{x:x\in A\lor x\in B\}}};
+  \node[lra cat right object] (comp) at (2.4,-1.0)
+    {\LraCatObject{(A\cup B)^c}{\{x:x\notin A\land x\notin B\}}};
+  \node[lra cat result object] (meet) at (2.4,-2.35)
+    {\LraCatObject{A^c\cap B^c}{\{x:x\in A^c\land x\in B^c\}}};
+
+  \draw[lra cat left arrow] (A) -- (join);
+  \draw[lra cat left arrow] (B) -- (join);
+  \draw[lra cat universal arrow] (join) -- node[lra cat label,right]{complement} (comp);
+  \draw[lra cat result arrow] (comp) -- node[lra cat label,right]{same condition} (meet);
+
+  \node[lra cat note] at (2.4,-3.1)
+    {complement turns the join condition into the meet of complements};
+\end{tikzpicture}

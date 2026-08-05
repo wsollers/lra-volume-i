@@ -1,0 +1,20 @@
+\begin{tikzpicture}[lra categorical diagram]
+  \node[lra cat native object] (F) at (2.4,1.75)
+    {\LraCatObject{\{A_i\}_{i\in I}}{A_i\subseteq U}};
+
+  \node[lra cat left object] (U) at (0,0)
+    {\LraCatObject{\bigcup_{i\in I}A_i}{\{x:\exists i\in I,\ x\in A_i\}}};
+  \node[lra cat right object] (K) at (4.8,0)
+    {\LraCatObject{\bigcap_{i\in I}A_i}{\{x:\forall i\in I,\ x\in A_i\}}};
+
+  \node[lra cat native object] (Ai) at (2.4,-1.55)
+    {\LraCatObject{A_i}{\text{one indexed set}}};
+
+  \draw[lra cat left arrow] (F) -- node[lra cat label,above left]{collect any} (U);
+  \draw[lra cat right arrow] (F) -- node[lra cat label,above right]{common to all} (K);
+  \draw[lra cat left arrow] (Ai) -- node[lra cat label,below left]{each \(A_i\subseteq\)} (U);
+  \draw[lra cat right arrow] (K) -- node[lra cat label,below right]{\(\subseteq\) each \(A_i\)} (Ai);
+
+  \node[lra cat note] at (2.4,-2.35)
+    {indexed union is existential aggregation; indexed intersection is universal common core};
+\end{tikzpicture}

@@ -1,0 +1,81 @@
+\begin{lrachaptercard}{Set Theory --- ZFC Signature Card}
+\begin{lracardtoprow}
+\begin{lralanguageblock}
+\LraCardMathRow{Signature}{\mathcal L_{\in,\varnothing}
+  = \mathrm{FOL}^{=}+\{\in,\varnothing\}}
+  {Expanded ZFC language used in this chapter.}
+\LraCardMathRow{Nonlogical relation}{\in:2}
+  {Primitive binary membership relation.}
+\LraCardMathRow{Constant}{\varnothing:0}
+  {The empty-set constant.}
+\LraCardRow{Function symbols}{None}
+  {Set-forming tools are introduced by axioms and definitions.}
+\end{lralanguageblock}
+\begin{lrastructureblock}
+\LraCardMathRow{Form}{\mathfrak M=\langle M,E,e\rangle}
+  {\(M\) is the universe; \(E\subseteq M\times M\); \(e\in M\).}
+\LraCardMathRow{Interpretation}{\in^{\mathfrak M}=E,\quad
+  \varnothing^{\mathfrak M}=e}
+  {All variables range over \(M\).}
+\LraCardMathRow{Membership truth}{\mathfrak M\models a\in b
+  \iff a\,E\,b}
+  {Membership statements are evaluated inside \(\mathfrak M\).}
+\end{lrastructureblock}
+\end{lracardtoprow}
+
+\begin{lratheoryblock}
+\LraCardMathRow{Theory}{\mathrm{ZFC}\subseteq
+  \mathrm{Sent}(\mathcal L_{\in,\varnothing})}
+  {A set of first-order sentences and schemas.}
+\LraCardMathRow{Satisfaction}{\mathfrak M\models \mathrm{ZFC}}
+  {All ZFC axioms hold in the structure.}
+\begin{lraaxiomlist}
+\LraAxiomItem{\hyperref[ax:extensionality]{Extensionality}}
+  {same members imply same set}
+\LraAxiomItem{\hyperref[ax:empty-set]{Empty Set}}
+  {the constant \(\varnothing\) has no members}
+\LraAxiomItem{\hyperref[ax:pairing]{Pairing}}
+  {given \(a,b\), the set \(\{a,b\}\) exists}
+\LraAxiomItem{\hyperref[ax:union]{Union}}
+  {given \(F\), the set \(\bigcup F\) exists}
+\LraAxiomItem{\hyperref[ax:power-set]{Power Set}}
+  {given \(A\), the set \(\mathcal P(A)\) exists}
+\LraAxiomItem{\hyperref[ax:infinity]{Infinity}}
+  {an inductive infinite set exists}
+\LraAxiomItem{\hyperref[ax:separation]{Separation Schema}}
+  {definable subsets of existing sets exist}
+\LraAxiomItem{\hyperref[ax:replacement]{Replacement Schema}}
+  {definable functional images of sets exist}
+\LraAxiomItem{\hyperref[ax:foundation]{Foundation}}
+  {membership is well-founded}
+\LraAxiomItem{\hyperref[ax:choice]{Choice}}
+  {pairwise disjoint nonempty families admit selector sets}
+\end{lraaxiomlist}
+\end{lratheoryblock}
+
+\medskip
+\noindent\textbf{Native and Unlocked Interface}
+\begin{lratoolbelt}
+\begin{lratoolnative}{Native}
+\footnotesize
+Variables, equality, logic, quantifiers, membership \(\in\), and the
+empty-set constant \(\varnothing\).
+\end{lratoolnative}
+\begin{lratoolaxiom}{Axiom-Given}
+\footnotesize
+\(\varnothing\), unordered pairs \(\{a,b\}\), unions over set-families,
+power sets \(\mathcal P(A)\), infinite sets, separated subsets, replacement
+images, selector sets.
+\end{lratoolaxiom}
+\begin{lratoolderived}{Derived}
+\footnotesize
+\(A\cup B\), \(A\cap B\), \(A\setminus B\), \(A^c\) relative to \(U\),
+\(A\triangle B\), \(A\times B\).
+\end{lratoolderived}
+\begin{lratoollater}{Later Structure}
+\footnotesize
+Relations, functions, images, preimages, order, lattices, cardinality,
+quotient objects.
+\end{lratoollater}
+\end{lratoolbelt}
+\end{lrachaptercard}

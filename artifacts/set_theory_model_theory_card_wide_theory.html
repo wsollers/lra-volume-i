@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set Theory — ZFC Signature Card Wide Theory</title>
+<style>
+  :root{
+    --bg:#f7f7f8;
+    --panel:#ffffff;
+    --toolkit:#f1f1f3;
+    --border:#b8b8bd;
+    --text:#222222;
+    --muted:#5f6673;
+    --signature-box:#fff7ed;
+    --signature-border:#b7791f;
+    --structure-box:#eff6ff;
+    --structure-border:#2f6fae;
+    --theory-box:#faf5ff;
+    --theory-border:#7b3fb2;
+    --uses-box:#f7f4ef;
+    --uses-border:#8a735a;
+    --classification-box:#f8fafc;
+    --classification-border:#64748b;
+    --new-box:#f0fdf4;
+    --new-border:#2f855a;
+    --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    min-height:100vh;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Georgia,"Iowan Old Style",serif;
+    padding:42px 18px 56px;
+  }
+  h1{
+    margin:0;
+    text-align:center;
+    font-size:1.55rem;
+    font-weight:650;
+  }
+  .subtitle{
+    max-width:760px;
+    margin:8px auto 30px;
+    text-align:center;
+    color:var(--muted);
+    font-family:var(--mono);
+    font-size:.82rem;
+    line-height:1.55;
+  }
+  .wrap{max-width:920px;margin:0 auto;}
+  .card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .head{
+    padding:20px 24px 15px;
+    border-top:4px solid var(--signature-border);
+    border-bottom:1px solid var(--border);
+  }
+  .kicker{
+    margin:0 0 5px;
+    color:var(--signature-border);
+    font-family:var(--mono);
+    font-size:.68rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  h2{margin:0;font-size:1.18rem;}
+  .body{padding:18px 24px 22px;}
+  .top-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .block{
+    background:var(--toolkit);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:14px;
+  }
+  .block h3{
+    margin:0 0 10px;
+    font-family:var(--mono);
+    font-size:.76rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  .language{
+    background:var(--signature-box);
+    border-color:var(--signature-border);
+  }
+  .structure{
+    background:var(--structure-box);
+    border-color:var(--structure-border);
+  }
+  .theory{
+    background:var(--theory-box);
+    border-color:var(--theory-border);
+  }
+  .language h3{color:var(--signature-border);}
+  .structure h3{color:var(--structure-border);}
+  .theory h3{color:var(--theory-border);}
+  .row{
+    padding:8px 0;
+    border-bottom:1px solid rgba(0,0,0,.12);
+    line-height:1.45;
+  }
+  .row:last-child{border-bottom:none;}
+  .label{
+    display:block;
+    margin-bottom:3px;
+    color:var(--muted);
+    font-family:var(--mono);
+    font-size:.71rem;
+  }
+  .m{font-family:var(--mono);font-size:.88rem;}
+  .note{
+    display:block;
+    margin-top:4px;
+    color:var(--muted);
+    font-size:.78rem;
+    line-height:1.45;
+  }
+  .theory{
+    margin-top:14px;
+  }
+  .theory-head{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-bottom:12px;
+  }
+  .axioms{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px 12px;
+  }
+  .axiom-line{
+    padding:9px 10px;
+    background:#ffffff;
+    border:1px solid rgba(123,63,178,.32);
+    border-radius:7px;
+    font-size:.82rem;
+    line-height:1.42;
+  }
+  .axiom-line b{
+    color:var(--text);
+    font-family:var(--mono);
+    font-size:.72rem;
+  }
+  .section{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px dashed var(--border);
+  }
+  .section-title{
+    margin:0 0 10px;
+    color:var(--uses-border);
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .toolbelt{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:10px;
+  }
+  .mini{
+    min-height:104px;
+    padding:11px 12px;
+    background:var(--classification-box);
+    border:1px solid var(--border);
+    border-radius:8px;
+  }
+  .mini b{
+    display:block;
+    margin-bottom:6px;
+    font-family:var(--mono);
+    font-size:.74rem;
+  }
+  .mini.native{
+    background:var(--signature-box);
+    border-color:var(--signature-border);
+  }
+  .mini.axiom{
+    background:var(--new-box);
+    border-color:var(--new-border);
+  }
+  .mini.derived{
+    background:var(--uses-box);
+    border-color:var(--uses-border);
+  }
+  .mini.later{
+    background:var(--classification-box);
+    border-color:var(--classification-border);
+  }
+  .native b{color:var(--signature-border);}
+  .axiom b{color:var(--new-border);}
+  .derived b{color:var(--uses-border);}
+  .later b{color:var(--classification-border);}
+  .mini span{
+    color:var(--muted);
+    font-size:.79rem;
+    line-height:1.45;
+  }
+  .callout{
+    margin-top:16px;
+    padding:12px 14px;
+    background:#f1f1f3;
+    border:1px solid var(--border);
+    border-left:3px solid var(--structure-border);
+    border-radius:8px;
+    color:#343a45;
+    font-size:.84rem;
+    line-height:1.58;
+  }
+  @media (max-width:780px){
+    .top-grid,.theory-head,.axioms,.toolbelt{grid-template-columns:1fr;}
+    body{padding:30px 12px 42px;}
+  }
+</style>
+</head>
+<body>
+
+<h1>Set Theory — ZFC Signature Card</h1>
+<p class="subtitle">Language and structure name the interface. Theory lists the ZFC sentences and schemas that govern that interface.</p>
+
+<div class="wrap">
+  <section class="card">
+    <div class="head">
+      <p class="kicker">Chapter Opener · Formal Signature</p>
+      <h2>The Interface of ZFC Set Theory</h2>
+    </div>
+
+    <div class="body">
+      <div class="top-grid">
+        <article class="block language">
+          <h3>Language</h3>
+          <div class="row">
+            <span class="label">Signature</span>
+            <span class="m">ℒ∈,∅ = FOL= + { ∈, ∅ }</span>
+            <span class="note">expanded ZFC language used in this chapter</span>
+          </div>
+          <div class="row">
+            <span class="label">Non-Logical Relation</span>
+            <span class="m">∈ : 2</span>
+            <span class="note">primitive binary membership relation</span>
+          </div>
+          <div class="row">
+            <span class="label">Constant</span>
+            <span class="m">∅ : 0</span>
+            <span class="note">the empty-set constant</span>
+          </div>
+          <div class="row">
+            <span class="label">Function Symbols</span>
+            <span class="m">none</span>
+            <span class="note">set-forming tools are introduced by axioms and definitions</span>
+          </div>
+        </article>
+
+        <article class="block structure">
+          <h3>Structure</h3>
+          <div class="row">
+            <span class="label">Form</span>
+            <span class="m">𝔐 = ⟨M,E,e⟩</span>
+            <span class="note">M is the universe; E ⊆ M × M; e ∈ M</span>
+          </div>
+          <div class="row">
+            <span class="label">Interpretation</span>
+            <span class="m">∈<sup>𝔐</sup> = E,  ∅<sup>𝔐</sup> = e</span>
+            <span class="note">all variables range over M</span>
+          </div>
+          <div class="row">
+            <span class="label">Membership Truth</span>
+            <span class="m">𝔐 ⊨ a∈b  iff  a E b</span>
+            <span class="note">membership statements are evaluated inside 𝔐</span>
+          </div>
+        </article>
+      </div>
+
+      <article class="block theory">
+        <h3>Theory</h3>
+        <div class="theory-head">
+          <div class="row">
+            <span class="label">Theory</span>
+            <span class="m">ZFC ⊆ Sent(ℒ∈,∅)</span>
+            <span class="note">a set of first-order sentences and schemas</span>
+          </div>
+          <div class="row">
+            <span class="label">Satisfaction</span>
+            <span class="m">𝔐 ⊨ ZFC</span>
+            <span class="note">all ZFC axioms hold in the structure</span>
+          </div>
+        </div>
+
+        <div class="axioms">
+          <div class="axiom-line"><b>Extensionality</b><br>same members imply same set</div>
+          <div class="axiom-line"><b>Empty Set</b><br>the constant ∅ has no members</div>
+          <div class="axiom-line"><b>Pairing</b><br>given a,b, the set {a,b} exists</div>
+          <div class="axiom-line"><b>Union</b><br>given F, the set ⋃F exists</div>
+          <div class="axiom-line"><b>Power Set</b><br>given A, the set 𝒫(A) exists</div>
+          <div class="axiom-line"><b>Infinity</b><br>an inductive infinite set exists</div>
+          <div class="axiom-line"><b>Separation Schema</b><br>definable subsets of existing sets exist</div>
+          <div class="axiom-line"><b>Replacement Schema</b><br>definable functional images of sets exist</div>
+          <div class="axiom-line"><b>Foundation</b><br>membership is well-founded</div>
+          <div class="axiom-line"><b>Choice</b><br>pairwise disjoint nonempty families admit selector sets</div>
+        </div>
+      </article>
+
+      <div class="section">
+        <p class="section-title">Native and Unlocked Interface</p>
+        <div class="toolbelt">
+          <article class="mini native">
+            <b>Native</b>
+            <span>variables, equality, logic, quantifiers, membership ∈, and the empty-set constant ∅</span>
+          </article>
+          <article class="mini axiom">
+            <b>Axiom-Given</b>
+            <span>∅, unordered pairs {a,b}, unions over set-families, power sets 𝒫(A), infinite sets, separated subsets, replacement images, selector sets</span>
+          </article>
+          <article class="mini derived">
+            <b>Derived</b>
+            <span>A∪B, A∩B, A\B, Aᶜ relative to U, A△B, A×B</span>
+          </article>
+          <article class="mini later">
+            <b>Later Structure</b>
+            <span>relations, functions, images, preimages, order, lattices, cardinality, quotient objects</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="callout">
+        <b>Reading:</b> the language supplies ∈ and ∅; a structure interprets them as E and e; the theory ZFC is the axiom inventory that makes the interpreted structure behave like a universe of sets.
+      </div>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

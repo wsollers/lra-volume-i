@@ -32,7 +32,9 @@ Term evaluation & \(\llbracket t\rrbracket_{\mathcal M,s}\) & value of a term \\
 A \emph{first-order language} \(\mathcal L\) consists of variables, logical
 symbols, and a signature of non-logical symbols: constant symbols, function
 symbols with assigned arities, and predicate symbols with assigned arities.
-Equality may be included as a distinguished logical predicate.
+Hereafter, predicate logic means first-order logic with equality: the
+distinguished equality symbol has the identity behavior axiomatized in
+\hyperref[ch:axiomatic-equality]{Axiomatic Equality}.
 \end{definition}
 \LeanFormalizes{def:fo-language}{lra-lean}{LRA.VolumeI.Logic.Language.FirstOrder.Signature}{FirstOrderLanguage}{pending}
 \LeanFormalizes{def:fo-language}{lra-lean}{LRA.VolumeI.Logic.Language.FirstOrder.Signature}{Signature}{pending}
@@ -49,7 +51,8 @@ Equality may be included as a distinguished logical predicate.
 \quad(n\geq 1),
 \end{aligned}
 \]
-together with the usual logical connectives, quantifiers, and punctuation.
+together with equality, the usual logical connectives, quantifiers, and
+punctuation.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]

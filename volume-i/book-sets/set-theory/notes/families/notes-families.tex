@@ -8,12 +8,33 @@
 % TOOLKIT
 % ---------------------------------------------------------
 
+\begin{lratopiccard}{Families --- Indexed Operation Signature}
+\begin{lrasignaturetable}
+\LraSignatureRow{Carrier/context}{An ambient set \(U\), an index set \(I\), and a function \(i\mapsto A_i\) with \(A_i\subseteq U\).}
+\LraSignatureRow{Family object}{The family \(\{A_i\}_{i\in I}\) is indexed data, not merely a set whose elements are sets.}
+\LraSignatureRow{Indexed union}{Existential membership: \(x\in\bigcup_{i\in I}A_i\) iff \(x\in A_i\) for some \(i\in I\).}
+\LraSignatureRow{Indexed intersection}{Universal membership: \(x\in\bigcap_{i\in I}A_i\) iff \(x\in A_i\) for every \(i\in I\).}
+\LraSignatureRow{Structural echo}{Binary union/intersection become arbitrary aggregation and common-core operations.}
+\end{lrasignaturetable}
+\end{lratopiccard}
+
 \begin{remark*}[Exposition]
 Many set-theoretic constructions require not just pairs of sets but
 infinite families. Indexed families provide the formal language for
 partitions, equivalence classes, unions over countably or uncountably many
 sets, and products indexed by arbitrary index sets.
 \end{remark*}
+
+\begin{lracategoricalcard}{Categorical Rendering --- Indexed Union and Intersection}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/families/figure-indexed-union-intersection}
+\end{center}
+\[
+  x\in\bigcup_{i\in I}A_i \Longleftrightarrow \exists i\in I,\ x\in A_i,
+  \qquad
+  x\in\bigcap_{i\in I}A_i \Longleftrightarrow \forall i\in I,\ x\in A_i.
+\]
+\end{lracategoricalcard}
 
 \begin{definitionbox}{Definition (Indexed Family of Sets)}
 \begin{definition}[Indexed Family of Sets]\label{def:indexed-family}
@@ -159,98 +180,6 @@ nonempty indexed case.
   \item \hyperref[def:indexed-family]{Indexed Family of Sets}
   \item \hyperref[def:intersection]{Intersection}
   \item \hyperref[def:universal-q]{Universal Formula}
-\end{itemize}
-\end{dependencies}
-
-\begin{theorembox}{Theorem (De Morgan's Laws for Indexed Families)}
-\begin{theorem}[De Morgan's Laws for Indexed Families]\label{thm:indexed-de-morgan}
-Let $\{A_i\}_{i\in I}$ be an indexed family of subsets of a universe $U$.
-Then
-\[
-U\setminus\bigcup_{i\in I}A_i
-=
-\bigcap_{i\in I}(U\setminus A_i).
-\]
-If $I\neq\varnothing$, then
-\[
-U\setminus\bigcap_{i\in I}A_i
-=
-\bigcup_{i\in I}(U\setminus A_i).
-\]
-\hyperref[prf:indexed-de-morgan]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  U\setminus\bigcup_{i\in I}A_i
-  =
-  \bigcap_{i\in I}(U\setminus A_i),
-  \qquad
-  I\neq\varnothing\to
-  U\setminus\bigcap_{i\in I}A_i
-  =
-  \bigcup_{i\in I}(U\setminus A_i).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Complement exchanges indexed unions with indexed intersections.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
-  \item \hyperref[def:indexed-union]{Indexed Union}
-  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
-  \item \hyperref[def:complement]{Complement}
-\end{itemize}
-\end{dependencies}
-
-\begin{theorembox}{Theorem (Distributive Laws for Indexed Families)}
-\begin{theorem}[Distributive Laws for Indexed Families]\label{thm:indexed-distributivity}
-Let $A\subseteq U$ and let $\{B_i\}_{i\in I}$ be an indexed family of subsets
-of a universe $U$. Then
-\[
-A\cap\bigcup_{i\in I}B_i
-=
-\bigcup_{i\in I}(A\cap B_i).
-\]
-If $I\neq\varnothing$, then
-\[
-A\cup\bigcap_{i\in I}B_i
-=
-\bigcap_{i\in I}(A\cup B_i).
-\]
-\hyperref[prf:indexed-distributivity]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  A\cap\bigcup_{i\in I}B_i
-  =
-  \bigcup_{i\in I}(A\cap B_i),
-  \qquad
-  I\neq\varnothing\to
-  A\cup\bigcap_{i\in I}B_i
-  =
-  \bigcap_{i\in I}(A\cup B_i).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Union and intersection distribute over indexed families in the same way they
-distribute over binary operations.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
-  \item \hyperref[def:indexed-union]{Indexed Union}
-  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
-  \item \hyperref[def:union]{Union}
-  \item \hyperref[def:intersection]{Intersection}
 \end{itemize}
 \end{dependencies}
 

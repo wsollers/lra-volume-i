@@ -1,0 +1,22 @@
+\begin{tikzpicture}[lra categorical diagram, x=1cm, y=1cm]
+  \node[lra cat native object, minimum width=3.0cm] (A) at (0,1.3)
+    {\LraCatObject{A}{\{x:x\in A\}}};
+  \node[lra cat native object, minimum width=3.0cm] (B) at (6,1.3)
+    {\LraCatObject{B}{\{x:x\in B\}}};
+
+  \node[lra cat result object, minimum width=4.4cm] (profile) at (3,-0.3)
+    {\LraCatObjectText{\forall x\,(x\in A\leftrightarrow x\in B)}
+      {same membership profile}};
+
+  \node[lra cat result object, minimum width=3.0cm] (equal) at (3,-2.0)
+    {\LraCatObjectPlain{A=B}};
+
+  \draw[lra cat left arrow] (A) -- node[lra cat label,above left]{membership} (profile);
+  \draw[lra cat right arrow] (B) -- node[lra cat label,above right]{membership} (profile);
+  \draw[lra cat result arrow] (profile) -- node[lra cat label,right]{Extensionality} (equal);
+  \draw[lra cat universal arrow] (equal.west) to[out=165,in=235]
+    node[lra cat label,left]{same elements} (profile.west);
+
+  \node[lra cat note] at (3,-2.85)
+    {equality of sets is exactly equality of membership behavior};
+\end{tikzpicture}

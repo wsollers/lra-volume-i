@@ -1,0 +1,16 @@
+\begin{tikzpicture}[lra categorical diagram, x=1cm, y=1cm]
+  \node[lra cat native object, minimum width=3.2cm] (condition) at (3,1.1)
+    {\LraCatObjectText{\forall x\,(x\notin E)}{empty membership profile}};
+
+  \node[lra cat result object, minimum width=2.8cm] (empty) at (3,-0.6)
+    {\LraCatObject{\varnothing}{\{x:\bot\}}};
+
+  \node[lra cat native object, minimum width=2.4cm] (A) at (6,-0.6)
+    {\LraCatObjectPlain{A}};
+
+  \draw[lra cat result arrow] (condition) -- node[lra cat label,right]{witness} (empty);
+  \draw[lra cat universal arrow] (empty) -- (A);
+
+  \node[lra cat note] at (3,-1.55)
+    {the empty set is the object with the false membership condition};
+\end{tikzpicture}

@@ -1,0 +1,19 @@
+\begin{tikzpicture}[lra categorical diagram, x=1cm, y=1cm]
+  \node[lra cat native object, minimum width=2.6cm] (A) at (0,1.2)
+    {\LraCatObjectPlain{A}};
+  \node[lra cat native object, minimum width=2.6cm] (B) at (6,1.2)
+    {\LraCatObjectPlain{B}};
+
+  \node[lra cat result object, minimum width=4.4cm] (condition) at (3,-0.3)
+    {\LraCatObject{x=A\lor x=B}{\{x:x=A\lor x=B\}}};
+
+  \node[lra cat result object, minimum width=3.2cm] (pair) at (3,-1.9)
+    {\LraCatObject{\{A,B\}}{\{x:x=A\lor x=B\}}};
+
+  \draw[lra cat left arrow] (A) -- node[lra cat label,above left]{name as element} (condition);
+  \draw[lra cat right arrow] (B) -- node[lra cat label,above right]{name as element} (condition);
+  \draw[lra cat result arrow] (condition) -- node[lra cat label,right]{Pairing} (pair);
+
+  \node[lra cat note] at (3,-2.75)
+    {two given objects determine one set by a two-case membership test};
+\end{tikzpicture}

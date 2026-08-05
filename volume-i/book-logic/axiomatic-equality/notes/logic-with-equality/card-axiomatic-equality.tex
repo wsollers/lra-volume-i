@@ -1,0 +1,50 @@
+\begin{lrachaptercard}{Axiomatic Equality --- Language, Structure, Theory}
+\begin{multicols}{2}
+\LraCardMathRow{Language}{\mathcal L_{=}:=\{=\}}
+The pure language of equality has no constant symbols, no function symbols,
+and no non-logical relation symbols. Its only distinguished symbol is equality,
+read as identity.
+
+\LraCardMathRow{Structure}{\mathcal M=(M,=^{\mathcal M})}
+The domain \(M\) is nonempty. Equality is not freely interpreted:
+\[
+  =^{\mathcal M}=\Delta_M
+  =\{(x,x):x\in M\}\subseteq M\times M.
+\]
+
+\columnbreak
+
+\LraCardMathRow{Theory}{\mathrm{Eq}\subseteq\mathrm{Sent}(\mathcal L_=)}
+The equality theory consists of the reflexivity axiom and Leibniz substitution
+schema. Symmetry, transitivity, uniqueness, and well-definedness are derived
+from these.
+
+\LraCardMathRow{Satisfaction}{\mathcal M\models\mathrm{Eq}}
+Every equality sentence holds when \(=\) is interpreted as actual identity on
+the domain.
+\end{multicols}
+\end{lrachaptercard}
+
+\begin{lratopiccard}{Axiomatic Equality --- Native Interface}
+\begin{lrasignaturetable}
+\LraSignatureRow{Carrier/context}{A nonempty domain \(M\); variables range over objects of \(M\).}
+\LraSignatureRow{Native relation}{Equality \(x=y\), interpreted by the diagonal \(\Delta_M\subseteq M\times M\).}
+\LraSignatureRow{Constants}{None in the pure equality language.}
+\LraSignatureRow{Operations}{None in the pure equality language. Function symbols appear only after a richer first-order signature is supplied.}
+\LraSignatureRow{Axioms}{Reflexivity and Leibniz substitution.}
+\LraSignatureRow{Immediate theorems}{Symmetry, transitivity, and equality as an equivalence relation.}
+\LraSignatureRow{Derived definitions}{Distinctness \(x\neq y\), uniqueness \(\exists!\), and finite-size constraints such as ``at least two'' and ``at most two.''}
+\LraSignatureRow{Structural echo}{The diagonal \(\Delta_M:M\to M\times M\); equalizers detect when two maps have the same value.}
+\end{lrasignaturetable}
+\end{lratopiccard}
+
+\begin{lraproofpatterncard}{Equality --- Proof Patterns}
+\begin{lrasignaturetable}
+\LraSignatureRow{Prove symmetry}{Assume \(x=y\). Use Leibniz with \(\phi(z)\equiv(z=x)\) and reflexivity \(x=x\).}
+\LraSignatureRow{Prove transitivity}{Assume \(x=y\) and \(y=z\). Use Leibniz with \(\phi(w)\equiv(x=w)\).}
+\LraSignatureRow{Use substitution}{Choose the property \(\phi\) whose truth should transfer across \(x=y\).}
+\LraSignatureRow{Prove uniqueness}{Show existence of a witness, then show any two witnesses are equal.}
+\LraSignatureRow{Prove well-definedness}{Show the proposed output does not change when equal representatives or equal inputs are substituted.}
+\LraSignatureRow{Use congruence}{For functions, replace equal inputs inside \(f\); for relations, replace equal inputs inside \(R\).}
+\end{lrasignaturetable}
+\end{lraproofpatterncard}

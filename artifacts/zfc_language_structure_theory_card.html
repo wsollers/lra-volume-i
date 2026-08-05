@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZFC — Language, Structure, Theory</title>
+<style>
+  :root{
+    --bg:#0b0d13;
+    --panel:#161a23;
+    --panel2:#10141d;
+    --border:#2a3040;
+    --text:#e8ebf2;
+    --muted:#9aa2b5;
+    --blue:#5b8def;
+    --green:#5fbf8f;
+    --orange:#e5a04f;
+    --red:#e0616f;
+    --violet:#b18cff;
+    --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:38px 18px 58px;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Georgia,"Iowan Old Style",serif;
+  }
+  h1{
+    margin:0;
+    text-align:center;
+    font-size:1.55rem;
+  }
+  .subtitle{
+    margin:8px auto 30px;
+    max-width:760px;
+    text-align:center;
+    color:var(--muted);
+    font-family:var(--mono);
+    font-size:.82rem;
+    line-height:1.55;
+  }
+  main{
+    max-width:980px;
+    margin:0 auto;
+    display:grid;
+    gap:24px;
+  }
+  .card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .card-head{
+    padding:18px 22px 14px;
+    border-bottom:1px solid var(--border);
+    border-top:4px solid var(--blue);
+  }
+  .kicker{
+    margin:0 0 5px;
+    color:var(--blue);
+    font-family:var(--mono);
+    font-size:.68rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  h2{
+    margin:0;
+    font-size:1.15rem;
+  }
+  .body{
+    padding:18px 22px 22px;
+  }
+  .triad{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:14px;
+  }
+  .block{
+    background:var(--panel2);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:14px 14px 13px;
+  }
+  .block h3{
+    margin:0 0 9px;
+    font-family:var(--mono);
+    font-size:.76rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  .language h3{color:var(--blue);}
+  .structure h3{color:var(--green);}
+  .theory h3{color:var(--orange);}
+  .line{
+    padding:8px 0;
+    border-bottom:1px solid #202634;
+    font-size:.9rem;
+    line-height:1.45;
+  }
+  .line:last-child{border-bottom:none;}
+  .label{
+    display:block;
+    margin-bottom:3px;
+    color:var(--muted);
+    font-family:var(--mono);
+    font-size:.72rem;
+  }
+  .m{
+    font-family:var(--mono);
+    font-size:.86rem;
+  }
+  .note{
+    display:block;
+    margin-top:4px;
+    color:var(--muted);
+    font-size:.78rem;
+    line-height:1.45;
+  }
+  .callout{
+    margin-top:16px;
+    padding:12px 14px;
+    background:#0d1119;
+    border:1px solid var(--border);
+    border-left:3px solid var(--green);
+    border-radius:8px;
+    color:#cbd1dc;
+    font-size:.84rem;
+    line-height:1.58;
+  }
+  .diagram-card .card-head{border-top-color:var(--violet);}
+  .diagram-card .kicker{color:var(--violet);}
+  .legend{
+    display:flex;
+    gap:9px;
+    flex-wrap:wrap;
+    margin:0 0 14px;
+    color:var(--muted);
+    font-family:var(--mono);
+    font-size:.75rem;
+  }
+  .legend span{
+    padding:2px 8px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    background:var(--panel2);
+  }
+  svg{
+    width:100%;
+    height:auto;
+    display:block;
+    background:#090c12;
+    border:1px solid var(--border);
+    border-radius:10px;
+  }
+  .node{fill:#171c27;stroke:#d9deea;stroke-width:1.7;}
+  .node-blue{stroke:var(--blue);}
+  .node-green{stroke:var(--green);}
+  .node-orange{stroke:var(--orange);}
+  .node-red{stroke:var(--red);}
+  .node-violet{stroke:var(--violet);}
+  .txt{
+    fill:var(--text);
+    font-family:Georgia,"Iowan Old Style",serif;
+    font-size:15px;
+    text-anchor:middle;
+    dominant-baseline:middle;
+  }
+  .small{
+    fill:var(--muted);
+    font-family:var(--mono);
+    font-size:11px;
+    text-anchor:middle;
+  }
+  .arrow{stroke:#6f7d99;stroke-width:1.8;fill:none;marker-end:url(#arrow);}
+  .blue-arrow{stroke:var(--blue);marker-end:url(#arrow-blue);}
+  .green-arrow{stroke:var(--green);marker-end:url(#arrow-green);}
+  .orange-arrow{stroke:var(--orange);marker-end:url(#arrow-orange);}
+  .violet-arrow{stroke:var(--violet);marker-end:url(#arrow-violet);}
+  .axiom-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:12px;
+    margin-top:16px;
+  }
+  .axiom{
+    background:var(--panel2);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px;
+    min-height:116px;
+  }
+  .axiom b{
+    display:block;
+    margin-bottom:5px;
+    color:var(--text);
+    font-family:var(--mono);
+    font-size:.76rem;
+  }
+  .axiom span{
+    color:var(--muted);
+    font-size:.82rem;
+    line-height:1.45;
+  }
+  @media (max-width:780px){
+    .triad,.axiom-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<h1>ZFC as Language, Structure, and Theory</h1>
+<p class="subtitle">A front-of-chapter model-theory card: first name the formal interface, then show the semantic object, then list the axioms that turn that object into a model of set theory.</p>
+
+<main>
+  <section class="card">
+    <div class="card-head">
+      <p class="kicker">Model Theory Bedrock</p>
+      <h2>The Formal Domain of Discourse</h2>
+    </div>
+    <div class="body">
+      <div class="triad">
+        <article class="block language">
+          <h3>Language</h3>
+          <div class="line">
+            <span class="label">Signature</span>
+            <span class="m">ℒ∈ = FOL= + { ∈ }</span>
+            <span class="note">one non-logical symbol</span>
+          </div>
+          <div class="line">
+            <span class="label">Relation Symbols</span>
+            <span class="m">∈ : 2</span>
+            <span class="note">membership is binary</span>
+          </div>
+          <div class="line">
+            <span class="label">Function / Constant Symbols</span>
+            <span class="m">none</span>
+            <span class="note">strict ZFC has no primitive operations and no primitive named sets</span>
+          </div>
+        </article>
+
+        <article class="block structure">
+          <h3>Structure</h3>
+          <div class="line">
+            <span class="label">Form</span>
+            <span class="m">𝔐 = ⟨ M, E ⟩</span>
+            <span class="note">M is the universe; E ⊆ M × M interprets ∈</span>
+          </div>
+          <div class="line">
+            <span class="label">Internal Membership</span>
+            <span class="m">a E b</span>
+            <span class="note">inside 𝔐, this is what “a ∈ b” means</span>
+          </div>
+          <div class="line">
+            <span class="label">No Axioms Yet</span>
+            <span class="m">⟨ M, E ⟩</span>
+            <span class="note">a structure is only data until we ask what it satisfies</span>
+          </div>
+        </article>
+
+        <article class="block theory">
+          <h3>Theory</h3>
+          <div class="line">
+            <span class="label">Axiom Set</span>
+            <span class="m">ZFC ⊆ Sent(ℒ∈)</span>
+            <span class="note">sentences written using variables, logic, equality, and ∈</span>
+          </div>
+          <div class="line">
+            <span class="label">Satisfaction</span>
+            <span class="m">𝔐 ⊨ ZFC</span>
+            <span class="note">every ZFC axiom is true when ∈ is interpreted as E</span>
+          </div>
+          <div class="line">
+            <span class="label">Unlocked Vocabulary</span>
+            <span class="m">∅, {a,b}, ⋃A, 𝒫(A), ⊆</span>
+            <span class="note">defined or guaranteed after the axioms, not native to ℒ∈</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout">
+        <b>Pedagogical rule:</b> the Language block tells us what may be written, the Structure block tells us what the symbols mean in a candidate universe, and the Theory block tells us which sentences must come out true. The later algebraic cards begin only after this bedrock is in place.
+      </div>
+    </div>
+  </section>
+
+  <section class="card diagram-card">
+    <div class="card-head">
+      <p class="kicker">Categorical Shadow</p>
+      <h2>What the ZFC Axioms Start Building</h2>
+    </div>
+    <div class="body">
+      <p class="legend"><span>blue: primitive semantics</span><span>green: object constructors</span><span>orange: subset constructors</span><span>violet: later structural interface</span></p>
+
+      <svg viewBox="0 0 920 520" role="img" aria-label="Diagram showing the structural shadow of ZFC axioms">
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#6f7d99"/>
+          </marker>
+          <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#5b8def"/>
+          </marker>
+          <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#5fbf8f"/>
+          </marker>
+          <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#e5a04f"/>
+          </marker>
+          <marker id="arrow-violet" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#b18cff"/>
+          </marker>
+        </defs>
+
+        <rect class="node node-blue" x="360" y="28" width="200" height="58" rx="8"/>
+        <text class="txt" x="460" y="58">𝔐 = ⟨M,E⟩</text>
+        <text class="small" x="460" y="105">membership semantics</text>
+
+        <rect class="node node-blue" x="72" y="154" width="156" height="56" rx="8"/>
+        <text class="txt" x="150" y="183">Extensionality</text>
+        <text class="small" x="150" y="226">equality by members</text>
+
+        <rect class="node node-green" x="276" y="154" width="156" height="56" rx="8"/>
+        <text class="txt" x="354" y="183">Empty / Pairing</text>
+        <text class="small" x="354" y="226">basic objects</text>
+
+        <rect class="node node-green" x="488" y="154" width="156" height="56" rx="8"/>
+        <text class="txt" x="566" y="183">Union / Power</text>
+        <text class="small" x="566" y="226">closure tools</text>
+
+        <rect class="node node-orange" x="692" y="154" width="156" height="56" rx="8"/>
+        <text class="txt" x="770" y="183">Separation</text>
+        <text class="small" x="770" y="226">subobjects by predicate</text>
+
+        <path class="arrow blue-arrow" d="M410 86 C330 118, 230 130, 172 154"/>
+        <path class="arrow blue-arrow" d="M438 86 C410 112, 378 128, 360 154"/>
+        <path class="arrow blue-arrow" d="M487 86 C510 112, 543 128, 560 154"/>
+        <path class="arrow blue-arrow" d="M530 86 C620 116, 715 130, 760 154"/>
+
+        <rect class="node node-orange" x="146" y="300" width="166" height="62" rx="8"/>
+        <text class="txt" x="229" y="323">𝒫(U), ⊆</text>
+        <text class="small" x="229" y="345">subset order appears</text>
+
+        <rect class="node node-violet" x="378" y="300" width="166" height="62" rx="8"/>
+        <text class="txt" x="461" y="323">∪ and ∩</text>
+        <text class="small" x="461" y="345">join and meet</text>
+
+        <rect class="node node-violet" x="610" y="300" width="166" height="62" rx="8"/>
+        <text class="txt" x="693" y="323">Complement</text>
+        <text class="small" x="693" y="345">Boolean negation in U</text>
+
+        <path class="arrow green-arrow" d="M360 210 C324 250, 274 274, 240 300"/>
+        <path class="arrow green-arrow" d="M566 210 C530 250, 493 274, 471 300"/>
+        <path class="arrow orange-arrow" d="M770 210 C742 250, 714 274, 700 300"/>
+        <path class="arrow orange-arrow" d="M770 210 C650 250, 500 274, 260 300"/>
+
+        <rect class="node node-violet" x="246" y="424" width="420" height="58" rx="8"/>
+        <text class="txt" x="456" y="447">Boolean Algebra of Subobjects of U</text>
+        <text class="small" x="456" y="469">bottom/top · join/meet · complements · monotone maps later</text>
+
+        <path class="arrow violet-arrow" d="M229 362 C286 394, 342 410, 384 424"/>
+        <path class="arrow violet-arrow" d="M461 362 C461 385, 460 406, 459 424"/>
+        <path class="arrow violet-arrow" d="M693 362 C634 395, 581 412, 530 424"/>
+      </svg>
+
+      <div class="axiom-grid">
+        <div class="axiom"><b>Extensionality</b><span>turns membership profiles into equality. Categorically, it whispers “subobjects are determined by their elements/predicates.”</span></div>
+        <div class="axiom"><b>Empty Set, Pairing, Union, Power Set</b><span>guarantee basic object-building operations. These later become bottom, finite joins, indexed unions, and powerset/subobject structure.</span></div>
+        <div class="axiom"><b>Separation</b><span>turns predicates into subsets of an existing set. This is the first strong bridge from logic to subobject thinking.</span></div>
+        <div class="axiom"><b>Replacement</b><span>lets definable functional images of sets remain sets. This prepares the later function-image interface.</span></div>
+        <div class="axiom"><b>Infinity</b><span>guarantees an inductive set, opening the natural-number construction and recursion/induction machinery.</span></div>
+        <div class="axiom"><b>Foundation and Choice</b><span>impose global structural behavior: well-founded membership and selectable representatives where choice functions are needed.</span></div>
+      </div>
+
+      <div class="callout">
+        <b>Important guardrail:</b> this diagram is a categorical shadow of ZFC, not a replacement for the formal axioms. The formal theory is still first-order set theory in ℒ∈; the diagram records the recurring structural roles those axioms make available.
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>

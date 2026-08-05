@@ -1,12 +1,22 @@
 % =========================================================
-% Derived Constructions and Set Operations
+% Axiom-Derived Set Operations
 % =========================================================
 
-\subsection{Set Constructions and Operations}
+\subsection{Axiom-Derived Set Operations}
 
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
+
+\begin{lratopiccard}{Axiom-Derived Operations --- Construction Signature}
+\begin{lrasignaturetable}
+\LraSignatureRow{Native data}{Objects are sets; the only primitive relation is membership \(x\in A\).}
+\LraSignatureRow{Axiom-licensed outputs}{\(\varnothing\), \(\{a,b\}\), \(\bigcup A\), \(\mathcal P(A)\), and separated subsets \(\{x\in A\mid \varphi(x)\}\).}
+\LraSignatureRow{Derived outputs}{\(A\cup B\), \(A\cap B\), \(A\setminus B\), \(A\triangle B\), \(A^c\), and \(A\times B\).}
+\LraSignatureRow{Licensing proof}{State the intended membership profile; prove existence; prove uniqueness by Extensionality; then introduce notation.}
+\LraSignatureRow{Use rule}{Every later calculation begins by rewriting \(x\in\) the constructed set into its membership condition.}
+\end{lrasignaturetable}
+\end{lratopiccard}
 
 % ---------------------------------------------------------
 % Well-foundedness for definitional extensions
@@ -49,382 +59,6 @@ empty-set condition determines exactly one set.
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Existence and Uniqueness of Pairing's Output)}
-\begin{theorem}[Existence and Uniqueness of Pairing's Output]\label{thm:pairing-output-exists-unique}
-For any sets $x_1$ and $x_2$, there exists a unique set $P$ whose elements are
-exactly $x_1$ and $x_2$:
-\[
-  \forall x_1\,\forall x_2\,\exists! P\,\forall w,\quad
-  w\in P\leftrightarrow (w=x_1\vee w=x_2).
-\]
-\hyperref[prf:pairing-output-exists-unique]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\LeanFormalizes{thm:pairing-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFC.Semantics.AxiomReadings}{pairingAxiomReading}{checked}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \forall x_1\,\forall x_2\,\exists P\,
-  \Bigl(
-  \forall w,\ (w\in P\leftrightarrow(w=x_1\vee w=x_2))
-  \wedge
-  \forall P'\,
-  ((\forall w,\ (w\in P'\leftrightarrow(w=x_1\vee w=x_2)))\to P'=P)
-  \Bigr).
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  \text{unique realization of }\quad
-  \forall w,\ (w\in P\leftrightarrow(w=x_1\vee w=x_2)).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-For fixed inputs \(x_1\) and \(x_2\), the brace notation
-\(\{x_1,x_2\}\) names a unique output set.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[ax:pairing]{Axiom of Pairing}
-  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
-\end{itemize}
-\end{dependencies}
-
-\begin{theorembox}{Theorem (Existence and Uniqueness of Union's Output)}
-\begin{theorem}[Existence and Uniqueness of Union's Output]\label{thm:union-output-exists-unique}
-For any set $x$, there exists a unique set $U$ whose elements are exactly the
-elements of members of $x$:
-\[
-  \forall x\,\exists! U\,\forall z,\quad
-  z\in U\leftrightarrow \exists w\,(w\in x\wedge z\in w).
-\]
-\hyperref[prf:union-output-exists-unique]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\LeanFormalizes{thm:union-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFC.Semantics.AxiomReadings}{unionAxiomReading}{checked}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \forall x\,\exists U\,
-  \Bigl(
-  \forall z,\ (z\in U\leftrightarrow \exists w\,(w\in x\wedge z\in w))
-  \wedge
-  \forall U'\,
-  ((\forall z,\ (z\in U'\leftrightarrow \exists w\,(w\in x\wedge z\in w)))
-  \to U'=U)
-  \Bigr).
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  \text{unique realization of }\quad
-  \forall z,\ (z\in U\leftrightarrow\exists w\,(w\in x\wedge z\in w)).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-For a set-indexed family \(x\), the notation \(\bigcup x\) names the unique
-set collecting elements of members of \(x\).
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[ax:union]{Axiom of Union}
-  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
-\end{itemize}
-\end{dependencies}
-
-\begin{theorembox}{Theorem (Existence and Uniqueness of Power Set's Output)}
-\begin{theorem}[Existence and Uniqueness of Power Set's Output]\label{thm:power-set-output-exists-unique}
-For any set $A$, there exists a unique set $P$ whose elements are exactly the
-subsets of $A$:
-\[
-  \forall A\,\exists! P\,\forall S,\quad
-  S\in P\leftrightarrow S\subseteq A.
-\]
-\hyperref[prf:power-set-output-exists-unique]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\LeanFormalizes{thm:power-set-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFC.Theory.Axioms}{powerSetAxiom}{pending}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \forall A\,\exists P\,
-  \Bigl(
-  \forall S,\ (S\in P\leftrightarrow S\subseteq A)
-  \wedge
-  \forall P'\,((\forall S,\ (S\in P'\leftrightarrow S\subseteq A))\to P'=P)
-  \Bigr).
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  \text{unique realization of }\quad
-  \forall S,\ (S\in P\leftrightarrow S\subseteq A).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-For each set \(A\), the notation \(\mathcal P(A)\) names the unique set whose
-members are exactly the subsets of \(A\).
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[ax:power-set]{Axiom of Power Set}
-  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
-\end{itemize}
-\end{dependencies}
-
-\begin{theorembox}{Theorem (Existence and Uniqueness of Separation's Output)}
-\begin{theorem}[Existence and Uniqueness of Separation's Output]\label{thm:separation-output-exists-unique}
-Let $A$ be a set and let $\varphi(x)$ be a formula. There exists a unique set
-$B$ whose elements are exactly the elements of $A$ satisfying $\varphi$:
-\[
-  \forall A\,\exists! B\,\forall x,\quad
-  x\in B\leftrightarrow (x\in A\wedge \varphi(x)).
-\]
-\hyperref[prf:separation-output-exists-unique]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\LeanFormalizes{thm:separation-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFC.Semantics.SetObjectBridge}{SeparationSchemaProvidesPredicateSetWitness}{pending}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \forall A\,\exists B\,
-  \Bigl(
-  \forall x,\ (x\in B\leftrightarrow(x\in A\wedge\varphi(x)))
-  \wedge
-  \forall B'\,
-  ((\forall x,\ (x\in B'\leftrightarrow(x\in A\wedge\varphi(x))))\to B'=B)
-  \Bigr).
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  \text{unique realization of }\quad
-  \forall x,\ (x\in B\leftrightarrow(x\in A\wedge\varphi(x))).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Bounded set-builder notation \(\{x\in A\mid \varphi(x)\}\) is legitimate
-because Separation supplies a witness and Extensionality makes it unique.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[ax:separation]{Axiom Schema of Separation}
-  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
-\end{itemize}
-\end{dependencies}
-
-\begin{corollarybox}{Corollary (Existence and Uniqueness of Intersection)}
-\begin{corollary}[Existence and Uniqueness of Intersection]\label{cor:intersection-exists-unique}
-For any sets $A$ and $B$, the set
-\[
-  A\cap B:=\{\,x\in A\mid x\in B\,\}
-\]
-exists and is unique.
-\hyperref[prf:intersection-exists-unique]{Go to proof.}
-\end{corollary}
-\end{corollarybox}
-
-\LeanFormalizes{cor:intersection-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesIntersection}{pending}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \forall A\,\forall B\,\exists! C\,\forall x,\quad
-  x\in C\leftrightarrow(x\in A\wedge x\in B).
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  \text{unique realization of }\quad
-  \forall x,\ (x\in C\leftrightarrow(x\in A\wedge x\in B)).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Intersection is the separated subset of \(A\) consisting of elements that also
-belong to \(B\).
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[thm:separation-output-exists-unique]{Existence and Uniqueness of Separation's Output}
-\end{itemize}
-\end{dependencies}
-
-\begin{corollarybox}{Corollary (Existence and Uniqueness of Set Difference)}
-\begin{corollary}[Existence and Uniqueness of Set Difference]\label{cor:set-difference-exists-unique}
-For any sets $A$ and $B$, the set
-\[
-  A\setminus B:=\{\,x\in A\mid x\notin B\,\}
-\]
-exists and is unique.
-\hyperref[prf:set-difference-exists-unique]{Go to proof.}
-\end{corollary}
-\end{corollarybox}
-
-\LeanFormalizes{cor:set-difference-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesDifference}{pending}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \forall A\,\forall B\,\exists! C\,\forall x,\quad
-  x\in C\leftrightarrow(x\in A\wedge x\notin B).
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  \text{unique realization of }\quad
-  \forall x,\ (x\in C\leftrightarrow(x\in A\wedge x\notin B)).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Set difference is the separated subset of \(A\) consisting of elements outside
-\(B\).
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[thm:separation-output-exists-unique]{Existence and Uniqueness of Separation's Output}
-\end{itemize}
-\end{dependencies}
-
-\begin{corollarybox}{Corollary (Existence and Uniqueness of Binary Union)}
-\begin{corollary}[Existence and Uniqueness of Binary Union]\label{cor:binary-union-exists-unique}
-For any sets $A$ and $B$, the set
-\[
-  A\cup B:=\bigcup\{A,B\}
-\]
-exists and is unique.
-\hyperref[prf:binary-union-exists-unique]{Go to proof.}
-\end{corollary}
-\end{corollarybox}
-
-\LeanFormalizes{cor:binary-union-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesUnion}{pending}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \forall A\,\forall B\,\exists! C\,\forall x,\quad
-  x\in C\leftrightarrow(x\in A\vee x\in B).
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  \text{unique realization of }\quad
-  \forall x,\ (x\in C\leftrightarrow(x\in A\vee x\in B)).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Binary union is a derived operation obtained by first pairing \(A,B\) and then
-taking the union of that pair set.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[thm:pairing-output-exists-unique]{Existence and Uniqueness of Pairing's Output}
-  \item \hyperref[thm:union-output-exists-unique]{Existence and Uniqueness of Union's Output}
-\end{itemize}
-\end{dependencies}
-
-\begin{corollarybox}{Corollary (Existence and Uniqueness of Symmetric Difference)}
-\begin{corollary}[Existence and Uniqueness of Symmetric Difference]\label{cor:symmetric-difference-exists-unique}
-For any sets $A$ and $B$, the set
-\[
-  A\triangle B:=(A\setminus B)\cup(B\setminus A)
-\]
-exists and is unique.
-\hyperref[prf:symmetric-difference-exists-unique]{Go to proof.}
-\end{corollary}
-\end{corollarybox}
-
-\LeanFormalizes{cor:symmetric-difference-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesSymmetricDifference}{pending}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \forall A\,\forall B\,\exists! C\,\forall x,\quad
-  x\in C\leftrightarrow
-  ((x\in A\wedge x\notin B)\vee(x\in B\wedge x\notin A)).
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  \text{unique realization of }\quad
-  \forall x,\ (x\in C\leftrightarrow((x\in A\wedge x\notin B)\vee
-  (x\in B\wedge x\notin A))).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Symmetric difference is a composite set-former built from two set differences
-and one binary union.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[cor:set-difference-exists-unique]{Existence and Uniqueness of Set Difference}
-  \item \hyperref[cor:binary-union-exists-unique]{Existence and Uniqueness of Binary Union}
-\end{itemize}
-\end{dependencies}
-
-\begin{corollarybox}{Corollary (Existence and Uniqueness of Relative Complement)}
-\begin{corollary}[Existence and Uniqueness of Relative Complement]\label{cor:relative-complement-exists-unique}
-Let $U$ be a fixed ambient set. For every set $A$, the relative complement
-\[
-  A^c:=U\setminus A
-\]
-exists and is unique. This is a relative construction; ZFC has no absolute
-complement operation over a universal set of all sets.
-\hyperref[prf:relative-complement-exists-unique]{Go to proof.}
-\end{corollary}
-\end{corollarybox}
-
-\LeanFormalizes{cor:relative-complement-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ComplementSpec}{pending}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \forall A\,\exists! C\,\forall x,\quad
-  x\in C\leftrightarrow(x\in U\wedge x\notin A).
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  \text{unique realization of }\quad
-  \forall x,\ (x\in C\leftrightarrow(x\in U\wedge x\notin A)).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Complement notation is relative to a fixed ambient set \(U\), not an absolute
-operation over all sets.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[cor:set-difference-exists-unique]{Existence and Uniqueness of Set Difference}
-\end{itemize}
-\end{dependencies}
-
-% ---------------------------------------------------------
 % Empty Set
 % ---------------------------------------------------------
 \begin{definitionbox}{Definition (Empty Set)}
@@ -592,8 +226,151 @@ This two-step structure appears throughout set-theoretic proofs.
 \end{dependencies}
 
 % ---------------------------------------------------------
+\begin{theorembox}{Theorem (Existence and Uniqueness of Pairing's Output)}
+\begin{theorem}[Existence and Uniqueness of Pairing's Output]\label{thm:pairing-output-exists-unique}
+For any sets $x_1$ and $x_2$, there exists a unique set $P$ whose elements are
+exactly $x_1$ and $x_2$:
+\[
+  \forall x_1\,\forall x_2\,\exists! P\,\forall w,\quad
+  w\in P\leftrightarrow (w=x_1\vee w=x_2).
+\]
+\hyperref[prf:pairing-output-exists-unique]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\LeanFormalizes{thm:pairing-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFC.Semantics.AxiomReadings}{pairingAxiomReading}{checked}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x_1\,\forall x_2\,\exists P\,
+  \Bigl(
+  \forall w,\ (w\in P\leftrightarrow(w=x_1\vee w=x_2))
+  \wedge
+  \forall P'\,
+  ((\forall w,\ (w\in P'\leftrightarrow(w=x_1\vee w=x_2)))\to P'=P)
+  \Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \text{unique realization of }\quad
+  \forall w,\ (w\in P\leftrightarrow(w=x_1\vee w=x_2)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For fixed inputs \(x_1\) and \(x_2\), the brace notation
+\(\{x_1,x_2\}\) names a unique output set. The singleton \(\{x\}\) is the
+special case \(\{x,x\}\), whose only member is \(x\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:pairing]{Axiom of Pairing}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Existence and Uniqueness of Union's Output)}
+\begin{theorem}[Existence and Uniqueness of Union's Output]\label{thm:union-output-exists-unique}
+For any set $x$, there exists a unique set $U$ whose elements are exactly the
+elements of members of $x$:
+\[
+  \forall x\,\exists! U\,\forall z,\quad
+  z\in U\leftrightarrow \exists w\,(w\in x\wedge z\in w).
+\]
+\hyperref[prf:union-output-exists-unique]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\LeanFormalizes{thm:union-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFC.Semantics.AxiomReadings}{unionAxiomReading}{checked}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\,\exists U\,
+  \Bigl(
+  \forall z,\ (z\in U\leftrightarrow \exists w\,(w\in x\wedge z\in w))
+  \wedge
+  \forall U'\,
+  ((\forall z,\ (z\in U'\leftrightarrow \exists w\,(w\in x\wedge z\in w)))
+  \to U'=U)
+  \Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \text{unique realization of }\quad
+  \forall z,\ (z\in U\leftrightarrow\exists w\,(w\in x\wedge z\in w)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For a set-indexed family \(x\), the notation \(\bigcup x\) names the unique
+set collecting elements of members of \(x\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:union]{Axiom of Union}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Existence and Uniqueness of Binary Union)}
+\begin{corollary}[Existence and Uniqueness of Binary Union]\label{cor:binary-union-exists-unique}
+For any sets $A$ and $B$, the set
+\[
+  A\cup B:=\bigcup\{A,B\}
+\]
+exists and is unique.
+\hyperref[prf:binary-union-exists-unique]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\LeanFormalizes{cor:binary-union-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesUnion}{pending}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\forall B\,\exists! C\,\forall x,\quad
+  x\in C\leftrightarrow(x\in A\vee x\in B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \text{unique realization of }\quad
+  \forall x,\ (x\in C\leftrightarrow(x\in A\vee x\in B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Binary union is a derived operation obtained by first pairing \(A,B\) and then
+taking the union of that pair set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:pairing-output-exists-unique]{Existence and Uniqueness of Pairing's Output}
+  \item \hyperref[thm:union-output-exists-unique]{Existence and Uniqueness of Union's Output}
+\end{itemize}
+\end{dependencies}
+
 % Set Operations
 % ---------------------------------------------------------
+\begin{lratopiccard}{Basic Operations --- Membership Signatures}
+\begin{lrasignaturetable}
+\LraSignatureRow{Context}{Work inside a fixed ambient set \(U\) when complements are used.}
+\LraSignatureRow{Binary union}{\(A\cup B\): \(x\in A\cup B\) iff \(x\in A\) or \(x\in B\).}
+\LraSignatureRow{Binary intersection}{\(A\cap B\): \(x\in A\cap B\) iff \(x\in A\) and \(x\in B\).}
+\LraSignatureRow{Difference}{\(A\setminus B\): \(x\in A\setminus B\) iff \(x\in A\) and \(x\notin B\).}
+\LraSignatureRow{Symmetric difference}{\(A\triangle B\): membership means \(x\) belongs to exactly one of \(A,B\).}
+\LraSignatureRow{Complement}{\(A^c\): \(x\in A^c\) iff \(x\in U\) and \(x\notin A\).}
+\LraSignatureRow{Power set}{\(\mathcal P(A)\): \(S\in\mathcal P(A)\) iff \(S\subseteq A\).}
+\end{lrasignaturetable}
+\end{lratopiccard}
+
 \begin{definitionbox}{Definition (Union)}
 \begin{definition}[Union]\label{def:union}
 The \emph{union} of $A$ and $B$, denoted $A \cup B$, is the set of all
@@ -629,7 +406,110 @@ The union keeps every element that belongs to at least one of the two sets.
 \end{itemize}
 \end{dependencies}
 
+\begin{lracategoricalcard}{Categorical Rendering --- Union as Join}
+\begin{center}
 \input{volume-i/book-sets/set-theory/notes/sets/figure-union}
+\end{center}
+\[
+  A\subseteq C\ \wedge\ B\subseteq C
+  \quad\Longleftrightarrow\quad
+  A\cup B\subseteq C.
+\]
+\end{lracategoricalcard}
+
+\begin{lracategoricalcard}{Concrete Picture --- Union}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-union-venn}
+\end{center}
+\[
+  x\in A\cup B
+  \quad\Longleftrightarrow\quad
+  x\in A\ \vee\ x\in B.
+\]
+\end{lracategoricalcard}
+
+\begin{theorembox}{Theorem (Existence and Uniqueness of Separation's Output)}
+\begin{theorem}[Existence and Uniqueness of Separation's Output]\label{thm:separation-output-exists-unique}
+Let $A$ be a set and let $\varphi(x)$ be a formula. There exists a unique set
+$B$ whose elements are exactly the elements of $A$ satisfying $\varphi$:
+\[
+  \forall A\,\exists! B\,\forall x,\quad
+  x\in B\leftrightarrow (x\in A\wedge \varphi(x)).
+\]
+\hyperref[prf:separation-output-exists-unique]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\LeanFormalizes{thm:separation-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFC.Semantics.SetObjectBridge}{SeparationSchemaProvidesPredicateSetWitness}{pending}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\exists B\,
+  \Bigl(
+  \forall x,\ (x\in B\leftrightarrow(x\in A\wedge\varphi(x)))
+  \wedge
+  \forall B'\,
+  ((\forall x,\ (x\in B'\leftrightarrow(x\in A\wedge\varphi(x))))\to B'=B)
+  \Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \text{unique realization of }\quad
+  \forall x,\ (x\in B\leftrightarrow(x\in A\wedge\varphi(x))).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Bounded set-builder notation \(\{x\in A\mid \varphi(x)\}\) is legitimate
+because Separation supplies a witness and Extensionality makes it unique.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:separation]{Axiom Schema of Separation}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Existence and Uniqueness of Intersection)}
+\begin{corollary}[Existence and Uniqueness of Intersection]\label{cor:intersection-exists-unique}
+For any sets $A$ and $B$, the set
+\[
+  A\cap B:=\{\,x\in A\mid x\in B\,\}
+\]
+exists and is unique.
+\hyperref[prf:intersection-exists-unique]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\LeanFormalizes{cor:intersection-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesIntersection}{pending}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\forall B\,\exists! C\,\forall x,\quad
+  x\in C\leftrightarrow(x\in A\wedge x\in B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \text{unique realization of }\quad
+  \forall x,\ (x\in C\leftrightarrow(x\in A\wedge x\in B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Intersection is the separated subset of \(A\) consisting of elements that also
+belong to \(B\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:separation-output-exists-unique]{Existence and Uniqueness of Separation's Output}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Intersection)}
 \begin{definition}[Intersection]\label{def:intersection}
@@ -666,7 +546,65 @@ The intersection keeps exactly the elements common to both sets.
 \end{itemize}
 \end{dependencies}
 
+\begin{lracategoricalcard}{Categorical Rendering --- Intersection as Meet}
+\begin{center}
 \input{volume-i/book-sets/set-theory/notes/sets/figure-intersection}
+\end{center}
+\[
+  D\subseteq A\ \wedge\ D\subseteq B
+  \quad\Longleftrightarrow\quad
+  D\subseteq A\cap B.
+\]
+\end{lracategoricalcard}
+
+\begin{lracategoricalcard}{Concrete Picture --- Intersection}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-intersection-venn}
+\end{center}
+\[
+  x\in A\cap B
+  \quad\Longleftrightarrow\quad
+  x\in A\ \wedge\ x\in B.
+\]
+\end{lracategoricalcard}
+
+\begin{corollarybox}{Corollary (Existence and Uniqueness of Set Difference)}
+\begin{corollary}[Existence and Uniqueness of Set Difference]\label{cor:set-difference-exists-unique}
+For any sets $A$ and $B$, the set
+\[
+  A\setminus B:=\{\,x\in A\mid x\notin B\,\}
+\]
+exists and is unique.
+\hyperref[prf:set-difference-exists-unique]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\LeanFormalizes{cor:set-difference-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesDifference}{pending}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\forall B\,\exists! C\,\forall x,\quad
+  x\in C\leftrightarrow(x\in A\wedge x\notin B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \text{unique realization of }\quad
+  \forall x,\ (x\in C\leftrightarrow(x\in A\wedge x\notin B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Set difference is the separated subset of \(A\) consisting of elements outside
+\(B\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:separation-output-exists-unique]{Existence and Uniqueness of Separation's Output}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Set Difference)}
 \begin{definition}[Set Difference]\label{def:set-difference}
@@ -705,6 +643,47 @@ Set difference removes from $A$ every element that also belongs to $B$.
 
 \input{volume-i/book-sets/set-theory/notes/sets/figure-set-difference}
 
+\begin{corollarybox}{Corollary (Existence and Uniqueness of Symmetric Difference)}
+\begin{corollary}[Existence and Uniqueness of Symmetric Difference]\label{cor:symmetric-difference-exists-unique}
+For any sets $A$ and $B$, the set
+\[
+  A\triangle B:=(A\setminus B)\cup(B\setminus A)
+\]
+exists and is unique.
+\hyperref[prf:symmetric-difference-exists-unique]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\LeanFormalizes{cor:symmetric-difference-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesSymmetricDifference}{pending}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\forall B\,\exists! C\,\forall x,\quad
+  x\in C\leftrightarrow
+  ((x\in A\wedge x\notin B)\vee(x\in B\wedge x\notin A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \text{unique realization of }\quad
+  \forall x,\ (x\in C\leftrightarrow((x\in A\wedge x\notin B)\vee
+  (x\in B\wedge x\notin A))).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Symmetric difference is a composite set-former built from two set differences
+and one binary union.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[cor:set-difference-exists-unique]{Existence and Uniqueness of Set Difference}
+  \item \hyperref[cor:binary-union-exists-unique]{Existence and Uniqueness of Binary Union}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Symmetric Difference)}
 \begin{definition}[Symmetric Difference]\label{def:sym-diff}
 The \emph{symmetric difference} $A \triangle B$ is the set of elements
@@ -740,12 +719,6 @@ The symmetric difference keeps elements that belong to exactly one of the two
 sets.
 \end{remark*}
 
-\begin{remark*}[Exposition]
-The symmetric difference is commutative and associative. Under $\triangle$,
-the power set $\mathcal{P}(U)$ forms an abelian group with identity
-$\varnothing$ and every element its own inverse ($A \triangle A = \varnothing$).
-\end{remark*}
-
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[cor:symmetric-difference-exists-unique]{Existence and Uniqueness of Symmetric Difference}
@@ -753,6 +726,45 @@ $\varnothing$ and every element its own inverse ($A \triangle A = \varnothing$).
 \end{dependencies}
 
 \input{volume-i/book-sets/set-theory/notes/sets/figure-symmetric-difference}
+
+\begin{corollarybox}{Corollary (Existence and Uniqueness of Relative Complement)}
+\begin{corollary}[Existence and Uniqueness of Relative Complement]\label{cor:relative-complement-exists-unique}
+Let $U$ be a fixed ambient set. For every set $A$, the relative complement
+\[
+  A^c:=U\setminus A
+\]
+exists and is unique. This is a relative construction; ZFC has no absolute
+complement operation over a universal set of all sets.
+\hyperref[prf:relative-complement-exists-unique]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\LeanFormalizes{cor:relative-complement-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ComplementSpec}{pending}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\exists! C\,\forall x,\quad
+  x\in C\leftrightarrow(x\in U\wedge x\notin A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \text{unique realization of }\quad
+  \forall x,\ (x\in C\leftrightarrow(x\in U\wedge x\notin A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complement notation is relative to a fixed ambient set \(U\), not an absolute
+operation over all sets.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[cor:set-difference-exists-unique]{Existence and Uniqueness of Set Difference}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Complement)}
 \begin{definition}[Complement]\label{def:complement}
@@ -827,8 +839,9 @@ $a = c$ and $b = d$.
 \end{remark*}
 
 \begin{remark*}[Exposition]
-In general, $A \times B \neq B \times A$. The product is however associative
-up to canonical isomorphism: $(A \times B) \times C \cong A \times (B \times C)$.
+The Cartesian product provides a way to encode ordered information. Relations
+and functions will be defined as special subsets of Cartesian products, so they
+require no new foundational objects.
 \end{remark*}
 
 \begin{dependencies}
@@ -837,6 +850,50 @@ up to canonical isomorphism: $(A \times B) \times C \cong A \times (B \times C)$
   \item \hyperref[ax:pairing]{Axiom of Pairing}
   \item \hyperref[ax:power-set]{Axiom of Power Set}
   \item \hyperref[ax:separation]{Axiom Schema of Separation}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Existence and Uniqueness of Power Set's Output)}
+\begin{theorem}[Existence and Uniqueness of Power Set's Output]\label{thm:power-set-output-exists-unique}
+For any set $A$, there exists a unique set $P$ whose elements are exactly the
+subsets of $A$:
+\[
+  \forall A\,\exists! P\,\forall S,\quad
+  S\in P\leftrightarrow S\subseteq A.
+\]
+\hyperref[prf:power-set-output-exists-unique]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\LeanFormalizes{thm:power-set-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFC.Theory.Axioms}{powerSetAxiom}{pending}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\,\exists P\,
+  \Bigl(
+  \forall S,\ (S\in P\leftrightarrow S\subseteq A)
+  \wedge
+  \forall P'\,((\forall S,\ (S\in P'\leftrightarrow S\subseteq A))\to P'=P)
+  \Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \text{unique realization of }\quad
+  \forall S,\ (S\in P\leftrightarrow S\subseteq A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For each set \(A\), the notation \(\mathcal P(A)\) names the unique set whose
+members are exactly the subsets of \(A\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:power-set]{Axiom of Power Set}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
 \end{itemize}
 \end{dependencies}
 
@@ -879,9 +936,50 @@ Cantor's theorem shows $|\mathcal{P}(A)| > |A|$ strictly.
 \end{itemize}
 \end{dependencies}
 
+% =========================================================
+% The Inclusion Order on Sets
+% =========================================================
+
+\subsection{The Inclusion Order on Sets}
+
 % ---------------------------------------------------------
 % Monotonicity under inclusion
 % ---------------------------------------------------------
+\begin{lratopiccard}{Inclusion Order --- Signature}
+\begin{lrasignaturetable}
+\LraSignatureRow{Relation}{\(A\subseteq B\) iff every member of \(A\) is a member of \(B\).}
+\LraSignatureRow{Strict relation}{\(A\subsetneq B\) iff \(A\subseteq B\) and \(A\neq B\).}
+\LraSignatureRow{Equality test}{\(A=B\) iff \(A\subseteq B\) and \(B\subseteq A\).}
+\LraSignatureRow{Monotone maps}{\(A\subseteq B\Rightarrow F(A)\subseteq F(B)\): the operation preserves inclusion.}
+\LraSignatureRow{Antitone maps}{\(A\subseteq B\Rightarrow F(B)\subseteq F(A)\): the operation reverses inclusion.}
+\LraSignatureRow{Structural echo}{Sets ordered by inclusion are the first poset/subobject picture in the text.}
+\end{lrasignaturetable}
+\end{lratopiccard}
+
+\begin{lraproofpatterncard}{Inclusion Proof Patterns}
+\begin{lraproofpatterntable}
+\LraProofPatternRow{Prove \(A\subseteq B\)}{Take arbitrary \(x\in A\), then prove \(x\in B\).}
+\LraProofPatternRow{Prove \(A=B\)}{Prove \(A\subseteq B\) and \(B\subseteq A\), then use Extensionality.}
+\LraProofPatternRow{Prove monotonicity}{Assume \(A\subseteq B\), unpack membership in \(F(A)\), use the hypothesis, and rebuild membership in \(F(B)\).}
+\LraProofPatternRow{Prove antitonicity}{Assume \(A\subseteq B\), but aim for \(F(B)\subseteq F(A)\).}
+\end{lraproofpatterntable}
+\end{lraproofpatterncard}
+
+\begin{lracategoricalcard}{Categorical Rendering --- Monotone and Antitone}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/sets/figure-order-monotone-antitone}
+\end{center}
+\[
+  A\subseteq B
+  \quad\Longrightarrow\quad
+  F(A)\subseteq F(B),
+  \qquad
+  A\subseteq B
+  \quad\Longrightarrow\quad
+  G(B)\subseteq G(A).
+\]
+\end{lracategoricalcard}
+
 \begin{definitionbox}{Definition (Inclusion-Monotone Set Operation)}
 \begin{definition}[Inclusion-Monotone Set Operation]\label{def:inclusion-monotone-set-operation}
 A set operation $F$ is \emph{inclusion-monotone} in an argument if replacing
@@ -1178,150 +1276,5 @@ Set difference is inclusion-antitone in the set being removed.
 \begin{itemize}
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:set-difference]{Set Difference}
-\end{itemize}
-\end{dependencies}
-
-% ---------------------------------------------------------
-% De Morgan --- Theorem box (named, major result of section)
-% ---------------------------------------------------------
-\begin{theorembox}{Theorem (De Morgan's Laws)}
-\begin{theorem}[De Morgan's Laws]\label{thm:de-morgan}
-Let $U$ be a universe and $A,B \subseteq U$. Then
-\[
-(A \cup B)^c = A^c \cap B^c
-\quad\text{and}\quad
-(A \cap B)^c = A^c \cup B^c.
-\]
-\hyperref[prf:de-morgan]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \forall A,B\subseteq U,\quad
-  (A\cup B)^c=A^c\cap B^c
-  \wedge
-  (A\cap B)^c=A^c\cup B^c.
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  \operatorname{SetEqual}((A\cup B)^c,A^c\cap B^c)
-  \wedge
-  \operatorname{SetEqual}((A\cap B)^c,A^c\cup B^c).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Complement exchanges unions with intersections and intersections with unions.
-\end{remark*}
-
-\begin{remark*}[Exposition]
-De Morgan's laws mirror the propositional logic identities $\neg(P \lor Q) \equiv \neg P \land \neg Q$ and $\neg(P \land Q) \equiv \neg P \lor \neg Q$ under the correspondence $\cap \leftrightarrow \land$, $\cup \leftrightarrow \lor$, $A^c \leftrightarrow \neg A$.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:union]{Union}
-  \item \hyperref[def:intersection]{Intersection}
-  \item \hyperref[def:complement]{Complement}
-\end{itemize}
-\end{dependencies}
-
-\begin{definitionbox}{Definition (Set Duality)}
-\begin{definition}[Set Duality]\label{def:set-duality}
-Two set-theoretic expressions over a fixed universe $U$ are \emph{dual} if one
-is obtained from the other by simultaneously replacing
-$\cup \leftrightarrow \cap$ and $\varnothing \leftrightarrow U$, with
-complements unchanged.
-\end{definition}
-\end{definitionbox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \operatorname{SetDual}(E,E',U)
-  \iff
-  E'\text{ is obtained from }E\text{ by interchanging }\cup,\cap
-  \text{ and }\varnothing,U.
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  \operatorname{SetDual}(E,E',U).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Set duality pairs expressions by exchanging the two basic set operations and
-the two extremal sets of a fixed universe.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:union]{Union}
-  \item \hyperref[def:intersection]{Intersection}
-  \item \hyperref[def:empty-set]{Empty Set}
-  \item \hyperref[def:complement]{Complement}
-\end{itemize}
-\end{dependencies}
-
-\begin{corollarybox}{Corollary}
-\begin{corollary}[\texorpdfstring{\hyperref[prf:set-duality]{Principle of Set Duality}}{Principle of Set Duality}]\label{cor:set-duality}
-Any identity involving $\cup$, $\cap$, $\varnothing$, and $U$ that holds for
-all subsets of a universe remains valid when each operation and constant is
-replaced by its dual.
-\hyperref[prf:set-duality]{\textit{Go to proof.}}
-\end{corollary}
-\end{corollarybox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \forall A_1,\dots,A_n\subseteq U,\quad
-  E=E'
-  \to
-  E^d=(E')^d.
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  \operatorname{SetEqual}(E,E')
-  \to
-  \operatorname{SetEqual}(E^d,(E')^d).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Any universal identity built from the dual operations has a valid dual identity.
-\end{remark*}
-
-\begin{remark*}[Exposition]
-To prove a statement involving unions and intersections, it often suffices to
-prove one version; the dual statement follows immediately.
-\end{remark*}
-
-\begin{remark*}[Exposition]
-The two distributive laws
-\[
-A \cap (B \cup C) = (A \cap B) \cup (A \cap C)
-\quad\text{and}\quad
-A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
-\]
-are duals of each other. Proving either one and applying the Principle of Set
-Duality yields the other immediately.
-\end{remark*}
-
-\begin{remark*}[Exposition]
-The Cartesian product provides a way to encode ordered information.
-Relations and functions will be defined as special subsets of Cartesian
-products, so they require no new foundational objects.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:set-duality]{Set Duality}
-  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
 \end{itemize}
 \end{dependencies}

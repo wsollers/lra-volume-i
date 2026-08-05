@@ -5,7 +5,6 @@
 % Dependency order:
 %   notes-order           --- posets, strict order, bounds, well-order, chains, nets
 %   notes-order-sup-inf   --- upper/lower bounds, supremum, infimum, duality of sup/inf
-%   notes-order-lattices  --- lattices, complete lattices, Boolean lattices, Knaster--Tarski
 %   notes-order-hasse-sup-duality --- Hasse diagrams, cover relation, duality principle
 %   notes-order-extensions --- preorders, Szpilrajn, OWC
 %   notes-order-induced    --- induced orders, order embeddings
@@ -57,26 +56,6 @@
 \end{toolkitbox}
 
 \input{volume-i/book-sets/orderings/notes/order/notes-order-sup-inf}
-
-\begin{toolkitbox}{Lattices --- Quick Reference}
-\small
-\begin{tabular}{l l}
-\toprule
-\textbf{Name}  & \textbf{Meaning} \\
-\midrule
-\hyperref[def:lattice]{Lattice}               & Poset with $\sup\{a,b\}$ and $\inf\{a,b\}$ for all $a,b$   \\
-\hyperref[def:lattice]{Join / Meet}           & $a \vee b = \sup\{a,b\}$; $a \wedge b = \inf\{a,b\}$        \\
-\hyperref[def:complete-lattice]{Complete lattice}      & Every subset has sup and inf                                \\
-\hyperref[def:distributive-lattice]{Distributive lattice}  & $a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)$      \\
-\hyperref[def:boolean-lattice]{Boolean lattice}       & Complemented distributive lattice                           \\
-\hyperref[def:lattice]{$\mathcal{P}(X)$}      & Complete Boolean lattice under $\subseteq$                  \\
-\hyperref[def:boolean-lattice]{$\sigma$-algebras}     & Sub-lattices of $\mathcal{P}(X)$ closed under countable ops  \\
-\hyperref[thm:knaster-tarski]{Knaster--Tarski}       & Every monotone map on a complete lattice has a fixed point   \\
-\bottomrule
-\end{tabular}
-\end{toolkitbox}
-
-\input{volume-i/book-sets/orderings/notes/order/notes-order-lattices}
 
 \begin{toolkitbox}{Hasse Diagrams and Duality --- Quick Reference}
 \small

@@ -1,0 +1,220 @@
+% =========================================================
+% Duality and De Morgan
+% =========================================================
+
+\subsection{Complement Duality and De Morgan Laws}
+
+\begin{lratopiccard}{Duality and De Morgan --- Structural Signature}
+\begin{lrasignaturetable}
+\LraSignatureRow{Context}{All complements are relative to a fixed ambient set \(U\).}
+\LraSignatureRow{Order reversal}{Complement sends inclusions \(A\subseteq B\) to \(B^c\subseteq A^c\).}
+\LraSignatureRow{Binary De Morgan}{Complement exchanges \(A\cup B\) with \(A\cap B\).}
+\LraSignatureRow{Indexed De Morgan}{Complement exchanges indexed unions and indexed intersections, with the usual nonempty-index convention for intersections.}
+\LraSignatureRow{Duality principle}{Universal identities built from \(\cup,\cap,\varnothing,U\) travel with their duals.}
+\LraSignatureRow{Proof move}{Translate to element membership, then exchange \(\neg(\lor)\) with \(\land\neg\) and \(\neg(\exists)\) with \(\forall\neg\).}
+\end{lrasignaturetable}
+\end{lratopiccard}
+
+\begin{remark*}[Exposition]
+Once ordinary and indexed unions and intersections are available, complement
+reveals the structural symmetry between the two operations. The order reversal
+of complement was proved earlier as an operation-level behavior; here the same
+reversal becomes the De Morgan exchange and the general principle of set
+duality.
+\end{remark*}
+
+\begin{theorembox}{Theorem (De Morgan's Laws)}
+\begin{theorem}[De Morgan's Laws]\label{thm:de-morgan}
+Let $U$ be a universe and $A,B \subseteq U$. Then
+\[
+(A \cup B)^c = A^c \cap B^c
+\quad\text{and}\quad
+(A \cap B)^c = A^c \cup B^c.
+\]
+\hyperref[prf:de-morgan]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{lracategoricalcard}{Categorical Rendering --- De Morgan}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/families/figure-de-morgan-categorical}
+\end{center}
+\[
+  x\in(A\cup B)^c
+  \quad\Longleftrightarrow\quad
+  x\in A^c\cap B^c.
+\]
+\end{lracategoricalcard}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A,B\subseteq U,\quad
+  (A\cup B)^c=A^c\cap B^c
+  \wedge
+  (A\cap B)^c=A^c\cup B^c.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SetEqual}((A\cup B)^c,A^c\cap B^c)
+  \wedge
+  \operatorname{SetEqual}((A\cap B)^c,A^c\cup B^c).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complement exchanges unions with intersections and intersections with unions.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+De Morgan's laws mirror the propositional logic identities
+$\neg(P \lor Q) \equiv \neg P \land \neg Q$ and
+$\neg(P \land Q) \equiv \neg P \lor \neg Q$ under the correspondence
+$\cap \leftrightarrow \land$, $\cup \leftrightarrow \lor$, and
+$A^c \leftrightarrow \neg A$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:complement]{Complement}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (De Morgan's Laws for Indexed Families)}
+\begin{theorem}[De Morgan's Laws for Indexed Families]\label{thm:indexed-de-morgan}
+Let $\{A_i\}_{i\in I}$ be an indexed family of subsets of a universe $U$.
+Then
+\[
+U\setminus\bigcup_{i\in I}A_i
+=
+\bigcap_{i\in I}(U\setminus A_i).
+\]
+If $I\neq\varnothing$, then
+\[
+U\setminus\bigcap_{i\in I}A_i
+=
+\bigcup_{i\in I}(U\setminus A_i).
+\]
+\hyperref[prf:indexed-de-morgan]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  U\setminus\bigcup_{i\in I}A_i
+  =
+  \bigcap_{i\in I}(U\setminus A_i),
+  \qquad
+  I\neq\varnothing\to
+  U\setminus\bigcap_{i\in I}A_i
+  =
+  \bigcup_{i\in I}(U\setminus A_i).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complement exchanges indexed unions with indexed intersections.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
+  \item \hyperref[def:indexed-union]{Indexed Union}
+  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
+  \item \hyperref[def:complement]{Complement}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Set Duality)}
+\begin{definition}[Set Duality]\label{def:set-duality}
+Two set-theoretic expressions over a fixed universe $U$ are \emph{dual} if one
+is obtained from the other by simultaneously replacing
+$\cup \leftrightarrow \cap$ and $\varnothing \leftrightarrow U$, with
+complements unchanged.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{SetDual}(E,E',U)
+  \iff
+  E'\text{ is obtained from }E\text{ by interchanging }\cup,\cap
+  \text{ and }\varnothing,U.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SetDual}(E,E',U).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Set duality pairs expressions by exchanging the two basic set operations and
+the two extremal sets of a fixed universe.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[def:complement]{Complement}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary}
+\begin{corollary}[\texorpdfstring{\hyperref[prf:set-duality]{Principle of Set Duality}}{Principle of Set Duality}]\label{cor:set-duality}
+Any identity involving $\cup$, $\cap$, $\varnothing$, and $U$ that holds for
+all subsets of a universe remains valid when each operation and constant is
+replaced by its dual.
+\hyperref[prf:set-duality]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A_1,\dots,A_n\subseteq U,\quad
+  E=E'
+  \to
+  E^d=(E')^d.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SetEqual}(E,E')
+  \to
+  \operatorname{SetEqual}(E^d,(E')^d).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Any universal identity built from the dual operations has a valid dual identity.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+To prove a statement involving unions and intersections, it often suffices to
+prove one version; the dual statement follows immediately.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The two distributive laws
+\[
+A \cap (B \cup C) = (A \cap B) \cup (A \cap C)
+\quad\text{and}\quad
+A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
+\]
+are duals of each other. Proving either one and applying the Principle of Set
+Duality yields the other immediately.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:set-duality]{Set Duality}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+\end{itemize}
+\end{dependencies}

@@ -1,0 +1,25 @@
+\begin{tikzpicture}[lra categorical diagram]
+  \node[lra cat native object] (A) at (0,1.6)
+    {\LraCatObject{A}{\{x:x\in A\}}};
+  \node[lra cat native object] (B) at (4.2,1.6)
+    {\LraCatObject{B}{\{x:x\in B\}}};
+  \node[lra cat left object] (FA) at (0,0)
+    {\LraCatObject{F(A)}{\text{output on }A}};
+  \node[lra cat left object] (FB) at (4.2,0)
+    {\LraCatObject{F(B)}{\text{output on }B}};
+  \node[lra cat right object] (GB) at (0,-1.6)
+    {\LraCatObject{G(B)}{\text{output on }B}};
+  \node[lra cat right object] (GA) at (4.2,-1.6)
+    {\LraCatObject{G(A)}{\text{output on }A}};
+
+  \draw[lra cat arrow] (A) -- node[lra cat label,above]{\(A\subseteq B\)} (B);
+  \draw[lra cat left arrow] (A) -- node[lra cat label,left]{\(F\)} (FA);
+  \draw[lra cat left arrow] (B) -- node[lra cat label,right]{\(F\)} (FB);
+  \draw[lra cat left arrow] (FA) -- node[lra cat label,above]{preserves} (FB);
+  \draw[lra cat right arrow] (B) -- node[lra cat label,right]{\(G\)} (GA);
+  \draw[lra cat right arrow] (A) -- node[lra cat label,left]{\(G\)} (GB);
+  \draw[lra cat right arrow] (GB) -- node[lra cat label,below]{reverses} (GA);
+
+  \node[lra cat note] at (2.1,-2.35)
+    {monotone maps preserve inclusion; antitone maps reverse it};
+\end{tikzpicture}

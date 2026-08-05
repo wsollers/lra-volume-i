@@ -1,0 +1,21 @@
+\begin{tikzpicture}[lra categorical diagram, x=1cm, y=1cm]
+  \node[lra cat native object, minimum width=3.0cm] (A) at (3,1.4)
+    {\LraCatObjectText{A\neq\varnothing}{nonempty set}};
+
+  \node[lra cat result object, minimum width=4.4cm] (minimal) at (3,-0.25)
+    {\LraCatObject{x\in A\land x\cap A=\varnothing}
+      {\in\text{-minimal element}}};
+
+  \node[lra cat result object, minimum width=3.2cm] (nochain) at (3,-1.9)
+    {\LraCatObjectText{\text{no descent}}{no infinite membership fall}};
+
+  \node[lra cat native object, minimum width=2.2cm] (empty) at (6,-0.85)
+    {\LraCatObjectPlain{\varnothing}};
+
+  \draw[lra cat result arrow] (A) -- node[lra cat label,right]{Foundation} (minimal);
+  \draw[lra cat universal arrow] (minimal.east) -- node[lra cat label,below]{intersection with \(A\)} (empty.west);
+  \draw[lra cat result arrow] (minimal) -- (nochain);
+
+  \node[lra cat note] at (3,-2.75)
+    {every nonempty membership region has a bottom element};
+\end{tikzpicture}

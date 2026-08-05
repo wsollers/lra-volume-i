@@ -1,0 +1,60 @@
+% =========================================================
+% Quantifier and Equality Proof Patterns
+% =========================================================
+\paragraph{Quantifier and Equality Proof Patterns.}
+
+Predicate logic supplies formal deduction rules. In ordinary mathematical
+writing, those rules appear as repeatable proof moves. The table below records
+the translation from formal rule to human proof habit.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{p{0.28\textwidth} p{0.30\textwidth} p{0.32\textwidth}}
+\toprule
+\textbf{Goal or Given Form} & \textbf{Formal Rule Behind It} & \textbf{Proof Move} \\
+\midrule
+Prove $\forall x\,P(x)$ &
+  Universal generalization &
+  Fix an arbitrary $x$ and prove $P(x)$. \\
+
+Use $\forall x\,P(x)$ &
+  Universal instantiation &
+  Substitute the particular object or term you need. \\
+
+Prove $\exists x\,P(x)$ &
+  Existential generalization &
+  Construct a witness and verify the property. \\
+
+Use $\exists x\,P(x)$ &
+  Existential instantiation &
+  Name a fresh witness and carry its defining property forward. \\
+
+Prove $\exists!x\,P(x)$ &
+  Existence plus equality comparison &
+  Produce one witness, then assume two witnesses and prove they are equal. \\
+
+Use $a=b$ &
+  Equality elimination &
+  Replace one term by the other inside a legitimate formula. \\
+
+Prove term equality $s=t$ &
+  Reflexivity, symmetry, transitivity, substitution &
+  Rewrite, chain equalities, or show both terms reduce to the same expression. \\
+
+Prove set equality $A=B$ &
+  Extensionality &
+  Prove $A\subseteq B$ and $B\subseteq A$, or prove equivalent membership tests. \\
+
+Show a definition is well-defined &
+  Equality-respecting construction &
+  Check that equal inputs or equivalent representatives give equal outputs. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Formal rule versus proof technique]
+The rules themselves belong to predicate logic and the identity/equality
+foundation. The proof technique is the habit they create in written
+mathematics: fix an arbitrary object, produce a witness, substitute equals,
+compare two witnesses, or check that a construction ignores accidental names.
+\end{remark}

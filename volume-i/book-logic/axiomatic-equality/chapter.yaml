@@ -1,0 +1,73 @@
+subject: axiomatic-equality
+display_title: "Axiomatic Equality"
+volume: volume-i
+book: book-logic
+path: volume-i/book-logic/axiomatic-equality
+status: active
+sections:
+  - subject: logic-with-equality
+    display_title: "Logic with Equality"
+dependencies:
+  prior: propositional-logic
+  next: predicate-logic
+environments:
+  - label: def:axiomatic-equality-language
+    type: def
+    file: notes\logic-with-equality\notes-logic-with-equality.tex
+    display_title: Pure Language of Equality
+    proof_file: null
+  - label: def:axiomatic-equality-structure
+    type: def
+    file: notes\logic-with-equality\notes-logic-with-equality.tex
+    display_title: Equality Structure
+    proof_file: null
+  - label: def:distinctness
+    type: def
+    file: notes\logic-with-equality\notes-logic-with-equality.tex
+    display_title: Distinctness
+    proof_file: null
+  - label: ax:axiomatic-equality-reflexivity
+    type: ax
+    file: notes\logic-with-equality\notes-logic-with-equality.tex
+    display_title: Reflexivity of Equality
+    proof_file: null
+  - label: ax:axiomatic-equality-substitution
+    type: ax
+    file: notes\logic-with-equality\notes-logic-with-equality.tex
+    display_title: Substitution of Identicals
+    proof_file: null
+  - label: thm:axiomatic-equality-symmetry
+    type: thm
+    file: notes\logic-with-equality\notes-logic-with-equality.tex
+    display_title: Symmetry of Equality
+    proof_file: proofs\logic-with-equality\prf-axiomatic-equality-symmetry.tex
+  - label: thm:axiomatic-equality-transitivity
+    type: thm
+    file: notes\logic-with-equality\notes-logic-with-equality.tex
+    display_title: Transitivity of Equality
+    proof_file: proofs\logic-with-equality\prf-axiomatic-equality-transitivity.tex
+  - label: thm:axiomatic-equality-equivalence-relation
+    type: thm
+    file: notes\logic-with-equality\notes-logic-with-equality.tex
+    display_title: Equality is an Equivalence Relation
+    proof_file: proofs\logic-with-equality\prf-axiomatic-equality-equivalence-relation.tex
+  - label: thm:axiomatic-equality-function-congruence
+    type: thm
+    file: notes\logic-with-equality\notes-logic-with-equality.tex
+    display_title: Function Congruence
+    proof_file: proofs\logic-with-equality\prf-axiomatic-equality-function-congruence.tex
+  - label: thm:axiomatic-equality-relation-congruence
+    type: thm
+    file: notes\logic-with-equality\notes-logic-with-equality.tex
+    display_title: Relation Congruence
+    proof_file: proofs\logic-with-equality\prf-axiomatic-equality-relation-congruence.tex
+  - label: def:axiomatic-equality-unique-existence
+    type: def
+    file: notes\logic-with-equality\notes-logic-with-equality.tex
+    display_title: Unique Existence
+    proof_file: null
+  - label: def:two-element-bounds
+    type: def
+    file: notes\logic-with-equality\notes-logic-with-equality.tex
+    display_title: Two-Element Bounds
+    proof_file: null

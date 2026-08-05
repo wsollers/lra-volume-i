@@ -2,11 +2,30 @@
 % Algebraic Laws of Set Operations
 % =========================================================
 
-\subsection{Algebraic Laws of Set Operations}
+\subsection{Binary and Indexed Set-Algebra Laws}
 
 % ---------------------------------------------------------
 % TOOLKIT
 % ---------------------------------------------------------
+
+\begin{lratopiccard}{Set Algebra --- Signature}
+\begin{lrasignaturetable}
+\LraSignatureRow{Carrier/context}{The power set \(\mathcal P(U)\) of a fixed ambient set \(U\).}
+\LraSignatureRow{Constants}{\(\varnothing\) and \(U\).}
+\LraSignatureRow{Operations}{Binary operations \(\cup,\cap\) and unary complement \((-)^c\).}
+\LraSignatureRow{Laws}{Commutativity, associativity, distributivity, identity, absorption, and involution.}
+\LraSignatureRow{Structural echo}{\(\mathcal P(U)\) is the prototype Boolean algebra of subsets.}
+\end{lrasignaturetable}
+\end{lratopiccard}
+
+\begin{lraproofpatterncard}{Algebraic Laws --- Proof Pattern}
+\begin{lraproofpatterntable}
+\LraProofPatternRow{Identity between set terms}{Take an arbitrary element and rewrite membership using the operation rules.}
+\LraProofPatternRow{Dual law}{Prove one law directly, then use set duality when the hypotheses match the duality principle.}
+\LraProofPatternRow{Indexed law}{Translate membership in an indexed union/intersection into an existential/universal statement over the index set.}
+\LraProofPatternRow{Final step}{Convert equivalent membership conditions back into set equality by Extensionality.}
+\end{lraproofpatterntable}
+\end{lraproofpatterncard}
 
 \begin{remark*}[Exposition]
 The operations $\cup$, $\cap$, and complement satisfy algebraic laws analogous
@@ -64,6 +83,19 @@ Let $A,B,C$ be sets. Then
 \end{theorem}
 \end{theorembox}
 
+\begin{lracategoricalcard}{Categorical Rendering --- Associativity of Union}
+\begin{center}
+\input{volume-i/book-sets/set-theory/notes/families/figure-associativity-union-categorical}
+\end{center}
+\[
+  (A\cup B)\cup C
+  =
+  A\cup(B\cup C)
+  =
+  \{x:x\in A\lor x\in B\lor x\in C\}.
+\]
+\end{lracategoricalcard}
+
 \begin{remark*}[Standard quantified statement]
 $\forall A, B, C:\; \forall x\,\bigl((x \in (A \cup B) \cup C) \leftrightarrow (x \in A \cup (B \cup C))\bigr)$, and analogously for $\cap$.
 \end{remark*}
@@ -120,6 +152,53 @@ Intersection distributes over union, and union distributes over intersection.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Distributive Laws for Indexed Families)}
+\begin{theorem}[Distributive Laws for Indexed Families]\label{thm:indexed-distributivity}
+Let $A\subseteq U$ and let $\{B_i\}_{i\in I}$ be an indexed family of subsets
+of a universe $U$. Then
+\[
+A\cap\bigcup_{i\in I}B_i
+=
+\bigcup_{i\in I}(A\cap B_i).
+\]
+If $I\neq\varnothing$, then
+\[
+A\cup\bigcap_{i\in I}B_i
+=
+\bigcap_{i\in I}(A\cup B_i).
+\]
+\hyperref[prf:indexed-distributivity]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\cap\bigcup_{i\in I}B_i
+  =
+  \bigcup_{i\in I}(A\cap B_i),
+  \qquad
+  I\neq\varnothing\to
+  A\cup\bigcap_{i\in I}B_i
+  =
+  \bigcap_{i\in I}(A\cup B_i).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Union and intersection distribute over indexed families in the same way they
+distribute over binary operations.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
+  \item \hyperref[def:indexed-union]{Indexed Union}
+  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
   \item \hyperref[def:union]{Union}
   \item \hyperref[def:intersection]{Intersection}
 \end{itemize}
@@ -220,6 +299,12 @@ canonical isomorphism, and distributes over union in each coordinate:
 \[
 A \times (B \cup C) = (A \times B) \cup (A \times C).
 \]
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The symmetric difference is commutative and associative. Under $\triangle$,
+the power set $\mathcal{P}(U)$ forms an abelian group with identity
+$\varnothing$ and every element its own inverse ($A \triangle A = \varnothing$).
 \end{remark*}
 
 \begin{remark*}[Exposition]

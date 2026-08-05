@@ -1,0 +1,8 @@
+\begin{tikzpicture}[x=1cm, y=1cm, >=Stealth]
+  \node[draw, rounded corners=2pt, minimum width=2.8cm, minimum height=0.8cm]
+    (A) at (0,0) {\(A\)};
+  \draw[->] (A.north east) to[out=45,in=135,looseness=5]
+    node[above] {\(\mathrm{id}_A\)} (A.north west);
+  \node[font=\footnotesize] at (0,-0.9)
+    {identity preserves every element of \(A\)};
+\end{tikzpicture}

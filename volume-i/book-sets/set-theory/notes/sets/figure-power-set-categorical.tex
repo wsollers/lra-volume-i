@@ -1,0 +1,16 @@
+\begin{tikzpicture}[lra categorical diagram, x=1cm, y=1cm]
+  \node[lra cat native object, minimum width=2.8cm] (A) at (3,1.3)
+    {\LraCatObject{A}{\{x:x\in A\}}};
+
+  \node[lra cat result object, minimum width=4.6cm] (condition) at (3,-0.3)
+    {\LraCatObject{X\subseteq A}{\{X:\forall x\,(x\in X\to x\in A)\}}};
+
+  \node[lra cat result object, minimum width=3.4cm] (power) at (3,-1.9)
+    {\LraCatObject{\mathcal P(A)}{\{X:X\subseteq A\}}};
+
+  \draw[lra cat result arrow] (A) -- node[lra cat label,right]{subset test} (condition);
+  \draw[lra cat result arrow] (condition) -- node[lra cat label,right]{Power Set} (power);
+
+  \node[lra cat note] at (3,-2.75)
+    {a set of subobjects: every subset of \(A\) becomes an element};
+\end{tikzpicture}

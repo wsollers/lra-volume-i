@@ -1,0 +1,25 @@
+\begin{tikzpicture}[lra categorical diagram]
+  \node[lra cat native object] (A) at (0,2)
+    {\LraCatObject{A}{\{x:x\in A\}}};
+  \node[lra cat native object] (B) at (3,2)
+    {\LraCatObject{B}{\{x:x\in B\}}};
+  \node[lra cat native object] (C) at (6,2)
+    {\LraCatObject{C}{\{x:x\in C\}}};
+
+  \node[lra cat left object] (AB) at (1.5,0.6)
+    {\LraCatObject{A\cup B}{\{x:x\in A\lor x\in B\}}};
+  \node[lra cat right object] (BC) at (4.5,0.6)
+    {\LraCatObject{B\cup C}{\{x:x\in B\lor x\in C\}}};
+  \node[lra cat result object] (ABC) at (3,-0.95)
+    {\LraCatObject{A\cup B\cup C}{\{x:x\in A\lor x\in B\lor x\in C\}}};
+
+  \draw[lra cat left arrow] (A) -- node[lra cat label,above left]{group \(A,B\)} (AB);
+  \draw[lra cat left arrow] (B) -- (AB);
+  \draw[lra cat right arrow] (B) -- (BC);
+  \draw[lra cat right arrow] (C) -- node[lra cat label,above right]{group \(B,C\)} (BC);
+  \draw[lra cat result arrow] (AB) -- node[lra cat label,left]{add \(C\)} (ABC);
+  \draw[lra cat result arrow] (BC) -- node[lra cat label,right]{add \(A\)} (ABC);
+
+  \node[lra cat note] at (3,-1.75)
+    {both parenthesizations produce the same membership condition};
+\end{tikzpicture}

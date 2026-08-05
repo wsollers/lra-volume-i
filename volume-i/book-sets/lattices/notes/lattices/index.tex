@@ -1,0 +1,21 @@
+\section{Lattices}
+
+\begin{toolkitbox}{Lattices --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Name}  & \textbf{Meaning} \\
+\midrule
+\hyperref[def:lattice]{Lattice}               & Poset with $\sup\{a,b\}$ and $\inf\{a,b\}$ for all $a,b$   \\
+\hyperref[def:lattice]{Join / Meet}           & $a \vee b = \sup\{a,b\}$; $a \wedge b = \inf\{a,b\}$        \\
+\hyperref[def:complete-lattice]{Complete lattice}      & Every subset has sup and inf                                \\
+\hyperref[def:distributive-lattice]{Distributive lattice}  & $a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)$      \\
+\hyperref[def:boolean-lattice]{Boolean lattice}       & Complemented distributive lattice                           \\
+\hyperref[def:lattice]{$\mathcal{P}(X)$}      & Complete Boolean lattice under $\subseteq$                  \\
+\hyperref[def:boolean-lattice]{$\sigma$-algebras}     & Sub-lattices of $\mathcal{P}(X)$ closed under countable ops  \\
+\hyperref[thm:knaster-tarski]{Knaster--Tarski}       & Every monotone map on a complete lattice has a fixed point   \\
+\bottomrule
+\end{tabular}
+\end{toolkitbox}
+
+\input{volume-i/book-sets/lattices/notes/lattices/notes-lattices}

@@ -1,0 +1,12 @@
+subject: lattices
+display_title: "Lattices"
+volume: volume-i
+book: book-sets
+path: volume-i/book-sets/lattices
+status: active
+sections:
+  - subject: lattices
+    display_title: "Lattices"
+dependencies:
+  prior: orderings
+  next: functions-and-order

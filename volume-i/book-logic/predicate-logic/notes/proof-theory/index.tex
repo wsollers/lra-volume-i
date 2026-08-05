@@ -1,7 +1,7 @@
-\section{Proof Theory}
+\section{Deduction Rules}
 
 % =========================================================
-% Proof Theory --- Orchestrator
+% Deduction Rules --- Orchestrator
 % =========================================================
 
 \begin{toolkitbox}{Quantifier Inference Rules --- Quick Reference}
@@ -41,16 +41,16 @@ Prove $\exists y\,\forall x\,\varphi(x,y)$ & Find $y$ first; then verify for all
 
 \input{volume-i/book-logic/predicate-logic/notes/proof-theory/notes-quantifier-strategies}
 
-\begin{toolkitbox}{Equality Rules --- Quick Reference}
+\begin{toolkitbox}{Term Equality Rules --- Quick Reference}
 \small
 \begin{tabular}{l p{0.68\linewidth}}
 \toprule
 \textbf{Name}  & \textbf{Meaning} \\
 \midrule
-\hyperref[def:eq-refl]{Reflexivity (EqI)}    & Primitive rule with schema $t = t$ \\
-\hyperref[def:eq-elim]{Equality Elim (EqE)}  & Primitive rule: $t_1=t_2,\;\varphi[t_1/x] \Rightarrow \varphi[t_2/x]$ \\
-\hyperref[thm:eq-sym]{Symmetry}             & Derived rule: $t_1=t_2 \Rightarrow t_2=t_1$ \\
-\hyperref[thm:eq-trans]{Transitivity}         & Derived rule: $t_1=t_2,\;t_2=t_3 \Rightarrow t_1=t_3$ \\
+\hyperref[def:eq-refl]{Term reflexivity (EqI)}    & Primitive rule with schema $t = t$ \\
+\hyperref[def:eq-elim]{Term equality elim (EqE)}  & Primitive rule: $t_1=t_2,\;\varphi[t_1/x] \Rightarrow \varphi[t_2/x]$ \\
+\hyperref[thm:eq-sym]{Term symmetry}             & Derived rule: $t_1=t_2 \Rightarrow t_2=t_1$ \\
+\hyperref[thm:eq-trans]{Term transitivity}         & Derived rule: $t_1=t_2,\;t_2=t_3 \Rightarrow t_1=t_3$ \\
 \hyperref[thm:eq-term]{Term substitution}    & Derived rule for substituting equals inside terms \\
 \hyperref[thm:eq-pred]{Predicate substitution}  & Derived rule for substituting equals inside predicates \\
 \bottomrule
