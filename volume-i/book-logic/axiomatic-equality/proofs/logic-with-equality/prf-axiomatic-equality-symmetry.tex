@@ -13,15 +13,55 @@ If \(x=y\), then \(y=x\).
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for axiomatic-equality-symmetry.
+Assume \(x=y\). Let \(\Phi(z)\) be the formula \(z=x\). By reflexivity of
+equality, \(x=x\), so \(\Phi(x)\) holds. Since \(x=y\), substitution of
+identicals applied to the formula-context \(\Phi\) gives \(\Phi(y)\). Hence
+\(y=x\). Therefore \(x=y\to y=x\), and universal generalization gives
+\[
+  \forall x\,\forall y\,(x=y\to y=x).
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for axiomatic-equality-symmetry.
+We want to prove that equality can be reversed. So suppose first that
+\[
+  x=y.
+\]
+The substitution axiom cannot be used in isolation; it must be applied to a
+formula that is already known to hold. The known formula comes from
+reflexivity:
+\[
+  x=x.
+\]
+
+Now choose the formula-context
+\[
+  \Phi(z) \quad\text{to mean}\quad z=x.
+\]
+In this context, the variable \(z\) marks the single position where
+substitution is being performed, while the displayed \(x\) on the right side
+is held fixed as a parameter. With this choice,
+\[
+  \Phi(x) \quad\text{is}\quad x=x,
+\]
+which is true by reflexivity. Since the assumption says \(x=y\), substitution
+of identicals transfers the truth of \(\Phi(x)\) to \(\Phi(y)\). But
+\[
+  \Phi(y) \quad\text{is}\quad y=x.
+\]
+Thus \(y=x\). Since this was derived from the arbitrary assumption \(x=y\), we
+have proved \(x=y\to y=x\), and hence
+\[
+  \forall x\,\forall y\,(x=y\to y=x).
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+The key move is to use reflexivity first and substitution second. Reflexivity
+supplies the true statement \(x=x\). Substitution then changes the selected
+first occurrence of \(x\) into \(y\) inside the formula-context \(z=x\), while
+the right-hand \(x\) remains fixed.
 \end{remark*}
 
 \begin{dependencies}

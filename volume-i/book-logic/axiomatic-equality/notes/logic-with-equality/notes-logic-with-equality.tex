@@ -173,6 +173,19 @@ the same truth value on both:
 \begin{remark*}[Interpretation]
 This is Leibniz's law: identical objects are indiscernible by any formula of
 the language.
+
+An application of this axiom begins by choosing a formula-context
+\(\Phi(z)\), where \(z\) marks the place at which substitution is allowed.
+If \(x=y\) and \(\Phi(x)\) has already been obtained, then substitution gives
+\(\Phi(y)\). Other variables and other occurrences in the displayed expression
+are held fixed as parameters of the chosen formula-context.
+
+Thus substitution is not restricted to atomic predicates alone. It applies
+inside relation statements, inside formulas involving function symbols, and
+inside equations between terms, because each of these can be treated as a
+formula \(\Phi(z)\). For example, to prove symmetry of equality one chooses
+\(\Phi(z)\) to be \(z=x\). Reflexivity gives \(\Phi(x)\), namely \(x=x\);
+from \(x=y\), substitution then gives \(\Phi(y)\), namely \(y=x\).
 \end{remark*}
 
 \begin{dependencies}
