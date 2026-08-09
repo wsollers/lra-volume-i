@@ -7,21 +7,74 @@
 \hyperref[thm:axiomatic-equality-transitivity]{Return to Theorem}
 \end{remark*}
 
+\ProofVaultURL{https://github.com/wsollers/lra-proof-vault/tree/master/volume-i/book-logic/axiomatic-equality/thm-axiomatic-equality-transitivity}
+
 \begin{theorem*}[Transitivity of Equality]
 If \(x=y\) and \(y=z\), then \(x=z\).
 \end{theorem*}
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for axiomatic-equality-transitivity.
+Assume \(x=y\) and \(y=z\). Let \(\Phi(w)\) be the formula \(x=w\). From the
+first assumption, \(\Phi(y)\) holds. From the second assumption and
+substitution of identicals applied to the formula-context \(\Phi\), it follows
+that \(\Phi(z)\) holds. Hence \(x=z\). Therefore
+\((x=y\land y=z)\to x=z\), and universal generalization gives
+\[
+  \forall x\,\forall y\,\forall z\,\bigl((x=y\land y=z)\to x=z\bigr).
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for axiomatic-equality-transitivity.
+\textbf{Step 1.} Assume the hypothesis:
+\[
+  x=y \quad\text{and}\quad y=z.
+\]
+By conjunction elimination, we may use the two facts separately:
+\[
+  x=y
+  \qquad\text{and}\qquad
+  y=z.
+\]
+
+\textbf{Step 2.} Choose the formula-context
+\[
+  \Phi(w) \quad\text{to mean}\quad x=w.
+\]
+The variable \(w\) marks the position where substitution is allowed. The
+displayed \(x\) is not being replaced; it is held fixed as a parameter of the
+chosen formula-context.
+
+\textbf{Step 3.} With this choice of \(\Phi\), the statement \(\Phi(y)\) is
+exactly
+\[
+  x=y,
+\]
+which is one of the facts obtained from the hypothesis. Since the other fact is
+\(y=z\), substitution of identicals transfers the truth of \(\Phi(y)\) to
+\(\Phi(z)\).
+
+\textbf{Step 4.} But \(\Phi(z)\) is exactly
+\[
+  x=z.
+\]
+Thus \(x=z\). Since this conclusion was derived from the arbitrary assumption
+\(x=y\land y=z\), we have proved
+\[
+  (x=y\land y=z)\to x=z,
+\]
+and hence
+\[
+  \forall x\,\forall y\,\forall z\,\bigl((x=y\land y=z)\to x=z\bigr).
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+The proof uses the equality \(y=z\) to replace the right-hand occurrence of
+\(y\) in the already known statement \(x=y\). The formula-context \(x=w\)
+records exactly that replacement position: \(\Phi(y)\) is \(x=y\), and
+\(\Phi(z)\) is \(x=z\).
 \end{remark*}
 
 \begin{dependencies}
