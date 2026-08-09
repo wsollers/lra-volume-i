@@ -63,6 +63,9 @@ $\forall A, B:\; \forall x\,(x \in A \cup B \leftrightarrow x \in B \cup A)$ and
 Union and intersection do not depend on the order of their two arguments.
 \end{remark*}
 
+\LeanFormalizes{thm:commutativity}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Union}{UnionCommutative}{pending}
+\LeanFormalizes{thm:commutativity}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Intersection}{IntersectionCommutative}{pending}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[ax:extensionality]{Axiom of Extensionality}
@@ -112,6 +115,9 @@ $\forall A, B, C:\; \forall x\,\bigl((x \in (A \cup B) \cup C) \leftrightarrow (
 Union and intersection can be regrouped without changing the resulting set.
 \end{remark*}
 
+\LeanFormalizes{thm:associativity}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Union}{UnionAssociative}{pending}
+\LeanFormalizes{thm:associativity}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Intersection}{IntersectionAssociative}{pending}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[ax:extensionality]{Axiom of Extensionality}
@@ -148,6 +154,9 @@ $\forall A, B, C:\; \forall x\,\bigl(x \in A \cap (B \cup C) \leftrightarrow x \
 \begin{remark*}[Interpretation]
 Intersection distributes over union, and union distributes over intersection.
 \end{remark*}
+
+\LeanFormalizes{thm:distributivity}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Duality}{IntersectionDistributesOverUnion}{pending}
+\LeanFormalizes{thm:distributivity}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Duality}{UnionDistributesOverIntersection}{pending}
 
 \begin{dependencies}
 \begin{itemize}
@@ -194,6 +203,9 @@ Union and intersection distribute over indexed families in the same way they
 distribute over binary operations.
 \end{remark*}
 
+\LeanFormalizes{thm:indexed-distributivity}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Indexed}{IntersectionDistributesOverIndexedUnion}{pending}
+\LeanFormalizes{thm:indexed-distributivity}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Indexed}{UnionDistributesOverIndexedIntersection}{pending}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:indexed-family]{Indexed Family of Sets}
@@ -210,7 +222,22 @@ Let $A,B$ be sets and $U$ a universe with $A \subseteq U$. Then
 \[
 A \cup \varnothing = A,
 \qquad
+\varnothing \cup A = A,
+\]
+\[
 A \cap U = A,
+\qquad
+U \cap A = A,
+\]
+\[
+A\cup U=U,
+\qquad
+U\cup A=U,
+\]
+\[
+A\cap\varnothing=\varnothing,
+\qquad
+\varnothing\cap A=\varnothing,
 \]
 \[
 A \cup (A \cap B) = A,
@@ -223,6 +250,9 @@ A \cap (A \cup B) = A.
 
 \begin{remark*}[Standard quantified statement]
 $\forall A \subseteq U:\; \forall x\,(x \in A \cup \varnothing \leftrightarrow x \in A)$ and $\forall x\,(x \in A \cap U \leftrightarrow x \in A)$.
+The symmetric identity laws and the domination/null laws are stated explicitly:
+$\varnothing\cup A=A$, $U\cap A=A$, $A\cup U=U$, $U\cup A=U$,
+$A\cap\varnothing=\varnothing$, and $\varnothing\cap A=\varnothing$.
 Absorption: $\forall A, B:\; \forall x\,(x \in A \cup (A \cap B) \leftrightarrow x \in A)$, and dually.
 \end{remark*}
 
@@ -230,7 +260,19 @@ Absorption: $\forall A, B:\; \forall x\,(x \in A \cup (A \cap B) \leftrightarrow
 \[
   \operatorname{SetEqual}(A\cup\varnothing,A)
   \wedge
+  \operatorname{SetEqual}(\varnothing\cup A,A)
+  \wedge
   \operatorname{SetEqual}(A\cap U,A)
+  \wedge
+  \operatorname{SetEqual}(U\cap A,A)
+  \wedge
+  \operatorname{SetEqual}(A\cup U,U)
+  \wedge
+  \operatorname{SetEqual}(U\cup A,U)
+  \wedge
+  \operatorname{SetEqual}(A\cap\varnothing,\varnothing)
+  \wedge
+  \operatorname{SetEqual}(\varnothing\cap A,\varnothing)
   \wedge
   \operatorname{SetEqual}(A\cup(A\cap B),A)
   \wedge
@@ -243,10 +285,132 @@ The empty set and universe act as identities for the appropriate operations,
 and absorption removes redundant nested occurrences of $A$.
 \end{remark*}
 
+\LeanFormalizes{thm:identity-absorption}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Union}{UnionEmpty}{pending}
+\LeanFormalizes{thm:identity-absorption}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Union}{EmptyUnion}{pending}
+\LeanFormalizes{thm:identity-absorption}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Union}{UnionUniversal}{pending}
+\LeanFormalizes{thm:identity-absorption}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Union}{UniversalUnion}{pending}
+\LeanFormalizes{thm:identity-absorption}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Intersection}{IntersectionUniversal}{pending}
+\LeanFormalizes{thm:identity-absorption}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Intersection}{UniversalIntersection}{pending}
+\LeanFormalizes{thm:identity-absorption}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Intersection}{IntersectionEmpty}{pending}
+\LeanFormalizes{thm:identity-absorption}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Intersection}{EmptyIntersection}{pending}
+\LeanFormalizes{thm:identity-absorption}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Duality}{AbsorptionUnionIntersection}{pending}
+\LeanFormalizes{thm:identity-absorption}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Duality}{AbsorptionIntersectionUnion}{pending}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[ax:extensionality]{Axiom of Extensionality}
   \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Idempotency of Union and Intersection)}
+\begin{theorem}[Idempotency of Union and Intersection]\label{thm:idempotency}
+Let $A$ be a set. Then
+\[
+A\cup A=A
+\qquad\text{and}\qquad
+A\cap A=A.
+\]
+\hyperref[prf:idempotency]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A,\quad A\cup A=A \quad\text{and}\quad A\cap A=A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SetEqual}(A\cup A,A)
+  \wedge
+  \operatorname{SetEqual}(A\cap A,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Repeating the same set in a union or intersection does not change the result.
+\end{remark*}
+
+\LeanFormalizes{thm:idempotency}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Union}{UnionIdempotent}{pending}
+\LeanFormalizes{thm:idempotency}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Intersection}{IntersectionIdempotent}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Complement Extreme and Complementarity Laws)}
+\begin{theorem}[Complement Extreme and Complementarity Laws]\label{thm:complement-laws}
+Let $A\subseteq U$. Then
+\[
+\varnothing^c=U,
+\qquad
+U^c=\varnothing,
+\]
+\[
+A\cup A^c=U,
+\qquad
+A^c\cup A=U,
+\]
+and
+\[
+A\cap A^c=\varnothing,
+\qquad
+A^c\cap A=\varnothing.
+\]
+\hyperref[prf:complement-laws]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A\subseteq U,\quad
+  \varnothing^c=U,\quad U^c=\varnothing,\quad
+  A\cup A^c=U,\quad A^c\cup A=U,\quad
+  A\cap A^c=\varnothing,\quad A^c\cap A=\varnothing.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SetEqual}(\varnothing^c,U)
+  \wedge
+  \operatorname{SetEqual}(U^c,\varnothing)
+  \wedge
+  \operatorname{SetEqual}(A\cup A^c,U)
+  \wedge
+  \operatorname{SetEqual}(A^c\cup A,U)
+  \wedge
+  \operatorname{SetEqual}(A\cap A^c,\varnothing)
+  \wedge
+  \operatorname{SetEqual}(A^c\cap A,\varnothing).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A set and its complement exhaust the universe and are disjoint.
+\end{remark*}
+
+\LeanFormalizes{thm:complement-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Complement}{ComplementEmpty}{pending}
+\LeanFormalizes{thm:complement-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Complement}{ComplementUniversal}{pending}
+\LeanFormalizes{thm:complement-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Complement}{UnionComplement}{pending}
+\LeanFormalizes{thm:complement-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Complement}{ComplementUnion}{pending}
+\LeanFormalizes{thm:complement-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Complement}{IntersectionComplement}{pending}
+\LeanFormalizes{thm:complement-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Complement}{ComplementIntersection}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+  \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[def:complement]{Complement}
   \item \hyperref[def:union]{Union}
   \item \hyperref[def:intersection]{Intersection}
   \item \hyperref[def:subset]{Subset}
@@ -277,46 +441,163 @@ $\forall A \subseteq U:\; \forall x\,(x \in (A^c)^c \leftrightarrow x \in A)$.
 Taking the complement twice returns the original set.
 \end{remark*}
 
-\begin{remark*}[Exposition]
-Set difference $\setminus$ is neither commutative nor associative:
-\[
-A \setminus B \neq B \setminus A,
-\qquad
-(A \setminus B) \setminus C \neq A \setminus (B \setminus C) \quad \text{in general}.
-\]
-It interacts with union and intersection via:
-\[
-A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C),
-\qquad
-A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C).
-\]
-These follow from $A \setminus B = A \cap B^c$ together with De Morgan's laws.
-\end{remark*}
-
-\begin{remark*}[Exposition]
-The Cartesian product $\times$ is not commutative, is associative only up to
-canonical isomorphism, and distributes over union in each coordinate:
-\[
-A \times (B \cup C) = (A \times B) \cup (A \times C).
-\]
-\end{remark*}
-
-\begin{remark*}[Exposition]
-The symmetric difference is commutative and associative. Under $\triangle$,
-the power set $\mathcal{P}(U)$ forms an abelian group with identity
-$\varnothing$ and every element its own inverse ($A \triangle A = \varnothing$).
-\end{remark*}
-
-\begin{remark*}[Exposition]
-Later, after the ring-theory toolkit has been developed, the structure
-\((\mathcal P(U),\triangle,\cap)\) will be treated as a Boolean ring. In that
-setting, idempotency under intersection forces commutativity and characteristic
-\(2\). The full proof belongs with the ring-theory material.
-\end{remark*}
+\LeanFormalizes{thm:involution}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Complement}{DoubleComplement}{pending}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[ax:extensionality]{Axiom of Extensionality}
   \item \hyperref[def:complement]{Complement}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Difference Laws)}
+\begin{theorem}[Difference Laws]\label{thm:difference-laws}
+Let $A,B,C$ be sets. Then
+\[
+A\setminus B=A\cap B^c,
+\qquad
+A\setminus\varnothing=A,
+\qquad
+\varnothing\setminus A=\varnothing,
+\qquad
+A\setminus A=\varnothing,
+\]
+\[
+A\setminus(B\cup C)=(A\setminus B)\cap(A\setminus C),
+\qquad
+A\setminus(B\cap C)=(A\setminus B)\cup(A\setminus C),
+\]
+\[
+(A\cup B)\setminus C=(A\setminus C)\cup(B\setminus C),
+\qquad
+(A\cap B)\setminus C=(A\setminus C)\cap(B\setminus C),
+\]
+and
+\[
+A\setminus B\subseteq A,
+\qquad
+(A\setminus B)\cap B=\varnothing.
+\]
+\hyperref[prf:difference-laws]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{gathered}
+A\setminus B=A\cap B^c,\quad
+A\setminus\varnothing=A,\quad
+\varnothing\setminus A=\varnothing,\quad
+A\setminus A=\varnothing,\\
+A\setminus(B\cup C)=(A\setminus B)\cap(A\setminus C),\quad
+A\setminus(B\cap C)=(A\setminus B)\cup(A\setminus C),\\
+(A\cup B)\setminus C=(A\setminus C)\cup(B\setminus C),\quad
+(A\cap B)\setminus C=(A\setminus C)\cap(B\setminus C),\\
+A\setminus B\subseteq A,\quad
+(A\setminus B)\cap B=\varnothing.
+\end{gathered}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Set difference is intersection with a complement, so its algebra is inherited
+from intersection and complement.
+\end{remark*}
+
+\LeanFormalizes{thm:difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Difference}{DifferenceAsIntersectionComplement}{pending}
+\LeanFormalizes{thm:difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Difference}{DifferenceEmpty}{pending}
+\LeanFormalizes{thm:difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Difference}{EmptyDifference}{pending}
+\LeanFormalizes{thm:difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Difference}{DifferenceSelf}{pending}
+\LeanFormalizes{thm:difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Difference}{DifferenceUnion}{pending}
+\LeanFormalizes{thm:difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Difference}{DifferenceIntersection}{pending}
+\LeanFormalizes{thm:difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Difference}{UnionDifferenceDistributes}{pending}
+\LeanFormalizes{thm:difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Difference}{IntersectionDifferenceDistributes}{pending}
+\LeanFormalizes{thm:difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Difference}{DifferenceSubsetLeft}{pending}
+\LeanFormalizes{thm:difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Difference}{DifferenceDisjointRight}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+  \item \hyperref[def:set-difference]{Set Difference}
+  \item \hyperref[def:complement]{Complement}
+  \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[thm:de-morgan]{De Morgan's Laws}
+  \item \hyperref[thm:complement-laws]{Complement Extreme and Complementarity Laws}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Symmetric Difference Laws)}
+\begin{theorem}[Symmetric Difference Laws]\label{thm:symmetric-difference-laws}
+Let $A,B,C$ be sets. Then
+\[
+A\triangle B=(A\setminus B)\cup(B\setminus A),
+\qquad
+A\triangle B=(A\cup B)\setminus(A\cap B),
+\]
+\[
+A\triangle B=B\triangle A,
+\qquad
+(A\triangle B)\triangle C=A\triangle(B\triangle C),
+\]
+\[
+A\triangle\varnothing=A,
+\qquad
+\varnothing\triangle A=A,
+\qquad
+A\triangle A=\varnothing,
+\]
+and
+\[
+A\triangle B=\varnothing\iff A=B,
+\qquad
+A\triangle B\subseteq A\cup B.
+\]
+\hyperref[prf:symmetric-difference-laws]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{gathered}
+A\triangle B=(A\setminus B)\cup(B\setminus A),\quad
+A\triangle B=(A\cup B)\setminus(A\cap B),\\
+A\triangle B=B\triangle A,\quad
+(A\triangle B)\triangle C=A\triangle(B\triangle C),\\
+A\triangle\varnothing=A,\quad
+\varnothing\triangle A=A,\quad
+A\triangle A=\varnothing,\\
+A\triangle B=\varnothing\iff A=B,\quad
+A\triangle B\subseteq A\cup B.
+\end{gathered}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Symmetric difference records exactly where two sets disagree.
+\end{remark*}
+
+\LeanFormalizes{thm:symmetric-difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SymmetricDifference}{SymmetricDifferenceAsUnionDifferences}{pending}
+\LeanFormalizes{thm:symmetric-difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SymmetricDifference}{SymmetricDifferenceAsUnionDifferenceIntersection}{pending}
+\LeanFormalizes{thm:symmetric-difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SymmetricDifference}{SymmetricDifferenceCommutative}{pending}
+\LeanFormalizes{thm:symmetric-difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SymmetricDifference}{SymmetricDifferenceEmpty}{pending}
+\LeanFormalizes{thm:symmetric-difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SymmetricDifference}{EmptySymmetricDifference}{pending}
+\LeanFormalizes{thm:symmetric-difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SymmetricDifference}{SymmetricDifferenceSelf}{pending}
+\LeanFormalizes{thm:symmetric-difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SymmetricDifference}{SymmetricDifferenceAssociative}{pending}
+\LeanFormalizes{thm:symmetric-difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SymmetricDifference}{SymmetricDifferenceEqEmptyIff}{pending}
+\LeanFormalizes{thm:symmetric-difference-laws}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SymmetricDifference}{SymmetricDifferenceSubsetUnion}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+  \item \hyperref[def:sym-diff]{Symmetric Difference}
+  \item \hyperref[def:set-difference]{Set Difference}
+  \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[thm:difference-laws]{Difference Laws}
 \end{itemize}
 \end{dependencies}

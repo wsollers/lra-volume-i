@@ -13,19 +13,12 @@ If $C\subseteq D$, then $A\setminus D\subseteq A\setminus C$.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Assume $C\subseteq D$. Let $x\in A\setminus D$. Then $x\in A$ and
-$x\notin D$. If $x\in C$, then $x\in D$, contradicting $x\notin D$.
-Therefore $x\notin C$. Since $x\in A$ and $x\notin C$, we have
-$x\in A\setminus C$. Hence $A\setminus D\subseteq A\setminus C$.
+TODO: professional standard proof for set-difference-antitone-right.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-Changing the right argument of a difference changes the exclusion condition.
-A larger set on the right removes more elements, so difference is antitone in
-that argument. The proof uses the contrapositive reading of $C\subseteq D$:
-if $x\notin D$, then $x\notin C$. Combined with the unchanged fact $x\in A$,
-this gives $x\in A\setminus C$.
+TODO: detailed learning proof for set-difference-antitone-right.
 \end{proof}
 
 \begin{remark*}[Proof structure]
@@ -33,7 +26,6 @@ this gives $x\in A\setminus C$.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[thm:set-difference-antitone-right]{Proof target}
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:set-difference]{Set Difference}
 \end{itemize}

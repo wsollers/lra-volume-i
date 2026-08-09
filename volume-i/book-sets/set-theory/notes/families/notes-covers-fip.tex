@@ -54,6 +54,9 @@ A \;\subseteq\; \bigcup_{C \in \mathcal{C}} C.
 A cover supplies at least one set containing each element of the covered set.
 \end{remark*}
 
+\LeanFormalizes{def:cover-full}{lra-lean}{LRA.VolumeI.Set.Families}{Covers}{pending}
+\LeanFormalizes{def:cover-full}{lra-lean}{LRA.VolumeI.Set.Families}{CoversElementwiseIff}{pending}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:subset]{Subset}
@@ -81,6 +84,9 @@ $\mathcal{C}'$ is a \emph{subcover} of $\mathcal{C}$ if $\mathcal{C}'
 \begin{remark*}[Interpretation]
 A subcover is a smaller collection that still covers the same set.
 \end{remark*}
+
+\LeanFormalizes{def:subcover}{lra-lean}{LRA.VolumeI.Set.Families}{Subcover}{pending}
+\LeanFormalizes{def:subcover}{lra-lean}{LRA.VolumeI.Set.Families}{SubcoverIff}{pending}
 
 \begin{dependencies}
 \begin{itemize}
@@ -113,6 +119,10 @@ $|\mathcal{C}'| < \infty$.
 A finite subcover covers the same set using only finitely many members of the
 original cover.
 \end{remark*}
+
+\LeanFormalizes{def:finite-cover}{lra-lean}{LRA.VolumeI.Set.Families}{FiniteCollection}{pending}
+\LeanFormalizes{def:finite-cover}{lra-lean}{LRA.VolumeI.Set.Families}{FiniteSubcover}{pending}
+\LeanFormalizes{def:finite-cover}{lra-lean}{LRA.VolumeI.Set.Families}{FiniteSubcoverIff}{pending}
 
 \begin{remark*}[Exposition]
 The condition of being a cover is easy to satisfy: take $\mathcal{C} =
@@ -220,6 +230,8 @@ The finite intersection property says that no finite subcollection has empty
 intersection.
 \end{remark*}
 
+\LeanFormalizes{def:fip}{lra-lean}{LRA.VolumeI.Set.Families}{FiniteIntersectionProperty}{pending}
+
 \begin{remark*}[Exposition]
 The FIP is a consistency condition: no finite list of sets from $\mathcal{F}$
 is mutually exclusive. It does \emph{not} say the entire intersection
@@ -240,6 +252,120 @@ intersection.
   \item \hyperref[def:empty-set]{Empty Set}
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:finite-infinite]{Finite and Infinite Sets}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Cover Failure and Relative Complements)}
+\begin{theorem}[Cover Failure and Relative Complements]\label{thm:cover-failure-relative-complements}
+Let $A$ be a set and let $\mathcal{C}$ be a collection of sets. Then
+$\mathcal{C}$ fails to cover $A$ if and only if the relative complements
+$A\setminus C$ have nonempty total intersection:
+\[
+A\not\subseteq\bigcup_{C\in\mathcal C}C
+\iff
+\bigcap_{C\in\mathcal{C}}(A\setminus C)\neq\varnothing.
+\]
+\hyperref[prf:cover-failure-relative-complements]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\not\subseteq\bigcup_{C\in\mathcal C}C
+\iff
+\exists x\in A,\ \forall C\in\mathcal C,\ x\notin C
+\iff
+\bigcap_{C\in\mathcal C}(A\setminus C)\neq\varnothing.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  A\not\subseteq\bigcup_{C\in\mathcal C}C
+  \iff
+  \bigcap_{C\in\mathcal C}(A\setminus C)\neq\varnothing.
+\]
+The predicate-level content is the equivalence between cover failure and
+nonempty total intersection of relative complements.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A cover fails exactly when there is a point of $A$ missed by every member of
+the collection.  Such a point belongs to every relative complement
+$A\setminus C$.
+\end{remark*}
+
+\LeanFormalizes{thm:cover-failure-relative-complements}{lra-lean}{LRA.VolumeI.Set.Families}{RelativeComplementCollection}{pending}
+\LeanFormalizes{thm:cover-failure-relative-complements}{lra-lean}{LRA.VolumeI.Set.Families}{CoverFailureIffRelativeComplementIntersectionNonempty}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cover-full]{Cover}
+  \item \hyperref[def:set-difference]{Set Difference}
+  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
+  \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (No Finite Subcover and FIP)}
+\begin{theorem}[No Finite Subcover and FIP]\label{thm:no-finite-subcover-fip}
+Let $A$ be a set and let $\mathcal{C}$ be a collection of sets. Then
+$\mathcal{C}$ has no finite subcover of $A$ if and only if the collection of
+relative complements $\{A\setminus C:C\in\mathcal{C}\}$ has the finite
+intersection property:
+\[
+\bigl(\forall\mathcal{C}_0\subseteq\mathcal{C},\
+\mathcal C_0\text{ finite}\to
+A\not\subseteq\bigcup_{C\in\mathcal C_0}C\bigr)
+\iff
+\{A\setminus C:C\in\mathcal{C}\}\text{ has the finite intersection property}.
+\]
+\hyperref[prf:no-finite-subcover-fip]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\forall\mathcal C_0\subseteq\mathcal C,\ 
+\mathcal C_0\text{ finite}\to
+A\not\subseteq\bigcup_{C\in\mathcal C_0}C\\
+&\qquad\iff
+\forall\mathcal C_0\subseteq\mathcal C,\ 
+\mathcal C_0\text{ finite}\to
+\bigcap_{C\in\mathcal C_0}(A\setminus C)\neq\varnothing.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \forall\mathcal C_0\subseteq\mathcal C,\ 
+  \mathcal C_0\text{ finite}\to
+  A\not\subseteq\bigcup_{C\in\mathcal C_0}C
+\]
+is equivalent to the finite-intersection-property condition for
+\(\{A\setminus C:C\in\mathcal C\}\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The previous theorem turns one failed cover into one nonempty intersection of
+relative complements.  This theorem applies that conversion uniformly to every
+finite subcollection.  That is exactly the finite-intersection-property
+translation used in compactness.
+\end{remark*}
+
+\LeanFormalizes{thm:no-finite-subcover-fip}{lra-lean}{LRA.VolumeI.Set.Families}{HasNoFiniteSubcover}{pending}
+\LeanFormalizes{thm:no-finite-subcover-fip}{lra-lean}{LRA.VolumeI.Set.Families}{NoFiniteSubcoverIffRelativeComplementFIP}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cover-full]{Cover}
+  \item \hyperref[def:subcover]{Subcover}
+  \item \hyperref[def:finite-cover]{Finite Cover}
+  \item \hyperref[def:fip]{Finite Intersection Property}
+  \item \hyperref[thm:cover-failure-relative-complements]{Cover Failure and Relative Complements}
 \end{itemize}
 \end{dependencies}
 
@@ -275,6 +401,9 @@ $A \subseteq \bigcup_{\alpha \in I} U_\alpha \;\leftrightarrow\; \neg(\forall\te
   \neg\operatorname{FiniteIntersectionProperty}(\{F_\alpha\cap A\}_{\alpha\in I}).
 \]
 \end{remark*}
+
+\LeanFormalizes{prop:fip-duality}{lra-lean}{LRA.VolumeI.Set.Families}{HasFiniteSubcover}{pending}
+\LeanFormalizes{prop:fip-duality}{lra-lean}{LRA.VolumeI.Set.Families}{FiniteSubcoverIffRelativeComplementNotFIP}{pending}
 
 \begin{remark*}[Interpretation]
 Covering by a family is equivalent to failure of the finite intersection

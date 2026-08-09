@@ -31,7 +31,8 @@ There exists a unique set $E$ such that no object is an element of $E$:
 \end{theorem}
 \end{theorembox}
 
-\LeanFormalizes{thm:empty-set-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesEmptySet}{pending}
+\LeanFormalizes{thm:empty-set-exists-unique}{lra-lean}{LRA.VolumeI.Set.TT.Set}{LRASet.EmptySetExistsUnique}{pending}
+
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -225,6 +226,106 @@ This two-step structure appears throughout set-theoretic proofs.
 \end{itemize}
 \end{dependencies}
 
+\begin{theorembox}{Theorem (Extensional Equality Criteria)}
+\begin{theorem}[Extensional Equality Criteria]\label{thm:extensional-equality-criteria}
+Let $A$ and $B$ be sets. Then
+\[
+A=B \iff \forall x\,(x\in A\leftrightarrow x\in B),
+\]
+and
+\[
+A=B \iff (A\subseteq B \land B\subseteq A).
+\]
+\hyperref[prf:extensional-equality-criteria]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A=B \iff \forall x\,(x\in A\leftrightarrow x\in B),
+  \qquad
+  A=B \iff (A\subseteq B \wedge B\subseteq A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{SetEqual}(A,B)
+  \iff
+  \operatorname{Subset}(A,B)\wedge\operatorname{Subset}(B,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+To prove equality of sets, prove that they have the same members. In most
+working proofs this becomes the mutual-inclusion method: prove $A\subseteq B$
+and $B\subseteq A$.
+\end{remark*}
+
+\LeanFormalizes{thm:extensional-equality-criteria}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SubsetCriteria}{SetExtensionalityIff}{pending}
+\LeanFormalizes{thm:extensional-equality-criteria}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SubsetCriteria}{SetEqualityIffMutualSubset}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:set-equality]{Set Equality}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Subset Absorption Criteria)}
+\begin{theorem}[Subset Absorption Criteria]\label{thm:subset-absorption-criteria}
+Let $A$ and $B$ be sets. Then
+\[
+A\subseteq B \iff A\cup B=B,
+\]
+and
+\[
+A\subseteq B \iff A\cap B=A.
+\]
+\hyperref[prf:subset-absorption-criteria]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall A,B,\quad
+  A\subseteq B\iff A\cup B=B,
+  \qquad
+  A\subseteq B\iff A\cap B=A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Subset}(A,B)
+  \iff
+  \operatorname{SetEqual}(A\cup B,B),
+  \qquad
+  \operatorname{Subset}(A,B)
+  \iff
+  \operatorname{SetEqual}(A\cap B,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Inclusion can be recognized algebraically: a smaller set is absorbed by union
+with the larger set and by intersection with the larger set.
+\end{remark*}
+
+\LeanFormalizes{thm:subset-absorption-criteria}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SubsetCriteria}{SubsetIffUnionEqRight}{pending}
+\LeanFormalizes{thm:subset-absorption-criteria}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.SubsetCriteria}{SubsetIffIntersectionEqLeft}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:set-equality]{Set Equality}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+\end{itemize}
+\end{dependencies}
+
 % ---------------------------------------------------------
 \begin{theorembox}{Theorem (Existence and Uniqueness of Pairing's Output)}
 \begin{theorem}[Existence and Uniqueness of Pairing's Output]\label{thm:pairing-output-exists-unique}
@@ -238,7 +339,8 @@ exactly $x_1$ and $x_2$:
 \end{theorem}
 \end{theorembox}
 
-\LeanFormalizes{thm:pairing-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFC.Semantics.AxiomReadings}{pairingAxiomReading}{checked}
+\LeanFormalizes{thm:pairing-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.TT.Set}{LRASet.PairSetExistsUnique}{pending}
+
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -284,7 +386,8 @@ elements of members of $x$:
 \end{theorem}
 \end{theorembox}
 
-\LeanFormalizes{thm:union-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFC.Semantics.AxiomReadings}{unionAxiomReading}{checked}
+\LeanFormalizes{thm:union-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.Families}{IndexedUnionExistsUnique}{pending}
+
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -329,7 +432,8 @@ exists and is unique.
 \end{corollary}
 \end{corollarybox}
 
-\LeanFormalizes{cor:binary-union-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesUnion}{pending}
+\LeanFormalizes{cor:binary-union-exists-unique}{lra-lean}{LRA.VolumeI.Set.TT.Set}{LRASet.BinaryUnionExistsUnique}{pending}
+
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -440,7 +544,8 @@ $B$ whose elements are exactly the elements of $A$ satisfying $\varphi$:
 \end{theorem}
 \end{theorembox}
 
-\LeanFormalizes{thm:separation-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFC.Semantics.SetObjectBridge}{SeparationSchemaProvidesPredicateSetWitness}{pending}
+\LeanFormalizes{thm:separation-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.TT.Set}{LRASet.SeparationExistsUnique}{pending}
+
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -484,7 +589,8 @@ exists and is unique.
 \end{corollary}
 \end{corollarybox}
 
-\LeanFormalizes{cor:intersection-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesIntersection}{pending}
+\LeanFormalizes{cor:intersection-exists-unique}{lra-lean}{LRA.VolumeI.Set.TT.Set}{LRASet.IntersectionExistsUnique}{pending}
+
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -579,7 +685,8 @@ exists and is unique.
 \end{corollary}
 \end{corollarybox}
 
-\LeanFormalizes{cor:set-difference-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesDifference}{pending}
+\LeanFormalizes{cor:set-difference-exists-unique}{lra-lean}{LRA.VolumeI.Set.TT.Set}{LRASet.DifferenceExistsUnique}{pending}
+
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -654,7 +761,8 @@ exists and is unique.
 \end{corollary}
 \end{corollarybox}
 
-\LeanFormalizes{cor:symmetric-difference-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ZFCProvidesSymmetricDifference}{pending}
+\LeanFormalizes{cor:symmetric-difference-exists-unique}{lra-lean}{LRA.VolumeI.Set.TT.Set}{LRASet.SymmetricDifferenceExistsUnique}{pending}
+
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -739,7 +847,8 @@ complement operation over a universal set of all sets.
 \end{corollary}
 \end{corollarybox}
 
-\LeanFormalizes{cor:relative-complement-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFCSet}{ZFCSet.ComplementSpec}{pending}
+\LeanFormalizes{cor:relative-complement-exists-unique}{lra-lean}{LRA.VolumeI.Set.TT.Set}{LRASet.RelativeComplementExistsUnique}{pending}
+
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -865,7 +974,8 @@ subsets of $A$:
 \end{theorem}
 \end{theorembox}
 
-\LeanFormalizes{thm:power-set-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.ZFC.Theory.Axioms}{powerSetAxiom}{pending}
+\LeanFormalizes{thm:power-set-output-exists-unique}{lra-lean}{LRA.VolumeI.Set.PowerSets}{RelativePowerSetExistsUnique}{pending}
+
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1061,6 +1171,8 @@ C\cup A\subseteq C\cup B.
 \end{theorem}
 \end{theorembox}
 
+\LeanFormalizes{thm:union-monotone-inclusion}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Union}{UnionMonotoneInclusion}{pending}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall A,B,C,\quad
@@ -1110,6 +1222,8 @@ C\cap A\subseteq C\cap B.
 \end{theorem}
 \end{theorembox}
 
+\LeanFormalizes{thm:intersection-monotone-inclusion}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Intersection}{IntersectionMonotoneInclusion}{pending}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall A,B,C,\quad
@@ -1148,6 +1262,8 @@ If $A\subseteq B$, then
 \end{theorem}
 \end{theorembox}
 
+\LeanFormalizes{thm:power-set-monotone-inclusion}{lra-lean}{LRA.VolumeI.Set.PowerSets}{RelativePowerSetMonotoneInclusion}{pending}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall A,B,\quad A\subseteq B\to \mathcal{P}(A)\subseteq\mathcal{P}(B).
@@ -1184,6 +1300,8 @@ B^c\subseteq A^c.
 \end{theorem}
 \end{theorembox}
 
+\LeanFormalizes{thm:complement-antitone-inclusion}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Complement}{ComplementAntitoneInclusion}{pending}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall A,B\subseteq U,\quad A\subseteq B\to B^c\subseteq A^c.
@@ -1218,6 +1336,8 @@ A\setminus C\subseteq B\setminus C.
 \hyperref[prf:set-difference-monotone-left]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\LeanFormalizes{thm:set-difference-monotone-left}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Difference}{DifferenceMonotoneLeft}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1271,6 +1391,8 @@ A\setminus D\subseteq A\setminus C.
 \begin{remark*}[Interpretation]
 Set difference is inclusion-antitone in the set being removed.
 \end{remark*}
+
+\LeanFormalizes{thm:set-difference-antitone-right}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Difference}{DifferenceAntitoneRight}{pending}
 
 \begin{dependencies}
 \begin{itemize}

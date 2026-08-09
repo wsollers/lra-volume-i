@@ -1,0 +1,61 @@
+\newpage
+\phantomsection
+\label{prf:basic-preimage-laws}
+\LRAProofFor{thm:basic-preimage-laws}
+
+\begin{remark*}[Return]
+\hyperref[thm:basic-preimage-laws]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Basic Preimage Laws]
+Let $f:A\to B$, let $g:B\to C$, let $S,T\subseteq B$, and let $R\subseteq C$.
+Then:
+\begin{enumerate}[label=(\roman*)]
+\item $f^{-1}(B)=A$,
+\item $f^{-1}(\varnothing)=\varnothing$,
+\item $f^{-1}(S\triangle T)=f^{-1}(S)\triangle f^{-1}(T)$,
+\item $\id_A^{-1}(U)=U$ for every $U\subseteq A$,
+\item $(g\circ f)^{-1}(R)=f^{-1}(g^{-1}(R))$,
+\item $f^{-1}(S)\subseteq A$,
+\item if $S\subseteq T$, then $f^{-1}(S)\subseteq f^{-1}(T)$,
+\item if $h:A\to B$ and $f(a)=h(a)$ for every $a\in A$, then
+      $f^{-1}(S)=h^{-1}(S)$,
+\item if $S=T$, then $f^{-1}(S)=f^{-1}(T)$,
+\item if $R_0\subseteq R_1\subseteq C$, then
+      $(g\circ f)^{-1}(R_0)\subseteq (g\circ f)^{-1}(R_1)$.
+\end{enumerate}
+Moreover, for $S,T,R_0\subseteq B$,
+\[
+f^{-1}\!\bigl(S\setminus (T\cup R_0)\bigr)
+=
+f^{-1}(S)\setminus \bigl(f^{-1}(T)\cup f^{-1}(R_0)\bigr).
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+TODO: professional standard proof for basic-preimage-laws.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+TODO: detailed learning proof for basic-preimage-laws.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:identity]{Identity Function}
+  \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:preimage]{Preimage}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:set-difference]{Set Difference}
+  \item \hyperref[def:sym-diff]{Symmetric Difference}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

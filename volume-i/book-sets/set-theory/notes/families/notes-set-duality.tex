@@ -75,6 +75,9 @@ $\cap \leftrightarrow \land$, $\cup \leftrightarrow \lor$, and
 $A^c \leftrightarrow \neg A$.
 \end{remark*}
 
+\LeanFormalizes{thm:de-morgan}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Duality}{DeMorganUnion}{pending}
+\LeanFormalizes{thm:de-morgan}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Duality}{DeMorganIntersection}{pending}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:union]{Union}
@@ -118,6 +121,9 @@ U\setminus\bigcap_{i\in I}A_i
 \begin{remark*}[Interpretation]
 Complement exchanges indexed unions with indexed intersections.
 \end{remark*}
+
+\LeanFormalizes{thm:indexed-de-morgan}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Indexed}{ComplementIndexedUnion}{pending}
+\LeanFormalizes{thm:indexed-de-morgan}{lra-lean}{LRA.VolumeI.Set.Operations.Laws.Indexed}{ComplementIndexedIntersection}{pending}
 
 \begin{dependencies}
 \begin{itemize}

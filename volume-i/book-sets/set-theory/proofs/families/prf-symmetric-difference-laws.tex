@@ -1,0 +1,63 @@
+\newpage
+\phantomsection
+\label{prf:symmetric-difference-laws}
+\LRAProofFor{thm:symmetric-difference-laws}
+
+\begin{remark*}[Return]
+\hyperref[thm:symmetric-difference-laws]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Symmetric Difference Laws]
+Let $A,B,C$ be sets. Then
+\[
+A\triangle B=(A\setminus B)\cup(B\setminus A),
+\qquad
+A\triangle B=(A\cup B)\setminus(A\cap B),
+\]
+\[
+A\triangle B=B\triangle A,
+\qquad
+(A\triangle B)\triangle C=A\triangle(B\triangle C),
+\]
+\[
+A\triangle\varnothing=A,
+\qquad
+\varnothing\triangle A=A,
+\qquad
+A\triangle A=\varnothing,
+\]
+and
+\[
+A\triangle B=\varnothing\iff A=B,
+\qquad
+A\triangle B\subseteq A\cup B.
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+TODO: professional standard proof for symmetric-difference-laws.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+TODO: detailed learning proof for symmetric-difference-laws.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[ax:extensionality]{Axiom of Extensionality}
+  \item \hyperref[def:sym-diff]{Symmetric Difference}
+  \item \hyperref[def:set-difference]{Set Difference}
+  \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[thm:difference-laws]{Difference Laws}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

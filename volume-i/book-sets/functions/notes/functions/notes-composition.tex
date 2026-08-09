@@ -530,6 +530,74 @@ to the domain.
 \end{itemize}
 \end{dependencies}
 
+\subsubsection*{Basic Preimage Laws}
+
+\begin{theorembox}{Theorem (Basic Preimage Laws)}
+\begin{theorem}[Basic Preimage Laws]\label{thm:basic-preimage-laws}
+Let $f:A\to B$, let $g:B\to C$, let $S,T\subseteq B$, and let $R\subseteq C$.
+Then:
+\begin{enumerate}[label=(\roman*)]
+\item $f^{-1}(B)=A$,
+\item $f^{-1}(\varnothing)=\varnothing$,
+\item $f^{-1}(S\triangle T)=f^{-1}(S)\triangle f^{-1}(T)$,
+\item $\id_A^{-1}(U)=U$ for every $U\subseteq A$,
+\item $(g\circ f)^{-1}(R)=f^{-1}(g^{-1}(R))$,
+\item $f^{-1}(S)\subseteq A$,
+\item if $S\subseteq T$, then $f^{-1}(S)\subseteq f^{-1}(T)$,
+\item if $h:A\to B$ and $f(a)=h(a)$ for every $a\in A$, then
+      $f^{-1}(S)=h^{-1}(S)$,
+\item if $S=T$, then $f^{-1}(S)=f^{-1}(T)$,
+\item if $R_0\subseteq R_1\subseteq C$, then
+      $(g\circ f)^{-1}(R_0)\subseteq (g\circ f)^{-1}(R_1)$.
+\end{enumerate}
+Moreover, for $S,T,R_0\subseteq B$,
+\[
+f^{-1}\!\bigl(S\setminus (T\cup R_0)\bigr)
+=
+f^{-1}(S)\setminus \bigl(f^{-1}(T)\cup f^{-1}(R_0)\bigr).
+\]
+\hyperref[prf:basic-preimage-laws]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{gathered}
+f^{-1}(B)=A,\quad
+f^{-1}(\varnothing)=\varnothing,\quad
+f^{-1}(S\triangle T)=f^{-1}(S)\triangle f^{-1}(T),\\
+\id_A^{-1}(U)=U,\quad
+(g\circ f)^{-1}(R)=f^{-1}(g^{-1}(R)),\quad
+S\subseteq T\to f^{-1}(S)\subseteq f^{-1}(T).
+\end{gathered}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+These are the tactical preimage identities used constantly in topology and
+measure theory.  The key habit is to reduce every statement to the single
+membership equivalence
+\[
+a\in f^{-1}(S) \iff f(a)\in S.
+\]
+Once that is expanded, unions become disjunctions, intersections become
+conjunctions, complements become negations, and composition becomes
+substitution.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:identity]{Identity Function}
+  \item \hyperref[def:composition]{Composition}
+  \item \hyperref[def:preimage]{Preimage}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:set-difference]{Set Difference}
+  \item \hyperref[def:sym-diff]{Symmetric Difference}
+\end{itemize}
+\end{dependencies}
+
 \subsubsection*{Indexed Preimage Operations}
 
 \begin{theorembox}{Theorem (Preimages Preserve Indexed Set Operations)}
@@ -674,6 +742,46 @@ inclusions into equalities.
   \item \hyperref[def:preimage]{Preimage}
   \item \hyperref[def:injective]{Injective Function}
   \item \hyperref[def:surjective]{Surjective Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Image of a Preimage)}
+\begin{theorem}[Image of a Preimage]\label{thm:image-of-preimage}
+Let $f:A\to B$ and let $T\subseteq B$. Then
+\[
+f(f^{-1}(T)) = T\cap \operatorname{im}(f).
+\]
+In particular, if $T\subseteq \operatorname{im}(f)$, then
+\[
+f(f^{-1}(T))=T.
+\]
+\hyperref[prf:image-of-preimage]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+f(f^{-1}(T)) = T\cap \operatorname{im}(f),
+\qquad
+T\subseteq \operatorname{im}(f)\to f(f^{-1}(T))=T.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Pulling $T$ back and then pushing forward recovers exactly the part of $T$
+that the function can actually hit.  The operation cannot create target values
+outside the image of $f$, and it cannot lose target values from $T$ that are
+already in the image.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:image-function]{Image of a Function}
+  \item \hyperref[def:image-set]{Image of a Set}
+  \item \hyperref[def:preimage]{Preimage}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
 

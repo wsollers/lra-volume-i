@@ -65,6 +65,9 @@ Different indices may correspond to the same set: $i \neq j$ does not imply
 $A_i \neq A_j$. This distinction matters for quotient constructions.
 \end{remark*}
 
+\LeanFormalizes{def:indexed-family}{lra-lean}{LRA.VolumeI.Set.Families}{IndexedFamily}{pending}
+\LeanFormalizes{def:indexed-family}{lra-lean}{LRA.VolumeI.Set.Families}{IndexedFamilyOfSubsets}{pending}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -115,6 +118,10 @@ union whose indices are the members of the collection:
 Thus unions over finite, countable, or uncountable collections use the same
 definition; only the size of the indexing collection changes.
 \end{remark*}
+
+\LeanFormalizes{def:indexed-union}{lra-lean}{LRA.VolumeI.Set.Families}{IndexedUnion}{pending}
+\LeanFormalizes{def:indexed-union}{lra-lean}{LRA.VolumeI.Set.Families}{CollectionUnion}{pending}
+\LeanFormalizes{def:indexed-union}{lra-lean}{LRA.VolumeI.Set.Families}{IndexedUnionMembershipIff}{pending}
 
 \begin{dependencies}
 \begin{itemize}
@@ -174,6 +181,10 @@ index set $I$ is finite and nonempty:
 In topology, ``closed under finite intersections'' refers to this finite
 nonempty indexed case.
 \end{remark*}
+
+\LeanFormalizes{def:indexed-intersection}{lra-lean}{LRA.VolumeI.Set.Families}{IndexedIntersection}{pending}
+\LeanFormalizes{def:indexed-intersection}{lra-lean}{LRA.VolumeI.Set.Families}{CollectionIntersection}{pending}
+\LeanFormalizes{def:indexed-intersection}{lra-lean}{LRA.VolumeI.Set.Families}{IndexedIntersectionMembershipIff}{pending}
 
 \begin{dependencies}
 \begin{itemize}
@@ -246,6 +257,10 @@ $\mathcal{C}$ covers $A$ $\;\leftrightarrow\; \forall x \in A,\; \exists C \in \
 A cover supplies at least one member of the collection containing each point of
 the covered set.
 \end{remark*}
+
+\LeanFormalizes{def:set-cover}{lra-lean}{LRA.VolumeI.Set.Families}{SetCollection}{pending}
+\LeanFormalizes{def:set-cover}{lra-lean}{LRA.VolumeI.Set.Families}{Covers}{pending}
+\LeanFormalizes{def:set-cover}{lra-lean}{LRA.VolumeI.Set.Families}{CoversElementwiseIff}{pending}
 
 \begin{dependencies}
 \begin{itemize}

@@ -1,0 +1,164 @@
+% =========================================================
+% Set Algebras
+% =========================================================
+
+\subsection{Set Algebras}
+
+\begin{exposition}
+Closure rules become mathematical structures when they are packaged together.
+A set algebra is the finite Boolean closure package for families of subsets.
+It is the first structure in this restart where the family is required to
+behave like a small universe of sets.
+\end{exposition}
+
+\begin{definitionbox}{Definition (Set Algebra)}
+\begin{definition}[Set Algebra]\label{def:set-algebra}
+Let \(X\) be a set.  A \emph{set algebra} on \(X\) is a family
+\(\mathcal A\subseteq\mathcal P(X)\) such that:
+\begin{enumerate}[label=(\roman*)]
+\item \(X\in\mathcal A\);
+\item if \(A\in\mathcal A\), then \(X\setminus A\in\mathcal A\);
+\item if \(A_1,\dots,A_n\in\mathcal A\), then
+      \(\bigcup_{k=1}^{n}A_k\in\mathcal A\), with the empty finite union
+      interpreted as \(\varnothing\).
+\end{enumerate}
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\mathcal A\text{ is a set algebra on }X
+\iff
+X\in\mathcal A,\quad
+\mathcal A\text{ is complement-closed},\quad
+\mathcal A\text{ is closed under finite unions}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A set algebra is a family that admits the ambient set, complements, and finite
+unions.  The previous closure-duality theorem explains why finite
+intersections do not have to be listed separately in this definition.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+Many books call this a \emph{field of sets}.  In this chapter, \emph{set
+algebra} is the preferred term because it points directly at the finite
+Boolean operations.
+\end{remark*}
+
+\LeanFormalizes{def:set-algebra}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebra}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-under-set-operation-vocabulary]{Closed Under Set Operations}
+  \item \hyperref[thm:pairwise-closure-implies-finite-closure]{Pairwise Closure Implies Finite Closure}
+  \item \hyperref[thm:complement-union-intersection-closure-duality]{Complement-Union-Intersection Closure Duality}
+  \item \hyperref[def:power-set]{Power Set}
+  \item \hyperref[def:complement]{Complement}
+  \item \hyperref[def:union]{Union}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Set Algebra Equivalent Definitions)}
+\begin{theorem}[Set Algebra Equivalent Definitions]\label{thm:set-algebra-equivalent-definitions}
+Let \(\mathcal A\subseteq\mathcal P(X)\).  The following packages are
+equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item \(\mathcal A\) is a set algebra: \(X\in\mathcal A\), \(\mathcal A\) is
+      closed under complements, and \(\mathcal A\) is closed under finite
+      unions.
+\item \(\varnothing\in\mathcal A\), \(\mathcal A\) is closed under
+      complements, and \(\mathcal A\) is closed under finite unions.
+\item \(X\in\mathcal A\), \(\mathcal A\) is closed under complements, and
+      \(\mathcal A\) is closed under finite intersections.
+\item \(\mathcal A\) contains \(X\), is closed under complements, is closed
+      under finite unions, and is closed under finite intersections.
+\end{enumerate}
+\hyperref[prf:set-algebra-equivalent-definitions]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\mathcal A\text{ is a set algebra on }X\\
+&\iff
+\varnothing\in\mathcal A,\ \mathcal A\text{ is complement-closed, and }
+\mathcal A\text{ is closed under finite unions}\\
+&\iff
+X\in\mathcal A,\ \mathcal A\text{ is complement-closed, and }
+\mathcal A\text{ is closed under finite intersections}.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+These equivalent definitions say that a set algebra can be introduced with
+several axiom packages.  Once complements are available, finite union closure
+and finite intersection closure determine each other.
+\end{remark*}
+
+\LeanFormalizes{thm:set-algebra-equivalent-definitions}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraEmptyAxiomPackage}{pending}
+\LeanFormalizes{thm:set-algebra-equivalent-definitions}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraFiniteIntersectionPackage}{pending}
+\LeanFormalizes{thm:set-algebra-equivalent-definitions}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraFiniteBooleanClosurePackage}{pending}
+\LeanFormalizes{thm:set-algebra-equivalent-definitions}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraEquivalentDefinitions}{pending}
+\LeanFormalizes{thm:set-algebra-equivalent-definitions}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraIffEmptyAxiomPackage}{pending}
+\LeanFormalizes{thm:set-algebra-equivalent-definitions}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraIffFiniteIntersectionPackage}{pending}
+\LeanFormalizes{thm:set-algebra-equivalent-definitions}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraIffFiniteBooleanClosurePackage}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:set-algebra]{Set Algebra}
+  \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[thm:complement-laws]{Complement Laws}
+  \item \hyperref[thm:complement-union-intersection-closure-duality]{Complement-Union-Intersection Closure Duality}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Set Algebra Closure Consequences)}
+\begin{theorem}[Set Algebra Closure Consequences]\label{thm:set-algebra-closure-consequences}
+Let \(\mathcal A\) be a set algebra on \(X\).  Then:
+\begin{enumerate}[label=(\roman*)]
+\item \(\varnothing\in\mathcal A\);
+\item \(\mathcal A\) is closed under complements;
+\item \(\mathcal A\) is closed under finite unions;
+\item \(\mathcal A\) is closed under finite intersections;
+\item if \(A,B\in\mathcal A\), then \(A\setminus B\in\mathcal A\);
+\item if \(A,B\in\mathcal A\), then \(A\triangle B\in\mathcal A\).
+\end{enumerate}
+\hyperref[prf:set-algebra-closure-consequences]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\mathcal A\text{ is a set algebra on }X
+\to
+\varnothing\in\mathcal A,\quad
+\mathcal A\text{ is complement-closed},\quad
+\mathcal A\text{ is closed under finite unions, finite intersections, differences, and symmetric differences}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+After this theorem, a set algebra can be used as a finite Boolean workspace:
+all of the ordinary finite set operations stay inside the algebra.
+\end{remark*}
+
+\LeanFormalizes{thm:set-algebra-closure-consequences}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraContainsEmpty}{pending}
+\LeanFormalizes{thm:set-algebra-closure-consequences}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraClosedUnderComplements}{pending}
+\LeanFormalizes{thm:set-algebra-closure-consequences}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraClosedUnderFiniteUnions}{pending}
+\LeanFormalizes{thm:set-algebra-closure-consequences}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraClosedUnderFiniteIntersections}{pending}
+\LeanFormalizes{thm:set-algebra-closure-consequences}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraClosedUnderPairwiseDifferences}{pending}
+\LeanFormalizes{thm:set-algebra-closure-consequences}{lra-lean}{LRA.VolumeI.Set.Families}{SetAlgebraClosedUnderPairwiseSymmetricDifferences}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:set-algebra]{Set Algebra}
+  \item \hyperref[thm:set-algebra-equivalent-definitions]{Set Algebra Equivalent Definitions}
+  \item \hyperref[thm:difference-laws]{Difference Laws}
+  \item \hyperref[thm:symmetric-difference-laws]{Symmetric Difference Laws}
+  \item \hyperref[thm:complement-union-intersection-closure-duality]{Complement-Union-Intersection Closure Duality}
+\end{itemize}
+\end{dependencies}

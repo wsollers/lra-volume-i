@@ -18,33 +18,15 @@ elements of members of $x$:
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Fix a set \(x\). By the Axiom of Union, there is a set \(U\) such that
-\[
-  \forall z,\quad z\in U\leftrightarrow \exists w\,(w\in x\wedge z\in w).
-\]
-If \(U'\) satisfies the same condition, then for every \(z\),
-\[
-  z\in U\leftrightarrow \exists w\,(w\in x\wedge z\in w)\leftrightarrow z\in U'.
-\]
-By Extensionality, \(U=U'\). Hence the union output exists and is unique.
+TODO: professional standard proof for union-output-exists-unique.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-\textbf{Step 1.} Fix the input set \(x\). The Union axiom supplies a set
-\(U\) collecting exactly the objects that lie in some member of \(x\).
-
-\textbf{Step 2.} If another set \(U'\) has the same collecting property, then
-an arbitrary object \(z\) belongs to \(U\) exactly when it belongs to a member
-of \(x\), and exactly under the same condition belongs to \(U'\).
-
-\textbf{Step 3.} The two candidates have the same elements, so Extensionality
-gives \(U=U'\).
+TODO: detailed learning proof for union-output-exists-unique.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-Existence is the Union axiom; uniqueness is the standard extensional comparison
-of two witnesses with the same defining biconditional.
 \end{remark*}
 
 \begin{dependencies}

@@ -1,0 +1,264 @@
+% =========================================================
+% Closure Rules for Families of Sets
+% =========================================================
+
+\subsection{Closure Rules for Families of Sets}
+
+\begin{exposition}
+A set operation may exist without a chosen family being closed under that
+operation.  If \(A,B\subseteq X\), then \(A\cup B\) exists as a subset of
+\(X\).  A separate question is whether \(A\cup B\) belongs to a particular
+family \(\mathcal F\subseteq\mathcal P(X)\).
+\end{exposition}
+
+\begin{definitionbox}{Definition (Closed Under Set Operations)}
+\begin{definition}[Closed Under Set Operations]\label{def:closed-under-set-operation-vocabulary}
+Let \(X\) be a set and let \(\mathcal F\subseteq\mathcal P(X)\).
+\begin{enumerate}[label=(\roman*)]
+\item \(\mathcal F\) is \emph{closed under a unary operation} \(T\) if
+      \(A\in\mathcal F\) implies \(T(A)\in\mathcal F\).
+\item \(\mathcal F\) is \emph{closed under a binary operation} \(\star\) if
+      \(A,B\in\mathcal F\) implies \(A\star B\in\mathcal F\).
+\item \(\mathcal F\) is \emph{closed under an indexed operation} if every
+      indexed family \((A_i)_{i\in I}\) of members of \(\mathcal F\) has its
+      indexed output again in \(\mathcal F\).
+\item \(\mathcal F\) is \emph{closed under a collection operation} if every
+      subcollection \(\mathcal G\subseteq\mathcal F\) has its collection output
+      again in \(\mathcal F\).
+\end{enumerate}
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\mathcal F\text{ is closed under }T
+&\iff \forall A\in\mathcal F,\ T(A)\in\mathcal F,\\
+\mathcal F\text{ is closed under }\star
+&\iff \forall A,B\in\mathcal F,\ A\star B\in\mathcal F,\\
+\mathcal F\text{ is closed under an indexed operation}
+&\iff \forall (A_i)_{i\in I}\subseteq\mathcal F,\ \mathcal O((A_i)_{i\in I})\in\mathcal F.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+\operatorname{ClosedUnderUnaryOperation}(\mathcal F,T)
+&\iff \forall A\in\mathcal F,\ T(A)\in\mathcal F,\\
+\operatorname{ClosedUnderBinaryOperation}(\mathcal F,\star)
+&\iff \forall A,B\in\mathcal F,\ A\star B\in\mathcal F.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closure is a stability property.  The operation produces a subset of \(X\);
+closure says the family admits that output as one of its selected members.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The following phrases use the preceding definition:
+\[
+\begin{array}{ll}
+\text{closed under complements}
+  & A\in\mathcal F\Rightarrow X\setminus A\in\mathcal F,\\
+\text{closed under pairwise unions}
+  & A,B\in\mathcal F\Rightarrow A\cup B\in\mathcal F,\\
+\text{closed under pairwise intersections}
+  & A,B\in\mathcal F\Rightarrow A\cap B\in\mathcal F,\\
+\text{closed under countable unions}
+  & A_n\in\mathcal F\ \forall n\in\mathbb N
+    \Rightarrow \bigcup_{n\in\mathbb N}A_n\in\mathcal F,\\
+\text{closed under arbitrary unions}
+  & \mathcal G\subseteq\mathcal F
+    \Rightarrow \bigcup_{G\in\mathcal G}G\in\mathcal F.
+\end{array}
+\]
+\end{remark*}
+
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderUnaryOperation}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderBinaryOperation}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderIndexedOperation}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderCollectionOperation}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderComplements}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderPairwiseUnions}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderPairwiseIntersections}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderPairwiseDifferences}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderPairwiseSymmetricDifferences}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderCountableUnions}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderCountableIntersections}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderArbitraryUnions}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderArbitraryIntersections}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{FiniteUnionFromList}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{FiniteIntersectionFromList}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderFiniteUnions}{pending}
+\LeanFormalizes{def:closed-under-set-operation-vocabulary}{lra-lean}{LRA.VolumeI.Set.Families}{ClosedUnderFiniteIntersections}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:complement]{Complement}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Closure Rule Intersection Stability)}
+\begin{theorem}[Closure Rule Intersection Stability]\label{thm:closure-rule-intersection-stability}
+Let \(\mathfrak S\subseteq\mathcal P(\mathcal P(X))\) be a collection system.
+If every \(\mathcal F\in\mathfrak S\) is closed under a fixed unary, binary,
+indexed, or collection operation, then
+\[
+\bigcap_{\mathcal F\in\mathfrak S}\mathcal F
+\]
+is closed under the same operation.
+
+In particular, intersection preserves closure under complements, pairwise
+unions, pairwise intersections, countable unions, countable intersections,
+arbitrary unions, and arbitrary intersections.
+\hyperref[prf:closure-rule-intersection-stability]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \mathcal T\subseteq\mathfrak S,\quad
+\bigl(\forall \mathcal F\in\mathcal T,\ \mathcal F\text{ is closed under }\mathcal O\bigr)
+\to
+\bigcap_{\mathcal F\in\mathcal T}\mathcal F\text{ is closed under }\mathcal O.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\forall \mathcal T\subseteq\mathfrak S,\quad
+\bigl(\forall \mathcal F\in\mathcal T,\ \mathcal F\text{ is closed under }\mathcal O\bigr)
+\to
+\bigcap_{\mathcal F\in\mathcal T}\mathcal F\text{ is closed under }\mathcal O.
+\]
+The predicate-level content is stability of the same closure rule under
+intersection of the eligible families.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the mechanism behind generated structures.  If all admissible
+structures obey a closure rule, then the intersection of all admissible
+structures also obeys that rule.
+\end{remark*}
+
+\LeanFormalizes{thm:closure-rule-intersection-stability}{lra-lean}{LRA.VolumeI.Set.Families}{UnaryClosureStableUnderCollectionIntersection}{pending}
+\LeanFormalizes{thm:closure-rule-intersection-stability}{lra-lean}{LRA.VolumeI.Set.Families}{BinaryClosureStableUnderCollectionIntersection}{pending}
+\LeanFormalizes{thm:closure-rule-intersection-stability}{lra-lean}{LRA.VolumeI.Set.Families}{IndexedClosureStableUnderCollectionIntersection}{pending}
+\LeanFormalizes{thm:closure-rule-intersection-stability}{lra-lean}{LRA.VolumeI.Set.Families}{CollectionClosureStableUnderCollectionIntersection}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-under-set-operation-vocabulary]{Closed Under Set Operations}
+  \item \hyperref[def:collection-system]{Collection System}
+  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Pairwise Closure Implies Finite Closure)}
+\begin{theorem}[Pairwise Closure Implies Finite Closure]\label{thm:pairwise-closure-implies-finite-closure}
+Let \(\mathcal F\subseteq\mathcal P(X)\).
+\begin{enumerate}[label=(\roman*)]
+\item If \(\varnothing\in\mathcal F\) and \(\mathcal F\) is closed under
+      pairwise unions, then \(\mathcal F\) is closed under finite unions.
+\item If \(X\in\mathcal F\) and \(\mathcal F\) is closed under pairwise
+      intersections, then \(\mathcal F\) is closed under finite intersections.
+\end{enumerate}
+\hyperref[prf:pairwise-closure-implies-finite-closure]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\varnothing\in\mathcal F\ \wedge\
+\mathcal F\text{ is closed under pairwise unions}
+&\to
+\mathcal F\text{ is closed under finite unions},\\
+X\in\mathcal F\ \wedge\
+\mathcal F\text{ is closed under pairwise intersections}
+&\to
+\mathcal F\text{ is closed under finite intersections}.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Pairwise closure is the two-input closure rule.  Finite closure is obtained by
+iterating the two-input rule over a finite list.
+\end{remark*}
+
+\begin{remark*}[Exposition]
+The empty finite union is \(\varnothing\), and the empty finite intersection is
+\(X\).  These conventions explain why the theorem includes
+\(\varnothing\in\mathcal F\) for finite unions and \(X\in\mathcal F\) for
+finite intersections.
+\end{remark*}
+
+\LeanFormalizes{thm:pairwise-closure-implies-finite-closure}{lra-lean}{LRA.VolumeI.Set.Families}{PairwiseUnionClosureImpliesFiniteUnionClosure}{pending}
+\LeanFormalizes{thm:pairwise-closure-implies-finite-closure}{lra-lean}{LRA.VolumeI.Set.Families}{PairwiseIntersectionClosureImpliesFiniteIntersectionClosure}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-under-set-operation-vocabulary]{Closed Under Set Operations}
+  \item \hyperref[def:empty-set]{Empty Set}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Complement-Union-Intersection Closure Duality)}
+\begin{theorem}[Complement-Union-Intersection Closure Duality]\label{thm:complement-union-intersection-closure-duality}
+Let \(\mathcal F\subseteq\mathcal P(X)\) be closed under complements.
+\begin{enumerate}[label=(\roman*)]
+\item If \(\mathcal F\) is closed under pairwise unions, then
+      \(\mathcal F\) is closed under pairwise intersections.
+\item If \(\mathcal F\) is closed under pairwise intersections, then
+      \(\mathcal F\) is closed under pairwise unions.
+\item If \(\mathcal F\) is closed under finite unions, then
+      \(\mathcal F\) is closed under finite intersections.
+\item If \(\mathcal F\) is closed under finite intersections, then
+      \(\mathcal F\) is closed under finite unions.
+\end{enumerate}
+\hyperref[prf:complement-union-intersection-closure-duality]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+\mathcal F\text{ complement-closed and union-closed}
+&\to \mathcal F\text{ intersection-closed},\\
+\mathcal F\text{ complement-closed and intersection-closed}
+&\to \mathcal F\text{ union-closed},
+\end{aligned}
+\]
+at the corresponding pairwise or finite level.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Complement closure and De Morgan laws make union closure and intersection
+closure interchangeable at the same finite level.
+\end{remark*}
+
+\LeanFormalizes{thm:complement-union-intersection-closure-duality}{lra-lean}{LRA.VolumeI.Set.Families}{ComplementAndPairwiseUnionClosureImpliesPairwiseIntersectionClosure}{pending}
+\LeanFormalizes{thm:complement-union-intersection-closure-duality}{lra-lean}{LRA.VolumeI.Set.Families}{ComplementAndPairwiseIntersectionClosureImpliesPairwiseUnionClosure}{pending}
+\LeanFormalizes{thm:complement-union-intersection-closure-duality}{lra-lean}{LRA.VolumeI.Set.Families}{ComplementAndFiniteUnionClosureImpliesFiniteIntersectionClosure}{pending}
+\LeanFormalizes{thm:complement-union-intersection-closure-duality}{lra-lean}{LRA.VolumeI.Set.Families}{ComplementAndFiniteIntersectionClosureImpliesFiniteUnionClosure}{pending}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-under-set-operation-vocabulary]{Closed Under Set Operations}
+  \item \hyperref[thm:de-morgan]{De Morgan Laws}
+  \item \hyperref[thm:involution]{Involution}
+  \item \hyperref[thm:pairwise-closure-implies-finite-closure]{Pairwise Closure Implies Finite Closure}
+\end{itemize}
+\end{dependencies}
