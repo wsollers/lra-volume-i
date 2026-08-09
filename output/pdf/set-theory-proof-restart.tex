@@ -1,0 +1,500 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.72in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\definecolor{LRAInk}{HTML}{1F2937}
+\definecolor{LRABlue}{HTML}{2563EB}
+\definecolor{LRABg}{HTML}{F8FAFC}
+\definecolor{LRABorder}{HTML}{CBD5E1}
+\hypersetup{colorlinks=true,linkcolor=LRABlue,urlcolor=LRABlue}
+\newtcolorbox{studyblock}[3]{
+  enhanced,
+  breakable,
+  colback=LRABg,
+  colframe=LRABorder,
+  boxrule=0.45pt,
+  arc=1.5mm,
+  left=7pt,
+  right=7pt,
+  top=6pt,
+  bottom=6pt,
+  before skip=8pt,
+  after skip=8pt,
+  title={\textbf{#1: #2}\hfill\texttt{#3}},
+  coltitle=LRAInk,
+  colbacktitle=white,
+  fonttitle=\small,
+}
+\begin{document}
+\begin{center}
+{\LARGE Set Theory Proof Restart Packet}\\[0.35em]
+{\large Definitions and theorem statements in prerequisite order}\\[0.45em]
+{\small Generated from Volume I, Book II, Chapter 8 source files.}
+\end{center}
+
+\tableofcontents
+\newpage
+
+\section{Definition-Theorem Study Order}
+The sequence below places each theorem as close as possible to the definitions and earlier results it needs.
+
+\begin{studyblock}{Axiom}{Reflexivity of Equality}{ax:axiomatic-equality-reflexivity}
+Every object is identical to itself:
+\[
+  \forall x\,(x=x).
+\]
+\end{studyblock}
+\begin{studyblock}{Axiom}{Substitution of Identicals}{ax:axiomatic-equality-substitution}
+For every formula \(\phi(x)\), if two objects are identical, then \(\phi\) has
+the same truth value on both:
+\[
+  \forall x\,\forall y\,
+  \bigl(x=y\to(\phi(x)\leftrightarrow\phi(y))\bigr).
+\]
+\end{studyblock}
+\begin{studyblock}{Axiom}{Axiom of Extensionality}{ax:extensionality}
+Two sets are equal iff they have the same elements.
+\[
+\forall A \, \forall B \,
+\Bigl( A = B \iff \forall x \, (x \in A \leftrightarrow x \in B) \Bigr).
+\]
+\end{studyblock}
+\begin{studyblock}{Axiom}{Axiom of Empty Set}{ax:empty-set}
+There exists a set with no elements.
+\[
+\exists A \, \forall x \, (x \notin A).
+\]
+\end{studyblock}
+\begin{studyblock}{Axiom}{Axiom of Pairing}{ax:pairing}
+For any two sets, there exists a set containing exactly those two sets.
+\[
+\forall A \, \forall B \, \exists C \,
+\forall x \, (x \in C \leftrightarrow (x = A \lor x = B)).
+\]
+\end{studyblock}
+\begin{studyblock}{Axiom}{Axiom of Union}{ax:union}
+For any family of sets, there exists a set containing exactly the elements of
+those sets.
+\[
+\forall A \, \exists U \,
+\forall x \,
+\bigl( x \in U \leftrightarrow \exists B \, (B \in A \land x \in B) \bigr).
+\]
+\end{studyblock}
+\begin{studyblock}{Axiom}{Axiom of Power Set}{ax:power-set}
+For any set, there exists a set of all its subsets.
+\[
+\forall A \, \exists P \,
+\forall x \, (x \in P \leftrightarrow x \subseteq A).
+\]
+\end{studyblock}
+\begin{studyblock}{Axiom}{Axiom of Infinity}{ax:infinity}
+There exists an infinite set.
+\[
+\exists A \,
+\Bigl( \varnothing \in A \land
+\forall x \, (x \in A \rightarrow x \cup \{x\} \in A) \Bigr).
+\]
+\end{studyblock}
+\begin{studyblock}{Axiom}{Axiom Schema of Separation}{ax:separation}
+Given a set and a property, there exists a subset containing exactly the
+elements satisfying that property. For any formula $\varphi(x)$,
+\[
+\forall A \, \exists B \,
+\forall x \, (x \in B \leftrightarrow (x \in A \land \varphi(x))).
+\]
+\end{studyblock}
+\begin{studyblock}{Axiom}{Axiom Schema of Replacement}{ax:replacement}
+If $\varphi(x,y)$ defines a functional relation on a set $A$, then the image
+of $A$ under $\varphi$ is a set. For any formula $\varphi(x,y)$,
+\[
+\forall A\,
+\Bigl(
+\bigl(\forall x \in A\, \exists! y\, \varphi(x,y)\bigr)
+\rightarrow
+\exists B\, \forall y\,
+\bigl(y \in B \leftrightarrow \exists x \in A\, \varphi(x,y)\bigr)
+\Bigr).
+\]
+\end{studyblock}
+\begin{studyblock}{Axiom}{Axiom of Foundation}{ax:foundation}
+Every nonempty set has an $\in$-minimal element.
+\[
+\forall A \,
+\Bigl( A \neq \varnothing \rightarrow
+\exists x \in A \, (x \cap A = \varnothing) \Bigr).
+\]
+\end{studyblock}
+\begin{studyblock}{Axiom}{Axiom of Choice}{ax:choice}
+For any family of nonempty sets, there exists a selection function.
+\[
+\forall A \,
+\Bigl(
+(\forall B \in A \, (B \neq \varnothing))
+\rightarrow
+\exists f \,
+\forall B \in A \, (f(B) \in B)
+\Bigr).
+\]
+\end{studyblock}
+\begin{studyblock}{Definition}{Set and Membership}{def:set-membership}
+In axiomatic set theory, the notions of \emph{set} and \emph{membership} are
+\emph{primitive}.
+
+\begin{itemize}
+  \item A \emph{set} is an object.
+  \item \emph{Membership} is a binary relation, denoted by $\in$, between objects.
+\end{itemize}
+
+If $x$ is an object and $A$ is a set, the statement $x \in A$ is read as
+``$x$ is an element of $A$.'' No definition of ``set'' or ``$\in$'' is given
+in more basic terms. Their meaning is determined entirely by the axioms
+governing them.
+\end{studyblock}
+\begin{studyblock}{Definition}{Subset}{def:subset}
+Let $A$ and $B$ be sets. We say $A$ is a \emph{subset} of $B$, written
+$A \subseteq B$, if every element of $A$ is also an element of $B$:
+\[
+A \subseteq B \;\;\Longleftrightarrow\;\; \forall x \, (x \in A \rightarrow x \in B).
+\]
+\end{studyblock}
+\begin{studyblock}{Definition}{Proper Subset}{def:proper-subset}
+$A$ is a \emph{proper subset} of $B$, written $A \subsetneq B$, if
+$A \subseteq B$ and $A \neq B$.
+\end{studyblock}
+\begin{studyblock}{Definition}{Set Equality}{def:set-equality}
+Two sets $A$ and $B$ are \emph{equal}, written $A = B$, if they have the same
+elements:
+\[
+A = B \;\;\Longleftrightarrow\;\; \forall x \, (x \in A \leftrightarrow x \in B).
+\]
+Equivalently, $A = B \iff (A \subseteq B \land B \subseteq A)$.
+\end{studyblock}
+\begin{studyblock}{1. Theorem}{Existence and Uniqueness of the Empty Set}{thm:empty-set-exists-unique}
+There exists a unique set $E$ such that no object is an element of $E$:
+\[
+  \exists! E\,\forall x,\ x\notin E.
+\]
+\end{studyblock}
+\begin{studyblock}{Definition}{Empty Set}{def:empty-set}
+The unique set with no elements is called the \emph{empty set} and is denoted
+$\varnothing$.
+\end{studyblock}
+\begin{studyblock}{2. Theorem}{Existence and Uniqueness of Pairing's Output}{thm:pairing-output-exists-unique}
+For any sets $x_1$ and $x_2$, there exists a unique set $P$ whose elements are
+exactly $x_1$ and $x_2$:
+\[
+  \forall x_1\,\forall x_2\,\exists! P\,\forall w,\quad
+  w\in P\leftrightarrow (w=x_1\vee w=x_2).
+\]
+\end{studyblock}
+\begin{studyblock}{3. Theorem}{Existence and Uniqueness of Union's Output}{thm:union-output-exists-unique}
+For any set $x$, there exists a unique set $U$ whose elements are exactly the
+elements of members of $x$:
+\[
+  \forall x\,\exists! U\,\forall z,\quad
+  z\in U\leftrightarrow \exists w\,(w\in x\wedge z\in w).
+\]
+\end{studyblock}
+\begin{studyblock}{4. Corollary}{Existence and Uniqueness of Binary Union}{cor:binary-union-exists-unique}
+For any sets $A$ and $B$, the set
+\[
+  A\cup B:=\bigcup\{A,B\}
+\]
+exists and is unique.
+\end{studyblock}
+\begin{studyblock}{Definition}{Union}{def:union}
+The \emph{union} of $A$ and $B$, denoted $A \cup B$, is the set of all
+elements belonging to at least one of the two sets:
+\[
+A \cup B \;=\; \{\, x \mid x \in A \lor x \in B \,\}.
+\]
+\end{studyblock}
+\begin{studyblock}{5. Theorem}{Existence and Uniqueness of Separation's Output}{thm:separation-output-exists-unique}
+Let $A$ be a set and let $\varphi(x)$ be a formula. There exists a unique set
+$B$ whose elements are exactly the elements of $A$ satisfying $\varphi$:
+\[
+  \forall A\,\exists! B\,\forall x,\quad
+  x\in B\leftrightarrow (x\in A\wedge \varphi(x)).
+\]
+\end{studyblock}
+\begin{studyblock}{6. Corollary}{Existence and Uniqueness of Intersection}{cor:intersection-exists-unique}
+For any sets $A$ and $B$, the set
+\[
+  A\cap B:=\{\,x\in A\mid x\in B\,\}
+\]
+exists and is unique.
+\end{studyblock}
+\begin{studyblock}{Definition}{Intersection}{def:intersection}
+The \emph{intersection} of $A$ and $B$, denoted $A \cap B$, is the set of all
+elements common to both:
+\[
+A \cap B \;=\; \{\, x \mid x \in A \land x \in B \,\}.
+\]
+\end{studyblock}
+\begin{studyblock}{7. Corollary}{Existence and Uniqueness of Set Difference}{cor:set-difference-exists-unique}
+For any sets $A$ and $B$, the set
+\[
+  A\setminus B:=\{\,x\in A\mid x\notin B\,\}
+\]
+exists and is unique.
+\end{studyblock}
+\begin{studyblock}{Definition}{Set Difference}{def:set-difference}
+The \emph{set difference} $A \setminus B$ is the set of elements in $A$ but
+not in $B$:
+\[
+A \setminus B \;=\; \{\, x \mid x \in A \land x \notin B \,\}.
+\]
+\end{studyblock}
+\begin{studyblock}{8. Corollary}{Existence and Uniqueness of Symmetric Difference}{cor:symmetric-difference-exists-unique}
+For any sets $A$ and $B$, the set
+\[
+  A\triangle B:=(A\setminus B)\cup(B\setminus A)
+\]
+exists and is unique.
+\end{studyblock}
+\begin{studyblock}{Definition}{Symmetric Difference}{def:sym-diff}
+The \emph{symmetric difference} $A \triangle B$ is the set of elements
+belonging to exactly one of $A$ and $B$:
+\[
+A \triangle B
+\;=\;
+(A \setminus B) \cup (B \setminus A)
+\;=\;
+\{\, x \mid (x \in A \lor x \in B) \land x \notin A \cap B \,\}.
+\]
+\end{studyblock}
+\begin{studyblock}{9. Corollary}{Existence and Uniqueness of Relative Complement}{cor:relative-complement-exists-unique}
+Let $U$ be a fixed ambient set. For every set $A$, the relative complement
+\[
+  A^c:=U\setminus A
+\]
+exists and is unique. This is a relative construction; ZFC has no absolute
+complement operation over a universal set of all sets.
+\end{studyblock}
+\begin{studyblock}{Definition}{Complement}{def:complement}
+Let $U$ be a fixed universe and $A \subseteq U$. The \emph{complement} of $A$
+relative to $U$, denoted $A^c$, is:
+\[
+A^c \;=\; U \setminus A.
+\]
+\end{studyblock}
+\begin{studyblock}{10. Theorem}{Existence and Uniqueness of Power Set's Output}{thm:power-set-output-exists-unique}
+For any set $A$, there exists a unique set $P$ whose elements are exactly the
+subsets of $A$:
+\[
+  \forall A\,\exists! P\,\forall S,\quad
+  S\in P\leftrightarrow S\subseteq A.
+\]
+\end{studyblock}
+\begin{studyblock}{Definition}{Power Set}{def:power-set}
+The \emph{power set} of $A$, denoted $\mathcal{P}(A)$, is the set of all
+subsets of $A$:
+\[
+\mathcal{P}(A) \;:=\; \{\, S \mid S \subseteq A \,\}.
+\]
+\end{studyblock}
+\begin{studyblock}{Definition}{Cartesian Product}{def:cartesian-product}
+The \emph{Cartesian product} of sets $A$ and $B$ is:
+\[
+A \times B = \{\, (a,b) \mid a \in A \text{ and } b \in B \,\}.
+\]
+\end{studyblock}
+\begin{studyblock}{Definition}{Inclusion-Monotone Set Operation}{def:inclusion-monotone-set-operation}
+A set operation $F$ is \emph{inclusion-monotone} in an argument if replacing
+that argument by a larger set can only enlarge the value of the operation.
+For a one-variable operation, this means
+\[
+A\subseteq B \quad\Longrightarrow\quad F(A)\subseteq F(B).
+\]
+\end{studyblock}
+\begin{studyblock}{Definition}{Inclusion-Antitone Set Operation}{def:inclusion-antitone-set-operation}
+A set operation $F$ is \emph{inclusion-antitone} in an argument if replacing
+that argument by a larger set can only shrink the value of the operation:
+\[
+A\subseteq B \quad\Longrightarrow\quad F(B)\subseteq F(A).
+\]
+\end{studyblock}
+\begin{studyblock}{11. Theorem}{Union is Inclusion-Monotone}{thm:union-monotone-inclusion}
+If $A\subseteq B$, then $A\cup C\subseteq B\cup C$ and
+$C\cup A\subseteq C\cup B$.
+\end{studyblock}
+\begin{studyblock}{12. Theorem}{Intersection is Inclusion-Monotone}{thm:intersection-monotone-inclusion}
+If $A\subseteq B$, then $A\cap C\subseteq B\cap C$ and
+$C\cap A\subseteq C\cap B$.
+\end{studyblock}
+\begin{studyblock}{13. Theorem}{Power Set is Inclusion-Monotone}{thm:power-set-monotone-inclusion}
+If $A\subseteq B$, then $\mathcal{P}(A)\subseteq\mathcal{P}(B)$.
+\end{studyblock}
+\begin{studyblock}{14. Theorem}{Complement is Inclusion-Antitone}{thm:complement-antitone-inclusion}
+Let complements be taken relative to a fixed universe $U$. If
+$A\subseteq B\subseteq U$, then $B^c\subseteq A^c$.
+\end{studyblock}
+\begin{studyblock}{15. Theorem}{Set Difference is Inclusion-Monotone in the Left Argument}{thm:set-difference-monotone-left}
+If $A\subseteq B$, then $A\setminus C\subseteq B\setminus C$.
+\end{studyblock}
+\begin{studyblock}{16. Theorem}{Set Difference is Inclusion-Antitone in the Right Argument}{thm:set-difference-antitone-right}
+If $C\subseteq D$, then $A\setminus D\subseteq A\setminus C$.
+\end{studyblock}
+\begin{studyblock}{Definition}{Indexed Family of Sets}{def:indexed-family}
+Let $I$ be a set (the \emph{index set}) and $U$ a universe. An
+\emph{indexed family of sets} is a function
+\[
+F : I \to \mathcal{P}(U),
+\]
+with $F(i)$ typically written $A_i$. The family is denoted $\{A_i\}_{i \in I}$.
+\end{studyblock}
+\begin{studyblock}{Definition}{Indexed Union}{def:indexed-union}
+The \emph{union} of the indexed family $\{A_i\}_{i \in I}$ is:
+\[
+\bigcup_{i \in I} A_i
+\;:=\;
+\{\, x \mid \exists i \in I \text{ such that } x \in A_i \,\}.
+\]
+\end{studyblock}
+\begin{studyblock}{Definition}{Indexed Intersection}{def:indexed-intersection}
+For $I \neq \varnothing$, the \emph{intersection} of $\{A_i\}_{i \in I}$ is:
+\[
+\bigcap_{i \in I} A_i
+\;:=\;
+\{\, x \mid \forall i \in I,\; x \in A_i \,\}.
+\]
+\end{studyblock}
+\begin{studyblock}{17. Theorem}{De Morgan's Laws}{thm:de-morgan}
+Let $U$ be a universe and let $A,B \subseteq U$. Then
+\[
+(A \cup B)^c = A^c \cap B^c
+\quad\text{and}\quad
+(A \cap B)^c = A^c \cup B^c.
+\]
+\end{studyblock}
+\begin{studyblock}{18. Theorem}{De Morgan's Laws for Indexed Families}{thm:indexed-de-morgan}
+Let $\{A_i\}_{i\in I}$ be an indexed family of subsets of a universe $U$.
+Then
+\[
+U\setminus\bigcup_{i\in I}A_i
+=
+\bigcap_{i\in I}(U\setminus A_i).
+\]
+If $I\neq\varnothing$, then
+\[
+U\setminus\bigcap_{i\in I}A_i
+=
+\bigcup_{i\in I}(U\setminus A_i).
+\]
+\end{studyblock}
+\begin{studyblock}{Definition}{Set Duality}{def:set-duality}
+Two set-theoretic expressions over a fixed universe $U$ are \emph{dual} if one
+is obtained from the other by simultaneously replacing
+$\cup \leftrightarrow \cap$ and $\varnothing \leftrightarrow U$, with
+complements unchanged.
+\end{studyblock}
+\begin{studyblock}{19. Corollary}{Principle of Set Duality}{cor:set-duality}
+Any valid set identity involving $\cup$, $\cap$, $\varnothing$, and $U$
+remains valid after exchanging $\cup$ with $\cap$ and $\varnothing$ with $U$.
+\end{studyblock}
+\begin{studyblock}{20. Theorem}{Commutativity of Union and Intersection}{thm:commutativity}
+Let $A,B$ be sets. Then
+\[
+A \cup B = B \cup A
+\quad\text{and}\quad
+A \cap B = B \cap A.
+\]
+\end{studyblock}
+\begin{studyblock}{21. Theorem}{Associativity of Union and Intersection}{thm:associativity}
+Let $A,B,C$ be sets. Then
+\[
+(A \cup B) \cup C = A \cup (B \cup C)
+\quad\text{and}\quad
+(A \cap B) \cap C = A \cap (B \cap C).
+\]
+\end{studyblock}
+\begin{studyblock}{22. Theorem}{Distributive Laws}{thm:distributivity}
+Let $A,B,C$ be sets. Then
+\[
+A \cap (B \cup C) = (A \cap B) \cup (A \cap C),
+\]
+\[
+A \cup (B \cap C) = (A \cup B) \cap (A \cup C).
+\]
+\end{studyblock}
+\begin{studyblock}{23. Theorem}{Distributive Laws for Indexed Families}{thm:indexed-distributivity}
+Let $A\subseteq U$ and let $\{B_i\}_{i\in I}$ be an indexed family of subsets
+of a universe $U$. Then
+\[
+A\cap\bigcup_{i\in I}B_i
+=
+\bigcup_{i\in I}(A\cap B_i).
+\]
+If $I\neq\varnothing$, then
+\[
+A\cup\bigcap_{i\in I}B_i
+=
+\bigcap_{i\in I}(A\cup B_i).
+\]
+\end{studyblock}
+\begin{studyblock}{24. Theorem}{Identity and Absorption Laws}{thm:identity-absorption}
+Let $A,B$ be sets and $U$ a universe with $A \subseteq U$. Then
+\[
+A \cup \varnothing = A,
+\qquad
+A \cap U = A,
+\]
+\[
+A \cup (A \cap B) = A,
+\qquad
+A \cap (A \cup B) = A.
+\]
+\end{studyblock}
+\begin{studyblock}{25. Theorem}{Involution of Complement}{thm:involution}
+For any $A \subseteq U$,
+\[
+(A^c)^c = A.
+\]
+\end{studyblock}
+\begin{studyblock}{Definition}{Cover}{def:cover-full}
+Let $A$ be a set and $\mathcal{C}$ a collection of sets.
+$\mathcal{C}$ is a \emph{cover} of $A$ if every element of $A$ belongs to
+at least one member of $\mathcal{C}$:
+\[
+A \;\subseteq\; \bigcup_{C \in \mathcal{C}} C.
+\]
+\end{studyblock}
+\begin{studyblock}{Definition}{Subcover}{def:subcover}
+$\mathcal{C}'$ is a \emph{subcover} of $\mathcal{C}$ if $\mathcal{C}'
+\subseteq \mathcal{C}$ and $\mathcal{C}'$ is still a cover of $A$.
+\end{studyblock}
+\begin{studyblock}{Definition}{Finite Cover}{def:finite-cover}
+A cover is \emph{finite} if it has finitely many members. A \emph{finite
+subcover} is a subcover $\mathcal{C}' \subseteq \mathcal{C}$ with
+$|\mathcal{C}'| < \infty$.
+\end{studyblock}
+\begin{studyblock}{Definition}{Finite Intersection Property}{def:fip}
+A collection $\mathcal{F}$ of sets has the \emph{finite intersection
+property} (FIP) if every finite subcollection has nonempty intersection:
+for all finite $\mathcal{F}' \subseteq \mathcal{F}$,
+\[
+\bigcap_{F \in \mathcal{F}'} F \;\neq\; \varnothing.
+\]
+\end{studyblock}
+\begin{studyblock}{26. Proposition}{FIP--Cover Duality}{prop:fip-duality}
+Let $X$ be a set, $A \subseteq X$, and $\{U_\alpha\}_{\alpha \in I}$ a
+family of subsets of $X$. Let $F_\alpha = U_\alpha^c = X \setminus U_\alpha$.
+Then:
+\[
+\{U_\alpha\} \text{ covers } A
+\;\;\Longleftrightarrow\;\;
+\{F_\alpha \cap A\}_{\alpha \in I} \text{ does \emph{not} have the FIP}.
+\]
+More precisely: the family $\{U_\alpha\}$ does \emph{not} cover $A$ if and
+only if the family of closed complements $\{F_\alpha\}$ has the FIP relative
+to $A$.
+\end{studyblock}
+
+
+\end{document}

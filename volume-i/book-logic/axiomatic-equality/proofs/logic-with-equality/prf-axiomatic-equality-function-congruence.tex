@@ -7,27 +7,84 @@
 \hyperref[thm:axiomatic-equality-function-congruence]{Return to Theorem}
 \end{remark*}
 
+\ProofVaultURL{https://github.com/wsollers/lra-proof-vault/tree/master/volume-i/book-logic/axiomatic-equality/thm-axiomatic-equality-function-congruence}
+
 \begin{theorem*}[Function Congruence]
-Equal inputs give equal outputs under the same function symbol.
+For any unary function symbol \(f\),
+\[
+  \forall x\,\forall y\,(x=y\to f(x)=f(y)).
+\]
+More generally, equal inputs in each coordinate yield equal outputs.
 \end{theorem*}
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for axiomatic-equality-function-congruence.
+Assume \(x=y\). By reflexivity of equality, \(f(x)=f(x)\). Let \(\Phi(z)\)
+be the formula \(f(x)=f(z)\). Then \(\Phi(x)\) holds. Since \(x=y\),
+substitution of identicals applied to the formula-context \(\Phi\) gives
+\(\Phi(y)\). Hence \(f(x)=f(y)\). Therefore \(x=y\to f(x)=f(y)\), and
+universal generalization gives
+\[
+  \forall x\,\forall y\,(x=y\to f(x)=f(y)).
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for axiomatic-equality-function-congruence.
+\textbf{Step 1.} Assume the hypothesis:
+\[
+  x=y.
+\]
+We want to derive \(f(x)=f(y)\).
+
+\textbf{Step 2.} Reflexivity applies to every term, including the term
+\(f(x)\). Hence
+\[
+  f(x)=f(x).
+\]
+
+\textbf{Step 3.} Choose the formula-context
+\[
+  \Phi(z) \quad\text{to mean}\quad f(x)=f(z).
+\]
+The variable \(z\) marks the input position where substitution is being
+performed. The first occurrence \(f(x)\) is held fixed as a parameter of the
+chosen formula-context.
+
+\textbf{Step 4.} With this choice of \(\Phi\), the statement \(\Phi(x)\) is
+exactly
+\[
+  f(x)=f(x),
+\]
+which is true by reflexivity. Since the assumption is \(x=y\), substitution of
+identicals transfers the truth of \(\Phi(x)\) to \(\Phi(y)\).
+
+\textbf{Step 5.} But \(\Phi(y)\) is exactly
+\[
+  f(x)=f(y).
+\]
+Thus \(f(x)=f(y)\). Since this conclusion was derived from the arbitrary
+assumption \(x=y\), we have proved
+\[
+  x=y\to f(x)=f(y),
+\]
+and hence
+\[
+  \forall x\,\forall y\,(x=y\to f(x)=f(y)).
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+The proof uses reflexivity to obtain the true instance \(f(x)=f(x)\), then uses
+substitution of identicals along \(x=y\). The formula-context
+\(\Phi(z)\equiv f(x)=f(z)\) records that only the second input occurrence is
+being replaced.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[ax:axiomatic-equality-reflexivity]{Reflexivity of Equality}
   \item \hyperref[ax:axiomatic-equality-substitution]{Substitution of Identicals}
-  \item \hyperref[thm:axiomatic-equality-symmetry]{Symmetry of Equality}
 \end{itemize}
 \end{dependencies}
 
