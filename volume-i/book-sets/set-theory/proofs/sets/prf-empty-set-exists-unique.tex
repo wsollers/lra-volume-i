@@ -7,6 +7,8 @@
 \hyperref[thm:empty-set-exists-unique]{Return to Theorem}
 \end{remark*}
 
+\ProofVaultURL{https://github.com/wsollers/lra-proof-vault/tree/master/volume-i/book-sets/set-theory/thm-empty-set-exists-unique}
+
 \begin{theorem*}[Existence and Uniqueness of the Empty Set]
 There exists a unique set $E$ such that no object is an element of $E$:
 \[
@@ -16,15 +18,60 @@ There exists a unique set $E$ such that no object is an element of $E$:
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for empty-set-exists-unique.
+By the Axiom of Empty Set, there is a set $E$ such that
+\[
+  \forall x,\ x\notin E.
+\]
+It remains to prove uniqueness. Let $F$ be any set such that
+\[
+  \forall x,\ x\notin F.
+\]
+For every object $x$, the implications $x\in E\to x\in F$ and
+$x\in F\to x\in E$ are true, since their antecedents are false. Hence
+\[
+  \forall x,\ (x\in E\leftrightarrow x\in F).
+\]
+By the Axiom of Extensionality, $E=F$. Therefore there exists a unique set
+with no elements.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for empty-set-exists-unique.
+\textbf{Step 1. Existence.} The Axiom of Empty Set supplies a set $E$ with no
+members:
+\[
+  \forall x,\ x\notin E.
+\]
+This proves the existence part of the statement.
+
+\textbf{Step 2. Setup for uniqueness.} To prove that this set is unique, let
+$F$ be another set with the same empty-set property:
+\[
+  \forall x,\ x\notin F.
+\]
+We must show that $F=E$.
+
+\textbf{Step 3. Compare memberships.} Fix an arbitrary object $x$. Since
+$E$ has no members, the statement $x\in E$ is false, so the implication
+$x\in E\to x\in F$ holds. Since $F$ has no members, the statement $x\in F$ is
+false, so the implication $x\in F\to x\in E$ also holds. Thus
+\[
+  x\in E\leftrightarrow x\in F.
+\]
+Because $x$ was arbitrary,
+\[
+  \forall x,\ (x\in E\leftrightarrow x\in F).
+\]
+
+\textbf{Step 4. Apply Extensionality.} The Axiom of Extensionality says that
+sets with the same members are equal. Hence $E=F$. Therefore the empty-set
+property is realized by exactly one set.
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Use the Empty Set axiom for existence. For uniqueness, compare any two
+empty-set witnesses element-by-element; both membership directions are
+vacuously true, so Extensionality identifies the two sets.
 \end{remark*}
 
 \begin{dependencies}
