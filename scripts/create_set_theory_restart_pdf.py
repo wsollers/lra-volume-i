@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import re
 import subprocess
 from pathlib import Path
@@ -256,7 +257,18 @@ The sequence below places each theorem as close as possible to the definitions a
 """
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Generate the Set Theory proof restart packet PDF from the Volume I "
+            "source files."
+        )
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
+    parse_args()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     TEX_PATH.write_text(build_tex(), encoding="utf-8")
     cmd = [

@@ -72,6 +72,13 @@ Once the domain \(M\) is chosen, the equality interpretation is fixed. Equality
 is not an arbitrary binary relation selected independently of the domain.
 \end{remark*}
 
+\LeanFormalizes{def:axiomatic-equality-structure}{lra-lean}{LRA.Identity.EqualityStructure}{isDiagonal}{checked}
+\LeanFormalizes{def:axiomatic-equality-structure}{lra-lean}{LRA.Identity}{IdentIsDiagonal}{checked}
+\LeanFormalizes{def:axiomatic-equality-structure}{lra-lean}{LRA.Identity.Interop}{axiomaticIsEq}{checked}
+\LeanFormalizes{def:axiomatic-equality-structure}{lra-lean}{LRA.Identity.Interop}{toEq}{checked}
+\LeanFormalizes{def:axiomatic-equality-structure}{lra-lean}{LRA.Identity.Interop}{ofEq}{checked}
+\LeanFormalizes{def:axiomatic-equality-structure}{lra-lean}{LRA.Identity.IdentityRelation}{satisfiesIdentityTheory}{checked}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:axiomatic-equality-language]{Pure Language of Equality}
@@ -101,6 +108,9 @@ The symbol \(\neq\) abbreviates non-identity:
 Distinctness is not a new primitive relation. It is notation for the negation
 of equality.
 \end{remark*}
+
+\LeanFormalizes{def:distinctness}{lra-lean}{LRA.Identity}{DistinctIrreflexive}{checked}
+\LeanFormalizes{def:distinctness}{lra-lean}{LRA.Identity}{DistinctSymmetric}{checked}
 
 \begin{dependencies}
 \begin{itemize}
@@ -188,6 +198,8 @@ formula \(\Phi(z)\). For example, to prove symmetry of equality one chooses
 from \(x=y\), substitution then gives \(\Phi(y)\), namely \(y=x\).
 \end{remark*}
 
+\LeanFormalizes{ax:axiomatic-equality-substitution}{lra-lean}{LRA.Identity}{IdentLeibnizIff}{checked}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[ax:axiomatic-equality-reflexivity]{Reflexivity of Equality}
@@ -224,7 +236,7 @@ Let \(\phi(z)\) be the formula \(z=x\). By reflexivity, \(\phi(x)\), namely
 \(y\), yielding \(y=x\).
 \end{remark*}
 
-\LeanFormalizes{thm:axiomatic-equality-symmetry}{lra-lean}{LRA.VolumeI.Identity.Axioms}{EqualitySymmetry}{checked}
+\LeanFormalizes{thm:axiomatic-equality-symmetry}{lra-lean}{LRA.Identity}{IdentSymmetric}{checked}
 
 \begin{dependencies}
 \begin{itemize}
@@ -264,7 +276,7 @@ Let \(\phi(w)\) be the formula \(x=w\). From \(x=y\), \(\phi(y)\) is true. From
 \(y=z\), substitution transfers \(\phi\) from \(y\) to \(z\), giving \(x=z\).
 \end{remark*}
 
-\LeanFormalizes{thm:axiomatic-equality-transitivity}{lra-lean}{LRA.VolumeI.Identity.Axioms}{EqualityTransitivity}{checked}
+\LeanFormalizes{thm:axiomatic-equality-transitivity}{lra-lean}{LRA.Identity}{IdentTransitive}{checked}
 
 \begin{dependencies}
 \begin{itemize}
@@ -302,6 +314,8 @@ Equality is reflexive, symmetric, and transitive.
 Equality is the first and strictest equivalence relation: it identifies only an
 object with itself.
 \end{remark*}
+
+\LeanFormalizes{thm:axiomatic-equality-equivalence-relation}{lra-lean}{LRA.Identity}{IdentIsCongruence}{checked}
 
 \begin{dependencies}
 \begin{itemize}
@@ -341,7 +355,10 @@ Function congruence is the logical reason operations are well-defined: applying
 the same operation to identical inputs cannot produce different outputs.
 \end{remark*}
 
-\LeanFormalizes{thm:axiomatic-equality-function-congruence}{lra-lean}{LRA.VolumeI.Identity.Native}{FunctionCongruence}{checked}
+\LeanFormalizes{thm:axiomatic-equality-function-congruence}{lra-lean}{LRA.Identity}{IdentPreservesFunctions}{checked}
+\LeanFormalizes{thm:axiomatic-equality-function-congruence}{lra-lean}{LRA.Identity}{IdentPreservesOperations}{checked}
+\LeanFormalizes{thm:axiomatic-equality-function-congruence}{lra-lean}{LRA.Identity}{IndexedOperationCongruence}{checked}
+\LeanFormalizes{thm:axiomatic-equality-function-congruence}{lra-lean}{LRA.Identity.AlgebraicStructure}{interpretOperationCongruence}{checked}
 
 \begin{dependencies}
 \begin{itemize}
@@ -379,6 +396,8 @@ with the analogous rule in every coordinate.
 Relation congruence says identical objects have the same relational behavior
 with respect to every relation expressible in the language.
 \end{remark*}
+
+\LeanFormalizes{thm:axiomatic-equality-relation-congruence}{lra-lean}{LRA.Identity}{IdentPreservesRelations}{checked}
 
 \begin{dependencies}
 \begin{itemize}
@@ -466,6 +485,8 @@ and
 Before number theory is available, equality already lets the language compare
 objects and express small cardinal constraints.
 \end{remark*}
+
+\LeanFormalizes{def:two-element-bounds}{lra-lean}{LRA.Identity}{ExactlyOneNotAtLeastTwoWitnesses}{checked}
 
 \begin{dependencies}
 \begin{itemize}
